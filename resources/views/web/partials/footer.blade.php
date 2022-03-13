@@ -50,8 +50,10 @@
                                     <img src="{{ asset('images/mail.png') }}" alt="">
                                 </div>
                                 <div class="libro">
-                                    <p>Libro de <br>reclamaciones</p>
-                                    <img src="{{ asset('images/libro.png') }}" alt="">
+                                    <a href="{{ route('libro.reclamaciones') }}">
+                                        <p>Libro de <br>reclamaciones</p>
+                                        <img src="{{ asset('images/libro.png') }}" alt="">
+                                    </a>
                                 </div>
                             </div>
                         </li>
@@ -71,7 +73,10 @@
                             <a href="">Términos y condiciones de uso</a>
                         </li>
                         <li>
-                            <a href="">Política de privacidad</a>
+                            <a href="{{ route('manual.alumno') }}">Manual del Alumno</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('politicas') }}">Política de privacidad</a>
                         </li>
                     </ul>
                     <ul class="redes">

@@ -179,6 +179,35 @@ $(document).ready(function(){
     $('#carousel-recomendaciones .owl-next').html('<img src="' + base + '/images/arrow-right-black.png">');
     $('#carousel-recomendaciones .owl-prev').html('<img src="' + base + '/images/arrow-left-black.png">');
 
+    $('#carousel-blog').owlCarousel({
+        loop: true,
+        startPosition: 0,
+        dots: true,
+        margin: 0,
+        autoplay: false,
+        autoplayTimeout: 8000,
+        touchDrag: true,
+        mouseDrag: true,
+        nav: true,
+        responsive: {
+            0: {
+            items: 1,
+            nav: false,
+            },
+            768: {
+            items: 1,
+            nav: false,
+            },
+            900: {
+            items: 3,
+            nav: true,
+            }
+        }
+    });
+    
+    $('#carousel-blog .owl-next').html('<img src="' + base + '/images/arrow-right-black.png">');
+    $('#carousel-blog .owl-prev').html('<img src="' + base + '/images/arrow-left-black.png">');
+
     $('[id*=btn-header]').on('click', function(){
         var id_list = $(this).attr('list');
         if($('#' + id_list).hasClass('noActiveList')){
@@ -224,7 +253,7 @@ $(document).ready(function(){
 })
 
 $(document).on("click", function(event){
-    var $trigger = $(".dropdown");
+    var $trigger = $(".dropdown_header");
     if($trigger !== event.target && !$trigger.has(event.target).length){
         $(".dropPrograma").removeClass('ActiveList');
         $(".dropPrograma").addClass('noActiveList');

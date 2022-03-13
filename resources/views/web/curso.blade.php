@@ -103,6 +103,7 @@
                 </p>
                 <div class="botones">
                     <a href="" class="btn btn-matricula">
+                        <img src="{{ asset('images/cart.png') }}" alt="">
                         MATRICULARME AHORA
                     </a>
                     <a href="" class="btn btn-descarga">
@@ -161,7 +162,7 @@
                         </h2>
                         <div id="collapse_3" class="accordion-collapse collapse show" aria-labelledby="head_3">
                             <div class="accordion-body">
-                                <div class="accordion accordion-flush" id="accordion_flush">
+                                <div class="accordion" id="accordion_flush">
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="head_flush_1">
                                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush_1" aria-expanded="false" aria-controls="flush_1">
@@ -169,7 +170,7 @@
                                                 Introducción al Supply Chain Management
                                             </button>
                                         </h2>
-                                        <div id="flush_1" class="accordion-collapse collapse" aria-labelledby="head_flush_1" data-bs-parent="#accordion_flush">
+                                        <div id="flush_1" class="accordion-collapse collapse" aria-labelledby="head_flush_1">
                                             <div class="accordion-body">
                                                 <ul>
                                                     <li>
@@ -192,7 +193,7 @@
                                                 Planeamiento de la Demanda y Oferta
                                             </button>
                                         </h2>
-                                        <div id="flush_2" class="accordion-collapse collapse" aria-labelledby="head_flush_2" data-bs-parent="#accordion_flush">
+                                        <div id="flush_2" class="accordion-collapse collapse" aria-labelledby="head_flush_2">
                                             <div class="accordion-body">
                                                 <ul>
                                                     <li>

@@ -105,6 +105,16 @@
                             <img src="{{ asset('images/certiprof.png') }}" alt="">
                         </div>
                     </div>
+                    <div class="item">
+                        <div class="imagen">
+                            <img src="{{ asset('images/ccl.png') }}" alt="">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="imagen">
+                            <img src="{{ asset('images/premioempresa.png') }}" alt="">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -321,7 +331,7 @@
                         <img src="{{ asset('images/articulo1.png') }}" alt="">
                     </div>
                     <div class="content">
-                        <a href="" class="btn btn-leer">ARTÍCULO COMPLETO</a>
+                        <a href="{{ route('post') }}" class="btn btn-leer">ARTÍCULO COMPLETO</a>
                         <p class="category">
                             Logros
                         </p>
@@ -340,7 +350,7 @@
                         <img src="{{ asset('images/articulo2.png') }}" alt="">
                     </div>
                     <div class="content">
-                        <a href="" class="btn btn-leer">ARTÍCULO COMPLETO</a>
+                        <a href="{{ route('post') }}" class="btn btn-leer">ARTÍCULO COMPLETO</a>
                         <p class="category">
                             Logros
                         </p>
@@ -359,7 +369,7 @@
                         <img src="{{ asset('images/articulo3.png') }}" alt="">
                     </div>
                     <div class="content">
-                        <a href="" class="btn btn-leer">ARTÍCULO COMPLETO</a>
+                        <a href="{{ route('post') }}" class="btn btn-leer">ARTÍCULO COMPLETO</a>
                         <p class="category">
                             Logros
                         </p>
@@ -503,18 +513,71 @@
                                 <div class="first">
                                     <img src="{{ asset('images/icon-reco1.png') }}" alt="">
                                     <p>
-                                        técnicA En
-                                        administración DE
-                                        EMPRESAS
+                                        Profesional de Negocios Internacionales
                                     </p>
                                 </div>
                                 <div class="second">
                                     <img src="{{ asset('images/icon-reco2.png') }}" alt="">
                                     <p>
-                                        "El desarrollo de las clases fueron muy
-                                        <span>dinámicas y entendibles.</span> Durante el curso hubo un 
-                                        <span>trato coordial y apoyo inmediato </span>
-                                        de parte de coordinación académica ante mis consultas”.
+                                        “El curso impactó en mi puesto de trabajo de forma positiva, ayudando a desenvolverme con eficiencia y brindándome mejores oportunidades en mi área laboral”.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="content">
+                            <div class="cara">
+                                <div class="image">
+                                    <img src="{{ asset('images/recomendacion5.png') }}" alt="">
+                                </div>
+                                <p class="name">
+                                    Franco Andrés Valdez Chumpitaz
+                                </p>
+                                <p class="description">
+                                    Egresado: SAP MM Y SAP PM
+                                </p>
+                            </div>
+                            <div class="detras">
+                                <div class="first">
+                                    <img src="{{ asset('images/icon-reco1.png') }}" alt="">
+                                    <p>
+                                        Bachiller UNIVERSITARIO EN administración
+                                    </p>
+                                </div>
+                                <div class="second">
+                                    <img src="{{ asset('images/icon-reco2.png') }}" alt="">
+                                    <p>
+                                        “La plataforma educativa es innovadora, mantiene informado al alumno de su avance académico y lo impulsa a desarrollar de manera constante cada tema. Recomiendo el curso y valoro la dinámica del profesor para explicar cada clase mediante ejemplos sencillos hasta más avanzados”.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="content">
+                            <div class="cara">
+                                <div class="image">
+                                    <img src="{{ asset('images/recomendacion6.png') }}" alt="">
+                                </div>
+                                <p class="name">
+                                    Marco Paul De Jesús Arévalo Santa María
+                                </p>
+                                <p class="description">
+                                    Egresado: SAP FI Y SAP HCM
+                                </p>
+                            </div>
+                            <div class="detras">
+                                <div class="first">
+                                    <img src="{{ asset('images/icon-reco1.png') }}" alt="">
+                                    <p>
+                                        Profesional de Negocios Internacionales
+                                    </p>
+                                </div>
+                                <div class="second">
+                                    <img src="{{ asset('images/icon-reco2.png') }}" alt="">
+                                    <p>
+                                        “Lo que más destaco de Summa Center es su gran compromiso con el alumno, desde el primer día estuvieron cuidando mi formación académica, preguntándome si todo marchaba bien o había algo que no entendía para que me pudieran explicar y cuando lo necesitaba me atendían de forma inmediata. Además, todo lo aprendido se ponía en práctica mediante casos reales con el docente”.
                                     </p>
                                 </div>
                             </div>

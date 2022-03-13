@@ -7,14 +7,28 @@
             <li>
                 <a href="{{ route('blog') }}" class="@if(Route::currentRouteName()=="blog") active @endif">BLOG</a>
             </li>
-            <li>
-                <a href="" class="">BOLSA DE TRABAJO</a>
+            <li class="bolsa">
+                <div class="dropdown">
+                    <a href="{{ route('bolsa.trabajo') }}" class="@if(Route::currentRouteName()=="bolsa.trabajo") active @endif" id="dropdownMenuButton0" data-bs-toggle="dropdown" aria-expanded="false">BOLSA DE TRABAJO</a>
+                    <ul class="dropdown-menu shadow" aria-labelledby="dropdownMenuButton0">
+                        <li>
+                            <a class="dropdown-item @if(Route::currentRouteName()=="ver-anuncios") active @endif" href="{{ route('ver-anuncios') }}">
+                                <img src="{{ asset('images/icono-veranuncios.png') }}" alt=""> Ver Anuncios
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="">
+                                <img src="{{ asset('images/icono-crearanuncios.png') }}" alt=""> Crear Anuncios
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </li>
             <li>
-                <a href="" class="">SOPORTE</a>
+                <a href="{{ route('soporte') }}" class="@if(Route::currentRouteName()=="soporte") active @endif">SOPORTE</a>
             </li>
             <li>
-                <a href="" class="">CONTACTO</a>
+                <a href="{{ route('contacto') }}" class="@if(Route::currentRouteName()=="contacto") active @endif">CONTACTO</a>
             </li>
         </ul>
         <ul class="header-second" id="header-second">
@@ -24,8 +38,8 @@
                 </a>
             </li>
             <li class="menu">
-                <div class="dropdown">
-                    <button id="btn-header" list="header1_list" class="btn btn-item @if(Route::currentRouteName()=="equipo" || Route::currentRouteName()=="ofimatica") active0 @endif">
+                <div class="dropdown dropdown_header">
+                    <button id="btn-header" list="header1_list" class="btn btn-item @if(Route::currentRouteName()=="equipo" || Route::currentRouteName()=="ofimatica" || preg_match("/^responsabilidad-social/", Route::currentRouteName())) active0 @endif">
                       SUMMA
                     </button>
                 </div>
@@ -49,7 +63,7 @@
                             <img src="{{ asset('images/icono-distinciones.png') }}" alt="">
                             Distinciones
                         </a>
-                        <a class="dropdown-item" href="">
+                        <a class="dropdown-item @if(preg_match("/^responsabilidad-social/", Route::currentRouteName())) activeitems @endif" href="{{ route('responsabilidad-social-objetivos') }}">
                             <img src="{{ asset('images/icono-responsabilidad.png') }}" alt="">
                             Responsabilidad Social
                         </a>
@@ -136,7 +150,7 @@
                 </div>
             </div>
             <li class="menu">
-                <div class="dropdown">
+                <div class="dropdown dropdown_header">
                     <button id="btn-header" list="header2_list" class="btn btn-item @if(Route::currentRouteName()=="programas" || Route::currentRouteName()=="curso") active0 @endif">
                       PROGRAMAS
                     </button>
@@ -320,8 +334,8 @@
                 </div>
             </div>
             <li class="menu">
-                <div class="dropdown">
-                    <button id="btn-header" list="header3_list" class="btn btn-item @if(Route::currentRouteName()=="nuestras-certificaciones" || Route::currentRouteName()=="insignias-digitales" || Route::currentRouteName()=="ruta-insignias") active0 @endif">
+                <div class="dropdown dropdown_header">
+                    <button id="btn-header" list="header3_list" class="btn btn-item @if(Route::currentRouteName()=="nuestras-certificaciones" || Route::currentRouteName()=="insignias-digitales" || Route::currentRouteName()=="ruta-insignias" || Route::currentRouteName()=="coleccion-insignias" || Route::currentRouteName()=="insignia" || Route::currentRouteName()=="preguntas-frecuentes") active0 @endif">
                         CERTIFICACIONES
                     </button>
                 </div>
@@ -340,7 +354,11 @@
                                 <img src="{{ asset('images/menu-ruta-insignias.png') }}" alt="">
                                 Rutas de Insignias
                             </a>
-                            <a class="dropdown-item" href="">
+                            <a class="dropdown-item @if(Route::currentRouteName()=="coleccion-insignias" || Route::currentRouteName()=="insignia") activeitems @endif" href="{{ route('coleccion-insignias') }}">
+                                <img src="{{ asset('images/coleccion-insignias.png') }}" alt="">
+                                Colección de Insignias
+                            </a>
+                            <a class="dropdown-item @if(Route::currentRouteName()=="preguntas-frecuentes") activeitems @endif" href="{{ route('preguntas-frecuentes') }}">
                                 <img src="{{ asset('images/menu-preguntas-frecuentes.png') }}" alt="">
                                 Preguntas Frecuentes
                             </a>
@@ -349,7 +367,7 @@
                 </div>
             </li>
             <li class="menu">
-                <div class="dropdown">
+                <div class="dropdown dropdown_header">
                     <button id="btn-header" list="header4_list" class="btn btn-item">
                         CORPORATIVOS
                     </button>
@@ -377,11 +395,11 @@
                 <a href="">CAMPUS ONLINE</a>
             </li>
             <li class="menu-link3">
-                <a href="">
+                <a href="{{ route('cart') }}">
                     <img class="cart" src="{{ asset('images/cart.png') }}" alt="">
                 </a>
                 <a href="">
-                    <img src="{{ asset('images/search.png') }}" alt="">
+                    <img class="search" src="{{ asset('images/search.png') }}" alt="">
                 </a>
             </li>
         </ul>

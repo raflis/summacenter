@@ -25,7 +25,7 @@
     @include('web.partials.footer')
     <script src="{{ asset('js/app.js?v=0') }}"></script>
     <script src="{{ asset('js/aos.js') }}"></script>
-    <script src="{{ asset('js/main.js') }}"></script>
+    <script src="{{ asset('js/main.js?v='.time()) }}"></script>
     <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
     <script src="{{ asset('js/multi-animated-counter.js') }}"></script>
     <!--<script src="{{ asset('js/all.js') }}"></script>-->

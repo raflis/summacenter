@@ -86,7 +86,6 @@
                                                     <a class="btn-link" href="">tech</a>
                                                 </div>
                                             </div>
-                    
                                         </div>
                                     </div>
                                     <div class="col-md-4 item">
@@ -95,7 +94,7 @@
                                                 <img src="{{ asset('images/articulo1.png') }}" alt="">
                                             </div>
                                             <div class="content">
-                                                <a href="" class="btn btn-leer">ARTÍCULO COMPLETO</a>
+                                                <a href="{{ route('post') }}" class="btn btn-leer">ARTÍCULO COMPLETO</a>
                                                 <p class="category">
                                                     Logros
                                                 </p>
@@ -132,7 +131,7 @@
                                                 <img src="{{ asset('images/articulo2.png') }}" alt="">
                                             </div>
                                             <div class="content">
-                                                <a href="" class="btn btn-leer">ARTÍCULO COMPLETO</a>
+                                                <a href="{{ route('post') }}" class="btn btn-leer">ARTÍCULO COMPLETO</a>
                                                 <p class="category">
                                                     Logros
                                                 </p>
@@ -162,7 +161,7 @@
                                                 <img src="{{ asset('images/articulo3.png') }}" alt="">
                                             </div>
                                             <div class="content">
-                                                <a href="" class="btn btn-leer">ARTÍCULO COMPLETO</a>
+                                                <a href="{{ route('post') }}" class="btn btn-leer">ARTÍCULO COMPLETO</a>
                                                 <p class="category">
                                                     Logros
                                                 </p>
@@ -181,7 +180,7 @@
                                                 <img src="{{ asset('images/articulo2.png') }}" alt="">
                                             </div>
                                             <div class="content">
-                                                <a href="" class="btn btn-leer">ARTÍCULO COMPLETO</a>
+                                                <a href="{{ route('post') }}" class="btn btn-leer">ARTÍCULO COMPLETO</a>
                                                 <p class="category">
                                                     Logros
                                                 </p>
