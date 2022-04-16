@@ -2,7 +2,7 @@
     <div class="container-fluid px-0">
         <ul class="header-first">
             <li>
-                <a href="" class="">EGRESADOS</a>
+                <a href="{{ route('egresados') }}" class="@if(Route::currentRouteName()=="egresados") active @endif">EGRESADOS</a>
             </li>
             <li>
                 <a href="{{ route('blog') }}" class="@if(Route::currentRouteName()=="blog") active @endif">BLOG</a>
@@ -39,7 +39,7 @@
             </li>
             <li class="menu">
                 <div class="dropdown dropdown_header">
-                    <button id="btn-header" list="header1_list" class="btn btn-item @if(Route::currentRouteName()=="equipo" || Route::currentRouteName()=="ofimatica" || preg_match("/^responsabilidad-social/", Route::currentRouteName())) active0 @endif">
+                    <button id="btn-header" list="header1_list" class="btn btn-item @if(Route::currentRouteName()=="modelo-educativo" || Route::currentRouteName()=="nosotros" || Route::currentRouteName()=="equipo" || Route::currentRouteName()=="ofimatica" || preg_match("/^responsabilidad-social/", Route::currentRouteName())) active0 @endif">
                       SUMMA
                     </button>
                 </div>
@@ -47,15 +47,15 @@
             <div class="dropPrograma dropInicio shadow noActiveList" id="header1_list">
                 <div class="menu">
                     <div class="menu-left">
-                        <a class="dropdown-item" href="" class="menu1">
+                        <a class="dropdown-item @if(Route::currentRouteName()=="nosotros") activeitems @endif" href="{{ route('nosotros') }}" class="menu1">
                             <img src="{{ asset('images/icono-nosotros.png') }}" alt="">
                             Nosotros
                         </a>
-                        <a class="dropdown-item" href="{{ route('equipo') }}" class="menu2">
+                        <a class="dropdown-item @if(Route::currentRouteName()=="equipo") activeitems @endif" href="{{ route('equipo') }}" class="menu2">
                             <img src="{{ asset('images/icono-equipo.png') }}" alt="">
                             Equipo Summa
                         </a>
-                        <a class="dropdown-item" href="">
+                        <a class="dropdown-item @if(Route::currentRouteName()=="modelo-educativo") activeitems @endif" href="{{ route('modelo-educativo') }}">
                             <img src="{{ asset('images/icono-modelo.png') }}" alt="">
                             Modelo Educativo
                         </a>
@@ -368,24 +368,20 @@
             </li>
             <li class="menu">
                 <div class="dropdown dropdown_header">
-                    <button id="btn-header" list="header4_list" class="btn btn-item">
+                    <button id="btn-header" list="header4_list" class="btn btn-item @if(Route::currentRouteName()=="asesoria-especializada" || Route::currentRouteName()=="capacitaciones-corporativas") active0 @endif">
                         CORPORATIVOS
                     </button>
                 </div>
                 <div class="dropPrograma dropCorpo shadow noActiveList" id="header4_list">
                     <div class="menu">
                         <div class="menu-left">
-                            <a class="dropdown-item" href="">
-                                <img src="{{ asset('images/menu-preguntas-frecuentes.png') }}" alt="">
-                                Link 1
+                            <a class="dropdown-item @if(Route::currentRouteName()=="asesoria-especializada") activeitems @endif" href="{{ route('asesoria-especializada') }}">
+                                <img src="{{ asset('images/icono-corporativo1.png') }}" alt="">
+                                Asesoría Especializada
                             </a>
-                            <a class="dropdown-item" href="">
-                                <img src="{{ asset('images/menu-preguntas-frecuentes.png') }}" alt="">
-                                Link 2
-                            </a>
-                            <a class="dropdown-item" href="">
-                                <img src="{{ asset('images/menu-preguntas-frecuentes.png') }}" alt="">
-                                Link 3
+                            <a class="dropdown-item @if(Route::currentRouteName()=="capacitaciones-corporativas") activeitems @endif" href="{{ route('capacitaciones-corporativas') }}">
+                                <img src="{{ asset('images/icono-corporativo2.png') }}" alt="">
+                                Capacitaciones Corporativas
                             </a>
                         </div>
                     </div>

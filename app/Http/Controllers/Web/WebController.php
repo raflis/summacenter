@@ -154,6 +154,12 @@ class WebController extends Controller
         return view('web.politicas', compact('agent'));
     }
 
+    public function terminos_y_condiciones()
+    {
+        $agent = new Agent();
+        return view('web.terminos-y-condiciones', compact('agent'));
+    }
+
     public function manual_alumno()
     {
         $agent = new Agent();
@@ -206,6 +212,48 @@ class WebController extends Controller
     {
         $agent = new Agent();
         return view('web.bolsa-trabajo-solicitud', compact('agent'));
+    }
+
+    public function asesoria_especializada()
+    {
+        $agent = new Agent();
+        return view('web.corporativo-asesoria-especializada', compact('agent'));
+    }
+
+    public function capacitaciones_corporativas()
+    {
+        $agent = new Agent();
+        return view('web.corporativo-capacitaciones-corporativas', compact('agent'));
+    }
+
+    public function verifica_certificacion()
+    {
+        $agent = new Agent();
+        return view('web.certificacion-verifica', compact('agent'));
+    }
+
+    public function certificado_adquirido()
+    {
+        $agent = new Agent();
+        return view('web.certificacion-certificado-adquirido', compact('agent'));
+    }
+
+    public function insignia_adquirida()
+    {
+        $agent = new Agent();
+        return view('web.certificacion-insignia-adquirido', compact('agent'));
+    }
+
+    public function modelo_educativo()
+    {
+        $agent = new Agent();
+        return view('web.modelo-educativo', compact('agent'));
+    }
+
+    public function nosotros()
+    {
+        $agent = new Agent();
+        return view('web.nosotros', compact('agent'));
     }
 
     public function postContacto(Request $request)

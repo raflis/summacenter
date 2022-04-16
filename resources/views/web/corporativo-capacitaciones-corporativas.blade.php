@@ -1,0 +1,535 @@
+@extends('web.layout')
+
+@section('content')
+
+<section class="sec13">
+    @include('web.partials.header')
+    <div class="container-fluid content">
+        <div class="row content_">
+            <div class="col-md-7">
+                <p>
+                    Capacitaciones 
+                </p>
+                <p>
+                    CORPORATIVAS
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="sec0">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 breadcrumb_">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item"><a href="{{ route('index') }}">Inicio</a></li>
+                      <li class="breadcrumb-item active" aria-current="page">Corporativo</li>
+                      <li class="breadcrumb-item active" aria-current="page">Capacitaciones Corporativas</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="sec50">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 texto">
+                <h1>
+                    CURSOS CORPORATIVOS ADAPTADOS A TUS NECESIDADES
+                </h1>
+                <p>
+                    A través de nuestros cursos y programas corporativos, llevamos el conocimiento a tu organización mediante una sólida propuesta educativa que responde a los retos en transformación digital, agilidad, data, innovación y tecnologías exponenciales. Nuestras propuestas educativas son tanto para organizaciones públicas como privadas.
+                </p>
+            </div>
+            <div class="col-md-12 px-0 navdiv">
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="pills_1_tab" data-bs-toggle="pill" data-bs-target="#pills_1" type="button" role="tab" aria-controls="pills_1" aria-selected="true">
+                            Presentación
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills_2_tab" data-bs-toggle="pill" data-bs-target="#pills_2" type="button" role="tab" aria-controls="pills_2" aria-selected="false">
+                            Propuesta de Valor
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills_3_tab" data-bs-toggle="pill" data-bs-target="#pills_3" type="button" role="tab" aria-controls="pills_3" aria-selected="false">
+                            Educación Corporativa
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills_4_tab" data-bs-toggle="pill" data-bs-target="#pills_4" type="button" role="tab" aria-controls="pills_4" aria-selected="false">
+                            Portafolio
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills_5_tab" data-bs-toggle="pill" data-bs-target="#pills_5" type="button" role="tab" aria-controls="pills_5" aria-selected="false">
+                            Contacto
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-12 px-0">
+                <div class="content">
+                    <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="pills_1" role="tabpanel" aria-labelledby="pills_1_tab">
+                            <div class="content1">
+                                <div class="content1_1">
+                                    <div class="image">
+                                        <img src="{{ asset('images/capacitaciones_image1.png') }}" alt="">
+                                    </div>
+                                    <div class="content_">
+                                        <div class="content">
+                                            <p>
+                                                Desarrollamos programas y <strong>cursos de formación para empresas</strong>, los cuales permiten estandarizar los conocimientos de los participantes a través de una metodología ágil que incluye casuística real para el logro de los objetivos.
+                                                <br><br>
+                                                Al finalizar, el participante podrá gestionar sus actividades de forma práctica, aplicando lo aprendido y utilizando la información de la organización para los ejercicios, casos y discusiones.
+                                                <br><br>
+                                                Lo cuál brindará a los participantes más herramientas para seguir desarrollándose como profesionales de alto rendimiento en sus centros de labores.
+                                            </p>
+                                            <div class="btn_action">
+                                                <a href="" class="btn btn-conocemas">
+                                                    Conoce más sobre nuestros<br>cursos corporativos
+                                                    <img src="{{ asset('images/arrow-right-white.png') }}" alt="">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills_2" role="tabpanel" aria-labelledby="pills_2_tab">
+                            <div class="content1">
+                                <div class="propuestas">
+                                    <div class="academica">
+                                        <h1>
+                                            Propuesta Académica
+                                        </h1>
+                                        <div class="items">
+                                            <div class="item">
+                                                <div class="image">
+                                                    <img src="{{ asset('images/propuesta-academica1.png') }}" alt="">
+                                                </div>
+                                                <h3>
+                                                    personalizado
+                                                </h3>
+                                                <p>
+                                                    Cursos a medida orientados a
+                                                    cubrir las necesidades de
+                                                    la  organización
+                                                </p>
+                                            </div>
+                                            <div class="item">
+                                                <div class="image">
+                                                    <img src="{{ asset('images/propuesta-academica2.png') }}" alt="">
+                                                </div>
+                                                <h3>
+                                                    competitividad
+                                                </h3>
+                                                <p>
+                                                    Formación por competencias
+                                                    de acuerdo al mercado
+                                                    laboral
+                                                </p>
+                                            </div>
+                                            <div class="item">
+                                                <div class="image">
+                                                    <img src="{{ asset('images/propuesta-academica3.png') }}" alt="">
+                                                </div>
+                                                <h3>
+                                                    experiencia
+                                                </h3>
+                                                <p>
+                                                    Plana docente altamente
+                                                    calificada y con trayectoria
+                                                    profesional en el mercado
+                                                </p>
+                                            </div>
+                                            <div class="item">
+                                                <div class="image">
+                                                    <img src="{{ asset('images/propuesta-academica4.png') }}" alt="">
+                                                </div>
+                                                <h3>
+                                                    adaptabilidad
+                                                </h3>
+                                                <p>
+                                                    Flexibilidad en tiempo,
+                                                    duración y desarrollo
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="comercial">
+                                        <h1>
+                                            Propuesta Comercial
+                                        </h1>
+                                        <div class="items">
+                                            <div class="item">
+                                                <div class="image">
+                                                    <img src="{{ asset('images/propuesta-comercial1.png') }}" alt="">
+                                                </div>
+                                                <h3>
+                                                    MODALIDAD
+                                                </h3>
+                                                <p>
+                                                    Capacitación In-House o E-Learning
+                                                    ( según disponibilidad )
+                                                </p>
+                                            </div>
+                                            <div class="item">
+                                                <div class="image">
+                                                    <img src="{{ asset('images/propuesta-comercial2.png') }}" alt="">
+                                                </div>
+                                                <h3>
+                                                    RESPALDO
+                                                </h3>
+                                                <p>
+                                                    Convenios de Cooperación
+                                                    Interinstitucional por medio de
+                                                    Bolsa de Trabajo
+                                                </p>
+                                            </div>
+                                            <div class="item">
+                                                <div class="image">
+                                                    <img src="{{ asset('images/propuesta-comercial3.png') }}" alt="">
+                                                </div>
+                                                <h3>
+                                                    PROMOCIONES
+                                                </h3>
+                                                <p>
+                                                    Descuentos por
+                                                    Programas de Capacitación
+                                                </p>
+                                            </div>
+                                            <div class="item">
+                                                <div class="image">
+                                                    <img src="{{ asset('images/propuesta-comercial4.png') }}" alt="">
+                                                </div>
+                                                <h3>
+                                                    CERTIFICACIÓN
+                                                </h3>
+                                                <p>
+                                                    Certificados a nombres de
+                                                    la Institución con valor
+                                                    internacional
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills_3" role="tabpanel" aria-labelledby="pills_3_tab">
+                            <div class="content1">
+                                <div class="educacion_corporativa">
+                                    <h1>
+                                        MODELO CORPORativo
+                                    </h1>
+                                    <p>
+                                        Programas Corporativos IN-COMPANY responde a un modelo de educación que se basa en tres pilares esenciales: especialidad, transformativa y del futuro.
+                                        Los cursos y programas pueden ser adaptados para hacer frente a las necesidades e intereses específicos de su empresa; incorporando casos prácticos reales, actividades sobre las iniciativas o proyectos propios de su organización.
+                                    </p>
+                                    <div class="steps">
+                                        <div class="step">
+                                            <div class="number">
+                                                <p>
+                                                    1
+                                                </p>
+                                            </div>
+                                            <div class="text">
+                                                Colaboración y
+                                                trabajo en equipo de los colaboradores
+                                            </div>
+                                        </div>
+                                        <div class="step">
+                                            <div class="number">
+                                                <p>
+                                                    2
+                                                </p>
+                                            </div>
+                                            <div class="text">
+                                                Creación de un
+                                                lenguaje común
+                                            </div>
+                                        </div>
+                                        <div class="step">
+                                            <div class="number">
+                                                <p>
+                                                    3
+                                                </p>
+                                            </div>
+                                            <div class="text">
+                                                Información específica y aplicalble
+                                            </div>
+                                        </div>
+                                        <div class="step">
+                                            <div class="number">
+                                                <p>
+                                                    4
+                                                </p>
+                                            </div>
+                                            <div class="text">
+                                                Enfoques de aprendizaje personalidados
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h2>
+                                        ¿Cómo lo hacemos?
+                                    </h2>
+                                    <div class="image">
+                                        <img src="{{ asset('images/educacion-corporativa-como.png') }}" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills_4" role="tabpanel" aria-labelledby="pills_4_tab">
+                            <div class="content1">
+                                <div class="portafolio">
+                                    <h1>
+                                        CASOS DE ÉXITO
+                                    </h1>
+                                    <img src="{{ asset('images/portafolio_imagen.png') }}" alt="">
+                                    <p class="init">
+                                        
+                                        <strong>Con más de una década de experiencia brindando servicios de capacitación a la medida,</strong>
+                                        <br><br>
+                                        Summa Center ha tenido la oportunidad de trabajar con organizaciones líderes, dentro y fuera del Perú, que operan en diferentes sectores económicos, destacando entre los sectores minero, energético, gobierno, financiero, contrucción, entre otros.
+                                    </p>
+                                    <div class="items">
+                                        <div class="item">
+                                            <div class="image">
+                                                <img src="{{ asset('images/icon-portafolio1.png') }}" alt="">
+                                            </div>
+                                            <div class="counters" id="counters_1">
+                                                <div class="counter" data-TargetNum="50">0</div><span class="plus"> %</span>
+                                            </div>
+                                            <p>
+                                                de nuestros clientes se encuentran entre las 500 organizaciones más grandes del país.
+                                            </p>
+                                        </div>
+                                        <div class="item">
+                                            <div class="image">
+                                                <img src="{{ asset('images/icon-portafolio2.png') }}" alt="">
+                                            </div>
+                                            <div class="counters" id="counters_1">
+                                                <div class="counter" data-TargetNum="60">0</div><span class="plus"> %</span>
+                                            </div>
+                                            <p>
+                                                de los programas se desarrollaron con organizaciones entre las 100 más grandes del Perú.
+                                            </p>
+                                        </div>
+                                        <div class="item">
+                                            <div class="image">
+                                                <img src="{{ asset('images/icon-portafolio3.png') }}" alt="">
+                                            </div>
+                                            <div class="counters" id="counters_1">
+                                                <div class="counter" data-TargetNum="30">0</div><span class="plus"> %</span>
+                                            </div>
+                                            <p>
+                                                de nuestros clientes son organizaciones de cooperación internacional, gubernamentaleso sin fines de lucro.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills_5" role="tabpanel" aria-labelledby="pills_5_tab">
+                            <div class="content1">
+                                <div class="contacto">
+                                    <div class="formulario">
+                                        <h1>
+                                            EXCLUSIVO PARA EMPRESAS
+                                        </h1>
+                                        <p class="tit">
+                                            Si quieres solicitar información sobre algún curso para llevarlo únicamente de forma corporativa déjanos tus datos para comunicarnos contigo a la brevedad. 
+                                        </p>
+                                        <form action="" class="row">
+                                            <div class="form-group col-md-4">
+                                                <label for="">Nombres*</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="">Apellido Paterno*</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="">Apellido Materno*</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="">Tipo de Documento*</label>
+                                                <select name="" id="" class="form-select">
+                                                    <option value="DNI">Documento nacional de identidad (DNI)</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="">Número de Documento*</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="">Teléfono*</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="">Celular*</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="">Correo Electrónico*</label>
+                                                <input type="email" class="form-control">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="">Empresa*</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="">Cargo*</label>
+                                                <input type="email" class="form-control">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="">Consulta</label>
+                                                <textarea name="" class="form-control" rows="3"></textarea>
+                                            </div>
+                                            <div class="form-check col-md-7">
+                                                <input type="checkbox" name="checko" value="si" class="form-check-input">
+                                                <label class="form-check-label" for="defaultCheck1">
+                                                    Llamar y enviar mensajes de texto a este número de teléfono
+                                                </label>
+                                            </div>
+                                            <div class="form-group col-md-7">
+                                                <p class="bottom">
+                                                    Al enviar el formulario con esta casilla marcadda, acepto recibir llamadas (incluidas
+                                                    llamadas en vivo, automáticas o grabadas), mensajes de texto y mensajes de este
+                                                    es un número de teléfono celular inalámbrico.
+                                                </p>
+                                            </div>
+                                            <div class="form-group col-md-12">
+                                                <button type="submit" class="btn btn-guardar">GUARDAR</button>
+                                                <a href="" class="btn btn-cancelar">CANCELAR</a>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="sec51">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 title">
+                <h1>
+                    CAPACITACIONES QUE TE PUEDEN INTERESAR
+                </h1>
+            </div>
+            <div class="col-md-12">
+                <div id="carousel-cursos" class="owl-carousel">
+                    <div class="item">
+                        <div class="item-header">
+                            <div class="titulo-header">
+                                <img src="{{ asset('images/curso-logistica.png') }}" alt="">
+                                <span>
+                                    Operaciones y Logística
+                                </span>
+                            </div>
+                        </div>
+                        <div class="item-content">
+                            <div class="imagen">
+                                <img src="{{ asset('images/curso1.png') }}" alt="">
+                            </div>
+                            <div class="content">
+                                <h4>
+                                    Accede nuestros cursos
+                                    Especializados en el Sector
+                                    Logístico
+                                </h4>
+                                <a href="" class="btn btn-vermas">VER MÁS</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="item-header">
+                            <div class="titulo-header">
+                                <img src="{{ asset('images/curso-mantenimiento.png') }}" alt="">
+                                <span>
+                                    Mantenimiento
+                                </span>
+                            </div>
+                        </div>
+                        <div class="item-content">
+                            <div class="imagen">
+                                <img src="{{ asset('images/curso2.png') }}" alt="">
+                            </div>
+                            <div class="content">
+                                <h4>
+                                    Accede nuestros cursos
+                                    Especializados en el Sector
+                                    Minero
+                                </h4>
+                                <a href="" class="btn btn-vermas">VER MÁS</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="item-header">
+                            <div class="titulo-header">
+                                <img src="{{ asset('images/curso-produccion.png') }}" alt="">
+                                <span>
+                                    Producción
+                                </span>
+                            </div>
+                        </div>
+                        <div class="item-content">
+                            <div class="imagen">
+                                <img src="{{ asset('images/curso3.png') }}" alt="">
+                            </div>
+                            <div class="content">
+                                <h4>
+                                    Accede nuestros cursos
+                                    Especializados en el Sector
+                                    de Mantenimiento
+                                </h4>
+                                <a href="" class="btn btn-vermas">VER MÁS</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="item-header">
+                            <div class="titulo-header">
+                                <img src="{{ asset('images/curso-recursos-humanos.png') }}" alt="">
+                                <span>
+                                    Talento Humano
+                                </span>
+                            </div>
+                        </div>
+                        <div class="item-content">
+                            <div class="imagen">
+                                <img src="{{ asset('images/curso4.png') }}" alt="">
+                            </div>
+                            <div class="content">
+                                <h4>
+                                    Accede nuestros cursos
+                                    Especializados en el Sector
+                                    de Recursos Humanos
+                                </h4>
+                                <a href="" class="btn btn-vermas">VER MÁS</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@endsection

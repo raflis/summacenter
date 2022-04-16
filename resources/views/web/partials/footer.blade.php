@@ -18,13 +18,13 @@
                            </p>
                        </li>
                        <li>
-                           <a href="">
+                           <a href="{{ route('contacto') }}">
                                 <img src="{{ asset('images/ubicacion.png') }}" alt="">
                                 Cómo llegar
                             </a>
                        </li>
                        <li>
-                           <a href="">Ver mapa</a>
+                           <a href="{{ route('contacto') }}">Ver mapa</a>
                        </li>
                    </ul>
                </div>
@@ -46,8 +46,10 @@
                         <li>
                             <div class="items">
                                 <div class="mail">
-                                    <p>Enviar mensaje</p>
-                                    <img src="{{ asset('images/mail.png') }}" alt="">
+                                    <a href="{{ route('contacto') }}">
+                                        <p>Enviar mensaje</p>
+                                        <img src="{{ asset('images/mail.png') }}" alt="">
+                                    </a>
                                 </div>
                                 <div class="libro">
                                     <a href="{{ route('libro.reclamaciones') }}">
@@ -70,7 +72,7 @@
                             <a href="">Mapa del sitio</a>
                         </li>
                         <li>
-                            <a href="">Términos y condiciones de uso</a>
+                            <a href="{{ route('terminos-y-condiciones') }}">Términos y condiciones de uso</a>
                         </li>
                         <li>
                             <a href="{{ route('manual.alumno') }}">Manual del Alumno</a>
@@ -86,22 +88,22 @@
                             </p>
                         </li>
                         <li>
-                            <a href="">
+                            <a href="https://www.facebook.com/SummaCenterProfesional/" target="_blank">
                                 <img src="{{ asset('images/fb.png') }}" alt="">
                             </a>
                         </li>
                         <li>
-                            <a href="">
+                            <a href="https://www.instagram.com/summacenter_/" target="_blank">
                                 <img src="{{ asset('images/ig.png') }}" alt="">
                             </a>
                         </li>
                         <li>
-                            <a href="">
+                            <a href="https://pe.linkedin.com/company/summa-center" target="_blank">
                                 <img src="{{ asset('images/in.png') }}" alt="">
                             </a>
                         </li>
                         <li>
-                            <a href="">
+                            <a href="https://www.youtube.com/channel/UC_eeAWexBW38n69qhu39CZg" target="_blank">
                                 <img src="{{ asset('images/yt.png') }}" alt="">
                             </a>
                         </li>

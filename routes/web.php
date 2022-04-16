@@ -25,6 +25,7 @@ Route::get('programas', [App\Http\Controllers\Web\WebController::class, 'program
 Route::get('equipo', [App\Http\Controllers\Web\WebController::class, 'equipo'])->name('equipo');
 Route::get('soporte', [App\Http\Controllers\Web\WebController::class, 'soporte'])->name('soporte');
 Route::get('contacto', [App\Http\Controllers\Web\WebController::class, 'contacto'])->name('contacto');
+Route::get('terminos-y-condiciones', [App\Http\Controllers\Web\WebController::class, 'terminos_y_condiciones'])->name('terminos-y-condiciones');
 Route::get('politicas-y-privacidad', [App\Http\Controllers\Web\WebController::class, 'politicas'])->name('politicas');
 Route::get('manual-del-alumno', [App\Http\Controllers\Web\WebController::class, 'manual_alumno'])->name('manual.alumno');
 Route::get('libro-de-reclamaciones', [App\Http\Controllers\Web\WebController::class, 'libro_reclamaciones'])->name('libro.reclamaciones');
@@ -49,6 +50,14 @@ Route::get('responsabilidad-social/talleres-gratuitos', [App\Http\Controllers\We
 Route::get('responsabilidad-social/ecoeficiencia', [App\Http\Controllers\Web\WebController::class, 'responsabilidad_social_ecoeficiencia'])->name('responsabilidad-social-ecoeficiencia');
 Route::get('responsabilidad-social/programa-de-donaciones', [App\Http\Controllers\Web\WebController::class, 'responsabilidad_social_programa_de_donaciones'])->name('responsabilidad-social-programa-de-donaciones');
 Route::get('preguntas-frecuentes', [App\Http\Controllers\Web\WebController::class, 'preguntas_frecuentes'])->name('preguntas-frecuentes');
+Route::get('asesoria-especializada', [App\Http\Controllers\Web\WebController::class, 'asesoria_especializada'])->name('asesoria-especializada');
+Route::get('capacitaciones-corporativas', [App\Http\Controllers\Web\WebController::class, 'capacitaciones_corporativas'])->name('capacitaciones-corporativas');
+Route::get('egresados', [App\Http\Controllers\Web\WebController::class, 'egresados'])->name('egresados');
+Route::get('verifica-tu-certificacion', [App\Http\Controllers\Web\WebController::class, 'verifica_certificacion'])->name('verifica-tu-certificacion');
+Route::get('insignia-adquirida', [App\Http\Controllers\Web\WebController::class, 'insignia_adquirida'])->name('insignia-adquirida');
+Route::get('certificado-adquirido', [App\Http\Controllers\Web\WebController::class, 'certificado_adquirido'])->name('certificado-adquirido');
+Route::get('modelo-educativo', [App\Http\Controllers\Web\WebController::class, 'modelo_educativo'])->name('modelo-educativo');
+Route::get('nosotros', [App\Http\Controllers\Web\WebController::class, 'nosotros'])->name('nosotros');
 Route::get('curso', [App\Http\Controllers\Web\WebController::class, 'curso'])->name('curso');
 Route::get('cart', [App\Http\Controllers\Web\WebController::class, 'cart'])->name('cart');
 Route::get('checkout', [App\Http\Controllers\Web\WebController::class, 'checkout'])->name('checkout');
