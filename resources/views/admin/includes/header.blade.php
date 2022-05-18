@@ -5,7 +5,7 @@
         <div class="linea3"></div>
     </div>
     <a href="" class="nav-brand">
-        Octavio Inmobiliaria
+        Summa Center
     </a>
     <ul class="navbar-nav my-0 first">
         <li class="dropdown lifirst">

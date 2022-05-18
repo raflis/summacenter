@@ -9,6 +9,17 @@
 <section class="sec35">
     <div class="container-fluid">
         <div class="row">
+            <div class="col-md-12 breadcrumb___ pb-3">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item"><a href="{{ route('index') }}">Inicio</a></li>
+                      <li class="breadcrumb-item"><a href="{{ route('blog') }}">Blog</a></li>
+                      <li class="breadcrumb-item active" aria-current="page">Nombre del post</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-md-12 px-0">
                 <div class="header_post">
                     <div class="fecha">

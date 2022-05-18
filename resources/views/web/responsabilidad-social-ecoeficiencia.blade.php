@@ -23,7 +23,7 @@
             <div class="col-md-12">
                 <div class="content">
                     <h1 class="tit">
-                        Responsabilidad Social
+                        Voluntariado
                     </h1>
                     <h2 class="tit2">
                         ECOEFICIENCIA

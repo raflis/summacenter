@@ -62,7 +62,7 @@
                                 </p>
                             </div>
                             <div class="item_right">
-                                <a href="{{ route('anuncio') }}" class="btn btn-info">Más información</a>
+                                <a href="{{ route('bolsa.anuncio') }}" class="btn btn-info">Más información</a>
                             </div>
                         </div>
                         <div class="item">
@@ -76,7 +76,91 @@
                                 </p>
                             </div>
                             <div class="item_right">
-                                <a href="{{ route('anuncio') }}" class="btn btn-info">Más información</a>
+                                <a href="{{ route('bolsa.anuncio') }}" class="btn btn-info">Más información</a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item_left">
+                                <h1>
+                                    Redactor Creativo Jr.
+                                </h1>
+                                <p class="mb-2"><strong>Betzabeth Fernandez</strong> - Lima</p>
+                                <p>
+                                    ¡Nuestro equipo de creatividad sigue creciendo!
+                                </p>
+                            </div>
+                            <div class="item_right">
+                                <a href="{{ route('bolsa.anuncio') }}" class="btn btn-info">Más información</a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item_left">
+                                <h1>
+                                    Diseñador Gráfico Audiovisual
+                                </h1>
+                                <p class="mb-2"><strong>Betzabeth Fernandez</strong> - Lima</p>
+                                <p>
+                                    En Mandarina estamos buscando un Diseñador Gráfico audiovisual
+                                </p>
+                            </div>
+                            <div class="item_right">
+                                <a href="{{ route('bolsa.anuncio') }}" class="btn btn-info">Más información</a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item_left">
+                                <h1>
+                                    Redactor Creativo Jr.
+                                </h1>
+                                <p class="mb-2"><strong>Betzabeth Fernandez</strong> - Lima</p>
+                                <p>
+                                    ¡Nuestro equipo de creatividad sigue creciendo!
+                                </p>
+                            </div>
+                            <div class="item_right">
+                                <a href="{{ route('bolsa.anuncio') }}" class="btn btn-info">Más información</a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item_left">
+                                <h1>
+                                    Diseñador Gráfico Audiovisual
+                                </h1>
+                                <p class="mb-2"><strong>Betzabeth Fernandez</strong> - Lima</p>
+                                <p>
+                                    En Mandarina estamos buscando un Diseñador Gráfico audiovisual
+                                </p>
+                            </div>
+                            <div class="item_right">
+                                <a href="{{ route('bolsa.anuncio') }}" class="btn btn-info">Más información</a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item_left">
+                                <h1>
+                                    Redactor Creativo Jr.
+                                </h1>
+                                <p class="mb-2"><strong>Betzabeth Fernandez</strong> - Lima</p>
+                                <p>
+                                    ¡Nuestro equipo de creatividad sigue creciendo!
+                                </p>
+                            </div>
+                            <div class="item_right">
+                                <a href="{{ route('bolsa.anuncio') }}" class="btn btn-info">Más información</a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item_left">
+                                <h1>
+                                    Diseñador Gráfico Audiovisual
+                                </h1>
+                                <p class="mb-2"><strong>Betzabeth Fernandez</strong> - Lima</p>
+                                <p>
+                                    En Mandarina estamos buscando un Diseñador Gráfico audiovisual
+                                </p>
+                            </div>
+                            <div class="item_right">
+                                <a href="{{ route('bolsa.anuncio') }}" class="btn btn-info">Más información</a>
                             </div>
                         </div>
                     </div>

@@ -3,8 +3,15 @@
 namespace App\Http\Controllers\Web;
 
 use Validator;
+use App\Models\Admin\Badge;
 use Jenssegers\Agent\Agent;
+use App\Models\Admin\Slider;
+use App\Models\Admin\Worker;
 use Illuminate\Http\Request;
+use App\Models\Admin\Partner;
+use App\Models\Admin\PageField;
+use App\Models\Admin\CourseArea;
+use App\Models\Admin\Testimonial;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 
@@ -12,8 +19,13 @@ class WebController extends Controller
 {
     public function index()
     {
+        $sliders = Slider::orderBy('order', 'Asc')->get();
+        $testimonials = Testimonial::orderBy('order', 'Asc')->get();
+        $partners = Partner::orderBy('order', 'Asc')->get();
+        $pagefields = PageField::find(1);
+        $course_areas = CourseArea::orderBy('order', 'Asc')->get();
         $agent = new Agent();
-        return view('web.index', compact('agent'));
+        return view('web.index', compact('agent', 'sliders', 'testimonials', 'partners', 'pagefields', 'course_areas'));
     }
 
     public function egresados()
@@ -22,16 +34,51 @@ class WebController extends Controller
         return view('web.egresados', compact('agent'));
     }
 
-    public function programas()
+    public function recomendaciones()
     {
+        $testimonials = Testimonial::orderBy('order', 'Asc')->get();
         $agent = new Agent();
-        return view('web.programas', compact('agent'));
+        return view('web.recomendaciones', compact('agent', 'testimonials'));
     }
 
-    public function equipo()
+    public function programas($slug = 'all')
     {
         $agent = new Agent();
-        return view('web.equipo', compact('agent'));
+        $course_areas = CourseArea::orderBy('order', 'Asc')->get();
+        return view('web.programas', compact('agent', 'course_areas'));
+    }
+
+    public function equipo(Request $request)
+    {
+        if($request->type && $request->position):
+            switch ($request->type):
+                case 'manager':
+                    $workers0 = Worker::where('position', '<>', $request->position)->orderBy('order', 'Asc');
+                    $workers = Worker::where('position', $request->position)->orderBy('order', 'Asc')->union($workers0)->get();
+                    break;
+                case 'teacher':
+                    $workers0 = Worker::where('course_area_id', '<>', $request->area)->orderBy('order', 'Asc');
+                    $workers = Worker::where('course_area_id', $request->area)->orderBy('order', 'Asc')->union($workers0)->get();
+                    break;
+                case 'administration':
+                    $workers0 = Worker::where('position', '<>', $request->position)->orderBy('order', 'Asc');
+                    $workers = Worker::where('position', $request->position)->orderBy('order', 'Asc')->union($workers0)->get();
+                    break;
+                default:
+                    $workers = Worker::orderBy('order', 'Asc')->get();
+                    break;
+            endswitch;
+        else:
+            $workers = Worker::orderBy('order', 'Asc')->get();
+        endif;
+        $agent = new Agent();
+        return view('web.equipo', compact('agent', 'workers'));
+    }
+
+    public function distinciones()
+    {
+        $agent = new Agent();
+        return view('web.distinciones', compact('agent'));
     }
 
     public function curso()
@@ -48,14 +95,17 @@ class WebController extends Controller
 
     public function coleccion_insignias()
     {
+        $course_areas = CourseArea::orderBy('order', 'Asc')->get();
         $agent = new Agent();
-        return view('web.coleccion-insignias', compact('agent'));
+        return view('web.coleccion-insignias', compact('agent', 'course_areas'));
     }
 
-    public function insignia()
+    public function insignia($slug, $id)
     {
         $agent = new Agent();
-        return view('web.insignia', compact('agent'));
+        $course_area = CourseArea::find($id);
+        $badges = Badge::where('course_area_id', $id)->select('category')->orderBy('category', 'Asc')->distinct('category')->get();
+        return view('web.insignia', compact('agent', 'course_area', 'badges'));
     }
 
     public function preguntas_frecuentes()
@@ -64,10 +114,17 @@ class WebController extends Controller
         return view('web.preguntas-frecuentes', compact('agent'));
     }
 
-    public function ruta_insignias()
+    public function ruta_insignias($area, $category, $name, $id)
+    {
+        $badge = Badge::find($id);
+        $agent = new Agent();
+        return view('web.ruta-insignias', compact('agent', 'badge'));
+    }
+
+    public function grupo_excelencia()
     {
         $agent = new Agent();
-        return view('web.ruta-insignias', compact('agent'));
+        return view('web.grupo-excelencia', compact('agent'));
     }
 
     public function responsabilidad_social_objetivos()
@@ -178,6 +235,12 @@ class WebController extends Controller
         return view('web.bolsa-trabajo', compact('agent'));
     }
 
+    public function bolsa_seleccionar()
+    {
+        $agent = new Agent();
+        return view('web.bolsa-trabajo-seleccionar', compact('agent'));
+    }
+
     public function bolsa_trabajo_perfil()
     {
         $agent = new Agent();
@@ -202,10 +265,16 @@ class WebController extends Controller
         return view('web.anuncio', compact('agent'));
     }
 
-    public function bolsa_trabajo_registro()
+    public function bolsa_trabajo_registro_postulante()
     {
         $agent = new Agent();
-        return view('web.bolsa-trabajo-registro', compact('agent'));
+        return view('web.bolsa-trabajo-registro-postulante', compact('agent'));
+    }
+
+    public function bolsa_trabajo_registro_empresa()
+    {
+        $agent = new Agent();
+        return view('web.bolsa-trabajo-registro-empresa', compact('agent'));
     }
 
     public function bolsa_trabajo_solicitud()

@@ -9,6 +9,16 @@
 <section class="sec25">
     <div class="container-fluid">
         <div class="row">
+            <div class="col-md-12 breadcrumb_">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-0 mt-3">
+                      <li class="breadcrumb-item"><a href="{{ route('index') }}">Inicio</a></li>
+                      <li class="breadcrumb-item active" aria-current="page">Programas</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-md-12">
                 <div class="resultados">
                     <div class="result">
@@ -18,48 +28,6 @@
                                 29 Programas
                             </span>
                         </p>
-                    </div>
-                    <div class="items">
-                        <div class="item">
-                            <span class="cerrar">X</span>
-                            <span class="texto">Logística</span>
-                        </div>
-                        <div class="item">
-                            <span class="cerrar">X</span>
-                            <span class="texto">Logística</span>
-                        </div>
-                        <div class="item">
-                            <span class="cerrar">X</span>
-                            <span class="texto">Logística</span>
-                        </div>
-                        <div class="item">
-                            <span class="cerrar">X</span>
-                            <span class="texto">Logística</span>
-                        </div>
-                        <div class="item">
-                            <span class="cerrar">X</span>
-                            <span class="texto">Logística</span>
-                        </div>
-                        <div class="item">
-                            <span class="cerrar">X</span>
-                            <span class="texto">Logística</span>
-                        </div>
-                        <div class="item">
-                            <span class="cerrar">X</span>
-                            <span class="texto">Logística</span>
-                        </div>
-                        <div class="item">
-                            <span class="cerrar">X</span>
-                            <span class="texto">Logística</span>
-                        </div>
-                        <div class="item">
-                            <span class="cerrar">X</span>
-                            <span class="texto">Logística</span>
-                        </div>
-                        <div class="item">
-                            <span class="cerrar">X</span>
-                            <span class="texto">Logística</span>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -80,7 +48,15 @@
                                 <div id="panel_area" class="accordion-collapse collapse show" aria-labelledby="panel_area">
                                     <div class="accordion-body">
                                         <div class="lista">
+                                            @foreach ($course_areas as $item)
                                             <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="nombre2">
+                                                <label class="form-check-label" for="nombre2">
+                                                    {{ $item->name }}
+                                                </label>
+                                            </div>
+                                            @endforeach
+                                            {{-- <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" value="" id="nombre1">
                                                 <label class="form-check-label" for="nombre1">
                                                     Operaciones y Logística
@@ -99,25 +75,7 @@
                                                         </label>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="nombre2">
-                                                <label class="form-check-label" for="nombre2">
-                                                    Mantenimiento
-                                                </label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="nombre3">
-                                                <label class="form-check-label" for="nombre3">
-                                                    Contabilidad y Finanzas
-                                                </label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="nombre4">
-                                                <label class="form-check-label" for="nombre4">
-                                                    Talento Humano
-                                                </label>
-                                            </div>
+                                            </div> --}}
                                         </div>
                                     </div>
                                 </div>
@@ -189,7 +147,7 @@
                                                     SAP s/4hana MM & PM & PP
                                                 </h4>
                                                 <div class="vermas">
-                                                    <a href="" class="btn btn-vermas">VER MÁS</a>
+                                                    <a href="{{ route('curso') }}" class="btn btn-vermas">VER MÁS</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -208,7 +166,7 @@
                                                     SAP s/4hana MM & PM & PP
                                                 </h4>
                                                 <div class="vermas">
-                                                    <a href="" class="btn btn-vermas">VER MÁS</a>
+                                                    <a href="{{ route('curso') }}" class="btn btn-vermas">VER MÁS</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -227,7 +185,7 @@
                                                     SAP s/4hana MM & PM & PP
                                                 </h4>
                                                 <div class="vermas">
-                                                    <a href="" class="btn btn-vermas">VER MÁS</a>
+                                                    <a href="{{ route('curso') }}" class="btn btn-vermas">VER MÁS</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -246,7 +204,7 @@
                                                     SAP s/4hana MM & PM & PP
                                                 </h4>
                                                 <div class="vermas">
-                                                    <a href="" class="btn btn-vermas">VER MÁS</a>
+                                                    <a href="{{ route('curso') }}" class="btn btn-vermas">VER MÁS</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -269,7 +227,7 @@
                                                     SAP s/4hana MM & PM & PP
                                                 </h4>
                                                 <div class="vermas">
-                                                    <a href="" class="btn btn-vermas">VER MÁS</a>
+                                                    <a href="{{ route('curso') }}" class="btn btn-vermas">VER MÁS</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -288,7 +246,7 @@
                                                     SAP s/4hana MM & PM & PP
                                                 </h4>
                                                 <div class="vermas">
-                                                    <a href="" class="btn btn-vermas">VER MÁS</a>
+                                                    <a href="{{ route('curso') }}" class="btn btn-vermas">VER MÁS</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -307,7 +265,7 @@
                                                     SAP s/4hana MM & PM & PP
                                                 </h4>
                                                 <div class="vermas">
-                                                    <a href="" class="btn btn-vermas">VER MÁS</a>
+                                                    <a href="{{ route('curso') }}" class="btn btn-vermas">VER MÁS</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -326,7 +284,7 @@
                                                     SAP s/4hana MM & PM & PP
                                                 </h4>
                                                 <div class="vermas">
-                                                    <a href="" class="btn btn-vermas">VER MÁS</a>
+                                                    <a href="{{ route('curso') }}" class="btn btn-vermas">VER MÁS</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -349,7 +307,7 @@
                                                     SAP s/4hana MM & PM & PP
                                                 </h4>
                                                 <div class="vermas">
-                                                    <a href="" class="btn btn-vermas">VER MÁS</a>
+                                                    <a href="{{ route('curso') }}" class="btn btn-vermas">VER MÁS</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -368,7 +326,7 @@
                                                     SAP s/4hana MM & PM & PP
                                                 </h4>
                                                 <div class="vermas">
-                                                    <a href="" class="btn btn-vermas">VER MÁS</a>
+                                                    <a href="{{ route('curso') }}" class="btn btn-vermas">VER MÁS</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -387,7 +345,7 @@
                                                     SAP s/4hana MM & PM & PP
                                                 </h4>
                                                 <div class="vermas">
-                                                    <a href="" class="btn btn-vermas">VER MÁS</a>
+                                                    <a href="{{ route('curso') }}" class="btn btn-vermas">VER MÁS</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -406,7 +364,7 @@
                                                     SAP s/4hana MM & PM & PP
                                                 </h4>
                                                 <div class="vermas">
-                                                    <a href="" class="btn btn-vermas">VER MÁS</a>
+                                                    <a href="{{ route('curso') }}" class="btn btn-vermas">VER MÁS</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -429,7 +387,7 @@
                                                     SAP s/4hana MM & PM & PP
                                                 </h4>
                                                 <div class="vermas">
-                                                    <a href="" class="btn btn-vermas">VER MÁS</a>
+                                                    <a href="{{ route('curso') }}" class="btn btn-vermas">VER MÁS</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -448,7 +406,7 @@
                                                     SAP s/4hana MM & PM & PP
                                                 </h4>
                                                 <div class="vermas">
-                                                    <a href="" class="btn btn-vermas">VER MÁS</a>
+                                                    <a href="{{ route('curso') }}" class="btn btn-vermas">VER MÁS</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -467,7 +425,7 @@
                                                     SAP s/4hana MM & PM & PP
                                                 </h4>
                                                 <div class="vermas">
-                                                    <a href="" class="btn btn-vermas">VER MÁS</a>
+                                                    <a href="{{ route('curso') }}" class="btn btn-vermas">VER MÁS</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -486,7 +444,7 @@
                                                     SAP s/4hana MM & PM & PP
                                                 </h4>
                                                 <div class="vermas">
-                                                    <a href="" class="btn btn-vermas">VER MÁS</a>
+                                                    <a href="{{ route('curso') }}" class="btn btn-vermas">VER MÁS</a>
                                                 </div>
                                             </div>
                                         </div>

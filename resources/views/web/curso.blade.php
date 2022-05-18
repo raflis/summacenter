@@ -75,7 +75,7 @@
                             </p>
                             <p class="inversion">
                                 Monto Regular
-                                s/1800.00
+                                S/ 1800
                             </p>
                         </div>
                     </div>
@@ -87,6 +87,18 @@
 
 <section class="sec24">
     <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 breadcrumb__">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-0 mt-3">
+                      <li class="breadcrumb-item"><a href="{{ route('index') }}">Inicio</a></li>
+                      <li class="breadcrumb-item"><a href="{{ route('programas') }}">Programas</a></li>
+                      <li class="breadcrumb-item active" aria-current="page">Categoría</li>
+                      <li class="breadcrumb-item active" aria-current="page">Curso</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
         <div class="row">
             <div class="col-md-7 presentacion">
                 <h1>
@@ -106,13 +118,13 @@
                         <img src="{{ asset('images/cart.png') }}" alt="">
                         MATRICULARME AHORA
                     </a>
-                    <a href="" class="btn btn-descarga">
-                        DESCARGAR VIDEO <br> INTRODUCTORIO
+                    <a href="" class="btn btn-descarga" data-bs-toggle="modal" data-bs-target="#video1">
+                        VER VIDEO <br> INTRODUCTORIO
                     </a>
                 </div>
             </div>
             <div class="col-md-5 video">
-                <iframe width="100%" height="330" src="https://www.youtube.com/embed/BsWSocrmlSI" 
+                <iframe width="100%" height="330" src="https://www.youtube.com/embed/x" 
                 title="YouTube video player" frameborder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen></iframe>
@@ -120,6 +132,19 @@
         </div>
     </div>
 </section>
+
+<div class="modal fade videomodal" id="video1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <iframe height=480 src="https://www.youtube.com/embed/x" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</div>
 
 <section class="sec28">
     <div class="container-fluid">
@@ -281,7 +306,7 @@
                                 </li>
                             </ul>
                             <div class="buttons">
-                                <a href="">
+                                <a href="" class="btn-solicitar">
                                     SOLICITAR<br>
                                     INFORMACIÓN
                                 </a>
@@ -447,5 +472,18 @@
         </div>
     </div>
 </section>
+
+@endsection
+
+@section('script')
+
+<script>
+    $(function(){
+        $('.btn-solicitar').click(function(e){
+            e.preventDefault();
+            $('input[name=name]').focus();
+        })
+    })
+</script>
 
 @endsection

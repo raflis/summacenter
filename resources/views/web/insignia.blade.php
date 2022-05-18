@@ -18,219 +18,72 @@
     </div>
 </section>
 
+<section class="sec0">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 breadcrumb_ pb-0 pt-3">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item"><a href="{{ route('index') }}">Inicio</a></li>
+                      <li class="breadcrumb-item active" aria-current="page">Certificaciones</li>
+                      <li class="breadcrumb-item"><a href="{{ route('coleccion-insignias') }}">Colección de Insignias</a></li>
+                      <li class="breadcrumb-item active" aria-current="page">{{ $course_area->name }}</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="sec31">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12 px-0">
                 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    @foreach ($badges as $item)
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="pills_1_tab" data-bs-toggle="pill" data-bs-target="#pills_1" type="button" role="tab" aria-controls="pills_1" aria-selected="true">
-                            Black
+                        <button class="nav-link {{ ($loop->first)?'active':'' }}" id="pills_{{ $item->category }}_tab" data-bs-toggle="pill" data-bs-target="#pills_{{ $item->category }}" type="button" role="tab" aria-controls="pills_{{ $item->category }}" aria-selected="true">
+                            {{ getBadge($item->category, NULL) }}
                         </button>
                     </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="pills_2_tab" data-bs-toggle="pill" data-bs-target="#pills_2" type="button" role="tab" aria-controls="pills_2" aria-selected="false">
-                            Platinium
-                        </button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="pills_3_tab" data-bs-toggle="pill" data-bs-target="#pills_3" type="button" role="tab" aria-controls="pills_3" aria-selected="false">
-                            Gold
-                        </button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="pills_4_tab" data-bs-toggle="pill" data-bs-target="#pills_4" type="button" role="tab" aria-controls="pills_4" aria-selected="false">
-                            Silver
-                        </button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="pills_5_tab" data-bs-toggle="pill" data-bs-target="#pills_5" type="button" role="tab" aria-controls="pills_5" aria-selected="false">
-                            Bronce
-                        </button>
-                    </li>
+                    @endforeach
                 </ul>
             </div>
             <div class="col-md-12">
                 <div class="content">
                     <div class="tab-content" id="pills-tabContent">
-                        <div class="tab-pane fade show active" id="pills_1" role="tabpanel" aria-labelledby="pills_1_tab">
-                            <div class="items">
-                                <div class="item">
-                                    <div class="item-left">
-                                        <img src="{{ asset('images/diplomado_insignia1.png') }}" alt="">
-                                        <a href="" class="btn btn-vermas">Ver más</a>
-                                    </div>
-                                    <div class="item-right">
-                                        <div class="item-right-head">
-                                            <h3>
-                                                SAP S/4HANA Minería
-                                                MM & PM & PP <br>
-                                                (Usuario Experto)
-                                            </h3>
-                                            <div class="stars">
-                                                <img class="star" src="{{ asset('images/star.png') }}" alt="">
-                                                <img class="star" src="{{ asset('images/star.png') }}" alt="">
-                                                <img class="star" src="{{ asset('images/star.png') }}" alt="">
-                                                <img class="star" src="{{ asset('images/star.png') }}" alt="">
-                                                <img class="star" src="{{ asset('images/star.png') }}" alt="">
+                        @foreach ($badges as $item)
+                            <div class="tab-pane fade {{ ($loop->first)?'show active':'' }}" id="pills_{{ $item->category }}" role="tabpanel" aria-labelledby="pills_{{ $item->category }}_tab">
+                                <div class="items">
+                                    @foreach ($course_area->badges as $ite)
+                                        @if($ite->category == $item->category)
+                                        <div class="item">
+                                            <div class="item-left">
+                                                <img src="{{ $ite->image }}" alt="">
+                                                <a href="{{ route('insignia', [$course_area->slug, Str::slug(getBadge($ite->category, NULL)), Str::slug($ite->name), $ite->id]) }}" class="btn btn-vermas">Ver más</a>
+                                            </div>
+                                            <div class="item-right">
+                                                <div class="item-right-head">
+                                                    <h3>
+                                                        {{ $ite->name }}
+                                                    </h3>
+                                                    <div class="stars">
+                                                        @for ($i = 0; $i < getBadge($ite->category, 'stars'); $i++)
+                                                        <img class="star" src="{{ asset('images/star.png') }}" alt="">
+                                                        @endfor
+                                                    </div>
+                                                </div>
+                                                <div class="item-right-bottom">
+                                                    <p>Área: {{ $course_area->name }}</p>
+                                                    <p>Nivel: {{ getBadge($ite->category, NULL) }}</p>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="item-right-bottom">
-                                            <p>Área: Minería</p>
-                                            <p>Nivel: Diplomado</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="item-left">
-                                        <img src="{{ asset('images/diplomado_insignia1.png') }}" alt="">
-                                        <a href="" class="btn btn-vermas">Ver más</a>
-                                    </div>
-                                    <div class="item-right">
-                                        <div class="item-right-head">
-                                            <h3>
-                                                SAP S/4HANA Minería
-                                                MM & PM & PP <br>
-                                                (Usuario Experto)
-                                            </h3>
-                                            <div class="stars">
-                                                <img class="star" src="{{ asset('images/star.png') }}" alt="">
-                                                <img class="star" src="{{ asset('images/star.png') }}" alt="">
-                                                <img class="star" src="{{ asset('images/star.png') }}" alt="">
-                                                <img class="star" src="{{ asset('images/star.png') }}" alt="">
-                                                <img class="star" src="{{ asset('images/star.png') }}" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="item-right-bottom">
-                                            <p>Área: Minería</p>
-                                            <p>Nivel: Diplomado</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="item-left">
-                                        <img src="{{ asset('images/diplomado_insignia1.png') }}" alt="">
-                                        <a href="" class="btn btn-vermas">Ver más</a>
-                                    </div>
-                                    <div class="item-right">
-                                        <div class="item-right-head">
-                                            <h3>
-                                                SAP S/4HANA Minería
-                                                MM & PM & PP <br>
-                                                (Usuario Experto)
-                                            </h3>
-                                            <div class="stars">
-                                                <img class="star" src="{{ asset('images/star.png') }}" alt="">
-                                                <img class="star" src="{{ asset('images/star.png') }}" alt="">
-                                                <img class="star" src="{{ asset('images/star.png') }}" alt="">
-                                                <img class="star" src="{{ asset('images/star.png') }}" alt="">
-                                                <img class="star" src="{{ asset('images/star.png') }}" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="item-right-bottom">
-                                            <p>Área: Minería</p>
-                                            <p>Nivel: Diplomado</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="item-left">
-                                        <img src="{{ asset('images/diplomado_insignia1.png') }}" alt="">
-                                        <a href="" class="btn btn-vermas">Ver más</a>
-                                    </div>
-                                    <div class="item-right">
-                                        <div class="item-right-head">
-                                            <h3>
-                                                SAP S/4HANA Minería
-                                                MM & PM & PP <br>
-                                                (Usuario Experto)
-                                            </h3>
-                                            <div class="stars">
-                                                <img class="star" src="{{ asset('images/star.png') }}" alt="">
-                                                <img class="star" src="{{ asset('images/star.png') }}" alt="">
-                                                <img class="star" src="{{ asset('images/star.png') }}" alt="">
-                                                <img class="star" src="{{ asset('images/star.png') }}" alt="">
-                                                <img class="star" src="{{ asset('images/star.png') }}" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="item-right-bottom">
-                                            <p>Área: Minería</p>
-                                            <p>Nivel: Diplomado</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="item-left">
-                                        <img src="{{ asset('images/diplomado_insignia1.png') }}" alt="">
-                                        <a href="" class="btn btn-vermas">Ver más</a>
-                                    </div>
-                                    <div class="item-right">
-                                        <div class="item-right-head">
-                                            <h3>
-                                                SAP S/4HANA Minería
-                                                MM & PM & PP <br>
-                                                (Usuario Experto)
-                                            </h3>
-                                            <div class="stars">
-                                                <img class="star" src="{{ asset('images/star.png') }}" alt="">
-                                                <img class="star" src="{{ asset('images/star.png') }}" alt="">
-                                                <img class="star" src="{{ asset('images/star.png') }}" alt="">
-                                                <img class="star" src="{{ asset('images/star.png') }}" alt="">
-                                                <img class="star" src="{{ asset('images/star.png') }}" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="item-right-bottom">
-                                            <p>Área: Minería</p>
-                                            <p>Nivel: Diplomado</p>
-                                        </div>
-                                    </div>
+                                        @endif
+                                    @endforeach
                                 </div>
                             </div>
-                        </div>
-                        <div class="tab-pane fade" id="pills_2" role="tabpanel" aria-labelledby="pills_2_tab">
-                            <div class="items">
-                                <div class="item">
-                                    <div class="item-left">
-                                        <img src="{{ asset('images/diplomado_insignia1.png') }}" alt="">
-                                        <a href="" class="btn btn-vermas">Ver más</a>
-                                    </div>
-                                    <div class="item-right">
-                                        <div class="item-right-head">
-                                            <h3>
-                                                SAP S/4HANA Minería
-                                                MM & PM & PP <br>
-                                                (Usuario Experto)
-                                            </h3>
-                                            <div class="stars">
-                                                <img class="star" src="{{ asset('images/star.png') }}" alt="">
-                                                <img class="star" src="{{ asset('images/star.png') }}" alt="">
-                                                <img class="star" src="{{ asset('images/star.png') }}" alt="">
-                                                <img class="star" src="{{ asset('images/star.png') }}" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="item-right-bottom">
-                                            <p>Área: Minería</p>
-                                            <p>Nivel: Diplomado</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="pills_3" role="tabpanel" aria-labelledby="pills_3_tab">
-                            <div class="items">
-
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="pills_4" role="tabpanel" aria-labelledby="pills_4_tab">
-                            <div class="items">
-
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="pills_5" role="tabpanel" aria-labelledby="pills_5_tab">
-                            <div class="items">
-
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

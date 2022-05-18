@@ -21,6 +21,16 @@
 <section class="sec24">
     <div class="container-fluid">
         <div class="row">
+            <div class="col-md-12 breadcrumb__ pb-3">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item"><a href="{{ route('index') }}">Inicio</a></li>
+                      <li class="breadcrumb-item active" aria-current="page">Soporte</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-md-7 presentacion">
                 <h1>
                     Capacítate con nosotros y

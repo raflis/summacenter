@@ -48,7 +48,7 @@
                                         <button class="btn btn-login-trabajo">INICIAR SESIÓN</button>
                                     </div>
                                     <div class="form-group">
-                                        <a href="{{ route('bolsa.trabajo.registro') }}" class="btn btn-login-crear">CREAR CUENTA</a>
+                                        <a href="{{ route('bolsa.trabajo.registro.postulante') }}" class="btn btn-login-crear">CREAR CUENTA</a>
                                     </div>
                                     <div class="form-group text-center">
                                         <a href="" class="">¿Olvidaste tu contraseña?</a>
@@ -77,7 +77,7 @@
                                         <button class="btn btn-login-trabajo">INICIAR SESIÓN</button>
                                     </div>
                                     <div class="form-group">
-                                        <a href="{{ route('bolsa.trabajo.registro') }}" class="btn btn-login-crear">CREAR CUENTA</a>
+                                        <a href="{{ route('bolsa.trabajo.registro.empresa') }}" class="btn btn-login-crear">CREAR CUENTA</a>
                                     </div>
                                     <div class="form-group text-center">
                                         <a href="" class="">¿Olvidaste tu contraseña?</a>

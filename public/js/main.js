@@ -28,7 +28,7 @@ document.onreadystatechange = function() {
 var base = location.protocol+'//'+location.host;
 var route = document.getElementsByName('routeName')[0].getAttribute('content');
 
-$(document).ready(function(){
+$(function(){
 
     AOS.init();
 
@@ -120,6 +120,35 @@ $(document).ready(function(){
     
     $('#carousel-partners .owl-next').html('<img src="' + base + '/images/arrow-right.png">');
     $('#carousel-partners .owl-prev').html('<img src="' + base + '/images/arrow-left.png">');
+
+    $('#carousel-confiaron-empresas').owlCarousel({
+        loop: true,
+        startPosition: 0,
+        dots: true,
+        margin: 0,
+        autoplay: false,
+        autoplayTimeout: 8000,
+        touchDrag: true,
+        mouseDrag: true,
+        nav: true,
+        responsive: {
+            0: {
+            items: 1,
+            nav: false,
+            },
+            768: {
+            items: 1,
+            nav: false,
+            },
+            900: {
+            items: 5,
+            nav: true,
+            }
+        }
+    });
+    
+    $('#carousel-confiaron-empresas .owl-next').html('<img src="' + base + '/images/arrow-right.png">');
+    $('#carousel-confiaron-empresas .owl-prev').html('<img src="' + base + '/images/arrow-left.png">');
 
     $('#carousel-cursos').owlCarousel({
         loop: true,
@@ -215,12 +244,12 @@ $(document).ready(function(){
             $('[class*=dropPrograma]').addClass('noActiveList');
             $('#' + id_list).removeClass('noActiveList');
             $('#' + id_list).addClass('ActiveList');
-            $('[id*=btn-header]').removeClass('active0');
-            $(this).addClass('active0');
+            $('[id*=btn-header]').removeClass('active00');
+            $(this).addClass('active00');
         }else{
             $('#' + id_list).removeClass('ActiveList');
             $('#' + id_list).addClass('noActiveList');
-            $(this).removeClass('active0');
+            $(this).removeClass('active00');
         }
     });
 
@@ -257,6 +286,6 @@ $(document).on("click", function(event){
     if($trigger !== event.target && !$trigger.has(event.target).length){
         $(".dropPrograma").removeClass('ActiveList');
         $(".dropPrograma").addClass('noActiveList');
-        $('[id*=btn-header]').removeClass('active0');
+        $('[id*=btn-header]').removeClass('active00');
     }            
 });

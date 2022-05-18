@@ -25,7 +25,7 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                       <li class="breadcrumb-item"><a href="{{ route('index') }}">Inicio</a></li>
-                      <li class="breadcrumb-item active" aria-current="page">Corporativo</li>
+                      <li class="breadcrumb-item active" aria-current="page">Corporativos</li>
                       <li class="breadcrumb-item active" aria-current="page">Asesorías Especializada</li>
                     </ol>
                 </nav>

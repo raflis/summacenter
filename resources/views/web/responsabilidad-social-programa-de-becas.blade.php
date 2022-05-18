@@ -23,10 +23,10 @@
             <div class="col-md-12">
                 <div class="content">
                     <h1 class="tit">
-                        Responsabilidad Social
+                        Financiamiento
                     </h1>
                     <h2 class="tit2">
-                        QUIÉNES SOMOS
+                        PROGRAMA DE BECAS
                     </h2>
                     <div class="content_">
                         <img class="img6" src="{{ asset('images/img6.png') }}" alt="">

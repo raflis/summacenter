@@ -40,32 +40,23 @@
     </div>
     <div class="container-fluid px-0">
         <div id="carousel-slider" class="owl-carousel">
-            <div class="item">
+            @foreach ($sliders as $slider)
+            <div class="item" style="background-image: url({{ $slider->image_desktop }})">
                 <div class="text">
                     <h1>
-                        EL MUNDO NO PARA 
+                        {{ $slider->title1 }}
                         <br>
-                        <span>CAPACÍTATE AHORA EN</span>
+                        <span>{{ $slider->title2 }}</span>
                     </h1>
                     <h2>
-                        SUMMA CENTER
+                        {{ $slider->title3 }}
                     </h2>
-                    <a href="" class="btn btn-vermas">VER MÁS</a>
+                    @if($slider->button_name && $slider->button_link)
+                    <a href="{{ $slider->button_link }}" class="btn btn-vermas">{{ $slider->button_name }}</a>
+                    @endif
                 </div>
             </div>
-            <div class="item">
-                <div class="text">
-                    <h1>
-                        EL MUNDO NO PARA 
-                        <br>
-                        <span>CAPACÍTATE AHORA EN</span>
-                    </h1>
-                    <h2>
-                        SUMMA CENTER
-                    </h2>
-                    <a href="" class="btn btn-vermas">VER MÁS</a>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
@@ -80,41 +71,13 @@
             </div>
             <div class="col-md-12 carousel">
                 <div id="carousel-partners" class="owl-carousel">
+                    @foreach ($partners as $partner)
                     <div class="item">
                         <div class="imagen">
-                            <img src="{{ asset('images/sap.png') }}" alt="">
+                            <img src="{{ $partner->image }}" alt="">
                         </div>
                     </div>
-                    <div class="item">
-                        <div class="imagen">
-                            <img src="{{ asset('images/microsoft.png') }}" alt="">
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="imagen">
-                            <img src="{{ asset('images/credly.png') }}" alt="">
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="imagen">
-                            <img src="{{ asset('images/acreditta.png') }}" alt="">
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="imagen">
-                            <img src="{{ asset('images/certiprof.png') }}" alt="">
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="imagen">
-                            <img src="{{ asset('images/ccl.png') }}" alt="">
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="imagen">
-                            <img src="{{ asset('images/premioempresa.png') }}" alt="">
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -128,81 +91,26 @@
             <div class="col-md-7">
                 <div class="title">
                     <h1>
-                        ¿Porqué <span>elegirnos?</span>
+                        {{ $pagefields->choose_title }}
                     </h1>
                     <p>
-                        Especializado en brindar cursos de capacitación en
-                        tecnologías de la información, innovación y gestión
-                        empresarial con altos estándares de calidad
-                        educativa.
+                        {{ $pagefields->choose_text }}
                     </p>
                 </div>
                 <div class="items">
+                    @foreach ($pagefields->choose_items as $item)
                     <div class="item">
                         <div class="image">
-                            <img src="{{ asset('images/partners.png') }}" alt="">
+                            <img src="{{ $item['image'] }}" alt="">
                         </div>
                         <div class="description">
-                            <h3>PARTNERS</h3>
+                            <h3>{{ $item['name'] }}</h3>
                             <p>
-                                Más de 4000 certificaciones
-                                de nuestros Business Partners
-                                nos respaldan
+                                {{ $item['detail'] }}
                             </p>
                         </div>
                     </div>
-                    <div class="item">
-                        <div class="image">
-                            <img src="{{ asset('images/acreditacion.png') }}" alt="">
-                        </div>
-                        <div class="description">
-                            <h3>ACREDITACIÓN</h3>
-                            <p>
-                                Más de 4000 certificaciones
-                                de nuestros Business Partners
-                                nos respaldan
-                            </p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="image">
-                            <img src="{{ asset('images/planadocente.png') }}" alt="">
-                        </div>
-                        <div class="description">
-                            <h3>PLANA DOCENTE</h3>
-                            <p>
-                                Más de 4000 certificaciones
-                                de nuestros Business Partners
-                                nos respaldan
-                            </p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="image">
-                            <img src="{{ asset('images/calidadeducativa.png') }}" alt="">
-                        </div>
-                        <div class="description">
-                            <h3>CALIDAD EDUCATIVA</h3>
-                            <p>
-                                Más de 4000 certificaciones
-                                de nuestros Business Partners
-                                nos respaldan
-                            </p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="image">
-                            <img src="{{ asset('images/soporte.png') }}" alt="">
-                        </div>
-                        <div class="description">
-                            <h3>SOPORTE</h3>
-                            <p>
-                                Más de 4000 certificaciones
-                                de nuestros Business Partners
-                                nos respaldan
-                            </p>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -219,98 +127,29 @@
             </div>
             <div class="col-md-12">
                 <div id="carousel-cursos" class="owl-carousel">
+                    @foreach ($course_areas as $item)
                     <div class="item">
                         <div class="item-header">
                             <div class="titulo-header">
-                                <img src="{{ asset('images/curso-logistica.png') }}" alt="">
+                                <img src="{{ $item->icon }}" alt="">
                                 <span>
-                                    Operaciones y Logística
+                                    {{ $item->name }}
                                 </span>
                             </div>
                         </div>
                         <div class="item-content">
                             <div class="imagen">
-                                <img src="{{ asset('images/curso1.png') }}" alt="">
+                                <img src="{{ $item->image }}" alt="">
                             </div>
                             <div class="content">
                                 <h4>
-                                    Accede nuestros cursos
-                                    Especializados en el Sector
-                                    Logístico
+                                    {{ $item->text }}
                                 </h4>
                                 <a href="" class="btn btn-vermas">VER MÁS</a>
                             </div>
                         </div>
                     </div>
-                    <div class="item">
-                        <div class="item-header">
-                            <div class="titulo-header">
-                                <img src="{{ asset('images/curso-mantenimiento.png') }}" alt="">
-                                <span>
-                                    Mantenimiento
-                                </span>
-                            </div>
-                        </div>
-                        <div class="item-content">
-                            <div class="imagen">
-                                <img src="{{ asset('images/curso2.png') }}" alt="">
-                            </div>
-                            <div class="content">
-                                <h4>
-                                    Accede nuestros cursos
-                                    Especializados en el Sector
-                                    Minero
-                                </h4>
-                                <a href="" class="btn btn-vermas">VER MÁS</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-header">
-                            <div class="titulo-header">
-                                <img src="{{ asset('images/curso-produccion.png') }}" alt="">
-                                <span>
-                                    Producción
-                                </span>
-                            </div>
-                        </div>
-                        <div class="item-content">
-                            <div class="imagen">
-                                <img src="{{ asset('images/curso3.png') }}" alt="">
-                            </div>
-                            <div class="content">
-                                <h4>
-                                    Accede nuestros cursos
-                                    Especializados en el Sector
-                                    de Mantenimiento
-                                </h4>
-                                <a href="" class="btn btn-vermas">VER MÁS</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-header">
-                            <div class="titulo-header">
-                                <img src="{{ asset('images/curso-recursos-humanos.png') }}" alt="">
-                                <span>
-                                    Talento Humano
-                                </span>
-                            </div>
-                        </div>
-                        <div class="item-content">
-                            <div class="imagen">
-                                <img src="{{ asset('images/curso4.png') }}" alt="">
-                            </div>
-                            <div class="content">
-                                <h4>
-                                    Accede nuestros cursos
-                                    Especializados en el Sector
-                                    de Recursos Humanos
-                                </h4>
-                                <a href="" class="btn btn-vermas">VER MÁS</a>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -396,194 +235,39 @@
             </div>
             <div class="col-md-12">
                 <div id="carousel-recomendaciones" class="owl-carousel">
+                    @foreach ($testimonials as $testimonial)
                     <div class="item">
                         <div class="content">
                             <div class="cara">
                                 <div class="image">
-                                    <img src="{{ asset('images/recomendacion1.png') }}" alt="">
+                                    <img src="{{ $testimonial->image }}" alt="">
                                 </div>
                                 <p class="name">
-                                    Nieves Marisol Bautista Huaman
+                                    {{ $testimonial->name }}
                                 </p>
                                 <p class="description">
-                                    Egresada: SAP HCM y Excel
+                                    Egresado: {{ $testimonial->graduated_career }}
                                 </p>
                             </div>
                             <div class="detras">
                                 <div class="first">
                                     <img src="{{ asset('images/icon-reco1.png') }}" alt="">
                                     <p>
-                                        técnicA En
-                                        administración DE
-                                        EMPRESAS
+                                        {{ $testimonial->career }}
                                     </p>
                                 </div>
                                 <div class="second">
                                     <img src="{{ asset('images/icon-reco2.png') }}" alt="">
-                                    <p>
-                                        "El desarrollo de las clases fueron muy
-                                        <span>dinámicas y entendibles.</span> Durante el curso hubo un 
-                                        <span>trato coordial y apoyo inmediato </span>
-                                        de parte de coordinación académica ante mis consultas”.
-                                    </p>
+                                    {!! htmlspecialchars_decode($testimonial->comment) !!}
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="item">
-                        <div class="content">
-                            <div class="cara">
-                                <div class="image">
-                                    <img src="{{ asset('images/recomendacion2.png') }}" alt="">
-                                </div>
-                                <p class="name">
-                                    Pedro Flores Ipanaque
-                                </p>
-                                <p class="description">
-                                    Egresado: SAP PM
-                                </p>
-                            </div>
-                            <div class="detras">
-                                <div class="first">
-                                    <img src="{{ asset('images/icon-reco1.png') }}" alt="">
-                                    <p>
-                                        técnico Electricista
-                                    </p>
-                                </div>
-                                <div class="second">
-                                    <img src="{{ asset('images/icon-reco2.png') }}" alt="">
-                                    <p>
-                                        “Me sorprendió que <span>no era díficil aprender SAP.</span> 
-                                        Con mi capacitación en Summa Center <span>logré postular al 
-                                        área de planeamiento</span> de mi empresa, aportando mis conocimentos de 
-                                        SAP PM <span>pude mejorar</span> los puntos de medición correctamente”.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="content">
-                            <div class="cara">
-                                <div class="image">
-                                    <img src="{{ asset('images/recomendacion3.png') }}" alt="">
-                                </div>
-                                <p class="name">
-                                    Jean Paul Martínez Paula
-                                </p>
-                                <p class="description">
-                                    Egresado: SAP PM
-                                </p>
-                            </div>
-                            <div class="detras">
-                                <div class="first">
-                                    <img src="{{ asset('images/icon-reco1.png') }}" alt="">
-                                    <p>
-                                        supervisor de despacho y Logística
-                                    </p>
-                                </div>
-                                <div class="second">
-                                    <img src="{{ asset('images/icon-reco2.png') }}" alt="">
-                                    <p>
-                                        “Gracias al curso que llevé <span>escalé rápidamente a 
-                                        un nuevo cargo profesional</span>, ya que le dió un mayor 
-                                        peso a mi currículum frente a los reclutadores, los 
-                                        cuales <span>me promovieron al demostrarles mis nuevos 
-                                        conocimientos</span> adquiridos. Valoro mucho la atención especial 
-                                        que la institución le presta al alumno”.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="content">
-                            <div class="cara">
-                                <div class="image">
-                                    <img src="{{ asset('images/recomendacion4.png') }}" alt="">
-                                </div>
-                                <p class="name">
-                                    Marco Piero Aarón Gonzáles Uscamayta
-                                </p>
-                                <p class="description">
-                                    Egresado: SAP PM
-                                </p>
-                            </div>
-                            <div class="detras">
-                                <div class="first">
-                                    <img src="{{ asset('images/icon-reco1.png') }}" alt="">
-                                    <p>
-                                        Profesional de Negocios Internacionales
-                                    </p>
-                                </div>
-                                <div class="second">
-                                    <img src="{{ asset('images/icon-reco2.png') }}" alt="">
-                                    <p>
-                                        “El curso impactó en mi puesto de trabajo de forma positiva, ayudando a desenvolverme con eficiencia y brindándome mejores oportunidades en mi área laboral”.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="content">
-                            <div class="cara">
-                                <div class="image">
-                                    <img src="{{ asset('images/recomendacion5.png') }}" alt="">
-                                </div>
-                                <p class="name">
-                                    Franco Andrés Valdez Chumpitaz
-                                </p>
-                                <p class="description">
-                                    Egresado: SAP MM Y SAP PM
-                                </p>
-                            </div>
-                            <div class="detras">
-                                <div class="first">
-                                    <img src="{{ asset('images/icon-reco1.png') }}" alt="">
-                                    <p>
-                                        Bachiller UNIVERSITARIO EN administración
-                                    </p>
-                                </div>
-                                <div class="second">
-                                    <img src="{{ asset('images/icon-reco2.png') }}" alt="">
-                                    <p>
-                                        “La plataforma educativa es innovadora, mantiene informado al alumno de su avance académico y lo impulsa a desarrollar de manera constante cada tema. Recomiendo el curso y valoro la dinámica del profesor para explicar cada clase mediante ejemplos sencillos hasta más avanzados”.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="content">
-                            <div class="cara">
-                                <div class="image">
-                                    <img src="{{ asset('images/recomendacion6.png') }}" alt="">
-                                </div>
-                                <p class="name">
-                                    Marco Paul De Jesús Arévalo Santa María
-                                </p>
-                                <p class="description">
-                                    Egresado: SAP FI Y SAP HCM
-                                </p>
-                            </div>
-                            <div class="detras">
-                                <div class="first">
-                                    <img src="{{ asset('images/icon-reco1.png') }}" alt="">
-                                    <p>
-                                        Profesional de Negocios Internacionales
-                                    </p>
-                                </div>
-                                <div class="second">
-                                    <img src="{{ asset('images/icon-reco2.png') }}" alt="">
-                                    <p>
-                                        “Lo que más destaco de Summa Center es su gran compromiso con el alumno, desde el primer día estuvieron cuidando mi formación académica, preguntándome si todo marchaba bien o había algo que no entendía para que me pudieran explicar y cuando lo necesitaba me atendían de forma inmediata. Además, todo lo aprendido se ponía en práctica mediante casos reales con el docente”.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
+            </div>
+            <div class="col-md-12 text-center">
+                <a href="{{ route('recomendaciones') }}" class="btn btn-vermas">VER MÁS RECOMENDACIONES</a>
             </div>
         </div>
     </div>
@@ -594,67 +278,31 @@
         <div class="row justify-content-center">
             <div class="col-md-12 title">
                 <h1>
-                    NUESTROS LOGROS
+                    {{ $pagefields->achievement_title }}
                 </h1>
             </div>
             <div class="col-md-12 logros">
                 <div class="logros_">
                     <img src="{{ asset('images/mundo.png') }}" alt="">
                     <div class="texto">
-                        Más de 4 000
-                        alumnos certificados
-                        a nivel mundial
+                        {{ $pagefields->achievement_text }}
                     </div>
                 </div>
             </div>
+            @foreach ($pagefields->achievement_items as $item)
             <div class="col-md-3 item" id="counters_1">
                 <div class="image">
-                    <img src="{{ asset('images/docentes.png') }}" alt="">
+                    <img src="{{ $item['image'] }}" alt="">
                 </div>
                 <div class="counters" id="counters_1">
-                    <span class="plus">+ </span><div class="counter" data-TargetNum="10">0</div>
+                    <span class="plus">+ </span><div class="counter" data-TargetNum="{{ $item['amount'] }}">0</div>
                 </div>
                 <p>
-                    DOCENTES
+                    {{ $item['name'] }}
                 </p>
-                <span>Especializados</span>
+                <span>{{ $item['text'] }}</span>
             </div>
-            <div class="col-md-3 item" id="counters_1">
-                <div class="image">
-                    <img src="{{ asset('images/cursos.png') }}" alt="">
-                </div>
-                <div class="counters" id="counters_1">
-                    <span class="plus">+ </span><div class="counter" data-TargetNum="15">0</div>
-                </div>
-                <p>
-                    CURSOS
-                </p>
-                <span>profesionales</span>
-            </div>
-            <div class="col-md-3 item" id="counters_1">
-                <div class="image">
-                    <img src="{{ asset('images/alumnos.png') }}" alt="">
-                </div>
-                <div class="counters" id="counters_1">
-                    <span class="plus">+ </span><div class="counter" data-TargetNum="4000">0</div>
-                </div>
-                <p>
-                    ALUMNOS
-                </p>
-                <span>Certificados</span>
-            </div>
-            <div class="col-md-3 item" id="counters_1">
-                <div class="image">
-                    <img src="{{ asset('images/insignias.png') }}" alt="">
-                </div>
-                <div class="counters" id="counters_1">
-                    <span class="plus">+ </span><div class="counter" data-TargetNum="100">0</div>
-                </div>
-                <p>
-                    INSIGNIAS
-                </p>
-                <span>Digitales</span>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
@@ -673,7 +321,7 @@
                         nuestra institución, respaldada internacionalmente
                         por Credly.
                     </p>
-                    <form action="" method="POST">
+                    <form action="{{ route('verifica-tu-certificacion') }}" method="GET">
                         <input type="text" class="form-control shadow" name="document" placeholder="Nro. Documento de Identidad">
                         <input type="submit" value="Verificar">
                     </form>

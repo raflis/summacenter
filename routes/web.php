@@ -21,10 +21,11 @@ Route::get('clear-cache', function() {
 });
 
 Route::get('/', [App\Http\Controllers\Web\WebController::class, 'index'])->name('index');
-Route::get('programas', [App\Http\Controllers\Web\WebController::class, 'programas'])->name('programas');
+Route::get('programas/{slug?}', [App\Http\Controllers\Web\WebController::class, 'programas'])->name('programas');
 Route::get('equipo', [App\Http\Controllers\Web\WebController::class, 'equipo'])->name('equipo');
 Route::get('soporte', [App\Http\Controllers\Web\WebController::class, 'soporte'])->name('soporte');
 Route::get('contacto', [App\Http\Controllers\Web\WebController::class, 'contacto'])->name('contacto');
+Route::get('recomendaciones', [App\Http\Controllers\Web\WebController::class, 'recomendaciones'])->name('recomendaciones');
 Route::get('terminos-y-condiciones', [App\Http\Controllers\Web\WebController::class, 'terminos_y_condiciones'])->name('terminos-y-condiciones');
 Route::get('politicas-y-privacidad', [App\Http\Controllers\Web\WebController::class, 'politicas'])->name('politicas');
 Route::get('manual-del-alumno', [App\Http\Controllers\Web\WebController::class, 'manual_alumno'])->name('manual.alumno');
@@ -32,15 +33,19 @@ Route::get('libro-de-reclamaciones', [App\Http\Controllers\Web\WebController::cl
 Route::get('bolsa-de-trabajo', [App\Http\Controllers\Web\WebController::class, 'bolsa_trabajo'])->name('bolsa.trabajo');
 Route::get('bolsa-de-trabajo/perfil', [App\Http\Controllers\Web\WebController::class, 'bolsa_trabajo_perfil'])->name('bolsa.trabajo.perfil');
 Route::get('bolsa-de-trabajo/configuracion', [App\Http\Controllers\Web\WebController::class, 'bolsa_trabajo_configuracion'])->name('bolsa.trabajo.configuracion');
-Route::get('bolsa-de-trabajo/ver-anuncios', [App\Http\Controllers\Web\WebController::class, 'ver_anuncios'])->name('ver-anuncios');
-Route::get('bolsa-de-trabajo/anuncio', [App\Http\Controllers\Web\WebController::class, 'anuncio'])->name('anuncio');
+Route::get('bolsa-de-trabajo/seleccionar', [App\Http\Controllers\Web\WebController::class, 'bolsa_seleccionar'])->name('bolsa.seleccionar');
+Route::get('bolsa-de-trabajo/ver-anuncios', [App\Http\Controllers\Web\WebController::class, 'ver_anuncios'])->name('bolsa.ver-anuncios');
+Route::get('bolsa-de-trabajo/anuncio', [App\Http\Controllers\Web\WebController::class, 'anuncio'])->name('bolsa.anuncio');
 Route::get('bolsa-de-trabajo/solicitud', [App\Http\Controllers\Web\WebController::class, 'bolsa_trabajo_solicitud'])->name('bolsa.trabajo.solicitud');
-Route::get('bolsa-de-trabajo/registro', [App\Http\Controllers\Web\WebController::class, 'bolsa_trabajo_registro'])->name('bolsa.trabajo.registro');
+Route::get('bolsa-de-trabajo/registro/postulante', [App\Http\Controllers\Web\WebController::class, 'bolsa_trabajo_registro_postulante'])->name('bolsa.trabajo.registro.postulante');
+Route::get('bolsa-de-trabajo/registro/empresa', [App\Http\Controllers\Web\WebController::class, 'bolsa_trabajo_registro_empresa'])->name('bolsa.trabajo.registro.empresa');
 Route::get('nuestras-certificaciones', [App\Http\Controllers\Web\WebController::class, 'nuestras_certificaciones'])->name('nuestras-certificaciones');
 Route::get('insignias-digitales', [App\Http\Controllers\Web\WebController::class, 'insignias_digitales'])->name('insignias-digitales');
 Route::get('coleccion-insignias', [App\Http\Controllers\Web\WebController::class, 'coleccion_insignias'])->name('coleccion-insignias');
-Route::get('insignia', [App\Http\Controllers\Web\WebController::class, 'insignia'])->name('insignia');
-Route::get('ruta-insignias', [App\Http\Controllers\Web\WebController::class, 'ruta_insignias'])->name('ruta-insignias');
+Route::get('coleccion-insignias/{slug}/{id}', [App\Http\Controllers\Web\WebController::class, 'insignia'])->name('coleccion-insignias.area');
+Route::get('coleccion-insignias/{area}/{category}/{name}/{id}', [App\Http\Controllers\Web\WebController::class, 'ruta_insignias'])->name('insignia');
+Route::get('grupo-de-excelencia-academica', [App\Http\Controllers\Web\WebController::class, 'grupo_excelencia'])->name('grupo-excelencia');
+Route::get('distinciones', [App\Http\Controllers\Web\WebController::class, 'distinciones'])->name('distinciones');
 Route::get('responsabilidad-social/objetivos', [App\Http\Controllers\Web\WebController::class, 'responsabilidad_social_objetivos'])->name('responsabilidad-social-objetivos');
 Route::get('responsabilidad-social/mision', [App\Http\Controllers\Web\WebController::class, 'responsabilidad_social_mision'])->name('responsabilidad-social-mision');
 Route::get('responsabilidad-social/quienes-somos', [App\Http\Controllers\Web\WebController::class, 'responsabilidad_social_quienes_somos'])->name('responsabilidad-social-quienes-somos');

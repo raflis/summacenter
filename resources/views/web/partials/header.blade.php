@@ -9,15 +9,15 @@
             </li>
             <li class="bolsa">
                 <div class="dropdown">
-                    <a href="{{ route('bolsa.trabajo') }}" class="@if(Route::currentRouteName()=="bolsa.trabajo") active @endif" id="dropdownMenuButton0" data-bs-toggle="dropdown" aria-expanded="false">BOLSA DE TRABAJO</a>
+                    <a href="{{ route('bolsa.trabajo') }}" class="@if(preg_match("/^bolsa./", Route::currentRouteName())) active @endif" id="dropdownMenuButton0" data-bs-toggle="dropdown" aria-expanded="false">BOLSA DE TRABAJO</a>
                     <ul class="dropdown-menu shadow" aria-labelledby="dropdownMenuButton0">
                         <li>
-                            <a class="dropdown-item @if(Route::currentRouteName()=="ver-anuncios") active @endif" href="{{ route('ver-anuncios') }}">
+                            <a class="dropdown-item @if(Route::currentRouteName()=="bolsa.seleccionar") active @endif" href="{{ route('bolsa.seleccionar') }}">
                                 <img src="{{ asset('images/icono-veranuncios.png') }}" alt=""> Ver Anuncios
                             </a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="">
+                            <a class="dropdown-item" href="{{ route('bolsa.trabajo') }}">
                                 <img src="{{ asset('images/icono-crearanuncios.png') }}" alt=""> Crear Anuncios
                             </a>
                         </li>
@@ -39,307 +39,73 @@
             </li>
             <li class="menu">
                 <div class="dropdown dropdown_header">
-                    <button id="btn-header" list="header1_list" class="btn btn-item @if(Route::currentRouteName()=="modelo-educativo" || Route::currentRouteName()=="nosotros" || Route::currentRouteName()=="equipo" || Route::currentRouteName()=="ofimatica" || preg_match("/^responsabilidad-social/", Route::currentRouteName())) active0 @endif">
+                    <button id="btn-header" list="header1_list" class="btn btn-item @if(Route::currentRouteName()=="modelo-educativo" || Route::currentRouteName()=="nosotros" || Route::currentRouteName()=="equipo" || Route::currentRouteName()=="ofimatica" || preg_match("/^responsabilidad-social/", Route::currentRouteName()) || Route::currentRouteName()=="distinciones") active0 @endif">
                       SUMMA
                     </button>
                 </div>
-            </li>
-            <div class="dropPrograma dropInicio shadow noActiveList" id="header1_list">
-                <div class="menu">
-                    <div class="menu-left">
-                        <a class="dropdown-item @if(Route::currentRouteName()=="nosotros") activeitems @endif" href="{{ route('nosotros') }}" class="menu1">
-                            <img src="{{ asset('images/icono-nosotros.png') }}" alt="">
-                            Nosotros
-                        </a>
-                        <a class="dropdown-item @if(Route::currentRouteName()=="equipo") activeitems @endif" href="{{ route('equipo') }}" class="menu2">
-                            <img src="{{ asset('images/icono-equipo.png') }}" alt="">
-                            Equipo Summa
-                        </a>
-                        <a class="dropdown-item @if(Route::currentRouteName()=="modelo-educativo") activeitems @endif" href="{{ route('modelo-educativo') }}">
-                            <img src="{{ asset('images/icono-modelo.png') }}" alt="">
-                            Modelo Educativo
-                        </a>
-                        <a class="dropdown-item" href="">
-                            <img src="{{ asset('images/icono-distinciones.png') }}" alt="">
-                            Distinciones
-                        </a>
-                        <a class="dropdown-item @if(preg_match("/^responsabilidad-social/", Route::currentRouteName())) activeitems @endif" href="{{ route('responsabilidad-social-objetivos') }}">
-                            <img src="{{ asset('images/icono-responsabilidad.png') }}" alt="">
-                            Responsabilidad Social
-                        </a>
-                        <div class="todo">
-                            <a href="{{ route('programas') }}">
-                                Ver Todo
+                <div class="dropPrograma dropCorpo shadow noActiveList" id="header1_list">
+                    <div class="menu">
+                        <div class="menu-left">
+                            <a class="dropdown-item @if(Route::currentRouteName()=="nosotros") activeitems @endif" href="{{ route('nosotros') }}" class="menu1">
+                                <img src="{{ asset('images/icono-nosotros.png') }}" alt="">
+                                Nosotros
                             </a>
-                        </div>
-                    </div>
-                    <div class="menu-right">
-                        <div class="submenu menu1">
-                            <p class="title">
-                                Dirección
-                            </p>
-                            <a class="submenu_" href="">
-                                Gerente General
+                            <a class="dropdown-item @if(Route::currentRouteName()=="equipo") activeitems @endif" href="{{ route('equipo') }}" class="menu2">
+                                <img src="{{ asset('images/icono-equipo.png') }}" alt="">
+                                Equipo Summa
                             </a>
-                            <a class="submenu_" href="">
-                                Gerente Comercial
+                            <a class="dropdown-item @if(Route::currentRouteName()=="modelo-educativo") activeitems @endif" href="{{ route('modelo-educativo') }}">
+                                <img src="{{ asset('images/icono-modelo.png') }}" alt="">
+                                Modelo Educativo
                             </a>
-                            <a class="submenu_" href="">
-                                Gerente de Marketing
+                            <a class="dropdown-item @if(Route::currentRouteName()=="distinciones") activeitems @endif" href="{{ route('distinciones') }}">
+                                <img src="{{ asset('images/icono-distinciones.png') }}" alt="">
+                                Distinciones
                             </a>
-                        </div>
-                        <div class="submenu menu2">
-                            <p class="title">
-                                Docentes
-                            </p>
-                            <a class="submenu_" href="">
-                                Operaciones y Logística
+                            <a class="dropdown-item @if(preg_match("/^responsabilidad-social/", Route::currentRouteName())) activeitems @endif" href="{{ route('responsabilidad-social-objetivos') }}">
+                                <img src="{{ asset('images/icono-responsabilidad.png') }}" alt="">
+                                Responsabilidad Social
                             </a>
-                            <a class="submenu_" href="">
-                                Mantenimiento
-                            </a>
-                            <a class="submenu_" href="">
-                                Producción
-                            </a>
-                            <a class="submenu_" href="">
-                                Contabilidad y Finanzas
-                            </a>
-                            <a class="submenu_" href="">
-                                Operaciones y Logística
-                            </a>
-                            <a class="submenu_" href="">
-                                Mantenimiento
-                            </a>
-                            <a class="submenu_" href="">
-                                Producción
-                            </a>
-                            <a class="submenu_" href="">
-                                Contabilidad y Finanzas
-                            </a>
-                            <a class="submenu_" href="">
-                                Operaciones y Logística
-                            </a>
-                            <a class="submenu_" href="">
-                                Mantenimiento
-                            </a>
-                            <a class="submenu_" href="">
-                                Producción
-                            </a>
-                            <a class="submenu_" href="">
-                                Contabilidad y Finanzas
-                            </a>
-                        </div>
-                        <div class="submenu menu3">
-                            <p class="title">
-                                Administración
-                            </p>
-                            <a class="submenu_" href="">
-                                Coordinación Académica
-                            </a>
-                            <a class="submenu_" href="">
-                                Soporte Técnico
-                            </a>
-                            <a class="submenu_" href="">
-                                Contabilidad
-                            </a>
-                            <a href="" class="submenu_">
-                                Marketing
-                            </a>
+                            <div class="todo">
+                                <a href="{{ route('programas') }}">
+                                    Ver Todo
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </li>
             <li class="menu">
                 <div class="dropdown dropdown_header">
                     <button id="btn-header" list="header2_list" class="btn btn-item @if(Route::currentRouteName()=="programas" || Route::currentRouteName()=="curso") active0 @endif">
                       PROGRAMAS
                     </button>
                 </div>
-            </li>
-            <div class="dropPrograma shadow noActiveList" id="header2_list">
-                <div class="menu">
-                    <div class="menu-left">
-                        <a class="dropdown-item" href="" class="menu1">
-                            <img src="{{ asset('images/icono-programa1.png') }}" alt="">
-                            Operaciones y Logística
-                        </a>
-                        <a class="dropdown-item" href="" class="menu2">
-                            <img src="{{ asset('images/icono-programa2.png') }}" alt="">
-                            Mantenimiento
-                        </a>
-                        <a class="dropdown-item" href="">
-                            <img src="{{ asset('images/icono-programa3.png') }}" alt="">
-                            Producción
-                        </a>
-                        <a class="dropdown-item" href="">
-                            <img src="{{ asset('images/icono-programa4.png') }}" alt="">
-                            Contabilidad y Finanzas
-                        </a>
-                        <a class="dropdown-item" href="">
-                            <img src="{{ asset('images/icono-programa5.png') }}" alt="">
-                            Talento Humano
-                        </a>
-                        <a class="dropdown-item" href="">
-                            <img src="{{ asset('images/icono-programa6.png') }}" alt="">
-                            Ventas y Distribución
-                        </a>
-                        <a class="dropdown-item" href="">
-                            <img src="{{ asset('images/icono-programa7.png') }}" alt="">
-                            Administración
-                        </a>
-                        <a class="dropdown-item" href="">
-                            <img src="{{ asset('images/icono-programa8.png') }}" alt="">
-                            Inteligencia de Negocios
-                        </a>
-                        <a class="dropdown-item" href="">
-                            <img src="{{ asset('images/icono-programa9.png') }}" alt="">
-                            Ofimática
-                        </a>
-                        <a class="dropdown-item" href="">
-                            <img src="{{ asset('images/icono-programa10.png') }}" alt="">
-                            Minería
-                        </a>
-                        <a class="dropdown-item" href="">
-                            <img src="{{ asset('images/icono-programa11.png') }}" alt="">
-                            Innovación y Tecnología
-                        </a>
-                        <a class="dropdown-item" href="">
-                            <img src="{{ asset('images/icono-programa12.png') }}" alt="">
-                            Metodologías Agiles
-                        </a>
-                        <div class="todo">
-                            <a href="{{ route('programas') }}">
-                                Ver Todo
+                <div class="dropPrograma dropCorpo shadow noActiveList" id="header2_list">
+                    <div class="menu">
+                        <div class="menu-left">
+                            @foreach ($course_areas as $item)
+                            <a class="dropdown-item" href="{{ route('programas', $item->slug) }}" class="menu1">
+                                <img src="{{ $item->icon }}" alt="">
+                                {{ $item->name }}
                             </a>
-                        </div>
-                    </div>
-                    <div class="menu-right">
-                        <div class="submenu menu1">
-                            <p class="title">
-                                Diplomados
-                            </p>
-                            <a class="submenu_ @if(Route::currentRouteName()=="curso") activeitems @endif" href="{{ route('curso') }}">
-                                SAP ERP MM
-                            </a>
-                            <a class="submenu_" href="">
-                                SAP S/4HANA MM
-                            </a>
-                            <a class="submenu_" href="">
-                                SAP ERP MM
-                            </a>
-                            <a class="submenu_" href="">
-                                SAP S/4HANA MM
-                            </a>
-                        </div>
-                        <div class="submenu menu2">
-                            <p class="title">
-                                Especializaciones
-                            </p>
-                            <a class="submenu_" href="">
-                                SAP ERP MM
-                            </a>
-                            <a class="submenu_" href="">
-                                SAP S/4HANA MM
-                            </a>
-                            <a class="submenu_" href="">
-                                SCM
-                            </a>
-                            <a class="submenu_" href="">
-                                SAP ERP MM
-                            </a>
-                            <a class="submenu_" href="">
-                                SAP S/4HANA MM
-                            </a>
-                            <a class="submenu_" href="">
-                                SCM
-                            </a>
-                            <a class="submenu_" href="">
-                                SAP ERP MM
-                            </a>
-                            <a class="submenu_" href="">
-                                SAP S/4HANA MM
-                            </a>
-                            <a class="submenu_" href="">
-                                SCM
-                            </a>
-                            <a class="submenu_" href="">
-                                SAP ERP MM
-                            </a>
-                            <a class="submenu_" href="">
-                                SAP S/4HANA MM
-                            </a>
-                            <a class="submenu_" href="">
-                                SCM
-                            </a>
-                        </div>
-                        <div class="submenu menu3">
-                            <p class="title">
-                                Cursos
-                            </p>
-                            <a class="submenu_" href="">
-                                SAP ERP MM
-                            </a>
-                            <a class="submenu_" href="">
-                                SAP S/4HANA MM
-                            </a>
-                            <a class="submenu_" href="">
-                                SAP ERP MM
-                            </a>
-                            <a class="submenu_" href="">
-                                SAP S/4HANA MM
-                            </a>
-                        </div>
-                        <div class="submenu menu4">
-                            <p class="title">
-                                Talleres
-                            </p>
-                            <a class="submenu_" href="">
-                                SAP ERP MM
-                            </a>
-                            <a class="submenu_" href="">
-                                SAP S/4HANA MM
-                            </a>
-                            <a class="submenu_" href="">
-                                SCM
-                            </a>
-                            <a class="submenu_" href="">
-                                SAP ERP MM
-                            </a>
-                            <a class="submenu_" href="">
-                                SAP S/4HANA MM
-                            </a>
-                            <a class="submenu_" href="">
-                                SCM
-                            </a>
-                            <a class="submenu_" href="">
-                                SAP ERP MM
-                            </a>
-                            <a class="submenu_" href="">
-                                SAP S/4HANA MM
-                            </a>
-                            <a class="submenu_" href="">
-                                SCM
-                            </a>
-                            <a class="submenu_" href="">
-                                SAP ERP MM
-                            </a>
-                            <a class="submenu_" href="">
-                                SAP S/4HANA MM
-                            </a>
-                            <a class="submenu_" href="">
-                                SCM
-                            </a>
+                            @endforeach
+                            <div class="todo">
+                                <a href="{{ route('programas') }}">
+                                    Ver Todo
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </li>
             <li class="menu">
                 <div class="dropdown dropdown_header">
-                    <button id="btn-header" list="header3_list" class="btn btn-item @if(Route::currentRouteName()=="nuestras-certificaciones" || Route::currentRouteName()=="insignias-digitales" || Route::currentRouteName()=="ruta-insignias" || Route::currentRouteName()=="coleccion-insignias" || Route::currentRouteName()=="insignia" || Route::currentRouteName()=="preguntas-frecuentes") active0 @endif">
+                    <button id="btn-header" list="header3_list" class="btn btn-item @if(Route::currentRouteName()=="nuestras-certificaciones" || Route::currentRouteName()=="preguntas-frecuentes" || Route::currentRouteName()=="grupo-excelencia" || preg_match("/insignia/", Route::currentRouteName()) ) active0 @endif">
                         CERTIFICACIONES
                     </button>
                 </div>
-                <div class="dropPrograma dropCerti shadow noActiveList" id="header3_list">
+                <div class="dropPrograma dropCorpo shadow noActiveList" id="header3_list">
                     <div class="menu">
                         <div class="menu-left">
                             <a class="dropdown-item @if(Route::currentRouteName()=="nuestras-certificaciones") activeitems @endif" href="{{ route('nuestras-certificaciones') }}">
@@ -350,13 +116,13 @@
                                 <img src="{{ asset('images/menu-insignias-digitales.png') }}" alt="">
                                 Insignias Digitales
                             </a>
-                            <a class="dropdown-item @if(Route::currentRouteName()=="ruta-insignias") activeitems @endif" href="{{ route('ruta-insignias') }}">
-                                <img src="{{ asset('images/menu-ruta-insignias.png') }}" alt="">
-                                Rutas de Insignias
-                            </a>
                             <a class="dropdown-item @if(Route::currentRouteName()=="coleccion-insignias" || Route::currentRouteName()=="insignia") activeitems @endif" href="{{ route('coleccion-insignias') }}">
                                 <img src="{{ asset('images/coleccion-insignias.png') }}" alt="">
                                 Colección de Insignias
+                            </a>
+                            <a class="dropdown-item @if(Route::currentRouteName()=="grupo-excelencia") activeitems @endif" href="{{ route('grupo-excelencia') }}">
+                                <img src="{{ asset('images/icon-excelencia-academica.png') }}" alt="">
+                                Grupo de Excelencia Académica
                             </a>
                             <a class="dropdown-item @if(Route::currentRouteName()=="preguntas-frecuentes") activeitems @endif" href="{{ route('preguntas-frecuentes') }}">
                                 <img src="{{ asset('images/menu-preguntas-frecuentes.png') }}" alt="">

@@ -18,10 +18,10 @@
     </div>
 </section>
 
-<section class="sec0">
+<section class="sec60">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-12 breadcrumb_">
+            <div class="col-md-12 breadcrumb__ pt-5">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                       <li class="breadcrumb-item"><a href="{{ route('index') }}">Inicio</a></li>
@@ -30,19 +30,20 @@
                 </nav>
             </div>
         </div>
-    </div>
-</section>
-
-<section class="sec52">
-    <div class="container-fluid">
         <div class="row">
-            <div class="col-md-12 texto">
-                <h1>
-                    tE DAMOS LA BIENVENIDA A EGRESADOS SUMMA
-                </h1>
-                <p class="init">
-                    Un espacio creado para fortalecer la comunidad de egresados y donde compartiremos información actualizada del sector laboral. Entérate de las últimas novedades, casos de éxito y beneficios exclusivos para ti.
-                </p>
+            <div class="col-md-12 text_">
+                <div class="text">
+                    <h1>
+                        TE DAMOS LA BIENVENIDA A EGRESADOS SUMMA
+                    </h1>
+                    <p>
+                        Un espacio creado para fortalecer la comunidad de egresados y donde compartiremos información actualizada del sector laboral. Entérate de las últimas novedades, casos de éxito y beneficios exclusivos para ti.
+                    </p>
+                    <a href="">
+                        Conoce más sobre nuestros<br>Egresados Summa
+                        <img src="http://127.0.0.1:8000/images/arrow-right-white.png" alt="">
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -50,14 +51,28 @@
 
 <section class="sec53">
     <div class="container-fluid">
-        <div class="col-md-12 px-0">
-            <h1>
-                BENEFICIOS
-            </h1>
-            <div class="items">
-                <div class="item_left">
-                </div>
-                <div class="item_right">
+        <div class="row">
+            <div class="col-md-12 beneficios">
+                <h1>
+                    BENEFICIOS
+                </h1>
+                <div class="items">
+                    <div class="item">
+                        <div class="image">
+                            <img src="{{ asset('images/icon-egresado3.png') }}" alt="">
+                        </div>
+                        <div class="text">
+                            <h3>
+                                Noticias de Egresados
+                            </h3>
+                            <p>
+                                Entérate de las últimas novedades que tenemos para nuestra comunidad de egresados.
+                            </p>
+                            <div class="btn-action">
+                                <a href="" class="btn btn-ingresa">INGRESA AQUÍ</a>
+                            </div>
+                        </div>
+                    </div>
                     <div class="item">
                         <div class="image">
                             <img src="{{ asset('images/icon-egresado1.png') }}" alt="">
@@ -86,22 +101,6 @@
                                 Continúa aprendiendo en la Escuela <strong>SUMMA CENTER</strong> donde encontrarás diferentes programas que te ayudarán a potenciar tu perfil profesional.
                                 <br>
                                 <strong>Nuestra comunidad de egresados tienen un descuento especial de 15% en todos nuestros programas.</strong>
-                            </p>
-                            <div class="btn-action">
-                                <a href="" class="btn btn-ingresa">INGRESA AQUÍ</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="image">
-                            <img src="{{ asset('images/icon-egresado3.png') }}" alt="">
-                        </div>
-                        <div class="text">
-                            <h3>
-                                Noticias de Egresados
-                            </h3>
-                            <p>
-                                Entérate de las últimas novedades que tenemos para nuestra comunidad de egresados.
                             </p>
                             <div class="btn-action">
                                 <a href="" class="btn btn-ingresa">INGRESA AQUÍ</a>

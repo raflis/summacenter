@@ -2,7 +2,8 @@
 
 namespace App\Providers;
 
-use App\Models\Admin\Home;
+use App\Models\Admin\Worker;
+use App\Models\Admin\CourseArea;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 
@@ -31,8 +32,17 @@ class AppServiceProvider extends ServiceProvider
 
         Paginator::useBootstrap();
         
-        view()->composer('web.partials.footer',function($view){
-            //$view->with('home', Home::findOrFail(1));
+        view()->composer('web.partials.header',function($view){
+            $view->with('worker_managers', Worker::select('position')->where('type', 'manager')->orderBy('order', 'Asc')->distinct('position')->get());
+            $view->with('worker_teachers', Worker::select('workers.course_area_id')
+                                                    ->join('course_areas', 'workers.course_area_id', '=', 'course_areas.id')
+                                                    ->where('workers.type', 'teacher')
+                                                    ->distinct('worker.course_area_id')
+                                                    ->orderBy('course_areas.name', 'Asc')
+                                                    ->get()
+                        );
+            $view->with('worker_administrators', Worker::select('position')->where('type', 'administration')->orderBy('order', 'Asc')->distinct('position')->get());
+            $view->with('course_areas', CourseArea::orderBy('order', 'Asc')->get());
         });
     }
 }

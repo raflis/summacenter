@@ -18,6 +18,22 @@
     </div>
 </section>
 
+<section class="sec0">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 breadcrumb_ pb-0 pt-3">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item"><a href="{{ route('index') }}">Inicio</a></li>
+                      <li class="breadcrumb-item active" aria-current="page">Certificaciones</li>
+                      <li class="breadcrumb-item active" aria-current="page">Colección de Insignias</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="sec30">
     <div class="container-fluid">
         <div class="row insignias">
@@ -25,142 +41,25 @@
                 Haz click en el área de especialización para
                 obtener más información de la ruta de insignias
             </h3>
+            @foreach ($course_areas as $item)
             <div class="col-md-3 insignia">
                 <div class="insignia_">
                     <div class="image">
                         <div class="cant">
-                            28
+                            {{ count($item->badges) }}
                         </div>
-                        <a href="{{ route('insignia') }}">
-                            <img src="{{ asset('images/excel_insignia1.png') }}" alt="">
+                        <a href="{{ route('coleccion-insignias.area', [Str::slug($item->name), $item->id]) }}">
+                            <img src="{{ $item->badge }}" alt="">
                         </a>
                     </div>
                     <div class="text">
-                        <a href="">
-                            Logística y Operaciones
+                        <a href="{{ route('coleccion-insignias.area', [Str::slug($item->name), $item->id]) }}">
+                            {{ $item->name }}
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 insignia">
-                <div class="insignia_">
-                    <div class="image">
-                        <div class="cant">
-                            28
-                        </div>
-                        <a href="{{ route('insignia') }}">
-                            <img src="{{ asset('images/excel_insignia1.png') }}" alt="">
-                        </a>
-                    </div>
-                    <div class="text">
-                        <a href="">
-                            Logística y Operaciones
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 insignia">
-                <div class="insignia_">
-                    <div class="image">
-                        <div class="cant">
-                            28
-                        </div>
-                        <a href="{{ route('insignia') }}">
-                            <img src="{{ asset('images/excel_insignia1.png') }}" alt="">
-                        </a>
-                    </div>
-                    <div class="text">
-                        <a href="">
-                            Logística y Operaciones
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 insignia">
-                <div class="insignia_">
-                    <div class="image">
-                        <div class="cant">
-                            28
-                        </div>
-                        <a href="{{ route('insignia') }}">
-                            <img src="{{ asset('images/excel_insignia1.png') }}" alt="">
-                        </a>
-                    </div>
-                    <div class="text">
-                        <a href="">
-                            Logística y Operaciones
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 insignia">
-                <div class="insignia_">
-                    <div class="image">
-                        <div class="cant">
-                            28
-                        </div>
-                        <a href="{{ route('insignia') }}">
-                            <img src="{{ asset('images/excel_insignia1.png') }}" alt="">
-                        </a>
-                    </div>
-                    <div class="text">
-                        <a href="">
-                            Logística y Operaciones
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 insignia">
-                <div class="insignia_">
-                    <div class="image">
-                        <div class="cant">
-                            28
-                        </div>
-                        <a href="{{ route('insignia') }}">
-                            <img src="{{ asset('images/excel_insignia1.png') }}" alt="">
-                        </a>
-                    </div>
-                    <div class="text">
-                        <a href="">
-                            Logística y Operaciones
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 insignia">
-                <div class="insignia_">
-                    <div class="image">
-                        <div class="cant">
-                            28
-                        </div>
-                        <a href="{{ route('insignia') }}">
-                            <img src="{{ asset('images/excel_insignia1.png') }}" alt="">
-                        </a>
-                    </div>
-                    <div class="text">
-                        <a href="">
-                            Logística y Operaciones
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 insignia">
-                <div class="insignia_">
-                    <div class="image">
-                        <div class="cant">
-                            28
-                        </div>
-                        <a href="{{ route('insignia') }}">
-                            <img src="{{ asset('images/excel_insignia1.png') }}" alt="">
-                        </a>
-                    </div>
-                    <div class="text">
-                        <a href="">
-                            Logística y Operaciones
-                        </a>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>

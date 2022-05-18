@@ -61,6 +61,12 @@ body
 .pt-20
     padding-top 20vh !important
 
+.breadcrumb___
+    padding 0 30px
+
+.breadcrumb__
+    padding 0 60px
+
 .sec0
     padding-top 35px
     .breadcrumb_
@@ -132,6 +138,26 @@ form
 .loader-body.done
     visibility hidden
     opacity 0
+
+.videomodal
+    .modal-content
+        border 0
+        background-color transparent
+        .modal-header
+            padding-top 0
+            padding-bottom 2px
+            border 0
+            button
+                background transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23FFF'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat
+                opacity 1
+                &:focus
+                    box-shadow unset
+        .modal-body
+            iframe
+                width 100%
+            video
+                width 100%
+
 @keyframes spin
     from
         transform translate(-0%, -50%) rotate(0deg)
@@ -223,6 +249,7 @@ form
                 li
                     padding-left 0
                     .dropdown-item
+                        border-radius 0
                         background-color #FFCE7B
                         border 1px solid rgba(255,255,255,0.5)
                         padding-left 14px
@@ -289,6 +316,14 @@ form
                 transition .2s all
                 &:after
                     background-image url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23242953'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important
+            .active00
+                color #242953
+                font-family font-semibold
+                background #FFCE7B
+                padding 10px 35px 10px 13px
+                transition .2s all
+                &:after
+                    background-image url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23242953'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important        
             .active
                 font-family font-semibold
                 background-color #ffd58e
@@ -371,6 +406,8 @@ form
                     //width 25%
                     background-color #ffce7b
                     overflow-y auto
+                    max-height 500px
+                    width 220px
                     .activeitems
                         background-color #ffd58e
                         color #000 !important
@@ -385,13 +422,14 @@ form
                         white-space unset
                         font-size .9rem
                         transition .3s all
+                        line-height 1.5
                         &:hover
                             background-color #ffd58e
                             color #000 !important
                             border-left 3px solid #061d38
                             padding-left 14px
                         img
-                            width 40px
+                            width 35px
                             height fit-content
                             margin-right 10px
                     .todo
@@ -508,35 +546,35 @@ form
             background-position bottom
             background-size cover
             background-repeat no-repeat
-            background-image url('../images/slider1.png')
             display flex
             flex-direction row
             flex-wrap wrap
             align-items flex-end
             padding 0 40px 50px
             .text
-                width 60%
+                width 70%
                 h1
                     color #fff
                     font-size 3rem
-                    line-height 1
+                    line-height 1.1
                     text-align left
                     margin 0
+                    font-family font-semibold
                     span
                         font-family font-bold
                 h2
                     color #FFCE7B
-                    font-size 4rem
-                    line-height 1
+                    font-size 3.2rem
+                    line-height 1.1
                     font-family font-extrabold
                     text-align left
                     margin 0
             .btn-vermas
-                margin-top 10px
+                margin-top 25px
                 color #FFCE7B
                 background transparent
                 border 1px solid #FFCE7B
-                font-size 1.1rem
+                font-size 1.2rem
                 padding 3px 15px
         .owl-dots
             position absolute
@@ -655,7 +693,7 @@ form
                         span
                             font-size 1.2rem
                         img
-                            height 40px
+                            height 43px
                 .item-content
                     background #FED68C
                     .content
@@ -687,7 +725,7 @@ form
                         width 130px
                         transition all .5s
                     img
-                        height 35px
+                        height 38px
                         width auto
                         padding-right 10px
                         transition all .5s
@@ -819,6 +857,18 @@ form
             font-family font-semibold
             color #061D38
             font-size 1.7rem
+    .btn-vermas
+        color #061D38
+        background-color #FFCE7B
+        padding 6px 20px 5px
+        font-family font-semibold
+        font-size 1rem
+        margin-top 20px
+        border-radius 6px
+        transition .3s all
+        &:hover
+            background-color #061D38
+            color #FFCE7B
     #carousel-recomendaciones
         padding 0 50px
         margin-top 40px
@@ -830,25 +880,28 @@ form
                 transform-style preserve-3d
                 transition all .4s linear
                 background #061D38
-                height 400px
+                height 62vh
                 .cara
-                    height 400px
+                    height 100%
+                    width 100%
                     position absolute
                     backface-visibility hidden
                     top 0
                     left 0
-                    padding 30px 40px 0px
+                    padding 30px 40px 10px
                     background-color inherit
                     z-index 9
+                    overflow hidden
                 .detras
-                    height 400px
+                    height 99%
                     transform rotateY(180deg)
-                    padding 30px 20px 0px
+                    padding 30px 20px 10px
                     display flex
                     flex-wrap wrap
                     align-content flex-start
                     flex-direction column
                     justify-content center
+                    overflow hidden
                     .first
                         display flex
                         img
@@ -931,6 +984,7 @@ form
                 color #061d38
     .item
         text-align center
+        margin-bottom 22px
         .image
             img
                 width 170px
@@ -2033,7 +2087,7 @@ form
         display flex
         justify-content flex-start
         flex-wrap wrap
-        padding 0 45px
+        padding 0 45px 30px
         .item2
             width 25%
             padding 15px
@@ -2044,26 +2098,33 @@ form
                 transform-style preserve-3d
                 transition all .4s linear
                 background #e0e2e5
-                height 350px
                 border-radius 10px
                 border 1px solid #FFF
+                height 51vh
+                .item_active
+                    border 2px solid #061d38
                 .cara
-                    height 350px
                     position absolute
                     backface-visibility hidden
+                    height 100%
                     top 0
                     left 0
                     padding 0px
+                    padding-bottom 18px
                     text-align center
                     border-radius 10px
                     background-color inherit
                     z-index 9
+                    width 100%
+                    display flex
+                    flex-direction column
                 .detras
+                    overflow hidden
                     background-color #061d38
-                    height 349px
+                    height 99%
                     width 100%
                     transform rotateY(180deg)
-                    padding 30px 20px 0px
+                    padding 10px 20px 10px
                     display flex
                     flex-wrap wrap
                     align-content flex-start
@@ -2079,8 +2140,8 @@ form
                             height auto
                         p
                             line-height 1.3
-                            font-family font-regular
-                            font-size .9rem
+                            font-family font-light
+                            font-size .8rem
                             color #FFF
                             padding-left 10px
                             margin 0
@@ -2093,10 +2154,10 @@ form
                             height auto
                         p
                             line-height 1.3
-                            font-size .9rem
+                            font-size .8rem
                             color #FFF
                             padding-left 10px
-                            font-family font-regular
+                            font-family font-light
                             margin 0
                             span
                                 font-family font-bold
@@ -2108,8 +2169,8 @@ form
                             height auto
                         p
                             line-height 1.3
-                            font-family font-regular
-                            font-size .9rem
+                            font-family font-light
+                            font-size .8rem
                             color #FFF
                             padding-left 10px
                             margin 0
@@ -2117,31 +2178,42 @@ form
                     img
                         width 100%
                         border-radius 10px
-                p.name
-                    font-family font-semibold
-                    color #061d38
-                    font-size 1.1rem
-                    line-height 1.2
-                    text-align center
-                    margin 0
-                    padding 20px 2% 5px
-                    margin-bottom 8px
-                span.cargo
-                    background-color #fed68c
-                    padding 3px 15px
-                    color #061d38
-                    font-size .9rem
-                    border-radius 6px
+                .cara_bottom
+                    height 100%
+                    display flex
+                    flex-direction column
+                    justify-content flex-start
+                    padding-top 4%
+                    p.name
+                        font-family font-semibold
+                        color #061d38
+                        font-size 1.1rem
+                        line-height 1.2
+                        text-align center
+                        margin 0
+                        padding 20px 2% 5px
+                        margin-bottom 8px
+                    span.cargo
+                        background-color #fed68c
+                        padding 3px 15px
+                        color #061d38
+                        font-size .9rem
+                        border-radius 6px
+                        display inline-block
+                        margin 0 5%
         .item3
             width 25%
             padding 15px
+            .item_active
+                border 2px solid #061d38 !important
             .content
                 transition all .4s linear
                 background #e0e2e5
-                height 370px
                 border-radius 10px
                 border 1px solid #FFF
                 text-align center
+                padding-bottom 15px
+                overflow hidden
                 .image
                     img
                         width 100%
@@ -2161,6 +2233,8 @@ form
                     color #061d38
                     font-size .9rem
                     border-radius 6px
+                    display inline-block
+                    margin 0 5%
                 p.telefono
                     text-align left
                     color #000000
@@ -2904,6 +2978,18 @@ form
 .sec32
     padding-top 0vh
     padding-bottom 80px
+    .top_h3
+        margin-top 30px
+        padding 0 60px
+        font-family font-bold
+        color #061D38
+        font-size 1.2rem
+    .top_h4
+        padding 0 60px
+        font-family font-medium
+        color #061D38
+        font-size 1rem
+        margin-bottom 30px
     ul.nav
         display flex
         justify-content space-between
@@ -2924,7 +3010,7 @@ form
                 font-family font-light
                 font-size .9rem
     .content
-        padding 0 60px
+        padding 0 50px
         .accordion
             .accordion-item
                 background-color #FFF
@@ -2971,12 +3057,12 @@ form
                             &:before
                                 content ''
                                 position absolute
-                                background-image url('../images/li-circle.png')
+                                background-image url('../images/li-circle2.png')
                                 background-size contain
                                 background-repeat no-repeat
                                 margin-left -20px
                                 margin-top 5px
-                                height 7px
+                                height 8px
                                 width 100%
 
                     #accordion_flush
@@ -4812,37 +4898,113 @@ form
                                 margin 0
             .portafolio
                 padding 60px 60px 10px
-                h1
-                    color #010119
-                    font-family font-bold
-                    font-size 1.4rem
-                    margin-bottom 15px
-                    text-transform uppercase
-                    text-align center
-                p.init
-                    font-family font-light
-                    font-size 1rem
-                    line-height 1.4
-                    margin 0
-                    padding-right 65%
-                    padding-top 60px
-                    strong
+                .portafolio_header
+                    display flex
+                    flex-wrap wrap
+                    .image
+                        background-image url(../images/img-caso-exito.png)
+                        background-position center
+                        background-repeat no-repeat
+                        background-size 101%
+                        width 50%
+                        img
+                            width 100%
+                    .content_
+                        width 50%
+                        .content
+                            background-color #E0E2E5
+                            h1
+                                color #061D38
+                                font-family font-bold
+                                font-size 1rem
+                                margin 0
+                                padding 25px 18px 0
+                                text-transform uppercase
+                            p
+                                color #010119
+                                font-size 1rem
+                                line-height 1.4
+                                margin 0
+                                font-family font-light
+                                padding 25px 18px
+                                strong
+                                    font-family font-bold
+                                    color #061D38
+                            .btn_action
+                                background-color #FACD7F
+                                padding 20px 40% 20px 20px
+                                a.btn-conocemas
+                                    background-color #061D38
+                                    color #fff
+                                    font-family font-semibold
+                                    display flex
+                                    justify-content space-between
+                                    align-items center
+                                    text-align left
+                                    padding 15px
+                                    border-radius 12px
+                                    font-size 1rem
+                                    img
+                                        height 40px
+                .portafolio_carrusel
+                    margin-top 25px
+                    h1
+                        color #061D38
                         font-family font-bold
-                img
-                    float right
-                    height 400px
+                        font-size 1.1rem
+                        margin-bottom 20px
+                        padding 25px 18px 0
+                        text-transform uppercase
+                        text-align center
+                     #carousel-confiaron-empresas
+                        padding 0 30px
+                        .item
+                            margin auto
+                            height 140px
+                            display flex
+                            align-items center
+                            justify-content center
+                            .imagen
+                                img
+                                    width 145px
+                                    height auto
+                        .owl-nav
+                            display inherit !important
+                            .owl-prev
+                                position absolute
+                                left 1%
+                                top 40%
+                            .owl-next
+                                position absolute
+                                right 1%
+                                top 40%
+                            img
+                                height 33px
+            .portafolio2
+                padding 0
+                .image-bg
+                    height 80vh
+                    background-image url(../images/img-bg-portafolio.png)
+                    background-position center
+                    background-repeat no-repeat
+                    background-size cover
                 .items
-                    padding-top 100px
+                    background-image url(../images/bg-portafolio2.jpg)
+                    background-position center
+                    background-repeat no-repeat
+                    background-size cover
+                    padding-top 18vh
                     display flex
                     width 100%
                     justify-content space-evenly
+                    height 90vh
                     .item
                         width 20%
                         text-align center
                         .image
                             display flex
                             justify-content center
-                            height 140px
+                            height 200px
                             margin-bottom 8px
                             img
                                 height 100%
@@ -4850,16 +5012,16 @@ form
                             display inline-flex
                             .counter
                                 color #FACD7F
-                                font-size 3rem
+                                font-size 4rem
                                 font-family font-bold
                             span
                                 font-family font-bold
-                                font-size 3rem
+                                font-size 4rem
                                 color #FACD7F
                                 margin-left 8px
                         p
-                            color #000
-                            font-size .9rem
+                            color #FFF
+                            font-size 1rem
                             line-height 1.4
                             margin 0
             .contacto
@@ -5048,66 +5210,62 @@ form
             font-family font-light
 
 .sec53
-    .container-fluid
-        padding 0
+    background-image url(../images/bg-egresados2.jpg)
+    background-size cover
+    background-repeat no-repeat
+    background-position center
+    padding 30px 0 30px
+    .beneficios
+        padding 0 60px
         h1
-            color #081C38
-            font-size 1rem
+            color #FFF
+            font-size 1.1rem
             line-height 1.3
             font-family font-bold
             text-transform uppercase
-            padding-left 60px
-            margin-bottom 30px
+            margin-bottom 50px
         .items
             display flex
             flex-wrap wrap
-            .item_left
-                width 60%
-                background-image url(../images/certificado-image.jpg)
-                background-size cover
-                background-repeat no-repeat
-            .item_right
-                width 40%
+            justify-content space-between
+            .item
+                width 30%
                 display flex
                 flex-wrap wrap
-                padding-right 60px
-                .item
-                    width 100%
-                    display flex
-                    flex-wrap wrap
-                    background-color #FACD7F
-                    border-radius 13px
-                    padding 30px 20px
-                    border-top 15px solid #081C38
-                    margin-bottom 30px
-                    .image
-                        padding-top 10px
-                        width 20%
-                        img
-                            width 100%
-                    .text
-                        width 80%
-                        padding-left 20px
-                        h3
-                            color #061D38
-                            font-size 1.1rem
-                            font-family font-bold
-                            margin-bottom 15px
-                        p
-                            font-family font-light
-                            font-size .9rem
-                            line-height 1.4
-                            margin-bottom 30px
-                            strong
-                                font-family font-semibold
-                        .btn-action
-                            .btn-ingresa
-                                background-color #061D38
-                                color #FFF
-                                font-family font-medium
-                                font-size .8rem
-                                padding 7px 20px
-                                border-radius 0
+                background-color #FACD7F
+                border-radius 13px
+                padding 30px 20px
+                border-top 15px solid #081C38
+                margin-bottom 30px
+                height 100%
+                .image
+                    padding-top 10px
+                    width 20%
+                    img
+                        width 100%
+                .text
+                    width 80%
+                    padding-left 20px
+                    h3
+                        color #061D38
+                        font-size 1.1rem
+                        font-family font-bold
+                        margin-bottom 15px
+                    p
+                        font-family font-light
+                        font-size .9rem
+                        line-height 1.4
+                        margin-bottom 30px
+                        strong
+                            font-family font-semibold
+                    .btn-action
+                        .btn-ingresa
+                            background-color #061D38
+                            color #FFF
+                            font-family font-medium
+                            font-size .8rem
+                            padding 7px 20px
+                            border-radius 0
 
 .sec54
     margin-top 60px
@@ -5734,6 +5892,423 @@ form
                 font-size 1.65rem
                 padding 7px 40px
                 background-color #FFCE7B
+
+.sec59
+    margin-bottom 50px
+    .titulo
+        padding 0
+        h1
+            color #061D38
+            font-family font-semibold
+            font-size 1.7rem
+            margin 0
+            text-align center
+            background-color #E0E2E5
+            padding 20px 0
+    .texto1
+        padding 0 60px
+        display flex
+        flex-wrap wrap
+        align-items center
+        .image
+            width 20%
+            img
+                width 100%
+        .texto
+            width 80%
+            p
+                line-height 1.5
+                font-size 1rem
+                font-family font-light
+                color #010119
+                margin 0
+                padding-left 15px
+            .text_
+                display flex
+                align-items center
+                margin-top 20px
+                img
+                    width 330px
+                p
+                    margin 0
+    .video
+        margin-top 100px
+        margin-bottom 100px
+        .video_
+            width 50%
+            margin auto
+            iframe
+                width 100%
+                height 400px
+    .premiacion
+        h1
+            color #061D38
+            font-family font-bold
+            font-size 1.3rem
+            margin-bottom 25px
+            text-align center
+        p
+            text-align center
+            font-family font-light
+            font-size 1rem
+            margin 0
+            line-height 1.5
+            color #061D38
+        .items
+            display flex
+            flex-wrap wrap
+            justify-content space-around
+            padding 0 60px
+            margin-top 40px
+            .item
+                text-align center
+                width 27%
+                background-color #FCD48A
+                border-radius 6px
+                border-top 5px solid #061D38
+                display flex
+                flex-direction column
+                margin-bottom 20px
+                padding 16px
+                .image
+                    height 90px
+                    margin-bottom 15px
+                    img
+                        height 100%
+                .texto
+                    background-color #061D38
+                    height 100%
+                    display flex
+                    align-items center
+                    justify-content center
+                    border-radius 4px
+                    padding 15px 0
+                    p
+                        font-family font-bold
+                        color #FFF
+                        font-size 1rem
+                        line-height 1.4
+                        margin 0
+                        text-transform uppercase
+    .fuentes
+        margin-top 30px
+        padding 0 60px
+        p
+            font-family font-light
+            font-size 1rem
+            color #010119
+            line-height 1.4
+            margin-bottom 30px
+            text-align center
+        .items
+            display flex
+            flex-wrap wrap
+            .item_left
+                width 50%
+                display flex
+                flex-wrap wrap
+                margin auto
+                .image
+                    height 90px
+                    width 50%
+                    margin-bottom 20px
+                    img
+                        height 100%
+            .item_right
+                width 50%
+                text-align right
+                img
+                    width 90%
+
+.sec60
+    background-image url(../images/bg-egresados.jpg)
+    background-size cover
+    background-repeat no-repeat
+    background-position center
+    .text_
+        padding 40px 60px 60px
+        .text
+            width 40%
+            h1
+                color #081C38
+                font-family font-bold
+                font-size 1.3rem
+                margin-bottom 25px
+            p
+                color #010119
+                font-family font-light
+                font-size 1.1rem
+                line-height 1.6
+                margin-bottom 30px
+            a
+                background-color #061d38
+                color #fff
+                font-family font-semibold
+                display inline-flex
+                justify-content space-between
+                align-items center
+                text-align left
+                padding 10px 15px
+                border-radius 10px
+                font-size 1rem
+                text-decoration none
+                img
+                    padding-left 20px
+                    height 40px
+
+.sec61
+    margin-top -32vh
+    position relative
+    z-index 99
+    padding-bottom 40px
+    .anuncio_seleccionar
+        background-color rgba(0, 0, 0, .4)
+        border-radius 20px
+        ul
+            padding 20px
+            li
+                width 50%
+                padding 10px
+                border-right 2px solid #c6c6c6
+                border-bottom 2px solid #c6c6c6
+                &:nth-child(2)
+                    border-right 0
+                button
+                    width 100%
+                    color #FFF
+                    font-family font-semibold
+                    font-size 2rem
+                    line-height 1.2
+                    cursor auto
+                .active
+                    background-color transparent
+            .anuncio_izq
+                border-bottom 0
+                text-align center
+            .anuncio_der
+                border-bottom 0
+                border-right 0
+                text-align center
+            .anuncio-img
+                height 200px
+                width auto
+                display block
+                margin auto
+                margin-top 20px
+            .btn-ver
+                background-color #F9CC85
+                color #061D38
+                font-family font-medium
+                font-size 1rem
+                padding 5px 35px 3px
+                margin-top 30px
+
+.sec62
+    margin-bottom 50px
+    .detail
+        display flex
+        flex-wrap wrap
+        padding 0 50px
+        margin-bottom 20px
+        .detail_left
+            width 75%
+            padding-right 30%
+            margin-top auto
+            margin-bottom auto
+            h1
+                color #010119
+                font-size 1.6rem
+                font-family font-semibold
+                margin-bottom 25px
+            p
+                color #010119
+                font-family font-light
+                font-size 1rem
+        .detail_right
+            width 25%
+            img
+                width 100%
+    .items_
+        margin 20px 0 40px
+        h1
+            color #061D38
+            font-family font-bold
+            font-size 1.3rem
+            margin-bottom 25px
+            text-align center
+        .items
+            display flex
+            flex-wrap wrap
+            justify-content space-around
+            padding 0 60px
+            margin-top 40px
+            .item
+                text-align center
+                width 27%
+                background-color #FCD48A
+                border-radius 6px
+                border-top 5px solid #061D38
+                display flex
+                flex-direction column
+                margin-bottom 20px
+                padding 16px
+                .image
+                    height 90px
+                    margin-bottom 15px
+                    img
+                        height 100%
+                .texto
+                    background-color #061D38
+                    height 100%
+                    display flex
+                    align-items center
+                    justify-content center
+                    border-radius 4px
+                    padding 15px 15px
+                    p
+                        font-family font-light
+                        color #FFF
+                        font-size 1rem
+                        line-height 1.4
+                        margin 0
+                        strong
+                            font-family font-bold
+    .bg1
+        background-image url(../images/bg-reconocimiento.jpg)
+        background-position center
+        background-size cover
+        background-repeat no-repeat
+        display flex
+        flex-wrap wrap
+        justify-content center
+        align-items center
+        padding 40px 0
+        .reco1
+            width 31%
+            height fit-content
+        .reco2
+            width 50%
+            height fit-content
+
+.sec63
+    position relative
+    background-position bottom
+    background-size cover
+    background-repeat no-repeat
+    .content
+        height 100vh
+        .content_
+            height 100vh
+            align-items flex-end
+            padding-bottom 40px
+            padding-left 30px
+            p.tit
+                line-height 1.1
+                margin 0
+                font-size 3.5rem
+                color #F1CC7F
+                font-family font-extrabold
+            p.subtit
+                line-height 1.1
+                margin 0
+                font-size 3.5rem
+                color #FFF
+                font-family font-extrabold
+
+.sec64
+    .items_
+        .items
+            display flex
+            flex-wrap wrap
+            margin-top 30px
+            .item
+                display flex
+                flex-wrap wrap
+                width 100%
+                margin-bottom 45px
+                .item_
+                    width 90%
+                    display flex
+                    flex-wrap wrap
+                    background-color #061D38
+                    border-radius 20px
+                    .item_left
+                        width 20%
+                        padding 30px
+                        border-top-left-radius 20px
+                        border-bottom-left-radius 20px
+                        margin-top auto
+                        margin-bottom auto
+                        .image
+                            border-radius 10px
+                            background #FFF
+                            img
+                                width 100%
+                                border 3px solid #FFF
+                                border-radius 12px
+                    .item_right
+                        width 80%
+                        padding 45px 30px 45px 20px
+                        border-top-right-radius 20px
+                        border-bottom-right-radius 20px
+                        margin-top auto
+                        margin-bottom auto
+                        .stars
+                            margin-bottom 15px
+                            img
+                                height 30px
+                                margin-right 15px
+                        h2
+                            color #FFF
+                            font-family font-bold
+                            font-size 1.8rem
+                        h3
+                            color #FFF
+                            font-size 1.3rem
+                        .detail
+                            margin-top 35px
+                            p
+                                color #FFF
+                                font-size 1.1rem
+                                line-height 1.3
+                                margin 0
+                                strong, b
+                                    font-family font-bold
+                .item_right2
+                    width 10%
+                    height 100%
+                    display flex
+                    align-items center
+                    margin auto
+                    background #FFF
+                    .triangle
+                        width 0
+                        height 0
+                        border-left 100px solid #061D38
+                        border-top 50px solid transparent
+                        border-bottom 50px solid transparent
+            .item2
+                .item_
+                    background-color #D6DDE5
+                    .item_left
+                        .image
+                            background #061D38
+                            img
+                                border 3px solid #061D38
+                    .item_right
+                        h2
+                            color #061D38
+                        h3
+                            color #061D38
+                        .detail
+                            p
+                                color #061D38
+                .item_right2
+                    .triangle
+                        border-left 100px solid #D6DDE5
+
+
+
 
 .footer
     background-position center

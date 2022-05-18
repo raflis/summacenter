@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('static/admin/css/admin.css?v='.time()) }}">
     <script src="https://kit.fontawesome.com/084224f6ac.js" crossorigin="anonymous"></script>
-    <title>Administrador de contenidos | Octavio Inmobiliaria</title>
+    <title>Administrador de contenidos | SummaCenter</title>
     <style>
       table{
         box-shadow: rgb(53 63 74 / 2%) 0px 14px 68px, rgb(53 63 74 / 4%) 0px 5.84887px 28.4088px, rgb(53 63 74 / 4%) 0px 3.12708px 15.1887px, rgb(53 63 74 / 6%) 0px 1.75302px 8.51466px, rgb(53 63 74 / 6%) 0px 0.931014px 4.52207px, rgb(53 63 74 / 9%) 0px 0.387416px 1.88173px;
@@ -54,6 +54,10 @@
           left: 0;
           right: 0;
           margin: auto;
+      }
+
+      textarea.form-control{
+        font-size: .85rem;
       }
 
 ::-webkit-scrollbar {
@@ -198,7 +202,7 @@
     <script src="{{ asset('static/admin/vendor/ckeditor/ckeditor.js') }}"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/ckeditor/4.5.11/adapters/jquery.js"></script>
     <script>
-      $('textarea').ckeditor({
+      $('.ckeditor').ckeditor({
         height: 100,
         filebrowserImageBrowseUrl: route_prefix + '?type=Images',
         filebrowserImageUploadUrl: route_prefix + '/upload?type=Images&_token=LbN1W47Wmxi1atddNpT3pLcmTqo3gkrtKvrkPVju',

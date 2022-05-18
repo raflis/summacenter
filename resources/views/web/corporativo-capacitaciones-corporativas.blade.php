@@ -25,7 +25,7 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                       <li class="breadcrumb-item"><a href="{{ route('index') }}">Inicio</a></li>
-                      <li class="breadcrumb-item active" aria-current="page">Corporativo</li>
+                      <li class="breadcrumb-item active" aria-current="page">Corporativos</li>
                       <li class="breadcrumb-item active" aria-current="page">Capacitaciones Corporativas</li>
                     </ol>
                 </nav>
@@ -93,7 +93,7 @@
                                                 Lo cuál brindará a los participantes más herramientas para seguir desarrollándose como profesionales de alto rendimiento en sus centros de labores.
                                             </p>
                                             <div class="btn_action">
-                                                <a href="" class="btn btn-conocemas">
+                                                <a href="{{ route('programas') }}" class="btn btn-conocemas">
                                                     Conoce más sobre nuestros<br>cursos corporativos
                                                     <img src="{{ asset('images/arrow-right-white.png') }}" alt="">
                                                 </a>
@@ -290,16 +290,84 @@
                         <div class="tab-pane fade" id="pills_4" role="tabpanel" aria-labelledby="pills_4_tab">
                             <div class="content1">
                                 <div class="portafolio">
-                                    <h1>
-                                        CASOS DE ÉXITO
-                                    </h1>
-                                    <img src="{{ asset('images/portafolio_imagen.png') }}" alt="">
-                                    <p class="init">
-                                        
-                                        <strong>Con más de una década de experiencia brindando servicios de capacitación a la medida,</strong>
-                                        <br><br>
-                                        Summa Center ha tenido la oportunidad de trabajar con organizaciones líderes, dentro y fuera del Perú, que operan en diferentes sectores económicos, destacando entre los sectores minero, energético, gobierno, financiero, contrucción, entre otros.
-                                    </p>
+                                    <div class="portafolio_header">
+                                        <div class="content_">
+                                            <div class="content">
+                                                <h1>
+                                                    CASOS DE ÉXITO
+                                                </h1>
+                                                <p>
+                                                    <strong>Con más de una década de experiencia brindando servicios de capacitación a la medida,</strong>
+                                                    <br><br>
+                                                    Summa Center ha tenido la oportunidad de trabajar con organizaciones líderes, dentro y fuera del Perú, que operan en diferentes sectores económicos, destacando entre los sectores minero, energético, gobierno, financiero, contrucción, entre otros.
+                                                </p>
+                                                <div class="btn_action">
+                                                    <a href="" class="btn btn-conocemas">
+                                                        Conoce más sobre nuestros<br>Casos de Éxito
+                                                        <img src="{{ asset('images/arrow-right-white.png') }}" alt="">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="image">
+                                        </div>
+                                    </div>
+                                    <div class="portafolio_carrusel">
+                                        <h1>
+                                            EMPRESAS QUE CONFIARON EN NOSOTROS
+                                        </h1>
+                                        <div id="carousel-confiaron-empresas" class="owl-carousel">
+                                            <div class="item">
+                                                <div class="imagen">
+                                                    <img src="{{ asset('images/backus.png') }}" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <div class="imagen">
+                                                    <img src="{{ asset('images/bbva.png') }}" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <div class="imagen">
+                                                    <img src="{{ asset('images/alicorp.png') }}" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <div class="imagen">
+                                                    <img src="{{ asset('images/volcan.png') }}" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <div class="imagen">
+                                                    <img src="{{ asset('images/boxer.png') }}" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <div class="imagen">
+                                                    <img src="{{ asset('images/orion.png') }}" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <div class="imagen">
+                                                    <img src="{{ asset('images/nestle.png') }}" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <div class="imagen">
+                                                    <img src="{{ asset('images/kimberly.png') }}" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <div class="imagen">
+                                                    <img src="{{ asset('images/aceros.png') }}" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="portafolio2">
+                                    <div class="image-bg">
+                                    </div>
                                     <div class="items">
                                         <div class="item">
                                             <div class="image">
@@ -383,11 +451,15 @@
                                                 <label for="">Correo Electrónico*</label>
                                                 <input type="email" class="form-control">
                                             </div>
-                                            <div class="form-group col-md-6">
+                                            <div class="form-group col-md-4">
                                                 <label for="">Empresa*</label>
                                                 <input type="text" class="form-control">
                                             </div>
-                                            <div class="form-group col-md-6">
+                                            <div class="form-group col-md-4">
+                                                <label for="">RUC*</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                            <div class="form-group col-md-4">
                                                 <label for="">Cargo*</label>
                                                 <input type="email" class="form-control">
                                             </div>

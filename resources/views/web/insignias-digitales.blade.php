@@ -21,6 +21,22 @@
     </div>
 </section>
 
+<section class="sec0">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 breadcrumb_ pb-0 pt-3">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item"><a href="{{ route('index') }}">Inicio</a></li>
+                      <li class="breadcrumb-item active" aria-current="page">Certificaciones</li>
+                      <li class="breadcrumb-item active" aria-current="page">Insignias Digitales</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="sec11">
     <div class="container-fluid">
         <div class="row justify-content-center">

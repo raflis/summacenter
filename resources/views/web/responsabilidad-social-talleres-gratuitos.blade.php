@@ -23,7 +23,7 @@
             <div class="col-md-12">
                 <div class="content">
                     <h1 class="tit">
-                        Responsabilidad Social
+                        Apoyo a la investigación
                     </h1>
                     <h2 class="tit2">
                         TALLERES GRATUITOS

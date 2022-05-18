@@ -22,6 +22,21 @@
     </div>
 </section>
 
+<section class="sec0">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 breadcrumb_ pt-2 pb-0">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item"><a href="{{ route('index') }}">Inicio</a></li>
+                      <li class="breadcrumb-item active" aria-current="page">Blog</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="sec19">
     <div class="container-fluid">
         <div class="row">
