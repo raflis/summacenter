@@ -1,7 +1,4 @@
 <section class="footer">
-    <a href="" class="msg">
-        <img src="{{ asset('images/msg.png') }}" alt="">
-    </a>
     <div class="container-fluid">
         <div class="row justify-content-center">
            <div class="col-md-3">
@@ -12,9 +9,7 @@
                                UBICACIÓN
                            </p>
                            <p>
-                                Germán Schreiber 246, Int. 301
-                                Urb. Santa Ana, San Isidro
-                                Lima, Perú
+                                {{ $setting->address }}
                            </p>
                        </li>
                        <li>
@@ -37,10 +32,10 @@
                                 CONTACTO
                             </p>
                             <p>
-                                Central telefónica +51 1 407 6616
+                                Central telefónica {{ $setting->telephone }}
                             </p>
                             <p>
-                                Número de Whatsapp +51932 490 078
+                                Número de Whatsapp <a href="https://wa.me/+51{{ $setting->whatsapp }}" target="blank">{{ $setting->whatsapp }}</a>
                             </p>
                         </li>
                         <li>
@@ -88,22 +83,22 @@
                             </p>
                         </li>
                         <li>
-                            <a href="https://www.facebook.com/SummaCenterProfesional/" target="_blank">
+                            <a href="{{ $setting->facebook }}" target="_blank">
                                 <img src="{{ asset('images/fb.png') }}" alt="">
                             </a>
                         </li>
                         <li>
-                            <a href="https://www.instagram.com/summacenter_/" target="_blank">
+                            <a href="{{ $setting->instagram }}" target="_blank">
                                 <img src="{{ asset('images/ig.png') }}" alt="">
                             </a>
                         </li>
                         <li>
-                            <a href="https://pe.linkedin.com/company/summa-center" target="_blank">
+                            <a href="{{ $setting->linkedin }}" target="_blank">
                                 <img src="{{ asset('images/in.png') }}" alt="">
                             </a>
                         </li>
                         <li>
-                            <a href="https://www.youtube.com/channel/UC_eeAWexBW38n69qhu39CZg" target="_blank">
+                            <a href="{{ $setting->youtube }}" target="_blank">
                                 <img src="{{ asset('images/yt.png') }}" alt="">
                             </a>
                         </li>

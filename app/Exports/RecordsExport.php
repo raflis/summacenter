@@ -8,28 +8,27 @@ use Maatwebsite\Excel\Concerns\FromView;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 
-class RecordsExport implements FromView
+class RecordsExport implements FromView, ShouldAutoSize
 {
     /**
     * @return \Illuminate\Support\Collection
     */
 
-    protected $name, $lastname, $project, $start_date, $end_date;
+    protected $name, $lastname, $start_date, $end_date;
 
-    public function __construct($name, $lastname, $project, $start_date, $end_date)
+    public function __construct($name, $lastname, $start_date, $end_date)
     {
         $this->name = $name;
         $this->lastname = $lastname;
-        $this->project = $project;
         $this->start_date = $start_date;
         $this->end_date = $end_date;
     }
     
     public function view(): View
     {
-        return view('admin.records.excelrecord', [
+        return view('admin.records.excel.record', [
             'records' => Record::orderBy('id','Desc')
-                                ->project($this->project)
+                                ->whereIn('from', ['curso', 'inicio'])
                                 ->name($this->name)
                                 ->lastname($this->lastname)
                                 ->startdate($this->start_date)

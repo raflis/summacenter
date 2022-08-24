@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use App\Models\Admin\Worker;
+use App\Models\Admin\Setting;
+use Illuminate\Support\Carbon;
 use App\Models\Admin\CourseArea;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
@@ -30,6 +32,10 @@ class AppServiceProvider extends ServiceProvider
             return'/u842821089/domains/mned.online/public_html';
         });*/
 
+        Carbon::setUTF8(true);
+        Carbon::setLocale(config('app.locale'));
+        setlocale(LC_ALL, 'es_MX', 'es', 'ES', 'es_MX.utf8');
+
         Paginator::useBootstrap();
         
         view()->composer('web.partials.header',function($view){
@@ -43,6 +49,14 @@ class AppServiceProvider extends ServiceProvider
                         );
             $view->with('worker_administrators', Worker::select('position')->where('type', 'administration')->orderBy('order', 'Asc')->distinct('position')->get());
             $view->with('course_areas', CourseArea::orderBy('order', 'Asc')->get());
+        });
+
+        view()->composer('web.partials.footer',function($view){
+            $view->with('setting', Setting::find(1));
+        });
+
+        view()->composer('web.layout',function($view){
+            $view->with('setting', Setting::find(1));
         });
     }
 }

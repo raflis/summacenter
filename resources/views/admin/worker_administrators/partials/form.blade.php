@@ -2,12 +2,12 @@
 
 <div class="form-group col-sm-6">
   {{ Form::label('fullname', 'Nombre completo:') }} <code>*</code>
-  {{ Form::text('fullname', null, ['class' => 'form-control', 'placeholder' => 'Nombre del área']) }}
+  {{ Form::text('fullname', null, ['class' => 'form-control', 'placeholder' => 'Nombre del área', 'required']) }}
 </div>
 
 <div class="form-group col-sm-6">
   {{ Form::label('position', 'Nombre del puesto de trabajo:') }} <code>*</code>
-  {{ Form::text('position', null, ['class' => 'form-control', 'placeholder' => 'Nombre del puesto de trabajo']) }}
+  {{ Form::text('position', null, ['class' => 'form-control', 'placeholder' => 'Nombre del puesto de trabajo', 'required']) }}
 </div>
 
 <div class="form-group col-sm-6">
@@ -18,7 +18,7 @@
         <i class="far fa-image"></i> Elegir
         </a>
     </span>
-    {!! Form::text('image',null,['class'=>'form-control','id'=>'thumbnail1']) !!}
+    {!! Form::text('image', null, ['class' => 'form-control', 'id' => 'thumbnail1', 'required']) !!}
   </div>
   <div id="holder1" style="margin-top:15px;max-height:100px;">
   @if(Route::currentRouteName()=="worker_administrators.edit")
@@ -29,17 +29,20 @@
 
 <div class="form-group col-sm-6">
   {{ Form::label('telephone', 'Teléfono:') }} <code>*</code>
-  {{ Form::text('telephone', null, ['class' => 'form-control', 'placeholder' => 'Ingrese teléfono']) }}
+  {{ Form::text('telephone', null, ['class' => 'form-control', 'placeholder' => 'Ingrese teléfono', 'required']) }}
 </div>
 
 <div class="form-group col-sm-6">
   {{ Form::label('email', 'Email:') }} <code>*</code>
-  {{ Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'Ingrese email']) }}
+  {{ Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'Ingrese email', 'required']) }}
 </div>
 
 <div class="form-group col-sm-6">
   {{ Form::label('order', 'Orden:') }} <code>*</code>
-  {{ Form::number('order', null, ['class' => 'form-control', 'placeholder' => 'Orden']) }}
+  {{ Form::number('order', null, ['class' => 'form-control', 'placeholder' => 'Orden', 'required']) }}
+  <div class="invalid-feedback">
+    Ingrese orden a mostrar
+  </div>
 </div>
 
 @section('script')

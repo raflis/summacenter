@@ -19,7 +19,7 @@ class CourseController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth:user');
         $this->middleware('isadmin');
     }
     
@@ -43,7 +43,7 @@ class CourseController extends Controller
     public function create(Request $request)
     {
         $course_category = CourseCategory::find($request->id_get);
-        $workers = Worker::where('type', 'teacher')->orderBy('fullname', 'Asc')->pluck('fullname', 'id')->prepend('Selecciona un docente', '');
+        $workers = Worker::where('type', 'teacher')->orderBy('fullname', 'Asc')->pluck('fullname', 'id'); //->prepend('Selecciona un docente', '');
         $course_subareas = CourseSubarea::orderBy('order', 'Asc')->pluck('name', 'id')->prepend('Selecciona un sub area', '');
         return view('admin.courses.create', compact('course_category', 'workers', 'course_subareas'));
     }
@@ -62,10 +62,9 @@ class CourseController extends Controller
             'course_category_id' => 'required',
             'course_subarea_id' => 'required',
             'name' => 'required',
-            'slug' => 'required|unique:courses,slug',
+            'slug' => 'required',
+            //'slug' => 'required|unique:courses,slug',
             'title1' => 'required',
-            'title2' => 'required',
-            'title3' => 'required',
             'slider' => 'required',
             'image' => 'required',
             'badge' => 'required',
@@ -79,6 +78,7 @@ class CourseController extends Controller
             'brochure' => 'required',
             'video_id' => 'required',
             'objective' => 'required',
+            'benefits' => 'required',
             'audience' => 'required',
             'worker_id' => 'required',
             'order' => 'required',
@@ -89,7 +89,7 @@ class CourseController extends Controller
             'course_subarea_id.required' => 'Ingrese la sub area del curso',
             'name.required' => 'Ingrese nombre',
             'slug.required' => 'Ingrese slug url',
-            'slug.unique' => 'Ya existe un registro con la misma URL',
+            //'slug.unique' => 'Ya existe un registro con la misma URL',
             'title1.required' => 'Ingrese título 1',
             'title2.required' => 'Ingrese título 2',
             'title3.required' => 'Ingrese título 3',
@@ -107,6 +107,7 @@ class CourseController extends Controller
             'video_id.required' => 'Ingrese ID del video',
             'objective.required' => 'Ingrese objetivo del curso',
             'audience.required' => 'Ingrese audiencia del curso',
+            'benefits.required' => 'Ingrese beneficios del curso',
             'worker_id.required' => 'Seleccine docente',
             'order.required' => 'Ingrese orden',
         ];
@@ -115,11 +116,8 @@ class CourseController extends Controller
         if($validator->fails()):
             return back()->withErrors($validator)->with('message','Se ha producido un error')->with('typealert','danger')->withInput();
         else:
-            if($request->benefits):
-                $request->merge(['benefits'=>array_values(collect($request->benefits)->sortBy(['order'])->toArray())]);
-            endif;
-
             $recorded = Course::create($request->all());
+            $recorded->workers()->attach($request->get('worker_id'));
             return redirect()->route('courses.index', ['id_get' => $id_get])->with('message','Creado con éxito.')->with('typealert','success');
         endif;
     }
@@ -144,7 +142,7 @@ class CourseController extends Controller
     public function edit(Request $request, $id)
     {
         $course_category = CourseCategory::find($request->id_get);
-        $workers = Worker::where('type', 'teacher')->orderBy('fullname', 'Asc')->pluck('fullname', 'id')->prepend('Selecciona un docente', '');
+        $workers = Worker::where('type', 'teacher')->orderBy('fullname', 'Asc')->pluck('fullname', 'id'); //->prepend('Selecciona un docente', '');
         $course_subareas = CourseSubarea::orderBy('order', 'Asc')->pluck('name', 'id')->prepend('Selecciona un sub area', '');
         $course = Course::find($id);
         return view('admin.courses.edit', compact('course', 'course_category', 'workers', 'course_subareas'));
@@ -165,10 +163,9 @@ class CourseController extends Controller
             'course_category_id' => 'required',
             'course_subarea_id' => 'required',
             'name' => 'required',
-            'slug' => 'required|unique:courses,slug,'.$id,
+            'slug' => 'required',
+            //'slug' => 'required|unique:courses,slug,'.$id,
             'title1' => 'required',
-            'title2' => 'required',
-            'title3' => 'required',
             'slider' => 'required',
             'image' => 'required',
             'badge' => 'required',
@@ -182,6 +179,7 @@ class CourseController extends Controller
             'brochure' => 'required',
             'video_id' => 'required',
             'objective' => 'required',
+            'benefits' => 'required',
             'audience' => 'required',
             'worker_id' => 'required',
             'order' => 'required',
@@ -192,7 +190,7 @@ class CourseController extends Controller
             'course_subarea_id.required' => 'Ingrese la sub area del curso',
             'name.required' => 'Ingrese nombre',
             'slug.required' => 'Ingrese slug url',
-            'slug.unique' => 'Ya existe un registro con la misma URL',
+            //'slug.unique' => 'Ya existe un registro con la misma URL',
             'title1.required' => 'Ingrese título 1',
             'title2.required' => 'Ingrese título 2',
             'title3.required' => 'Ingrese título 3',
@@ -209,6 +207,7 @@ class CourseController extends Controller
             'brochure.required' => 'Ingrese link del brochure',
             'video_id.required' => 'Ingrese ID del video',
             'objective.required' => 'Ingrese objetivo del curso',
+            'benefits.required' => 'Ingrese beneficios del curso',
             'audience.required' => 'Ingrese audiencia del curso',
             'worker_id.required' => 'Seleccine docente',
             'order.required' => 'Ingrese orden',
@@ -218,12 +217,9 @@ class CourseController extends Controller
         if($validator->fails()):
             return back()->withErrors($validator)->with('message','Se ha producido un error')->with('typealert','danger')->withInput();
         else:
-            if($request->benefits):
-                $request->merge(['benefits'=>array_values(collect($request->benefits)->sortBy(['order'])->toArray())]);
-            endif;
-
             $updated = Course::find($id);
             $updated->fill($request->all())->save();
+            $updated->workers()->sync($request->get('worker_id'));
             return redirect()->route('courses.index', ['id_get' => $id_get])->with('message','Actualizado con éxito.')->with('typealert','success');
         endif;
     }

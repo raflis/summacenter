@@ -2,16 +2,16 @@
 
 @section('content')
 
-<section class="sec13">
+<section class="sec13" style="background-image: url('{{ $pagefield->cover_pages[8]['image'] }}')">
     @include('web.partials.header')
     <div class="container-fluid content">
         <div class="row content_">
             <div class="col-md-7">
                 <p>
-                    Capacitaciones 
+                    {{ $pagefield->cover_pages[8]['title1'] }}
                 </p>
                 <p>
-                    CORPORATIVAS
+                    {{ $pagefield->cover_pages[8]['title2'] }}
                 </p>
             </div>
         </div>
@@ -416,66 +416,62 @@
                                         <p class="tit">
                                             Si quieres solicitar información sobre algún curso para llevarlo únicamente de forma corporativa déjanos tus datos para comunicarnos contigo a la brevedad. 
                                         </p>
-                                        <form action="" class="row">
-                                            <div class="form-group col-md-4">
+                                        <form action="{{ route('postCorporativo') }}" method="POST" class="row needs-validation" novalidate>
+                                            @csrf
+                                            <input type="hidden" name="from" value="corporativo">
+                                            <div class="form-group col-md-6">
                                                 <label for="">Nombres*</label>
-                                                <input type="text" class="form-control">
+                                                <input type="text" name="name" class="form-control" required>
                                             </div>
-                                            <div class="form-group col-md-4">
-                                                <label for="">Apellido Paterno*</label>
-                                                <input type="text" class="form-control">
-                                            </div>
-                                            <div class="form-group col-md-4">
-                                                <label for="">Apellido Materno*</label>
-                                                <input type="text" class="form-control">
+                                            <div class="form-group col-md-6">
+                                                <label for="">Apellidos*</label>
+                                                <input type="text" name="lastname" class="form-control" required>
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="">Tipo de Documento*</label>
-                                                <select name="" id="" class="form-select">
+                                                <select name="type_document" id="" class="form-select" required>
                                                     <option value="DNI">Documento nacional de identidad (DNI)</option>
+                                                    <option value="Pasaporte">Pasaporte</option>
+                                                    <option value="Carnet de extranjería">Carnet de extranjería</option>
                                                 </select>
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="">Número de Documento*</label>
-                                                <input type="text" class="form-control">
+                                                <input type="text" name="document" class="form-control" required>
                                             </div>
-                                            <div class="form-group col-md-4">
+                                            <div class="form-group col-md-6">
                                                 <label for="">Teléfono*</label>
-                                                <input type="text" class="form-control">
+                                                <input type="text" name="telephone" class="form-control" required>
                                             </div>
-                                            <div class="form-group col-md-4">
-                                                <label for="">Celular*</label>
-                                                <input type="text" class="form-control">
-                                            </div>
-                                            <div class="form-group col-md-4">
+                                            <div class="form-group col-md-6">
                                                 <label for="">Correo Electrónico*</label>
-                                                <input type="email" class="form-control">
+                                                <input type="email" name="email" class="form-control" required>
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label for="">Empresa*</label>
-                                                <input type="text" class="form-control">
+                                                <input type="text" name="company" class="form-control" required>
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label for="">RUC*</label>
-                                                <input type="text" class="form-control">
+                                                <input type="text" name="ruc" class="form-control" required>
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label for="">Cargo*</label>
-                                                <input type="email" class="form-control">
+                                                <input type="text" name="position" class="form-control" required>
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="">Consulta</label>
-                                                <textarea name="" class="form-control" rows="3"></textarea>
+                                                <textarea name="observation" class="form-control" rows="3"></textarea>
                                             </div>
                                             <div class="form-check col-md-7">
-                                                <input type="checkbox" name="checko" value="si" class="form-check-input">
-                                                <label class="form-check-label" for="defaultCheck1">
+                                                <input class="form-check-input" name="call_sms" type="checkbox" value="1" id="flexCheckDefault">
+                                                <label class="form-check-label" for="flexCheckDefault">
                                                     Llamar y enviar mensajes de texto a este número de teléfono
                                                 </label>
                                             </div>
                                             <div class="form-group col-md-7">
                                                 <p class="bottom">
-                                                    Al enviar el formulario con esta casilla marcadda, acepto recibir llamadas (incluidas
+                                                    Al enviar el formulario con esta casilla marcada, acepto recibir llamadas (incluidas
                                                     llamadas en vivo, automáticas o grabadas), mensajes de texto y mensajes de este
                                                     es un número de teléfono celular inalámbrico.
                                                 </p>
@@ -506,98 +502,29 @@
             </div>
             <div class="col-md-12">
                 <div id="carousel-cursos" class="owl-carousel">
+                    @foreach ($course_areas as $item)
                     <div class="item">
                         <div class="item-header">
                             <div class="titulo-header">
-                                <img src="{{ asset('images/curso-logistica.png') }}" alt="">
+                                <img src="{{ $item->icon }}" alt="">
                                 <span>
-                                    Operaciones y Logística
+                                    {{ $item->name }}
                                 </span>
                             </div>
                         </div>
                         <div class="item-content">
                             <div class="imagen">
-                                <img src="{{ asset('images/curso1.png') }}" alt="">
+                                <img src="{{ $item->image }}" alt="">
                             </div>
                             <div class="content">
                                 <h4>
-                                    Accede nuestros cursos
-                                    Especializados en el Sector
-                                    Logístico
+                                    {{ $item->text }}
                                 </h4>
-                                <a href="" class="btn btn-vermas">VER MÁS</a>
+                                <a href="{{ route('programas', $item->slug) }}" class="btn btn-vermas">VER MÁS</a>
                             </div>
                         </div>
                     </div>
-                    <div class="item">
-                        <div class="item-header">
-                            <div class="titulo-header">
-                                <img src="{{ asset('images/curso-mantenimiento.png') }}" alt="">
-                                <span>
-                                    Mantenimiento
-                                </span>
-                            </div>
-                        </div>
-                        <div class="item-content">
-                            <div class="imagen">
-                                <img src="{{ asset('images/curso2.png') }}" alt="">
-                            </div>
-                            <div class="content">
-                                <h4>
-                                    Accede nuestros cursos
-                                    Especializados en el Sector
-                                    Minero
-                                </h4>
-                                <a href="" class="btn btn-vermas">VER MÁS</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-header">
-                            <div class="titulo-header">
-                                <img src="{{ asset('images/curso-produccion.png') }}" alt="">
-                                <span>
-                                    Producción
-                                </span>
-                            </div>
-                        </div>
-                        <div class="item-content">
-                            <div class="imagen">
-                                <img src="{{ asset('images/curso3.png') }}" alt="">
-                            </div>
-                            <div class="content">
-                                <h4>
-                                    Accede nuestros cursos
-                                    Especializados en el Sector
-                                    de Mantenimiento
-                                </h4>
-                                <a href="" class="btn btn-vermas">VER MÁS</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-header">
-                            <div class="titulo-header">
-                                <img src="{{ asset('images/curso-recursos-humanos.png') }}" alt="">
-                                <span>
-                                    Talento Humano
-                                </span>
-                            </div>
-                        </div>
-                        <div class="item-content">
-                            <div class="imagen">
-                                <img src="{{ asset('images/curso4.png') }}" alt="">
-                            </div>
-                            <div class="content">
-                                <h4>
-                                    Accede nuestros cursos
-                                    Especializados en el Sector
-                                    de Recursos Humanos
-                                </h4>
-                                <a href="" class="btn btn-vermas">VER MÁS</a>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

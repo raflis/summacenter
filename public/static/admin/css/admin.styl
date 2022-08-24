@@ -66,6 +66,63 @@
     font-family font-bold
     font-size .85rem
 
+.loading
+    position fixed
+    width 100vw
+    height 120vh
+    background rgba(250, 250, 250, .95)
+    display flex
+    justify-content center
+    align-items center
+    z-index 99999
+
+#loader
+    border 12px solid #f3f3f3
+    border-radius 50%
+    border-top 12px solid #444444
+    width 70px
+    height 70px
+    animation spin 1s linear infinite
+    z-index 9999
+
+.center-all
+    position absolute
+    top 0
+    bottom 0
+    left 0
+    right 0
+    margin auto
+
+@keyframes spin
+    from
+        transform rotate(0deg)
+    to
+        transform rotate(360deg)
+
+::-webkit-scrollbar
+    width 10px
+    height 9px
+    background rgb(196, 196, 196)
+
+::-webkit-scrollbar
+    width 10px
+    height 9px
+    background #C4C4C4
+
+::-webkit-scrollbar-thumb
+    width 10px
+    background rgb(81, 81, 81)
+
+::-webkit-scrollbar-thumb
+    width 10px
+    background #515151
+
+::-webkit-scrollbar-track
+    box-shadow white 0px 0px 5px inset
+
+::-webkit-scrollbar-track
+    box-shadow inset 0 0 5px white
+
 body
     margin 0px
     font-family font-regular
@@ -251,7 +308,7 @@ nav
         transform translateX(0%)
         transition: transform .2s ease-in;
         .sidenav-menu-heading
-            padding 1.75rem 1rem 0.75rem
+            padding 1rem 1rem 0.55rem
             font-size 0.7rem
             font-family font-bold
             text-transform uppercase
@@ -282,6 +339,8 @@ nav
             height 25vh
             background rgba(33, 40, 50, 0.05)
             padding-left 1rem
+            padding-top 1rem
+            padding-bottom 1rem
             p
                 &:nth-child(1)
                     color #69707a
@@ -290,6 +349,7 @@ nav
                 &:nth-child(3)
                     color #000
                     font-size .8rem
+                    margin-bottom 0
                 &:nth-child(2)
                     color #212832
                     font-size .9rem
@@ -362,19 +422,35 @@ nav
                                 line-height unset
                 .card-body
                     justify-content center
+                    .form-group
+                        strong
+                            font-size .8rem
+                        .bootstrap-select
+                            display block
+                            width 100%
+                            .dropdown-menu
+                                li
+                                    a
+                                        font-size .8rem
+                        button.dropdown-toggle
+                            //border 1px solid #ced4da
+                            box-shadow none
+                            background transparent
+                            outline 0 !important
+                            font-size .8rem
                     .labelspan
                         width 100%
                         font-size .8rem
-                    input[type=date]
-                        font-size .8rem
-                    input[type=text]
+                    input
                         font-size .8rem
                     select
                         font-size .8rem
+                    textarea
+                        font-size .8rem !important
                     .btn-descargar
                         font-size .8rem
                     label
-                        font-size .85rem
+                        font-size .8rem
                         font-family font-medium
                     ::placeholder
                         font-size .8rem
@@ -415,16 +491,18 @@ nav
                         font-family font-semibold
                 .card-body
                     label
-                        font-size .85rem
+                        font-size .8rem
                         font-family font-medium
+                    textarea
+                        font-size .8rem
                     input
-                        font-size .85rem
+                        font-size .8rem
                     select
-                        font-size .85rem
+                        font-size .8rem
                     ::placeholder
-                        font-size .85rem
+                        font-size .8rem
                     .alertas
-                        font-size .9rem
+                        font-size .85rem
                     p
                         margin-bottom .2rem
                         .name

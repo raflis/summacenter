@@ -18,11 +18,33 @@ class User extends Authenticatable
      * @var string[]
      */
     protected $fillable = [
+        'role',
         'name',
+        'lastname',
+        'type_document',
+        'document',
+        'birthday',
+        'telephone',
+        'career',
+        'position',
+        'address',
+        'department',
+        'district',
+        'invoice_name',
+        'invoice_address',
+        'invoice_department',
+        'invoice_district',
+        'invoice_telephone',
+        'invoice_email',
+        'company_name',
+        'company_document',
+        'company_address',
+        'company_telephone',
+        'avatar',
         'email',
         'password',
     ];
-
+    //MTTBT-00063910-2022
     /**
      * The attributes that should be hidden for serialization.
      *

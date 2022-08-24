@@ -22,7 +22,7 @@
                             Crear tema
                         </span>
                     </div>
-                    {!! Form::open(['route' => ['topics.store', ['id_get' => Request::get('id_get')]]]) !!}
+                    {!! Form::open(['route' => ['topics.store', ['id_get' => Request::get('id_get')]], 'class' => 'needs-validation', 'novalidate']) !!}
                     <div class="card-body row">
                         <div class="col-sm-12">
                             @include('admin.includes.alert')

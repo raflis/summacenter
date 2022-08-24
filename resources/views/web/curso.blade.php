@@ -2,20 +2,27 @@
 
 @section('content')
 
-<section class="sec22" style="background-image: url('../images/slider-ofimatica.png')">
+<section class="sec22" style="background-image: url('{{ $course->slider }}')!important">
     @include('web.partials.header')
     <div class="container-fluid content">
         <div class="row content_">
             <div class="col-md-7">
                 <p>
-                    SCM
+                    {{ $course->title1 }}
                 </p>
+                @if($course->title2)
                 <p>
-                    Gestión y Optimización de la Cadena de
+                    {{ $course->title2 }}
                 </p>
+                @endif
+                @if($course->title3)
                 <p>
-                    SUMINISTRO
+                    {{ $course->title3 }}
                 </p>
+                @endif
+                @if($course->title3_image)
+                <img src="{{ $course->title3_image }}" alt="">
+                @endif
             </div>
         </div>
     </div>
@@ -35,7 +42,7 @@
                                 Inicio:
                             </p>
                             <p class="fecha">
-                                6 de Enero
+                                {{ $course->start_of_classes }}
                             </p>
                         </div>
                     </div>
@@ -48,7 +55,7 @@
                                 Horario:
                             </p>
                             <p class="horario">
-                                Sábados de 6:00pm a 10:00pm
+                                {{ $course->schedule }}
                             </p>
                         </div>
                     </div>
@@ -61,7 +68,7 @@
                                 Duración:
                             </p>
                             <p class="duracion">
-                                46 Horas Cronológicas
+                                {{ $course->duration }}
                             </p>
                         </div>
                     </div>
@@ -75,7 +82,7 @@
                             </p>
                             <p class="inversion">
                                 Monto Regular
-                                S/ 1800
+                                S/ {{ $course->price }}
                             </p>
                         </div>
                     </div>
@@ -93,8 +100,8 @@
                     <ol class="breadcrumb mb-0 mt-3">
                       <li class="breadcrumb-item"><a href="{{ route('index') }}">Inicio</a></li>
                       <li class="breadcrumb-item"><a href="{{ route('programas') }}">Programas</a></li>
-                      <li class="breadcrumb-item active" aria-current="page">Categoría</li>
-                      <li class="breadcrumb-item active" aria-current="page">Curso</li>
+                      <li class="breadcrumb-item"><a href="{{ route('programas', $course->course_category->course_area->slug) }}">{{ $course->course_category->course_area->name }}</a></li>
+                      <li class="breadcrumb-item active" aria-current="page">{{ $course->name }}</li>
                     </ol>
                 </nav>
             </div>
@@ -102,19 +109,17 @@
         <div class="row">
             <div class="col-md-7 presentacion">
                 <h1>
-                    Actualízate en las
-                    tendencias del
-                    sector logístico
+                    {{ $course->subtitle }}
                 </h1>
                 <p class="text1">
                     Este curso esta disponible en Modalidad:
                 </p>
                 <p class="text2">
                     <img src="{{ asset('images/icono-online.png') }}" alt="">
-                    Sincrónica Online
+                    {{ $course->modality }}
                 </p>
                 <div class="botones">
-                    <a href="" class="btn btn-matricula">
+                    <a href="" class="btn btn-matricula btn-add" id_product="{{ $course->id }}">
                         <img src="{{ asset('images/cart.png') }}" alt="">
                         MATRICULARME AHORA
                     </a>
@@ -124,7 +129,7 @@
                 </div>
             </div>
             <div class="col-md-5 video">
-                <iframe width="100%" height="330" src="https://www.youtube.com/embed/x" 
+                <iframe width="100%" height="330" src="https://www.youtube.com/embed/{{ $course->video_id }}" 
                 title="YouTube video player" frameborder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen></iframe>
@@ -140,7 +145,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <iframe height=480 src="https://www.youtube.com/embed/x" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe height=480 src="https://www.youtube.com/embed/{{ $course->download_video }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
     </div>
@@ -159,9 +164,7 @@
                         </h2>
                         <div id="collapse_1" class="accordion-collapse collapse" aria-labelledby="head_1">
                             <div class="accordion-body">
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit accusantium, architecto labore, maxime omnis dolorem sed assumenda delectus qui, ratione cupiditate corrupti quasi numquam aliquid quidem perferendis cumque repellendus reprehenderit?
-                                </p>
+                                {!! htmlspecialchars_decode($course->objective) !!}
                             </div>
                         </div>
                     </div>
@@ -173,9 +176,7 @@
                         </h2>
                         <div id="collapse_2" class="accordion-collapse collapse" aria-labelledby="head_2">
                             <div class="accordion-body">
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit accusantium, architecto labore, maxime omnis dolorem sed assumenda delectus qui, ratione cupiditate corrupti quasi numquam aliquid quidem perferendis cumque repellendus reprehenderit?
-                                </p>
+                                {!! htmlspecialchars_decode($course->audience) !!}
                             </div>
                         </div>
                     </div>
@@ -188,52 +189,25 @@
                         <div id="collapse_3" class="accordion-collapse collapse show" aria-labelledby="head_3">
                             <div class="accordion-body">
                                 <div class="accordion" id="accordion_flush">
+                                    @foreach ($course->topics as $item)
                                     <div class="accordion-item">
-                                        <h2 class="accordion-header" id="head_flush_1">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush_1" aria-expanded="false" aria-controls="flush_1">
+                                        <h2 class="accordion-header" id="head_flush_{{ $item->id }}">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush_{{ $item->id }}" aria-expanded="false" aria-controls="flush_{{ $item->id }}">
                                                 <img src="{{ asset('images/cruz.png') }}" alt="">
-                                                Introducción al Supply Chain Management
+                                                {{ $item->name }}
                                             </button>
                                         </h2>
-                                        <div id="flush_1" class="accordion-collapse collapse" aria-labelledby="head_flush_1">
+                                        <div id="flush_{{ $item->id }}" class="accordion-collapse collapse" aria-labelledby="head_flush_{{ $item->id }}">
                                             <div class="accordion-body">
                                                 <ul>
-                                                    <li>
-                                                        Introducción al Supply Chain Management
-                                                    </li>
-                                                    <li>
-                                                        Introducción al Supply Chain Management
-                                                    </li>
-                                                    <li>
-                                                        Introducción al Supply Chain Management
-                                                    </li>
+                                                    @foreach ($item->sessions as $ses)
+                                                        <li>{{ $ses['name'] }}</li>
+                                                    @endforeach
                                                 </ul>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="head_flush_2">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush_2" aria-expanded="false" aria-controls="flush_2">
-                                                <img src="{{ asset('images/cruz.png') }}" alt="">
-                                                Planeamiento de la Demanda y Oferta
-                                            </button>
-                                        </h2>
-                                        <div id="flush_2" class="accordion-collapse collapse" aria-labelledby="head_flush_2">
-                                            <div class="accordion-body">
-                                                <ul>
-                                                    <li>
-                                                        Planeamiento de la Demanda y Oferta
-                                                    </li>
-                                                    <li>
-                                                        Planeamiento de la Demanda y Oferta
-                                                    </li>
-                                                    <li>
-                                                        Planeamiento de la Demanda y Oferta
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    </div> 
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
@@ -245,42 +219,35 @@
                         <p>
                             Este curso incluye:
                         </p>
-                        <ul>
-                            <li>
-                                46 HORAS Cronológicas con material teórico práctico descargable
-                            </li>
-                            <li>
-                                Obsequio de capacitación complementaria que potenciará tu Perfil Porfesional
-                            </li>
-                            <li>
-                                Casos Prácticos y Analíticos para desarrollar luego de cada tema
-                            </li>
-                        </ul>
+                        {!! htmlspecialchars_decode($course->benefits) !!}
                     </div>
                     <div class="accordion-item accordion-teacher">
-                        <div class="teacher">
-                            <div class="image">
-                                <img src="{{ asset('images/teacher.png') }}" alt="">
+                        <div id="carousel-curso-profesor" class="owl-carousel">
+                            @foreach ($course->workers as $item)
+                            <div class="item">
+                                <div class="teacher">
+                                    <div class="image">
+                                        <img src="{{ $item->image_course }}" alt="">
+                                    </div>
+                                    <div class="description">
+                                        <h2>
+                                            Docente
+                                        </h2>
+                                        <p class="name">
+                                            {{ $item->fullname }}
+                                        </p>
+                                        <div class="detail">
+                                            {!! htmlspecialchars_decode($item->item_course) !!}
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="description">
-                                <h2>
-                                    Docente
-                                </h2>
-                                <p class="name">
-                                    MBA Ing. César Huaitalla Mauricio
-                                </p>
-                                <p class="detail">
-                                    <strong>MBA en Dirección y Administración</strong> de Empresas en la Universidad de Politécnica di Bari, Italia. Ingeniero Industrial de profesión,
-                                    Titulado y Colegiado. Adicionalmente cuenta con una Maestría en Dirección Jose Cela de España y con un Diplomado en Supply Chain Management en la UPC.
-                                    <br><br>
-                                    <strong>Experiencia</strong> en más de 25 años trabajando en logística, producción, comercialización, administración de contratos y mejora continua en empresas transnacionales y nacionales.
-                                </p>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                     <div class="accordion-item accordion-certificate">
                         <div class="image">
-                            <img src="{{ asset('images/certificado2.png') }}" alt="">
+                            <img src="{{ $course->certificate }}" alt="">
                         </div>
                         <div class="content">
                             <h2>
@@ -302,7 +269,7 @@
                                     Contiene un URL que te direcciona al portal de insignias y acreditaciones
                                 </li>
                                 <li>
-                                    Incluye el ID del certificado internacial y nacionales.
+                                    Incluye el ID del certificado internacional y nacional.
                                 </li>
                             </ul>
                             <div class="buttons">
@@ -310,7 +277,7 @@
                                     SOLICITAR<br>
                                     INFORMACIÓN
                                 </a>
-                                <a href="">
+                                <a href="{{ $course->brochure }}" target="_blank">
                                     DESCARGAR<br>
                                     BROCHURE
                                 </a>
@@ -324,29 +291,29 @@
                     <p class="tit1">Para más información</p>
                     <p class="tit2">INGRESA TUS DATOS</p>
                     <div class="formulario_ row">
-                        <form action="{{ route('index') }}" method="POST">
+                        <form action="{{ route('postCurso') }}" method="POST" class="needs-validation" novalidate>
                         @csrf
+                        <input type="hidden" name="from" value="curso">
+                        <input type="hidden" name="interested_course" value="{{ $course->zoho_code }}|{{ $course->name }}">
                         <div class="form-group col-md-12">
                             <label for="name">Nombres</label>
-                            <input type="text" name="name" id="" class="form-control" placeholder="Nombre" required>
+                            <input type="text" name="name" class="form-control" placeholder="Nombres" required>
                         </div>
                         <div class="form-group col-md-12">
                             <label for="lastname">Apellidos</label>
-                            <input type="text" name="lastname" id="" class="form-control" placeholder="Apellidos" required>
+                            <input type="text" name="lastname" class="form-control" placeholder="Apellidos" required>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label for="document">DNI</label>
+                            <input type="text" name="document" class="form-control" placeholder="DNI" required>
                         </div>
                         <div class="form-group col-md-12">
                             <label for="email">Email</label>
-                            <input type="email" name="email" id="" class="form-control" placeholder="Email" required>
+                            <input type="email" name="email" class="form-control" placeholder="Email" required>
                         </div>
                         <div class="form-group col-md-12">
                             <label for="telephone">Celular</label>
-                            <input type="text" name="telephone" id="" class="form-control" placeholder="Celular" required>
-                        </div>
-                        <div class="form-group col-md-12">
-                            <label for="course">Curso de Interés</label>
-                            <select name="course" id="" class="form-select" required>
-                                <option value="">Estoy interesado en</option>
-                            </select>
+                            <input type="text" name="telephone" class="form-control" placeholder="Celular" required>
                         </div>
                         <div class="form-group col-md-12">
                             <p class="texto">
@@ -375,98 +342,29 @@
             </div>
             <div class="col-md-12">
                 <div id="carousel-cursos" class="owl-carousel">
+                    @foreach ($course_areas as $item)
                     <div class="item">
                         <div class="item-header">
                             <div class="titulo-header">
-                                <img src="{{ asset('images/curso-logistica.png') }}" alt="">
+                                <img src="{{ $item->icon }}" alt="">
                                 <span>
-                                    Operaciones y Logística
+                                    {{ $item->name }}
                                 </span>
                             </div>
                         </div>
                         <div class="item-content">
                             <div class="imagen">
-                                <img src="{{ asset('images/curso1.png') }}" alt="">
+                                <img src="{{ $item->image }}" alt="">
                             </div>
                             <div class="content">
                                 <h4>
-                                    Accede nuestros cursos
-                                    Especializados en el Sector
-                                    Logístico
+                                    {{ $item->text }}
                                 </h4>
-                                <a href="" class="btn btn-vermas">VER MÁS</a>
+                                <a href="{{ route('programas', $item->slug) }}" class="btn btn-vermas">VER MÁS</a>
                             </div>
                         </div>
                     </div>
-                    <div class="item">
-                        <div class="item-header">
-                            <div class="titulo-header">
-                                <img src="{{ asset('images/curso-mantenimiento.png') }}" alt="">
-                                <span>
-                                    Mantenimiento
-                                </span>
-                            </div>
-                        </div>
-                        <div class="item-content">
-                            <div class="imagen">
-                                <img src="{{ asset('images/curso2.png') }}" alt="">
-                            </div>
-                            <div class="content">
-                                <h4>
-                                    Accede nuestros cursos
-                                    Especializados en el Sector
-                                    Minero
-                                </h4>
-                                <a href="" class="btn btn-vermas">VER MÁS</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-header">
-                            <div class="titulo-header">
-                                <img src="{{ asset('images/curso-produccion.png') }}" alt="">
-                                <span>
-                                    Producción
-                                </span>
-                            </div>
-                        </div>
-                        <div class="item-content">
-                            <div class="imagen">
-                                <img src="{{ asset('images/curso3.png') }}" alt="">
-                            </div>
-                            <div class="content">
-                                <h4>
-                                    Accede nuestros cursos
-                                    Especializados en el Sector
-                                    de Mantenimiento
-                                </h4>
-                                <a href="" class="btn btn-vermas">VER MÁS</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-header">
-                            <div class="titulo-header">
-                                <img src="{{ asset('images/curso-recursos-humanos.png') }}" alt="">
-                                <span>
-                                    Talento Humano
-                                </span>
-                            </div>
-                        </div>
-                        <div class="item-content">
-                            <div class="imagen">
-                                <img src="{{ asset('images/curso4.png') }}" alt="">
-                            </div>
-                            <div class="content">
-                                <h4>
-                                    Accede nuestros cursos
-                                    Especializados en el Sector
-                                    de Recursos Humanos
-                                </h4>
-                                <a href="" class="btn btn-vermas">VER MÁS</a>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

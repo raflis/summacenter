@@ -22,7 +22,7 @@
                             Editar subarea
                         </span>
                     </div>
-                    {!! Form::model($course_subarea, ['route' => ['course_subareas.update', $course_subarea->id], 'method' => 'PUT']) !!}
+                    {!! Form::model($course_subarea, ['route' => ['course_subareas.update', $course_subarea->id], 'method' => 'PUT', 'class' => 'needs-validation', 'novalidate']) !!}
                     <div class="card-body row">
                         <div class="col-sm-12">
                             @include('admin.includes.alert')

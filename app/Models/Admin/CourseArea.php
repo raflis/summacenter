@@ -15,9 +15,14 @@ class CourseArea extends Model
         'name', 'slug', 'icon', 'image', 'badge', 'text', 'order',
     ];
 
+    public function courses()
+    {
+        return $this->hasManyThrough(Course::class, CourseCategory::class);
+    }
+
     public function course_categories()
     {
-        return $this->hasMany(CourseCategory::class);
+        return $this->hasMany(CourseCategory::class)->orderBy('order', 'Asc');
     }
 
     public function badges()

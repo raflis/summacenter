@@ -2,7 +2,12 @@
 
 function getRole($id)
 {
-    $roles=['2'=>'Usuario normal','1'=>'Administrador','0'=>'Administrador'];
+    $roles = [
+        '3' => 'Empresa',
+        '2' => 'Postulante',
+        '1' => 'Usuario' ,
+        '0' => 'Administrador'
+    ];
     return $roles[$id];
 }
 
@@ -36,6 +41,57 @@ function getBadge($id, $type)
             break;
     }
     
+}
+
+function zero_fill($valor, $long = 0)
+{
+    return str_pad($valor, $long, '0', STR_PAD_LEFT);
+}
+
+function job_types()
+{
+    $job_types = [
+        'Tiempo Completo' => 'Tiempo Completo',
+        'Medio Tiempo' => 'Medio Tiempo',
+        'Part time' => 'Part time',
+        'Freelance' => 'Freelance',
+        'Trabajo desde Casa' => 'Trabajo desde Casa',
+        'Rotativo' => 'Rotativo',
+        'Por temporada' => 'Por temporada',
+    ];
+    return $job_types;
+}
+
+function departments()
+{
+    $departments = [
+        'Amazonas' => 'Amazonas',
+        'Ancash' => 'Ancash',
+        'Apurímac' => 'Apurímac',
+        'Arequipa' => 'Arequipa',
+        'Ayacucho' => 'Ayacucho',
+        'Cajamarca' => 'Cajamarca',
+        'Callao' => 'Callao',
+        'Cuzco' => 'Cuzco',
+        'Huancavelica' => 'Huancavelica',
+        'Huánuco' => 'Huánuco',
+        'Ica' => 'Ica',
+        'Junín' => 'Junín',
+        'La Libertad' => 'La Libertad',
+        'Lambayeque' => 'Lambayeque',
+        'Lima' => 'Lima',
+        'Loreto' => 'Loreto',
+        'Madre de Dios' => 'Madre de Dios',
+        'Moquegua' => 'Moquegua',
+        'Pasco' => 'Pasco',
+        'Piura' => 'Piura',
+        'Puno' => 'Puno',
+        'San Martín' => 'San Martín',
+        'Tacna' => 'Tacna',
+        'Tumbes' => 'Tumbes',
+        'Ucayali' => 'Ucayali',
+    ];
+    return $departments;
 }
 
 function getStatus($value)

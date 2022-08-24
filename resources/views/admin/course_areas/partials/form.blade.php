@@ -1,11 +1,11 @@
 <div class="form-group col-sm-6">
   {{ Form::label('name', 'Nombre del área:') }} <code>*</code>
-  {{ Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Nombre del área']) }}
+  {{ Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Nombre del área', 'required']) }}
 </div>
 
 <div class="form-group col-sm-6">
   {{ Form::label('slug', 'URL amigable') }} <code>*</code>
-  {{ Form::text('slug', null, ['class' => 'form-control', 'id' => 'slug']) }}
+  {{ Form::text('slug', null, ['class' => 'form-control', 'id' => 'slug', 'required']) }}
 </div>
 
 <div class="form-group col-sm-4">
@@ -16,7 +16,7 @@
         <i class="far fa-image"></i> Elegir
         </a>
     </span>
-    {!! Form::text('icon',null,['class'=>'form-control','id'=>'thumbnail1']) !!}
+    {!! Form::text('icon', null, ['class' => 'form-control', 'id' => 'thumbnail1', 'required']) !!}
   </div>
   <div id="holder1" style="margin-top:15px;max-height:100px;">
   @if(Route::currentRouteName()=="course_areas.edit")
@@ -33,7 +33,7 @@
         <i class="far fa-image"></i> Elegir
         </a>
     </span>
-    {!! Form::text('image',null,['class'=>'form-control','id'=>'thumbnail2']) !!}
+    {!! Form::text('image',null,['class'=>'form-control','id'=>'thumbnail2', 'required']) !!}
   </div>
   <div id="holder2" style="margin-top:15px;max-height:100px;">
   @if(Route::currentRouteName()=="course_areas.edit")
@@ -50,7 +50,7 @@
         <i class="far fa-image"></i> Elegir
         </a>
     </span>
-    {!! Form::text('badge',null,['class'=>'form-control','id'=>'thumbnail3']) !!}
+    {!! Form::text('badge',null,['class'=>'form-control','id'=>'thumbnail3', 'required']) !!}
   </div>
   <div id="holder3" style="margin-top:15px;max-height:100px;">
   @if(Route::currentRouteName()=="course_areas.edit")
@@ -61,12 +61,15 @@
 
 <div class="form-group col-sm-12">
   {{ Form::label('text', 'Texto:') }} <code>*</code>
-  {{ Form::text('text', null, ['class' => 'form-control', 'placeholder' => 'Ingrese texto']) }}
+  {{ Form::text('text', null, ['class' => 'form-control', 'placeholder' => 'Ingrese texto', 'required']) }}
 </div>
 
 <div class="form-group col-sm-12">
   {{ Form::label('order', 'Orden:') }} <code>*</code>
-  {{ Form::number('order', null, ['class' => 'form-control', 'placeholder' => 'Orden']) }}
+  {{ Form::number('order', null, ['class' => 'form-control', 'placeholder' => 'Orden', 'required']) }}
+  <div class="invalid-feedback">
+    Ingrese orden a mostrar
+  </div>
 </div>
 
 @section('script')

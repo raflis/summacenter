@@ -22,7 +22,7 @@
                             Editar partner
                         </span>
                     </div>
-                    {!! Form::model($partner, ['route' => ['partners.update', $partner->id], 'method' => 'PUT']) !!}
+                    {!! Form::model($partner, ['route' => ['partners.update', $partner->id], 'method' => 'PUT', 'class' => 'needs-validation', 'novalidate']) !!}
                     <div class="card-body row">
                         <div class="col-sm-12">
                             @include('admin.includes.alert')

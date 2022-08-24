@@ -22,7 +22,7 @@
                             Editar
                         </span>
                     </div>
-                    {!! Form::model($worker_teacher, ['route' => ['worker_teachers.update', $worker_teacher->id], 'method' => 'PUT']) !!}
+                    {!! Form::model($worker_teacher, ['route' => ['worker_teachers.update', $worker_teacher->id], 'method' => 'PUT', 'class' => 'needs-validation', 'novalidate']) !!}
                     <div class="card-body row">
                         <div class="col-sm-12">
                             @include('admin.includes.alert')

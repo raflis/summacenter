@@ -2,16 +2,16 @@
 
 @section('content')
 
-<section class="sec13">
+<section class="sec13" style="background-image: url({{ $pagefield->cover_pages[2]['image'] }})">
     @include('web.partials.header')
     <div class="container-fluid content">
         <div class="row content_">
             <div class="col-md-7">
                 <p>
-                    NUESTRAS
+                    {{ $pagefield->cover_pages[2]['title1'] }}
                 </p>
-                <p>
-                    CERTIFICACIONES
+                <p class="tit">
+                    {{ $pagefield->cover_pages[2]['title2'] }}
                 </p>
             </div>
         </div>
@@ -135,13 +135,13 @@
                         VERIFICA TU CERTIFICACIÓN
                     </h5>
                     <p>
-                        Como alumno Summa puedes ingresar tu documento
-                        de identidad y verificar tu certificación emitida por
-                        nuestra institución, respaldada internacionalmente
+                        Como alumno Summa puedes ingresar tu correo de
+                        usuario y verificar tu insignia emitida por nuestra
+                        institución, respaldada internacionalmente
                         por Credly.
                     </p>
-                    <form action="" method="POST">
-                        <input type="text" class="form-control shadow" name="document" placeholder="Nro. Documento de Identidad">
+                    <form action="{{ route('verifica-tu-certificacion') }}" method="GET" class="needs-validation" novalidate>
+                        <input type="email" class="form-control shadow" name="email" placeholder="Ingrese su email" required>
                         <input type="submit" value="Verificar">
                     </form>
                 </div>

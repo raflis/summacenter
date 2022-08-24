@@ -41,7 +41,7 @@
                             Conoce sobre nuestra visión, misión y valores. 
                         </p>
                     </div>
-                    <a href="" class="btn btn-vermas">VER MÁS</a>
+                    <a href="{{ route('nosotros') }}" class="btn btn-vermas">VER MÁS</a>
                 </div>
             </div>
             <div class="col-md-4 item">
@@ -69,7 +69,7 @@
                             Conoce nuestros métodos de enseñanza.
                         </p>
                     </div>
-                    <a href="" class="btn btn-vermas">VER MÁS</a>
+                    <a href="{{ route('modelo-educativo') }}" class="btn btn-vermas">VER MÁS</a>
                 </div>
             </div>
             <div class="col-md-4 item">

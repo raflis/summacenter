@@ -58,6 +58,26 @@ body
 .btn, input, select, textarea
     &:focus
         box-shadow none !important
+
+.was-validated
+    .form-control:valid, .form-control.is-valid
+        border 1px solid #38c172 !important
+
+.was-validated
+    .form-control:invalid, .form-control.is-invalid
+        border 1px solid #e3342f !important
+
+.was-validated
+    .form-select:valid, .form-select.is-valid
+        border 1px solid #38c172 !important
+
+.was-validated
+    .form-select:invalid, .form-select.is-invalid
+        border 1px solid #e3342f !important
+
+.was-validated .form-check-input:invalid, .form-check-input.is-invalid
+    border 1px solid #e3342f !important
+
 .pt-20
     padding-top 20vh !important
 
@@ -65,6 +85,8 @@ body
     padding 0 30px
 
 .breadcrumb__
+    display flex
+    align-items center
     padding 0 60px
 
 .sec0
@@ -178,6 +200,311 @@ form
             font-family font-light
             line-height 1.3
 
+#deleting, #applications
+    .btn-close
+        position absolute
+        top 8px
+        right 8px
+    .btn-guardar
+        background-color #ffce7b
+        color #242953
+        font-family font-medium
+        font-size .9rem
+    .btn-cancelar
+        background-color #242953
+        font-family font-medium
+        font-size .9rem
+        color #fff
+    .shakehands
+        color #242953
+
+.fondo-active
+    background rgba(0, 0, 0, .7) !important
+    display block !important
+.fondo
+    position fixed
+    display none
+    height 100%
+    width 100%
+    top 0
+    left 0
+    z-index 9999999
+    transition transform .3s ease-in
+.cartlist-active
+    transform translateX(0%) !important
+.cartlist
+    display block
+    position fixed
+    top 0
+    right 0
+    background #FFF
+    height 100vh
+    width 30%
+    z-index 9999999999
+    transform translateX(100%)
+    transition transform .3s ease-in
+    overflow-y auto
+    .cartlist_header
+        display flex
+        flex-wrap wrap
+        justify-content space-between
+        align-items center
+        flex-direction row
+        width 100%
+        padding 30px 40px 0px
+        h4
+            font-size 1.3rem
+            color #4d4d4d
+            font-family font-bold
+        .cartlist_close
+            top 12px
+            right 24px
+            cursor pointer
+            background-color rgba(0,0,0,0.1)
+            height 30px
+            width 30px
+            border-radius 50%
+            display flex
+            align-items center
+            justify-content center
+            &:hover
+                i
+                    color #000
+            i
+                font-size 1.4rem
+                color rgba(0,0,0,0.2)
+                transition .4s all
+    .items
+        position relative
+        display flex
+        flex-wrap wrap
+        width 100%
+        margin-top 40px
+        padding 0px 40px 30px
+        .empty_cart
+            font-size 1.3rem
+            text-align center
+            font-family font-light
+            color #868785
+            margin-top 70%
+            width 100%
+            i
+                font-size 2.4rem
+                margin-bottom 5px
+        .item
+            width 100%
+            margin-bottom 30px
+            display flex
+            flex-wrap wrap
+            justify-content space-between
+            .image
+                width 30%
+                img
+                    width 100%
+            .item_detail
+                width 65%
+                display flex
+                flex-wrap wrap
+                justify-content space-between
+                align-items flex-start
+                a.h5_name
+                    text-decoration none
+                    width 85%
+                    font-family font-bold
+                    font-size 1rem
+                    line-height 1.3
+                    color #4d4d4d
+                    margin-bottom 3px
+                p.cat
+                    width 100%
+                    font-size .9rem
+                    color #808080
+                    font-family font-light
+                    margin 0
+                    line-height 1.3
+                .delete_product
+                    width 10%
+                    cursor pointer
+                    &:hover
+                        i
+                            color #000
+                    i
+                        font-size 1.2rem
+                        color rgba(0, 0, 0, .4)
+                .amount_product
+                    width 100%
+                    margin-top 3px
+                    font-size .9rem
+                    color #4d4d4d
+                    display flex
+                    align-items flex-end
+                    .modify_amount_product
+                        display inline-flex
+                        .minus, .plus
+                            border 1px solid #808080
+                            background #FFF
+                            color #808080
+                            height 35px
+                            width 35px
+                            display flex
+                            align-items center
+                            justify-content center
+                            font-size 1.3rem
+                        input[name=quantity__input]
+                            color #808080
+                            font-size 1.1rem
+                            height 35px
+                            width 45px
+                            border 0
+                            text-align center
+                            border-top 1px solid #808080
+                            border-bottom 1px solid #808080
+                        .quantity__input[type=number]
+                            -moz-appearance textfield
+                        input::-webkit-outer-spin-button, input::-webkit-inner-spin-button
+                            -webkit-appearance none
+                            margin 0
+                    .price_total
+                        margin 0
+                        padding-left 7px
+                        font-size 1rem
+                        color #4d4d4d
+                        font-family font-semibold
+    .subtotal
+        width 100%
+        background-color rgba(0, 0, 0, .05)
+        display flex
+        flex-wrap wrap
+        align-items center
+        justify-content space-between
+        padding 30px 40px
+        p
+            font-size 1rem
+            font-family font-medium
+            color rgba(0, 0, 0, .8)
+            &:nth-child(2)
+                font-family font-bold
+                font-size 1.2rem
+        a
+            background-color #061d38
+            text-decoration none
+            font-size 1rem
+            font-family font-medium
+            width 100%
+            color #FFF
+            padding 5px 0 6px
+            text-align center
+            border-radius 4px
+
+.beforesend
+    position fixed
+    width 100vw
+    height 100vh
+    background rgba(0, 0, 0, .2)
+    display none
+    justify-content center
+    align-items center
+    z-index 9999999999999999
+    .beforesend_loader
+        width 48px
+        height 48px
+        border-radius 50%
+        display inline-block
+        border-top 4px solid #FFF
+        border-right 4px solid transparent
+        box-sizing border-box
+        animation rotation 1s linear infinite
+        &:after
+            content ''
+            box-sizing border-box
+            position absolute
+            left 0
+            top 0
+            width 48px
+            height 48px
+            border-radius 50%
+            border-left 4px solid #FF3D00
+            border-bottom 4px solid transparent
+            animation rotation 0.5s linear infinite reverse
+    @keyframes rotation
+        0%
+            transform rotate(0deg)
+        100%
+            transform rotate(360deg)
+
+#cartGracias
+    .modal-content
+        .modal-body
+            position relative
+            button.btn-close
+                position absolute !important
+                top 8px
+                right 8px
+            h4
+                color #061d38
+                font-size 1rem
+                font-family font-light
+                font-weight bold
+                margin-bottom 25px
+            .content_gracias
+                display flex
+                flex-wrap wrap
+                justify-content space-between
+                .image
+                    width 30%
+                    img
+                        width 100%
+                .description
+                    width 66%
+                    h3
+                        color #4d4d4d
+                        font-family font-bold
+                        font-size 1rem
+                        margin-bottom 3px
+                    .p1
+                        color #808080
+                        font-size .9rem
+                        margin-bottom 13px
+                        font-family font-light
+                    .p0
+                        color #4d4d4d
+                        font-size .9rem
+                        margin-bottom 3px
+                    .price_old_product
+                        color #aaa
+                        font-size .85rem
+                        margin-bottom 4px
+                        text-decoration line-through
+                        font-family font-light
+                        line-height 1
+                    .price_now_product
+                        color #4d4d4d
+                        font-size 1rem
+                        font-family font-semibold
+                        line-height 1
+                .gocart
+                    background-color #061d38
+                    text-decoration none
+                    font-size .9rem
+                    font-family font-medium
+                    width 100%
+                    color #FFF
+                    padding 5px 0 6px
+                    text-align center
+                    border-radius 4px
+                    margin-bottom 7px
+                    margin-top 15px
+                .goback
+                    background-color #ffff
+                    text-decoration none
+                    font-size .9rem
+                    font-family font-regular
+                    width 100%
+                    color #061d38
+                    padding 5px 0 6px
+                    text-align center
+                    border-radius 4px
+
 .header
     position absolute
     top 0
@@ -288,11 +615,29 @@ form
         align-items center
         transition all .5s
         z-index 99
+        .header-left
+            display flex
+            flex-wrap wrap
+            align-items center
+        .header-right
+            display flex
+            flex-wrap wrap
+            align-items center
         li.logo
+            margin-right 50px
             img
                 height 60px
         li.menu
             position relative
+            margin-right 30px
+            .btn-login
+                text-decoration none
+                background #FFCE7B
+                color #00001D
+                border-radius 5px
+                padding 10px 13px
+                font-size .9rem
+                font-family font-medium
             .btn-item
                 background-color transparent
                 color #FFF
@@ -330,6 +675,8 @@ form
                 color #000 !important
                 border-left 3px solid #061d38
                 padding-left 14px
+        li.menu2
+            margin-right 20px
         li.menu-link
             a
                 text-decoration none
@@ -337,23 +684,50 @@ form
                 font-size .9rem
                 font-family font-medium
         li.menu-link2
+            margin-right 20px
             a
                 text-decoration none
                 background #FFCE7B
-                color #00001D
+                color #242953
                 border-radius 5px
                 padding 10px 13px
                 font-size .9rem
                 font-family font-medium
         li.menu-link3
+            position relative
+            .cant
+                position absolute
+                height 19px
+                width 19px
+                top -4px
+                right 0px
+                font-size .7rem
+                display flex
+                align-items center
+                justify-content center
+                background-color #242953
+                border-radius 50%
+                z-index 1
+                color #FFF
             a
-                text-decoration none   
+                text-decoration none
+                background #FFCE7B
+                color #242953
+                border-radius 5px
+                padding 10px 13px
+                font-size .9rem
+                font-family font-medium
+                display flex
+                justify-content center
+                align-items center
                 img.cart
                     padding-right 10px
                     padding-left 10px
                     height 44px
                 img.search
                     height 35px
+                i
+                    font-size 1.4rem
         .ActiveList
             display flex
         .noActiveList
@@ -432,6 +806,9 @@ form
                             width 35px
                             height fit-content
                             margin-right 10px
+                    a.userdrop
+                        i
+                            padding-right 5px
                     .todo
                         text-align center
                         padding 23px 0 18px
@@ -525,8 +902,12 @@ form
                         border-color unset
                         border-bottom 3.5px solid #FFF
                         box-shadow unset
+            select
+                option
+                    color #000
+                    font-size .85rem
             .form-select
-                background-image url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%23FFFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/></svg>") !important
+                background-image url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%23FFFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/></svg>")
                 background-size 19px 19px !important
             .enviar
                 text-align center
@@ -671,7 +1052,7 @@ form
                     color #061D38
 
 .sec4
-    padding 60px 0 70px
+    padding 60px 0 50px
     .title
         h1
             text-align center
@@ -806,6 +1187,7 @@ form
             padding-bottom 40px
     .item
         .item_
+            margin-bottom 20px
             .image
                 img
                     width 100%
@@ -848,11 +1230,24 @@ form
                     font-size .85rem
                     color #FFF
                     margin-bottom 15px
+            .tags
+                padding 0
+                margin-bottom 15px
+                .btn-tag
+                    background-color #facd7f
+                    color #061d38
+                    padding 2px 7px 1px
+                    font-size .7rem
+                    margin-bottom 4px
+                    border-radius 13px
+                    font-family font-medium
+                    transition .5s all
 
 .sec6
-    padding 60px 0 50px
+    padding 0px 0 50px
     .title
         h1
+            margin-top 60px
             text-align center
             font-family font-semibold
             color #061D38
@@ -1331,7 +1726,6 @@ form
     background-position bottom
     background-size cover
     background-repeat no-repeat
-    background-image url('../images/slider-certificaciones.png')
     .content
         height 100vh
         .content_
@@ -1571,14 +1965,14 @@ form
                 border-radius 30px
                 box-shadow 0 0.5rem 1rem rgba(0, 0, 0, .2)
                 margin 0 10px
-            #categoriasCol
+            div[id^='categoriasCol']
                 position absolute
                 z-index 999
                 margin-left 58px
                 border-radius 16px
                 top 37px
                 width 360px
-            #tagsCol
+            div[id^='tagsCol']
                 position absolute
                 z-index 999
                 margin-left 208px
@@ -1594,16 +1988,103 @@ form
                     color #323232
                     font-family font-light
                     text-decoration none
-                    padding 4px 7px 0
+                    padding 1px 7px 1px
                     border 1px solid #323232
                     font-size .7rem
                     border-radius 10px
                     margin-right 3px
                     margin-bottom 6px
                     display inline-block
+                .active
+                    background-color #323232
+                    color #FFF
     .content1
         padding 0 60px
         .item
+            display flex
+            margin-bottom 25px
+            .item_
+                display flex
+                flex-direction column
+                transition .5s all
+                &:hover
+                    transform scale(1.05)
+                    .content
+                        background #facd7f
+                        color #061D38
+                    p.category
+                        background #061D38 !important
+                        color #facd7f !important
+                    p.tit
+                        color #061d38 !important
+                    p.description
+                        color #061d38 !important
+                    .btn-tag
+                        background-color #061d38 !important
+                        color #facd7f !important
+                .image
+                    img
+                        width 100%
+                .content
+                    background #061D38
+                    padding 20px 15px 23px
+                    position relative
+                    overflow-y hidden
+                    height 100%
+                    transition .5s all
+                    &:hover
+                        .btn-leer
+                            bottom 0px
+                    .btn-leer
+                        position absolute
+                        bottom -30px
+                        left 0
+                        width 100%
+                        background #061D38
+                        color #facd7f
+                        font-size .9rem
+                        text-decoration none
+                        border-radius 0
+                        padding 5px 0px 4px
+                        transition all .5s
+                    p.category
+                        display inline-block
+                        background #FACD7F
+                        color #000017
+                        font-family font-bold
+                        font-size .9rem
+                        padding 3px 12px
+                        line-height 1.2
+                        text-transform uppercase
+                        transition .5s all
+                    p.tit
+                        font-family font-semibold
+                        line-height 1.2
+                        font-size 1rem
+                        color #FACD7F
+                        transition .5s all
+                    p.description
+                        line-height 1.2
+                        font-size .85rem
+                        color #FFF
+                        margin-bottom 10px
+                        transition .5s all
+                .tags
+                    padding 0
+                    margin-bottom 15px
+                    .btn-tag
+                        background-color #facd7f
+                        color #061d38
+                        padding 2px 7px 1px
+                        font-size .7rem
+                        margin-bottom 4px
+                        border-radius 13px
+                        font-family font-medium
+                        transition .5s all
+    .itemSearch
+        padding-right 40px
+        padding-left 40px
+        #itemTag
             display flex
             margin-bottom 25px
             .item_
@@ -1690,7 +2171,6 @@ form
     background-position bottom
     background-size cover
     background-repeat no-repeat
-    background-image url('../images/slider-programas.png')
     .content
         height 100vh
         .content_
@@ -1719,6 +2199,8 @@ form
             p.tit
                 font-size 4rem
                 font-family font-extrabold
+            img
+                height 90px
     .formulario
         position absolute
         right 0
@@ -1934,7 +2416,7 @@ form
     .content
         display flex
         justify-content space-between
-        .right-content
+        .left-content
             width 20%
             p.tit
                 margin 0
@@ -1945,6 +2427,9 @@ form
                 padding .7rem 1.25rem .6rem
                 img
                     height 20px
+            .accordion
+                position sticky
+                top 12vh
             .accordion-item
                 border unset
                 button.accordion-button
@@ -1967,6 +2452,10 @@ form
                         label.form-check-label
                             color #061d38
                             font-size .9rem
+                            a
+                                text-decoration none
+                                color #061d38
+                                font-size .9rem
                         .form-check
                             margin-bottom 0.35rem
                             .form-check-input
@@ -1982,14 +2471,40 @@ form
                                     background-color #061d38
                         .sublista
                             padding 8px 0 0px
-        .left-content
+            .accordion-bottom
+                background-color #FED68C
+                border 1px solid #061d38
+                border-bottom 2px solid
+                border-left 2px solid
+                border-right 2px solid
+                text-align center
+                transition .3s all
+                padding 5px 0
+                &:hover
+                    background-color #061d38
+                    color #FED68C
+                    border-color #061d38
+                button
+                    font-size 1rem
+                    color #061d38
+                    font-family font-medium
+                    background-color transparent
+                    border 0
+                    width 100%
+                    transition .3s all
+                    &:hover
+                        color #FED68C
+        .right-content
             width 77%
             ul.nav
                 display flex
-                justify-content space-around
+                justify-content flex-start
                 box-shadow 0 0.5rem 1rem rgba(0, 0, 0, .15)
-                padding 20px 0
+                padding 20px 60px
                 li.nav-item
+                    padding-right 60px
+                    &:last-child
+                        padding-right 0
                     button
                         color #061d38
                         font-family font-light
@@ -2001,20 +2516,21 @@ form
                         font-size .9rem
             .content
                 display flex
-                justify-content space-between
+                justify-content flex-start
                 flex-wrap wrap
                 margin-top 40px
                 .item
-                    width 32%
-                    margin-bottom 10px
+                    width 33%
+                    margin-bottom 15px
                     transition .5s all
+                    display flex
                     &:focus
                         transform scale(1.04)
                         .item-header, .item-content
                             box-shadow 0 0rem .5rem rgba(0, 0, 0, .4)
                     .item-content
                         background #E0E2E5
-                        margin-top 7px
+                        margin-right 15px
                         border-radius 5px
                         transition .5s all
                         .imagen
@@ -2065,6 +2581,24 @@ form
                                 padding 3px 15px 2px
                                 font-family font-semibold
                                 margin-bottom 10px
+                                transition .3s all
+                                &:hover
+                                    background #061d38
+                                    color #FED68C
+            .content_paginate
+                margin-top 15px
+                .pagination
+                    .page-item
+                        .page-link
+                            color #061d38
+                            border 1px solid #061d38
+                            &:focus
+                                box-shadow unset
+                    .active
+                        .page-link
+                            background-color #061d38
+                            color #FFF
+
 .sec26
     ul.nav
         display flex
@@ -2136,12 +2670,12 @@ form
                         align-items center
                         margin-bottom 20px
                         img
-                            width 36px
+                            width 32px
                             height auto
                         p
                             line-height 1.3
                             font-family font-light
-                            font-size .8rem
+                            font-size .7rem
                             color #FFF
                             padding-left 10px
                             margin 0
@@ -2150,11 +2684,11 @@ form
                         align-items center
                         margin-bottom 20px
                         img
-                            width 36px
+                            width 32px
                             height auto
                         p
                             line-height 1.3
-                            font-size .8rem
+                            font-size .7rem
                             color #FFF
                             padding-left 10px
                             font-family font-light
@@ -2165,12 +2699,12 @@ form
                         display flex
                         align-items center
                         img
-                            width 36px
+                            width 32px
                             height auto
                         p
                             line-height 1.3
                             font-family font-light
-                            font-size .8rem
+                            font-size .7rem
                             color #FFF
                             padding-left 10px
                             margin 0
@@ -2406,9 +2940,14 @@ form
                     padding-top .1rem
                     p
                         line-height 1.3
-                        margin 0
                         color #061d38
                         font-size .9rem
+                    ul
+                        padding-left 1rem
+                        li
+                            color #061d38
+                            font-size .9rem
+                            line-height 1.3
                     #accordion_flush
                         .accordion-item
                             background-color #FFF
@@ -2433,53 +2972,71 @@ form
             .accordion-only
                 padding 1rem 1.25rem
                 h2
-                    color #000000
-                    font-size .8rem
+                    color #061d38
+                    font-size .9rem
                     font-family font-bold
                     margin-bottom 2px
                 p
-                    color #000
+                    color #061d38
                     margin 0
                     line-height 1.2
-                    font-size .8rem
+                    font-size .9rem
                     margin-bottom 15px
                 ul
                     padding-left 1rem
                     li
-                        color #000
+                        color #061d38
                         font-size .8rem
             .accordion-teacher
-                padding 2rem 1.25rem 1rem
+                padding 2rem 1.25rem 2rem
                 background-color #e0e1e4
                 border 2px solid #e0e1e4
-                .teacher
-                    display flex
-                    .image
-                        margin-top auto
-                        margin-bottom auto
-                        width 25%
-                        img
-                            width 100%
+                #carousel-curso-profesor
+                    .item
+                        .teacher
+                            display flex
+                            .image
+                                margin-top auto
+                                margin-bottom auto
+                                width 25%
+                                img
+                                    width 100%
+                                    border-radius 50%
+                            .description
+                                padding-left 1rem
+                                width 75%
+                                h2
+                                    color #061d38
+                                    font-family font-medium
+                                    font-size 1.6rem
+                                    margin 0
+                                p
+                                    line-height 1.3
+                                p.name
+                                    color #061d38
+                                    margin 0
+                                    font-size 1.3rem
+                                    margin-bottom 20px
+                                .detail
+                                    p
+                                        color #061d38
+                                        font-size 1rem
+                    .owl-nav
+                        display none
+                    .owl-dots
+                        position absolute
+                        width 100%
+                        text-align center
+                        bottom -23px
+                        .owl-dot
+                            height 20px
+                            width 20px
                             border-radius 50%
-                    .description
-                        padding-left 1rem
-                        width 75%
-                        h2
-                            color #061d38
-                            font-family font-medium
-                            font-size 1.6rem
-                            margin 0
-                        p
-                            line-height 1.3
-                        p.name
-                            color #061d38
-                            margin 0
-                            font-size 1.3rem
-                            margin-bottom 20px
-                        p.detail
-                            color #061d38
-                            margin 0
-                            font-size 1rem
+                            background transparent
+                            border 2px solid #061d38
+                            margin 0 2px
+                        .active
+                            background-color #fed68c
             .accordion-certificate
                 padding 2rem 1rem
                 background-color #fed68c
@@ -2601,56 +3158,90 @@ form
                         padding 8px 33px 4px
 
 .sec29
-    padding-top 20vh
+    padding-top 22vh
     padding-bottom 40px
+    h1.tit
+        text-align center
+        font-size 1.8rem
+        font-family font-semibold
+        color #061d38
+        margin-bottom 60px
     .cart-left
         padding 0 60px
+        .modes
+            display flex
+            flex-wrap wrap
+            justify-content space-between
+            margin-bottom 35px
+            .mode
+                width 30%
+                display flex
+                flex-direction column
+                align-items center
+                cursor pointer
+                background-color #EFF0F4
+                border-radius 12px
+                padding 20px 0
+                img
+                    height 55px
+                    margin-bottom 10px
+                p
+                    font-size .9rem
+                    color #061d38
+                    margin 0
+                    font-family font-medium
+            .active_mode
+                background-color #FFCE7B
         .information
             h3
                 font-family font-medium
                 color #061d38
                 font-size 1rem
                 margin-bottom 17px
-            form
-                input, select
+            label
+                color #061d38
+                margin-bottom 3px
+                a
+                    color #061d38
+            input, select
+                border 2px solid #061d38
+                margin-bottom 15px
+                border-radius 13px
+                font-family font-light
+                color #061d38
+                padding 13px 15px
+                &:focus
+                    box-shadow unset
                     border 2px solid #061d38
-                    margin-bottom 15px
-                    border-radius 13px
-                    font-family font-light
-                    color #061d38
-                    padding 13px 15px
-                    &:focus
-                        box-shadow unset
-                        border 2px solid #061d38
-                input[type=checkbox]
-                    border-radius 0
-                    padding 0
-                    width 20px
-                    height 20px
-                    &:checked
-                        background-color #061d38
-                label.form-check-label
-                    padding-top 4px
-                    margin-right 5px
-                    font-family font-light
-                    font-size .85rem
-                .btn-pagar
-                    color #000
-                    background-color #ffce7b
-                    padding 14px 60px
-                    font-family font-medium
-                    font-size 1.1rem
-                    margin 17px 0 30px
+            input[type=checkbox]
+                border-radius 0
+                padding 0
+                width 20px
+                height 20px
+                &:checked
+                    background-color #061d38
+            label.form-check-label
+                padding-top 4px
+                margin-right 5px
+                font-family font-light
+                font-size .85rem
+            .btn-pagar
+                color #000
+                background-color #ffce7b
+                padding 14px 60px
+                font-family font-medium
+                font-size 1.1rem
+                margin 17px 0 30px
+                border 0
+                border-radius 0
+                &:focus
                     border 0
-                    border-radius 0
-                    &:focus
-                        border 0
-                .volver
-                    text-decoration none
-                    font-size .9rem
-                    color #061d38
-                    font-family font-light
-                    margin-left 15px
+            .volver
+                text-decoration none
+                font-size .9rem
+                color #061d38
+                font-family font-light
+                margin-left 15px
         .tit
             margin-bottom 30px
             h1
@@ -2714,16 +3305,26 @@ form
         .content
             background-color #eff0f4
             padding 40px 20px 20px 20px
+            border-radius 12px
             .items
                 border-bottom 3px solid #061d38
                 padding-bottom 10px
                 .item
                     display flex
+                    flex-wrap wrap
                     justify-content space-between
-                    margin-bottom 12px
+                    margin-bottom 25px
+                    position relative
+                    #delete_product_cart
+                        position absolute
+                        top -8px
+                        right 0
+                        i
+                            color #e3342f
                     .detail-left
                         display flex
                         align-items center
+                        width 80%
                         .image
                             padding 2px
                             border 3px solid #061d38
@@ -2746,8 +3347,9 @@ form
                                 margin 0
                     .detail-right
                         display flex
-                        justify-content space-between
+                        justify-content flex-end
                         align-items center
+                        width 18%
                         .price
                             text-align right
                             .price-before
@@ -2757,6 +3359,15 @@ form
                             .price-now
                                 font-family font-light
                                 font-size 1rem
+                    .empty_cart
+                        text-align center
+                        width 100%
+                        i
+                            font-size 2.5rem
+                            color #000
+                        p
+                            font-size 1rem
+                            color #000
             .subtotal
                 padding 20px 0 15px
                 border-bottom 3px solid #061d38
@@ -2804,6 +3415,8 @@ form
                                 font-size .9rem
                             &:last-child
                                 font-size .7rem
+                        p.p_total
+                            font-size 1rem
                     .price-right
                         font-size 1.3rem
                         color #000
@@ -2811,9 +3424,9 @@ form
                 .btn-pagar
                     color #000
                     background-color #ffce7b
-                    padding 14px 60px
+                    padding 10px 60px
                     font-family font-medium
-                    font-size 1.2rem
+                    font-size 1.1rem
                     margin 17px 0 30px
             .promo
                 h3
@@ -3089,7 +3702,7 @@ form
 
 .sec33
     padding-top 10vh
-    padding-bottom 80px
+    padding-bottom 50px
     .btn-action
         text-align center
         margin-top 35px
@@ -3097,6 +3710,26 @@ form
             background-color #FED68C
             color #061D38
             padding 5px 25px
+    .tit_badge
+        text-align center
+        h1
+            font-size 2.1rem
+            font-family font-semibold
+            margin-bottom 100px
+            text-align center
+            color #000
+            position relative
+            display inline-block
+            &:after
+                content ''
+                position absolute
+                height 2px
+                left 0
+                right 0
+                width 80%
+                bottom -13px
+                margin auto
+                background-color #fdcc7b
     .content
         display flex
         padding 0 60px
@@ -3131,7 +3764,7 @@ form
         .content-right
             padding-left 50px
             h1
-                font-size 2.1rem
+                font-size 1.9rem
                 font-family font-semibold
                 margin-bottom 10px
                 color #0e0e0f
@@ -3237,6 +3870,11 @@ form
 .sec35
     padding-top 23vh
     padding-bottom 80px
+    .tab-content > .tab-pane
+        display block !important
+        height 0 !important
+    .tab-content > .active
+        height auto !important
     .header_post
         display flex
         justify-content space-between
@@ -3337,7 +3975,7 @@ form
                 transition .5s all
                 &:hover
                     transform scale(1.05)
-                    .contentt
+                    .content
                         background #facd7f
                         color #061D38
                     p.category
@@ -3353,7 +3991,7 @@ form
                 .image
                     img
                         width 100%
-                .contentt
+                .content
                     background #061D38
                     padding 20px 15px 23px
                     position relative
@@ -3554,13 +4192,15 @@ form
                 color #061d38
                 font-size .8rem
                 font-family font-light 
+                a
+                    color #061d38
         .form-group
             margin-bottom 15px
             label
                 color #061d38
                 font-size .9rem
-                font-family font-light 
-            input.form-control
+                font-family font-light
+            input.form-control, textarea
                 background-color transparent
                 border 1px solid #061d38
                 padding-top 10px
@@ -3939,6 +4579,8 @@ form
         .login_trabajo_content
             padding-bottom 10px
             border-radius 20px
+            .alertas_div
+                padding 0 5%
             .tit
                 display flex
                 justify-content space-around
@@ -4012,6 +4654,68 @@ form
         padding 40px 30px
         .form-group
             margin-bottom 15px
+            label
+                color #FFF
+                font-size .9rem
+            input, select
+                background-color #FFF
+                border 0
+                border-radius 10px
+                padding-top 10px
+                padding-bottom 10px
+                color #061d38
+                font-size .9rem
+    p.aviso
+        text-align center
+        small
+            color #FFF
+    h2
+        font-family font-medium
+        font-size .9rem
+        text-align center
+        margin-top 20px
+    .back-login
+        color #061d38
+        text-decoration none
+        font-family font-medium
+        font-size .9rem
+    .btn-crear
+        background-color #fdcc7b
+        color #061d38
+        font-family font-medium
+        width 80%
+        border-radius 7px
+        font-size 1.1rem
+        margin auto
+        display flex
+        align-items center
+        justify-content center
+        margin-top 25px
+
+.sec42_2
+    margin-top -77vh
+    position relative
+    z-index 99
+    padding-bottom 40px
+    .tit_registro
+        h1
+            font-family font-semibold
+            color #FFF
+            font-size 2.3rem
+            text-align center
+            text-shadow 2px 2px 2px rgba(0, 0, 0, .3)
+        p
+            text-align center
+            color #FFF
+            line-height 1.3
+            font-size 1.15rem
+            text-shadow 2px 2px 2px rgba(0, 0, 0, .3)
+    .form_registro
+        background-color rgba(0, 0, 0, .4)
+        border-radius 20px
+        padding 40px 30px
+        .form-group
+            margin-bottom 15px
             input
                 background-color #FFF
                 border 0
@@ -4020,6 +4724,21 @@ form
                 padding-bottom 10px
                 color #061d38
                 font-size .9rem
+    p.aviso
+        text-align center
+        small
+            color #FFF
+    h2
+        font-family font-medium
+        font-size .9rem
+        text-align center
+        margin-top 20px
+        color #FFF
+    .back-login
+        color #FFF
+        text-decoration none
+        font-family font-medium
+        font-size .9rem
     .btn-crear
         background-color #fdcc7b
         color #061d38
@@ -4218,9 +4937,80 @@ form
                 font-size 5rem
 
 .sec46
+    .profile
+        padding-left 60px
+        padding-right 60px
+        display flex
+        justify-content flex-end
+        margin-bottom 0px
+        margin-top 0px
+        a.profile_user
+            cursor pointer
+            display flex
+            flex-wrap wrap
+            align-items center
+            text-decoration none
+            img
+                height 50px
+                width 50px
+                border-radius 50%
+                margin-right 10px
+            p
+                margin 0
+                line-height 1.3
+                font-family font-medium
+                font-size .9rem
+                color #000
+                position relative
+                padding-left 15px
+                &:before
+                    content ''
+                    position absolute
+                    top 0
+                    bottom 0
+                    margin auto
+                    left 0
+                    height 180%
+                    width 2.5px
+                    background-color #000
+        .dropdown-menu
+            padding 0
+            border-radius 0
+            border none
+            li
+                padding-left 0
+                .dropdown-item
+                    background-color #FFCE7B
+                    border 1px solid rgba(255,255,255,0.5)
+                    padding-left 14px
+                    padding-top 10px
+                    padding-bottom 10px
+                    color #061d38
+                    font-family font-medium
+                    display flex
+                    align-items center
+                    //white-space unset
+                    font-size .9rem
+                    transition .3s all
+                    &:active
+                        color inherit
+                    &:hover
+                        background-color #ffd58e
+                        border-left 3px solid #061d38
+                        padding-left 12px
+                    img
+                        width 30px
+                        height fit-content
+                        margin-right 10px
+                .active
+                    color #212529
+                    background-color #ffd58e
+                    border-left 3px solid #061d38
+                    padding-left 12px
     .busq
         background-color #FED68C
         padding 30px 30px 20px
+        margin-bottom 20px
         input, select
             border 1px solid #061D38
             border-radius 0
@@ -4299,12 +5089,83 @@ form
 
 .sec47
     padding-top 20vh
+    .profile
+        padding-left 60px
+        padding-right 60px
+        display flex
+        justify-content flex-end
+        margin-bottom 0px
+        margin-top 0px
+        a.profile_user
+            cursor pointer
+            display flex
+            flex-wrap wrap
+            align-items center
+            text-decoration none
+            img
+                height 50px
+                width 50px
+                border-radius 50%
+                margin-right 10px
+            p
+                margin 0
+                line-height 1.3
+                font-family font-medium
+                font-size .9rem
+                color #000
+                position relative
+                padding-left 15px
+                &:before
+                    content ''
+                    position absolute
+                    top 0
+                    bottom 0
+                    margin auto
+                    left 0
+                    height 180%
+                    width 2.5px
+                    background-color #000
+        .dropdown-menu
+            padding 0
+            border-radius 0
+            border none
+            li
+                padding-left 0
+                .dropdown-item
+                    background-color #FFCE7B
+                    border 1px solid rgba(255,255,255,0.5)
+                    padding-left 14px
+                    padding-top 10px
+                    padding-bottom 10px
+                    color #061d38
+                    font-family font-medium
+                    display flex
+                    align-items center
+                    //white-space unset
+                    font-size .9rem
+                    transition .3s all
+                    &:active
+                        color inherit
+                    &:hover
+                        background-color #ffd58e
+                        border-left 3px solid #061d38
+                        padding-left 12px
+                    img
+                        width 30px
+                        height fit-content
+                        margin-right 10px
+                .active
+                    color #212529
+                    background-color #ffd58e
+                    border-left 3px solid #061d38
+                    padding-left 12px
     .content
         display flex
         flex-wrap wrap
         padding-left 60px
         padding-right 60px
         justify-content space-between
+        margin-top 20px
         .content_left
             width 70%
             .offer
@@ -4337,12 +5198,40 @@ form
                     font-size 1.5rem
                 .description
                     h2
-                        font-family font-medium
+                        font-family font-semibold
                         font-size 1rem
                         margin-bottom 15px
                     p
                         font-size 1rem
                         line-height 1.3
+                    .btn-postular
+                        background-color #FED68C
+                        font-family font-medium
+                        font-size 1.1rem
+                        padding 10px 30px
+                        border-radius 12px
+                    .experience
+                        .item
+                            display flex
+                            flex-wrap wrap
+                            justify-content flex-start
+                            margin-bottom 20px
+                            .exp_left
+                                width 40%
+                                span
+                                    font-size 1rem
+                                    font-family font-medium
+                            .exp_right
+                                width 40%
+                                span
+                                    font-size 1rem
+                                    font-family font-medium
+                                .detail
+                                    padding-left 0px
+                                    p
+                                        line-height 1.4
+                                        margin 0
+                                        font-size 1rem
         .content_right
             width 25%
             text-align center
@@ -4371,6 +5260,12 @@ form
                 font-size 1.4rem
                 padding 20px 50px
                 border-radius 12px
+                position sticky
+                top 80px
+            .advertisements
+                margin-top 30px
+                img
+                    width 80%
     h2.similares
         text-align center
         font-size 2rem
@@ -4499,16 +5394,32 @@ form
                     border-left 3px solid #061d38
                     padding-left 12px
     .content
+        h5
+            font-size 1.05rem
+            font-family font-semibold
+            margin-bottom 20px
         .content_item
             box-shadow 0px 5px 13px rgba(0, 0, 0, .2)
             padding 25px 35px
             border-radius 20px
             margin-bottom 38px
-            h1
-                font-family font-semibold
-                color #000
-                font-size 1.2rem
-                margin-bottom 22px
+            .content_header
+                display flex
+                flex-wrap wrap
+                justify-content space-between
+                margin-bottom 20px
+                .btn-crear-oferta
+                    background-color #198754
+                    color #FFF
+                    font-size .9rem
+                    padding 3px 9px
+                    border-radius 15px
+                    text-decoration none
+                h1
+                    font-family font-semibold
+                    color #000
+                    font-size 1.2rem
+                    margin-bottom 0px
             form
                 .form-check
                     padding-left 33px
@@ -4557,6 +5468,182 @@ form
                     font-family font-medium
                     font-size .9rem
                     color #FFF
+            .btn-back
+                background-color #242953
+                font-family font-medium
+                font-size 1rem
+                color #fff
+            .offer_detail
+                h3
+                    font-size 1.1rem
+                    font-family font-medium
+                    color #242953
+                p
+                    font-size 1rem
+                    font-family font-medium
+                    color #242953
+                    line-height 1.3
+                    margin 0
+                    span
+                        font-family font-light
+            .applicants
+                .accordion
+                    .accordion-item
+                        border 0
+                        .accordion-button
+                            font-size 1rem
+                            font-family font-medium
+                            background-color #ffce7b
+                            color #242953
+                            border-radius 20px
+                            margin-bottom 5px
+                            &:focus
+                                box-shadow none
+                .description
+                    h2
+                        font-family font-semibold
+                        font-size 1rem
+                        margin-bottom 5px
+                    p
+                        font-size 1rem
+                        line-height 1.3
+                        font-family font-light
+                        color #242953
+                    .btn-postular
+                        background-color #FED68C
+                        font-family font-medium
+                        font-size 1.1rem
+                        padding 10px 30px
+                        border-radius 12px
+                    .experience
+                        .item
+                            display flex
+                            flex-wrap wrap
+                            justify-content flex-start
+                            margin-bottom 20px
+                            .exp_left
+                                width 40%
+                                span
+                                    font-size 1rem
+                                    font-family font-medium
+                            .exp_right
+                                width 40%
+                                span
+                                    font-size 1rem
+                                    font-family font-medium
+                                .detail
+                                    padding-left 0px
+                                    p
+                                        line-height 1.4
+                                        margin 0
+                                        font-size 1rem
+                                        color #242953
+        h3
+            font-size 1rem
+            font-family font-medium
+            margin 20px 0 6px
+        .btnAddExp
+            background-color #198754
+            color #FFF
+            font-size .9rem
+            padding 1px 9px
+            border-radius 15px
+            text-decoration none
+        .items
+            .item
+                position relative
+                padding-top 15px
+                .delete_item
+                    position absolute
+                    top 0
+                    right 0
+                    cursor pointer
+                    i
+                        color #dc3545
+                        font-size .9rem
+        .postulaciones
+            #datatable_wrapper
+                margin-top 10px
+                .row
+                    &:nth-child(1)
+                        background #061D38
+                        margin 0
+                        border-radius 8px
+                        padding 10px 0
+                .dataTables_length
+                    label
+                        font-size .77rem
+                        color #FFF
+                        margin 0
+                    select
+                        padding .375rem 1.75rem .375rem .75rem
+                        background #fff url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right .75rem center/8px 10px
+                .dataTables_filter
+                    label
+                        font-size .77rem
+                        color #FFF
+                        margin 0
+                        input
+                            font-size .77rem
+                            color #212529
+                .dataTables_info
+                    font-size .77rem
+                    color #212529
+                #datatable_paginate
+                    .pagination
+                        font-size .77rem
+                        .page-item
+                            .page-link
+                                color #061d38
+                                &:focus
+                                    box-shadow none
+                        .active
+                            .page-link
+                                background #061d38
+                                color #FFF
+                                &:focus
+                                    box-shadow none
+                        .disabled
+                            .page-link
+                                color rgba(108, 117, 125, 50%) !important
+            table
+                thead
+                    background #061D38
+                    color #fff
+                    tr
+                        th
+                            border-top 0px
+                            vertical-align middle
+                            &:first-child
+                                border-top-left-radius 8px
+                            &:last-child
+                                border-top-right-radius 8px
+                            p
+                                text-transform uppercase
+                                font-size .9rem
+                                margin 0
+                tbody
+                    tr
+                        background #FFF !important
+                        &:nth-of-type(odd)
+                                background rgb(247, 247, 247) !important
+                        &:last-child
+                            border-bottom-right-radius 8px
+                            border-bottom-left-radius 8px
+                            td
+                                &:first-child
+                                    border-bottom-left-radius 8px
+                                &:last-child
+                                    border-bottom-right-radius 8px
+                        &:hover
+                            box-shadow rgba(6, 29, 56, 75%) 0px 0px 0px 1px inset, rgba(6, 29, 56, 75%) 4px 0px 0px 0px inset !important;
+                            border-color rgba(6, 29, 56, 1) !important;
+                        td
+                            padding-top .5rem
+                            padding-bottom .5rem
+                            border-top 0px
+                            color #061D38
+                            font-size .8rem
     .radios_form
         label
             font-size .8rem
@@ -5047,8 +6134,11 @@ form
                             label
                                 margin-bottom 6px
                                 font-size .9rem
-                            input, select
+                            input[type=text], input[type=email], select, textarea
                                 background-color #fff
+                                border 1px solid #706F6F
+                                font-size .9rem
+                            input[type=checkbox]
                                 border 1px solid #706F6F
                                 font-size .9rem
                         p.bottom
@@ -6307,8 +7397,190 @@ form
                     .triangle
                         border-left 100px solid #D6DDE5
 
+.sec65
+    padding-top 25vh
+    padding-bottom 40px
+    .cart-right
+        .content
+            background-color #eff0f4
+            padding 40px 20px 20px 20px
+            .details
+                margin-bottom 25px
+                h2
+                    color #061d38
+                    font-family font-bold
+                    font-size 1.4rem
+                    margin-bottom 30px
+                    text-align center
+                p
+                    font-size 1.1rem
+                    line-height 1.3
+                    color #061d38
+                    font-family font-medium
+                    margin 6px
+                    span
+                        font-family font-regular
+                .p1
+                    font-family font-semibold
+                    margin-bottom 15px
+            .items
+                border-bottom 3px solid #061d38
+                border-top 3px solid #061d38
+                padding-bottom 10px
+                .item
+                    display flex
+                    flex-wrap wrap
+                    justify-content space-between
+                    margin 25px 0
+                    position relative
+                    #delete_product_cart
+                        position absolute
+                        top -8px
+                        right 0
+                        i
+                            color #e3342f
+                    .detail-left
+                        display flex
+                        align-items center
+                        width 80%
+                        .image
+                            padding 2px
+                            border 3px solid #061d38
+                            border-radius 10px
+                            margin-right 10px
+                            img
+                                height 55px
+                        .name
+                            h3
+                                font-family font-bold
+                                color #000000
+                                font-size 1.1rem
+                                margin-bottom 0px
+                                text-transform uppercase
+                            p
+                                font-family font-light
+                                font-size .9rem
+                                color #000000
+                                line-height 1.3
+                                margin 0
+                    .detail-right
+                        display flex
+                        justify-content flex-end
+                        align-items center
+                        width 18%
+                        .price
+                            text-align right
+                            .price-before
+                                font-family font-light
+                                font-size .7rem
+                                text-decoration line-through
+                            .price-now
+                                font-family font-light
+                                font-size 1rem
+                    .empty_cart
+                        text-align center
+                        width 100%
+                        i
+                            font-size 2.5rem
+                            color #000
+                        p
+                            font-size 1rem
+                            color #000
+            .subtotal
+                padding 20px 0 15px
+                border-bottom 3px solid #061d38
+                .item
+                    display flex
+                    justify-content space-between
+                    margin-bottom 7px
+                    p
+                        color #000
+                        margin 0
+                        font-size 1rem
+                        font-family font-semibold
+                    div.envios
+                        color #000
+                        margin 0
+                        font-size .9rem
+                        display flex
+                        line-height 1
+                        align-items center
+                        .signo
+                            cursor pointer
+                            color #FFF
+                            background-color #061d38
+                            height 18px
+                            width 18px
+                            border-radius 50%
+                            margin-left 8px
+                            display flex
+                            align-items center
+                            justify-content center
+            .total
+                padding-top 20px
+                .price
+                    display flex
+                    justify-content space-between
+                    align-items center
+                    .price-left
+                        p
+                            color #000
+                            margin 0
+                            &:first-child
+                                font-size .9rem
+                            &:last-child
+                                font-size .7rem
+                        p.p_total
+                            font-size 1rem
+                    .price-right
+                        font-size 1.3rem
+                        color #000
+                        font-family font-medium
+                .btn-pagar
+                    color #000
+                    background-color #ffce7b
+                    padding 10px 60px
+                    font-family font-medium
+                    font-size 1.1rem
+                    margin 17px 0 30px
+    .back
+        margin-top 30px
+        a
+            font-family font-medium
+            color #061d38
+            font-size 1rem
+            text-decoration none
 
-
+.sec66
+    padding-top 20vh
+    .shopping
+        box-shadow 0 5px 13px rgba(0, 0, 0, .2)
+        padding 25px 35px
+        border-radius 20px
+        margin-bottom 38px
+        h1
+            font-size 1.3rem
+            color #061D38
+            font-family font-bold
+            margin-bottom 20px
+        table
+            width 100%
+            thead
+                tr
+                    th
+                        color #061D38
+                        font-family font-semibold
+                        font-size 1rem
+                        border-bottom 1px solid #061D38
+            tbody
+                tr
+                    td
+                        color #061D38
+                        padding-top 13px
+                        p
+                            font-size .9rem
+                            line-height 1.3
+                            margin 0
 
 .footer
     background-position center
@@ -6324,6 +7596,7 @@ form
         img
             width 100px
     .col1
+        position relative
         ul
             list-style none
             display flex
@@ -6363,6 +7636,10 @@ form
                     &:nth-child(1)
                         margin-bottom 1rem
                         font-family font-bold
+                    a
+                        color #FFF
+                        text-decoration none
+                        font-family font-semibold
             .items
                 display flex
                 .mail

@@ -22,7 +22,7 @@
                             Editar curso
                         </span>
                     </div>
-                    {!! Form::model($course, ['route' => ['courses.update', [$course->id, 'id_get' => Request::get('id_get')]], 'method' => 'PUT']) !!}
+                    {!! Form::model($course, ['route' => ['courses.update', [$course->id, 'id_get' => Request::get('id_get')]], 'method' => 'PUT', 'class' => 'needs-validation', 'novalidate']) !!}
                     <div class="card-body row">
                         <div class="col-sm-12">
                             @include('admin.includes.alert')

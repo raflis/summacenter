@@ -22,7 +22,7 @@
                             Crear subarea
                         </span>
                     </div>
-                    {!! Form::open(['route' => 'course_subareas.store']) !!}
+                    {!! Form::open(['route' => 'course_subareas.store', 'class' => 'needs-validation', 'novalidate']) !!}
                     <div class="card-body row">
                         <div class="col-sm-12">
                             @include('admin.includes.alert')

@@ -2,114 +2,134 @@
 
 @section('content')
 
-<section class="sec2" id="sliderBlog">
+<section class="sec18">
+    @include('web.partials.header')
+</section>
+
+<section class="sec35">
     <div class="container-fluid">
-        <div class="row justify-content-center mx-0">
+        <div class="row">
+            <div class="col-md-12 breadcrumb___ pb-3">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item"><a href="{{ route('index') }}">Inicio</a></li>
+                      <li class="breadcrumb-item"><a href="{{ route('blog') }}">Blog</a></li>
+                      <li class="breadcrumb-item"><a href="{{ route('subcategory', [$post->blog_sub_category->blog_category->slug, $post->blog_sub_category->slug, $post->blog_sub_category->id]) }}">{{ $post->blog_sub_category->blog_category->name }} / {{ $post->blog_sub_category->name }}</a></li>
+                      <li class="breadcrumb-item active" aria-current="page">{{ $post->name }}</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-md-12 px-0">
-                <div id="carousel-header" class="owl-carousel">
-                    <div class="item text-center">
-                        <div class="slider">
-                            <img src="{{ asset('images/slider-blog.png') }}" alt="" class="img-slider img-desktop">
-                            <img src="{{ asset('images/slider-blog-mobile.png') }}" alt="" class="img-slider img-mobile">
-                        </div>
+                <div class="header_post">
+                    <div class="fecha">
+                        <img src="{{ asset('images/fecha.png') }}" alt="">
+                        <p>
+                            {{ mb_strtoupper(\Carbon\Carbon::parse($post->created_at)->formatLocalized('%A, %d DE %B %Y'), 'UTF-8') }}
+                        </p>
                     </div>
-                    <div class="item text-center">
-                        <div class="slider">
-                            <img src="{{ asset('images/slider-home-desktop.png') }}" alt="" class="img-slider img-desktop">
-                            <img src="{{ asset('images/slider-home-mobile.png') }}" alt="" class="img-slider img-mobile">
+                    <div class="redes">
+                        <p>
+                            COMPARTE ESTE ARTICULO EN:
+                        </p>
+                        <div class="images">
+                            <a href="">
+                                <img src="{{ asset('images/facebook.png') }}" alt="">
+                            </a>
+                            <a href="">
+                                <img src="{{ asset('images/twitter.png') }}" alt="">
+                            </a>
+                            <a href="">
+                                <img src="{{ asset('images/whatsapp.png') }}" alt="">
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-
-<section class="sec26" id="contenidoDelPost">
-    <div class="container">
-        <div class="row">
+            <div class="col-md-12 post_body">
+                <h1>
+                    {{ $post->name }}
+                </h1>
+                <img class="post_head" src="{{ $post->image2 }}" alt="">
+                <div class="content0">
+                    {!! htmlspecialchars_decode($post->body) !!}
+                </div>
+            </div>
+            <div class="col-md-12 navegacion">
+                <h3>
+                    NOTICIAS QUE TE PUEDEN INTERESAR
+                </h3>
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    @php $i = 0 @endphp
+                    @foreach ($blog_categories as $item)
+                    @if(count($item->blog_posts) > 0)
+                    @php $i++ @endphp
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link {{ ($i == 1)?'active':'' }}" id="pills_{{ $i }}_tab" data-bs-toggle="pill" data-bs-target="#pills_{{ $i }}" type="button" role="tab" aria-controls="pills_{{ $i }}" aria-selected="true">
+                            {{ $item->name }}
+                        </button>
+                    </li>
+                    @endif
+                    @endforeach
+                </ul>
+            </div>
             <div class="col-md-12">
-                <div class="contenido">
-                    <div class="imagen">
-                        <img src="{{ $post->image }}" alt="">
-                    </div>
-                    <h1>{{ $post->name }}</h1>
-                    <div class="detail">
-                        {!! htmlspecialchars_decode($post->body) !!}
-                    </div>
-                    <hr>
-                    <div class="autor">
-                        <div class="nombre">
-                            <span>{{ $post->author }}</span>
+                <div class="content">
+                    <div class="tab-content" id="pills-tabContent">
+                        @php $j = 0 @endphp
+                        @foreach ($blog_categories as $item)
+                        @if(count($item->blog_posts) > 0)
+                        @php $j++ @endphp
+                        <div class="tab-pane fade {{ ($j == 1)?'show active':'' }}" id="pills_{{ $j }}" role="tabpanel" aria-labelledby="pills_{{ $j }}_tab">
+                            <div class="content1">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div id="carousel-blog{{ $j }}" class="owl-carousel">
+                                            @foreach ($item->blog_posts as $item_p)
+                                            <div class="item">
+                                                <div class="col-md-4 item0">
+                                                    <div class="item0_">
+                                                        <div class="image">
+                                                            <a href="{{ route('post', [$item_p->blog_sub_category->blog_category->slug, $item_p->blog_sub_category->slug, $item_p->slug, $item_p->id]) }}">
+                                                                <img src="{{ $item_p->image1 }}" alt="">
+                                                            </a>
+                                                        </div>
+                                                        <div class="content">
+                                                            <a href="{{ route('post', [$item_p->blog_sub_category->blog_category->slug, $item_p->blog_sub_category->slug, $item_p->slug, $item_p->id]) }}" class="btn btn-leer">
+                                                                ARTÍCULO COMPLETO
+                                                            </a>
+                                                            <p class="category">
+                                                                {{ $item_p->blog_sub_category->name }}
+                                                            </p>
+                                                            <p class="tit">
+                                                                {{ $item_p->name }}
+                                                            </p>
+                                                            <p class="description">
+                                                                {{ $item_p->summary }}
+                                                            </p>
+                                                            <div class="tags">
+                                                                @foreach ($item_p->blog_tags as $item_t)
+                                                                <a href="{{ route('tag', $item_t->slug) }}" class="btn btn-tag">{{ $item_t->name }}</a> 
+                                                                @endforeach
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="detalle">
-                            <span>
-                                {!! htmlspecialchars_decode($post->author_description) !!}
-                                {!! htmlspecialchars_decode($post->author_description) !!}
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="sec21" id="formularioProyecto">
-    <div class="container-fluid content">
-        <div class="row">
-            <div class="col-md-12 imagen-mobile">
-                <img src="{{ asset('images/proyecto-formulario-mobile.png') }}" alt="">
-            </div>
-            <div class="col-md-5 px-0 imagenForm">
-            </div>
-            <div class="col-md-7 formularioProyecto">
-                <div class="formTot">
-                    <h4>Déjanos tus datos y nos pondremos en contacto contigo</h4>
-                    <div class="formulario row">
-                        <form action="{{ route('contacto') }}" method="POST">
-                        @csrf
-                        <div class="form-group col-md-12">
-                            <select name="project" id="" class="form-control" required>
-                                <option value="">Selecciona un proyecto</option>
-                                @foreach ($projects as $item)
-                                    <option value="{{ $item->name }}">{{ $item->name }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <input type="text" name="name" id="" class="form-control" placeholder="Nombre" required>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <input type="text" name="lastname" id="" class="form-control" placeholder="Apellidos" required>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <input type="text" name="telephone" id="" class="form-control" placeholder="Teléfono" required>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <input type="email" name="email" id="" class="form-control" placeholder="Email" required>
-                        </div>
-                        <div class="form-group col-md-12">
-                            <select name="project_type" id="" class="form-control" required>
-                                <option value="">Estoy interesado en</option>
-                                @foreach ($typeprojects as $item => $i)
-                                    <option value="{{ $i }}">{{ $i }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="form-group col-md-12">
-                            <textarea class="form-control" name="observation" id="" rows="3" placeholder="Mensaje"></textarea>
-                        </div>
-                        <div class="form-group col-md-12 enviar">
-                            <input type="submit" class="btn btn-enviar shadow" value="Enviar">
-                        </div>
-                        </form>
+                        @endif
+                        @endforeach
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
 
 @endsection

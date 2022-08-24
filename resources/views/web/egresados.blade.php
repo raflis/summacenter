@@ -2,16 +2,16 @@
 
 @section('content')
 
-<section class="sec13">
+<section class="sec13" style="background-image: url('{{ $pagefield->cover_pages[9]['image'] }}')">
     @include('web.partials.header')
     <div class="container-fluid content">
         <div class="row content_">
             <div class="col-md-7">
                 <p>
-                    Egresados 
+                    {{ $pagefield->cover_pages[9]['title1'] }}
                 </p>
                 <p>
-                    SUMMA
+                    {{ $pagefield->cover_pages[9]['title2'] }}
                 </p>
             </div>
         </div>
@@ -41,7 +41,7 @@
                     </p>
                     <a href="">
                         Conoce más sobre nuestros<br>Egresados Summa
-                        <img src="http://127.0.0.1:8000/images/arrow-right-white.png" alt="">
+                        <img src="{{ asset('images/arrow-right-white.png') }}" alt="">
                     </a>
                 </div>
             </div>
@@ -69,7 +69,7 @@
                                 Entérate de las últimas novedades que tenemos para nuestra comunidad de egresados.
                             </p>
                             <div class="btn-action">
-                                <a href="" class="btn btn-ingresa">INGRESA AQUÍ</a>
+                                <a href="{{ route('blog') }}" class="btn btn-ingresa">INGRESA AQUÍ</a>
                             </div>
                         </div>
                     </div>
@@ -85,7 +85,7 @@
                                 Como <strong>Egresado SUMMA</strong> tienes acceso a la Bolsa de Trabajo para toda la vida. Ingresa hoy y conoce a las empresas que publican sus ofertas laborales con nosotros.
                             </p>
                             <div class="btn-action">
-                                <a href="" class="btn btn-ingresa">INGRESA AQUÍ</a>
+                                <a href="{{ route('bolsa.trabajo') }}" class="btn btn-ingresa">INGRESA AQUÍ</a>
                             </div>
                         </div>
                     </div>
@@ -103,7 +103,7 @@
                                 <strong>Nuestra comunidad de egresados tienen un descuento especial de 15% en todos nuestros programas.</strong>
                             </p>
                             <div class="btn-action">
-                                <a href="" class="btn btn-ingresa">INGRESA AQUÍ</a>
+                                <a href="{{ route('capacitaciones-corporativas') }}" class="btn btn-ingresa">INGRESA AQUÍ</a>
                             </div>
                         </div>
                     </div>
@@ -119,74 +119,40 @@
             <h1>
                 NOVEDADES
             </h1>
-            <div class="col-md-4 item">
-                <div class="item_">
-                    <div class="image">
-                        <img src="{{ asset('images/articulo2.png') }}" alt="">
-                    </div>
-                    <div class="content">
-                        <a href="{{ route('post') }}" class="btn btn-leer">ARTÍCULO COMPLETO</a>
-                        <p class="category">
-                            Logros
-                        </p>
-                        <p class="tit">
-                            Summa Center celebra sus más de 1000 estudiantes
-                        </p>
-                        <p class="description">
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud 
-                        </p>
-                        <div class="tags">
-                            <a href="" class="btn btn-tag">Online</a>
-                            <a href="" class="btn btn-tag">SAP</a>
-                            <a href="" class="btn btn-tag">Educación</a>
-                            <a href="" class="btn btn-tag">Online</a>
-                            <a href="" class="btn btn-tag">SAP</a>
-                            <a href="" class="btn btn-tag">Educación</a>
-                            <a href="" class="btn btn-tag">Online</a>
-                            <a href="" class="btn btn-tag">SAP</a>
-                            <a href="" class="btn btn-tag">Educación</a>
+            @foreach ($posts as $item)
+                @foreach($item->blog_posts as $ite)
+                @if($loop->iteration <= 3)
+                <div class="col-md-4 item">
+                    <div class="item_">
+                        <div class="image">
+                            <a href="{{ route('post', [$ite->blog_sub_category->blog_category->slug, $ite->blog_sub_category->slug, $ite->slug, $ite->id]) }}">
+                                <img src="{{ $ite->image1 }}" alt="">
+                            </a>
+                        </div>
+                        <div class="content">
+                            <a href="{{ route('post', [$ite->blog_sub_category->blog_category->slug, $ite->blog_sub_category->slug, $ite->slug, $ite->id]) }}" class="btn btn-leer">
+                                ARTÍCULO COMPLETO
+                            </a>
+                            <p class="category">
+                                {{ $ite->blog_sub_category->name }}
+                            </p>
+                            <p class="tit">
+                                {{ $ite->name }}
+                            </p>
+                            <p class="description">
+                                {{ $ite->summary }}
+                            </p>
+                            <div class="tags">
+                                @foreach ($ite->blog_tags as $item_t)
+                                <a href="{{ route('tag', $item_t->slug) }}" class="btn btn-tag">{{ $item_t->name }}</a> 
+                                @endforeach
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4 item">
-                <div class="item_">
-                    <div class="image">
-                        <img src="{{ asset('images/articulo3.png') }}" alt="">
-                    </div>
-                    <div class="content">
-                        <a href="{{ route('post') }}" class="btn btn-leer">ARTÍCULO COMPLETO</a>
-                        <p class="category">
-                            Logros
-                        </p>
-                        <p class="tit">
-                            Summa Center celebra sus más de 1000 estudiantes
-                        </p>
-                        <p class="description">
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud 
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 item">
-                <div class="item_">
-                    <div class="image">
-                        <img src="{{ asset('images/articulo2.png') }}" alt="">
-                    </div>
-                    <div class="content">
-                        <a href="{{ route('post') }}" class="btn btn-leer">ARTÍCULO COMPLETO</a>
-                        <p class="category">
-                            Logros
-                        </p>
-                        <p class="tit">
-                            Summa Center celebra sus más de 1000 estudiantes
-                        </p>
-                        <p class="description">
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud 
-                        </p>
-                    </div>
-                </div>
-            </div>
+                @endif
+                @endforeach
+            @endforeach
             <div class="col-md-12 btn-action">
                 <a href="{{ route('blog') }}" class="btn btn-vermas">VER MÁS</a>
             </div>

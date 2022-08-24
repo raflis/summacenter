@@ -18,7 +18,7 @@ class WorkerTeacherController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth:user');
         $this->middleware('isadmin');
     }
     
@@ -63,6 +63,7 @@ class WorkerTeacherController extends Controller
             'item1' => 'required',
             'item2' => 'required',
             'item3' => 'required',
+            'item_course' => 'required',
             'order' => 'required',
         ];
 
@@ -75,6 +76,7 @@ class WorkerTeacherController extends Controller
             'item1.required' => 'Ingrese lugar de estudio',
             'item2.required' => 'Ingrese breve descripción',
             'item3.required' => 'Ingrese participaciones',
+            'item_course.required' => 'Ingrese detalle para el curso',
             'order.required' => 'Ingrese orden',
         ];
 
@@ -130,6 +132,7 @@ class WorkerTeacherController extends Controller
             'item1' => 'required',
             'item2' => 'required',
             'item3' => 'required',
+            'item_course' => 'required',
             'order' => 'required',
         ];
 
@@ -142,6 +145,7 @@ class WorkerTeacherController extends Controller
             'item1.required' => 'Ingrese lugar de estudio',
             'item2.required' => 'Ingrese breve descripción',
             'item3.required' => 'Ingrese participaciones',
+            'item_course.required' => 'Ingrese detalle para el curso',
             'order.required' => 'Ingrese orden',
         ];
 

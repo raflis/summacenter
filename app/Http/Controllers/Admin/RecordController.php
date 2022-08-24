@@ -5,8 +5,9 @@ namespace App\Http\Controllers\Admin;
 use Excel;
 use App\Models\Record;
 use Illuminate\Http\Request;
-use App\Models\Admin\Service;
 use App\Exports\RecordsExport;
+use App\Exports\ContactsExport;
+use App\Exports\CorporateExport;
 use App\Http\Controllers\Controller;
 
 class RecordController extends Controller
@@ -19,39 +20,89 @@ class RecordController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth:user');
         $this->middleware('isadmin');
     }
     
-    public function excel(Request $request)
+    public function excel_record(Request $request)
     {
         $name = $request->get('name');
         $lastname = $request->get('lastname');
-        $project = $request->get('project');
         $startdate = $request->get('start_date');
         $enddate = $request->get('end_date');
 
-        return Excel::download(new RecordsExport($name, $lastname, $project, $startdate, $enddate),'registros.xlsx');
+        return Excel::download(new RecordsExport($name, $lastname, $startdate, $enddate),'registros-inicio-curso.xlsx');
+    }
+
+    public function excel_contact(Request $request)
+    {
+        $name = $request->get('name');
+        $lastname = $request->get('lastname');
+        $startdate = $request->get('start_date');
+        $enddate = $request->get('end_date');
+
+        return Excel::download(new ContactsExport($name, $lastname, $startdate, $enddate),'registros-contacto.xlsx');
+    }
+
+    public function excel_corporate(Request $request)
+    {
+        $name = $request->get('name');
+        $lastname = $request->get('lastname');
+        $startdate = $request->get('start_date');
+        $enddate = $request->get('end_date');
+
+        return Excel::download(new CorporateExport($name, $lastname, $startdate, $enddate),'registros-corporativo.xlsx');
     }
 
     public function index(Request $request)
     {
         $name = $request->get('name');
         $lastname = $request->get('lastname');
-        $service = $request->get('service');
         $startdate = $request->get('start_date');
         $enddate = $request->get('end_date');
-        $project = $request->get('project');
-        $projects = Record::select('project')->distinct()->get();
 
         $records = Record::orderBy('id','Desc')
-                            ->project($project)
+                            ->whereIn('from', ['curso', 'inicio'])
                             ->name($name)
                             ->lastname($lastname)
                             ->startdate($startdate)
                             ->enddate($enddate)
                             ->paginate();
-        return view('admin.records.index', compact('records', 'projects'));
+        return view('admin.records.record', compact('records'));
+    }
+
+    public function contact(Request $request)
+    {
+        $name = $request->get('name');
+        $lastname = $request->get('lastname');
+        $startdate = $request->get('start_date');
+        $enddate = $request->get('end_date');
+
+        $records = Record::orderBy('id','Desc')
+                            ->whereIn('from', ['contacto'])
+                            ->name($name)
+                            ->lastname($lastname)
+                            ->startdate($startdate)
+                            ->enddate($enddate)
+                            ->paginate();
+        return view('admin.records.contact', compact('records'));
+    }
+
+    public function corporate(Request $request)
+    {
+        $name = $request->get('name');
+        $lastname = $request->get('lastname');
+        $startdate = $request->get('start_date');
+        $enddate = $request->get('end_date');
+
+        $records = Record::orderBy('id','Desc')
+                            ->whereIn('from', ['corporativo'])
+                            ->name($name)
+                            ->lastname($lastname)
+                            ->startdate($startdate)
+                            ->enddate($enddate)
+                            ->paginate();
+        return view('admin.records.corporate', compact('records'));
     }
 
     /**

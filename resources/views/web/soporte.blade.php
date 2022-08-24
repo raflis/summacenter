@@ -2,16 +2,16 @@
 
 @section('content')
 
-<section class="sec13">
+<section class="sec13" style="background-image: url({{ $pagefield->cover_pages[10]['image'] }})">
     @include('web.partials.header')
     <div class="container-fluid content">
         <div class="row content_">
             <div class="col-md-7">
                 <p>
-                    Soporte
+                    {{ $pagefield->cover_pages[10]['title1'] }}
                 </p>
                 <p>
-                    TÉCNICO Y ACADÉMICO
+                    {{ $pagefield->cover_pages[10]['title2'] }}
                 </p>
             </div>
         </div>
@@ -33,16 +33,10 @@
         <div class="row">
             <div class="col-md-7 presentacion">
                 <h1>
-                    Capacítate con nosotros y
-                    obtén el apoyo de soporte
-                    Técnico Summa 24/7
+                    {{ $pagefield->support_text[0]['title1'] }}
                 </h1>
                 <p class="text1">
-                    Porque sabemos de tu esfuerzo por capacitarte
-                    y que tus tiempos son limitados.
-                </p>
-                <p class="text2">
-                    <strong>Te impulsaremos a seguir avanzando</strong>
+                    {{ $pagefield->support_text[0]['title2'] }}
                 </p>
                 <div class="botones">
                     <a href="" class="btn btn-matricula">
@@ -54,7 +48,7 @@
                 </div>
             </div>
             <div class="col-md-5 video">
-                <iframe width="100%" height="330" src="https://www.youtube.com/embed/BsWSocrmlSI" 
+                <iframe width="100%" height="330" src="https://www.youtube.com/embed/{{ $pagefield->support_text[0]['video'] }}" 
                 title="YouTube video player" frameborder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen></iframe>
@@ -69,156 +63,52 @@
             <div class="col-md-8 soporte_left">
                 <div class="tit">
                     <h1>
-                        Como Alumno Summa tienes un espacio
-                        especial para resolver dudas o problemas del curso
+                        {{ $pagefield->support_text[0]['title3'] }}
                     </h1>
                     <p>
-                        Te ayudamos a desarrollar de manera adecuada y segura tu capacitación profesional, ofreciendo un servicio garantizado, profesional y de calidad.
+                        {{ $pagefield->support_text[0]['title4'] }}
                     </p>
                 </div>
                 <div class="items">
+                    @foreach ($pagefield->support_items1 as $item)
                     <div class="item">
                         <div class="image">
-                            <img src="{{ asset('images/soporte1.png') }}" alt="">
+                            <img src="{{ $item['image'] }}" alt="">
                         </div>
                         <h3>
-                            PREGUNTAS
+                            {{ $item['name'] }}
                         </h3>
                         <p>
-                            Relacionado a los temas tratados en clases
+                            {{ $item['detail'] }}
                         </p>
-                        <div class="item_button">
-                            <a href="" class="btn btn-contactar">CONTACTAR</a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="image">
-                            <img src="{{ asset('images/soporte2.png') }}" alt="">
-                        </div>
-                        <h3>
-                            PLATAFORMA
-                        </h3>
-                        <p>
-                            Dudas sobre la plataforma virtual y los webinar
-                        </p>
-                        <div class="item_button">
-                            <a href="" class="btn btn-contactar">CONTACTAR</a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="image">
-                            <img src="{{ asset('images/soporte3.png') }}" alt="">
-                        </div>
-                        <h3>
-                            MEJORA
-                        </h3>
-                        <p>
-                            Optimizar y mejorar el rendimiento de la plataforma
-                        </p>
-                        <div class="item_button">
-                            <a href="" class="btn btn-contactar">CONTACTAR</a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="image">
-                            <img src="{{ asset('images/soporte4.png') }}" alt="">
-                        </div>
-                        <h3>
-                            CONSULTA DE NOTAS
-                        </h3>
-                        <p>
-                            Consulta tus notas, proyecto, recuperación de exmanen, etc
-                        </p>
-                        <div class="item_button">
-                            <a href="" class="btn btn-contactar">CONTACTAR</a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="image">
-                            <img src="{{ asset('images/soporte5.png') }}" alt="">
-                        </div>
-                        <h3>
-                            LICENCIA SAP
-                        </h3>
-                        <p>
-                            Consultas sobre el estado de licencia y extenciones
-                        </p>
-                        <div class="item_button">
-                            <a href="" class="btn btn-contactar">CONTACTAR</a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="image">
-                            <img src="{{ asset('images/soporte5.png') }}" alt="">
-                        </div>
-                        <h3>
-                            INSTALACIÓN SAP
-                        </h3>
-                        <p>
-                            El equipo de soporte te ayudará
-                            e intalará el sistema para el
-                            desarrollo de tus clases
-                        </p>
-                        <div class="item_button">
-                            <a href="" class="btn btn-contactar">CONTACTAR</a>
-                        </div>
-                    </div>
+                        <!--<div class="item_button">
+                            <a href="#" class="btn btn-contactar">CONTACTAR</a>
+                        </div>-->
+                    </div>  
+                    @endforeach
                 </div>
             </div>
             <div class="col-md-4 soporte_right">
                 <div class="items">
                     <h1 class="tit">
-                        Beneficios de tener
-                        un equipo a tu disposición
+                        {{ $pagefield->support_text[0]['title5'] }}
                     </h1>
+                    @foreach ($pagefield->support_items2 as $item)
                     <div class="item">
                         <div class="image">
-                            <img src="{{ asset('images/soporte_r1.png') }}" alt="">
+                            <img src="{{ $item['image'] }}" alt="">
                         </div>
                         <h3>
-                            Atención Inmediata
+                            {{ $item['name'] }}
                         </h3>
                         <p>
-                            Brindamos atención Inmediata
-                            a todos nuestros estudiantes
-                            24/7 de forma remota.
+                            {{ $item['detail'] }}
                         </p>
                     </div>
-                    <div class="item">
-                        <div class="image">
-                            <img src="{{ asset('images/soporte_r2.png') }}" alt="">
-                        </div>
-                        <h3>
-                            Solución de incidencias
-                        </h3>
-                        <p>
-                            Nuestro equipo de Profesionales está disponible para brindar soluciones inmediatas a las posibles eventualidades que se presenten.
-                        </p>
-                    </div>
+                    @if(!$loop->last)
                     <hr>
-                    <div class="item">
-                        <div class="image">
-                            <img src="{{ asset('images/soporte_r3.png') }}" alt="">
-                        </div>
-                        <h3>
-                            Garantía de contacto
-                        </h3>
-                        <p>
-                            Podrá contactarnos a través de nuestras diversas formas: Telefónicamente, Whatsapp y mail.
-                        </p>
-                    </div>
-                    <hr>
-                    <div class="item">
-                        <div class="image">
-                            <img src="{{ asset('images/soporte_r4.png') }}" alt="">
-                        </div>
-                        <h3>
-                            Ahorra Costos
-                        </h3>
-                        <p>
-                            El servicio de apoyo no tiene costo alguno, tus consultas y opiniones nos ayudan a mejorar para brindarte una mejor experiencia. 
-                        </p>
-                    </div>
+                    @endif
+                    @endforeach
                 </div>
             </div>
         </div>

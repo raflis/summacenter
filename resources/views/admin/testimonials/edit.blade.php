@@ -22,7 +22,7 @@
                             Editar testimonio
                         </span>
                     </div>
-                    {!! Form::model($testimonial, ['route' => ['testimonials.update', $testimonial->id], 'method' => 'PUT']) !!}
+                    {!! Form::model($testimonial, ['route' => ['testimonials.update', $testimonial->id], 'method' => 'PUT', 'class' => 'needs-validation', 'novalidate']) !!}
                     <div class="card-body row">
                         <div class="col-sm-12">
                             @include('admin.includes.alert')

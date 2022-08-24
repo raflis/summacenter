@@ -25,11 +25,6 @@
                 <div class="dropdown-divider"></div>
                 <ul class="navbar-nav ml-0 d-block px-0 second">
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="javascript:void()" data-toggle="modal" data-target="#change">
-                            <i class="fas fa-cog text-gray"></i> Cambiar contraseña
-                        </a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link pl-3 pr-1" href="javascript:void()" data-toggle="modal" data-target="#logout">
                             <i class="fas fa-sign-out-alt text-gray"></i> Cerrar sesión
                         </a>

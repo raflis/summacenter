@@ -22,7 +22,7 @@
                             Crear partner
                         </span>
                     </div>
-                    {!! Form::open(['route' => 'partners.store']) !!}
+                    {!! Form::open(['route' => 'partners.store', 'class' => 'needs-validation', 'novalidate']) !!}
                     <div class="card-body row">
                         <div class="col-sm-12">
                             @include('admin.includes.alert')

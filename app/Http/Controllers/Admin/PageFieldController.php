@@ -15,6 +15,12 @@ class PageFieldController extends Controller
      * @return \Illuminate\Http\Response
      */
 
+    public function __construct()
+    {
+        $this->middleware('auth:user');
+        $this->middleware('isadmin');
+    }
+
     public function choose()
     {
         $pagefield = PageField::find(1);
@@ -25,6 +31,18 @@ class PageFieldController extends Controller
     {
         $pagefield = PageField::find(1);
         return view('admin.pagefields.achievement', compact('pagefield'));
+    }
+
+    public function cover_page()
+    {
+        $pagefield = PageField::find(1);
+        return view('admin.pagefields.cover_page', compact('pagefield'));
+    }
+
+    public function support()
+    {
+        $pagefield = PageField::find(1);
+        return view('admin.pagefields.support', compact('pagefield'));
     }
 
     public function index()
@@ -102,6 +120,14 @@ class PageFieldController extends Controller
 
             if($request->achievement_items):
                 $request->merge(['achievement_items'=>array_values(collect($request->achievement_items)->sortBy(['order'])->toArray())]);
+            endif;
+
+            if($request->support_items1):
+                $request->merge(['support_items1'=>array_values(collect($request->support_items1)->sortBy(['order'])->toArray())]);
+            endif;
+
+            if($request->support_items2):
+                $request->merge(['support_items2'=>array_values(collect($request->support_items2)->sortBy(['order'])->toArray())]);
             endif;
             
             $pagefield = PageField::find(1);

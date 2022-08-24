@@ -22,7 +22,7 @@
                             Crear área
                         </span>
                     </div>
-                    {!! Form::open(['route' => 'course_areas.store']) !!}
+                    {!! Form::open(['route' => 'course_areas.store', 'class' => 'needs-validation', 'novalidate']) !!}
                     <div class="card-body row">
                         <div class="col-sm-12">
                             @include('admin.includes.alert')

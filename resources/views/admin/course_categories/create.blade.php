@@ -22,7 +22,7 @@
                             Crear categoría
                         </span>
                     </div>
-                    {!! Form::open(['route' => ['course_categories.store', ['id_get' => Request::get('id_get'), 'name_get' => Request::get('name_get')]]]) !!}
+                    {!! Form::open(['route' => ['course_categories.store', ['id_get' => Request::get('id_get'), 'name_get' => Request::get('name_get')]], 'class' => 'needs-validation', 'novalidate']) !!}
                     <div class="card-body row">
                         <div class="col-sm-12">
                             @include('admin.includes.alert')

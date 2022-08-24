@@ -6,12 +6,15 @@
 
 <div class="form-group col-sm-12">
   {{ Form::label('name', 'Nombre del tema:') }} <code>*</code>
-  {{ Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Nombre del tema']) }}
+  {{ Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Nombre del tema', 'required']) }}
 </div>
 
 <div class="form-group col-sm-12">
   {{ Form::label('order', 'Orden de aparición:') }} <code>*</code>
-  {{ Form::number('order', null, ['class' => 'form-control', 'placeholder' => 'Orden']) }}
+  {{ Form::number('order', null, ['class' => 'form-control', 'placeholder' => 'Orden', 'required']) }}
+  <div class="invalid-feedback">
+    Ingrese orden a mostrar
+  </div>
 </div>
 
 <div class="px-3 col-sm-12 mb-3">

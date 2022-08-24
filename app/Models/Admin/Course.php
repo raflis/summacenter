@@ -12,15 +12,15 @@ class Course extends Model
     protected $table = 'courses';
 
     protected $casts = [
-        'benefits' => 'array',
+        //'benefits' => 'array',
     ];
 
     protected $fillable = [
-        'course_category_id', 'course_subarea_id', 'name', 'slug', 'title1', 'title2', 'title3', 
+        'course_category_id', 'course_subarea_id', 'name', 'slug', 'zoho_code', 'title1', 'title2', 'title3', 'title3_image',
         'slider', 'image', 'badge', 'certificate',
         'start_of_classes', 'schedule', 'duration', 'price', 'subtitle', 'modality',
         'download_video', 'brochure', 'video_id', 'objective', 'audience', 'benefits',
-        'worker_id', 'order',
+        'order',
     ];
 
     public function course_category()
@@ -33,9 +33,9 @@ class Course extends Model
         return $this->belongsTo(CourseSubarea::class);
     }
 
-    public function worker()
+    public function workers()
     {
-        return $this->belongsTo(Worker::class);
+        return $this->belongsToMany(Worker::class);
     }
 
     public function topics()

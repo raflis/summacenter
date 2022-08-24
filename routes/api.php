@@ -13,7 +13,12 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+Route::prefix('zoho')->group(function(){
+    Route::get('authorization_code', [App\Http\Controllers\Api\SohoController::class, 'auth'])->name('soho.authorization_code');
+    Route::get('refresh_token', [App\Http\Controllers\Api\SohoController::class, 'refresh_token'])->name('soho.refresh_token');
+});
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::prefix('credly')->group(function(){
+    Route::get('getAuthorizationCode', [App\Http\Controllers\Api\CredlyController::class, 'getAuthorizationCode'])->name('credly.getAuthorizationCode');
+    Route::get('results', [App\Http\Controllers\Api\CredlyController::class, 'results'])->name('credly.results');
 });

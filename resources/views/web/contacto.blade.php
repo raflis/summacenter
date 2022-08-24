@@ -19,36 +19,56 @@
                     <p>
                         Completa el formulario y nos pondremos en contacto rápidamente contigo.
                     </p>
-                    <form action="" class="row">
+                    <form action="{{ route('postContacto') }}" method="POST" class="row needs-validation" novalidate>
+                        @csrf
+                        <input type="hidden" name="from" value="contacto">
                         <div class="form-group col-md-6">
-                            <label for="name">Nombre completo</label>
+                            <label for="name">Nombres</label>
                             <input type="text" name="name" id="" class="form-control" required>
+                            <div class="invalid-feedback">
+                                Este campo es obligatorio
+                            </div>
                         </div>
                         <div class="form-group col-md-6">
+                            <label for="name">Apellidos</label>
+                            <input type="text" name="lastname" id="" class="form-control" required>
+                            <div class="invalid-feedback">
+                                Este campo es obligatorio
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
                             <label for="name">Correo electrónico</label>
-                            <input type="text" name="name" id="" class="form-control" required>
+                            <input type="email" name="email" id="" class="form-control" required>
+                            <div class="invalid-feedback">
+                                Este campo es obligatorio
+                            </div>
                         </div>
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-4">
                             <label for="name">DNI</label>
-                            <input type="text" name="name" id="" class="form-control" required>
+                            <input type="text" name="document" id="" class="form-control" required>
+                            <div class="invalid-feedback">
+                                Este campo es obligatorio
+                            </div>
                         </div>
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-4">
                             <label for="name">Número de teléfono</label>
-                            <input type="text" name="name" id="" class="form-control" required>
+                            <input type="text" name="telephone" id="" class="form-control" required>
+                            <div class="invalid-feedback">
+                                Este campo es obligatorio
+                            </div>
                         </div>
                         <div class="form-group col-md-12">
                             <label for="name">Necesito apoyo en lo siguiente</label>
-                            <input type="text" name="name" id="" class="form-control" required>
-                        </div>
-                        <div class="form-group col-md-12">
-                            <label for="name">Necesito apoyo en lo siguiente</label>
-                            <input type="text" name="name" id="" class="form-control" required>
+                            <textarea name="observation" id="" class="form-control"></textarea>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required>
                             <label class="form-check-label" for="flexCheckDefault">
-                                Acepto expresamente todos los Términos y condiciones
+                                Acepto expresamente todos los <a target="_blank" href="{{ route('terminos-y-condiciones') }}">Términos y Condiciones</a>
                             </label>
+                            <div class="invalid-feedback">
+                                Acepte los términos
+                            </div>
                         </div>
                         <div class="form-group col-md-12 text-center">
                             <button type="submit" class="btn btn-enviar">ENVIAR</button>
@@ -62,10 +82,7 @@
                                     Encuentranos en:
                                 </p>
                                 <p class="t2">
-                                    Calle Germán Schreiber
-                                    Gulsmanco 246 San Isidro,
-                                    cruce con Canaval y
-                                    Moreyra
+                                    {{ $setting->address }}
                                 </p>
                             </div>
                         </div>
@@ -74,8 +91,8 @@
                             <div class="text">
                                 <p class="t1">Teleféfono:</p>
                                 <p class="t2">
-                                    932 490 078 <br>
-                                    +51 932 490 078
+                                    {{ $setting->telephone }}<br>
+                                    {{ $setting->whatsapp }}
                                 </p>
                             </div>
                         </div>
@@ -84,7 +101,7 @@
                             <div class="text">
                                 <p class="t1">E-mail:</p>
                                 <p class="t2">
-                                    coordinacion@summacenter.net
+                                    {{ $setting->email }}
                                 </p>
                             </div>
                         </div>

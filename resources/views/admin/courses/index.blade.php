@@ -54,7 +54,6 @@
                                 <th>Área</th>
                                 <th>Categoría</th>
                                 <th>Modalidad</th>
-                                <th>Docente</th>
                                 <th>Inicio</th>
                                 <th>Inversión</th>
                                 <th># de Temas</th>
@@ -71,7 +70,6 @@
                                 <td>{{ $item->course_category->course_area->name }}</td>
                                 <td>{{ $item->course_category->name }}</td>
                                 <td>{{ $item->modality }}</td>
-                                <td>{{ $item->worker->fullname }}</td>
                                 <td>{{ $item->start_of_classes }}</td>
                                 <td>{{ $item->price }}</td>
                                 <td>{{ count($item->topics) }}</td>

@@ -12,8 +12,8 @@ class Worker extends Model
     protected $table = 'workers';
 
     protected $fillable = [
-        'course_area_id', 'type', 'fullname', 'image', 'position', 'telephone',
-        'email', 'item1', 'item2', 'item3', 'order',
+        'course_area_id', 'type', 'fullname', 'image', 'image_course', 'position', 'telephone',
+        'email', 'item1', 'item2', 'item3', 'item_course', 'order',
     ];
 
     public function course_area()
@@ -23,6 +23,6 @@ class Worker extends Model
 
     public function courses()
     {
-        return $this->hasMany(Course::class);
+        return $this->belongsToMany(Course::class);
     }
 }

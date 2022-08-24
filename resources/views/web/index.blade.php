@@ -8,8 +8,9 @@
         <p>Para más información</p>
         <p>INGRESA TUS DATOS</p>
         <div class="formulario_ row">
-            <form action="{{ route('index') }}" method="POST">
+            <form action="{{ route('postIndex') }}" method="POST" class="needs-validation" novalidate>
             @csrf
+            <input type="hidden" name="from" value="inicio">
             <div class="form-group col-md-12">
                 <label for="name">Nombres</label>
                 <input type="text" name="name" id="" class="form-control" placeholder="Nombre" required>
@@ -17,6 +18,10 @@
             <div class="form-group col-md-12">
                 <label for="lastname">Apellidos</label>
                 <input type="text" name="lastname" id="" class="form-control" placeholder="Apellidos" required>
+            </div>
+            <div class="form-group col-md-12">
+                <label for="document">DNI</label>
+                <input type="text" name="document" id="" class="form-control" placeholder="DNI" required>
             </div>
             <div class="form-group col-md-12">
                 <label for="email">Email</label>
@@ -27,9 +32,14 @@
                 <input type="text" name="telephone" id="" class="form-control" placeholder="Celular" required>
             </div>
             <div class="form-group col-md-12">
-                <label for="course">Curso de Interés</label>
-                <select name="course" id="" class="form-select" required>
+                <label for="interested_course">Curso de Interés</label>
+                <select name="interested_course" id="" class="form-select" required>
                     <option value="">Estoy interesado en</option>
+                    @foreach ($course_areas as $item)
+                        @foreach ($item->courses as $item_)
+                        <option value="{{ $item_->zoho_code }}|{{ $item_->name }}">{{ $item_->name }}</option>
+                        @endforeach
+                    @endforeach
                 </select>
             </div>
             <div class="form-group col-md-12 enviar">
@@ -91,14 +101,14 @@
             <div class="col-md-7">
                 <div class="title">
                     <h1>
-                        {{ $pagefields->choose_title }}
+                        {{ $pagefield->choose_title }}
                     </h1>
                     <p>
-                        {{ $pagefields->choose_text }}
+                        {{ $pagefield->choose_text }}
                     </p>
                 </div>
                 <div class="items">
-                    @foreach ($pagefields->choose_items as $item)
+                    @foreach ($pagefield->choose_items as $item)
                     <div class="item">
                         <div class="image">
                             <img src="{{ $item['image'] }}" alt="">
@@ -145,7 +155,7 @@
                                 <h4>
                                     {{ $item->text }}
                                 </h4>
-                                <a href="" class="btn btn-vermas">VER MÁS</a>
+                                <a href="{{ route('programas', $item->slug) }}" class="btn btn-vermas">VER MÁS</a>
                             </div>
                         </div>
                     </div>
@@ -156,6 +166,7 @@
     </div>
 </section>
 
+@if(count($featured_posts) > 0)
 <section class="sec5">
     <div class="container-fluid">
         <div class="row">
@@ -164,66 +175,40 @@
                     ARTÍCULOS DESTACADOS
                 </h1>
             </div>
+            @foreach ($featured_posts as $item_p)
             <div class="col-md-4 item">
                 <div class="item_">
                     <div class="image">
-                        <img src="{{ asset('images/articulo1.png') }}" alt="">
+                        <a href="{{ route('post', [$item_p->blog_sub_category->blog_category->slug, $item_p->blog_sub_category->slug, $item_p->slug, $item_p->id]) }}">
+                            <img src="{{ $item_p->image1 }}" alt="">
+                        </a>
                     </div>
                     <div class="content">
-                        <a href="{{ route('post') }}" class="btn btn-leer">ARTÍCULO COMPLETO</a>
+                        <a href="{{ route('post', [$item_p->blog_sub_category->blog_category->slug, $item_p->blog_sub_category->slug, $item_p->slug, $item_p->id]) }}" class="btn btn-leer">
+                            ARTÍCULO COMPLETO
+                        </a>
                         <p class="category">
-                            Logros
+                            {{ $item_p->blog_sub_category->name }}
                         </p>
                         <p class="tit">
-                            Summa Center celebra sus más de 1000 estudiantes
+                            {{ $item_p->name }}
                         </p>
                         <p class="description">
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud 
+                            {{ $item_p->summary }}
                         </p>
+                        <div class="tags">
+                            @foreach ($item_p->blog_tags as $item_t)
+                            <a href="{{ route('tag', $item_t->slug) }}" class="btn btn-tag">{{ $item_t->name }}</a> 
+                            @endforeach
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 item">
-                <div class="item_">
-                    <div class="image">
-                        <img src="{{ asset('images/articulo2.png') }}" alt="">
-                    </div>
-                    <div class="content">
-                        <a href="{{ route('post') }}" class="btn btn-leer">ARTÍCULO COMPLETO</a>
-                        <p class="category">
-                            Logros
-                        </p>
-                        <p class="tit">
-                            Summa Center celebra sus más de 1000 estudiantes
-                        </p>
-                        <p class="description">
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud 
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 item">
-                <div class="item_">
-                    <div class="image">
-                        <img src="{{ asset('images/articulo3.png') }}" alt="">
-                    </div>
-                    <div class="content">
-                        <a href="{{ route('post') }}" class="btn btn-leer">ARTÍCULO COMPLETO</a>
-                        <p class="category">
-                            Logros
-                        </p>
-                        <p class="tit">
-                            Summa Center celebra sus más de 1000 estudiantes
-                        </p>
-                        <p class="description">
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud 
-                        </p>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
+@endif
 
 <section class="sec6">
     <div class="container-fluid">
@@ -278,18 +263,18 @@
         <div class="row justify-content-center">
             <div class="col-md-12 title">
                 <h1>
-                    {{ $pagefields->achievement_title }}
+                    {{ $pagefield->achievement_title }}
                 </h1>
             </div>
             <div class="col-md-12 logros">
                 <div class="logros_">
                     <img src="{{ asset('images/mundo.png') }}" alt="">
                     <div class="texto">
-                        {{ $pagefields->achievement_text }}
+                        {{ $pagefield->achievement_text }}
                     </div>
                 </div>
             </div>
-            @foreach ($pagefields->achievement_items as $item)
+            @foreach ($pagefield->achievement_items as $item)
             <div class="col-md-3 item" id="counters_1">
                 <div class="image">
                     <img src="{{ $item['image'] }}" alt="">
@@ -316,13 +301,13 @@
                         VERIFICA TU CERTIFICACIÓN
                     </h5>
                     <p>
-                        Como alumno Summa puedes ingresar tu documento
-                        de identidad y verificar tu certificación emitida por
-                        nuestra institución, respaldada internacionalmente
+                        Como alumno Summa puedes ingresar tu correo de
+                        usuario y verificar tu insignia emitida por nuestra
+                        institución, respaldada internacionalmente
                         por Credly.
                     </p>
-                    <form action="{{ route('verifica-tu-certificacion') }}" method="GET">
-                        <input type="text" class="form-control shadow" name="document" placeholder="Nro. Documento de Identidad">
+                    <form action="{{ route('verifica-tu-certificacion') }}" method="GET" class="needs-validation" novalidate>
+                        <input type="email" class="form-control shadow" name="email" placeholder="Ingrese su email" required>
                         <input type="submit" value="Verificar">
                     </form>
                 </div>

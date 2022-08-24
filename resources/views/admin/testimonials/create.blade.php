@@ -22,7 +22,7 @@
                             Crear testimonio
                         </span>
                     </div>
-                    {!! Form::open(['route' => 'testimonials.store']) !!}
+                    {!! Form::open(['route' => 'testimonials.store', 'class' => 'needs-validation', 'novalidate']) !!}
                     <div class="card-body row">
                         <div class="col-sm-12">
                             @include('admin.includes.alert')

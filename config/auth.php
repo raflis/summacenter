@@ -40,6 +40,16 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+
+        'user' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
+        
+        'jobbank' => [
+            'driver' => 'session',
+            'provider' => 'job_bank_users',
+        ],
     ],
 
     /*
@@ -63,6 +73,11 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
+        ],
+
+        'job_bank_users' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Admin\JobBankUser::class,
         ],
 
         // 'users' => [

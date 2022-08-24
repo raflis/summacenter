@@ -2,19 +2,19 @@
 
 @section('content')
 
-<section class="sec9">
+<section class="sec9" style="background-image: url({{ $pagefield->cover_pages[3]['image'] }})">
     @include('web.partials.header')
     <div class="container-fluid content">
         <div class="row content_">
             <div class="col-md-7">
                 <p>
-                    INSIGNIAS DIGITALES
+                    {{ $pagefield->cover_pages[3]['title1'] }}
                 </p>
-                <p>
-                    Revoluciona tu CV en el
+                <p class="tit">
+                    {{ $pagefield->cover_pages[3]['title2'] }}
                 </p>
-                <p>
-                    MERCADO LABORAL
+                <p class="tit">
+                    {{ $pagefield->cover_pages[3]['title3'] }}
                 </p>
             </div>
         </div>

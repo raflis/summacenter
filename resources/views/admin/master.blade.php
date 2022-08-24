@@ -10,6 +10,8 @@
     <link rel="icon" href="{{ asset('images/favicon.png') }}" type="image/png" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('static/admin/css/admin.css?v='.time()) }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/css/bootstrap-select.min.css">
+
     <script src="https://kit.fontawesome.com/084224f6ac.js" crossorigin="anonymous"></script>
     <title>Administrador de contenidos | SummaCenter</title>
     <style>
@@ -20,75 +22,7 @@
         box-shadow: rgb(10 112 206 / 75%) 0px 0px 0px 1px inset, rgb(10 112 206 / 75%) 4px 0px 0px 0px inset !important;
         border-color: rgb(10, 112, 206) !important;
       }
-
-      .loading{
-        position: fixed;
-        width: 100vw;
-        height: 120vh;
-        background: rgba(250, 250, 250, .95);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 99999;
-      }
-      #loader {
-          border: 12px solid #f3f3f3;
-          border-radius: 50%;
-          border-top: 12px solid #444444;
-          width: 70px;
-          height: 70px;
-          animation: spin 1s linear infinite;
-          z-index: 9999;
-      }
-        
-      @keyframes spin {
-          100% {
-              transform: rotate(360deg);
-          }
-      }
-        
-      .center-all  {
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          margin: auto;
-      }
-
-      textarea.form-control{
-        font-size: .85rem;
-      }
-
-::-webkit-scrollbar {
-    width: 10px;
-    height: 9px;
-    background: rgb(196, 196, 196);
-}
-
-::-webkit-scrollbar {
-    width: 10px;
-    height: 9px;
-    background: #C4C4C4;
-}
-
-::-webkit-scrollbar-thumb {
-    width: 10px;
-    background: rgb(81, 81, 81);
-}
-::-webkit-scrollbar-thumb {
-    width: 10px;
-    background: #515151;
-}
-
-::-webkit-scrollbar-track {
-    box-shadow: white 0px 0px 5px inset;
-}
-::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px white;
-}
-
-  </style>
+    </style>
 </head>
 <body>
     <div class="loading">
@@ -143,7 +77,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                <a class="btn btn-danger" href="{{ route('login.logout') }}" class="text-decoration-none text-white">Cerrar sesión</a>
+                <a class="btn btn-danger" href="{{ route('logout') }}" class="text-decoration-none text-white">Cerrar sesión</a>
             </div>
           </div>
         </div>
@@ -179,31 +113,57 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/js/bootstrap-select.min.js"></script>
     <script src="{{ asset('static/admin/js/admin.js?v='.time()) }}"></script>
     <script>
+      (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              } else{ // for me
+                form.classList.add('submitted'); // for me
+                $('input[type=submit]').attr('value', 'Cargando ...');
+                $('input[type=submit]').attr('disabled', true);
+                $(this).find(':submit').html('<i class="fa fa-spinner fa-spin"></i> Cargando ...');
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+    </script>
+    <script>
       $(function () {
-        $('[data-toggle="tooltip"]').tooltip()
+        $('[data-toggle="tooltip"]').tooltip();
       })
 
-      @if(Route::currentRouteName()!="progress.create")
       $('form').submit(function (e) {
         if ($(this).hasClass('submitted')) {
+            console.log('no duplicates');
             e.preventDefault();
         }
         else {
-            $(this).find(':submit').html('<i class="fa fa-spinner fa-spin"></i>');
+            $(this).find(':submit').html('<i class="fa fa-spinner fa-spin"></i> Cargando ...');
+            //$(this).find(':submit').prop('value', 'Cargando ...');
+            $(this).find(':submit').prop('disabled', true);
             //$(this).find(":submit").prop('disabled', true);
-            $(this).addClass('submitted');
+            //$(this).addClass('submitted');
             //$("*").css("cursor", "wait");
         }
       });
-      @endif
     </script>
     <script src="{{ asset('static/admin/vendor/ckeditor/ckeditor.js') }}"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/ckeditor/4.5.11/adapters/jquery.js"></script>
     <script>
       $('.ckeditor').ckeditor({
-        height: 100,
+        height: 150,
         filebrowserImageBrowseUrl: route_prefix + '?type=Images',
         filebrowserImageUploadUrl: route_prefix + '/upload?type=Images&_token=LbN1W47Wmxi1atddNpT3pLcmTqo3gkrtKvrkPVju',
         filebrowserBrowseUrl: route_prefix + '?type=Files',

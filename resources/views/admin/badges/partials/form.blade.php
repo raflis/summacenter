@@ -8,52 +8,55 @@
 
 <div class="form-group col-sm-6">
   {{ Form::label('category', 'Categoría:') }} <code>*</code>
-  {{ Form::select('category', getBadge(0, 'all'), null, ['class' => 'form-control', 'placeholder' => 'Selecciona categoría']) }}
+  {{ Form::select('category', getBadge(0, 'all'), null, ['class' => 'custom-select', 'placeholder' => 'Selecciona categoría', 'required']) }}
 </div>
 
 <div class="form-group col-sm-6">
   {{ Form::label('name', 'Nombre:') }} <code>*</code>
-  {{ Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Nombre']) }}
+  {{ Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Nombre', 'required']) }}
 </div>
 
 <div class="form-group col-sm-6">
   {{ Form::label('slug', 'URL amigable') }} <code>*</code>
-  {{ Form::text('slug', null, ['class' => 'form-control', 'id' => 'slug']) }}
+  {{ Form::text('slug', null, ['class' => 'form-control', 'id' => 'slug', 'required']) }}
 </div>
 
 <div class="form-group col-sm-4">
   {{ Form::label('type', 'Tipo:') }} <code>*</code>
-  {{ Form::text('type', null, ['class' => 'form-control', 'placeholder' => 'Tipo']) }}
+  {{ Form::text('type', null, ['class' => 'form-control', 'placeholder' => 'Tipo', 'required']) }}
 </div>
 
 <div class="form-group col-sm-4">
   {{ Form::label('level', 'Nivel:') }} <code>*</code>
-  {{ Form::text('level', null, ['class' => 'form-control', 'placeholder' => 'Nivel']) }}
+  {{ Form::text('level', null, ['class' => 'form-control', 'placeholder' => 'Nivel', 'required']) }}
 </div>
 
 <div class="form-group col-sm-4">
   {{ Form::label('time', 'Tiempo:') }} <code>*</code>
-  {{ Form::text('time', null, ['class' => 'form-control', 'placeholder' => 'Tiempo']) }}
+  {{ Form::text('time', null, ['class' => 'form-control', 'placeholder' => 'Tiempo', 'required']) }}
 </div>
 
 <div class="form-group col-sm-12">
   {{ Form::label('detail', 'Detalle:') }} <code>*</code>
-  {{ Form::textarea('detail', null, ['class' => 'form-control', 'placeholder' => 'Detalle', 'rows' => 3]) }}
+  {{ Form::textarea('detail', null, ['class' => 'form-control', 'placeholder' => 'Detalle', 'rows' => 3, 'required']) }}
 </div>
 
 <div class="form-group col-sm-6">
   {{ Form::label('criterion1', 'Criterio 1:') }} <code>*</code>
-  {{ Form::text('criterion1', null, ['class' => 'form-control', 'placeholder' => 'Criterio']) }}
+  {{ Form::text('criterion1', null, ['class' => 'form-control', 'placeholder' => 'Criterio', 'required']) }}
 </div>
 
 <div class="form-group col-sm-6">
   {{ Form::label('criterion2', 'Criterio 2:') }} <code>*</code>
-  {{ Form::text('criterion2', null, ['class' => 'form-control', 'placeholder' => 'Criterio']) }}
+  {{ Form::text('criterion2', null, ['class' => 'form-control', 'placeholder' => 'Criterio', 'required']) }}
 </div>
 
 <div class="form-group col-sm-12">
   {{ Form::label('order', 'Orden:') }} <code>*</code>
-  {{ Form::number('order', null, ['class' => 'form-control', 'placeholder' => 'Orden']) }}
+  {{ Form::number('order', null, ['class' => 'form-control', 'placeholder' => 'Orden', 'required']) }}
+  <div class="invalid-feedback">
+    Ingrese orden a mostrar
+  </div>
 </div>
 
 <div class="form-group col-sm-6">
@@ -64,7 +67,7 @@
         <i class="far fa-image"></i> Elegir
         </a>
     </span>
-    {!! Form::text('image',null,['class'=>'form-control','id'=>'thumbnail1']) !!}
+    {!! Form::text('image',null,['class'=>'form-control','id'=>'thumbnail1', 'required']) !!}
   </div>
   <div id="holder1" style="margin-top:15px;max-height:100px;">
   @if(Route::currentRouteName()=="badges.edit")
@@ -81,7 +84,7 @@
         <i class="far fa-image"></i> Elegir
         </a>
     </span>
-    {!! Form::text('image2',null,['class'=>'form-control','id'=>'thumbnail2']) !!}
+    {!! Form::text('image2',null,['class'=>'form-control','id'=>'thumbnail2', 'required']) !!}
   </div>
   <div id="holder2" style="margin-top:15px;max-height:100px;">
   @if(Route::currentRouteName()=="badges.edit")
@@ -94,12 +97,12 @@
   <div class="card shadow col-sm-12 px-0">
       <div class="card-header py-3 card-into">
         <h6 class="m-0 font-weight-bold text-primary float-left">Habilidades:</h6>
-        <button href="" class="btn btn-success btn-icon-split float-right añadir">
+        <p class="btn btn-success btn-icon-split float-right añadir">
           <span class="icon text-white-50">
             <i class="fas fa-plus"></i>
           </span>
           <span class="text text-white">Añadir</span>
-        </button>
+        </p>
       </div>
       <div class="texto row px-3">
           @if (Route::currentRouteName()=="badges.create")

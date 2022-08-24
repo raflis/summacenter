@@ -22,7 +22,7 @@
                             Editar insignia
                         </span>
                     </div>
-                    {!! Form::model($badge, ['route' => ['badges.update', [$badge->id, 'id_get' => Request::get('id_get')]], 'method' => 'PUT']) !!}
+                    {!! Form::model($badge, ['route' => ['badges.update', [$badge->id, 'id_get' => Request::get('id_get')]], 'method' => 'PUT', 'class' => 'needs-validation', 'novalidate']) !!}
                     <div class="card-body row">
                         <div class="col-sm-12">
                             @include('admin.includes.alert')

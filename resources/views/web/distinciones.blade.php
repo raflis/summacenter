@@ -2,16 +2,16 @@
 
 @section('content')
 
-<section class="sec13">
+<section class="sec13" style="background-image: url('{{ $pagefield->cover_pages[1]['image'] }}')">
     @include('web.partials.header')
     <div class="container-fluid content">
         <div class="row content_">
             <div class="col-md-7">
                 <p>
-                    Distinciones 
+                    {{ $pagefield->cover_pages[1]['title1'] }}
                 </p>
-                <p>
-                    CORPORATIVAS
+                <p class="tit">
+                    {{ $pagefield->cover_pages[1]['title2'] }}
                 </p>
             </div>
         </div>
@@ -64,7 +64,7 @@
             </div>
             <div class="col-md-12 video">
                 <div class="video_">
-                    <iframe src="https://www.youtube.com/embed/BsWSocrmlSI" 
+                    <iframe src="https://www.youtube.com/embed/codeeaqui" 
                         title="YouTube video player" frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                         allowfullscreen>

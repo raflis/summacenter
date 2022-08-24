@@ -10,16 +10,9 @@ class Record extends Model
     protected $table = 'records';
 
     protected $fillable = [
-        'name', 'lastname', 'telephone', 'email', 'project', 'project_type',
-        'observation',
+        'name', 'lastname', 'email', 'type_document', 'document', 'telephone',
+        'interested_course', 'company', 'ruc', 'position', 'call_sms', 'from', 'observation',
     ];
-
-    public function scopeProject($query, $name)
-    {
-        if($name):
-            return $query->Where('project', '=', "$name");
-        endif;
-    }
 
     public function scopeName($query, $name)
     {

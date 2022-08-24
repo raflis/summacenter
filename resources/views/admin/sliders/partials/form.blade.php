@@ -6,7 +6,7 @@
         <i class="far fa-image"></i> Elegir
         </a>
     </span>
-    {!! Form::text('image_desktop',null,['class'=>'form-control','id'=>'thumbnail1']) !!}
+    {!! Form::text('image_desktop',null,['class'=>'form-control','id'=>'thumbnail1', 'required']) !!}
 </div>
 <div id="holder1" style="margin-top:15px;max-height:100px;">
 @if (Route::currentRouteName()=="sliders.edit")
@@ -23,7 +23,7 @@
           <i class="far fa-image"></i> Elegir
           </a>
       </span>
-      {!! Form::text('image_mobile',null,['class'=>'form-control','id'=>'thumbnail2']) !!}
+      {!! Form::text('image_mobile',null,['class'=>'form-control','id'=>'thumbnail2', 'required']) !!}
   </div>
   <div id="holder2" style="margin-top:15px;max-height:100px;">
   @if (Route::currentRouteName()=="sliders.edit")
@@ -59,7 +59,10 @@
 
 <div class="form-group col-sm-12">
   {{ Form::label('order', 'Orden:') }} <code>*</code>
-  {{ Form::number('order', null, ['class' => 'form-control', 'placeholder' => 'Orden']) }}
+  {{ Form::number('order', null, ['class' => 'form-control', 'placeholder' => 'Orden', 'required']) }}
+  <div class="invalid-feedback">
+    Ingrese orden a mostrar
+  </div>
 </div>
 
 @section('script')

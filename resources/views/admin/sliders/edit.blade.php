@@ -22,7 +22,7 @@
                             Editar slider
                         </span>
                     </div>
-                    {!! Form::model($slider, ['route' => ['sliders.update', $slider->id], 'method' => 'PUT']) !!}
+                    {!! Form::model($slider, ['route' => ['sliders.update', $slider->id], 'method' => 'PUT', 'class' => 'needs-validation', 'novalidate']) !!}
                     <div class="card-body row">
                         <div class="col-sm-12">
                             @include('admin.includes.alert')

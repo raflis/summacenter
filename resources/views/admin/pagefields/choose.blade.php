@@ -19,14 +19,14 @@
                             Inicio
                         </span>
                     </div>
-                    {!! Form::model($pagefield, ['route' => ['pagefields.update', 1], 'method' => 'PUT']) !!}
+                    {!! Form::model($pagefield, ['route' => ['pagefields.update', 1], 'method' => 'PUT', 'class' => 'needs-validation', 'novalidate']) !!}
                     <div class="card-body row">
                         <div class="col-sm-12">
                             @include('admin.includes.alert')
                         </div>
                         <div class="form-group col-sm-12">
                           {{ Form::label('choose_title', 'Título:') }} <code>*</code>
-                          {{ Form::text('choose_title', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el título']) }}
+                          {{ Form::text('choose_title', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el título', 'required']) }}
                         </div>
                         <div class="form-group col-sm-12">
                             {{ Form::label('choose_text', 'Descripción:') }} <code>*</code>
@@ -52,12 +52,12 @@
                           <div class="card shadow col-sm-12 px-0">
                             <div class="card-header py-3 card-into">
                               <h6 class="m-0 font-weight-bold text-primary float-left">Porque elegirnos:</h6>
-                              <button href="" class="btn btn-success btn-icon-split float-right añadir">
+                              <p class="btn btn-success btn-icon-split float-right añadir">
                                 <span class="icon text-white-50">
                                   <i class="fas fa-plus"></i>
                                 </span>
                                 <span class="text text-white">Añadir</span>
-                              </button>
+                              </p>
                             </div>
                             <div class="texto row px-3">
                               @foreach ($pagefield->choose_items as $item)
@@ -83,7 +83,7 @@
                                 {!! Form::label('choose_items','Nombre:',['class'=>'mt-3']) !!} <code>*</code>
                                 {!! Form::text('choose_items['.$loop->index.'][name]',$item["name"],['class'=>'form-control','required']) !!}
                                 {!! Form::label('choose_items','Detalle:',['class'=>'mt-3']) !!} <code>*</code>
-                                {!! Form::textarea('choose_items['.$loop->index.'][detail]',$item["detail"],['class'=>'form-control','required', 'rows' => 3]) !!}
+                                {!! Form::textarea('choose_items['.$loop->index.'][detail]',$item["detail"],['class'=>'form-control','required', 'rows' => 3, 'required']) !!}
                                 {!! Form::label('choose_items','Orden:',['class'=>'mt-3']) !!} <code>*</code>
                                 {!! Form::number('choose_items['.$loop->index.'][order]',$item["order"],['class'=>'form-control','required']) !!}
                                 <hr class="mx-0 mt-4 border-bottom-dark" style="border:1px solid;background:#000">

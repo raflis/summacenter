@@ -22,6 +22,19 @@ class RedirectIfAuthenticated
         $guards = empty($guards) ? [null] : $guards;
 
         foreach ($guards as $guard) {
+            if ($guard == "user" && Auth::guard($guard)->check()) {
+                return redirect()->route('profile.index'); 
+            }
+
+            if ($guard == "jobbank" && Auth::guard($guard)->check()) {
+                if(Auth::guard("jobbank")->user()->role == 2):
+                    return redirect()->route('bolsa.trabajo.perfil.postulante');
+                endif;
+                if(Auth::guard("jobbank")->user()->role == 3):
+                    return redirect()->route('bolsa.trabajo.perfil.empresa');
+                endif;
+            }
+
             if (Auth::guard($guard)->check()) {
                 return redirect(RouteServiceProvider::HOME);
             }

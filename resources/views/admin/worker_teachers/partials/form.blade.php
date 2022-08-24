@@ -2,17 +2,17 @@
 
 <div class="form-group col-sm-4">
   {{ Form::label('course_area_id', 'Área de capacitación:') }} <code>*</code>
-  {{ Form::select('course_area_id', $course_areas, null, ['class' => 'form-control']) }}
+  {{ Form::select('course_area_id', $course_areas, null, ['class' => 'custom-select', 'required']) }}
 </div>
 
 <div class="form-group col-sm-4">
   {{ Form::label('fullname', 'Nombre completo:') }} <code>*</code>
-  {{ Form::text('fullname', null, ['class' => 'form-control', 'placeholder' => 'Nombre del área']) }}
+  {{ Form::text('fullname', null, ['class' => 'form-control', 'placeholder' => 'Nombre del área', 'required']) }}
 </div>
 
 <div class="form-group col-sm-4">
   {{ Form::label('position', 'Nombre del puesto de trabajo:') }} <code>*</code>
-  {{ Form::text('position', null, ['class' => 'form-control', 'placeholder' => 'Nombre del puesto de trabajo']) }}
+  {{ Form::text('position', null, ['class' => 'form-control', 'placeholder' => 'Nombre del puesto de trabajo', 'required']) }}
 </div>
 
 <div class="form-group col-sm-12">
@@ -23,7 +23,7 @@
         <i class="far fa-image"></i> Elegir
         </a>
     </span>
-    {!! Form::text('image',null,['class'=>'form-control','id'=>'thumbnail1']) !!}
+    {!! Form::text('image', null, ['class' => 'form-control', 'id' => 'thumbnail1', 'required']) !!}
   </div>
   <div id="holder1" style="margin-top:15px;max-height:100px;">
   @if(Route::currentRouteName()=="worker_teachers.edit")
@@ -33,23 +33,48 @@
 </div>
 
 <div class="form-group col-sm-12">
+  {!! Form::label('image_course','Imagen para mostrar en el Curso:',['class'=>'mt-3']) !!} <strong>(500 x 500px)</strong> <code>*</code>
+  <div class="input-group">
+    <span class="input-group-btn">
+        <a id="lfm2" data-input="thumbnail2" data-preview="holder2" class="btn btn-primary text-white">
+        <i class="far fa-image"></i> Elegir
+        </a>
+    </span>
+    {!! Form::text('image_course', null, ['class' => 'form-control', 'id' => 'thumbnail2', 'required']) !!}
+  </div>
+  <div id="holder2" style="margin-top:15px;max-height:100px;">
+  @if(Route::currentRouteName()=="worker_teachers.edit")
+    <img src="{{ $worker_teacher->image_course }}" alt="" style="height:5rem">
+  @endif
+  </div>
+</div>
+
+<div class="form-group col-sm-12">
   {{ Form::label('item1', 'Carrera y universidad:') }} <code>*</code>
-  {{ Form::textarea('item1', null, ['class' => 'form-control', 'placeholder' => 'Carrera y universidad', 'rows' => 2]) }}
+  {{ Form::textarea('item1', null, ['class' => 'form-control', 'placeholder' => 'Carrera y universidad', 'rows' => 2, 'required']) }}
 </div>
 
 <div class="form-group col-sm-12">
   {{ Form::label('item2', 'Consultor de:') }} <code>*</code>
-  {{ Form::textarea('item2', null, ['class' => 'form-control', 'placeholder' => 'Consultor de', 'rows' => 2]) }}
+  {{ Form::textarea('item2', null, ['class' => 'form-control', 'placeholder' => 'Consultor de', 'rows' => 2, 'required']) }}
 </div>
 
 <div class="form-group col-sm-12">
   {{ Form::label('item3', 'Resumen de experiencia:') }} <code>*</code>
-  {{ Form::textarea('item3', null, ['class' => 'form-control', 'placeholder' => 'Resumen de experiencia', 'rows' => 2]) }}
+  {{ Form::textarea('item3', null, ['class' => 'form-control', 'placeholder' => 'Resumen de experiencia', 'rows' => 2, 'required']) }}
+</div>
+
+<div class="form-group col-sm-12">
+  {{ Form::label('item_course', 'Resumen para mostrar en el Curso:') }} <code>*</code>
+  {{ Form::textarea('item_course', null, ['class' => 'form-control ckeditor', 'placeholder' => 'Resumen de experiencia', 'rows' => 2, 'required']) }}
 </div>
 
 <div class="form-group col-sm-12">
   {{ Form::label('order', 'Orden:') }} <code>*</code>
-  {{ Form::number('order', null, ['class' => 'form-control', 'placeholder' => 'Orden']) }}
+  {{ Form::number('order', null, ['class' => 'form-control', 'placeholder' => 'Orden', 'required']) }}
+  <div class="invalid-feedback">
+    Ingrese orden a mostrar
+  </div>
 </div>
 
 @section('script')
@@ -95,6 +120,7 @@ $.fn.filemanager = function(type, options) {
 </script>
 <script>
   $('#lfm1').filemanager('image', {prefix: route_prefix});
+  $('#lfm2').filemanager('image', {prefix: route_prefix});
   // $('#lfm').filemanager('file', {prefix: route_prefix});
 </script>
 

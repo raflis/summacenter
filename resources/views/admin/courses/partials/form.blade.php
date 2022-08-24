@@ -1,6 +1,6 @@
 <div class="form-group col-sm-3">
   {{ Form::label('not_read', 'Área de capacitación:') }} <code>*</code>
-  {{ Form::text('not_read', $course_category->course_area->name, ['class' => 'form-control', 'readonly']) }}
+  {{ Form::text('not_read', $course_category->course_area->name, ['class' => 'form-control', 'readonly', 'required']) }}
 </div>
 
 <div class="form-group col-sm-3">
@@ -11,47 +11,74 @@
 
 <div class="form-group col-sm-3">
   {{ Form::label('course_subarea_id', 'Sub Área:') }} <code>*</code>
-  {{ Form::select('course_subarea_id', $course_subareas, null, ['class' => 'form-control']) }}
+  {{ Form::select('course_subarea_id', $course_subareas, null, ['class' => 'custom-select', 'required']) }}
 </div>
 
 <div class="form-group col-sm-3">
   {{ Form::label('worker_id', 'Profesor:') }} <code>*</code>
-  {{ Form::select('worker_id', $workers, null, ['class' => 'form-control']) }}
+  @if (Route::currentRouteName()=="courses.edit")
+  {{ Form::select('worker_id[]', $workers, $course->workers, ['class' => 'select selectpicker', 'required', 'multiple']) }}
+  @else
+  {{ Form::select('worker_id[]', $workers, null, ['class' => 'select selectpicker', 'required', 'multiple']) }}
+  @endif
+  
 </div>
 
-<div class="form-group col-sm-6">
+<div class="form-group col-sm-4">
   {{ Form::label('name', 'Nombre del curso:') }} <code>*</code>
-  {{ Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Nombre de curso']) }}
+  {{ Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Nombre de curso', 'required']) }}
 </div>
 
-<div class="form-group col-sm-6">
+<div class="form-group col-sm-4">
   {{ Form::label('slug', 'URL amigable') }} <code>*</code>
-  {{ Form::text('slug', null, ['class' => 'form-control', 'id' => 'slug']) }}
+  {{ Form::text('slug', null, ['class' => 'form-control', 'id' => 'slug', 'required']) }}
 </div>
 
 <div class="form-group col-sm-4">
+  {{ Form::label('zoho_code', 'Código de Curso ZOHO CRM:') }} <code>*</code>
+  {{ Form::text('zoho_code', null, ['class' => 'form-control', 'placeholder' => 'Código de Curso ZOHO CRM', 'required']) }}
+</div>
+
+<div class="form-group col-sm-3">
   {{ Form::label('title1', 'Título 1:') }} <code>*</code>
-  {{ Form::text('title1', null, ['class' => 'form-control', 'placeholder' => 'Título 1']) }}
+  {{ Form::text('title1', null, ['class' => 'form-control', 'placeholder' => 'Título 1', 'required']) }}
 </div>
 
-<div class="form-group col-sm-4">
-  {{ Form::label('title2', 'Título 2:') }} <code>*</code>
+<div class="form-group col-sm-3">
+  {{ Form::label('title2', 'Título 2:') }}
   {{ Form::text('title2', null, ['class' => 'form-control', 'placeholder' => 'Título 2']) }}
 </div>
 
-<div class="form-group col-sm-4">
-  {{ Form::label('title3', 'Título 3:') }} <code>*</code>
+<div class="form-group col-sm-3">
+  {{ Form::label('title3', 'Título 3:') }}
   {{ Form::text('title3', null, ['class' => 'form-control', 'placeholder' => 'Título 3']) }}
+</div>
+
+<div class="form-group col-sm-3">
+  {!! Form::label('title3_image','Título 3 Imagen:',['class'=>'']) !!} <strong>(Alto de 90px)</strong>
+  <div class="input-group">
+    <span class="input-group-btn">
+        <a id="lfm5" data-input="thumbnail5" data-preview="holder5" class="btn btn-primary text-white">
+        <i class="far fa-image"></i> Elegir
+        </a>
+    </span>
+    {!! Form::text('title3_image', null, ['class' => 'form-control', 'id' => 'thumbnail5']) !!}
+  </div>
+  <div id="holder5" style="margin-top:15px;max-height:100px;">
+  @if(Route::currentRouteName()=="courses.edit")
+    <img src="{{ $course->title3_image }}" alt="" style="height:2rem">
+  @endif
+  </div>
 </div>
 
 <div class="form-group col-sm-6">
   {{ Form::label('subtitle', 'Sub título:') }} <code>*</code>
-  {{ Form::text('subtitle', null, ['class' => 'form-control', 'placeholder' => 'Sub título']) }}
+  {{ Form::text('subtitle', null, ['class' => 'form-control', 'placeholder' => 'Sub título', 'required']) }}
 </div>
 
 <div class="form-group col-sm-6">
   {{ Form::label('modality', 'Modalidad:') }} <code>*</code>
-  {{ Form::select('modality', ['' => 'Selecciona Modalidad Online', 'En vivo' => 'Online en Vivo', 'Pre grabada' => 'Online Pre grabadas'], null, ['class' => 'form-control']) }}
+  {{ Form::select('modality', ['' => 'Selecciona Modalidad Online', 'En vivo' => 'Online en Vivo', 'Pre grabada' => 'Online Pre grabadas'], null, ['class' => 'custom-select', 'required']) }}
 </div>
 
 <div class="form-group col-sm-3">
@@ -62,7 +89,7 @@
         <i class="far fa-image"></i> Elegir
         </a>
     </span>
-    {!! Form::text('slider',null,['class'=>'form-control','id'=>'thumbnail1']) !!}
+    {!! Form::text('slider', null, ['class' => 'form-control', 'id' => 'thumbnail1', 'required']) !!}
   </div>
   <div id="holder1" style="margin-top:15px;max-height:100px;">
   @if(Route::currentRouteName()=="courses.edit")
@@ -79,7 +106,7 @@
         <i class="far fa-image"></i> Elegir
         </a>
     </span>
-    {!! Form::text('image',null,['class'=>'form-control','id'=>'thumbnail2']) !!}
+    {!! Form::text('image', null, ['class' => 'form-control', 'id' => 'thumbnail2', 'required']) !!}
   </div>
   <div id="holder2" style="margin-top:15px;max-height:100px;">
   @if(Route::currentRouteName()=="courses.edit")
@@ -89,14 +116,14 @@
 </div>
 
 <div class="form-group col-sm-3">
-  {!! Form::label('badge','Imagen de insignia:',['class'=>'mt-3']) !!} <strong>(300 x 300px)</strong> <code>*</code>
+  {!! Form::label('badge', 'Imagen de insignia:',['class' => 'mt-3']) !!} <strong>(300 x 300px)</strong> <code>*</code>
   <div class="input-group">
     <span class="input-group-btn">
         <a id="lfm3" data-input="thumbnail3" data-preview="holder3" class="btn btn-primary text-white">
         <i class="far fa-image"></i> Elegir
         </a>
     </span>
-    {!! Form::text('badge',null,['class'=>'form-control','id'=>'thumbnail3']) !!}
+    {!! Form::text('badge', null, ['class' => 'form-control', 'id' => 'thumbnail3', 'required']) !!}
   </div>
   <div id="holder3" style="margin-top:15px;max-height:100px;">
   @if(Route::currentRouteName()=="courses.edit")
@@ -113,7 +140,7 @@
         <i class="far fa-image"></i> Elegir
         </a>
     </span>
-    {!! Form::text('certificate', null, ['class' => 'form-control', 'id' => 'thumbnail4']) !!}
+    {!! Form::text('certificate', null, ['class' => 'form-control', 'id' => 'thumbnail4', 'required']) !!}
   </div>
   <div id="holder4" style="margin-top:15px;max-height:100px;">
   @if(Route::currentRouteName()=="courses.edit")
@@ -124,27 +151,27 @@
 
 <div class="form-group col-sm-3">
   {{ Form::label('start_of_classes', 'Inicio de clases:') }} <code>*</code>
-  {{ Form::text('start_of_classes', null, ['class' => 'form-control', 'placeholder' => 'Inicio de clases']) }}
+  {{ Form::text('start_of_classes', null, ['class' => 'form-control', 'placeholder' => 'Inicio de clases', 'required']) }}
 </div>
 
 <div class="form-group col-sm-3">
   {{ Form::label('schedule', 'Horario:') }} <code>*</code>
-  {{ Form::text('schedule', null, ['class' => 'form-control', 'placeholder' => 'Horario']) }}
+  {{ Form::text('schedule', null, ['class' => 'form-control', 'placeholder' => 'Horario', 'required']) }}
 </div>
 
 <div class="form-group col-sm-3">
   {{ Form::label('duration', 'Duración:') }} <code>*</code>
-  {{ Form::text('duration', null, ['class' => 'form-control', 'placeholder' => 'Duración']) }}
+  {{ Form::text('duration', null, ['class' => 'form-control', 'placeholder' => 'Duración', 'required']) }}
 </div>
 
 <div class="form-group col-sm-3">
   {{ Form::label('price', 'Inversión:') }} <code>*</code>
-  {{ Form::number('price', null, ['class' => 'form-control', 'placeholder' => 'Inversión']) }}
+  {{ Form::number('price', null, ['class' => 'form-control', 'placeholder' => 'Inversión', 'required']) }}
 </div>
 
 <div class="form-group col-sm-4">
   {{ Form::label('download_video', 'Video introductorio:') }} <code>*</code>
-  {{ Form::text('download_video', null, ['class' => 'form-control', 'placeholder' => 'Video introductorio']) }}
+  {{ Form::text('download_video', null, ['class' => 'form-control', 'placeholder' => 'Video introductorio', 'required']) }}
 </div>
 
 <div class="form-group col-sm-4">
@@ -155,73 +182,39 @@
         <i class="far fa-image"></i> Elegir
         </a>
     </span>
-    {!! Form::text('brochure', null, ['class' => 'form-control', 'id' => 'thumbnail0']) !!}
+    {!! Form::text('brochure', null, ['class' => 'form-control', 'id' => 'thumbnail0', 'required']) !!}
   </div>
 </div>
 
 <div class="form-group col-sm-4">
   {{ Form::label('video_id', 'Video ID:') }} <code>*</code>
-  {{ Form::text('video_id', null, ['class' => 'form-control', 'placeholder' => 'Video ID']) }}
+  {{ Form::text('video_id', null, ['class' => 'form-control', 'placeholder' => 'Video ID', 'required']) }}
 </div>
 
 <div class="form-group col-sm-12">
   {{ Form::label('objective', 'Objetivo:') }} <code>*</code>
-  {{ Form::textarea('objective', null, ['class' => 'form-control', 'placeholder' => 'Objetivo', 'rows' => 3]) }}
+  {{ Form::textarea('objective', null, ['class' => 'form-control ckeditor', 'placeholder' => 'Objetivo', 'rows' => 3, 'required']) }}
 </div>
 
 <div class="form-group col-sm-12">
   {{ Form::label('audience', 'Público:') }} <code>*</code>
-  {{ Form::textarea('audience', null, ['class' => 'form-control', 'placeholder' => 'Público', 'rows' => 3]) }}
+  {{ Form::textarea('audience', null, ['class' => 'form-control ckeditor', 'placeholder' => 'Público', 'rows' => 3, 'required']) }}
 </div>
 
-<div class="px-3 col-sm-12 mb-3">
-  <div class="card shadow col-sm-12 px-0">
-      <div class="card-header py-3 card-into">
-        <h6 class="m-0 font-weight-bold text-primary float-left">Beneficios:</h6>
-        <button href="" class="btn btn-success btn-icon-split float-right añadir">
-          <span class="icon text-white-50">
-            <i class="fas fa-plus"></i>
-          </span>
-          <span class="text text-white">Añadir</span>
-        </button>
-      </div>
-      <div class="texto row px-3">
-          @if (Route::currentRouteName()=="courses.create")
-          <div class="card-body">
-          {!! Form::label('benefits','Beneficio:',['class'=>'']) !!} <code>*</code>
-          {!! Form::text('benefits[0][name]',null,['class'=>'form-control','required']) !!}
-          {!! Form::label('benefits','Orden:',['class'=>'mt-3']) !!} <code>*</code>
-          {!! Form::number('benefits[0][order]',null,['class'=>'form-control','required']) !!}
-
-          <hr class="mx-0 mt-4 border-bottom-dark" style="border:1px solid;background:#000">
-          </div>
-          @endif
-          @if (Route::currentRouteName()=="courses.edit")
-          @foreach ($course->benefits as $item)
-          <div class="card-body col-md-12">
-              @if ($loop->index >= 1)
-              <a href="#" class="btn btn-danger btn-circle btn-sm float-right mb-2 eliminar">
-                <i class="fas fa-trash"></i>
-              </a>
-              @endif
-              {!! Form::label('benefits','Beneficio:',['class'=>'mt-3']) !!} <code>*</code>
-              {!! Form::text('benefits['.$loop->index.'][name]',$item['name'],['class'=>'form-control','required']) !!}
-
-              {!! Form::label('benefits','Orden:',['class'=>'mt-3']) !!} <code>*</code>
-              {!! Form::number('benefits['.$loop->index.'][order]',$item['order'],['class'=>'form-control','required']) !!}
-  
-              <hr class="mx-0 mt-4 border-bottom-dark" style="border:1px solid;background:#000">
-          </div>
-          @endforeach
-          @endif
-      </div>
-      
+<div class="form-group col-sm-12">
+  {{ Form::label('benefits', 'Beneficios:') }} <code>*</code>
+  {{ Form::textarea('benefits', null, ['class' => 'form-control ckeditor', 'placeholder' => 'Beneficios', 'rows' => 3, 'required']) }}
+  <div class="invalid-feedback">
+    Este campo es obligatorio
   </div>
 </div>
 
 <div class="form-group col-sm-12">
-  {{ Form::label('order', 'Orden de aparición:') }} <code>*</code>
-  {{ Form::number('order', null, ['class' => 'form-control', 'placeholder' => 'Orden']) }}
+  {{ Form::label('order', 'Orden de aparición:', ['class' => 'form-label']) }} <code>*</code>
+  {{ Form::number('order', null, ['class' => 'form-control', 'placeholder' => 'Orden', 'required']) }}
+  <div class="invalid-feedback">
+    Ingrese orden a mostrar
+  </div>
 </div>
 
 @section('script')
@@ -235,43 +228,6 @@
           }
       });
   });
-</script>
-
-<script>
-	$(document).ready(function(){
-
-    @if (Route::currentRouteName()=="courses.edit")
-      var i={{ count($course->benefits)+1 }};
-    @else
-      var i=1;
-    @endif
-		 
-		$('.añadir').on('click',function(e){
-			e.preventDefault();
-			var template='<div class="col-md-12"><div class="card-body pt-0">' +
-							'<a href="#" class="btn btn-danger btn-circle btn-sm float-right mb-2 eliminar">' +
-								'<i class="fas fa-trash"></i>' +
-							'</a>' +
-                '<label for="benefits" class="mt-3">Beneficio:</label> <code>*</code>' +
-								'<input class="form-control" name="benefits['+i+'][name]" type="text" required>' +
-								'<label for="benefits" class="mt-3">Orden:</label> <code>*</code>' +
-								'<input class="form-control" name="benefits['+i+'][order]" type="number" required>' +
-                
-							'<hr class="mx-0 mt-4 border-bottom-dark" style="border:1px solid;background:#000">' + 
-						'</div></div>';
-	
-			$('.texto').append(template);
-			i++;
-		});
-	
-		$(document).on('click','.eliminar',function(e){
-			e.preventDefault();
-			
-			$(this).parent('.card-body').remove();
-		});
-
-   
-	});
 </script>
 
 <script>
@@ -318,6 +274,7 @@ $.fn.filemanager = function(type, options) {
   $('#lfm2').filemanager('image', {prefix: route_prefix});
   $('#lfm3').filemanager('image', {prefix: route_prefix});
   $('#lfm4').filemanager('image', {prefix: route_prefix});
+  $('#lfm5').filemanager('image', {prefix: route_prefix});
   $('#lfm0').filemanager('file', {prefix: route_prefix});
 </script>
 

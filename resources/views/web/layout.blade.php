@@ -12,15 +12,11 @@
     <link href="{{ asset('css/web.css?v='.time()) }}" rel="stylesheet">
     <link href="{{ asset('css/owl.carousel.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/aos.css') }}" rel="stylesheet">
+    @yield('css')
     <!--<link href="{{ asset('css/all.css') }}" rel="stylesheet">-->
+    <script src="https://kit.fontawesome.com/ebf82e38ce.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <!--<div class=loader-body id=loader>
-    <div class=loader></div>
-    </div>-->
-    <div class="loading">
-        <div id="loader" class="center-all"></div>
-    </div>
     @yield('content')
     @include('web.partials.footer')
     <script src="{{ asset('js/app.js?v=0') }}"></script>
@@ -30,5 +26,6 @@
     <script src="{{ asset('js/multi-animated-counter.js') }}"></script>
     <!--<script src="{{ asset('js/all.js') }}"></script>-->
     @yield('script')
+    {!! htmlspecialchars_decode($setting->script) !!}
 </body>
 </html>

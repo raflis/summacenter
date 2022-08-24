@@ -25,7 +25,7 @@
                             <div class="tit_head">
                                 <h3>N° de reclamo: <span>0000000001</span></h3>
                                 <p class="fecha">
-                                    6 de febrero del 2022
+                                    {{ mb_strtoupper(\Carbon\Carbon::now()->formatLocalized('%A, %d DE %B %Y'), 'UTF-8') }}
                                 </p>
                             </div>
                             <div class="form-group col-md-4">

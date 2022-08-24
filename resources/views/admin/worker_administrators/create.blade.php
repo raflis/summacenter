@@ -22,7 +22,7 @@
                             Crear
                         </span>
                     </div>
-                    {!! Form::open(['route' => 'worker_administrators.store']) !!}
+                    {!! Form::open(['route' => 'worker_administrators.store', 'class' => 'needs-validation', 'novalidate']) !!}
                     <div class="card-body row">
                         <div class="col-sm-12">
                             @include('admin.includes.alert')

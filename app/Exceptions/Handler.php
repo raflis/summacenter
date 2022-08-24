@@ -2,8 +2,10 @@
 
 namespace App\Exceptions;
 
-use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Auth;
 use Throwable;
+use Illuminate\Auth\AuthenticationException;
+use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
 class Handler extends ExceptionHandler
 {
@@ -37,5 +39,20 @@ class Handler extends ExceptionHandler
         $this->reportable(function (Throwable $e) {
             //
         });
+    }
+
+    protected function unauthenticated($request, AuthenticationException $exception)
+    {
+        /*if ($request->expectsJson()) {
+            return response()->json(['error' => 'Unauthenticated.'], 401);
+        }*/
+        if ($request->is('bolsa-de-trabajo') || $request->is('bolsa-de-trabajo/*')) {
+            //return redirect()->guest('/bolsa-de-trabajo');
+            return redirect()->route('bolsa.trabajo');
+        }
+        /*if ($request->is('myaccount') || $request->is('myaccount/*')) {
+            return redirect()->route('login.index');
+        }*/
+        return redirect()->guest(route('login.index'));
     }
 }

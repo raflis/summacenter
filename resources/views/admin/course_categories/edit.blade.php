@@ -22,7 +22,7 @@
                             Editar categoría
                         </span>
                     </div>
-                    {!! Form::model($course_category, ['route' => ['course_categories.update', [$course_category->id, 'id_get' => Request::get('id_get'), 'name_get' => Request::get('name_get')]], 'method' => 'PUT']) !!}
+                    {!! Form::model($course_category, ['route' => ['course_categories.update', [$course_category->id, 'id_get' => Request::get('id_get'), 'name_get' => Request::get('name_get')]], 'method' => 'PUT', 'class' => 'needs-validation', 'novalidate']) !!}
                     <div class="card-body row">
                         <div class="col-sm-12">
                             @include('admin.includes.alert')

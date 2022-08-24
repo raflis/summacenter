@@ -45,6 +45,7 @@
                                 <th>Orden</th>
                                 <th># de Insignias</th>
                                 <th># de Categorías</th>
+                                <th># de Cursos</th>
                                 <th width=400>Acciones</th>
                             </tr>
                         </thead>
@@ -58,6 +59,7 @@
                                 <td>{{ $item->order }}</td>
                                 <td>{{ count($item->badges) }}</td>
                                 <td>{{ count($item->course_categories) }}</td>
+                                <td>{{ count($item->courses) }}</td>
                                 <td>
                                     <div style="display: inline-flex">
                                         <a class="btn btn-warning text-white btn-sm mr-1" href="{{ route('badges.index', ['id_get' => $item->id, 'name_get' => $item->name]) }}">

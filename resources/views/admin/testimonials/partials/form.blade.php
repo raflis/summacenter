@@ -1,26 +1,29 @@
 <div class="form-group col-sm-6">
   {{ Form::label('name', 'Nombre completo:') }} <code>*</code>
-  {{ Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Nombres']) }}
+  {{ Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Nombres', 'required']) }}
 </div>
 
 <div class="form-group col-sm-6">
   {{ Form::label('graduated_career', 'Curso graduado:') }} <code>*</code>
-  {{ Form::text('graduated_career', null, ['class' => 'form-control', 'placeholder' => 'Curso graduado']) }}
+  {{ Form::text('graduated_career', null, ['class' => 'form-control', 'placeholder' => 'Curso graduado', 'required']) }}
 </div>
 
 <div class="form-group col-sm-6">
   {{ Form::label('career', 'Carrera estudiada:') }} <code>*</code>
-  {{ Form::text('career', null, ['class' => 'form-control', 'placeholder' => 'Carrera estudiada']) }}
+  {{ Form::text('career', null, ['class' => 'form-control', 'placeholder' => 'Carrera estudiada', 'required']) }}
 </div>
 
 <div class="form-group col-sm-3">
   {{ Form::label('stars', 'Estrellas:') }} <code>*</code>
-  {{ Form::select('stars', [1 => 1, 2 => 2, 3 => 3, 4 => 4, 5 => 5], null, ['class' => 'form-control', 'placeholder' => '# Estrellas']) }}
+  {{ Form::select('stars', [1 => 1, 2 => 2, 3 => 3, 4 => 4, 5 => 5], null, ['class' => 'custom-select', 'placeholder' => '# Estrellas', 'required']) }}
 </div>
 
 <div class="form-group col-sm-3">
   {{ Form::label('order', 'Orden:') }} <code>*</code>
-  {{ Form::number('order', null, ['class' => 'form-control', 'placeholder' => 'Orden']) }}
+  {{ Form::number('order', null, ['class' => 'form-control', 'placeholder' => 'Orden', 'required']) }}
+  <div class="invalid-feedback">
+    Ingrese orden a mostrar
+  </div>
 </div>
 
 <div class="form-group col-sm-6">
@@ -31,7 +34,7 @@
         <i class="far fa-image"></i> Elegir
         </a>
     </span>
-    {!! Form::text('image',null,['class'=>'form-control','id'=>'thumbnail1']) !!}
+    {!! Form::text('image',null,['class'=>'form-control','id'=>'thumbnail1', 'required']) !!}
 </div>
 <div id="holder1" style="margin-top:15px;max-height:100px;">
 @if (Route::currentRouteName()=="testimonials.edit")
@@ -42,7 +45,7 @@
 
 <div class="form-group col-sm-6">
   {{ Form::label('comment', 'Comentario:') }} <code>*</code>
-  {{ Form::textarea('comment', null, ['class' => 'form-control ckeditor', 'placeholder' => 'Comentario']) }}
+  {{ Form::textarea('comment', null, ['class' => 'form-control ckeditor', 'placeholder' => 'Comentario', 'required']) }}
 </div>
 
 

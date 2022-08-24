@@ -2,16 +2,16 @@
 
 @section('content')
 
-<section class="sec22">
+<section class="sec22" style="background-image: url({{ $pagefield->cover_pages[0]['image'] }})">
     @include('web.partials.header')
     <div class="container-fluid content">
         <div class="row content_">
             <div class="col-md-7">
                 <p>
-                    Conoce a nuestro
+                    {{ $pagefield->cover_pages[0]['title1'] }}
                 </p>
                 <p class="tit">
-                    EQUIPO SUMMA
+                    {{ $pagefield->cover_pages[0]['title2'] }}
                 </p>
             </div>
         </div>
