@@ -2,17 +2,23 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Admin\Flag;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Record extends Model
 {
     protected $table = 'records';
 
     protected $fillable = [
-        'name', 'lastname', 'email', 'type_document', 'document', 'telephone',
+        'name', 'lastname', 'email', 'type_document', 'document', 'flag_id', 'telephone',
         'interested_course', 'company', 'ruc', 'position', 'call_sms', 'from', 'observation',
     ];
+
+    public function flag()
+    {
+        return $this->belongsTo(Flag::class);
+    }
 
     public function scopeName($query, $name)
     {

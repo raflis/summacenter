@@ -91,6 +91,34 @@ textarea:focus {
 .pt-20 {
   padding-top: 20vh !important;
 }
+.drop_flags {
+  border-bottom: 2.5px solid #fff;
+  margin-bottom: 12px;
+}
+.drop_flags button#drop_flags {
+  color: #fff;
+}
+.drop_flags ul {
+  height: 190px;
+  overflow-y: overlay;
+}
+.drop_flags ul li button {
+  display: flex !important;
+  padding: 0.25rem 0.7rem;
+}
+.drop_flags ul li button img {
+  height: 16px;
+  margin-right: 5px;
+}
+.drop_flags ul li button p.name_flag {
+  margin: 0;
+  font-size: 0.7rem !important;
+  font-family: font-semibold !important;
+  color: #181b32;
+}
+.drop_flags ul li button p.name_flag span {
+  color: #999;
+}
 .breadcrumb___ {
   padding: 0 30px;
 }

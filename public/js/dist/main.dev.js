@@ -349,6 +349,15 @@ $(function () {
       this.selectionEnd = position;
     }
   });
+  $('[id*=flag_selec]').on('click', function () {
+    var imagen_bandera = $(this).attr('imagen_bandera');
+    var placeholder_bandera = $(this).attr('placeholder_bandera');
+    var flag_id = $(this).attr('flag_id');
+    $('.flag_user').attr('src', imagen_bandera);
+    $('#telephone').attr('placeholder', placeholder_bandera);
+    $('input[name=flag_id]').val(flag_id);
+    console.log(imagen_bandera);
+  });
   $('div[id*=mode_pay]').on('click', function (e) {
     e.preventDefault();
     $('div[id*=mode_pay]').removeClass('active_mode');

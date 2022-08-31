@@ -41,6 +41,7 @@ class SohoController extends Controller
         ]);
 
         $response = $response->json(); //generamos token de trabajo
+        return $response; //Delete this line, error in response
         
         $updated = Setting::find(1);
         $updated->zoho_token = $response['access_token'];

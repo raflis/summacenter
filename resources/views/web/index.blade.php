@@ -27,9 +27,27 @@
                 <label for="email">Email</label>
                 <input type="email" name="email" id="" class="form-control" placeholder="Email" required>
             </div>
-            <div class="form-group col-md-12">
-                <label for="telephone">Celular</label>
-                <input type="text" name="telephone" id="" class="form-control" placeholder="Celular" required>
+            <div class="form-group col-sm-12">
+                <label for="telephone">Teléfono</label>
+                <div class="phone_contact d-flex">
+                    <div class="dropdown drop_flags">
+                        <button class="btn btn-flag dropdown-toggle" type="button" id="drop_flags" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img class="flag_user" src="{{ asset('images/flags/pe.png') }}" alt="">
+                            <input type="hidden" name="flag_id" value="12">
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="drop_flags">
+                            @foreach ($flags as $flag)
+                            <li>
+                                <button id="flag_selec" class="dropdown-item" type="button" flag_id="{{ $flag->id }}" imagen_bandera="{{ asset('images/flags/'.$flag->image) }}" placeholder_bandera="{{ $flag->placeholder }}">
+                                    <img src="{{ asset('images/flags/'.$flag->image) }}" alt="">
+                                    <p class="name_flag">{{ $flag->name }} <span>({{ $flag->dial_code }})</span></p>
+                                </button>
+                            </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    <input type="text" name="telephone" id="telephone" class="form-control" placeholder="Teléfono" required>
+                </div>
             </div>
             <div class="form-group col-md-12">
                 <label for="interested_course">Curso de Interés</label>

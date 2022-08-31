@@ -6,6 +6,7 @@ use Http;
 use Validator;
 use App\Models\Record;
 use GuzzleHttp\Client;
+use App\Models\Admin\Flag;
 use App\Models\Admin\Badge;
 use Jenssegers\Agent\Agent;
 use App\Models\Admin\Course;
@@ -32,6 +33,7 @@ class WebController extends Controller
 {
     public function index()
     {
+        $flags = Flag::orderBy('name', 'Asc')->get();
         $sliders = Slider::orderBy('order', 'Asc')->get();
         $testimonials = Testimonial::orderBy('order', 'Asc')->get()->take(6);
         $partners = Partner::orderBy('order', 'Asc')->get();
@@ -39,7 +41,7 @@ class WebController extends Controller
         $course_areas = CourseArea::orderBy('order', 'Asc')->get();
         $featured_posts = BlogPost::where('featured', 1)->where('status', 'PUBLISHED')->get();
         $agent = new Agent();
-        return view('web.index', compact('agent', 'sliders', 'testimonials', 'partners', 'pagefield', 'course_areas', 'featured_posts'));
+        return view('web.index', compact('agent', 'sliders', 'testimonials', 'partners', 'pagefield', 'course_areas', 'featured_posts', 'flags'));
     }
 
     public function egresados()
