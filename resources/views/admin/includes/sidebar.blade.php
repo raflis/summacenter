@@ -13,6 +13,10 @@
         href="{{ route('settings.index') }}">
             <i class="fas fa-home text-gray pr-1"></i> Configuración
         </a>
+        <a class="nav-link @if(preg_match("/promos/", Route::currentRouteName())) active @endif" 
+        href="{{ route('promos.index') }}">
+            <i class="fas fa-home text-gray pr-1"></i> Cupones de descuento
+        </a>
 
         <div class="sidenav-menu-heading">Inicio</div>
         <a class="nav-link @if(in_array(Route::currentRouteName(), array('sliders.index', 'sliders.edit', 'sliders.create'))) active @endif" 

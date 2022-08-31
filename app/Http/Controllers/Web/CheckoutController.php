@@ -2,15 +2,17 @@
 
 namespace App\Http\Controllers\Web;
 
-use Mail;
 use Auth;
 use Hash;
+use Mail;
 use Validator;
 use App\Models\User;
 use App\Models\Admin\Sale;
+use App\Models\Admin\Promo;
 use Jenssegers\Agent\Agent;
 use App\Models\Admin\Course;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 
@@ -23,6 +25,22 @@ class CheckoutController extends Controller
 
     public function index()
     {
+        if(session('promo') == ''):
+            session()->forget('promo');
+        else:
+            $promo = session('promo');
+            $promo_ = Promo::where('name', $promo['name'])->whereDate('start', '<=', Carbon::now())->whereDate('end', '>=', Carbon::now())->where('active', 1)->first();
+            if($promo_):
+                $promo__ = [
+                    'name' => $promo_->name,
+                    'discount' => $promo_->discount,
+                ];
+                session()->put('promo', $promo__);
+            else:
+                $promo = session()->forget('promo');
+            endif;
+        endif;
+        
         return view('web.cart.index');
     }
 
@@ -122,6 +140,18 @@ class CheckoutController extends Controller
         foreach($cart as $id => $details):
             $total_price += $details['price'];
         endforeach;
+
+        if(session('promo') == ''):
+            $discount = 1;
+            $total_price_no_discount = $total_price;
+            $total_price = $total_price * $discount;
+        else:
+            $discount = 1 - session('promo')['discount']/100;
+            $total_price_no_discount = $total_price;
+            $total_price = $total_price * $discount;
+        endif;
+
+
         $sale = Sale::orderBy('id', 'Desc')->first();
         if($sale):
             $purchaseNumber = date('Ym').zero_fill($sale->id + 1, 5);
@@ -131,7 +161,7 @@ class CheckoutController extends Controller
         if($data->mode == 1): //con tarjeta
             $token = $this->generateToken();
             $sesion = $this->generateSesion($total_price, $token);
-            return view('web.cart.payment', compact('data', 'cart', 'purchaseNumber', 'token', 'sesion', 'total_price'));
+            return view('web.cart.payment', compact('data', 'cart', 'purchaseNumber', 'token', 'sesion', 'total_price', 'total_price_no_discount'));
         endif;
         if($data->mode == 2): //sin tarjeta
             $invoice = session('invoice');
@@ -172,6 +202,7 @@ class CheckoutController extends Controller
     
             session()->forget('cart');
             session()->forget('invoice');
+            session()->forget('promo');
             return view('web.cart.payment_without', compact('recorded'));
         endif;
         if($data->mode == 3): //transferencia
@@ -213,6 +244,7 @@ class CheckoutController extends Controller
     
             session()->forget('cart');
             session()->forget('invoice');
+            session()->forget('promo');
             return view('web.cart.payment_transfer', compact('recorded'));
         endif;
     }
@@ -227,7 +259,8 @@ class CheckoutController extends Controller
             'amount' => $data->order->amount,
             'currency' => $data->order->currency,
             'purchase_number' => request('purchaseNumber'),
-            'transaction_date' => date('Y-d-m H:i:s', strtotime($c[4].$c[5]."/".$c[2].$c[3]."/".$c[0].$c[1]." ".$c[6].$c[7].":".$c[8].$c[9].":".$c[10].$c[11])),
+            'transaction_date' => \Carbon\Carbon::now(),
+            //'transaction_date' => date('Y-d-m H:i:s', strtotime($c[4].$c[5]."/".$c[2].$c[3]."/".$c[0].$c[1]." ".$c[6].$c[7].":".$c[8].$c[9].":".$c[10].$c[11])),
             'card' => $data->dataMap->CARD,
             'brand' => $data->dataMap->BRAND,
             'status' => $data->dataMap->STATUS,
@@ -260,6 +293,7 @@ class CheckoutController extends Controller
 
         session()->forget('cart');
         session()->forget('invoice');
+        session()->forget('promo');
 
         return view('web.cart.confirmation', compact('data', 'recorded'));
     }
@@ -345,5 +379,29 @@ class CheckoutController extends Controller
             session()->put('cart', $cart);
             return response()->json(['success' => true]);
         }
+    }
+
+    public function addpromo(Request $request)
+    {
+        $promo = Promo::where('name', $request->promo)->whereDate('start', '<=', Carbon::now())->whereDate('end', '>=', Carbon::now())->where('active', 1)->first();
+        if($promo):
+            $promo = [
+                'name' => $promo->name,
+                'discount' => $promo->discount,
+            ];
+            session()->put('promo', $promo);
+            return response()->json(['success' => true]);
+        else:
+            return response()->json(['success' => false]);
+        endif;
+        
+    }
+
+    public function deletepromo(Request $request)
+    {
+        session()->forget('promo');
+        if(session('promo') == ''):
+            return response()->json(['success' => true]);
+        endif;
     }
 }

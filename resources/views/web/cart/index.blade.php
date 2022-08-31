@@ -143,7 +143,11 @@
                                 {{-- <p>Incluye S/ 28,27 de impuestos</p> --}}
                             </div>
                             <div class="price-right">
+                                @if(session('promo'))
+                                <span>S/ {{ $total }}</span> S/ {{ $total * (1 - session('promo')['discount']/100) }}
+                                @else
                                 S/ {{ $total }}
+                                @endif 
                             </div>
                         </div>
                         @if(session('cart'))
@@ -152,21 +156,22 @@
                         </div>
                         @endif
                     </div>
-                    {{-- <div class="promo">
+                    <div class="promo">
                         <h3>Promociones</h3>
+                        @if(session('promo'))
                         <div class="info">
-                            <span class="close">X</span>
-                            <span class="text">Se ha aplicado <strong>DESCSUMMA</strong></span>
+                            <span class="close" id="deletepromo">X</span>
+                            <span class="text">Se ha aplicado el <strong>{{ session('promo')['discount'] }}%</strong> de descuento con el código <strong>{{ session('promo')['name'] }}</strong></span>
                         </div>
-                        <form action="">
-                            <input type="text" name="" class="form-control">
-                            <button class="btn btn-cupon">Aplicar</button>
-                        </form>
-                        <p>
-                            El código de cupón introducido no es válido para este curso. ¿Es posible que hayas
-                            utilizado el código de cupón equivocado?
+                        @endif
+                        <div class="form-promo">
+                            <input type="text" id="promo" class="form-control">
+                            <a class="btn btn-cupon">Aplicar</a>
+                        </div>
+                        <p id="promo-error">
+                            
                         </p>
-                    </div> --}}
+                    </div>
                 </div>
                 <p class="compra_segura mt-3">
                     <img src="{{ asset('images/shield.png') }}" alt=""> Pago 100% Seguro

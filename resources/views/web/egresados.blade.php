@@ -39,7 +39,7 @@
                     <p>
                         Un espacio creado para fortalecer la comunidad de egresados y donde compartiremos información actualizada del sector laboral. Entérate de las últimas novedades, casos de éxito y beneficios exclusivos para ti.
                     </p>
-                    <a href="">
+                    <a href="{{ route('recomendaciones') }}">
                         Conoce más sobre nuestros<br>Egresados Summa
                         <img src="{{ asset('images/arrow-right-white.png') }}" alt="">
                     </a>

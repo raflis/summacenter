@@ -89,6 +89,8 @@ Route::group(['middleware' => ['auth:user'] ], function () {
     Route::post('checkout/confirmation', [App\Http\Controllers\Web\CheckoutController::class, 'confirmation'])->name('checkout.confirmation');
 });
 
+Route::post('addpromo', [App\Http\Controllers\Web\CheckoutController::class, 'addpromo'])->name('addpromo');
+Route::delete('deletepromo', [App\Http\Controllers\Web\CheckoutController::class, 'deletepromo'])->name('deletepromo');
 Route::post('addtocart', [App\Http\Controllers\Web\CheckoutController::class, 'addToCart'])->name('addToCart');
 Route::delete('removefromcart', [App\Http\Controllers\Web\CheckoutController::class, 'removeFromCart'])->name('removeFromCart');
 Route::patch('updatecart', [App\Http\Controllers\Web\CheckoutController::class, 'updateCart'])->name('updateCart');

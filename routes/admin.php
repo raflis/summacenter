@@ -38,4 +38,5 @@ Route::prefix('/admin')->group(function(){
     Route::resource('records', App\Http\Controllers\Admin\RecordController::class);
     Route::get('sales/excel', [App\Http\Controllers\Admin\SaleController::class, 'excel'])->name('sales.excel');
     Route::resource('sales', App\Http\Controllers\Admin\SaleController::class);
+    Route::resource('promos', App\Http\Controllers\Admin\PromoController::class);
 });

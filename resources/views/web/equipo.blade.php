@@ -52,7 +52,7 @@
                     </li>
                     <li class="nav-item" role="presentation">
                         <button class="nav-link {{ (Request::get('type') == 'administration')?'active':'' }}" id="pills_3_tab" data-bs-toggle="pill" data-bs-target="#pills_3" type="button" role="tab" aria-controls="pills_3" aria-selected="false">
-                            Administración
+                            Colaboradores
                         </button>
                     </li>
                 </ul>

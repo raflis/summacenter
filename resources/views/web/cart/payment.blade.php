@@ -65,7 +65,11 @@
                                 <p class="p_total">Total</p>
                             </div>
                             <div class="price-right">
+                                @if(session('promo'))
+                                <span>S/ {{ $total_price_no_discount }}</span> S/ {{ $total_price }}
+                                @else
                                 S/ {{ $total_price }}
+                                @endif 
                             </div>
                         </div>
                         @if(session('cart'))

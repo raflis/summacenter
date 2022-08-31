@@ -192,6 +192,58 @@ $(function () {
     delete_product_id = $(this).attr('delete_product_id');
     removeFromCart(delete_product_id);
   });
+  $('.btn-cupon').on('click', function (e) {
+    e.preventDefault();
+    promo = $('#promo').val();
+
+    if (promo == '') {
+      $('#promo').focus();
+      return false;
+    }
+
+    $.ajax({
+      url: '/addpromo',
+      method: "post",
+      headers: {
+        'X-CSRF-Token': csrf_token
+      },
+      data: {
+        _token: csrf_token,
+        promo: promo
+      },
+      success: function success(response) {
+        if (response.success == true) {
+          window.location.reload();
+        }
+
+        if (response.success == false) {
+          $('#promo-error').html('El código de cupón introducido no es válido. ¿Es posible que hayas utilizado el código de cupón equivocado?');
+        }
+      }
+    });
+    return false;
+  });
+  $('#deletepromo').on('click', function (e) {
+    e.preventDefault();
+    $.ajax({
+      url: '/deletepromo',
+      method: "DELETE",
+      headers: {
+        'X-CSRF-Token': csrf_token
+      },
+      data: {
+        _token: csrf_token
+      },
+      success: function success(response) {
+        if (response.success == true) {
+          window.location.reload();
+        } else {
+          $('#promo-error').html('Ah ocurrido un error :(');
+        }
+      }
+    });
+    return false;
+  });
 
   if (route == 'post') {
     initialize_owl($('#carousel-blog1'));
