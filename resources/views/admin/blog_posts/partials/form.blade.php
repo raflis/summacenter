@@ -1,12 +1,8 @@
-<div class="form-group col-sm-2">
+<div class="form-group col-sm-4">
   {{ Form::label('no_read1', 'Categoría:') }} <code>*</code>
-  {{ Form::text('no_read1', $blog_sub_category->blog_category->name, ['class' => 'form-control', 'readonly']) }}
-</div>
-
-<div class="form-group col-sm-2">
-  {{ Form::label('no_read2', 'Sub Categoría:') }} <code>*</code>
-  {{ Form::text('no_read2', $blog_sub_category->name, ['class' => 'form-control', 'readonly']) }}
-  {!! Form::hidden('blog_sub_category_id', $blog_sub_category->id) !!}
+  {{ Form::text('no_read1', $blog_category->name, ['class' => 'form-control', 'readonly']) }}
+  {!! Form::hidden('blog_category_id', $blog_category->id) !!}
+  
 </div>
 
 <div class="form-group col-sm-4">

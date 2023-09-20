@@ -66,10 +66,10 @@
             </form>
         </div>
     </div>
-    <div class="container-fluid px-0">
+    <div class="container-fluid px-0 carousel_index">
         <div id="carousel-slider" class="owl-carousel">
             @foreach ($sliders as $slider)
-            <div class="item" style="background-image: url({{ $slider->image_desktop }})">
+            <div class="item" style="background-image: url({{ ($agent->isMobile())?$slider->image_mobile:$slider->image_desktop }})">
                 <div class="text">
                     <h1>
                         {{ $slider->title1 }}
@@ -197,16 +197,16 @@
             <div class="col-md-4 item">
                 <div class="item_">
                     <div class="image">
-                        <a href="{{ route('post', [$item_p->blog_sub_category->blog_category->slug, $item_p->blog_sub_category->slug, $item_p->slug, $item_p->id]) }}">
+                        <a href="{{ route('post', [$item_p->blog_category->slug, $item_p->slug, $item_p->id]) }}">
                             <img src="{{ $item_p->image1 }}" alt="">
                         </a>
                     </div>
                     <div class="content">
-                        <a href="{{ route('post', [$item_p->blog_sub_category->blog_category->slug, $item_p->blog_sub_category->slug, $item_p->slug, $item_p->id]) }}" class="btn btn-leer">
+                        <a href="{{ route('post', [$item_p->blog_category->slug, $item_p->slug, $item_p->id]) }}" class="btn btn-leer">
                             ARTÍCULO COMPLETO
                         </a>
                         <p class="category">
-                            {{ $item_p->blog_sub_category->name }}
+                            {{ $item_p->blog_category->name }}
                         </p>
                         <p class="tit">
                             {{ $item_p->name }}
@@ -293,7 +293,7 @@
                 </div>
             </div>
             @foreach ($pagefield->achievement_items as $item)
-            <div class="col-md-3 item" id="counters_1">
+            <div class="col-md-3 col-6 item" id="counters_1">
                 <div class="image">
                     <img src="{{ $item['image'] }}" alt="">
                 </div>

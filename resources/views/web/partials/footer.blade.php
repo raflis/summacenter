@@ -35,7 +35,7 @@
                                 Central telefónica {{ $setting->telephone }}
                             </p>
                             <p>
-                                Número de Whatsapp <a href="https://wa.me/+51{{ $setting->whatsapp }}" target="blank">{{ $setting->whatsapp }}</a>
+                                Número de Whatsapp <a href="https://api.whatsapp.com/send?phone=51{{ $setting->whatsapp }}" target="blank">{{ $setting->whatsapp }}</a>
                             </p>
                         </li>
                         <li>
@@ -62,9 +62,6 @@
                     <ul>
                         <li class="sitio">
                             <p>SOBRE ESTE SITIO</p>
-                        </li>
-                        <li>
-                            <a href="">Mapa del sitio</a>
                         </li>
                         <li>
                             <a href="{{ route('terminos-y-condiciones') }}">Términos y condiciones de uso</a>

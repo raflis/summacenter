@@ -214,7 +214,7 @@ $(function(){
         return false;
     });
 
-    $(document).on('click', '.delete_product',function(e){
+    $(document).on('click', '.delete_product', function(e){
         delete_product_id = $(this).attr('delete_product_id');
         removeFromCart(delete_product_id);
     });
@@ -271,6 +271,7 @@ $(function(){
         initialize_owl($('#carousel-blog1'));
 
         let tabs = [
+            { target: '#pills_0', owl: '#carousel-blog0' },
             { target: '#pills_1', owl: '#carousel-blog1' },
             { target: '#pills_2', owl: '#carousel-blog2' },
             { target: '#pills_3', owl: '#carousel-blog3' },
@@ -545,14 +546,38 @@ $(function(){
         touchDrag: true,
         mouseDrag: true,
         nav: true,
+        items: 3,
         responsive: {
             0: {
             items: 1,
-            nav: false,
+            nav: true,
+            }
+        }
+    });
+    
+    $('[id*=carousel-blog] .owl-next').html('<img src="' + base + '/images/arrow-right-black.png">');
+    $('[id*=carousel-blog] .owl-prev').html('<img src="' + base + '/images/arrow-left-black.png">');
+
+    $('#carouselblog-related').owlCarousel({
+        loop: true,
+        startPosition: 0,
+        dots: false,
+        margin: 0,
+        autoplay: false,
+        autoplayTimeout: 8000,
+        touchDrag: true,
+        mouseDrag: true,
+        margin: 40,
+        nav: true,
+        center: true,
+        responsive: {
+            0: {
+            items: 1,
+            nav: true,
             },
             768: {
             items: 1,
-            nav: false,
+            nav: true,
             },
             900: {
             items: 3,
@@ -561,8 +586,8 @@ $(function(){
         }
     });
     
-    $('[id*=carousel-blog] .owl-next').html('<img src="' + base + '/images/arrow-right-black.png">');
-    $('[id*=carousel-blog] .owl-prev').html('<img src="' + base + '/images/arrow-left-black.png">');
+    $('#carouselblog-related .owl-next').html('<img src="' + base + '/images/arrow-right-black.png">');
+    $('#carouselblog-related .owl-prev').html('<img src="' + base + '/images/arrow-left-black.png">');
 
     $('[id*=btn-header]').on('click', function(){
         var id_list = $(this).attr('list');
@@ -581,12 +606,12 @@ $(function(){
     });
 
     $('.burgergg').on('click',function(){
-        if($('.nav-mobile').hasClass('nav-mobile-active'))
+        if($('.content-list').hasClass('nav-mobile-active'))
         {
-            $('.nav-mobile').removeClass('nav-mobile-active');
+            $('.content-list').removeClass('nav-mobile-active');
         }else
         {
-            $('.nav-mobile').addClass('nav-mobile-active');
+            $('.content-list').addClass('nav-mobile-active');
         }
         if($('.linea1').hasClass('toggle1')){$('.linea1').removeClass('toggle1');}else{$('.linea1').addClass('toggle1');}
         if($('.linea2').hasClass('toggle2')){$('.linea2').removeClass('toggle2');}else{$('.linea2').addClass('toggle2');}

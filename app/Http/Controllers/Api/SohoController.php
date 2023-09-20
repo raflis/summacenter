@@ -14,17 +14,19 @@ class SohoController extends Controller
     {
         $response = Http::asForm()->post('https://accounts.zoho.com/oauth/v2/token', [
             'code' => '1000.47a00343dadcd940803d998e7bed426a.00d1018e528a7ebcb03c981f3a2a2ea2', //token de 10 min generado en la plataforma
-            'redirect_url' => 'https://summa.dopamina.pe',
+            'redirect_url' => 'https://summacenterlatam.com',
             'client_id' => '1000.041UALJXMJNMY53P6XDU70OYDV8AFI',
             'client_secret' => '8829c06634ca1a4c9060169f4b9b270d7ab104ae78',
             'grant_type' => 'authorization_code',
         ]);
 
+        //scope in Self Cliente = ZohoCRM.modules.ALL
+
         return $response->json(); //generamos token de 1 hora
 
         /*{
-            "access_token":"1000.c6c5fb98cab210b5f0c0843de0d341a7.7a256dc5d08415a0a46a5322ba6f058d",
-            "refresh_token":"1000.62a3a0ec341d4b4b51e0b4608815a56a.6d647d2136547abb8636646f615838d4", //token que NUNCA caduca
+            "access_token":"1000.ca22a454deb3d9e83cde02f372098c88.bb699033964c8ea720956c07d4e30d36",
+            "refresh_token":"1000.d80dd7c106318bdacf55cb376976f82a.e5d7a923c8d0e380c5f0902d3c443be6", //token que NUNCA caduca
             "api_domain":"https:\/\/www.zohoapis.com",
             "token_type":"Bearer",
             "expires_in":3600
@@ -34,14 +36,14 @@ class SohoController extends Controller
     public function refresh_token()
     {
         $response = Http::asForm()->post('https://accounts.zoho.com/oauth/v2/token', [
-            'refresh_token' => '1000.62a3a0ec341d4b4b51e0b4608815a56a.6d647d2136547abb8636646f615838d4',
+            'refresh_token' => '1000.d80dd7c106318bdacf55cb376976f82a.e5d7a923c8d0e380c5f0902d3c443be6',
             'client_id' => '1000.041UALJXMJNMY53P6XDU70OYDV8AFI',
             'client_secret' => '8829c06634ca1a4c9060169f4b9b270d7ab104ae78',
             'grant_type' => 'refresh_token',
         ]);
 
         $response = $response->json(); //generamos token de trabajo
-        return $response; //Delete this line, error in response
+        //return $response; //Delete this line, error in response
         
         $updated = Setting::find(1);
         $updated->zoho_token = $response['access_token'];

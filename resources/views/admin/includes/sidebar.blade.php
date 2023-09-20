@@ -73,6 +73,22 @@
         href="{{ route('pagefields.support') }}">
             <i class="fas fa-home text-gray pr-1"></i> Soporte
         </a>
+        <a class="nav-link @if(preg_match("/pagefields.graduates/", Route::currentRouteName())) active @endif" 
+        href="{{ route('pagefields.graduates') }}">
+            <i class="fas fa-home text-gray pr-1"></i> Egresados
+        </a>
+        <a class="nav-link @if(preg_match("/pagefields.aboutus/", Route::currentRouteName())) active @endif" 
+        href="{{ route('pagefields.aboutus') }}">
+            <i class="fas fa-home text-gray pr-1"></i> Nosotros
+        </a>
+        <a class="nav-link @if(preg_match("/pagefields.terms_and_conditions/", Route::currentRouteName())) active @endif" 
+        href="{{ route('pagefields.terms_and_conditions') }}">
+            <i class="fas fa-home text-gray pr-1"></i> Términos y condiciones
+        </a>
+        <a class="nav-link @if(preg_match("/pagefields.privacy_policies/", Route::currentRouteName())) active @endif" 
+        href="{{ route('pagefields.privacy_policies') }}">
+            <i class="fas fa-home text-gray pr-1"></i> Política de privacidad
+        </a>
 
         <div class="sidenav-menu-heading">Blog</div>
         <a class="nav-link @if(preg_match("/blog_tags/", Route::currentRouteName())) active @endif" 

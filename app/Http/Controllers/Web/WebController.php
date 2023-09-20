@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Web;
 
+use Mail;
+use Str;
 use Http;
 use Validator;
 use App\Models\Record;
@@ -23,14 +25,19 @@ use App\Models\Admin\CourseArea;
 use App\Models\Admin\IssuedBadge;
 use App\Models\Admin\Testimonial;
 use App\Models\Admin\BlogCategory;
+use App\Models\Admin\ComplaintBook;
 use App\Http\Controllers\Controller;
-use App\Models\Admin\BlogSubCategory;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\SohoController;
 use App\Http\Controllers\Api\CredlyController;
 
 class WebController extends Controller
 {
+    public function test()
+    {
+        return view('web.test');
+    }
+
     public function index()
     {
         $flags = Flag::orderBy('name', 'Asc')->get();
@@ -92,9 +99,10 @@ class WebController extends Controller
     public function curso($slug, $id)
     {
         $agent = new Agent();
+        $flags = Flag::orderBy('name', 'Asc')->get();
         $course = Course::find($id);
         $course_areas = CourseArea::orderBy('order', 'Asc')->get();
-        return view('web.curso', compact('agent', 'course', 'course_areas'));
+        return view('web.curso', compact('agent', 'course', 'course_areas', 'flags'));
     }
 
     public function equipo(Request $request)
@@ -257,13 +265,15 @@ class WebController extends Controller
     public function politicas()
     {
         $agent = new Agent();
-        return view('web.politicas', compact('agent'));
+        $pagefield = PageField::find(1);
+        return view('web.politicas', compact('agent', 'pagefield'));
     }
 
     public function terminos_y_condiciones()
     {
         $agent = new Agent();
-        return view('web.terminos-y-condiciones', compact('agent'));
+        $pagefield = PageField::find(1);
+        return view('web.terminos-y-condiciones', compact('agent', 'pagefield'));
     }
 
     public function manual_alumno()
@@ -276,7 +286,68 @@ class WebController extends Controller
     public function libro_reclamaciones()
     {
         $agent = new Agent();
-        return view('web.libro-reclamaciones', compact('agent'));
+        $last_id = ComplaintBook::count() + 1;
+        return view('web.libro-reclamaciones', compact('agent', 'last_id'));
+    }
+
+    public function postLibro(Request $request)
+    {
+        $rules=[
+            'type_contact' => 'required',
+            'name' => 'required',
+            'lastname1' => 'required',
+            'lastname2' => 'required',
+            'address' => 'required',
+            'type_document' => 'required',
+            'document' => 'required',
+            'telephone' => 'required',
+            'email' => 'required',
+            'type_contract' => 'required',
+            'type_contract_clasification' => 'required',
+            'type_contract_description' => 'required',
+            'claim_type' => 'required',
+            'claim_description' => 'required',
+            'consumer_request' => 'required',
+        ];
+
+        $messages=[
+            //
+        ];
+        $validator=Validator::make($request->all(), $rules);
+        if($validator->fails()):
+            return back()->withErrors($validator)->with('message', 'Se ha producido un error')->with('typealert', 'danger')->withInput();
+        else:
+            if($request->hasFile('file_front')):
+                $fileName = $request->id_front.'_'.Str::slug(pathinfo($request->file_front->getClientOriginalName(), PATHINFO_FILENAME));
+                $fileName = $fileName.'.'.$request->file_front->getClientOriginalExtension();
+                $request->file_front->move(public_path('libro_reclamaciones'), $fileName);
+                $request->merge(['file' => $fileName]);
+            else:
+                $request->merge(['file' => '']);
+            endif;
+
+            $complaint_book = ComplaintBook::create($request->all());
+
+            $record = $request->all();
+            $record['id'] = $complaint_book->id;
+
+            $email_to_bd = 'summa.center1@gmail.com, coordinacion@summacenter.net';
+            $email_to_bd = explode(',', $email_to_bd);
+            foreach ($email_to_bd as $key => $value):
+                $record['email_to'] = trim($value);
+                Mail::send('web.emails.complaint_admin', $record, function($message) use ($record)
+                {
+                    $message->to($record['email_to'])->subject('Hoja de Reclamación - Summa Center - '.$record['id_front']);    
+                });
+            endforeach;
+
+            Mail::send('web.emails.complaint_user', $record, function($message) use ($record)
+            {
+                $message->to($record['email'])->subject('Hoja de Reclamación - Summa Center - '.$record['id_front']);    
+            });
+
+            return redirect()->route('gracias')->with('message', 'Gracias')->with('message', 'Pronto nos pondremos en contacto contigo.')->with('typealert', 'success');
+        endif;
     }
 
     public function asesoria_especializada()
@@ -328,7 +399,8 @@ class WebController extends Controller
     public function nosotros()
     {
         $agent = new Agent();
-        return view('web.nosotros', compact('agent'));
+        $pagefield = PageField::find(1);
+        return view('web.nosotros', compact('agent', 'pagefield'));
     }
 
     public function postIndex(Request $request)
@@ -379,10 +451,10 @@ class WebController extends Controller
                         'Lead_Status' => 'No contactado',
                         'CAMPA_A_OK' => 'Campaña Web',
                         'Fuente_de_Lead' => $request->document,
-                        'Fuente_de_Lead1' => 'GOOGLE ADWORDS',
+                        /*'Fuente_de_Lead1' => 'GOOGLE ADWORDS',
                         'C_digo_Curso' => [
                             $zoho_code
-                        ]
+                        ]*/
                     ]
                 ]
             ];
@@ -444,10 +516,10 @@ class WebController extends Controller
                         'Lead_Status' => 'No contactado',
                         'CAMPA_A_OK' => 'Campaña Web',
                         'Fuente_de_Lead' => $request->document,
-                        'Fuente_de_Lead1' => 'GOOGLE ADWORDS',
+                        /*'Fuente_de_Lead1' => 'GOOGLE ADWORDS',
                         'C_digo_Curso' => [
                             $zoho_code
-                        ]
+                        ]*/
                     ]
                 ]
             ];
@@ -504,7 +576,7 @@ class WebController extends Controller
                         'Lead_Status' => 'No contactado',
                         'CAMPA_A_OK' => 'Campaña Web',
                         'Fuente_de_Lead' => $request->document,
-                        'Fuente_de_Lead1' => 'GOOGLE ADWORDS',
+                        //'Fuente_de_Lead1' => 'GOOGLE ADWORDS',
                     ]
                 ]
             ];
@@ -514,7 +586,7 @@ class WebController extends Controller
                 'Content-Type' => 'application/json',
             ])->post('https://www.zohoapis.com/crm/v2/Leads', $data_zoho);
 
-            return redirect()->route('gracias')->with('message','Creado con éxito.')->with('typealert','success');
+            return redirect()->route('gracias')->with('message', 'Creado con éxito.')->with('typealert', 'success');
         endif;
     }
 
@@ -543,13 +615,13 @@ class WebController extends Controller
 
         $validator=Validator::make($request->all(), $rules, $messages);
         if($validator->fails()):
-            return back()->withErrors($validator)->with('message','Se ha producido un error')->with('typealert','danger')->withInput();
+            return back()->withErrors($validator)->with('message', 'Se ha producido un error')->with('typealert', 'danger')->withInput();
         else:
             if(!$request->call_sms):
                 $request->merge(['call_sms' => 0]);
             endif;
             $record = Record::create($request->all());
-            return redirect()->route('gracias')->with('message','Creado con éxito.')->with('typealert','success');
+            return redirect()->route('gracias')->with('message', 'Creado con éxito.')->with('typealert', 'success');
         endif;
     }
 
@@ -565,19 +637,12 @@ class WebController extends Controller
     	return view('web.blog.blog', compact('pagefield', 'blog_categories'));
     }
 
-    public function post($category, $subcategory, $slug, $id)
+    public function post($category, $slug, $id)
     {
         $post = BlogPost::where('slug', $slug)->where('id', $id)->first();
-        $blog_categories = BlogCategory::orderBy('order', 'Asc')->get();
-    	return view('web.blog.post', compact('post', 'blog_categories'));
-    }
-
-    public function subcategory($category, $subcategory, $id)
-    {
-        $pagefield = PageField::find(1);
-        $blog_categories = BlogCategory::orderBy('order', 'Asc')->get();
-        $blog_subcategory = BlogSubCategory::where('slug', $subcategory)->where('id', $id)->first();
-    	return view('web.blog.subcategory', compact('pagefield', 'blog_subcategory', 'blog_categories'));
+        //$related = BlogPost::where('id', '<>', $post->id)->get();
+        $related = BlogPost::where('blog_category_id', $post->blog_category_id)->where('id', '<>', $post->id)->orderBy('order', 'Asc')->get();
+    	return view('web.blog.post', compact('post', 'related'));
     }
 
     public function tag($slug)

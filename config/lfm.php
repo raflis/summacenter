@@ -15,8 +15,8 @@ return [
     |--------------------------------------------------------------------------
      */
 
-    'middlewares' => ['auth:user'],
-    'allow_multi_user' => false,
+    //'middlewares' => ['web'],
+    'allow_multi_user' => true,
 
     'use_package_routes'       => true,
 

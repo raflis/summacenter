@@ -64,47 +64,20 @@
                         <div class="tab-pane fade {{ ($j == 1)?'show active':'' }}" id="pills_{{ $item->id }}" role="tabpanel" aria-labelledby="pills_{{ $item->id }}_tab">
                             <div class="content1">
                                 <div class="row">
-                                    <div class="col-md-12 filtros">
-                                        <div class="busq">
-                                            <img class="embudo" src="{{ asset('images/embudo2.png') }}" alt="">
-                                            <button data-toggle="collapse" type="button" data-bs-toggle="collapse" data-bs-target="#categoriasCol{{ $item->id }}" aria-expanded="false" aria-controls="categoriasCol{{ $item->id }}">
-                                                <span>Categorías</span>
-                                                <img src="{{ asset('images/abajo-blanco.png') }}" alt="">
-                                            </button>
-                                            <!--<button data-toggle="collapse" type="button" data-bs-toggle="collapse" data-bs-target="#tagsCol{{ $item->id }}" aria-expanded="false" aria-controls="tagsCol{{ $item->id }}">
-                                                <span>Tags</span>
-                                                <img src="{{ asset('images/abajo-blanco.png') }}" alt="">
-                                            </button>-->
-                                            <div class="multi-collapse shadow collapse" id="categoriasCol{{ $item->id }}" style="">
-                                                <div class="card card-body">
-                                                    @foreach ($item->blog_subcategories as $item_)
-                                                    @if(count($item_->blog_posts) > 0)
-                                                    <a class="btn-link" href="{{ route('subcategory', [$item_->blog_category->slug, $item_->slug, $item_->id]) }}">{{ $item_->name }}</a>
-                                                    @endif
-                                                    @endforeach
-                                                </div>
-                                            </div>
-                                            <!--<div class="multi-collapse shadow collapse" id="tagsCol{{ $item->id }}" style="">
-                                                <div class="card card-body">
-                                                    <a class="btn-link" href="">code</a>
-                                                </div>
-                                            </div>-->
-                                        </div>
-                                    </div>
                                     @foreach ($item->blog_posts as $item_p)
                                     <div class="col-md-4 item">
                                         <div class="item_">
                                             <div class="image">
-                                                <a href="{{ route('post', [$item_p->blog_sub_category->blog_category->slug, $item_p->blog_sub_category->slug, $item_p->slug, $item_p->id]) }}">
+                                                <a href="{{ route('post', [$item_p->blog_category->slug, $item_p->slug, $item_p->id]) }}">
                                                     <img src="{{ $item_p->image1 }}" alt="">
                                                 </a>
                                             </div>
                                             <div class="content">
-                                                <a href="{{ route('post', [$item_p->blog_sub_category->blog_category->slug, $item_p->blog_sub_category->slug, $item_p->slug, $item_p->id]) }}" class="btn btn-leer">
+                                                <a href="{{ route('post', [$item_p->blog_category->slug, $item_p->slug, $item_p->id]) }}" class="btn btn-leer">
                                                     ARTÍCULO COMPLETO
                                                 </a>
                                                 <p class="category">
-                                                    {{ $item_p->blog_sub_category->name }}
+                                                    {{ $item_p->blog_category->name }}
                                                 </p>
                                                 <p class="tit">
                                                     {{ $item_p->name }}

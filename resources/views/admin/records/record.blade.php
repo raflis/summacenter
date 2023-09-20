@@ -85,7 +85,7 @@
                                 <td>{{ $record->name }}</td>
                                 <td>{{ $record->lastname }}</td>
                                 <td>{{ $record->document }}</td>
-                                <td>{{ $record->telephone }}</td>
+                                <td><img src="{{ asset('images/flags/'.$record->flag->image) }}" height=18 alt=""> {{ $record->telephone }}</td>
                                 <td>{{ $record->email }}</td>
                                 <td>{{ $record->interested_course }}</td>
                                 <td>{{ ($record->from == 'curso')?'Página de curso':'Página de inicio' }}</td>

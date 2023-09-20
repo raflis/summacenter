@@ -115,11 +115,14 @@ class SaleController extends Controller
 
         $validator=Validator::make($request->all(), $rules, $messages);
         if($validator->fails()):
-            return back()->withErrors($validator)->with('message','Se ha producido un error')->with('typealert','danger')->withInput();
+            return back()->withErrors($validator)->with('message', 'Se ha producido un error')->with('typealert', 'danger')->withInput();
         else:
             $updated = Sale::find($id);
+            if($request->paid == 1):
+                $request->merge(['status' => 'Authorized']);
+            endif;
             $updated->fill($request->all())->save();
-            return redirect()->route('sales.index')->with('message','Actualizado con éxito.')->with('typealert','success');
+            return redirect()->route('sales.index')->with('message', 'Actualizado con éxito.')->with('typealert', 'success');
         endif;
     }
 

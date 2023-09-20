@@ -12,12 +12,12 @@ class BlogPost extends Model
     protected $table = 'blog_posts';
 
     protected $fillable = [
-        'blog_sub_category_id', 'name', 'slug', 'image1', 'image2', 'summary', 'body', 'status', 'featured', 'order',
+        'blog_category_id', 'name', 'slug', 'image1', 'image2', 'summary', 'body', 'status', 'featured', 'order',
     ];
 
-    public function blog_sub_category()
+    public function blog_category()
     {
-        return $this->belongsTo(BlogSubCategory::class);
+        return $this->belongsTo(BlogCategory::class);
     }
 
     public function blog_tags()

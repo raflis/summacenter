@@ -152,7 +152,7 @@
             </div>
             <div class="header-right">
                 <li class="menu-link2">
-                    <a href="">CAMPUS ONLINE</a>
+                    <a href="{{ $setting->button_link }}">{{ $setting->button_name }}</a>
                 </li>
                 <li class="menu menu2">
                     <div class="dropdown dropdown_header">
@@ -206,6 +206,173 @@
                 </li>
             </div>
         </ul>
+    </div>
+</div>
+
+<div class="header_mobile">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="content">
+                    <div class="content-left">
+                        <div class="logo">
+                            <a href="{{ route('index') }}"><img src="{{ asset('images/logo.png') }}" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="content-right">
+                        <div class="burger burgergg">
+                            <div class="linea1"></div>
+                            <div class="linea2"></div>
+                            <div class="linea3"></div>
+                        </div>
+                    </div>
+                    <div class="content-list">
+                        <div class="burger0 burgergg">
+                            <div class="linea1"></div>
+                            <div class="linea2"></div>
+                            <div class="linea3"></div>
+                        </div>
+                        <ul class="list1">
+                            <li>
+                                <img src="{{ asset('images/logo.png') }}" alt="">
+                            </li>
+                            <li class="{{ (Route::currentRouteName()=="egresados")?'active':'' }}">
+                                <a href="{{ route('egresados') }}"><i class="fa-solid fa-angle-right"></i> EGRESADOS</a>
+                            </li>
+                            <li class="{{ (Route::currentRouteName()=="blog")?'active':'' }}">
+                                <a href="{{ route('blog') }}"><i class="fa-solid fa-angle-right"></i> BLOG</a>
+                            </li>
+                            <li class="{{ (Route::currentRouteName()=="soporte")?'active':'' }}">
+                                <a href="{{ route('soporte') }}"><i class="fa-solid fa-angle-right"></i> SOPORTE</a>
+                            </li>
+                            <li class="{{ (Route::currentRouteName()=="contacto")?'active':'' }}">
+                                <a href="{{ route('contacto') }}"><i class="fa-solid fa-angle-right"></i> CONTACTO</a>
+                            </li>
+                            <li>
+                                <a href="{{ $setting->button_link }}"><i class="fa-solid fa-link"></i> {{ $setting->button_name }}</a>
+                            </li>
+                        </ul>
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-heading0">
+                                    <button class="accordion-button {{ preg_match("/^bolsa./", Route::currentRouteName())?'':'collapsed' }}" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse0" aria-expanded="false" aria-controls="flush-collapse0">
+                                        BOLSA DE TRABAJO
+                                    </button>
+                                </h2>
+                                <div id="flush-collapse0" class="accordion-collapse collapse {{ preg_match("/^bolsa./", Route::currentRouteName())?'show':'' }}" aria-labelledby="flush-heading0" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <ul class="list2">
+                                            <li class="{{ (Route::currentRouteName()=="bolsa.seleccionar")?'active':'' }}">
+                                                <a href="{{ route('bolsa.seleccionar') }}">Ver Anuncios</a>
+                                            </li>
+                                            <li class="{{ (Route::currentRouteName()=="bolsa.trabajo")?'active':'' }}">
+                                                <a href="{{ route('bolsa.trabajo') }}">Crear Anuncios</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingOne">
+                                    <button class="accordion-button @if(Route::currentRouteName()=="modelo-educativo" || Route::currentRouteName()=="nosotros" || Route::currentRouteName()=="equipo" || Route::currentRouteName()=="ofimatica" || preg_match("/^responsabilidad-social/", Route::currentRouteName()) || Route::currentRouteName()=="distinciones") @else collapsed @endif" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                        SUMMA
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseOne" class="accordion-collapse collapse @if(Route::currentRouteName()=="modelo-educativo" || Route::currentRouteName()=="nosotros" || Route::currentRouteName()=="equipo" || Route::currentRouteName()=="ofimatica" || preg_match("/^responsabilidad-social/", Route::currentRouteName()) || Route::currentRouteName()=="distinciones") show @endif" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <ul class="list2">
+                                            <li class="{{ (Route::currentRouteName()=="nosotros")?'active':'' }}">
+                                                <a href="{{ route('nosotros') }}">Nosotros</a>
+                                            </li>
+                                            <li class="{{ (Route::currentRouteName()=="equipo")?'active':'' }}">
+                                                <a href="{{ route('equipo') }}">Equipo Summa</a>
+                                            </li>
+                                            <li class="{{ (Route::currentRouteName()=="modelo-educativo")?'active':'' }}">
+                                                <a href="{{ route('modelo-educativo') }}">Modelo Educativo</a>
+                                            </li>
+                                            <li class="{{ (Route::currentRouteName()=="distinciones")?'active':'' }}">
+                                                <a href="{{ route('distinciones') }}">Distinciones</a>
+                                            </li>
+                                            <li class="@if(preg_match("/^responsabilidad-social/", Route::currentRouteName())) active @endif">
+                                                <a href="{{ route('responsabilidad-social-objetivos') }}">Responsabilidad Social</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingTwo">
+                                    <button class="accordion-button @if(Route::currentRouteName()=="programas" || Route::currentRouteName()=="curso") @else collapsed @endif" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                        PROGRAMAS
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseTwo" class="accordion-collapse collapse @if(Route::currentRouteName()=="programas" || Route::currentRouteName()=="curso") show @endif" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <ul class="list2">
+                                            @foreach ($course_areas as $item)
+                                            <li class="@if(Request::url()==route('programas', $item->slug)) active @endif">
+                                                <a href="{{ route('programas', $item->slug) }}">{{ $item->name }}</a>
+                                            </li>
+                                            @endforeach
+                                            <li>
+                                                <a href="{{ route('programas') }}">Ver Todo</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingThree">
+                                    <button class="accordion-button @if(Route::currentRouteName()=="nuestras-certificaciones" || Route::currentRouteName()=="preguntas-frecuentes" || Route::currentRouteName()=="grupo-excelencia" || preg_match("/insignia/", Route::currentRouteName()) ) @else collapsed @endif" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                        CERTIFICACIONES
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseThree" class="accordion-collapse collapse @if(Route::currentRouteName()=="nuestras-certificaciones" || Route::currentRouteName()=="preguntas-frecuentes" || Route::currentRouteName()=="grupo-excelencia" || preg_match("/insignia/", Route::currentRouteName()) ) show @endif" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <ul class="list2">
+                                            <li class="@if(Route::currentRouteName()=="nuestras-certificaciones") active @endif">
+                                                <a href="{{ route('nuestras-certificaciones') }}">Nuestras Certificaciones</a>
+                                            </li>
+                                            <li class="@if(Route::currentRouteName()=="insignias-digitales") active @endif">
+                                                <a href="{{ route('insignias-digitales') }}">Insignias Digitales</a>
+                                            </li>
+                                            <li class="@if(Route::currentRouteName()=="coleccion-insignias" || Route::currentRouteName()=="insignia") active @endif">
+                                                <a href="{{ route('coleccion-insignias') }}">Colección de Insignias</a>
+                                            </li>
+                                            <li class="@if(Route::currentRouteName()=="grupo-excelencia") active @endif">
+                                                <a href="{{ route('grupo-excelencia') }}">Grupo de Excelencia Académica</a>
+                                            </li>
+                                            <li class="@if(Route::currentRouteName()=="preguntas-frecuentes") active @endif">
+                                                <a href="{{ route('preguntas-frecuentes') }}">Preguntas Frecuentes</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-heading4">
+                                    <button class="accordion-button @if(Route::currentRouteName()=="asesoria-especializada" || Route::currentRouteName()=="capacitaciones-corporativas") @else collapsed @endif" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse4" aria-expanded="false" aria-controls="flush-collapse4">
+                                        CORPORATIVO
+                                    </button>
+                                </h2>
+                                <div id="flush-collapse4" class="accordion-collapse collapse @if(Route::currentRouteName()=="asesoria-especializada" || Route::currentRouteName()=="capacitaciones-corporativas") show @endif" aria-labelledby="flush-heading4" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <ul class="list2">
+                                            <li class="@if(Route::currentRouteName()=="asesoria-especializada") active @endif">
+                                                <a href="{{ route('asesoria-especializada') }}">Asesoria Especializada</a>
+                                            </li>
+                                            <li class="@if(Route::currentRouteName()=="capacitaciones-corporativas") active @endif">
+                                                <a href="{{ route('capacitaciones-corporativas') }}">Capacitaciones Corporativas</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 

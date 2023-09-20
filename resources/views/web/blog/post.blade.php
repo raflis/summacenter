@@ -14,7 +14,7 @@
                     <ol class="breadcrumb">
                       <li class="breadcrumb-item"><a href="{{ route('index') }}">Inicio</a></li>
                       <li class="breadcrumb-item"><a href="{{ route('blog') }}">Blog</a></li>
-                      <li class="breadcrumb-item"><a href="{{ route('subcategory', [$post->blog_sub_category->blog_category->slug, $post->blog_sub_category->slug, $post->blog_sub_category->id]) }}">{{ $post->blog_sub_category->blog_category->name }} / {{ $post->blog_sub_category->name }}</a></li>
+                      <li class="breadcrumb-item active" aria-current="page">{{ $post->blog_category->name }}</li>
                       <li class="breadcrumb-item active" aria-current="page">{{ $post->name }}</li>
                     </ol>
                 </nav>
@@ -60,72 +60,37 @@
                 <h3>
                     NOTICIAS QUE TE PUEDEN INTERESAR
                 </h3>
-                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                    @php $i = 0 @endphp
-                    @foreach ($blog_categories as $item)
-                    @if(count($item->blog_posts) > 0)
-                    @php $i++ @endphp
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link {{ ($i == 1)?'active':'' }}" id="pills_{{ $i }}_tab" data-bs-toggle="pill" data-bs-target="#pills_{{ $i }}" type="button" role="tab" aria-controls="pills_{{ $i }}" aria-selected="true">
-                            {{ $item->name }}
-                        </button>
-                    </li>
-                    @endif
-                    @endforeach
-                </ul>
             </div>
             <div class="col-md-12">
-                <div class="content">
-                    <div class="tab-content" id="pills-tabContent">
-                        @php $j = 0 @endphp
-                        @foreach ($blog_categories as $item)
-                        @if(count($item->blog_posts) > 0)
-                        @php $j++ @endphp
-                        <div class="tab-pane fade {{ ($j == 1)?'show active':'' }}" id="pills_{{ $j }}" role="tabpanel" aria-labelledby="pills_{{ $j }}_tab">
-                            <div class="content1">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div id="carousel-blog{{ $j }}" class="owl-carousel">
-                                            @foreach ($item->blog_posts as $item_p)
-                                            <div class="item">
-                                                <div class="col-md-4 item0">
-                                                    <div class="item0_">
-                                                        <div class="image">
-                                                            <a href="{{ route('post', [$item_p->blog_sub_category->blog_category->slug, $item_p->blog_sub_category->slug, $item_p->slug, $item_p->id]) }}">
-                                                                <img src="{{ $item_p->image1 }}" alt="">
-                                                            </a>
-                                                        </div>
-                                                        <div class="content">
-                                                            <a href="{{ route('post', [$item_p->blog_sub_category->blog_category->slug, $item_p->blog_sub_category->slug, $item_p->slug, $item_p->id]) }}" class="btn btn-leer">
-                                                                ARTÍCULO COMPLETO
-                                                            </a>
-                                                            <p class="category">
-                                                                {{ $item_p->blog_sub_category->name }}
-                                                            </p>
-                                                            <p class="tit">
-                                                                {{ $item_p->name }}
-                                                            </p>
-                                                            <p class="description">
-                                                                {{ $item_p->summary }}
-                                                            </p>
-                                                            <div class="tags">
-                                                                @foreach ($item_p->blog_tags as $item_t)
-                                                                <a href="{{ route('tag', $item_t->slug) }}" class="btn btn-tag">{{ $item_t->name }}</a> 
-                                                                @endforeach
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            @endforeach
-                                        </div>
-                                    </div>
-                                </div>
+                <div id="carouselblog-related" class="owl-carousel">
+                    @foreach ($related as $item_p)
+                    <div class="item">
+                        <div class="image">
+                            <a href="{{ route('post', [$item_p->blog_category->slug, $item_p->slug, $item_p->id]) }}">
+                                <img src="{{ $item_p->image1 }}" alt="">
+                            </a>
+                        </div>
+                        <div class="content">
+                            <a href="{{ route('post', [$item_p->blog_category->slug, $item_p->slug, $item_p->id]) }}" class="btn btn-leer">
+                                ARTÍCULO COMPLETO
+                            </a>
+                            <p class="category">
+                                {{ $item_p->blog_category->name }}
+                            </p>
+                            <p class="tit">
+                                {{ $item_p->name }}
+                            </p>
+                            <p class="description">
+                                {{ $item_p->summary }}
+                            </p>
+                            <div class="tags">
+                                @foreach ($item_p->blog_tags as $item_t)
+                                <a href="{{ route('tag', $item_t->slug) }}" class="btn btn-tag">{{ $item_t->name }}</a> 
+                                @endforeach
                             </div>
                         </div>
-                        @endif
-                        @endforeach
                     </div>
+                    @endforeach
                 </div>
             </div>
         </div>

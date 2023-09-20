@@ -45,6 +45,30 @@ class PageFieldController extends Controller
         return view('admin.pagefields.support', compact('pagefield'));
     }
 
+    public function graduates()
+    {
+        $pagefield = PageField::find(1);
+        return view('admin.pagefields.graduates', compact('pagefield'));
+    }
+
+    public function aboutus()
+    {
+        $pagefield = PageField::find(1);
+        return view('admin.pagefields.aboutus', compact('pagefield'));
+    }
+
+    public function terms_and_conditions()
+    {
+        $pagefield = PageField::find(1);
+        return view('admin.pagefields.terms_and_conditions', compact('pagefield'));
+    }
+
+    public function privacy_policies()
+    {
+        $pagefield = PageField::find(1);
+        return view('admin.pagefields.privacy_policies', compact('pagefield'));
+    }
+
     public function index()
     {
         //
@@ -112,7 +136,7 @@ class PageFieldController extends Controller
 
         $validator=Validator::make($request->all(), $rules, $messages);
         if($validator->fails()):
-            return back()->withErrors($validator)->with('message','Se ha producido un error')->with('typealert','danger')->withInput();
+            return back()->withErrors($validator)->with('message', 'Se ha producido un error')->with('typealert', 'danger')->withInput();
         else:
             if($request->choose_items):
                 $request->merge(['choose_items'=>array_values(collect($request->choose_items)->sortBy(['order'])->toArray())]);
@@ -129,10 +153,22 @@ class PageFieldController extends Controller
             if($request->support_items2):
                 $request->merge(['support_items2'=>array_values(collect($request->support_items2)->sortBy(['order'])->toArray())]);
             endif;
+
+            if($request->graduates_items):
+                $request->merge(['graduates_items'=>array_values(collect($request->graduates_items)->sortBy(['order'])->toArray())]);
+            endif;
+
+            if($request->aboutus_items1):
+                $request->merge(['aboutus_items1'=>array_values(collect($request->aboutus_items1)->sortBy(['order'])->toArray())]);
+            endif;
+
+            if($request->aboutus_items2):
+                $request->merge(['aboutus_items2'=>array_values(collect($request->aboutus_items2)->sortBy(['order'])->toArray())]);
+            endif;
             
             $pagefield = PageField::find(1);
             $pagefield->fill($request->all())->save();
-            return redirect()->back()->with('message','Actualizado con éxito.')->with('typealert','success');
+            return redirect()->back()->with('message', 'Actualizado con éxito.')->with('typealert', 'success');
         endif;
     }
 

@@ -60,12 +60,12 @@ Route::post('postIndex', [App\Http\Controllers\Web\WebController::class, 'postIn
 Route::post('postCurso', [App\Http\Controllers\Web\WebController::class, 'postCurso'])->name('postCurso');
 Route::post('postContacto', [App\Http\Controllers\Web\WebController::class, 'postContacto'])->name('postContacto');
 Route::post('postCorporativo', [App\Http\Controllers\Web\WebController::class, 'postCorporativo'])->name('postCorporativo');
+Route::post('postLibro', [App\Http\Controllers\Web\WebController::class, 'postLibro'])->name('postLibro');
 
 Route::prefix('/blog')->group(function(){
     Route::get('/', [App\Http\Controllers\Web\WebController::class, 'blog'])->name('blog');
     Route::get('tag/{slug}', [App\Http\Controllers\Web\WebController::class, 'tag'])->name('tag');
-    Route::get('{category}/{subcategory}/{id}', [App\Http\Controllers\Web\WebController::class, 'subcategory'])->name('subcategory');
-    Route::get('{category}/{subcategory}/{slug}/{id}', [App\Http\Controllers\Web\WebController::class, 'post'])->name('post');
+    Route::get('{category}/{slug}/{id}', [App\Http\Controllers\Web\WebController::class, 'post'])->name('post');
 });
 
 Route::prefix('/myaccount')->group(function(){

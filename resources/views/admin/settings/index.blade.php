@@ -56,6 +56,18 @@
                             {{ Form::label('youtube', 'Youtube:') }} <code>*</code>
                             {{ Form::text('youtube', null, ['class' => 'form-control', 'placeholder' => 'Ingrese link de youtube', 'required']) }}
                         </div>
+                        <div class="form-group col-sm-6">
+                            {{ Form::label('button_name', 'Nombre del botón:') }} <code>*</code>
+                            {{ Form::text('button_name', null, ['class' => 'form-control', 'placeholder' => 'Nombre del botón', 'required']) }}
+                        </div>
+                        <div class="form-group col-sm-6">
+                            {{ Form::label('button_link', 'Link del botón:') }} <code>*</code>
+                            {{ Form::text('button_link', null, ['class' => 'form-control', 'placeholder' => 'Link del botón', 'required']) }}
+                        </div>
+                        <div class="form-group col-sm-12">
+                            {{ Form::label('map', 'Mapa de contacto:') }}
+                            {{ Form::textarea('map', null, ['class' => 'form-control', 'placeholder' => 'Mapa de contacto', 'rows' => 4]) }}
+                        </div>
                         <div class="form-group col-sm-12">
                             {{ Form::label('script', 'Script Javascript:') }}
                             {{ Form::textarea('script', null, ['class' => 'form-control', 'placeholder' => 'Script', 'rows' => 20]) }}

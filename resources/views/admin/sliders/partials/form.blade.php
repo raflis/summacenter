@@ -16,7 +16,7 @@
 </div>
 
 <div class="form-group col-sm-12">
-  {!! Form::label('image','Selecciona una imagen para mobile:',['class'=>'mt-3']) !!} <strong>(90 x 90px)</strong><code>*</code>
+  {!! Form::label('image','Selecciona una imagen para mobile:',['class'=>'mt-3']) !!} <strong>(400 x 720px)</strong><code>*</code>
   <div class="input-group">
       <span class="input-group-btn">
           <a id="lfm2" data-input="thumbnail2" data-preview="holder2" class="btn btn-primary text-white">

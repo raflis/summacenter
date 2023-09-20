@@ -31,7 +31,7 @@
 </div>
 <div class="form-group col-sm-3">
   {{ Form::label('paid', 'Validar pago') }} <code>*</code>
-  {{ Form::select('paid', ['0' => 'Pendiente', 1 => 'Pagado'], null, ['class' => 'form-control', 'required']) }}
+  {{ Form::select('paid', ['0' => 'Pendiente', 1 => 'Pagado'], null, ['class' => 'custom-select', 'required']) }}
 </div>
 
 <div class="form-group col-sm-9"></div>

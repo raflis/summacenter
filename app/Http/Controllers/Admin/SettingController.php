@@ -87,6 +87,9 @@ class SettingController extends Controller
             'instagram' => 'required',
             'linkedin' => 'required',
             'youtube' => 'required',
+            'map' => 'required',
+            'button_name' => 'required',
+            'button_link' => 'required',
         ];
 
         $messages=[

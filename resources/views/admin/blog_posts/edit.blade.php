@@ -7,10 +7,10 @@
         <div class="row layout-header">
             <div class="col-sm-12 header-content">
                 <h1>
-                    <i class="fas fa-bullhorn fa-xs text-white2"></i> Blog - {{ $blog_sub_category->blog_category->name }} - {{ $blog_sub_category->name }}
+                    <i class="fas fa-bullhorn fa-xs text-white2"></i> Blog - {{ $blog_category->name }}
                 </h1>
                 <span class="subtitle">
-                    Crear, editar y eliminar subcategorías.
+                    Crear, editar y eliminar.
                 </span>
             </div>
         </div>
@@ -19,7 +19,7 @@
                 <div class="card shadow">
                     <div class="card-header">
                         <span>
-                            Editar subcategoría
+                            Editar
                         </span>
                     </div>
                     {!! Form::model($blog_post, ['route' => ['blog_posts.update', $blog_post->id, 'id_get' => Request::get('id_get')], 'method' => 'PUT', 'class' => 'needs-validation', 'novalidate']) !!}

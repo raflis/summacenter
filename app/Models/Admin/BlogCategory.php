@@ -17,11 +17,6 @@ class BlogCategory extends Model
 
     public function blog_posts()
     {
-        return $this->hasManyThrough(BlogPost::class, BlogSubCategory::class)->where('status', 'PUBLISHED');
-    }
-
-    public function blog_subcategories()
-    {
-        return $this->hasMany(BlogSubCategory::class)->orderBy('order', 'Asc');
+        return $this->hasMany(BlogPost::class)->where('status', 'PUBLISHED');
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-define("VISA_DEVELOPMENT", true);
+define("VISA_DEVELOPMENT", false);
 
 // Desarrollo Visa
 define('VISA_DEV_MERCHANT_ID', '522591303');
@@ -12,9 +12,9 @@ define('VISA_DEV_URL_JS', 'https://static-content-qas.vnforapps.com/v2/js/checko
 define('VISA_DEV_URL_AUTHORIZATION', 'https://apitestenv.vnforapps.com/api.authorization/v3/authorization/ecommerce/'.VISA_DEV_MERCHANT_ID);
 
 // Producción Visa
-define('VISA_PRD_MERCHANT_ID', '527127703');
-define('VISA_PRD_USER', 'integraciones.visanet@necomplus.com');
-define('VISA_PRD_PWD', 'd5e7nk$M');
+define('VISA_PRD_MERCHANT_ID', '650213990');
+define('VISA_PRD_USER', 'adelacruz@summacenter.net');
+define('VISA_PRD_PWD', 'p6hHJFM$');
 define('VISA_PRD_URL_SECURITY', 'https://apiprod.vnforapps.com/api.security/v1/security');
 define('VISA_PRD_URL_SESSION', 'https://apiprod.vnforapps.com/api.ecommerce/v2/ecommerce/token/session/'.VISA_PRD_MERCHANT_ID);
 define('VISA_PRD_URL_JS', 'https://static-content.vnforapps.com/v2/js/checkout.js');

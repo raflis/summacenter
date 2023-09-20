@@ -7,7 +7,7 @@
         <div class="row layout-header">
             <div class="col-sm-12 header-content">
                 <h1>
-                    <i class="fas fa-bullhorn fa-xs text-white2"></i> Blog - {{ $blog_sub_category->blog_category->name }} - {{ $blog_sub_category->name }}
+                    <i class="fas fa-bullhorn fa-xs text-white2"></i> Blog - {{ $blog_category->name }}
                 </h1>
                 <span class="subtitle">
                     Crear, editar y eliminar.

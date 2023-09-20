@@ -7,10 +7,10 @@
         <div class="row layout-header">
             <div class="col-sm-12 header-content">
                 <h1>
-                    <i class="fas fa-bullhorn fa-xs text-white2"></i> Blog - {{ $blog_sub_category->blog_category->name }} - {{ $blog_sub_category->name }}
+                    <i class="fas fa-bullhorn fa-xs text-white2"></i> Blog - {{ $blog_category->name }}
                 </h1>
                 <span class="subtitle">
-                    Crear, editar y eliminar subcategorías.
+                    Crear, editar y eliminar.
                 </span>
             </div>
         </div>
@@ -22,7 +22,7 @@
                             Entradas
                         </span>
                         <div>
-                            <a class="btn btn-danger" href="{{ route('blog_sub_categories.index', ['id_get' => $blog_sub_category->blog_category->id]) }}">
+                            <a class="btn btn-danger" href="{{ route('blog_categories.index') }}">
                                 <span class="icon">
                                     <i class="fas fa-chevron-circle-left px-2 py-1"></i>
                                 </span>
@@ -50,7 +50,6 @@
                             <tr>
                                 <th>N°</th>
                                 <th>Nombre</th>
-                                <th>Sub Categoria</th>
                                 <th>Categoria</th>
                                 <th>Resumen</th>
                                 <th>Status</th>
@@ -64,8 +63,7 @@
                             <tr>
                                 <td>{{ $blog_posts->firstItem() + $loop->index }}</td>
                                 <td>{{ $item->name }}</td>
-                                <td>{{ $item->blog_sub_category->name }}</td>
-                                <td>{{ $item->blog_sub_category->blog_category->name }}</td>
+                                <td>{{ $item->blog_category->name }}</td>
                                 <td>{!! htmlspecialchars_decode($item->summary) !!}</td>
                                 <td>{{ ($item->status == 'DRAFT')?'Borrador':'Publicado' }}</td>
                                 <td>{{ ($item->featured == 1)?'Si':'No' }}</td>

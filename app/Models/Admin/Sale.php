@@ -34,7 +34,7 @@ class Sale extends Model
     public function scopePaid($query, $name)
     {
         if($name):
-            return $query->Where('status', 'LIKE', "%$name%");
+            return $query->Where('status', '=', "$name");
         endif;
     }
 

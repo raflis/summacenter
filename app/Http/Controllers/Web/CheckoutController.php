@@ -253,8 +253,20 @@ class CheckoutController extends Controller
     {
         $token = $this->generateToken();
         $data = $this->generateAuthorization(request('amount'), request('purchaseNumber'), $request->transactionToken, $token);
+        //dd($data);
         $invoice = session('invoice');
-        $c = preg_split('//', $data->dataMap->TRANSACTION_DATE, -1, PREG_SPLIT_NO_EMPTY);
+        //$c = preg_split('//', $data->dataMap->TRANSACTION_DATE, -1, PREG_SPLIT_NO_EMPTY);
+        if(isset($data->errorMessage)):
+            if($data->errorMessage == 'Not Authorized'):
+                $data_error = [
+                    'purchaseNumber' => request('purchaseNumber'),
+                    'transaction_date' => \Carbon\Carbon::now(),
+                    'detail' => $data->data->ACTION_DESCRIPTION,
+                ];
+                return view('web.cart.error', compact('data_error'));
+            endif;
+        endif;
+
         $data_sale = [
             'amount' => $data->order->amount,
             'currency' => $data->order->currency,

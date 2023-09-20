@@ -10,7 +10,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6 mapa">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1950.139594027511!2d-76.99606884202032!3d-12.161385997847761!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105b83a6e47378b%3A0x55f5cde618942060!2sJir%C3%B3n%20las%20Gaviotas%201957-1779%2C%20Santiago%20de%20Surco%2015054!5e0!3m2!1ses!2spe!4v1644994372417!5m2!1ses!2spe" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                {!! htmlspecialchars_decode($setting->map) !!}
             </div>
             <div class="col-md-6">
                 <div class="contacto shadow">
@@ -19,6 +19,9 @@
                     <p>
                         Completa el formulario y nos pondremos en contacto rápidamente contigo.
                     </p>
+                    <div>
+                        @include('web.partials.alert')
+                    </div>
                     <form action="{{ route('postContacto') }}" method="POST" class="row needs-validation" novalidate>
                         @csrf
                         <input type="hidden" name="from" value="contacto">

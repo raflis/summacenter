@@ -49,6 +49,7 @@ class AppServiceProvider extends ServiceProvider
                         );
             $view->with('worker_administrators', Worker::select('position')->where('type', 'administration')->orderBy('order', 'Asc')->distinct('position')->get());
             $view->with('course_areas', CourseArea::orderBy('order', 'Asc')->get());
+            $view->with('setting', Setting::find(1));
         });
 
         view()->composer('web.partials.footer',function($view){

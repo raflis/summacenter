@@ -13,6 +13,10 @@ Route::prefix('/admin')->group(function(){
     Route::get('pagefields/choose', [App\Http\Controllers\Admin\PageFieldController::class,'choose'])->name('pagefields.choose');
     Route::get('pagefields/achievement', [App\Http\Controllers\Admin\PageFieldController::class,'achievement'])->name('pagefields.achievement');
     Route::get('pagefields/support', [App\Http\Controllers\Admin\PageFieldController::class,'support'])->name('pagefields.support');
+    Route::get('pagefields/graduates', [App\Http\Controllers\Admin\PageFieldController::class,'graduates'])->name('pagefields.graduates');
+    Route::get('pagefields/aboutus', [App\Http\Controllers\Admin\PageFieldController::class,'aboutus'])->name('pagefields.aboutus');
+    Route::get('pagefields/terms_and_conditions', [App\Http\Controllers\Admin\PageFieldController::class,'terms_and_conditions'])->name('pagefields.terms_and_conditions');
+    Route::get('pagefields/privacy_policies', [App\Http\Controllers\Admin\PageFieldController::class,'privacy_policies'])->name('pagefields.privacy_policies');
     Route::resource('settings', App\Http\Controllers\Admin\SettingController::class);
     Route::resource('sliders', App\Http\Controllers\Admin\SliderController::class);
     Route::resource('partners', App\Http\Controllers\Admin\PartnerController::class);

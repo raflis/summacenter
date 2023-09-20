@@ -8,7 +8,6 @@ use App\Models\Admin\BlogTag;
 use App\Models\Admin\BlogPost;
 use App\Models\Admin\BlogCategory;
 use App\Http\Controllers\Controller;
-use App\Models\Admin\BlogSubCategory;
 
 class BlogPostController extends Controller
 {
@@ -31,9 +30,9 @@ class BlogPostController extends Controller
     public function index(Request $request)
     {
         $id_get = $request->id_get;
-        $blog_sub_category = BlogSubCategory::find($id_get);
-        $blog_posts = BlogPost::where('blog_sub_category_id', $id_get)->orderBy('order','Asc')->paginate();
-        return view('admin.blog_posts.index', compact('blog_posts', 'blog_sub_category'));
+        $blog_category = BlogCategory::find($id_get);
+        $blog_posts = BlogPost::where('blog_category_id', $id_get)->orderBy('order', 'Asc')->paginate();
+        return view('admin.blog_posts.index', compact('blog_posts', 'blog_category'));
     }
 
     /**
@@ -44,9 +43,9 @@ class BlogPostController extends Controller
     public function create(Request $request)
     {
         $id_get = $request->id_get;
-        $blog_sub_category = BlogSubCategory::find($id_get);
+        $blog_category = BlogCategory::find($id_get);
         $tags = BlogTag::orderBy('name', 'ASC')->get();
-        return view('admin.blog_posts.create', compact('blog_sub_category', 'tags'));
+        return view('admin.blog_posts.create', compact('blog_category', 'tags'));
     }
 
     /**
@@ -60,7 +59,7 @@ class BlogPostController extends Controller
         $id_get = $request->id_get;
 
         $rules=[
-            'blog_sub_category_id' => 'required',
+            'blog_category_id' => 'required',
             'name' => 'required',
             'slug' => 'required',
             'image1' => 'required',
@@ -113,10 +112,10 @@ class BlogPostController extends Controller
     public function edit(Request $request, $id)
     {
         $id_get = $request->id_get;
-        $blog_sub_category = BlogSubCategory::find($id_get);
+        $blog_category = BlogCategory::find($id_get);
         $tags = BlogTag::orderBy('name', 'ASC')->get();
         $blog_post = BlogPost::find($id);
-        return view('admin.blog_posts.edit', compact('blog_post', 'blog_sub_category', 'tags'));
+        return view('admin.blog_posts.edit', compact('blog_post', 'blog_category', 'tags'));
     }
 
     /**
@@ -131,7 +130,7 @@ class BlogPostController extends Controller
         $id_get = $request->id_get;
 
         $rules=[
-            'blog_sub_category_id' => 'required',
+            'blog_category_id' => 'required',
             'name' => 'required',
             'slug' => 'required',
             'image1' => 'required',

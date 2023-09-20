@@ -10,7 +10,7 @@
                     <i class="fas fa-bullhorn fa-xs text-white2"></i> Categorías
                 </h1>
                 <span class="subtitle">
-                    Crear, editar y eliminar categorías.
+                    Crear, editar y eliminar.
                 </span>
             </div>
         </div>
@@ -41,7 +41,6 @@
                                 <th>N°</th>
                                 <th>Nombre</th>
                                 <th>Orden</th>
-                                <th># de Subcategorías</th>
                                 <th># de Entradas</th>
                                 <th>Acciones</th>
                             </tr>
@@ -52,12 +51,11 @@
                                 <td>{{ $blog_categories->firstItem() + $loop->index }}</td>
                                 <td>{{ $item->name }}</td>
                                 <td>{{ $item->order }}</td>
-                                <td>{{ count($item->blog_subcategories) }}</td>
                                 <td>{{ count($item->blog_posts) }}</td>
                                 <td>
                                     <div style="display: inline-flex">
-                                        <a class="btn btn-success text-white btn-sm mr-1" href="{{ route('blog_sub_categories.index', ['id_get' => $item->id]) }}">
-                                            <i class="fas fa-plus pr-1"></i> Subcategorías
+                                        <a class="btn btn-success text-white btn-sm mr-1" href="{{ route('blog_posts.index', ['id_get' => $item->id]) }}">
+                                            <i class="fas fa-plus pr-1"></i> Entradas Blog
                                         </a>
 
                                         <a class="btn btn-primary text-white btn-sm mr-1" href="{{ route('blog_categories.edit', $item->id) }}">

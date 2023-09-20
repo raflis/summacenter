@@ -12,11 +12,15 @@
                         Gracias por tu compra
                     </strong>
                     <br>
+                    Nombre y apellido: {{ $recorded->invoice_name }}
+                    <br>
                     Número de pedido: {{ $recorded->purchase_number }}
                     <br>
                     Fecha y hora de pedido: {{ \Carbon\Carbon::parse($recorded->transaction_date)->format('d/m/Y H:i:s') }}
                     <br>
                     Importe pagado: {{ $recorded->amount }} {{ $recorded->currency }}
+                    <br>
+                    Tarjeta usada: {{ $recorded->brand }} {{ $recorded->card }}
                     <br><br>
                     Te hemos enviado más información de tu compra al email {{ $recorded->invoice_email }}
                     <br><br>

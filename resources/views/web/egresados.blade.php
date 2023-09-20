@@ -18,7 +18,7 @@
     </div>
 </section>
 
-<section class="sec60">
+<section class="sec60" style="background-image: url('{{ $pagefield->graduates_images[0]['desktop'] }}')">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12 breadcrumb__ pt-5">
@@ -34,13 +34,13 @@
             <div class="col-md-12 text_">
                 <div class="text">
                     <h1>
-                        TE DAMOS LA BIENVENIDA A EGRESADOS SUMMA
+                        {{ $pagefield->graduates_titles[0]['title'] }}
                     </h1>
                     <p>
-                        Un espacio creado para fortalecer la comunidad de egresados y donde compartiremos información actualizada del sector laboral. Entérate de las últimas novedades, casos de éxito y beneficios exclusivos para ti.
+                        {!! htmlspecialchars_decode(nl2br($pagefield->graduates_titles[0]['detail'])) !!}
                     </p>
-                    <a href="{{ route('recomendaciones') }}">
-                        Conoce más sobre nuestros<br>Egresados Summa
+                    <a href="{{ $pagefield->graduates_titles[0]['button_link'] }}">
+                        {!! htmlspecialchars_decode(nl2br($pagefield->graduates_titles[0]['button_name'])) !!}
                         <img src="{{ asset('images/arrow-right-white.png') }}" alt="">
                     </a>
                 </div>
@@ -57,56 +57,24 @@
                     BENEFICIOS
                 </h1>
                 <div class="items">
+                    @foreach ($pagefield->graduates_items as $item)
                     <div class="item">
                         <div class="image">
-                            <img src="{{ asset('images/icon-egresado3.png') }}" alt="">
+                            <img src="{{ $item['image'] }}" alt="">
                         </div>
                         <div class="text">
                             <h3>
-                                Noticias de Egresados
+                                {{ $item['name'] }}
                             </h3>
                             <p>
-                                Entérate de las últimas novedades que tenemos para nuestra comunidad de egresados.
+                                {!! htmlspecialchars_decode(nl2br($item['detail'])) !!}
                             </p>
                             <div class="btn-action">
-                                <a href="{{ route('blog') }}" class="btn btn-ingresa">INGRESA AQUÍ</a>
+                                <a href="{{ $item['link'] }}" class="btn btn-ingresa">INGRESA AQUÍ</a>
                             </div>
                         </div>
                     </div>
-                    <div class="item">
-                        <div class="image">
-                            <img src="{{ asset('images/icon-egresado1.png') }}" alt="">
-                        </div>
-                        <div class="text">
-                            <h3>
-                                Bolsa de Trabajo
-                            </h3>
-                            <p>
-                                Como <strong>Egresado SUMMA</strong> tienes acceso a la Bolsa de Trabajo para toda la vida. Ingresa hoy y conoce a las empresas que publican sus ofertas laborales con nosotros.
-                            </p>
-                            <div class="btn-action">
-                                <a href="{{ route('bolsa.trabajo') }}" class="btn btn-ingresa">INGRESA AQUÍ</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="image">
-                            <img src="{{ asset('images/icon-egresado2.png') }}" alt="">
-                        </div>
-                        <div class="text">
-                            <h3>
-                                Capacitación continua
-                            </h3>
-                            <p>
-                                Continúa aprendiendo en la Escuela <strong>SUMMA CENTER</strong> donde encontrarás diferentes programas que te ayudarán a potenciar tu perfil profesional.
-                                <br>
-                                <strong>Nuestra comunidad de egresados tienen un descuento especial de 15% en todos nuestros programas.</strong>
-                            </p>
-                            <div class="btn-action">
-                                <a href="{{ route('capacitaciones-corporativas') }}" class="btn btn-ingresa">INGRESA AQUÍ</a>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -125,16 +93,16 @@
                 <div class="col-md-4 item">
                     <div class="item_">
                         <div class="image">
-                            <a href="{{ route('post', [$ite->blog_sub_category->blog_category->slug, $ite->blog_sub_category->slug, $ite->slug, $ite->id]) }}">
+                            <a href="{{ route('post', [$ite->blog_category->slug, $ite->slug, $ite->id]) }}">
                                 <img src="{{ $ite->image1 }}" alt="">
                             </a>
                         </div>
                         <div class="content">
-                            <a href="{{ route('post', [$ite->blog_sub_category->blog_category->slug, $ite->blog_sub_category->slug, $ite->slug, $ite->id]) }}" class="btn btn-leer">
+                            <a href="{{ route('post', [$ite->blog_category->slug, $ite->slug, $ite->id]) }}" class="btn btn-leer">
                                 ARTÍCULO COMPLETO
                             </a>
                             <p class="category">
-                                {{ $ite->blog_sub_category->name }}
+                                {{ $ite->blog_category->name }}
                             </p>
                             <p class="tit">
                                 {{ $ite->name }}

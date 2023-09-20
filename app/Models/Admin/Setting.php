@@ -12,7 +12,8 @@ class Setting extends Model
     protected $table = 'settings';
 
     protected $fillable = [
-        'address', 'telephone', 'email', 'facebook', 'instagram', 'linkedin', 'youtube', 'whatsapp', 'script', 'zoho_token'
+        'address', 'telephone', 'email', 'facebook', 'instagram', 'linkedin', 'youtube', 'whatsapp', 'script', 'zoho_token',
+        'map', 'button_name', 'button_link',
     ];
     
 }
