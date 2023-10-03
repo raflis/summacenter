@@ -1,9 +1,9 @@
 <div class="header">
     <div class="container-fluid px-0">
         <ul class="header-first">
-            <li>
+            <!--<li>
                 <a href="{{ route('egresados') }}" class="@if(Route::currentRouteName()=="egresados") active @endif">EGRESADOS</a>
-            </li>
+            </li>-->
             <li>
                 <a href="{{ route('blog') }}" class="@if(Route::currentRouteName()=="blog") active @endif">BLOG</a>
             </li>
@@ -35,7 +35,7 @@
             <div class="header-left">
                 <li class="logo">
                     <a href="{{ route('index') }}">
-                        <img src="{{ asset('images/logo.png') }}" alt="">
+                        <img src="{{ asset('images/logo_color.png') }}" alt="">
                     </a>
                 </li>
                 <li class="menu">
@@ -63,7 +63,7 @@
                                     <img src="{{ asset('images/icono-distinciones.png') }}" alt="">
                                     Distinciones
                                 </a>
-                                <a class="dropdown-item @if(preg_match("/^responsabilidad-social/", Route::currentRouteName())) activeitems @endif" href="{{ route('responsabilidad-social-objetivos') }}">
+                                <a class="dropdown-item @if(preg_match("/^responsabilidad-social/", Route::currentRouteName())) activeitems @endif" href="{{ route('responsabilidad-social-programa-de-becas') }}">
                                     <img src="{{ asset('images/icono-responsabilidad.png') }}" alt="">
                                     Responsabilidad Social
                                 </a>
@@ -236,9 +236,9 @@
                             <li>
                                 <img src="{{ asset('images/logo.png') }}" alt="">
                             </li>
-                            <li class="{{ (Route::currentRouteName()=="egresados")?'active':'' }}">
+                            <!--<li class="{{ (Route::currentRouteName()=="egresados")?'active':'' }}">
                                 <a href="{{ route('egresados') }}"><i class="fa-solid fa-angle-right"></i> EGRESADOS</a>
-                            </li>
+                            </li>-->
                             <li class="{{ (Route::currentRouteName()=="blog")?'active':'' }}">
                                 <a href="{{ route('blog') }}"><i class="fa-solid fa-angle-right"></i> BLOG</a>
                             </li>
@@ -294,7 +294,7 @@
                                                 <a href="{{ route('distinciones') }}">Distinciones</a>
                                             </li>
                                             <li class="@if(preg_match("/^responsabilidad-social/", Route::currentRouteName())) active @endif">
-                                                <a href="{{ route('responsabilidad-social-objetivos') }}">Responsabilidad Social</a>
+                                                <a href="{{ route('responsabilidad-social-programa-de-becas') }}">Responsabilidad Social</a>
                                             </li>
                                         </ul>
                                     </div>

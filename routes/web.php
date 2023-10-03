@@ -46,6 +46,7 @@ Route::get('responsabilidad-social/biblioteca-summa', [App\Http\Controllers\Web\
 Route::get('responsabilidad-social/talleres-gratuitos', [App\Http\Controllers\Web\WebController::class, 'responsabilidad_social_talleres_gratuitos'])->name('responsabilidad-social-talleres-gratuitos');
 Route::get('responsabilidad-social/ecoeficiencia', [App\Http\Controllers\Web\WebController::class, 'responsabilidad_social_ecoeficiencia'])->name('responsabilidad-social-ecoeficiencia');
 Route::get('responsabilidad-social/programa-de-donaciones', [App\Http\Controllers\Web\WebController::class, 'responsabilidad_social_programa_de_donaciones'])->name('responsabilidad-social-programa-de-donaciones');
+Route::get('responsabilidad-social/programa-de-participacion', [App\Http\Controllers\Web\WebController::class, 'responsabilidad_social_programa_de_participacion'])->name('responsabilidad-social-programa-de-participacion');
 Route::get('preguntas-frecuentes', [App\Http\Controllers\Web\WebController::class, 'preguntas_frecuentes'])->name('preguntas-frecuentes');
 Route::get('asesoria-especializada', [App\Http\Controllers\Web\WebController::class, 'asesoria_especializada'])->name('asesoria-especializada');
 Route::get('capacitaciones-corporativas', [App\Http\Controllers\Web\WebController::class, 'capacitaciones_corporativas'])->name('capacitaciones-corporativas');

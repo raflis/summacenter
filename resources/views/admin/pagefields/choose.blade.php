@@ -24,29 +24,6 @@
                         <div class="col-sm-12">
                             @include('admin.includes.alert')
                         </div>
-                        <div class="form-group col-sm-12">
-                          {{ Form::label('choose_title', 'Título:') }} <code>*</code>
-                          {{ Form::text('choose_title', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el título', 'required']) }}
-                        </div>
-                        <div class="form-group col-sm-12">
-                            {{ Form::label('choose_text', 'Descripción:') }} <code>*</code>
-                            {{ Form::textarea('choose_text', null, ['class' => 'form-control', 'placeholder' => 'Descripción', 'rows' => 3, 'required' => true]) }}
-                        </div>
-
-                        <div class="form-group col-sm-12">
-                          {!! Form::label('choose_background','Image de fondo:',['class'=>'mt-3']) !!} <strong>(1786 x 1168px)</strong> <code>*</code>
-                          <div class="input-group">
-                            <span class="input-group-btn">
-                                <a id="lfm0" data-input="thumbnail0" data-preview="holder0" class="btn btn-primary text-white">
-                                <i class="far fa-image"></i> Elegir
-                                </a>
-                            </span>
-                            {!! Form::text('choose_background', null, ['class'=>'form-control','id'=>'thumbnail0']) !!}
-                          </div>
-                          <div id="holder0" style="margin-top:15px;max-height:100px;">
-                            <img src="{{ $pagefield->choose_background }}" alt="" style="height:5rem">
-                          </div>
-                        </div>
 
                         <div class="px-3 col-sm-12 mb-3">
                           <div class="card shadow col-sm-12 px-0">
@@ -68,24 +45,38 @@
                                   <i class="fas fa-trash"></i>
                                 </a>
                                 @endif
-                                {!! Form::label('choose_items','Selecciona una imagen:',['class'=>'']) !!} <small><strong>(334 x 334px)</strong></small> <code>*</code>
+                                {!! Form::label('choose_items','Selecciona una imagen:',['class'=>'']) !!} <small><strong>(90px alto)</strong></small> <code>*</code>
                                 <div class="input-group">
                                     <span class="input-group-btn">
                                         <a id="lfm_choose{{ $loop->iteration }}" data-input="choose_items{{ $loop->iteration }}" data-preview="holder_choose{{ $loop->iteration }}" class="btn btn-primary text-white">
                                         <i class="far fa-image"></i> Elegir
                                         </a>
                                     </span>
-                                    {!! Form::text('choose_items['.$loop->index.'][image]',$item['image'],['class'=>'form-control','id'=>'thumbnail_choose'.$loop->iteration,'required']) !!}
+                                    {!! Form::text('choose_items['.$loop->iteration.'][image]',$item['image'],['class'=>'form-control','id'=>'choose_items'.$loop->iteration,'required']) !!}
                                 </div>
                                 <div id="holder_choose{{ $loop->iteration }}" style="margin-top:15px;max-height:100px;">
                                     <img src="{{ $item['image'] }}" alt="" style="height:5rem">
                                 </div>
+
+                                {!! Form::label('choose_items','Selecciona una imagen hover:',['class'=>'']) !!} <small><strong>(90px alto)</strong></small> <code>*</code>
+                                <div class="input-group">
+                                    <span class="input-group-btn">
+                                        <a id="lfm_choose_hover{{ $loop->iteration }}" data-input="choose_items_hover{{ $loop->iteration }}" data-preview="holder_choose_hover{{ $loop->iteration }}" class="btn btn-primary text-white">
+                                        <i class="far fa-image"></i> Elegir
+                                        </a>
+                                    </span>
+                                    {!! Form::text('choose_items['.$loop->iteration.'][image_hover]',$item['image_hover'],['class'=>'form-control','id'=>'choose_items_hover'.$loop->iteration,'required']) !!}
+                                </div>
+                                <div id="holder_choose_hover{{ $loop->iteration }}" style="margin-top:15px;max-height:100px;">
+                                    <img src="{{ $item['image_hover'] }}" alt="" style="height:5rem">
+                                </div>
+
                                 {!! Form::label('choose_items','Nombre:',['class'=>'mt-3']) !!} <code>*</code>
-                                {!! Form::text('choose_items['.$loop->index.'][name]',$item["name"],['class'=>'form-control','required']) !!}
+                                {!! Form::text('choose_items['.$loop->iteration.'][name]',$item["name"],['class'=>'form-control','required']) !!}
                                 {!! Form::label('choose_items','Detalle:',['class'=>'mt-3']) !!} <code>*</code>
-                                {!! Form::textarea('choose_items['.$loop->index.'][detail]',$item["detail"],['class'=>'form-control','required', 'rows' => 3, 'required']) !!}
+                                {!! Form::textarea('choose_items['.$loop->iteration.'][detail]',$item["detail"],['class'=>'form-control','required', 'rows' => 3, 'required']) !!}
                                 {!! Form::label('choose_items','Orden:',['class'=>'mt-3']) !!} <code>*</code>
-                                {!! Form::number('choose_items['.$loop->index.'][order]',$item["order"],['class'=>'form-control','required']) !!}
+                                {!! Form::number('choose_items['.$loop->iteration.'][order]',$item["order"],['class'=>'form-control','required']) !!}
                                 <hr class="mx-0 mt-4 border-bottom-dark" style="border:1px solid;background:#000">
                               </div>
                               @endforeach
@@ -119,7 +110,7 @@
 								'<i class="fas fa-trash"></i>' +
 							'</a>' +
 
-                '<label for="benefit_items" class="">Selecciona una imagen:</label> <small><strong>(334 x 334px)</strong></small> <code>*</code>' +
+                '<label for="benefit_items" class="">Selecciona una imagen:</label> <small><strong>(90px alto)</strong></small> <code>*</code>' +
                 '<div class="input-group">' +
                   '<span class="input-group-btn">' +
                       '<a id="lfm_choose'+i+'" data-input="choose_items'+i+'" data-preview="holder_choose'+i+'" class="btn btn-primary text-white">' +
@@ -127,6 +118,17 @@
                       '</a>' +
                   '</span>' +
                   '<input class="form-control" id="choose_items'+i+'" name="choose_items['+i+'][image]" type="text" required>' +
+                '</div>' +
+                '<div id="holder_choose'+i+'" style="margin-top:15px;max-height:100px;"></div>' +
+
+                '<label for="benefit_items" class="">Selecciona una imagen hover:</label> <small><strong>(90px alto)</strong></small> <code>*</code>' +
+                '<div class="input-group">' +
+                  '<span class="input-group-btn">' +
+                      '<a id="lfm_choose_hover'+i+'" data-input="choose_items_hover'+i+'" data-preview="holder_choose_hover'+i+'" class="btn btn-primary text-white">' +
+                      '<i class="far fa-image"></i> Elegir' +
+                      '</a>' +
+                  '</span>' +
+                  '<input class="form-control" id="choose_items_hover'+i+'" name="choose_items['+i+'][image_hover]" type="text" required>' +
                 '</div>' +
                 '<div id="holder_choose'+i+'" style="margin-top:15px;max-height:100px;"></div>' +
                 
@@ -194,9 +196,11 @@
 
   </script>
   <script>
-    $('#lfm0').filemanager('image', {prefix: route_prefix});
+    $('#lfm_choose0').filemanager('image', {prefix: route_prefix});
+    $('#lfm_choose_hover0').filemanager('image', {prefix: route_prefix});
     @foreach ($pagefield->choose_items as $item)
     $('#lfm_choose{{ $loop->iteration }}').filemanager('image', {prefix: route_prefix});
+    $('#lfm_choose_hover{{ $loop->iteration }}').filemanager('image', {prefix: route_prefix});
     @endforeach
 
   </script>

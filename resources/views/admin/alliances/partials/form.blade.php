@@ -1,43 +1,21 @@
-{{ Form::hidden('type', 'administration') }}
-
-<div class="form-group col-sm-6">
-  {{ Form::label('fullname', 'Nombre completo:') }} <code>*</code>
-  {{ Form::text('fullname', null, ['class' => 'form-control', 'placeholder' => 'Nombre del área', 'required']) }}
-</div>
-
-<div class="form-group col-sm-6">
-  {{ Form::label('position', 'Nombre del puesto de trabajo:') }} <code>*</code>
-  {{ Form::text('position', null, ['class' => 'form-control', 'placeholder' => 'Nombre del puesto de trabajo', 'required']) }}
-</div>
-
-<div class="form-group col-sm-6">
-  {!! Form::label('image','Selecciona una imagen:',['class'=>'mt-3']) !!} <strong>(450 x 290px)</strong> <code>*</code>
-  <div class="input-group">
+<div class="form-group col-sm-12">
+{!! Form::label('image','Selecciona una imagen:',['class'=>'mt-3']) !!} <strong>(150px alto)</strong><code>*</code>
+<div class="input-group">
     <span class="input-group-btn">
         <a id="lfm1" data-input="thumbnail1" data-preview="holder1" class="btn btn-primary text-white">
         <i class="far fa-image"></i> Elegir
         </a>
     </span>
-    {!! Form::text('image', null, ['class' => 'form-control', 'id' => 'thumbnail1', 'required']) !!}
-  </div>
-  <div id="holder1" style="margin-top:15px;max-height:100px;">
-  @if(Route::currentRouteName()=="worker_administrators.edit")
-    <img src="{{ $worker_administrator->image }}" alt="" style="height:5rem">
+    {!! Form::text('image',null,['class'=>'form-control','id'=>'thumbnail1', 'required']) !!}
+</div>
+<div id="holder1" style="margin-top:15px;max-height:100px;">
+@if (Route::currentRouteName()=="alliances.edit")
+      <img src="{{ $alliance->image }}" alt="" style="height:5rem">
   @endif
-  </div>
+</div>
 </div>
 
-<div class="form-group col-sm-6">
-  {{ Form::label('telephone', 'Teléfono:') }}
-  {{ Form::text('telephone', null, ['class' => 'form-control', 'placeholder' => 'Ingrese teléfono']) }}
-</div>
-
-<div class="form-group col-sm-6">
-  {{ Form::label('email', 'Email:') }} <code>*</code>
-  {{ Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'Ingrese email', 'required']) }}
-</div>
-
-<div class="form-group col-sm-6">
+<div class="form-group col-sm-12">
   {{ Form::label('order', 'Orden:') }} <code>*</code>
   {{ Form::number('order', null, ['class' => 'form-control', 'placeholder' => 'Orden', 'required']) }}
   <div class="invalid-feedback">

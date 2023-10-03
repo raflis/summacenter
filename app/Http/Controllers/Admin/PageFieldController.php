@@ -69,6 +69,12 @@ class PageFieldController extends Controller
         return view('admin.pagefields.privacy_policies', compact('pagefield'));
     }
 
+    public function responsability()
+    {
+        $pagefield = PageField::find(1);
+        return view('admin.pagefields.responsability', compact('pagefield'));
+    }
+
     public function index()
     {
         //

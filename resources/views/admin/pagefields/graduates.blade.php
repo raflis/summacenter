@@ -88,19 +88,19 @@
                                         <i class="far fa-image"></i> Elegir
                                         </a>
                                     </span>
-                                    {!! Form::text('graduates_items['.$loop->index.'][image]',$item['image'],['class'=>'form-control','id'=>'thumbnail_graduates_items'.$loop->iteration,'required']) !!}
+                                    {!! Form::text('graduates_items['.$loop->iteration.'][image]',$item['image'],['class'=>'form-control','id'=>'thumbnail_graduates_items'.$loop->iteration,'required']) !!}
                                 </div>
                                 <div id="holder_graduates_items{{ $loop->iteration }}" style="margin-top:15px;max-height:100px;">
                                     <img src="{{ $item['image'] }}" alt="" style="height:5rem">
                                 </div>
                                 {!! Form::label('graduates_items','Nombre:',['class'=>'mt-3']) !!} <code>*</code>
-                                {!! Form::text('graduates_items['.$loop->index.'][name]',$item["name"],['class'=>'form-control','required']) !!}
+                                {!! Form::text('graduates_items['.$loop->iteration.'][name]',$item["name"],['class'=>'form-control','required']) !!}
                                 {!! Form::label('graduates_items','Detalle:',['class'=>'mt-3']) !!} <code>*</code>
-                                {!! Form::textarea('graduates_items['.$loop->index.'][detail]',$item["detail"],['class'=>'form-control','required', 'rows' => 3, 'required']) !!}
+                                {!! Form::textarea('graduates_items['.$loop->iteration.'][detail]',$item["detail"],['class'=>'form-control','required', 'rows' => 3, 'required']) !!}
                                 {!! Form::label('graduates_items','Link:',['class'=>'mt-3']) !!} <code>*</code>
-                                {!! Form::text('graduates_items['.$loop->index.'][link]',$item["link"],['class'=>'form-control','required']) !!}
+                                {!! Form::text('graduates_items['.$loop->iteration.'][link]',$item["link"],['class'=>'form-control','required']) !!}
                                 {!! Form::label('graduates_items','Orden:',['class'=>'mt-3']) !!} <code>*</code>
-                                {!! Form::number('graduates_items['.$loop->index.'][order]',$item["order"],['class'=>'form-control','required']) !!}
+                                {!! Form::number('graduates_items['.$loop->iteration.'][order]',$item["order"],['class'=>'form-control','required']) !!}
                                 <hr class="mx-0 mt-4 border-bottom-dark" style="border:1px solid;background:#000">
                               </div>
                               @endforeach

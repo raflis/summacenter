@@ -167,7 +167,11 @@
                                                 </span>
                                                 <p class="telefono">
                                                     <img src="{{ asset('images/telefono.png') }}" alt="">
-                                                    <a href="">{{ $item->telephone }}</a>
+                                                    @if($item->telephone)
+                                                    <a target="_blank" href="https://api.whatsapp.com/send?phone=51{{ $item->telephone }}">{{ $item->telephone }}</a>
+                                                    @else
+                                                    <a>-</a>
+                                                    @endif
                                                 </p>
                                                 <p class="correo">
                                                     <img src="{{ asset('images/correo.png') }}" alt="">

@@ -14,22 +14,22 @@
                     <ol class="breadcrumb px-60">
                       <li class="breadcrumb-item"><a href="{{ route('index') }}">Inicio</a></li>
                       <li class="breadcrumb-item active" aria-current="page">Responsabilidad Social</li>
-                      <li class="breadcrumb-item active" aria-current="page">Apoyo a la investigación</li>
-                      <li class="breadcrumb-item active" aria-current="page">Talleres Gratuitos</li>
+                      <li class="breadcrumb-item active" aria-current="page">Voluntariado</li>
+                      <li class="breadcrumb-item active" aria-current="page">Programa de Participación</li>
                     </ol>
                 </nav>
             </div>
             @include('web.partials.header-responsabilidad')
             <div class="col-md-12">
                 <h2 class="tit_vf">
-                    Talleres Gratuitos
+                    Programa de participación
                 </h2>
                 <div class="content_vf">
                     <div class="content_left">
-                        {!! htmlspecialchars_decode($pagefield->responsibility_text3) !!}
+                        {!! htmlspecialchars_decode($pagefield->responsibility_text4) !!}
                     </div>
                     <div class="content_right">
-                        <img class="img6" src="{{ $pagefield->responsibility_image3 }}" alt="">
+                        <img class="img6" src="{{ $pagefield->responsibility_image4 }}" alt="">
                     </div>
                 </div>
             </div>

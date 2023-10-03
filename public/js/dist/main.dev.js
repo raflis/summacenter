@@ -309,14 +309,15 @@ $(function () {
       $('#header-second').css('position', 'fixed');
       $('#header-second').css('top', '0');
       $('#header-second').css('width', '100%');
-      $('#header-second').css('background-color', 'rgba(6, 29, 56, .95)');
+      $('#header-second').css('background-color', 'rgba(255, 255, 255, .95)');
       $('#header-second').css('padding', '6px 20px');
       $('#header-second').addClass('shadow');
     } else {
+      console.log('top');
       $('#header-second').css('position', 'unset');
       $('#header-second').css('top', 'unset');
       $('#header-second').css('width', 'unset');
-      $('#header-second').css('background-color', 'rgba(6, 29, 56, .5)');
+      $('#header-second').css('background-color', 'rgba(255, 255, 255, 1)');
       $('#header-second').css('padding', '9px 20px');
       $('#header-second').removeClass('shadow');
     }
@@ -376,8 +377,8 @@ $(function () {
     startPosition: 0,
     dots: true,
     margin: 0,
-    autoplay: false,
-    autoplayTimeout: 8000,
+    autoplay: true,
+    autoplayTimeout: 3000,
     touchDrag: true,
     mouseDrag: true,
     responsive: {
@@ -401,7 +402,7 @@ $(function () {
   $('#carousel-partners').owlCarousel({
     loop: true,
     startPosition: 0,
-    dots: true,
+    dots: false,
     margin: 0,
     autoplay: false,
     autoplayTimeout: 8000,
@@ -425,6 +426,60 @@ $(function () {
   });
   $('#carousel-partners .owl-next').html('<img src="' + base + '/images/arrow-right.png">');
   $('#carousel-partners .owl-prev').html('<img src="' + base + '/images/arrow-left.png">');
+  $('#carousel-alliance').owlCarousel({
+    loop: true,
+    startPosition: 0,
+    dots: false,
+    margin: 0,
+    autoplay: false,
+    autoplayTimeout: 8000,
+    touchDrag: true,
+    mouseDrag: true,
+    nav: true,
+    responsive: {
+      0: {
+        items: 1,
+        nav: false
+      },
+      768: {
+        items: 1,
+        nav: false
+      },
+      900: {
+        items: 5,
+        nav: true
+      }
+    }
+  });
+  $('#carousel-alliance .owl-next').html('<img src="' + base + '/images/arrow-right.png">');
+  $('#carousel-alliance .owl-prev').html('<img src="' + base + '/images/arrow-left.png">');
+  $('#carousel-chooseus').owlCarousel({
+    loop: true,
+    startPosition: 0,
+    dots: false,
+    margin: 0,
+    autoplay: false,
+    autoplayTimeout: 8000,
+    touchDrag: true,
+    mouseDrag: true,
+    nav: true,
+    responsive: {
+      0: {
+        items: 1,
+        nav: false
+      },
+      768: {
+        items: 1,
+        nav: false
+      },
+      900: {
+        items: 5,
+        nav: true
+      }
+    }
+  });
+  $('#carousel-chooseus .owl-next').html('<img src="' + base + '/images/arrow-right-black.png">');
+  $('#carousel-chooseus .owl-prev').html('<img src="' + base + '/images/arrow-left-black.png">');
   $('#carousel-confiaron-empresas').owlCarousel({
     loop: true,
     startPosition: 0,
@@ -508,7 +563,7 @@ $(function () {
     loop: true,
     startPosition: 0,
     dots: true,
-    margin: 20,
+    margin: 0,
     autoplay: false,
     autoplayTimeout: 8000,
     touchDrag: true,

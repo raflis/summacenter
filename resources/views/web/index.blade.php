@@ -54,9 +54,7 @@
                 <select name="interested_course" id="" class="form-select" required>
                     <option value="">Estoy interesado en</option>
                     @foreach ($course_areas as $item)
-                        @foreach ($item->courses as $item_)
-                        <option value="{{ $item_->zoho_code }}|{{ $item_->name }}">{{ $item_->name }}</option>
-                        @endforeach
+                    <option value="{{ $item->name }}">{{ $item->name }}</option>
                     @endforeach
                 </select>
             </div>
@@ -94,7 +92,7 @@
         <div class="row">
             <div class="col-md-12 title">
                 <h1>
-                    NUESTROS PARTNERS
+                    NUESTROS ACREDITADORES
                 </h1>
             </div>
             <div class="col-md-12 carousel">
@@ -112,30 +110,50 @@
     </div>
 </section>
 
-<section class="sec3">
+<section class="sec3_2">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-5"></div>
-            <div class="col-md-7">
-                <div class="title">
-                    <h1>
-                        {{ $pagefield->choose_title }}
-                    </h1>
-                    <p>
-                        {{ $pagefield->choose_text }}
-                    </p>
-                </div>
-                <div class="items">
+            <div class="col-md-12">
+                <h1 class="title">
+                    ¿Por qué <span>elegirnos?</span>
+                </h1>
+                <div id="carousel-chooseus" class="owl-carousel">
                     @foreach ($pagefield->choose_items as $item)
                     <div class="item">
-                        <div class="image">
-                            <img src="{{ $item['image'] }}" alt="">
+                        <div class="item_">
+                            <div class="imagen">
+                                <img class="nohover" src="{{ $item['image'] }}" alt="">
+                                <img class="hover" src="{{ $item['image_hover'] }}" alt="">
+                            </div>
+                            <div class="description">
+                                <h3>{{ $item['name'] }}</h3>
+                                <p>
+                                    {{ $item['detail'] }}
+                                </p>
+                            </div>
                         </div>
-                        <div class="description">
-                            <h3>{{ $item['name'] }}</h3>
-                            <p>
-                                {{ $item['detail'] }}
-                            </p>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="sec2_2">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 title">
+                <h1>
+                    ALIANZAS ESTRATEGICAS
+                </h1>
+            </div>
+            <div class="col-md-12 carousel">
+                <div id="carousel-alliance" class="owl-carousel">
+                    @foreach ($alliances as $item)
+                    <div class="item">
+                        <div class="imagen">
+                            <img src="{{ $item->image }}" alt="">
                         </div>
                     </div>
                     @endforeach
@@ -159,7 +177,6 @@
                     <div class="item">
                         <div class="item-header">
                             <div class="titulo-header">
-                                <img src="{{ $item->icon }}" alt="">
                                 <span>
                                     {{ $item->name }}
                                 </span>
@@ -202,23 +219,12 @@
                         </a>
                     </div>
                     <div class="content">
-                        <a href="{{ route('post', [$item_p->blog_category->slug, $item_p->slug, $item_p->id]) }}" class="btn btn-leer">
-                            ARTÍCULO COMPLETO
-                        </a>
                         <p class="category">
                             {{ $item_p->blog_category->name }}
                         </p>
-                        <p class="tit">
+                        <a class="tit" href="{{ route('post', [$item_p->blog_category->slug, $item_p->slug, $item_p->id]) }}">
                             {{ $item_p->name }}
-                        </p>
-                        <p class="description">
-                            {{ $item_p->summary }}
-                        </p>
-                        <div class="tags">
-                            @foreach ($item_p->blog_tags as $item_t)
-                            <a href="{{ route('tag', $item_t->slug) }}" class="btn btn-tag">{{ $item_t->name }}</a> 
-                            @endforeach
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -233,7 +239,7 @@
         <div class="row">
             <div class="col-md-12 title">
                 <h1>
-                    RECOMENDACIONES
+                    EGRESADOS
                 </h1>
             </div>
             <div class="col-md-12">
@@ -251,18 +257,6 @@
                                 <p class="description">
                                     Egresado: {{ $testimonial->graduated_career }}
                                 </p>
-                            </div>
-                            <div class="detras">
-                                <div class="first">
-                                    <img src="{{ asset('images/icon-reco1.png') }}" alt="">
-                                    <p>
-                                        {{ $testimonial->career }}
-                                    </p>
-                                </div>
-                                <div class="second">
-                                    <img src="{{ asset('images/icon-reco2.png') }}" alt="">
-                                    {!! htmlspecialchars_decode($testimonial->comment) !!}
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -284,19 +278,8 @@
                     {{ $pagefield->achievement_title }}
                 </h1>
             </div>
-            <div class="col-md-12 logros">
-                <div class="logros_">
-                    <img src="{{ asset('images/mundo.png') }}" alt="">
-                    <div class="texto">
-                        {{ $pagefield->achievement_text }}
-                    </div>
-                </div>
-            </div>
             @foreach ($pagefield->achievement_items as $item)
-            <div class="col-md-3 col-6 item" id="counters_1">
-                <div class="image">
-                    <img src="{{ $item['image'] }}" alt="">
-                </div>
+            <div class="col-md-2 col-6 item" id="counters_1">
                 <div class="counters" id="counters_1">
                     <span class="plus">+ </span><div class="counter" data-TargetNum="{{ $item['amount'] }}">0</div>
                 </div>

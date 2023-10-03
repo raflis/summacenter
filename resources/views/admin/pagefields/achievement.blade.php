@@ -24,14 +24,6 @@
                         <div class="col-sm-12">
                             @include('admin.includes.alert')
                         </div>
-                        <div class="form-group col-sm-12">
-                          {{ Form::label('achievement_title', 'Título:') }} <code>*</code>
-                          {{ Form::text('achievement_title', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el título', 'required']) }}
-                        </div>
-                        <div class="form-group col-sm-12">
-                            {{ Form::label('achievement_text', 'Descripción:') }} <code>*</code>
-                            {{ Form::textarea('achievement_text', null, ['class' => 'form-control', 'placeholder' => 'Descripción', 'rows' => 1, 'required' => true]) }}
-                        </div>
 
                         <div class="px-3 col-sm-12 mb-3">
                           <div class="card shadow col-sm-12 px-0">
@@ -53,26 +45,15 @@
                                   <i class="fas fa-trash"></i>
                                 </a>
                                 @endif
-                                {!! Form::label('achievement_items','Selecciona una imagen:',['class'=>'']) !!} <small><strong>(320 x 321px)</strong></small> <code>*</code>
-                                <div class="input-group">
-                                    <span class="input-group-btn">
-                                        <a id="lfm_achievement{{ $loop->iteration }}" data-input="achievement_items{{ $loop->iteration }}" data-preview="holder_achievement{{ $loop->iteration }}" class="btn btn-primary text-white">
-                                        <i class="far fa-image"></i> Elegir
-                                        </a>
-                                    </span>
-                                    {!! Form::text('achievement_items['.$loop->index.'][image]',$item['image'],['class'=>'form-control','id'=>'thumbnail_achievement'.$loop->iteration,'required']) !!}
-                                </div>
-                                <div id="holder_achievement{{ $loop->iteration }}" style="margin-top:15px;max-height:100px;">
-                                    <img src="{{ $item['image'] }}" alt="" style="height:5rem">
-                                </div>
+                                
                                 {!! Form::label('achievement_items','Nombre:',['class'=>'mt-3']) !!} <code>*</code>
-                                {!! Form::text('achievement_items['.$loop->index.'][name]',$item["name"],['class'=>'form-control','required']) !!}
+                                {!! Form::text('achievement_items['.$loop->iteration.'][name]',$item["name"],['class'=>'form-control','required']) !!}
                                 {!! Form::label('achievement_items','Cantidad:',['class'=>'mt-3']) !!} <code>*</code>
-                                {!! Form::number('achievement_items['.$loop->index.'][amount]',$item["amount"],['class'=>'form-control','required']) !!}
+                                {!! Form::number('achievement_items['.$loop->iteration.'][amount]',$item["amount"],['class'=>'form-control','required']) !!}
                                 {!! Form::label('achievement_items','Texto:',['class'=>'mt-3']) !!} <code>*</code>
-                                {!! Form::text('achievement_items['.$loop->index.'][text]',$item["text"],['class'=>'form-control','required']) !!}
+                                {!! Form::text('achievement_items['.$loop->iteration.'][text]',$item["text"],['class'=>'form-control','required']) !!}
                                 {!! Form::label('achievement_items','Orden:',['class'=>'mt-3']) !!} <code>*</code>
-                                {!! Form::number('achievement_items['.$loop->index.'][order]',$item["order"],['class'=>'form-control','required']) !!}
+                                {!! Form::number('achievement_items['.$loop->iteration.'][order]',$item["order"],['class'=>'form-control','required']) !!}
                                 <hr class="mx-0 mt-4 border-bottom-dark" style="border:1px solid;background:#000">
                               </div>
                               @endforeach
@@ -105,17 +86,6 @@
 							'<a href="#" class="btn btn-danger btn-circle btn-sm float-right mb-2 eliminar">' +
 								'<i class="fas fa-trash"></i>' +
 							'</a>' +
-
-                '<label for="benefit_items" class="">Selecciona una imagen:</label> <small><strong>(320 x 321px)</strong></small> <code>*</code>' +
-                '<div class="input-group">' +
-                  '<span class="input-group-btn">' +
-                      '<a id="lfm_achievement'+i+'" data-input="achievement_items'+i+'" data-preview="holder_achievement'+i+'" class="btn btn-primary text-white">' +
-                      '<i class="far fa-image"></i> Elegir' +
-                      '</a>' +
-                  '</span>' +
-                  '<input class="form-control" id="achievement_items'+i+'" name="achievement_items['+i+'][image]" type="text" required>' +
-                '</div>' +
-                '<div id="holder_achievement'+i+'" style="margin-top:15px;max-height:100px;"></div>' +
                 
                 '<label for="achievement_items" class="mt-3">Nombre:</label> <code>*</code>' +
 								'<input class="form-control" name="achievement_items['+i+'][name]" type="text" required>' +

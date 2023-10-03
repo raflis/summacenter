@@ -91,12 +91,16 @@ textarea:focus {
 .pt-20 {
   padding-top: 22vh !important;
 }
+.px-60 {
+  padding-left: 60px;
+  padding-right: 60px;
+}
 .drop_flags {
-  border-bottom: 2.5px solid #fff;
+  border-bottom: 2.5px solid #254275;
   margin-bottom: 12px;
 }
 .drop_flags button#drop_flags {
-  color: #fff;
+  color: #254275;
 }
 .drop_flags ul {
   height: 190px;
@@ -160,7 +164,7 @@ form {
 .loading #loader {
   border: 2px #3f3f3f solid;
   border-radius: 50%;
-  border-top-color: #ffce7b;
+  border-top-color: #e5b336;
   width: 90px;
   height: 90px;
   animation: spin 1s linear infinite;
@@ -277,21 +281,21 @@ form {
 }
 #deleting .btn-guardar,
 #applications .btn-guardar {
-  background-color: #ffce7b;
-  color: #242953;
+  background-color: #e5b336;
+  color: #254275;
   font-family: font-medium;
   font-size: 0.9rem;
 }
 #deleting .btn-cancelar,
 #applications .btn-cancelar {
-  background-color: #242953;
+  background-color: #254275;
   font-family: font-medium;
   font-size: 0.9rem;
   color: #fff;
 }
 #deleting .shakehands,
 #applications .shakehands {
-  color: #242953;
+  color: #254275;
 }
 .fondo-active {
   background: rgba(0,0,0,0.7) !important;
@@ -492,7 +496,7 @@ form {
   font-size: 1.2rem;
 }
 .cartlist .subtotal a {
-  background-color: #061d38;
+  background-color: #254275;
   text-decoration: none;
   font-size: 1rem;
   font-family: font-medium;
@@ -576,7 +580,7 @@ form {
   right: 8px;
 }
 #cartGracias .modal-content .modal-body h4 {
-  color: #061d38;
+  color: #254275;
   font-size: 1rem;
   font-family: font-light;
   font-weight: bold;
@@ -628,7 +632,7 @@ form {
   line-height: 1;
 }
 #cartGracias .modal-content .modal-body .content_gracias .gocart {
-  background-color: #061d38;
+  background-color: #254275;
   text-decoration: none;
   font-size: 0.9rem;
   font-family: font-medium;
@@ -646,7 +650,7 @@ form {
   font-size: 0.9rem;
   font-family: font-regular;
   width: 100%;
-  color: #061d38;
+  color: #254275;
   padding: 5px 0 6px;
   text-align: center;
   border-radius: 4px;
@@ -665,20 +669,20 @@ form {
   z-index: 99999;
 }
 .header .dropdown_header .dropdown-menu {
-  background-color: #ffce7b;
+  background-color: #e5b336;
   border-radius: 0 !important;
   padding: 0;
   transform: translate3d(0px, 62.2px, 0px) !important;
 }
 .header .dropdown_header a.dropdown-item {
-  color: #061d38 !important;
+  color: #254275 !important;
   border: 1px solid rgba(255,255,255,0.5);
   font-family: font-medium;
 }
 .header .dropdown_header a.dropdown-item:hover {
-  background-color: #ffd58e;
+  background-color: #e5b336;
   color: #000 !important;
-  border-left: 3px solid #061d38;
+  border-left: 3px solid #254275;
   padding-left: 14px;
 }
 .header .dropdown_header a.dropdown-item img {
@@ -689,7 +693,7 @@ form {
 .header ul.header-first {
   list-style: none;
   margin: 0;
-  background: #061d38;
+  background: #254275;
   display: flex;
   justify-content: flex-end;
   padding: 8px 40px 8px 0;
@@ -704,15 +708,15 @@ form {
   font-size: 0.9rem;
 }
 .header ul.header-first li a.active {
-  background-color: #ffce7b;
-  color: #061d38;
+  background-color: #e5b336;
+  color: #254275;
   font-family: font-semibold;
   padding: 2px 10px;
   border-radius: 4px;
 }
 .header ul.header-first li a.btn-integrar {
-  border: 1.6px solid #ffce7b;
-  color: #ffce7b;
+  border: 1.6px solid #e5b336;
+  color: #e5b336;
   font-size: 0.9rem;
   border-radius: 2px;
   padding: 3px 10px 2px;
@@ -720,17 +724,17 @@ form {
 }
 .header ul.header-first li.bolsa button {
   background-color: #fff;
-  color: #061d38;
+  color: #254275;
   font-family: font-light;
   font-size: 0.9rem;
   border-radius: 0.25rem !important;
   padding: 8px 25px;
 }
 .header ul.header-first li.bolsa button:hover {
-  background-color: #fed68c;
+  background-color: #e5b336;
 }
 .header ul.header-first li.bolsa .active {
-  background-color: #fed68c;
+  background-color: #e5b336;
 }
 .header ul.header-first li.bolsa .dropdown-menu {
   padding: 0;
@@ -742,12 +746,12 @@ form {
 }
 .header ul.header-first li.bolsa .dropdown-menu li .dropdown-item {
   border-radius: 0;
-  background-color: #ffce7b;
+  background-color: #e5b336;
   border: 1px solid rgba(255,255,255,0.5);
   padding-left: 14px;
   padding-top: 10px;
   padding-bottom: 10px;
-  color: #061d38;
+  color: #254275;
   font-family: font-medium;
   display: flex;
   align-items: center;
@@ -758,8 +762,8 @@ form {
   color: inherit;
 }
 .header ul.header-first li.bolsa .dropdown-menu li .dropdown-item:hover {
-  background-color: #ffd58e;
-  border-left: 3px solid #061d38;
+  background-color: #e5b336;
+  border-left: 3px solid #254275;
   padding-left: 12px;
 }
 .header ul.header-first li.bolsa .dropdown-menu li .dropdown-item img {
@@ -769,15 +773,15 @@ form {
 }
 .header ul.header-first li.bolsa .dropdown-menu li .active {
   color: #212529;
-  background-color: #ffd58e;
-  border-left: 3px solid #061d38;
+  background-color: #e5b336;
+  border-left: 3px solid #254275;
   padding-left: 12px;
 }
 .header ul.header-second {
   position: relative;
   list-style: none;
   margin: 0;
-  background: rgba(6,29,56,0.5);
+  background: #fff;
   display: flex;
   justify-content: space-between;
   padding: 9px 20px;
@@ -799,7 +803,7 @@ form {
   margin-right: 50px;
 }
 .header ul.header-second li.logo img {
-  height: 60px;
+  height: 50px;
 }
 .header ul.header-second li.menu {
   position: relative;
@@ -807,7 +811,7 @@ form {
 }
 .header ul.header-second li.menu .btn-login {
   text-decoration: none;
-  background: #ffce7b;
+  background: #e5b336;
   color: #00001d;
   border-radius: 5px;
   padding: 10px 13px;
@@ -816,7 +820,7 @@ form {
 }
 .header ul.header-second li.menu .btn-item {
   background-color: transparent;
-  color: #fff;
+  color: #254275;
   font-size: 0.9rem;
   position: relative;
   padding: 10px 35px 10px 13px;
@@ -827,14 +831,14 @@ form {
   height: 1.25rem;
   margin-left: 8px;
   content: '';
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23FFF'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23242953'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
   background-repeat: no-repeat;
   background-size: 1.25rem;
 }
 .header ul.header-second li.menu .active0 {
-  color: #242953;
+  color: #254275;
   font-family: font-semibold;
-  background: #ffce7b;
+  background: #e5b336;
   padding: 10px 35px 10px 13px;
   transition: 0.2s all;
 }
@@ -842,9 +846,9 @@ form {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23242953'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
 }
 .header ul.header-second li.menu .active00 {
-  color: #242953;
+  color: #254275;
   font-family: font-semibold;
-  background: #ffce7b;
+  background: #e5b336;
   padding: 10px 35px 10px 13px;
   transition: 0.2s all;
 }
@@ -853,9 +857,9 @@ form {
 }
 .header ul.header-second li.menu .active {
   font-family: font-semibold;
-  background-color: #ffd58e;
+  background-color: #e5b336;
   color: #000 !important;
-  border-left: 3px solid #061d38;
+  border-left: 3px solid #254275;
   padding-left: 14px;
 }
 .header ul.header-second li.menu2 {
@@ -863,7 +867,7 @@ form {
 }
 .header ul.header-second li.menu-link a {
   text-decoration: none;
-  color: #ffce7b;
+  color: #e5b336;
   font-size: 0.9rem;
   font-family: font-medium;
 }
@@ -872,8 +876,8 @@ form {
 }
 .header ul.header-second li.menu-link2 a {
   text-decoration: none;
-  background: #ffce7b;
-  color: #242953;
+  background: #e5b336;
+  color: #254275;
   border-radius: 5px;
   padding: 10px 13px;
   font-size: 0.9rem;
@@ -892,15 +896,15 @@ form {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #242953;
+  background-color: #254275;
   border-radius: 50%;
   z-index: 1;
   color: #fff;
 }
 .header ul.header-second li.menu-link3 a {
   text-decoration: none;
-  background: #ffce7b;
-  color: #242953;
+  background: #e5b336;
+  color: #254275;
   border-radius: 5px;
   padding: 10px 13px;
   font-size: 0.9rem;
@@ -989,21 +993,21 @@ form {
 }
 .header ul.header-second .dropPrograma .menu .menu-left,
 .header ul.header-second .dropInicio .menu .menu-left {
-  background-color: #ffce7b;
+  background-color: #e5b336;
   overflow-y: auto;
   max-height: 500px;
   width: 220px;
 }
 .header ul.header-second .dropPrograma .menu .menu-left .activeitems,
 .header ul.header-second .dropInicio .menu .menu-left .activeitems {
-  background-color: #ffd58e;
+  background-color: #e5b336;
   color: #000 !important;
-  border-left: 3px solid #061d38 !important;
+  border-left: 3px solid #254275 !important;
   padding-left: 14px;
 }
 .header ul.header-second .dropPrograma .menu .menu-left a.dropdown-item,
 .header ul.header-second .dropInicio .menu .menu-left a.dropdown-item {
-  color: #061d38 !important;
+  color: #071e38 !important;
   border: 1px solid rgba(255,255,255,0.5);
   font-family: font-medium;
   display: flex;
@@ -1016,8 +1020,7 @@ form {
 .header ul.header-second .dropPrograma .menu .menu-left a.dropdown-item:hover,
 .header ul.header-second .dropInicio .menu .menu-left a.dropdown-item:hover {
   background-color: #ffd58e;
-  color: #000 !important;
-  border-left: 3px solid #061d38;
+  border-left: 3px solid #254275;
   padding-left: 14px;
 }
 .header ul.header-second .dropPrograma .menu .menu-left a.dropdown-item img,
@@ -1037,8 +1040,8 @@ form {
 }
 .header ul.header-second .dropPrograma .menu .menu-left .todo a,
 .header ul.header-second .dropInicio .menu .menu-left .todo a {
-  color: #ffce7b;
-  background-color: #061d38;
+  color: #e5b336;
+  background-color: #254275;
   font-size: 0.9rem;
   padding: 6px 10px;
   text-decoration: none;
@@ -1064,7 +1067,7 @@ form {
 .header ul.header-second .dropPrograma .menu .menu-right .submenu p.title,
 .header ul.header-second .dropInicio .menu .menu-right .submenu p.title {
   font-family: font-semibold;
-  color: #061d38;
+  color: #254275;
   border-bottom: 2px solid rgba(112,111,111,0.2);
   padding: 13px 35px;
   font-size: 0.9rem;
@@ -1075,7 +1078,7 @@ form {
 .header ul.header-second .dropPrograma .menu .menu-right .submenu a.submenu_,
 .header ul.header-second .dropInicio .menu .menu-right .submenu a.submenu_ {
   display: block;
-  color: #061d38;
+  color: #254275;
   font-family: font-light;
   font-size: 0.9rem;
   border-bottom: 2px solid rgba(112,111,111,0.2);
@@ -1084,16 +1087,16 @@ form {
 }
 .header ul.header-second .dropPrograma .menu .menu-right .submenu a.submenu_:hover,
 .header ul.header-second .dropInicio .menu .menu-right .submenu a.submenu_:hover {
-  background-color: #ffd58e;
+  background-color: #e5b336;
   color: #000 !important;
-  border-left: 3px solid #061d38;
+  border-left: 3px solid #254275;
   padding-left: 11px;
 }
 .header ul.header-second .dropPrograma .menu .menu-right .activeitems,
 .header ul.header-second .dropInicio .menu .menu-right .activeitems {
-  background-color: #ffd58e;
+  background-color: #e5b336;
   color: #000 !important;
-  border-left: 3px solid #061d38;
+  border-left: 3px solid #254275;
   padding-left: 11px !important;
 }
 .sec1 {
@@ -1105,13 +1108,13 @@ form {
   bottom: 0;
   z-index: 2;
   width: 26%;
-  margin: 0 40px 50px 0;
+  margin: 0 40px 30px 0;
   padding: 20px 40px 20px;
-  background: rgba(35,35,35,0.8);
+  background: rgba(255,255,255,0.87);
   border-radius: 15px;
 }
 .sec1 .formulario p {
-  color: #fff;
+  color: #254275;
   margin: 0;
   line-height: 1.3;
   text-align: center;
@@ -1128,17 +1131,17 @@ form {
 }
 .sec1 .formulario .formulario_ .form-group label {
   margin: 0;
-  color: #fff;
+  color: #254275;
   font-size: 0.85rem;
 }
 .sec1 .formulario .formulario_ .form-group input[type=text],
 .sec1 .formulario .formulario_ .form-group input[type=email],
 .sec1 .formulario .formulario_ .form-group select {
   background-color: transparent;
-  color: rgba(255,255,255,0.5);
+  color: #666;
   padding: 0;
   border: none;
-  border-bottom: 2.5px solid #fff;
+  border-bottom: 2.5px solid #254275;
   border-radius: 0;
   transition: 1s;
   font-size: 0.85rem;
@@ -1148,7 +1151,7 @@ form {
 .sec1 .formulario .formulario_ .form-group input[type=email]:focus,
 .sec1 .formulario .formulario_ .form-group select:focus {
   border-color: unset;
-  border-bottom: 3.5px solid #fff;
+  border-bottom: 3.5px solid #254275;
   box-shadow: unset;
 }
 .sec1 .formulario .formulario_ select option {
@@ -1156,7 +1159,7 @@ form {
   font-size: 0.85rem;
 }
 .sec1 .formulario .formulario_ .form-select {
-  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%23FFFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/></svg>");
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%23254275' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/></svg>");
   background-size: 19px 19px !important;
 }
 .sec1 .formulario .formulario_ .enviar {
@@ -1201,7 +1204,7 @@ form {
   font-family: font-bold;
 }
 .sec1 #carousel-slider .item .text h2 {
-  color: #ffce7b;
+  color: #e5b336;
   font-size: 3.2rem;
   line-height: 1.1;
   font-family: font-extrabold;
@@ -1210,9 +1213,9 @@ form {
 }
 .sec1 #carousel-slider .item .btn-vermas {
   margin-top: 25px;
-  color: #ffce7b;
+  color: #e5b336;
   background: transparent;
-  border: 1px solid #ffce7b;
+  border: 1px solid #e5b336;
   font-size: 1.2rem;
   padding: 3px 15px;
 }
@@ -1234,12 +1237,12 @@ form {
   background: #fed68c;
 }
 .sec2 {
-  padding: 30px 0 30px;
+  padding: 30px 0 10px;
 }
 .sec2 .title h1 {
   text-align: center;
-  font-family: font-semibold;
-  color: #061d38;
+  font-family: font-bold;
+  color: #254275;
   font-size: 1.7rem;
   margin-bottom: 20px;
 }
@@ -1272,6 +1275,48 @@ form {
 .sec2 .carousel #carousel-partners .owl-nav img {
   height: 33px;
 }
+.sec2_2 {
+  padding: 30px 0 10px;
+}
+.sec2_2 .title h1 {
+  text-align: center;
+  font-family: font-bold;
+  color: #254275;
+  font-size: 1.7rem;
+  margin-bottom: 20px;
+}
+.sec2_2 .carousel #carousel-alliance {
+  padding: 0 30px;
+}
+.sec2_2 .carousel #carousel-alliance .item {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sec2_2 .carousel #carousel-alliance .item .imagen {
+  height: 120px;
+}
+.sec2_2 .carousel #carousel-alliance .item .imagen img {
+  height: 100%;
+  width: auto;
+}
+.sec2_2 .carousel #carousel-alliance .owl-nav {
+  display: inherit !important;
+}
+.sec2_2 .carousel #carousel-alliance .owl-nav .owl-prev {
+  position: absolute;
+  left: 1%;
+  top: 40%;
+}
+.sec2_2 .carousel #carousel-alliance .owl-nav .owl-next {
+  position: absolute;
+  right: 1%;
+  top: 40%;
+}
+.sec2_2 .carousel #carousel-alliance .owl-nav img {
+  height: 33px;
+}
 .sec3 {
   background-position: bottom;
   background-size: cover;
@@ -1281,7 +1326,7 @@ form {
 }
 .sec3 .title h1 {
   text-align: center;
-  color: #061d38;
+  color: #254275;
   font-size: 2.7rem;
   margin-bottom: 20px;
 }
@@ -1290,7 +1335,7 @@ form {
 }
 .sec3 .title p {
   text-align: center;
-  color: #061d38;
+  color: #254275;
   line-height: 1.3;
   font-size: 1.2rem;
   margin: 0;
@@ -1314,7 +1359,7 @@ form {
 }
 .sec3 .items .item .description h3 {
   text-align: center;
-  color: #061d38;
+  color: #254275;
   font-size: 1.4rem;
   font-family: font-bold;
 }
@@ -1322,15 +1367,138 @@ form {
   text-align: center;
   font-size: 0.9rem;
   line-height: 1.3;
-  color: #061d38;
+  color: #254275;
+}
+.sec3_2 {
+  background: #f4f7ff;
+  padding: 30px 0 20px;
+}
+.sec3_2 h1.title {
+  text-align: center;
+  color: #254275;
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-family: font-medium;
+}
+.sec3_2 h1.title span {
+  font-family: font-bold;
+}
+.sec3_2 #carousel-chooseus {
+  padding: 0 40px 0;
+}
+.sec3_2 #carousel-chooseus .item {
+  padding: 50px 20px 0;
+  margin-top: 20px;
+  transition: all 0.3s;
+}
+.sec3_2 #carousel-chooseus .item:hover {
+  margin-top: 15px;
+  padding: 50px 12px 0;
+}
+.sec3_2 #carousel-chooseus .item:hover .item_ {
+  height: 270px;
+  border: 3px solid #e5b336;
+}
+.sec3_2 #carousel-chooseus .item:hover .item_ .imagen {
+  top: -52px;
+  margin: auto;
+  height: 92px;
+}
+.sec3_2 #carousel-chooseus .item:hover .item_ .imagen img.hover {
+  display: block;
+}
+.sec3_2 #carousel-chooseus .item:hover .item_ .imagen img.nohover {
+  display: none;
+}
+.sec3_2 #carousel-chooseus .item:hover .item_ .description {
+  padding: 0 15px 10px;
+}
+.sec3_2 #carousel-chooseus .item:hover .item_ .description h3 {
+  font-family: font-bold;
+  font-size: 1.2rem;
+  color: #e5b336;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.sec3_2 #carousel-chooseus .item:hover .item_ .description p {
+  color: #2b2b2b;
+  line-height: 1.3;
+  margin: 0;
+  font-size: 1.1rem;
+  text-align: center;
+}
+.sec3_2 #carousel-chooseus .item .item_ {
+  margin: auto;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #0087dc;
+  border-radius: 20px;
+  position: relative;
+  transition: all 0.3s;
+}
+.sec3_2 #carousel-chooseus .item .item_ .imagen {
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: -52px;
+  margin: auto;
+  height: 85px;
+  transition: all 0.3s;
+}
+.sec3_2 #carousel-chooseus .item .item_ .imagen img {
+  width: auto;
+  height: 100%;
+  margin: auto;
+  transition: all 0.3s;
+}
+.sec3_2 #carousel-chooseus .item .item_ .imagen .hover {
+  display: none;
+}
+.sec3_2 #carousel-chooseus .item .item_ .description {
+  transition: all 0.2s;
+  padding: 0 25px 10px;
+}
+.sec3_2 #carousel-chooseus .item .item_ .description h3 {
+  font-family: font-bold;
+  font-size: 1.1rem;
+  color: #0087dc;
+  text-align: center;
+  margin-bottom: 15px;
+  transition: all 0.2s;
+}
+.sec3_2 #carousel-chooseus .item .item_ .description p {
+  color: #2b2b2b;
+  line-height: 1.3;
+  margin: 0;
+  font-size: 1rem;
+  text-align: center;
+  transition: all 0.2s;
+}
+.sec3_2 #carousel-chooseus .owl-nav {
+  display: inherit !important;
+}
+.sec3_2 #carousel-chooseus .owl-nav .owl-prev {
+  position: absolute;
+  left: 1%;
+  top: 40%;
+}
+.sec3_2 #carousel-chooseus .owl-nav .owl-next {
+  position: absolute;
+  right: 1%;
+  top: 40%;
+}
+.sec3_2 #carousel-chooseus .owl-nav img {
+  height: 33px;
 }
 .sec4 {
   padding: 60px 0 50px;
 }
 .sec4 .title h1 {
   text-align: center;
-  font-family: font-semibold;
-  color: #061d38;
+  font-family: font-bold;
+  color: #254275;
   font-size: 1.7rem;
 }
 .sec4 #carousel-cursos {
@@ -1361,17 +1529,18 @@ form {
   padding: 5px 0;
 }
 .sec4 #carousel-cursos .item:hover .item-content .content h4 {
-  color: #061d38;
+  color: #254275;
   font-size: 1.1rem;
+  padding: 0 10%;
 }
 .sec4 #carousel-cursos .item:hover .item-content .content .btn-vermas {
-  background: #061d38;
+  background: #254275;
   color: #fff;
   font-size: 1rem;
 }
 .sec4 #carousel-cursos .item .item-header {
-  background: #e0e2e5;
-  border-radius: 5px;
+  background: #f4f7ff;
+  border-radius: 20px;
   padding: 13px 20%;
   display: flex;
   justify-content: center;
@@ -1384,12 +1553,12 @@ form {
   height: 50px;
 }
 .sec4 #carousel-cursos .item .item-header .titulo-header span {
-  font-family: font-medium;
+  font-family: font-semibold;
   font-size: 1.1rem;
   line-height: 1.2;
-  color: #061d38;
-  width: 130px;
+  color: #254275;
   transition: all 0.5s;
+  text-align: center;
 }
 .sec4 #carousel-cursos .item .item-header .titulo-header img {
   height: 38px;
@@ -1408,12 +1577,12 @@ form {
   font-size: 0.9rem;
   line-height: 1.2;
   margin: 0;
-  color: #061d38;
+  color: #254275;
 }
 .sec4 #carousel-cursos .item .item-content {
-  background: #e0e2e5;
+  background: #f4f7ff;
   margin-top: 7px;
-  border-radius: 5px;
+  border-radius: 20px;
   transition: all 0.5s;
 }
 .sec4 #carousel-cursos .item .item-content .imagen img {
@@ -1424,8 +1593,7 @@ form {
   transition: all 0.5s;
 }
 .sec4 #carousel-cursos .item .item-content .content h4 {
-  color: #061d38;
-  font-family: font-bold;
+  color: #254275;
   font-size: 1rem;
   margin: 15px 0 15px;
   text-align: center;
@@ -1443,7 +1611,7 @@ form {
 }
 .sec4 #carousel-cursos .item .item-content .content .btn-vermas {
   transition: all 0.5s;
-  color: #061d38;
+  color: #254275;
   font-size: 0.9rem;
   background: #fed68c;
   border-radius: 5px;
@@ -1477,38 +1645,29 @@ form {
 }
 .sec5 .title h1 {
   text-align: center;
-  font-family: font-semibold;
-  color: #061d38;
+  font-family: font-bold;
+  color: #254275;
   font-size: 1.7rem;
   padding-bottom: 40px;
 }
 .sec5 .item .item_ {
   margin-bottom: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
 }
 .sec5 .item .item_ .image img {
   width: 100%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 .sec5 .item .item_ .content {
-  background: #061d38;
+  background: #fff;
   padding: 20px 15px 23px;
   position: relative;
   overflow-y: hidden;
-}
-.sec5 .item .item_ .content:hover .btn-leer {
-  bottom: 0px;
-}
-.sec5 .item .item_ .content .btn-leer {
-  position: absolute;
-  bottom: -30px;
-  left: 0;
-  width: 100%;
-  background: #facd7f;
-  color: #000017;
-  font-size: 0.9rem;
-  text-decoration: none;
-  border-radius: 0;
-  padding: 1px 0px 0px;
-  transition: all 0.5s;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  height: 125px;
 }
 .sec5 .item .item_ .content p.category {
   display: inline-block;
@@ -1520,17 +1679,13 @@ form {
   line-height: 1.2;
   text-transform: uppercase;
 }
-.sec5 .item .item_ .content p.tit {
+.sec5 .item .item_ .content a.tit {
   font-family: font-semibold;
   line-height: 1.2;
   font-size: 1rem;
-  color: #facd7f;
-}
-.sec5 .item .item_ .content p.description {
-  line-height: 1.2;
-  font-size: 0.85rem;
-  color: #fff;
-  margin-bottom: 15px;
+  color: #2b2b2b;
+  text-decoration: none;
+  display: block;
 }
 .sec5 .item .item_ .tags {
   padding: 0;
@@ -1538,7 +1693,7 @@ form {
 }
 .sec5 .item .item_ .tags .btn-tag {
   background-color: #facd7f;
-  color: #061d38;
+  color: #254275;
   padding: 2px 7px 1px;
   font-size: 0.7rem;
   margin-bottom: 4px;
@@ -1552,13 +1707,13 @@ form {
 .sec6 .title h1 {
   margin-top: 60px;
   text-align: center;
-  font-family: font-semibold;
-  color: #061d38;
+  font-family: font-bold;
+  color: #254275;
   font-size: 1.7rem;
 }
 .sec6 .btn-vermas {
-  color: #061d38;
-  background-color: #ffce7b;
+  color: #254275;
+  background-color: #e5b336;
   padding: 6px 20px 5px;
   font-family: font-semibold;
   font-size: 1rem;
@@ -1567,27 +1722,26 @@ form {
   transition: 0.3s all;
 }
 .sec6 .btn-vermas:hover {
-  background-color: #061d38;
-  color: #ffce7b;
+  background-color: #254275;
+  color: #e5b336;
 }
 .sec6 #carousel-recomendaciones {
   padding: 0 50px;
   margin-top: 40px;
 }
-.sec6 #carousel-recomendaciones .item:hover .content {
-  transform: rotateY(180deg);
+.sec6 #carousel-recomendaciones .item {
+  padding: 0 10px;
+/*&:hover
+                .content
+                    transform rotateY(180deg)*/
 }
 .sec6 #carousel-recomendaciones .item .content {
-  transform-style: preserve-3d;
   transition: all 0.4s linear;
-  background: #061d38;
-  height: 62vh;
+  background: #fff;
 }
 .sec6 #carousel-recomendaciones .item .content .cara {
   height: 100%;
   width: 100%;
-  position: absolute;
-  backface-visibility: hidden;
   top: 0;
   left: 0;
   padding: 30px 40px 10px;
@@ -1638,25 +1792,25 @@ form {
   font-family: font-bold;
 }
 .sec6 #carousel-recomendaciones .item .content .image {
-  border-radius: 10px;
+  border-radius: 20px;
   background: #fff;
 }
 .sec6 #carousel-recomendaciones .item .content .image img {
   width: 100%;
-  border-radius: 17px;
-  border: 4px solid #fff;
+  border-radius: 20px;
+  border: 4px solid #254275;
 }
 .sec6 #carousel-recomendaciones .item .content p.name {
   font-family: font-bold;
-  color: #fff;
-  font-size: 1.3rem;
+  color: #254275;
+  font-size: 1.1rem;
   line-height: 1.2;
   text-align: center;
   margin: 0;
   padding: 20px 2% 5px;
 }
 .sec6 #carousel-recomendaciones .item .content p.description {
-  color: #fff;
+  color: #2b2b2b;
   font-size: 0.9rem;
   line-height: 1.2;
   text-align: center;
@@ -1680,12 +1834,12 @@ form {
   height: 40px;
 }
 .sec7 {
-  padding: 20px 100px 70px;
+  padding: 40px 100px 40px;
 }
 .sec7 .title h1 {
   text-align: center;
-  font-family: font-semibold;
-  color: #061d38;
+  font-family: font-bold;
+  color: #254275;
   font-size: 1.7rem;
 }
 .sec7 .logros {
@@ -1703,7 +1857,7 @@ form {
   width: 180px;
   font-size: 0.9rem;
   line-height: 1.3;
-  color: #061d38;
+  color: #254275;
 }
 .sec7 .item {
   text-align: center;
@@ -1715,16 +1869,16 @@ form {
 .sec7 .item .counters {
   display: inline-flex;
   align-items: center;
-  margin-top: 20px;
+  margin: 30px 0 20px;
 }
 .sec7 .item .counters .plus {
-  color: #facd7f;
+  color: #0087dc;
   font-family: font-bold;
   font-size: 2.5rem;
   line-height: 1;
 }
 .sec7 .item .counters .counter {
-  color: #facd7f;
+  color: #0087dc;
   font-family: font-bold;
   font-size: 2.5rem;
   line-height: 1;
@@ -1734,18 +1888,19 @@ form {
   font-family: font-bold;
   font-size: 1.4rem;
   margin: 0;
-  color: #061d38;
+  color: #2b2b2b;
 }
 .sec7 .item span {
   line-height: 1.3;
   font-size: 0.8rem;
-  color: #061d38;
+  color: #2b2b2b;
+  display: block;
 }
 .sec8 {
   background-position: bottom;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url("../images/background-certificado.png");
+  background-image: url("../images/bg-certificado.png");
   position: relative;
 }
 .sec8 .content {
@@ -1758,14 +1913,14 @@ form {
 .sec8 .content h5 {
   font-family: font-bold;
   font-size: 1.2rem;
-  color: #061d38;
+  color: #254275;
 }
 .sec8 .content p {
   line-height: 1.3;
   font-size: 1rem;
   padding: 0 13%;
   margin: 0;
-  color: #061d38;
+  color: #2b2b2b;
   margin-bottom: 20px;
 }
 .sec8 .content form {
@@ -1777,8 +1932,8 @@ form {
   color: #000;
 }
 .sec8 .content form input[type=submit] {
-  background: #061d38;
-  color: #fed68c;
+  background: #254275;
+  color: #fff;
   border: unset;
   margin-left: 10px;
   padding-right: 30px;
@@ -1967,7 +2122,7 @@ form {
   position: relative;
 }
 .sec10 .index-bar .active:after {
-  background: #ffce7b;
+  background: #e5b336;
   content: '';
   position: absolute;
   top: 0;
@@ -2034,7 +2189,7 @@ form {
   padding-left: 20px;
 }
 .sec11 .description h4 {
-  color: #061d38;
+  color: #254275;
   font-size: 1.2rem;
   margin-bottom: 20px;
   font-family: font-medium;
@@ -2235,7 +2390,7 @@ form {
   padding-bottom: 10px;
 }
 .sec15 .items .item .item_ p.title {
-  color: #ffce7b;
+  color: #e5b336;
   font-family: font-bold;
   font-size: 1.2rem;
   background: #000a25;
@@ -2262,7 +2417,7 @@ form {
   font-family: font-bold;
 }
 .sec15 .text p span {
-  color: #ffce7b;
+  color: #e5b336;
   font-family: font-bold;
 }
 .sec16 {
@@ -2389,13 +2544,13 @@ form {
   padding-right: 35px;
 }
 .sec19 ul.nav li.nav-item button {
-  color: #061d38;
+  color: #254275;
   font-family: font-light;
   font-size: 0.9rem;
 }
 .sec19 ul.nav li.nav-item .active {
   background-color: #fed68c;
-  color: #061d38;
+  color: #254275;
   font-family: font-light;
   font-size: 0.9rem;
 }
@@ -2412,7 +2567,7 @@ form {
 .sec19 .filtros .busq button {
   color: #fff;
   font-family: font-medium;
-  background-color: #061d38;
+  background-color: #254275;
   border: none;
   padding: 6px 15px 2px;
   border-radius: 30px;
@@ -2474,27 +2629,27 @@ form {
 }
 .sec19 .content1 .item .item_:hover .content {
   background: #facd7f;
-  color: #061d38;
+  color: #254275;
 }
 .sec19 .content1 .item .item_:hover p.category {
-  background: #061d38 !important;
+  background: #254275 !important;
   color: #facd7f !important;
 }
 .sec19 .content1 .item .item_:hover p.tit {
-  color: #061d38 !important;
+  color: #254275 !important;
 }
 .sec19 .content1 .item .item_:hover p.description {
-  color: #061d38 !important;
+  color: #254275 !important;
 }
 .sec19 .content1 .item .item_:hover .btn-tag {
-  background-color: #061d38 !important;
+  background-color: #254275 !important;
   color: #facd7f !important;
 }
 .sec19 .content1 .item .item_ .image img {
   width: 100%;
 }
 .sec19 .content1 .item .item_ .content {
-  background: #061d38;
+  background: #254275;
   padding: 20px 15px 23px;
   position: relative;
   overflow-y: hidden;
@@ -2509,7 +2664,7 @@ form {
   bottom: -30px;
   left: 0;
   width: 100%;
-  background: #061d38;
+  background: #254275;
   color: #facd7f;
   font-size: 0.9rem;
   text-decoration: none;
@@ -2548,7 +2703,7 @@ form {
 }
 .sec19 .content1 .item .item_ .tags .btn-tag {
   background-color: #facd7f;
-  color: #061d38;
+  color: #254275;
   padding: 2px 7px 1px;
   font-size: 0.7rem;
   margin-bottom: 4px;
@@ -2574,27 +2729,27 @@ form {
 }
 .sec19 .itemSearch #itemTag .item_:hover .content {
   background: #facd7f;
-  color: #061d38;
+  color: #254275;
 }
 .sec19 .itemSearch #itemTag .item_:hover p.category {
-  background: #061d38 !important;
+  background: #254275 !important;
   color: #facd7f !important;
 }
 .sec19 .itemSearch #itemTag .item_:hover p.tit {
-  color: #061d38 !important;
+  color: #254275 !important;
 }
 .sec19 .itemSearch #itemTag .item_:hover p.description {
-  color: #061d38 !important;
+  color: #254275 !important;
 }
 .sec19 .itemSearch #itemTag .item_:hover .btn-tag {
-  background-color: #061d38 !important;
+  background-color: #254275 !important;
   color: #facd7f !important;
 }
 .sec19 .itemSearch #itemTag .item_ .image img {
   width: 100%;
 }
 .sec19 .itemSearch #itemTag .item_ .content {
-  background: #061d38;
+  background: #254275;
   padding: 20px 15px 23px;
   position: relative;
   overflow-y: hidden;
@@ -2609,7 +2764,7 @@ form {
   bottom: -30px;
   left: 0;
   width: 100%;
-  background: #061d38;
+  background: #254275;
   color: #facd7f;
   font-size: 0.9rem;
   text-decoration: none;
@@ -2648,7 +2803,7 @@ form {
 }
 .sec19 .itemSearch #itemTag .item_ .tags .btn-tag {
   background-color: #facd7f;
-  color: #061d38;
+  color: #254275;
   padding: 2px 7px 1px;
   font-size: 0.7rem;
   margin-bottom: 4px;
@@ -2795,11 +2950,11 @@ form {
 .sec23 .info .info_ {
   display: flex;
   justify-content: space-between;
-  background-color: #ffce7b;
+  background-color: #e5b336;
   padding: 10px 60px;
 }
 .sec23 .info .info_ .precio {
-  background-color: #061d38;
+  background-color: #254275;
   width: 265px;
   border-radius: 10px;
 }
@@ -2848,13 +3003,13 @@ form {
 }
 .sec24 .presentacion h1 {
   font-family: font-bold;
-  color: #061d38;
+  color: #254275;
   font-size: 2.5rem;
   padding-right: 40%;
   padding-bottom: 20px;
 }
 .sec24 .presentacion p {
-  color: #061d38;
+  color: #254275;
   line-height: 1.2;
   font-size: 0.9rem;
 }
@@ -2873,8 +3028,8 @@ form {
   margin-top: 30px;
 }
 .sec24 .presentacion .botones .btn-matricula {
-  background-color: #ffce7b;
-  color: #061d38;
+  background-color: #e5b336;
+  color: #254275;
   font-family: font-semibold;
   line-height: 2.5;
   margin-right: 20px;
@@ -2887,14 +3042,14 @@ form {
   height: 40px;
 }
 .sec24 .presentacion .botones .btn-descarga {
-  background-color: #061d38;
+  background-color: #254275;
   color: #fff;
   font-family: font-semibold;
   line-height: 1.1;
   padding: 11px 35px 9px;
 }
 .sec24 .presentacion .botones .btn-azul {
-  background-color: #061d38;
+  background-color: #254275;
   color: #fff;
   font-family: font-semibold;
   line-height: 2.5;
@@ -2922,7 +3077,7 @@ form {
   width: 13%;
 }
 .sec25 .resultados .result p {
-  color: #061d38;
+  color: #254275;
   line-height: 1.3;
   margin: 0;
   font-size: 0.8rem;
@@ -2967,7 +3122,7 @@ form {
 }
 .sec25 .content .left-content p.tit {
   margin: 0;
-  background: #061d38;
+  background: #254275;
   color: #fff;
   font-family: font-medium;
   font-size: 1rem;
@@ -2985,7 +3140,7 @@ form {
 }
 .sec25 .content .left-content .accordion-item button.accordion-button {
   background: #fed68c;
-  color: #061d38;
+  color: #254275;
   font-size: 0.9rem;
 }
 .sec25 .content .left-content .accordion-item button.accordion-button:focus {
@@ -3005,12 +3160,12 @@ form {
   border-bottom: 1.5px solid #00001d;
 }
 .sec25 .content .left-content .accordion-item .accordion-body .lista label.form-check-label {
-  color: #061d38;
+  color: #254275;
   font-size: 0.9rem;
 }
 .sec25 .content .left-content .accordion-item .accordion-body .lista label.form-check-label a {
   text-decoration: none;
-  color: #061d38;
+  color: #254275;
   font-size: 0.9rem;
 }
 .sec25 .content .left-content .accordion-item .accordion-body .lista .form-check {
@@ -3021,21 +3176,21 @@ form {
   height: 1.3em;
   margin-top: 0;
   margin-right: 5px;
-  border: 2.5px solid #061d38;
+  border: 2.5px solid #254275;
 }
 .sec25 .content .left-content .accordion-item .accordion-body .lista .form-check .form-check-input:focus {
   border-color: unset;
   box-shadow: unset;
 }
 .sec25 .content .left-content .accordion-item .accordion-body .lista .form-check .form-check-input:checked {
-  background-color: #061d38;
+  background-color: #254275;
 }
 .sec25 .content .left-content .accordion-item .accordion-body .lista .sublista {
   padding: 8px 0 0px;
 }
 .sec25 .content .left-content .accordion-bottom {
   background-color: #fed68c;
-  border: 1px solid #061d38;
+  border: 1px solid #254275;
   border-bottom: 2px solid;
   border-left: 2px solid;
   border-right: 2px solid;
@@ -3044,13 +3199,13 @@ form {
   padding: 5px 0;
 }
 .sec25 .content .left-content .accordion-bottom:hover {
-  background-color: #061d38;
+  background-color: #254275;
   color: #fed68c;
-  border-color: #061d38;
+  border-color: #254275;
 }
 .sec25 .content .left-content .accordion-bottom button {
   font-size: 1rem;
-  color: #061d38;
+  color: #254275;
   font-family: font-medium;
   background-color: transparent;
   border: 0;
@@ -3076,13 +3231,13 @@ form {
   padding-right: 0;
 }
 .sec25 .content .right-content ul.nav li.nav-item button {
-  color: #061d38;
+  color: #254275;
   font-family: font-light;
   font-size: 0.9rem;
 }
 .sec25 .content .right-content ul.nav li.nav-item .active {
   background-color: #fed68c;
-  color: #061d38;
+  color: #254275;
   font-family: font-light;
   font-size: 0.9rem;
 }
@@ -3118,7 +3273,7 @@ form {
   position: absolute;
   top: 10px;
   left: 10px;
-  color: #061d38;
+  color: #254275;
   font-size: 0.7rem;
   background-color: #e0e2e5;
   margin: 0;
@@ -3150,7 +3305,7 @@ form {
   justify-content: space-between;
 }
 .sec25 .content .right-content .content .item .item-content .content h4 {
-  color: #061d38;
+  color: #254275;
   font-family: font-semibold;
   font-size: 0.9rem;
   margin: 10px 0 0px;
@@ -3159,7 +3314,7 @@ form {
   text-transform: uppercase;
 }
 .sec25 .content .right-content .content .item .item-content .content .btn-vermas {
-  color: #061d38;
+  color: #254275;
   font-size: 0.85rem;
   background: #fed68c;
   border-radius: 5px;
@@ -3169,21 +3324,21 @@ form {
   transition: 0.3s all;
 }
 .sec25 .content .right-content .content .item .item-content .content .btn-vermas:hover {
-  background: #061d38;
+  background: #254275;
   color: #fed68c;
 }
 .sec25 .content .right-content .content_paginate {
   margin-top: 15px;
 }
 .sec25 .content .right-content .content_paginate .pagination .page-item .page-link {
-  color: #061d38;
-  border: 1px solid #061d38;
+  color: #254275;
+  border: 1px solid #254275;
 }
 .sec25 .content .right-content .content_paginate .pagination .page-item .page-link:focus {
   box-shadow: unset;
 }
 .sec25 .content .right-content .content_paginate .pagination .active .page-link {
-  background-color: #061d38;
+  background-color: #254275;
   color: #fff;
 }
 .sec26 ul.nav {
@@ -3197,13 +3352,13 @@ form {
   padding-right: 35px;
 }
 .sec26 ul.nav li.nav-item button {
-  color: #061d38;
+  color: #254275;
   font-family: font-light;
   font-size: 0.9rem;
 }
 .sec26 ul.nav li.nav-item .active {
   background-color: #fed68c;
-  color: #061d38;
+  color: #254275;
   font-family: font-light;
   font-size: 0.9rem;
 }
@@ -3229,7 +3384,7 @@ form {
   height: 51vh;
 }
 .sec26 .items .item2 .content .item_active {
-  border: 2px solid #061d38;
+  border: 2px solid #254275;
 }
 .sec26 .items .item2 .content .cara {
   position: absolute;
@@ -3249,7 +3404,7 @@ form {
 }
 .sec26 .items .item2 .content .detras {
   overflow: hidden;
-  background-color: #061d38;
+  background-color: #254275;
   height: 99%;
   width: 100%;
   transform: rotateY(180deg);
@@ -3327,7 +3482,7 @@ form {
 }
 .sec26 .items .item2 .content .cara_bottom p.name {
   font-family: font-semibold;
-  color: #061d38;
+  color: #254275;
   font-size: 1.1rem;
   line-height: 1.2;
   text-align: center;
@@ -3336,9 +3491,9 @@ form {
   margin-bottom: 8px;
 }
 .sec26 .items .item2 .content .cara_bottom span.cargo {
-  background-color: #fed68c;
+  background-color: #e5b336;
   padding: 3px 15px;
-  color: #061d38;
+  color: #254275;
   font-size: 0.9rem;
   border-radius: 6px;
   display: inline-block;
@@ -3349,7 +3504,7 @@ form {
   padding: 15px;
 }
 .sec26 .items .item3 .item_active {
-  border: 2px solid #061d38 !important;
+  border: 2px solid #254275 !important;
 }
 .sec26 .items .item3 .content {
   transition: all 0.4s linear;
@@ -3375,9 +3530,9 @@ form {
   margin-bottom: 8px;
 }
 .sec26 .items .item3 .content span.cargo {
-  background-color: #fed68c;
+  background-color: #e5b336;
   padding: 3px 15px;
-  color: #061d38;
+  color: #254275;
   font-size: 0.9rem;
   border-radius: 6px;
   display: inline-block;
@@ -3431,13 +3586,13 @@ form {
   padding-right: 35px;
 }
 .sec27 ul.nav li.nav-item button {
-  color: #061d38;
+  color: #254275;
   font-family: font-light;
   font-size: 0.9rem;
 }
 .sec27 ul.nav li.nav-item .active {
   background-color: #fed68c;
-  color: #061d38;
+  color: #254275;
   font-family: font-light;
   font-size: 0.9rem;
 }
@@ -3562,14 +3717,14 @@ form {
 }
 .sec28 .contenido .accordion .accordion-item {
   background-color: #fff;
-  border: 2px solid #061d38;
+  border: 2px solid #254275;
   border-radius: 12px;
   margin-bottom: 20px;
 }
 .sec28 .contenido .accordion .accordion-item .accordion-header .accordion-button {
   background-color: transparent;
   border-radius: unset;
-  color: #061d38;
+  color: #254275;
   box-shadow: unset;
   font-family: font-medium;
   font-size: 1.2rem;
@@ -3586,14 +3741,14 @@ form {
 }
 .sec28 .contenido .accordion .accordion-item .accordion-body p {
   line-height: 1.3;
-  color: #061d38;
+  color: #254275;
   font-size: 0.9rem;
 }
 .sec28 .contenido .accordion .accordion-item .accordion-body ul {
   padding-left: 1rem;
 }
 .sec28 .contenido .accordion .accordion-item .accordion-body ul li {
-  color: #061d38;
+  color: #254275;
   font-size: 0.9rem;
   line-height: 1.3;
 }
@@ -3603,7 +3758,7 @@ form {
   margin: 0;
 }
 .sec28 .contenido .accordion .accordion-item .accordion-body #accordion_flush .accordion-item .accordion-header .accordion-button {
-  color: #061d38;
+  color: #254275;
   font-family: font-regular;
   font-size: 0.9rem;
   padding-left: 0;
@@ -3625,13 +3780,13 @@ form {
   padding: 1rem 1.25rem;
 }
 .sec28 .contenido .accordion .accordion-only h2 {
-  color: #061d38;
+  color: #254275;
   font-size: 0.9rem;
   font-family: font-bold;
   margin-bottom: 2px;
 }
 .sec28 .contenido .accordion .accordion-only p {
-  color: #061d38;
+  color: #254275;
   margin: 0;
   line-height: 1.2;
   font-size: 0.9rem;
@@ -3641,7 +3796,7 @@ form {
   padding-left: 1rem;
 }
 .sec28 .contenido .accordion .accordion-only ul li {
-  color: #061d38;
+  color: #254275;
   font-size: 0.8rem;
 }
 .sec28 .contenido .accordion .accordion-teacher {
@@ -3666,7 +3821,7 @@ form {
   width: 75%;
 }
 .sec28 .contenido .accordion .accordion-teacher #carousel-curso-profesor .item .teacher .description h2 {
-  color: #061d38;
+  color: #254275;
   font-family: font-medium;
   font-size: 1.6rem;
   margin: 0;
@@ -3675,13 +3830,13 @@ form {
   line-height: 1.3;
 }
 .sec28 .contenido .accordion .accordion-teacher #carousel-curso-profesor .item .teacher .description p.name {
-  color: #061d38;
+  color: #254275;
   margin: 0;
   font-size: 1.3rem;
   margin-bottom: 20px;
 }
 .sec28 .contenido .accordion .accordion-teacher #carousel-curso-profesor .item .teacher .description .detail p {
-  color: #061d38;
+  color: #254275;
   font-size: 1rem;
 }
 .sec28 .contenido .accordion .accordion-teacher #carousel-curso-profesor .owl-nav {
@@ -3698,16 +3853,16 @@ form {
   width: 20px;
   border-radius: 50%;
   background: transparent;
-  border: 2px solid #061d38;
+  border: 2px solid #254275;
   margin: 0 2px;
 }
 .sec28 .contenido .accordion .accordion-teacher #carousel-curso-profesor .owl-dots .active {
-  background-color: #fed68c;
+  background-color: #e5b336;
 }
 .sec28 .contenido .accordion .accordion-certificate {
   padding: 2rem 1rem;
-  background-color: #fed68c;
-  border: 2px solid #fed68c;
+  background-color: #e5b336;
+  border: 2px solid #e5b336;
   border-radius: 0;
   display: flex;
 }
@@ -3724,12 +3879,12 @@ form {
   padding-left: 2rem;
 }
 .sec28 .contenido .accordion .accordion-certificate .content h2 {
-  color: #061d38;
+  color: #254275;
   font-family: font-medium;
   font-size: 1.6rem;
 }
 .sec28 .contenido .accordion .accordion-certificate .content p {
-  color: #061d38;
+  color: #254275;
   line-height: 1.3;
   font-size: 0.95rem;
 }
@@ -3737,7 +3892,7 @@ form {
   padding-left: 1rem;
 }
 .sec28 .contenido .accordion .accordion-certificate .content ul li {
-  color: #061d38;
+  color: #254275;
   margin-bottom: 1rem;
   line-height: 1.3;
   font-size: 0.9rem;
@@ -3749,7 +3904,7 @@ form {
 }
 .sec28 .contenido .accordion .accordion-certificate .content .buttons a {
   padding: 9px 20px;
-  background: #061d38;
+  background: #254275;
   color: #fff;
   font-family: font-bold;
   text-decoration: none;
@@ -3764,7 +3919,7 @@ form {
   position: sticky;
   top: 12vh;
   padding: 20px 40px 20px;
-  background: #061d38;
+  background: #254275;
   border-radius: 15px;
 }
 .sec28 .formu .formulario p {
@@ -3858,7 +4013,7 @@ form {
   text-align: center;
   font-size: 1.8rem;
   font-family: font-semibold;
-  color: #061d38;
+  color: #254275;
   margin-bottom: 60px;
 }
 .sec29 .cart-left {
@@ -3886,39 +4041,39 @@ form {
 }
 .sec29 .cart-left .modes .mode p {
   font-size: 0.9rem;
-  color: #061d38;
+  color: #254275;
   margin: 0;
   font-family: font-medium;
 }
 .sec29 .cart-left .modes .active_mode {
-  background-color: #ffce7b;
+  background-color: #e5b336;
 }
 .sec29 .cart-left .information h3 {
   font-family: font-medium;
-  color: #061d38;
+  color: #254275;
   font-size: 1rem;
   margin-bottom: 17px;
 }
 .sec29 .cart-left .information label {
-  color: #061d38;
+  color: #254275;
   margin-bottom: 3px;
 }
 .sec29 .cart-left .information label a {
-  color: #061d38;
+  color: #254275;
 }
 .sec29 .cart-left .information input,
 .sec29 .cart-left .information select {
-  border: 2px solid #061d38;
+  border: 2px solid #254275;
   margin-bottom: 15px;
   border-radius: 13px;
   font-family: font-light;
-  color: #061d38;
+  color: #254275;
   padding: 13px 15px;
 }
 .sec29 .cart-left .information input:focus,
 .sec29 .cart-left .information select:focus {
   box-shadow: unset;
-  border: 2px solid #061d38;
+  border: 2px solid #254275;
 }
 .sec29 .cart-left .information input[type=checkbox] {
   border-radius: 0;
@@ -3927,7 +4082,7 @@ form {
   height: 20px;
 }
 .sec29 .cart-left .information input[type=checkbox]:checked {
-  background-color: #061d38;
+  background-color: #254275;
 }
 .sec29 .cart-left .information label.form-check-label {
   padding-top: 4px;
@@ -3937,7 +4092,7 @@ form {
 }
 .sec29 .cart-left .information .btn-pagar {
   color: #000;
-  background-color: #ffce7b;
+  background-color: #e5b336;
   padding: 14px 60px;
   font-family: font-medium;
   font-size: 1.1rem;
@@ -3951,7 +4106,7 @@ form {
 .sec29 .cart-left .information .volver {
   text-decoration: none;
   font-size: 0.9rem;
-  color: #061d38;
+  color: #254275;
   font-family: font-light;
   margin-left: 15px;
 }
@@ -3959,7 +4114,7 @@ form {
   margin-bottom: 30px;
 }
 .sec29 .cart-left .tit h1 {
-  color: #061d38;
+  color: #254275;
   font-size: 1.8rem;
   display: flex;
   align-items: flex-end;
@@ -3973,7 +4128,7 @@ form {
   margin-right: 10px;
 }
 .sec29 .cart-left .tit p {
-  color: #061d38;
+  color: #254275;
   font-size: 0.9rem;
   margin: 0;
   padding-right: 60%;
@@ -3998,7 +4153,7 @@ form {
   height: 10px;
   width: 10px;
   border-radius: 50%;
-  background-color: #061d38;
+  background-color: #254275;
 }
 .sec29 .cart-left .tarjetas .tarjetas-img1 {
   margin-bottom: 35px;
@@ -4007,7 +4162,7 @@ form {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 3px solid #061d38;
+  border: 3px solid #254275;
   border-radius: 15px;
   padding: 15px 23px;
 }
@@ -4030,7 +4185,7 @@ form {
   border-radius: 12px;
 }
 .sec29 .cart-right .content .items {
-  border-bottom: 3px solid #061d38;
+  border-bottom: 3px solid #254275;
   padding-bottom: 10px;
 }
 .sec29 .cart-right .content .items .item {
@@ -4055,7 +4210,7 @@ form {
 }
 .sec29 .cart-right .content .items .item .detail-left .image {
   padding: 2px;
-  border: 3px solid #061d38;
+  border: 3px solid #254275;
   border-radius: 10px;
   margin-right: 10px;
 }
@@ -4108,7 +4263,7 @@ form {
 }
 .sec29 .cart-right .content .subtotal {
   padding: 20px 0 15px;
-  border-bottom: 3px solid #061d38;
+  border-bottom: 3px solid #254275;
 }
 .sec29 .cart-right .content .subtotal .item {
   display: flex;
@@ -4137,7 +4292,7 @@ form {
 .sec29 .cart-right .content .subtotal .item div.envios .signo {
   cursor: pointer;
   color: #fff;
-  background-color: #061d38;
+  background-color: #254275;
   height: 18px;
   width: 18px;
   border-radius: 50%;
@@ -4178,7 +4333,7 @@ form {
 }
 .sec29 .cart-right .content .total .btn-pagar {
   color: #000;
-  background-color: #ffce7b;
+  background-color: #e5b336;
   padding: 10px 60px;
   font-family: font-medium;
   font-size: 1.1rem;
@@ -4217,7 +4372,7 @@ form {
 }
 .sec29 .cart-right .content .promo .form-promo a.btn-cupon {
   color: #000;
-  background-color: #ffce7b;
+  background-color: #e5b336;
   border-radius: 0;
   border: 3px solid #000;
   border-left: 0px;
@@ -4240,7 +4395,7 @@ form {
   padding-left: 60px;
 }
 .sec30 .insignias h3 {
-  color: #242953;
+  color: #254275;
   margin-bottom: 40px;
   font-size: 1.1rem;
   padding-right: 60%;
@@ -4310,7 +4465,7 @@ form {
   padding-right: 35px;
 }
 .sec31 ul.nav li.nav-item button {
-  color: #061d38;
+  color: #254275;
   font-family: font-light;
   font-size: 0.9rem;
   padding-right: 40px;
@@ -4318,7 +4473,7 @@ form {
 }
 .sec31 ul.nav li.nav-item .active {
   background-color: #fed68c;
-  color: #061d38;
+  color: #254275;
   font-family: font-light;
   font-size: 0.9rem;
 }
@@ -4343,8 +4498,8 @@ form {
   width: 150px;
 }
 .sec31 .content .items .item .item-left a.btn-vermas {
-  background-color: #fed68c;
-  color: #061d38;
+  background-color: #e5b336;
+  color: #254275;
   font-family: font-light;
   width: 80%;
   margin-top: 5px;
@@ -4370,7 +4525,7 @@ form {
 .sec31 .content .items .item .item-right .item-right-bottom p {
   margin: 0;
   line-height: 1.3;
-  color: #061d38;
+  color: #254275;
   font-family: font-light;
   font-size: 0.9rem;
 }
@@ -4382,13 +4537,13 @@ form {
   margin-top: 30px;
   padding: 0 60px;
   font-family: font-bold;
-  color: #061d38;
+  color: #254275;
   font-size: 1.2rem;
 }
 .sec32 .top_h4 {
   padding: 0 60px;
   font-family: font-medium;
-  color: #061d38;
+  color: #254275;
   font-size: 1rem;
   margin-bottom: 30px;
 }
@@ -4403,7 +4558,7 @@ form {
   padding-right: 35px;
 }
 .sec32 ul.nav li.nav-item button {
-  color: #061d38;
+  color: #254275;
   font-family: font-light;
   font-size: 0.9rem;
   padding-right: 40px;
@@ -4411,7 +4566,7 @@ form {
 }
 .sec32 ul.nav li.nav-item .active {
   background-color: #fed68c;
-  color: #061d38;
+  color: #254275;
   font-family: font-light;
   font-size: 0.9rem;
 }
@@ -4420,14 +4575,14 @@ form {
 }
 .sec32 .content .accordion .accordion-item {
   background-color: #fff;
-  border: 2px solid #061d38;
+  border: 2px solid #254275;
   border-radius: 12px;
   margin-bottom: 20px;
 }
 .sec32 .content .accordion .accordion-item .accordion-header .accordion-button {
   background-color: transparent;
   border-radius: unset;
-  color: #061d38;
+  color: #254275;
   box-shadow: unset;
   font-family: font-medium;
   font-size: 1.2rem;
@@ -4486,7 +4641,7 @@ form {
   margin: 0;
 }
 .sec32 .content .accordion .accordion-item .accordion-body #accordion_flush .accordion-item .accordion-header .accordion-button {
-  color: #061d38;
+  color: #254275;
   font-family: font-regular;
   font-size: 0.9rem;
   padding-left: 0;
@@ -4514,7 +4669,7 @@ form {
 }
 .sec33 .btn-action .btn-credly {
   background-color: #fed68c;
-  color: #061d38;
+  color: #254275;
   padding: 5px 25px;
 }
 .sec33 .tit_badge {
@@ -4633,7 +4788,7 @@ form {
   padding-left: 10px;
   margin: 0;
   line-height: 1.3;
-  color: #242953;
+  color: #254275;
   font-size: 0.85rem;
 }
 .sec33 .rutainsignia {
@@ -4642,7 +4797,7 @@ form {
 }
 .sec33 .rutainsignia h1 {
   margin: 0;
-  color: #242953;
+  color: #254275;
   font-size: 2.1rem;
   text-align: center;
   font-family: font-semibold;
@@ -4659,7 +4814,7 @@ form {
 }
 .sec34 .content h1 {
   font-family: font-semibold;
-  color: #061d38;
+  color: #254275;
   font-size: 1.5rem;
   text-align: center;
   margin-bottom: 50px;
@@ -4671,7 +4826,7 @@ form {
   width: 100%;
 }
 .sec34 .content .item .item_ .detail {
-  background-color: #061d38;
+  background-color: #254275;
 }
 .sec34 .content .item .item_ .detail h3 {
   color: #000017;
@@ -4756,7 +4911,7 @@ form {
   padding: 60px 60px 50px;
 }
 .sec35 .post_body h1 {
-  color: #ffce7b;
+  color: #e5b336;
   font-family: font-semibold;
   font-size: 2.5rem;
   margin-bottom: 30px;
@@ -4795,13 +4950,13 @@ form {
   padding-right: 35px;
 }
 .sec35 .navegacion ul.nav li.nav-item button {
-  color: #061d38;
+  color: #254275;
   font-family: font-light;
   font-size: 0.9rem;
 }
 .sec35 .navegacion ul.nav li.nav-item .active {
   background-color: #fed68c;
-  color: #061d38;
+  color: #254275;
   font-family: font-light;
   font-size: 0.9rem;
 }
@@ -4839,20 +4994,20 @@ form {
 }
 .sec35 #carouselblog-related .item:hover .content {
   background: #facd7f;
-  color: #061d38;
+  color: #254275;
 }
 .sec35 #carouselblog-related .item:hover p.category {
-  background: #061d38 !important;
+  background: #254275 !important;
   color: #facd7f !important;
 }
 .sec35 #carouselblog-related .item:hover p.tit {
-  color: #061d38 !important;
+  color: #254275 !important;
 }
 .sec35 #carouselblog-related .item:hover p.description {
-  color: #061d38 !important;
+  color: #254275 !important;
 }
 .sec35 #carouselblog-related .item:hover .btn-tag {
-  background-color: #061d38 !important;
+  background-color: #254275 !important;
   color: #facd7f !important;
 }
 .sec35 #carouselblog-related .item .image {
@@ -4863,7 +5018,7 @@ form {
 }
 .sec35 #carouselblog-related .item .content {
   width: 100%;
-  background: #061d38;
+  background: #254275;
   padding: 20px 15px 23px;
   position: relative;
   overflow-y: hidden;
@@ -4878,7 +5033,7 @@ form {
   bottom: -30px;
   left: 0;
   width: 100%;
-  background: #061d38;
+  background: #254275;
   color: #facd7f;
   font-size: 0.9rem;
   text-decoration: none;
@@ -4917,7 +5072,7 @@ form {
 }
 .sec35 #carouselblog-related .item .tags .btn-tag {
   background-color: #facd7f;
-  color: #061d38;
+  color: #254275;
   padding: 2px 7px 1px;
   font-size: 0.7rem;
   margin-bottom: 4px;
@@ -4932,7 +5087,7 @@ form {
   padding-left: 60px;
 }
 .sec36 .soporte_left .tit h1 {
-  color: #061d38;
+  color: #254275;
   font-family: font-semibold;
   font-size: 1.7rem;
   text-transform: uppercase;
@@ -4960,7 +5115,7 @@ form {
   transition: 0.5s all;
 }
 .sec36 .soporte_left .items .item:hover {
-  background-color: #fed68c;
+  background-color: #e5b336;
   transform: scale(1.1);
 }
 .sec36 .soporte_left .items .item:hover .btn-contactar {
@@ -4992,7 +5147,7 @@ form {
   margin-top: 30px;
 }
 .sec36 .soporte_left .items .item .item_button .btn-contactar {
-  background-color: #fed68c;
+  background-color: #e5b336;
   color: #000;
   font-family: font-semibold;
   font-size: 0.9rem;
@@ -5000,7 +5155,7 @@ form {
   transition: 0.5s all;
 }
 .sec36 .soporte_right h1 {
-  color: #061d38;
+  color: #254275;
   font-family: font-semibold;
   font-size: 1.7rem;
   text-transform: uppercase;
@@ -5017,15 +5172,15 @@ form {
   right: 0;
   margin: auto;
   height: 2px;
-  background-color: #061d38;
+  background-color: #254275;
 }
 .sec36 .soporte_right .items {
-  background-color: #fed68c;
+  background-color: #e5b336;
   border-radius: 15px;
   padding: 40px 0;
 }
 .sec36 .soporte_right .items hr {
-  color: #061d38;
+  color: #254275;
   width: 80%;
   height: 2px;
   border: 0;
@@ -5071,7 +5226,7 @@ form {
   border-radius: 25px;
 }
 .sec37 .contacto h3 {
-  color: #061d38;
+  color: #254275;
   margin-bottom: 0;
   font-family: font-semibold;
   font-size: 2rem;
@@ -5092,31 +5247,31 @@ form {
   color: #000;
 }
 .sec37 .contacto .form-check label.form-check-label {
-  color: #061d38;
+  color: #254275;
   font-size: 0.8rem;
   font-family: font-light;
 }
 .sec37 .contacto .form-check label.form-check-label a {
-  color: #061d38;
+  color: #254275;
 }
 .sec37 .contacto .form-group {
   margin-bottom: 15px;
 }
 .sec37 .contacto .form-group label {
-  color: #061d38;
+  color: #254275;
   font-size: 0.9rem;
   font-family: font-light;
 }
 .sec37 .contacto .form-group input.form-control,
 .sec37 .contacto .form-group textarea {
   background-color: transparent;
-  border: 1px solid #061d38;
+  border: 1px solid #254275;
   padding-top: 6px;
   padding-bottom: 6px;
   border-radius: 12px;
 }
 .sec37 .contacto .form-group .btn-enviar {
-  background-color: #ffce7b;
+  background-color: #e5b336;
   font-family: font-medium;
   font-size: 1.1rem;
   color: #000;
@@ -5171,7 +5326,7 @@ form {
   padding-left: 60px;
 }
 .sec38 .politicas h1 {
-  color: #061d38;
+  color: #254275;
   font-size: 2.5rem;
   font-family: font-semibold;
   text-align: center;
@@ -5196,7 +5351,7 @@ form {
   line-height: 1.3;
 }
 .sec38 .terminos h1 {
-  color: #061d38;
+  color: #254275;
   font-size: 2.5rem;
   font-family: font-semibold;
   text-align: center;
@@ -5230,21 +5385,21 @@ form {
   padding-left: 60px;
 }
 .sec39 .manual_alumno h1 {
-  color: #061d38;
+  color: #254275;
   font-family: font-bold;
   font-size: 1.7rem;
   margin-bottom: 25px;
 }
 .sec39 .manual_alumno .accordion .accordion-item {
   background-color: #fff;
-  border: 2px solid #061d38;
+  border: 2px solid #254275;
   border-radius: 12px;
   margin-bottom: 20px;
 }
 .sec39 .manual_alumno .accordion .accordion-item .accordion-header .accordion-button {
   background-color: transparent;
   border-radius: unset;
-  color: #061d38;
+  color: #254275;
   box-shadow: unset;
   font-family: font-medium;
   font-size: 1.2rem;
@@ -5273,7 +5428,7 @@ form {
   text-transform: uppercase;
 }
 .sec39 .manual_alumno .accordion .accordion-item .accordion-body h4 {
-  color: #061d38 !important;
+  color: #254275 !important;
   font-family: font-bold;
   font-size: 1rem;
 }
@@ -5304,7 +5459,7 @@ form {
   margin: 0;
 }
 .sec39 .manual_alumno .accordion .accordion-item .accordion-body #accordion_flush .accordion-item .accordion-header .accordion-button {
-  color: #061d38;
+  color: #254275;
   font-family: font-regular;
   font-size: 0.9rem;
   padding-left: 0;
@@ -5334,7 +5489,7 @@ form {
   width: 240px;
 }
 .sec39 .manual_alumno .felicitaciones h2 {
-  color: #061d38;
+  color: #254275;
   font-size: 2.3rem;
   font-family: font-bold;
   margin-bottom: 15px;
@@ -5343,7 +5498,7 @@ form {
 .sec39 .manual_alumno .felicitaciones p {
   font-family: font-medium;
   line-height: 1.3;
-  color: #061d38;
+  color: #254275;
   margin: 0;
   text-align: center;
   font-size: 1rem;
@@ -5355,7 +5510,7 @@ form {
   padding-left: 60px;
 }
 .sec40 .libro_reclamaciones .tit h1 {
-  color: #061d38;
+  color: #254275;
   font-family: font-semibold;
   font-size: 2.7rem;
   text-align: center;
@@ -5374,33 +5529,33 @@ form {
   margin-bottom: 20px;
 }
 .sec40 .libro_reclamaciones .tit2 h3 {
-  color: #061d38;
+  color: #254275;
   font-family: font-semibold;
   font-size: 1rem;
   margin: 0;
 }
 .sec40 .libro_reclamaciones .tit2 p {
-  color: #061d38;
+  color: #254275;
   font-family: font-semibold;
   font-size: 1rem;
   line-height: 1.3;
   margin: 0;
 }
 .sec40 .libro_reclamaciones .formu p.detail {
-  color: #061d38;
+  color: #254275;
   font-size: 0.8rem;
   line-height: 1.3;
   margin: 0;
 }
 .sec40 .libro_reclamaciones .formu p.detail_text {
-  color: #061d38;
+  color: #254275;
   font-size: 0.8rem;
   line-height: 1.3;
   margin: 0;
   text-align: right;
 }
 .sec40 .libro_reclamaciones .formu label {
-  color: #061d38;
+  color: #254275;
   font-size: 1rem;
   margin-right: 10px;
 }
@@ -5412,13 +5567,13 @@ form {
 .sec40 .libro_reclamaciones .formu select,
 .sec40 .libro_reclamaciones .formu textarea {
   background-color: #fff;
-  border: 2px solid #061d38;
+  border: 2px solid #254275;
   border-radius: 5px;
-  color: #061d38;
+  color: #254275;
   font-size: 1rem;
 }
 .sec40 .libro_reclamaciones .formu .btn-enviar {
-  background-color: #ffce7b;
+  background-color: #e5b336;
   color: #000;
   padding: 10px 25px;
   border-radius: 5px;
@@ -5467,17 +5622,17 @@ form {
 }
 .sec40 .libro_reclamaciones .formu .formu_item .tit_head p.fecha {
   margin: 0;
-  color: #061d38;
+  color: #254275;
   font-family: font-semibold;
   font-size: 1rem;
 }
 .sec40 .libro_reclamaciones .formu .formu_item p {
-  color: #061d38;
+  color: #254275;
   font-size: 1rem;
   line-height: 1.3;
 }
 .sec40 .libro_reclamaciones .formu .formu_item h3 {
-  color: #061d38;
+  color: #254275;
   font-family: font-semibold;
   font-size: 1.2rem;
   margin-bottom: 30px;
@@ -5565,8 +5720,8 @@ form {
   font-size: 1.3rem;
 }
 .sec41 .login_trabajo ul li .active {
-  background-color: #fed68c;
-  color: #061d38;
+  background-color: #e5b336;
+  color: #254275;
   font-family: font-semibold;
   font-size: 1.3rem;
 }
@@ -5606,7 +5761,7 @@ form {
 .sec41 .login_trabajo .login_trabajo_content .formulario_trabajo .form-group input {
   background: #fff;
   border-radius: 7px;
-  color: #061d38;
+  color: #254275;
   font-size: 1rem;
   border: 0;
   padding-top: 10px;
@@ -5614,14 +5769,14 @@ form {
 }
 .sec41 .login_trabajo .login_trabajo_content .formulario_trabajo .form-group .btn-login-trabajo {
   background-color: #fdcc7b;
-  color: #061d38;
+  color: #254275;
   font-family: font-medium;
   width: 100%;
   border-radius: 7px;
   font-size: 1.1rem;
 }
 .sec41 .login_trabajo .login_trabajo_content .formulario_trabajo .form-group .btn-login-crear {
-  background-color: #061d38;
+  background-color: #254275;
   color: #fff;
   font-family: font-medium;
   width: 100%;
@@ -5675,7 +5830,7 @@ form {
   border-radius: 10px;
   padding-top: 10px;
   padding-bottom: 10px;
-  color: #061d38;
+  color: #254275;
   font-size: 0.9rem;
 }
 .sec42 p.aviso {
@@ -5691,14 +5846,14 @@ form {
   margin-top: 20px;
 }
 .sec42 .back-login {
-  color: #061d38;
+  color: #254275;
   text-decoration: none;
   font-family: font-medium;
   font-size: 0.9rem;
 }
 .sec42 .btn-crear {
   background-color: #fdcc7b;
-  color: #061d38;
+  color: #254275;
   font-family: font-medium;
   width: 80%;
   border-radius: 7px;
@@ -5743,7 +5898,7 @@ form {
   border-radius: 10px;
   padding-top: 10px;
   padding-bottom: 10px;
-  color: #061d38;
+  color: #254275;
   font-size: 0.9rem;
 }
 .sec42_2 p.aviso {
@@ -5767,7 +5922,7 @@ form {
 }
 .sec42_2 .btn-crear {
   background-color: #fdcc7b;
-  color: #061d38;
+  color: #254275;
   font-family: font-medium;
   width: 80%;
   border-radius: 7px;
@@ -5788,7 +5943,7 @@ form {
   margin-bottom: 40px;
 }
 .sec43 .tit h1 {
-  color: #061d38;
+  color: #254275;
   font-size: 2.4rem;
   font-family: font-semibold;
   text-align: center;
@@ -5824,21 +5979,21 @@ form {
   width: 20%;
   text-align: right;
   margin-right: 20px;
-  color: #061d38;
+  color: #254275;
   font-size: 0.9rem;
   line-height: 1.3;
 }
 .sec43 .solicitud .form-group textarea {
   background: #fff;
   font-size: 0.9rem;
-  border: 1.5px solid #061d38;
+  border: 1.5px solid #254275;
 }
 .sec43 .solicitud .form-group input {
   font-size: 0.9rem;
   color: #999;
   height: 40px;
   background: #fff;
-  border: 1.5px solid #061d38;
+  border: 1.5px solid #254275;
 }
 .sec44 {
   padding-top: 20vh;
@@ -5892,17 +6047,17 @@ form {
 }
 .sec44 .nav_respo .btn-group button {
   background-color: #fff;
-  color: #061d38;
-  font-family: font-light;
+  color: #254275;
+  font-family: font-medium;
   font-size: 0.9rem;
   border-radius: 0.25rem !important;
   padding: 8px 25px;
 }
 .sec44 .nav_respo .btn-group button:hover {
-  background-color: #fed68c;
+  background-color: #e5b336;
 }
 .sec44 .nav_respo .btn-group .active {
-  background-color: #fed68c;
+  background-color: #e5b336;
 }
 .sec44 .nav_respo .dropdown-menu {
   padding: 0;
@@ -5910,25 +6065,27 @@ form {
   border: none;
 }
 .sec44 .nav_respo .dropdown-menu li .dropdown-item {
-  background-color: #ffce7b;
+  background-color: #e5b336;
   border: 1px solid rgba(255,255,255,0.5);
   padding-left: 14px;
   padding-top: 10px;
   padding-bottom: 10px;
+  color: #254275;
 }
 .sec44 .nav_respo .dropdown-menu li .dropdown-item:active {
   color: inherit;
 }
 .sec44 .nav_respo .dropdown-menu li .dropdown-item:hover {
-  background-color: #ffd58e;
-  border-left: 3px solid #061d38;
+  background-color: #e5b336;
+  border-left: 3px solid #254275;
   padding-left: 12px;
 }
 .sec44 .nav_respo .dropdown-menu li .active {
-  color: #212529;
-  background-color: #ffd58e;
-  border-left: 3px solid #061d38;
+  color: #254275;
+  background-color: #e5b336;
+  border-left: 3px solid #254275;
   padding-left: 12px;
+  font-family: font-semibold;
 }
 .sec44 .content {
   padding-right: 60px;
@@ -5941,9 +6098,9 @@ form {
   margin-bottom: 35px;
 }
 .sec44 .content h2.tit2 {
-  color: #ffce7b;
-  font-family: font-bold;
-  font-size: 1.5rem;
+  color: #254275;
+  font-family: font-semibold;
+  font-size: 1.7rem;
   text-align: center;
   margin-bottom: 30px;
 }
@@ -5967,6 +6124,34 @@ form {
 }
 .sec44 .content .content2 {
   margin-bottom: 50px;
+}
+.sec44 h2.tit_vf {
+  color: #254275;
+  font-family: font-semibold;
+  font-size: 1.7rem;
+  margin-bottom: 30px;
+  padding: 0 60px;
+}
+.sec44 .content_vf {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 60px;
+}
+.sec44 .content_vf .content_left {
+  width: 48%;
+}
+.sec44 .content_vf .content_left p {
+  font-size: 0.9rem;
+  color: #2b2b2b;
+  line-height: 1.3;
+}
+.sec44 .content_vf .content_right {
+  width: 40%;
+}
+.sec44 .content_vf .content_right img {
+  width: 100%;
+  height: auto;
 }
 .sec45 {
   position: relative;
@@ -6052,12 +6237,12 @@ form {
   padding-left: 0;
 }
 .sec46 .profile .dropdown-menu li .dropdown-item {
-  background-color: #ffce7b;
+  background-color: #e5b336;
   border: 1px solid rgba(255,255,255,0.5);
   padding-left: 14px;
   padding-top: 10px;
   padding-bottom: 10px;
-  color: #061d38;
+  color: #254275;
   font-family: font-medium;
   display: flex;
   align-items: center;
@@ -6068,8 +6253,8 @@ form {
   color: inherit;
 }
 .sec46 .profile .dropdown-menu li .dropdown-item:hover {
-  background-color: #ffd58e;
-  border-left: 3px solid #061d38;
+  background-color: #e5b336;
+  border-left: 3px solid #254275;
   padding-left: 12px;
 }
 .sec46 .profile .dropdown-menu li .dropdown-item img {
@@ -6079,8 +6264,8 @@ form {
 }
 .sec46 .profile .dropdown-menu li .active {
   color: #212529;
-  background-color: #ffd58e;
-  border-left: 3px solid #061d38;
+  background-color: #e5b336;
+  border-left: 3px solid #254275;
   padding-left: 12px;
 }
 .sec46 .busq {
@@ -6090,21 +6275,21 @@ form {
 }
 .sec46 .busq input,
 .sec46 .busq select {
-  border: 1px solid #061d38;
+  border: 1px solid #254275;
   border-radius: 0;
   width: 100%;
   font-size: 0.9rem;
   border-radius: 4px;
 }
 .sec46 .busq .btn-enviar {
-  background-color: #061d38;
+  background-color: #254275;
   color: #fff;
   font-family: font-semibold;
   font-size: 0.9rem;
   border-radius: 4px;
 }
 .sec46 .busq label {
-  color: #061d38;
+  color: #254275;
   font-size: 0.8rem;
   margin-top: 8px;
 }
@@ -6232,12 +6417,12 @@ form {
   padding-left: 0;
 }
 .sec47 .profile .dropdown-menu li .dropdown-item {
-  background-color: #ffce7b;
+  background-color: #e5b336;
   border: 1px solid rgba(255,255,255,0.5);
   padding-left: 14px;
   padding-top: 10px;
   padding-bottom: 10px;
-  color: #061d38;
+  color: #254275;
   font-family: font-medium;
   display: flex;
   align-items: center;
@@ -6248,8 +6433,8 @@ form {
   color: inherit;
 }
 .sec47 .profile .dropdown-menu li .dropdown-item:hover {
-  background-color: #ffd58e;
-  border-left: 3px solid #061d38;
+  background-color: #e5b336;
+  border-left: 3px solid #254275;
   padding-left: 12px;
 }
 .sec47 .profile .dropdown-menu li .dropdown-item img {
@@ -6259,8 +6444,8 @@ form {
 }
 .sec47 .profile .dropdown-menu li .active {
   color: #212529;
-  background-color: #ffd58e;
-  border-left: 3px solid #061d38;
+  background-color: #e5b336;
+  border-left: 3px solid #254275;
   padding-left: 12px;
 }
 .sec47 .content {
@@ -6512,12 +6697,12 @@ form {
   padding-left: 0;
 }
 .sec48 .profile .dropdown-menu li .dropdown-item {
-  background-color: #ffce7b;
+  background-color: #e5b336;
   border: 1px solid rgba(255,255,255,0.5);
   padding-left: 14px;
   padding-top: 10px;
   padding-bottom: 10px;
-  color: #061d38;
+  color: #254275;
   font-family: font-medium;
   display: flex;
   align-items: center;
@@ -6528,8 +6713,8 @@ form {
   color: inherit;
 }
 .sec48 .profile .dropdown-menu li .dropdown-item:hover {
-  background-color: #ffd58e;
-  border-left: 3px solid #061d38;
+  background-color: #e5b336;
+  border-left: 3px solid #254275;
   padding-left: 12px;
 }
 .sec48 .profile .dropdown-menu li .dropdown-item img {
@@ -6539,8 +6724,8 @@ form {
 }
 .sec48 .profile .dropdown-menu li .active {
   color: #212529;
-  background-color: #ffd58e;
-  border-left: 3px solid #061d38;
+  background-color: #e5b336;
+  border-left: 3px solid #254275;
   padding-left: 12px;
 }
 .sec48 .content h5 {
@@ -6623,20 +6808,20 @@ form {
   color: #706f6f;
 }
 .sec48 .content .content_item form .btn-guardar {
-  background-color: #ffce7b;
-  color: #242953;
+  background-color: #e5b336;
+  color: #254275;
   font-family: font-medium;
   font-size: 0.9rem;
   margin-right: 15px;
 }
 .sec48 .content .content_item form .btn-cancelar {
-  background-color: #242953;
+  background-color: #254275;
   font-family: font-medium;
   font-size: 0.9rem;
   color: #fff;
 }
 .sec48 .content .content_item .btn-back {
-  background-color: #242953;
+  background-color: #254275;
   font-family: font-medium;
   font-size: 1rem;
   color: #fff;
@@ -6644,12 +6829,12 @@ form {
 .sec48 .content .content_item .offer_detail h3 {
   font-size: 1.1rem;
   font-family: font-medium;
-  color: #242953;
+  color: #254275;
 }
 .sec48 .content .content_item .offer_detail p {
   font-size: 1rem;
   font-family: font-medium;
-  color: #242953;
+  color: #254275;
   line-height: 1.3;
   margin: 0;
 }
@@ -6662,8 +6847,8 @@ form {
 .sec48 .content .content_item .applicants .accordion .accordion-item .accordion-button {
   font-size: 1rem;
   font-family: font-medium;
-  background-color: #ffce7b;
-  color: #242953;
+  background-color: #e5b336;
+  color: #254275;
   border-radius: 20px;
   margin-bottom: 5px;
 }
@@ -6679,7 +6864,7 @@ form {
   font-size: 1rem;
   line-height: 1.3;
   font-family: font-light;
-  color: #242953;
+  color: #254275;
 }
 .sec48 .content .content_item .applicants .description .btn-postular {
   background-color: #fed68c;
@@ -6715,7 +6900,7 @@ form {
   line-height: 1.4;
   margin: 0;
   font-size: 1rem;
-  color: #242953;
+  color: #254275;
 }
 .sec48 .content h3 {
   font-size: 1rem;
@@ -6748,7 +6933,7 @@ form {
   margin-top: 10px;
 }
 .sec48 .content .postulaciones #datatable_wrapper .row:nth-child(1) {
-  background: #061d38;
+  background: #254275;
   margin: 0;
   border-radius: 8px;
   padding: 10px 0;
@@ -6779,13 +6964,13 @@ form {
   font-size: 0.77rem;
 }
 .sec48 .content .postulaciones #datatable_wrapper #datatable_paginate .pagination .page-item .page-link {
-  color: #061d38;
+  color: #254275;
 }
 .sec48 .content .postulaciones #datatable_wrapper #datatable_paginate .pagination .page-item .page-link:focus {
   box-shadow: none;
 }
 .sec48 .content .postulaciones #datatable_wrapper #datatable_paginate .pagination .active .page-link {
-  background: #061d38;
+  background: #254275;
   color: #fff;
 }
 .sec48 .content .postulaciones #datatable_wrapper #datatable_paginate .pagination .active .page-link:focus {
@@ -6795,7 +6980,7 @@ form {
   color: rgba(108,117,125,0.5) !important;
 }
 .sec48 .content .postulaciones table thead {
-  background: #061d38;
+  background: #254275;
   color: #fff;
 }
 .sec48 .content .postulaciones table thead tr th {
@@ -6837,19 +7022,19 @@ form {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   border-top: 0px;
-  color: #061d38;
+  color: #254275;
   font-size: 0.8rem;
 }
 .sec48 .radios_form label {
   font-size: 0.8rem;
-  color: #061d38;
+  color: #254275;
   font-family: font-semibold;
 }
 .sec48 .radios_form p {
   font-size: 0.8rem;
   line-height: 1.3;
   margin: 0;
-  color: #061d38;
+  color: #254275;
 }
 .sec49 {
   padding-bottom: 40px;
@@ -6882,13 +7067,13 @@ form {
   padding-right: 35px;
 }
 .sec49 ul.nav li.nav-item button {
-  color: #061d38;
+  color: #254275;
   font-family: font-light;
   font-size: 0.9rem;
 }
 .sec49 ul.nav li.nav-item .active {
   background-color: #fed68c;
-  color: #061d38;
+  color: #254275;
   font-family: font-light;
   font-size: 0.9rem;
 }
@@ -6980,12 +7165,12 @@ form {
   border-radius: 7px;
 }
 .sec49 .content .content1 .content_image .items_ .items .item .item_ h3 {
-  color: #ffce7b;
+  color: #e5b336;
   font-size: 1.3rem;
   margin: 0 9% 18px;
   padding: 5px 0 2px;
   font-family: font-bold;
-  background-color: #061d38;
+  background-color: #254275;
   text-transform: uppercase;
 }
 .sec49 .content .content1 .content_image .items_ .items .item .item_ p {
@@ -7029,13 +7214,13 @@ form {
   padding-right: 35px;
 }
 .sec50 ul.nav li.nav-item button {
-  color: #061d38;
+  color: #254275;
   font-family: font-light;
   font-size: 0.9rem;
 }
 .sec50 ul.nav li.nav-item .active {
   background-color: #fed68c;
-  color: #061d38;
+  color: #254275;
   font-family: font-light;
   font-size: 0.9rem;
 }
@@ -7062,7 +7247,7 @@ form {
   background-color: #e0e2e5;
 }
 .sec50 .content .content1 .content1_1 .content_ .content p {
-  color: #061d38;
+  color: #254275;
   font-size: 1rem;
   line-height: 1.4;
   margin: 0;
@@ -7077,7 +7262,7 @@ form {
   padding: 20px 40% 20px 20px;
 }
 .sec50 .content .content1 .content1_1 .content_ .content .btn_action a.btn-conocemas {
-  background-color: #061d38;
+  background-color: #254275;
   color: #fff;
   font-family: font-semibold;
   display: flex;
@@ -7161,7 +7346,7 @@ form {
   padding: 15px 30px;
   border-radius: 10px;
   width: 48%;
-  background-color: #061d38;
+  background-color: #254275;
   text-align: center;
   margin-bottom: 20px;
 }
@@ -7172,7 +7357,7 @@ form {
   height: 100%;
 }
 .sec50 .content .content1 .propuestas .comercial .items .item h3 {
-  color: #061d38;
+  color: #254275;
   font-size: 0.9rem;
   margin: 10px 15% 10px;
   background-color: #fcd48a;
@@ -7279,7 +7464,7 @@ form {
   background-color: #e0e2e5;
 }
 .sec50 .content .content1 .portafolio .portafolio_header .content_ .content h1 {
-  color: #061d38;
+  color: #254275;
   font-family: font-bold;
   font-size: 1rem;
   margin: 0;
@@ -7296,14 +7481,14 @@ form {
 }
 .sec50 .content .content1 .portafolio .portafolio_header .content_ .content p strong {
   font-family: font-bold;
-  color: #061d38;
+  color: #254275;
 }
 .sec50 .content .content1 .portafolio .portafolio_header .content_ .content .btn_action {
   background-color: #facd7f;
   padding: 20px 40% 20px 20px;
 }
 .sec50 .content .content1 .portafolio .portafolio_header .content_ .content .btn_action a.btn-conocemas {
-  background-color: #061d38;
+  background-color: #254275;
   color: #fff;
   font-family: font-semibold;
   display: flex;
@@ -7321,7 +7506,7 @@ form {
   margin-top: 25px;
 }
 .sec50 .content .content1 .portafolio .portafolio_carrusel h1 {
-  color: #061d38;
+  color: #254275;
   font-family: font-bold;
   font-size: 1.1rem;
   margin-bottom: 20px;
@@ -7470,8 +7655,8 @@ form {
   margin: 0;
 }
 .sec50 .content .content1 .contacto .formulario form .btn-guardar {
-  color: #242953;
-  background-color: #ffce7b;
+  color: #254275;
+  background-color: #e5b336;
   font-size: 1rem;
   padding: 13px 20px;
   font-family: font-medium;
@@ -7479,7 +7664,7 @@ form {
 }
 .sec50 .content .content1 .contacto .formulario form .btn-cancelar {
   color: #fff;
-  background-color: #242953;
+  background-color: #254275;
   font-size: 1rem;
   padding: 13px 20px;
   font-family: font-medium;
@@ -7490,7 +7675,7 @@ form {
 .sec51 .title h1 {
   text-align: center;
   font-family: font-semibold;
-  color: #061d38;
+  color: #254275;
   font-size: 1.7rem;
 }
 .sec51 #carousel-cursos {
@@ -7521,11 +7706,11 @@ form {
   padding: 5px 0;
 }
 .sec51 #carousel-cursos .item:hover .item-content .content h4 {
-  color: #061d38;
+  color: #254275;
   font-size: 1.1rem;
 }
 .sec51 #carousel-cursos .item:hover .item-content .content .btn-vermas {
-  background: #061d38;
+  background: #254275;
   color: #fff;
   font-size: 1rem;
 }
@@ -7547,7 +7732,7 @@ form {
   font-family: font-medium;
   font-size: 1.1rem;
   line-height: 1.2;
-  color: #061d38;
+  color: #254275;
   width: 130px;
   transition: all 0.5s;
 }
@@ -7568,7 +7753,7 @@ form {
   font-size: 0.9rem;
   line-height: 1.2;
   margin: 0;
-  color: #061d38;
+  color: #254275;
 }
 .sec51 #carousel-cursos .item .item-content {
   background: #e0e2e5;
@@ -7584,7 +7769,7 @@ form {
   transition: all 0.5s;
 }
 .sec51 #carousel-cursos .item .item-content .content h4 {
-  color: #061d38;
+  color: #254275;
   font-family: font-bold;
   font-size: 1rem;
   margin: 15px 0 15px;
@@ -7603,7 +7788,7 @@ form {
 }
 .sec51 #carousel-cursos .item .item-content .content .btn-vermas {
   transition: all 0.5s;
-  color: #061d38;
+  color: #254275;
   font-size: 0.9rem;
   background: #fed68c;
   border-radius: 5px;
@@ -7694,7 +7879,7 @@ form {
   padding-left: 20px;
 }
 .sec53 .beneficios .items .item .text h3 {
-  color: #061d38;
+  color: #254275;
   font-size: 1.1rem;
   font-family: font-bold;
   margin-bottom: 15px;
@@ -7709,7 +7894,7 @@ form {
   font-family: font-semibold;
 }
 .sec53 .beneficios .items .item .text .btn-action .btn-ingresa {
-  background-color: #061d38;
+  background-color: #254275;
   color: #fff;
   font-family: font-medium;
   font-size: 0.8rem;
@@ -7737,7 +7922,7 @@ form {
   margin-top: 25px;
 }
 .sec54 .btn-action .btn-vermas {
-  color: #061d38;
+  color: #254275;
   font-size: 1rem;
   padding: 4px 20px 2px;
   background-color: #fed68c;
@@ -7757,27 +7942,27 @@ form {
 }
 .sec54 .item .item_:hover .content {
   background: #facd7f;
-  color: #061d38;
+  color: #254275;
 }
 .sec54 .item .item_:hover p.category {
-  background: #061d38 !important;
+  background: #254275 !important;
   color: #facd7f !important;
 }
 .sec54 .item .item_:hover p.tit {
-  color: #061d38 !important;
+  color: #254275 !important;
 }
 .sec54 .item .item_:hover p.description {
-  color: #061d38 !important;
+  color: #254275 !important;
 }
 .sec54 .item .item_:hover .btn-tag {
-  background-color: #061d38 !important;
+  background-color: #254275 !important;
   color: #facd7f !important;
 }
 .sec54 .item .item_ .image img {
   width: 100%;
 }
 .sec54 .item .item_ .content {
-  background: #061d38;
+  background: #254275;
   padding: 20px 15px 23px;
   position: relative;
   overflow-y: hidden;
@@ -7792,7 +7977,7 @@ form {
   bottom: -30px;
   left: 0;
   width: 100%;
-  background: #061d38;
+  background: #254275;
   color: #facd7f;
   font-size: 0.9rem;
   text-decoration: none;
@@ -7831,7 +8016,7 @@ form {
 }
 .sec54 .item .item_ .tags .btn-tag {
   background-color: #facd7f;
-  color: #061d38;
+  color: #254275;
   padding: 2px 7px 1px;
   font-size: 0.7rem;
   margin-bottom: 4px;
@@ -7872,7 +8057,7 @@ form {
   padding-right: 35px;
 }
 .sec55 .content ul.nav li.nav-item button {
-  color: #061d38;
+  color: #254275;
   font-family: font-light;
   font-size: 0.9rem;
   padding-right: 40px;
@@ -7880,7 +8065,7 @@ form {
 }
 .sec55 .content ul.nav li.nav-item .active {
   background-color: #fed68c;
-  color: #061d38;
+  color: #254275;
   font-family: font-light;
   font-size: 0.9rem;
 }
@@ -7912,7 +8097,7 @@ form {
 }
 .sec55 .content .content_tab .items .item .text .btn-action .btn-vermas {
   background-color: #fed68c;
-  color: #061d38;
+  color: #254275;
   padding: 5px 20px;
   font-size: 1.1rem;
   font-family: font-medium;
@@ -7949,8 +8134,8 @@ form {
   font-size: 1.1rem;
 }
 .sec55 .content .content_tab .items_insignias .item_insignia .item-right .item-right-bottom a.btn-vermas {
-  background-color: #fed68c;
-  color: #061d38;
+  background-color: #e5b336;
+  color: #254275;
   font-family: font-light;
   width: 80%;
   margin-top: 5px;
@@ -8030,7 +8215,7 @@ form {
   margin-top: 150px;
 }
 .sec56 .certificado_resultado .btn-action .btn-descargar {
-  color: #061d38;
+  color: #254275;
   background-color: #fed68c;
   padding: 4px 30px;
   font-size: 1rem;
@@ -8040,7 +8225,7 @@ form {
   transform: scale(1.1);
 }
 .sec57 h1 {
-  color: #061d38;
+  color: #254275;
   font-size: 2.3rem;
   margin-bottom: 30px;
   font-family: font-bold;
@@ -8057,7 +8242,7 @@ form {
 .sec57 .texto p {
   font-size: 1rem;
   line-height: 1.5;
-  color: #061d38;
+  color: #254275;
   margin: 0;
 }
 .sec57 .items {
@@ -8086,7 +8271,7 @@ form {
   font-size: 1.4rem;
   margin: 20px 0 17px;
   padding: 0 30%;
-  color: #061d38;
+  color: #254275;
   text-transform: uppercase;
   text-align: center;
   font-family: font-bold;
@@ -8094,7 +8279,7 @@ form {
 .sec57 .items .item p {
   font-size: 0.9rem;
   line-height: 1.4;
-  color: #061d38;
+  color: #254275;
   padding: 0 20%;
   margin: 0;
 }
@@ -8103,7 +8288,7 @@ form {
   padding: 47px 60px 10px;
 }
 .sec57 .iconos_ .text_icon {
-  color: #061d38;
+  color: #254275;
   font-size: 1rem;
   line-height: 1.5;
   margin-bottom: 50px;
@@ -8138,7 +8323,7 @@ form {
 .sec57 .iconos_ .iconos .icon .icon_right p {
   margin: 0;
   font-size: 0.9rem;
-  color: #061d38;
+  color: #254275;
   line-height: 1.4;
   text-align: justify;
 }
@@ -8191,16 +8376,16 @@ form {
   text-align: center;
 }
 .sec57 .competencias_ .competencias .tit_color h1.color {
-  color: #061d38;
+  color: #254275;
   font-size: 1.7rem;
   font-family: font-bold;
-  background-color: #ffce7b;
+  background-color: #e5b336;
   display: inline;
   padding: 6px 15px;
   border-radius: 10px;
 }
 .sec57 .competencias_ .competencias h3 {
-  color: #061d38;
+  color: #254275;
   font-size: 1.4rem;
   font-family: font-bold;
   margin-top: 35px;
@@ -8217,7 +8402,7 @@ form {
   padding-right: 50%;
   font-size: 1rem;
   line-height: 1.5;
-  color: #061d38;
+  color: #254275;
   text-align: justify;
 }
 .sec57 .elearning_ {
@@ -8243,10 +8428,10 @@ form {
   text-align: center;
 }
 .sec57 .elearning_ .elearning .tit_color h1.color {
-  color: #061d38;
+  color: #254275;
   font-size: 1.7rem;
   font-family: font-bold;
-  background-color: #ffce7b;
+  background-color: #e5b336;
   display: inline;
   padding: 6px 15px;
   border-radius: 10px;
@@ -8266,14 +8451,14 @@ form {
   margin-bottom: 25px;
 }
 .sec58 .somos_ .somos .tit h1 {
-  color: #061d38;
+  color: #254275;
   font-size: 1.6rem;
   font-family: font-bold;
   text-transform: uppercase;
   margin-bottom: 30px;
 }
 .sec58 .somos_ .somos .tit p {
-  color: #061d38;
+  color: #254275;
   font-size: 1rem;
   margin: 0;
   line-height: 1.4;
@@ -8293,13 +8478,13 @@ form {
   padding-right: 35px;
 }
 .sec58 ul.nav li.nav-item button {
-  color: #061d38;
+  color: #254275;
   font-family: font-light;
   font-size: 0.9rem;
 }
 .sec58 ul.nav li.nav-item .active {
   background-color: #fed68c;
-  color: #061d38;
+  color: #254275;
   font-family: font-light;
   font-size: 0.9rem;
 }
@@ -8348,7 +8533,7 @@ form {
   background-color: #fff;
   padding: 15px;
   border-radius: 12px;
-  color: #061d38;
+  color: #254275;
   text-align: center;
 }
 .sec58 .content .content1 .mision_vision .p_top2 {
@@ -8357,14 +8542,14 @@ form {
   margin: 0;
   padding: 15px 10%;
   border-radius: 12px;
-  color: #061d38;
+  color: #254275;
   text-align: center;
 }
 .sec58 .content .content1 .mision_vision h3 {
   font-family: font-bold;
   font-size: 1rem;
   text-align: center;
-  color: #061d38;
+  color: #254275;
   margin: 30px 0 30px;
 }
 .sec58 .content .content1 .mision_vision .items {
@@ -8375,7 +8560,7 @@ form {
   align-items: center;
 }
 .sec58 .content .content1 .mision_vision .items .item {
-  border: 3px #061d38 dashed;
+  border: 3px #254275 dashed;
   width: 44%;
   display: flex;
   align-items: center;
@@ -8401,7 +8586,7 @@ form {
   text-align: center;
 }
 .sec58 .content .content1 .mision_vision .items .item2 {
-  border: 3px #061d38 dashed;
+  border: 3px #254275 dashed;
   width: 60%;
   display: flex;
   align-items: center;
@@ -8432,7 +8617,7 @@ form {
   padding: 100px 20px 30px;
   width: 100%;
   text-align: center;
-  border: 3.5px dashed #061d38;
+  border: 3.5px dashed #254275;
 }
 .sec58 .content .content1 .valores .tit {
   position: absolute;
@@ -8464,7 +8649,7 @@ form {
   color: #00001d;
   font-size: 1.65rem;
   padding: 7px 40px;
-  background-color: #ffce7b;
+  background-color: #e5b336;
 }
 .sec59 {
   margin-bottom: 50px;
@@ -8473,7 +8658,7 @@ form {
   padding: 0;
 }
 .sec59 .titulo h1 {
-  color: #061d38;
+  color: #254275;
   font-family: font-semibold;
   font-size: 1.7rem;
   margin: 0;
@@ -8528,7 +8713,7 @@ form {
   height: 400px;
 }
 .sec59 .premiacion h1 {
-  color: #061d38;
+  color: #254275;
   font-family: font-bold;
   font-size: 1.3rem;
   margin-bottom: 25px;
@@ -8540,7 +8725,7 @@ form {
   font-size: 1rem;
   margin: 0;
   line-height: 1.5;
-  color: #061d38;
+  color: #254275;
 }
 .sec59 .premiacion .items {
   display: flex;
@@ -8554,7 +8739,7 @@ form {
   width: 27%;
   background-color: #fcd48a;
   border-radius: 6px;
-  border-top: 5px solid #061d38;
+  border-top: 5px solid #254275;
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
@@ -8568,7 +8753,7 @@ form {
   height: 100%;
 }
 .sec59 .premiacion .items .item .texto {
-  background-color: #061d38;
+  background-color: #254275;
   height: 100%;
   display: flex;
   align-items: center;
@@ -8646,7 +8831,7 @@ form {
   margin-bottom: 30px;
 }
 .sec60 .text_ .text a {
-  background-color: #061d38;
+  background-color: #254275;
   color: #fff;
   font-family: font-semibold;
   display: inline-flex;
@@ -8713,7 +8898,7 @@ form {
 }
 .sec61 .anuncio_seleccionar ul .btn-ver {
   background-color: #f9cc85;
-  color: #061d38;
+  color: #254275;
   font-family: font-medium;
   font-size: 1rem;
   padding: 5px 35px 3px;
@@ -8755,7 +8940,7 @@ form {
   margin: 20px 0 40px;
 }
 .sec62 .items_ h1 {
-  color: #061d38;
+  color: #254275;
   font-family: font-bold;
   font-size: 1.3rem;
   margin-bottom: 25px;
@@ -8773,7 +8958,7 @@ form {
   width: 27%;
   background-color: #fcd48a;
   border-radius: 6px;
-  border-top: 5px solid #061d38;
+  border-top: 5px solid #254275;
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
@@ -8787,7 +8972,7 @@ form {
   height: 100%;
 }
 .sec62 .items_ .items .item .texto {
-  background-color: #061d38;
+  background-color: #254275;
   height: 100%;
   display: flex;
   align-items: center;
@@ -8868,7 +9053,7 @@ form {
   width: 90%;
   display: flex;
   flex-wrap: wrap;
-  background-color: #061d38;
+  background-color: #254275;
   border-radius: 20px;
 }
 .sec64 .items_ .items .item .item_ .item_left {
@@ -8936,7 +9121,7 @@ form {
 .sec64 .items_ .items .item .item_right2 .triangle {
   width: 0;
   height: 0;
-  border-left: 100px solid #061d38;
+  border-left: 100px solid #254275;
   border-top: 50px solid transparent;
   border-bottom: 50px solid transparent;
 }
@@ -8944,19 +9129,19 @@ form {
   background-color: #d6dde5;
 }
 .sec64 .items_ .items .item2 .item_ .item_left .image {
-  background: #061d38;
+  background: #254275;
 }
 .sec64 .items_ .items .item2 .item_ .item_left .image img {
-  border: 3px solid #061d38;
+  border: 3px solid #254275;
 }
 .sec64 .items_ .items .item2 .item_ .item_right h2 {
-  color: #061d38;
+  color: #254275;
 }
 .sec64 .items_ .items .item2 .item_ .item_right h3 {
-  color: #061d38;
+  color: #254275;
 }
 .sec64 .items_ .items .item2 .item_ .item_right .detail p {
-  color: #061d38;
+  color: #254275;
 }
 .sec64 .items_ .items .item2 .item_right2 .triangle {
   border-left: 100px solid #d6dde5;
@@ -8973,7 +9158,7 @@ form {
   margin-bottom: 25px;
 }
 .sec65 .cart-right .content .details h2 {
-  color: #061d38;
+  color: #254275;
   font-family: font-bold;
   font-size: 1.4rem;
   margin-bottom: 30px;
@@ -8982,7 +9167,7 @@ form {
 .sec65 .cart-right .content .details p {
   font-size: 1.1rem;
   line-height: 1.3;
-  color: #061d38;
+  color: #254275;
   font-family: font-medium;
   margin: 6px;
 }
@@ -8994,8 +9179,8 @@ form {
   margin-bottom: 15px;
 }
 .sec65 .cart-right .content .items {
-  border-bottom: 3px solid #061d38;
-  border-top: 3px solid #061d38;
+  border-bottom: 3px solid #254275;
+  border-top: 3px solid #254275;
   padding-bottom: 10px;
 }
 .sec65 .cart-right .content .items .item {
@@ -9020,7 +9205,7 @@ form {
 }
 .sec65 .cart-right .content .items .item .detail-left .image {
   padding: 2px;
-  border: 3px solid #061d38;
+  border: 3px solid #254275;
   border-radius: 10px;
   margin-right: 10px;
 }
@@ -9073,7 +9258,7 @@ form {
 }
 .sec65 .cart-right .content .subtotal {
   padding: 20px 0 15px;
-  border-bottom: 3px solid #061d38;
+  border-bottom: 3px solid #254275;
 }
 .sec65 .cart-right .content .subtotal .item {
   display: flex;
@@ -9097,7 +9282,7 @@ form {
 .sec65 .cart-right .content .subtotal .item div.envios .signo {
   cursor: pointer;
   color: #fff;
-  background-color: #061d38;
+  background-color: #254275;
   height: 18px;
   width: 18px;
   border-radius: 50%;
@@ -9138,7 +9323,7 @@ form {
 }
 .sec65 .cart-right .content .total .btn-pagar {
   color: #000;
-  background-color: #ffce7b;
+  background-color: #e5b336;
   padding: 10px 60px;
   font-family: font-medium;
   font-size: 1.1rem;
@@ -9149,7 +9334,7 @@ form {
 }
 .sec65 .back a {
   font-family: font-medium;
-  color: #061d38;
+  color: #254275;
   font-size: 1rem;
   text-decoration: none;
 }
@@ -9164,7 +9349,7 @@ form {
 }
 .sec66 .shopping h1 {
   font-size: 1.3rem;
-  color: #061d38;
+  color: #254275;
   font-family: font-bold;
   margin-bottom: 20px;
 }
@@ -9172,13 +9357,13 @@ form {
   width: 100%;
 }
 .sec66 .shopping table thead tr th {
-  color: #061d38;
+  color: #254275;
   font-family: font-semibold;
   font-size: 1rem;
-  border-bottom: 1px solid #061d38;
+  border-bottom: 1px solid #254275;
 }
 .sec66 .shopping table tbody tr td {
-  color: #061d38;
+  color: #254275;
   padding-top: 13px;
 }
 .sec66 .shopping table tbody tr td p {
@@ -9190,7 +9375,7 @@ form {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url("../images/background-footer.png");
+  background-image: url("../images/bg-footer.png");
   padding: 40px 0 20px;
   position: relative;
 }
@@ -9415,6 +9600,10 @@ form {
   .pt-20 {
     padding-top: 10vh !important;
   }
+  .px-60 {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
   .sec0 {
     padding-top: 10vh;
   }
@@ -9569,8 +9758,8 @@ form {
   }
   .sec2 .title h1 {
     text-align: center;
-    font-family: font-semibold;
-    color: #061d38;
+    font-family: font-bold;
+    color: #254275;
     font-size: 1.7rem;
     margin-bottom: 20px;
   }
@@ -9612,14 +9801,14 @@ form {
   }
   .sec3 .title h1 {
     text-align: center;
-    color: #061d38;
+    color: #254275;
     font-size: 1.7rem;
     margin-bottom: 20px;
-    font-family: font-semibold;
+    font-family: font-bold;
   }
   .sec3 .title p {
     text-align: center;
-    color: #061d38;
+    color: #254275;
     line-height: 1.3;
     font-size: 1rem;
     margin: 0;
@@ -9644,7 +9833,7 @@ form {
   }
   .sec3 .items .item .description h3 {
     text-align: center;
-    color: #061d38;
+    color: #254275;
     font-size: 1rem;
     font-family: font-bold;
   }
@@ -9652,15 +9841,138 @@ form {
     text-align: center;
     font-size: 1rem;
     line-height: 1.3;
-    color: #061d38;
+    color: #254275;
+  }
+  .sec3_2 {
+    background: #f4f7ff;
+    padding: 30px 0 20px;
+  }
+  .sec3_2 h1.title {
+    text-align: center;
+    color: #254275;
+    font-size: 1.7rem;
+    margin-bottom: 20px;
+    font-family: font-medium;
+  }
+  .sec3_2 h1.title span {
+    font-family: font-bold;
+  }
+  .sec3_2 #carousel-chooseus {
+    padding: 0 40px 0;
+  }
+  .sec3_2 #carousel-chooseus .item {
+    padding: 50px 20px 0;
+    margin-top: 20px;
+    transition: all 0.3s;
+  }
+  .sec3_2 #carousel-chooseus .item:hover {
+    margin-top: 15px;
+    padding: 50px 12px 0;
+  }
+  .sec3_2 #carousel-chooseus .item:hover .item_ {
+    height: 270px;
+    border: 3px solid #e5b336;
+  }
+  .sec3_2 #carousel-chooseus .item:hover .item_ .imagen {
+    top: -52px;
+    margin: auto;
+    height: 92px;
+  }
+  .sec3_2 #carousel-chooseus .item:hover .item_ .imagen img.hover {
+    display: block;
+  }
+  .sec3_2 #carousel-chooseus .item:hover .item_ .imagen img.nohover {
+    display: none;
+  }
+  .sec3_2 #carousel-chooseus .item:hover .item_ .description {
+    padding: 15px 15px 6px;
+  }
+  .sec3_2 #carousel-chooseus .item:hover .item_ .description h3 {
+    font-family: font-bold;
+    font-size: 1.2rem;
+    color: #e5b336;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  .sec3_2 #carousel-chooseus .item:hover .item_ .description p {
+    color: #2b2b2b;
+    line-height: 1.3;
+    margin: 0;
+    font-size: 1.1rem;
+    text-align: center;
+  }
+  .sec3_2 #carousel-chooseus .item .item_ {
+    margin: auto;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #0087dc;
+    border-radius: 20px;
+    position: relative;
+    transition: all 0.3s;
+  }
+  .sec3_2 #carousel-chooseus .item .item_ .imagen {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: -52px;
+    margin: auto;
+    height: 85px;
+    transition: all 0.3s;
+  }
+  .sec3_2 #carousel-chooseus .item .item_ .imagen img {
+    width: auto;
+    height: 100%;
+    margin: auto;
+    transition: all 0.3s;
+  }
+  .sec3_2 #carousel-chooseus .item .item_ .imagen .hover {
+    display: none;
+  }
+  .sec3_2 #carousel-chooseus .item .item_ .description {
+    transition: all 0.2s;
+    padding: 0 25px 10px;
+  }
+  .sec3_2 #carousel-chooseus .item .item_ .description h3 {
+    font-family: font-bold;
+    font-size: 1.1rem;
+    color: #0087dc;
+    text-align: center;
+    margin-bottom: 15px;
+    transition: all 0.2s;
+  }
+  .sec3_2 #carousel-chooseus .item .item_ .description p {
+    color: #2b2b2b;
+    line-height: 1.3;
+    margin: 0;
+    font-size: 1rem;
+    text-align: center;
+    transition: all 0.2s;
+  }
+  .sec3_2 #carousel-chooseus .owl-nav {
+    display: inherit !important;
+  }
+  .sec3_2 #carousel-chooseus .owl-nav .owl-prev {
+    position: absolute;
+    left: 1%;
+    top: 40%;
+  }
+  .sec3_2 #carousel-chooseus .owl-nav .owl-next {
+    position: absolute;
+    right: 1%;
+    top: 40%;
+  }
+  .sec3_2 #carousel-chooseus .owl-nav img {
+    height: 33px;
   }
   .sec4 {
     padding: 60px 0 50px;
   }
   .sec4 .title h1 {
     text-align: center;
-    font-family: font-semibold;
-    color: #061d38;
+    font-family: font-bold;
+    color: #254275;
     font-size: 1.7rem;
   }
   .sec4 #carousel-cursos {
@@ -9675,7 +9987,7 @@ form {
     margin-top: 0px;
   }
   .sec4 #carousel-cursos .item:hover .item-header {
-    background: #fed68c;
+    background: #e5b336;
     padding: 19px 20%;
   }
   .sec4 #carousel-cursos .item:hover .item-header .titulo-header span {
@@ -9691,18 +10003,17 @@ form {
     padding: 5px 0;
   }
   .sec4 #carousel-cursos .item:hover .item-content .content h4 {
-    color: #061d38;
+    color: #254275;
     font-size: 1.1rem;
   }
   .sec4 #carousel-cursos .item:hover .item-content .content .btn-vermas {
-    background: #061d38;
+    background: #254275;
     color: #fff;
     font-size: 1rem;
   }
   .sec4 #carousel-cursos .item .item-header {
-    background: #e0e2e5;
-    border-radius: 5px;
-    padding: 13px 20%;
+    background: #f4f7ff;
+    padding: 13px 3%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9714,11 +10025,10 @@ form {
     height: 50px;
   }
   .sec4 #carousel-cursos .item .item-header .titulo-header span {
-    font-family: font-medium;
+    font-family: font-semibold;
     font-size: 1rem;
     line-height: 1.2;
-    color: #061d38;
-    width: 130px;
+    color: #254275;
     transition: all 0.5s;
   }
   .sec4 #carousel-cursos .item .item-header .titulo-header img {
@@ -9734,16 +10044,15 @@ form {
   }
   .sec4 #carousel-cursos .item .item-header span {
     text-align: left;
-    font-family: font-medium;
+    font-family: font-regular;
     font-size: 1rem;
     line-height: 1.2;
     margin: 0;
-    color: #061d38;
+    color: #254275;
   }
   .sec4 #carousel-cursos .item .item-content {
-    background: #e0e2e5;
+    background: #f4f7ff;
     margin-top: 7px;
-    border-radius: 5px;
     transition: all 0.5s;
   }
   .sec4 #carousel-cursos .item .item-content .imagen img {
@@ -9754,8 +10063,7 @@ form {
     transition: all 0.5s;
   }
   .sec4 #carousel-cursos .item .item-content .content h4 {
-    color: #061d38;
-    font-family: font-bold;
+    color: #254275;
     font-size: 1rem;
     margin: 15px 0 15px;
     text-align: center;
@@ -9773,7 +10081,7 @@ form {
   }
   .sec4 #carousel-cursos .item .item-content .content .btn-vermas {
     transition: all 0.5s;
-    color: #061d38;
+    color: #254275;
     font-size: 1rem;
     background: #fed68c;
     border-radius: 5px;
@@ -9807,8 +10115,6 @@ form {
   }
   .sec5 .title h1 {
     text-align: center;
-    font-family: font-semibold;
-    color: #061d38;
     font-size: 1.7rem;
     padding-bottom: 40px;
   }
@@ -9819,13 +10125,9 @@ form {
     width: 100%;
   }
   .sec5 .item .item_ .content {
-    background: #061d38;
     padding: 20px 15px 23px;
     position: relative;
     overflow-y: hidden;
-  }
-  .sec5 .item .item_ .content:hover .btn-leer {
-    bottom: 0px;
   }
   .sec5 .item .item_ .content .btn-leer {
     position: absolute;
@@ -9854,7 +10156,6 @@ form {
     font-family: font-semibold;
     line-height: 1.2;
     font-size: 1rem;
-    color: #facd7f;
   }
   .sec5 .item .item_ .content p.description {
     line-height: 1.2;
@@ -9868,7 +10169,7 @@ form {
   }
   .sec5 .item .item_ .tags .btn-tag {
     background-color: #facd7f;
-    color: #061d38;
+    color: #254275;
     padding: 2px 7px 1px;
     font-size: 0.9rem;
     margin-bottom: 4px;
@@ -9883,12 +10184,12 @@ form {
     margin-top: 60px;
     text-align: center;
     font-family: font-semibold;
-    color: #061d38;
+    color: #254275;
     font-size: 1.7rem;
   }
   .sec6 .btn-vermas {
-    color: #061d38;
-    background-color: #ffce7b;
+    color: #254275;
+    background-color: #e5b336;
     padding: 6px 20px 5px;
     font-family: font-semibold;
     font-size: 1rem;
@@ -9897,27 +10198,19 @@ form {
     transition: 0.3s all;
   }
   .sec6 .btn-vermas:hover {
-    background-color: #061d38;
-    color: #ffce7b;
+    background-color: #254275;
+    color: #e5b336;
   }
   .sec6 #carousel-recomendaciones {
     padding: 0 50px;
     margin-top: 40px;
   }
-  .sec6 #carousel-recomendaciones .item:hover .content {
-    transform: rotateY(180deg);
-  }
   .sec6 #carousel-recomendaciones .item .content {
-    transform-style: preserve-3d;
     transition: all 0.4s linear;
-    background: #061d38;
-    height: 49vh;
   }
   .sec6 #carousel-recomendaciones .item .content .cara {
     height: 100%;
     width: 100%;
-    position: absolute;
-    backface-visibility: hidden;
     top: 0;
     left: 0;
     padding: 30px 20px 10px;
@@ -9969,16 +10262,13 @@ form {
   }
   .sec6 #carousel-recomendaciones .item .content .image {
     border-radius: 10px;
-    background: #fff;
   }
   .sec6 #carousel-recomendaciones .item .content .image img {
     width: 100%;
     border-radius: 17px;
-    border: 4px solid #fff;
   }
   .sec6 #carousel-recomendaciones .item .content p.name {
     font-family: font-bold;
-    color: #fff;
     font-size: 1.1rem;
     line-height: 1.2;
     text-align: center;
@@ -9986,7 +10276,6 @@ form {
     padding: 40px 2% 5px;
   }
   .sec6 #carousel-recomendaciones .item .content p.description {
-    color: #fff;
     font-size: 1rem;
     line-height: 1.2;
     text-align: center;
@@ -10018,7 +10307,6 @@ form {
   .sec7 .title h1 {
     text-align: center;
     font-family: font-semibold;
-    color: #061d38;
     font-size: 1.7rem;
   }
   .sec7 .logros {
@@ -10036,7 +10324,6 @@ form {
     width: 200px;
     font-size: 1rem;
     line-height: 1.3;
-    color: #061d38;
   }
   .sec7 .item {
     text-align: center;
@@ -10051,28 +10338,21 @@ form {
     margin-top: 20px;
   }
   .sec7 .item .counters .plus {
-    color: #facd7f;
-    font-family: font-bold;
     font-size: 2.5rem;
     line-height: 1;
   }
   .sec7 .item .counters .counter {
-    color: #facd7f;
-    font-family: font-bold;
     font-size: 2.1rem;
     line-height: 1;
   }
   .sec7 .item p {
     line-height: 1;
-    font-family: font-bold;
     font-size: 1.2rem;
     margin: 0;
-    color: #061d38;
   }
   .sec7 .item span {
     line-height: 1.3;
     font-size: 1rem;
-    color: #061d38;
   }
   .sec8 {
     background-position: bottom;
@@ -10091,14 +10371,14 @@ form {
   .sec8 .content h5 {
     font-family: font-bold;
     font-size: 1.1rem;
-    color: #061d38;
+    color: #254275;
   }
   .sec8 .content p {
     line-height: 1.3;
     font-size: 1rem;
     padding: 0 13%;
     margin: 0;
-    color: #061d38;
+    color: #254275;
     margin-bottom: 20px;
   }
   .sec8 .content form {
@@ -10110,7 +10390,7 @@ form {
     color: #000;
   }
   .sec8 .content form input[type=submit] {
-    background: #061d38;
+    background: #254275;
     color: #fed68c;
     border: unset;
     margin-left: 10px;
@@ -10302,7 +10582,7 @@ form {
     position: relative;
   }
   .sec10 .index-bar .active:after {
-    background: #ffce7b;
+    background: #e5b336;
     content: '';
     position: absolute;
     top: 0;
@@ -10372,7 +10652,7 @@ form {
     margin-bottom: 20px;
   }
   .sec11 .description h4 {
-    color: #061d38;
+    color: #254275;
     font-size: 1.1rem;
     margin-bottom: 20px;
     font-family: font-medium;
@@ -10581,7 +10861,7 @@ form {
     padding-bottom: 20px;
   }
   .sec15 .items .item .item_ p.title {
-    color: #ffce7b;
+    color: #e5b336;
     font-family: font-bold;
     font-size: 1.1rem;
     background: #000a25;
@@ -10608,7 +10888,7 @@ form {
     font-family: font-bold;
   }
   .sec15 .text p span {
-    color: #ffce7b;
+    color: #e5b336;
     font-family: font-bold;
   }
   .sec16 {
@@ -10743,14 +11023,14 @@ form {
     margin-bottom: 15px;
   }
   .sec19 ul.nav li.nav-item button {
-    color: #061d38;
+    color: #254275;
     font-family: font-light;
     font-size: 1rem;
     border: 1px solid #fed68c;
   }
   .sec19 ul.nav li.nav-item .active {
     background-color: #fed68c;
-    color: #061d38;
+    color: #254275;
     font-family: font-light;
     font-size: 1rem;
   }
@@ -10767,7 +11047,7 @@ form {
   .sec19 .filtros .busq button {
     color: #fff;
     font-family: font-medium;
-    background-color: #061d38;
+    background-color: #254275;
     border: none;
     padding: 6px 15px 2px;
     border-radius: 30px;
@@ -10829,27 +11109,27 @@ form {
   }
   .sec19 .content1 .item .item_:hover .content {
     background: #facd7f;
-    color: #061d38;
+    color: #254275;
   }
   .sec19 .content1 .item .item_:hover p.category {
-    background: #061d38 !important;
+    background: #254275 !important;
     color: #facd7f !important;
   }
   .sec19 .content1 .item .item_:hover p.tit {
-    color: #061d38 !important;
+    color: #254275 !important;
   }
   .sec19 .content1 .item .item_:hover p.description {
-    color: #061d38 !important;
+    color: #254275 !important;
   }
   .sec19 .content1 .item .item_:hover .btn-tag {
-    background-color: #061d38 !important;
+    background-color: #254275 !important;
     color: #facd7f !important;
   }
   .sec19 .content1 .item .item_ .image img {
     width: 100%;
   }
   .sec19 .content1 .item .item_ .content {
-    background: #061d38;
+    background: #254275;
     padding: 20px 15px 23px;
     position: relative;
     overflow-y: hidden;
@@ -10864,7 +11144,7 @@ form {
     bottom: 0px;
     left: 0;
     width: 100%;
-    background: #061d38;
+    background: #254275;
     color: #facd7f;
     font-size: 1rem;
     text-decoration: none;
@@ -10903,7 +11183,7 @@ form {
   }
   .sec19 .content1 .item .item_ .tags .btn-tag {
     background-color: #facd7f;
-    color: #061d38;
+    color: #254275;
     padding: 2px 7px 1px;
     font-size: 1rem;
     margin-bottom: 4px;
@@ -10929,27 +11209,27 @@ form {
   }
   .sec19 .itemSearch #itemTag .item_:hover .content {
     background: #facd7f;
-    color: #061d38;
+    color: #254275;
   }
   .sec19 .itemSearch #itemTag .item_:hover p.category {
-    background: #061d38 !important;
+    background: #254275 !important;
     color: #facd7f !important;
   }
   .sec19 .itemSearch #itemTag .item_:hover p.tit {
-    color: #061d38 !important;
+    color: #254275 !important;
   }
   .sec19 .itemSearch #itemTag .item_:hover p.description {
-    color: #061d38 !important;
+    color: #254275 !important;
   }
   .sec19 .itemSearch #itemTag .item_:hover .btn-tag {
-    background-color: #061d38 !important;
+    background-color: #254275 !important;
     color: #facd7f !important;
   }
   .sec19 .itemSearch #itemTag .item_ .image img {
     width: 100%;
   }
   .sec19 .itemSearch #itemTag .item_ .content {
-    background: #061d38;
+    background: #254275;
     padding: 20px 15px 23px;
     position: relative;
     overflow-y: hidden;
@@ -10964,7 +11244,7 @@ form {
     bottom: -30px;
     left: 0;
     width: 100%;
-    background: #061d38;
+    background: #254275;
     color: #facd7f;
     font-size: 1rem;
     text-decoration: none;
@@ -11003,7 +11283,7 @@ form {
   }
   .sec19 .itemSearch #itemTag .item_ .tags .btn-tag {
     background-color: #facd7f;
-    color: #061d38;
+    color: #254275;
     padding: 2px 7px 1px;
     font-size: 1rem;
     margin-bottom: 4px;
@@ -11153,12 +11433,12 @@ form {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: #ffce7b;
+    background-color: #e5b336;
     padding: 20px 15px;
   }
   .sec23 .info .info_ .precio {
     width: 100% !important;
-    background-color: #061d38;
+    background-color: #254275;
     border-radius: 10px;
     margin-top: 15px;
   }
@@ -11212,13 +11492,13 @@ form {
   }
   .sec24 .presentacion h1 {
     font-family: font-bold;
-    color: #061d38;
+    color: #254275;
     font-size: 1.7rem;
     padding: 0;
     margin: 20px 0 20px;
   }
   .sec24 .presentacion p {
-    color: #061d38;
+    color: #254275;
     line-height: 1.2;
     font-size: 1rem;
   }
@@ -11239,8 +11519,8 @@ form {
     margin-bottom: 20px;
   }
   .sec24 .presentacion .botones .btn-matricula {
-    background-color: #ffce7b;
-    color: #061d38;
+    background-color: #e5b336;
+    color: #254275;
     font-family: font-semibold;
     line-height: 2.5;
     margin-right: 20px;
@@ -11255,7 +11535,7 @@ form {
     height: 40px;
   }
   .sec24 .presentacion .botones .btn-descarga {
-    background-color: #061d38;
+    background-color: #254275;
     color: #fff;
     font-family: font-semibold;
     line-height: 1.1;
@@ -11264,7 +11544,7 @@ form {
     font-size: 1rem;
   }
   .sec24 .presentacion .botones .btn-azul {
-    background-color: #061d38;
+    background-color: #254275;
     color: #fff;
     font-family: font-semibold;
     line-height: 2.5;
@@ -11292,7 +11572,7 @@ form {
     width: 50%;
   }
   .sec25 .resultados .result p {
-    color: #061d38;
+    color: #254275;
     line-height: 1.3;
     margin: 0;
     font-size: 0.8rem;
@@ -11338,7 +11618,7 @@ form {
   }
   .sec25 .content .left-content p.tit {
     margin: 0;
-    background: #061d38;
+    background: #254275;
     color: #fff;
     font-family: font-medium;
     font-size: 1rem;
@@ -11356,7 +11636,7 @@ form {
   }
   .sec25 .content .left-content .accordion-item button.accordion-button {
     background: #fed68c;
-    color: #061d38;
+    color: #254275;
     font-size: 1rem;
   }
   .sec25 .content .left-content .accordion-item button.accordion-button:focus {
@@ -11376,12 +11656,12 @@ form {
     border-bottom: 1.5px solid #00001d;
   }
   .sec25 .content .left-content .accordion-item .accordion-body .lista label.form-check-label {
-    color: #061d38;
+    color: #254275;
     font-size: 1rem;
   }
   .sec25 .content .left-content .accordion-item .accordion-body .lista label.form-check-label a {
     text-decoration: none;
-    color: #061d38;
+    color: #254275;
     font-size: 1rem;
   }
   .sec25 .content .left-content .accordion-item .accordion-body .lista .form-check {
@@ -11392,21 +11672,21 @@ form {
     height: 1.3em;
     margin-top: 0;
     margin-right: 5px;
-    border: 2.5px solid #061d38;
+    border: 2.5px solid #254275;
   }
   .sec25 .content .left-content .accordion-item .accordion-body .lista .form-check .form-check-input:focus {
     border-color: unset;
     box-shadow: unset;
   }
   .sec25 .content .left-content .accordion-item .accordion-body .lista .form-check .form-check-input:checked {
-    background-color: #061d38;
+    background-color: #254275;
   }
   .sec25 .content .left-content .accordion-item .accordion-body .lista .sublista {
     padding: 8px 0 0px;
   }
   .sec25 .content .left-content .accordion-bottom {
     background-color: #fed68c;
-    border: 1px solid #061d38;
+    border: 1px solid #254275;
     border-bottom: 2px solid;
     border-left: 2px solid;
     border-right: 2px solid;
@@ -11415,13 +11695,13 @@ form {
     padding: 5px 0;
   }
   .sec25 .content .left-content .accordion-bottom:hover {
-    background-color: #061d38;
+    background-color: #254275;
     color: #fed68c;
-    border-color: #061d38;
+    border-color: #254275;
   }
   .sec25 .content .left-content .accordion-bottom button {
     font-size: 1rem;
-    color: #061d38;
+    color: #254275;
     font-family: font-medium;
     background-color: transparent;
     border: 0;
@@ -11447,13 +11727,13 @@ form {
     padding-right: 0;
   }
   .sec25 .content .right-content ul.nav li.nav-item button {
-    color: #061d38;
+    color: #254275;
     font-family: font-light;
     font-size: 1rem;
   }
   .sec25 .content .right-content ul.nav li.nav-item .active {
     background-color: #fed68c;
-    color: #061d38;
+    color: #254275;
     font-family: font-light;
     font-size: 1rem;
   }
@@ -11489,7 +11769,7 @@ form {
     position: absolute;
     top: 10px;
     left: 10px;
-    color: #061d38;
+    color: #254275;
     font-size: 1rem;
     background-color: #e0e2e5;
     margin: 0;
@@ -11521,7 +11801,7 @@ form {
     justify-content: space-between;
   }
   .sec25 .content .right-content .content .item .item-content .content h4 {
-    color: #061d38;
+    color: #254275;
     font-family: font-semibold;
     font-size: 1rem;
     margin: 10px 0 0px;
@@ -11530,7 +11810,7 @@ form {
     text-transform: uppercase;
   }
   .sec25 .content .right-content .content .item .item-content .content .btn-vermas {
-    color: #061d38;
+    color: #254275;
     font-size: 1rem;
     background: #fed68c;
     border-radius: 5px;
@@ -11540,21 +11820,21 @@ form {
     transition: 0.3s all;
   }
   .sec25 .content .right-content .content .item .item-content .content .btn-vermas:hover {
-    background: #061d38;
+    background: #254275;
     color: #fed68c;
   }
   .sec25 .content .right-content .content_paginate {
     margin-top: 15px;
   }
   .sec25 .content .right-content .content_paginate .pagination .page-item .page-link {
-    color: #061d38;
-    border: 1px solid #061d38;
+    color: #254275;
+    border: 1px solid #254275;
   }
   .sec25 .content .right-content .content_paginate .pagination .page-item .page-link:focus {
     box-shadow: unset;
   }
   .sec25 .content .right-content .content_paginate .pagination .active .page-link {
-    background-color: #061d38;
+    background-color: #254275;
     color: #fff;
   }
   .sec26 ul.nav {
@@ -11569,14 +11849,14 @@ form {
     margin-bottom: 15px;
   }
   .sec26 ul.nav li.nav-item button {
-    color: #061d38;
+    color: #254275;
     font-family: font-light;
     font-size: 1rem;
     border: 1px solid #fed68c;
   }
   .sec26 ul.nav li.nav-item .active {
     background-color: #fed68c;
-    color: #061d38;
+    color: #254275;
     font-family: font-light;
     font-size: 1rem;
   }
@@ -11603,7 +11883,7 @@ form {
     height: 51vh;
   }
   .sec26 .items .item2 .content .item_active {
-    border: 2px solid #061d38;
+    border: 2px solid #254275;
   }
   .sec26 .items .item2 .content .cara {
     position: absolute;
@@ -11623,7 +11903,7 @@ form {
   }
   .sec26 .items .item2 .content .detras {
     overflow: hidden;
-    background-color: #061d38;
+    background-color: #254275;
     height: 99%;
     width: 100%;
     transform: rotateY(180deg);
@@ -11704,7 +11984,7 @@ form {
   }
   .sec26 .items .item2 .content .cara_bottom p.name {
     font-family: font-semibold;
-    color: #061d38;
+    color: #254275;
     font-size: 1.2rem;
     line-height: 1.2;
     text-align: center;
@@ -11713,9 +11993,9 @@ form {
     margin-bottom: 8px;
   }
   .sec26 .items .item2 .content .cara_bottom span.cargo {
-    background-color: #fed68c;
+    background-color: #e5b336;
     padding: 3px 15px;
-    color: #061d38;
+    color: #254275;
     font-size: 1.1rem;
     border-radius: 6px;
     display: inline-block;
@@ -11727,7 +12007,7 @@ form {
     margin-bottom: 15px;
   }
   .sec26 .items .item3 .item_active {
-    border: 2px solid #061d38 !important;
+    border: 2px solid #254275 !important;
   }
   .sec26 .items .item3 .content {
     transition: all 0.4s linear;
@@ -11752,9 +12032,9 @@ form {
     padding: 20px 2% 5px;
   }
   .sec26 .items .item3 .content span.cargo {
-    background-color: #fed68c;
+    background-color: #e5b336;
     padding: 3px 15px;
-    color: #061d38;
+    color: #254275;
     font-size: 1rem;
     border-radius: 6px;
     display: inline-block;
@@ -11809,14 +12089,14 @@ form {
     margin-bottom: 15px;
   }
   .sec27 ul.nav li.nav-item button {
-    color: #061d38;
+    color: #254275;
     font-family: font-light;
     font-size: 1rem;
     border: 1px solid #fed68c;
   }
   .sec27 ul.nav li.nav-item .active {
     background-color: #fed68c;
-    color: #061d38;
+    color: #254275;
     font-family: font-light;
     font-size: 1rem;
   }
@@ -11954,14 +12234,14 @@ form {
   }
   .sec28 .contenido .accordion .accordion-item {
     background-color: #fff;
-    border: 2px solid #061d38;
+    border: 2px solid #254275;
     border-radius: 12px;
     margin-bottom: 20px;
   }
   .sec28 .contenido .accordion .accordion-item .accordion-header .accordion-button {
     background-color: transparent;
     border-radius: unset;
-    color: #061d38;
+    color: #254275;
     box-shadow: unset;
     font-family: font-medium;
     font-size: 1.2rem;
@@ -11978,14 +12258,14 @@ form {
   }
   .sec28 .contenido .accordion .accordion-item .accordion-body p {
     line-height: 1.3;
-    color: #061d38;
+    color: #254275;
     font-size: 1rem;
   }
   .sec28 .contenido .accordion .accordion-item .accordion-body ul {
     padding-left: 1rem;
   }
   .sec28 .contenido .accordion .accordion-item .accordion-body ul li {
-    color: #061d38;
+    color: #254275;
     font-size: 1rem;
     line-height: 1.3;
   }
@@ -11995,7 +12275,7 @@ form {
     margin: 0;
   }
   .sec28 .contenido .accordion .accordion-item .accordion-body #accordion_flush .accordion-item .accordion-header .accordion-button {
-    color: #061d38;
+    color: #254275;
     font-family: font-regular;
     font-size: 1rem;
     padding-left: 0;
@@ -12017,13 +12297,13 @@ form {
     padding: 1rem 1.25rem;
   }
   .sec28 .contenido .accordion .accordion-only h2 {
-    color: #061d38;
+    color: #254275;
     font-size: 1rem;
     font-family: font-bold;
     margin-bottom: 2px;
   }
   .sec28 .contenido .accordion .accordion-only p {
-    color: #061d38;
+    color: #254275;
     margin: 0;
     line-height: 1.2;
     font-size: 1rem;
@@ -12033,7 +12313,7 @@ form {
     padding-left: 1rem;
   }
   .sec28 .contenido .accordion .accordion-only ul li {
-    color: #061d38;
+    color: #254275;
     font-size: 1rem;
   }
   .sec28 .contenido .accordion .accordion-teacher {
@@ -12060,7 +12340,7 @@ form {
     width: 100%;
   }
   .sec28 .contenido .accordion .accordion-teacher #carousel-curso-profesor .item .teacher .description h2 {
-    color: #061d38;
+    color: #254275;
     font-family: font-medium;
     font-size: 1.1rem;
     margin: 0;
@@ -12069,13 +12349,13 @@ form {
     line-height: 1.3;
   }
   .sec28 .contenido .accordion .accordion-teacher #carousel-curso-profesor .item .teacher .description p.name {
-    color: #061d38;
+    color: #254275;
     margin: 0;
     font-size: 1.1rem;
     margin-bottom: 20px;
   }
   .sec28 .contenido .accordion .accordion-teacher #carousel-curso-profesor .item .teacher .description .detail p {
-    color: #061d38;
+    color: #254275;
     font-size: 1rem;
   }
   .sec28 .contenido .accordion .accordion-teacher #carousel-curso-profesor .owl-nav {
@@ -12092,16 +12372,16 @@ form {
     width: 20px;
     border-radius: 50%;
     background: transparent;
-    border: 2px solid #061d38;
+    border: 2px solid #254275;
     margin: 0 2px;
   }
   .sec28 .contenido .accordion .accordion-teacher #carousel-curso-profesor .owl-dots .active {
-    background-color: #fed68c;
+    background-color: #e5b336;
   }
   .sec28 .contenido .accordion .accordion-certificate {
     padding: 2rem 1rem;
-    background-color: #fed68c;
-    border: 2px solid #fed68c;
+    background-color: #e5b336;
+    border: 2px solid #e5b336;
     border-radius: 0;
     display: flex;
     flex-wrap: wrap;
@@ -12119,12 +12399,12 @@ form {
     padding-left: 0;
   }
   .sec28 .contenido .accordion .accordion-certificate .content h2 {
-    color: #061d38;
+    color: #254275;
     font-family: font-medium;
     font-size: 1.5rem;
   }
   .sec28 .contenido .accordion .accordion-certificate .content p {
-    color: #061d38;
+    color: #254275;
     line-height: 1.3;
     font-size: 1rem;
   }
@@ -12132,7 +12412,7 @@ form {
     padding-left: 1rem;
   }
   .sec28 .contenido .accordion .accordion-certificate .content ul li {
-    color: #061d38;
+    color: #254275;
     margin-bottom: 1rem;
     line-height: 1.3;
     font-size: 1rem;
@@ -12144,7 +12424,7 @@ form {
   }
   .sec28 .contenido .accordion .accordion-certificate .content .buttons a {
     padding: 9px 20px;
-    background: #061d38;
+    background: #254275;
     color: #fff;
     font-family: font-bold;
     text-decoration: none;
@@ -12159,7 +12439,7 @@ form {
     position: relative;
     top: unset;
     padding: 20px 30px 20px;
-    background: #061d38;
+    background: #254275;
     border-radius: 15px;
   }
   .sec28 .formu .formulario p {
@@ -12256,7 +12536,7 @@ form {
     text-align: center;
     font-size: 1.8rem;
     font-family: font-semibold;
-    color: #061d38;
+    color: #254275;
     margin-bottom: 60px;
   }
   .sec29 .cart-left {
@@ -12284,39 +12564,39 @@ form {
   }
   .sec29 .cart-left .modes .mode p {
     font-size: 0.9rem;
-    color: #061d38;
+    color: #254275;
     margin: 0;
     font-family: font-medium;
   }
   .sec29 .cart-left .modes .active_mode {
-    background-color: #ffce7b;
+    background-color: #e5b336;
   }
   .sec29 .cart-left .information h3 {
     font-family: font-medium;
-    color: #061d38;
+    color: #254275;
     font-size: 1rem;
     margin-bottom: 17px;
   }
   .sec29 .cart-left .information label {
-    color: #061d38;
+    color: #254275;
     margin-bottom: 3px;
   }
   .sec29 .cart-left .information label a {
-    color: #061d38;
+    color: #254275;
   }
   .sec29 .cart-left .information input,
   .sec29 .cart-left .information select {
-    border: 2px solid #061d38;
+    border: 2px solid #254275;
     margin-bottom: 15px;
     border-radius: 13px;
     font-family: font-light;
-    color: #061d38;
+    color: #254275;
     padding: 13px 15px;
   }
   .sec29 .cart-left .information input:focus,
   .sec29 .cart-left .information select:focus {
     box-shadow: unset;
-    border: 2px solid #061d38;
+    border: 2px solid #254275;
   }
   .sec29 .cart-left .information input[type=checkbox] {
     border-radius: 0;
@@ -12325,7 +12605,7 @@ form {
     height: 20px;
   }
   .sec29 .cart-left .information input[type=checkbox]:checked {
-    background-color: #061d38;
+    background-color: #254275;
   }
   .sec29 .cart-left .information label.form-check-label {
     padding-top: 4px;
@@ -12335,7 +12615,7 @@ form {
   }
   .sec29 .cart-left .information .btn-pagar {
     color: #000;
-    background-color: #ffce7b;
+    background-color: #e5b336;
     padding: 14px 60px;
     font-family: font-medium;
     font-size: 1.1rem;
@@ -12349,7 +12629,7 @@ form {
   .sec29 .cart-left .information .volver {
     text-decoration: none;
     font-size: 0.9rem;
-    color: #061d38;
+    color: #254275;
     font-family: font-light;
     margin-left: 15px;
   }
@@ -12357,7 +12637,7 @@ form {
     margin-bottom: 30px;
   }
   .sec29 .cart-left .tit h1 {
-    color: #061d38;
+    color: #254275;
     font-size: 1.8rem;
     display: flex;
     align-items: flex-end;
@@ -12371,7 +12651,7 @@ form {
     margin-right: 10px;
   }
   .sec29 .cart-left .tit p {
-    color: #061d38;
+    color: #254275;
     font-size: 0.9rem;
     margin: 0;
     padding-right: 60%;
@@ -12396,7 +12676,7 @@ form {
     height: 10px;
     width: 10px;
     border-radius: 50%;
-    background-color: #061d38;
+    background-color: #254275;
   }
   .sec29 .cart-left .tarjetas .tarjetas-img1 {
     margin-bottom: 35px;
@@ -12405,7 +12685,7 @@ form {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 3px solid #061d38;
+    border: 3px solid #254275;
     border-radius: 15px;
     padding: 15px 23px;
   }
@@ -12428,7 +12708,7 @@ form {
     border-radius: 12px;
   }
   .sec29 .cart-right .content .items {
-    border-bottom: 3px solid #061d38;
+    border-bottom: 3px solid #254275;
     padding-bottom: 10px;
   }
   .sec29 .cart-right .content .items .item {
@@ -12453,7 +12733,7 @@ form {
   }
   .sec29 .cart-right .content .items .item .detail-left .image {
     padding: 2px;
-    border: 3px solid #061d38;
+    border: 3px solid #254275;
     border-radius: 10px;
     margin-right: 10px;
   }
@@ -12506,7 +12786,7 @@ form {
   }
   .sec29 .cart-right .content .subtotal {
     padding: 20px 0 15px;
-    border-bottom: 3px solid #061d38;
+    border-bottom: 3px solid #254275;
   }
   .sec29 .cart-right .content .subtotal .item {
     display: flex;
@@ -12535,7 +12815,7 @@ form {
   .sec29 .cart-right .content .subtotal .item div.envios .signo {
     cursor: pointer;
     color: #fff;
-    background-color: #061d38;
+    background-color: #254275;
     height: 18px;
     width: 18px;
     border-radius: 50%;
@@ -12576,7 +12856,7 @@ form {
   }
   .sec29 .cart-right .content .total .btn-pagar {
     color: #000;
-    background-color: #ffce7b;
+    background-color: #e5b336;
     padding: 10px 60px;
     font-family: font-medium;
     font-size: 1.1rem;
@@ -12615,7 +12895,7 @@ form {
   }
   .sec29 .cart-right .content .promo .form-promo a.btn-cupon {
     color: #000;
-    background-color: #ffce7b;
+    background-color: #e5b336;
     border-radius: 0;
     border: 3px solid #000;
     border-left: 0px;
@@ -12638,7 +12918,7 @@ form {
     padding-left: 10px;
   }
   .sec30 .insignias h3 {
-    color: #242953;
+    color: #254275;
     margin-bottom: 20px;
     font-size: 1rem;
     padding-right: 0;
@@ -12705,7 +12985,7 @@ form {
     margin-bottom: 15px;
   }
   .sec31 ul.nav li.nav-item button {
-    color: #061d38;
+    color: #254275;
     font-family: font-light;
     font-size: 1rem;
     padding-right: 40px;
@@ -12714,7 +12994,7 @@ form {
   }
   .sec31 ul.nav li.nav-item .active {
     background-color: #fed68c;
-    color: #061d38;
+    color: #254275;
     font-family: font-light;
     font-size: 1rem;
   }
@@ -12740,8 +13020,8 @@ form {
     width: 100%;
   }
   .sec31 .content .items .item .item-left a.btn-vermas {
-    background-color: #fed68c;
-    color: #061d38;
+    background-color: #e5b336;
+    color: #254275;
     font-family: font-light;
     width: 90%;
     margin-top: 5px;
@@ -12767,7 +13047,7 @@ form {
   .sec31 .content .items .item .item-right .item-right-bottom p {
     margin: 0;
     line-height: 1.3;
-    color: #061d38;
+    color: #254275;
     font-family: font-light;
     font-size: 1rem;
   }
@@ -12779,13 +13059,13 @@ form {
     margin-top: 30px;
     padding: 0 20px;
     font-family: font-bold;
-    color: #061d38;
+    color: #254275;
     font-size: 1.1rem;
   }
   .sec32 .top_h4 {
     padding: 0 20px;
     font-family: font-medium;
-    color: #061d38;
+    color: #254275;
     font-size: 1rem;
     margin-bottom: 30px;
   }
@@ -12801,7 +13081,7 @@ form {
     margin-bottom: 20px;
   }
   .sec32 ul.nav li.nav-item button {
-    color: #061d38;
+    color: #254275;
     font-family: font-light;
     font-size: 1rem;
     padding-right: 40px;
@@ -12810,7 +13090,7 @@ form {
   }
   .sec32 ul.nav li.nav-item .active {
     background-color: #fed68c;
-    color: #061d38;
+    color: #254275;
     font-family: font-light;
     font-size: 1rem;
   }
@@ -12819,14 +13099,14 @@ form {
   }
   .sec32 .content .accordion .accordion-item {
     background-color: #fff;
-    border: 2px solid #061d38;
+    border: 2px solid #254275;
     border-radius: 12px;
     margin-bottom: 20px;
   }
   .sec32 .content .accordion .accordion-item .accordion-header .accordion-button {
     background-color: transparent;
     border-radius: unset;
-    color: #061d38;
+    color: #254275;
     box-shadow: unset;
     font-family: font-semibold;
     font-size: 1rem;
@@ -12888,7 +13168,7 @@ form {
     margin: 0;
   }
   .sec32 .content .accordion .accordion-item .accordion-body #accordion_flush .accordion-item .accordion-header .accordion-button {
-    color: #061d38;
+    color: #254275;
     font-family: font-regular;
     font-size: 1rem;
     padding-left: 0;
@@ -12916,7 +13196,7 @@ form {
   }
   .sec33 .btn-action .btn-credly {
     background-color: #fed68c;
-    color: #061d38;
+    color: #254275;
     padding: 5px 25px;
   }
   .sec33 .tit_badge {
@@ -13040,7 +13320,7 @@ form {
     padding-left: 10px;
     margin: 0;
     line-height: 1.3;
-    color: #242953;
+    color: #254275;
     font-size: 1rem;
   }
   .sec33 .rutainsignia {
@@ -13049,7 +13329,7 @@ form {
   }
   .sec33 .rutainsignia h1 {
     margin: 0;
-    color: #242953;
+    color: #254275;
     font-size: 1.7rem;
     text-align: center;
     font-family: font-semibold;
@@ -13066,7 +13346,7 @@ form {
   }
   .sec34 .content h1 {
     font-family: font-semibold;
-    color: #061d38;
+    color: #254275;
     font-size: 1.5rem;
     text-align: center;
     margin-bottom: 50px;
@@ -13078,7 +13358,7 @@ form {
     width: 100%;
   }
   .sec34 .content .item .item_ .detail {
-    background-color: #061d38;
+    background-color: #254275;
   }
   .sec34 .content .item .item_ .detail h3 {
     color: #000017;
@@ -13168,7 +13448,7 @@ form {
     padding: 60px 15px 50px;
   }
   .sec35 .post_body h1 {
-    color: #ffce7b;
+    color: #e5b336;
     font-family: font-semibold;
     font-size: 1.5rem;
     margin-bottom: 30px;
@@ -13208,14 +13488,14 @@ form {
     margin-bottom: 15px;
   }
   .sec35 .navegacion ul.nav li.nav-item button {
-    color: #061d38;
+    color: #254275;
     font-family: font-light;
     font-size: 1rem;
     border: 1px solid #fed68c;
   }
   .sec35 .navegacion ul.nav li.nav-item .active {
     background-color: #fed68c;
-    color: #061d38;
+    color: #254275;
     font-family: font-light;
     font-size: 1rem;
   }
@@ -13253,20 +13533,20 @@ form {
   }
   .sec35 #carouselblog-related .item:hover .content {
     background: #facd7f;
-    color: #061d38;
+    color: #254275;
   }
   .sec35 #carouselblog-related .item:hover p.category {
-    background: #061d38 !important;
+    background: #254275 !important;
     color: #facd7f !important;
   }
   .sec35 #carouselblog-related .item:hover p.tit {
-    color: #061d38 !important;
+    color: #254275 !important;
   }
   .sec35 #carouselblog-related .item:hover p.description {
-    color: #061d38 !important;
+    color: #254275 !important;
   }
   .sec35 #carouselblog-related .item:hover .btn-tag {
-    background-color: #061d38 !important;
+    background-color: #254275 !important;
     color: #facd7f !important;
   }
   .sec35 #carouselblog-related .item .image {
@@ -13277,7 +13557,7 @@ form {
   }
   .sec35 #carouselblog-related .item .content {
     width: 100%;
-    background: #061d38;
+    background: #254275;
     padding: 20px 15px 23px;
     position: relative;
     overflow-y: hidden;
@@ -13292,7 +13572,7 @@ form {
     bottom: 0px;
     left: 0;
     width: 100%;
-    background: #061d38;
+    background: #254275;
     color: #facd7f;
     font-size: 1rem;
     text-decoration: none;
@@ -13331,7 +13611,7 @@ form {
   }
   .sec35 #carouselblog-related .item .tags .btn-tag {
     background-color: #facd7f;
-    color: #061d38;
+    color: #254275;
     padding: 2px 7px 1px;
     font-size: 1rem;
     margin-bottom: 4px;
@@ -13346,7 +13626,7 @@ form {
     padding-left: 20px;
   }
   .sec36 .soporte_left .tit h1 {
-    color: #061d38;
+    color: #254275;
     font-family: font-semibold;
     font-size: 1.5rem;
     text-transform: uppercase;
@@ -13374,7 +13654,7 @@ form {
     transition: 0.5s all;
   }
   .sec36 .soporte_left .items .item:hover {
-    background-color: #fed68c;
+    background-color: #e5b336;
     transform: scale(1.1);
   }
   .sec36 .soporte_left .items .item:hover .btn-contactar {
@@ -13406,7 +13686,7 @@ form {
     margin-top: 30px;
   }
   .sec36 .soporte_left .items .item .item_button .btn-contactar {
-    background-color: #fed68c;
+    background-color: #e5b336;
     color: #000;
     font-family: font-semibold;
     font-size: 0.9rem;
@@ -13414,7 +13694,7 @@ form {
     transition: 0.5s all;
   }
   .sec36 .soporte_right h1 {
-    color: #061d38;
+    color: #254275;
     font-family: font-semibold;
     font-size: 1.5rem;
     text-transform: uppercase;
@@ -13432,15 +13712,15 @@ form {
     right: 0;
     margin: auto;
     height: 2px;
-    background-color: #061d38;
+    background-color: #254275;
   }
   .sec36 .soporte_right .items {
-    background-color: #fed68c;
+    background-color: #e5b336;
     border-radius: 15px;
     padding: 40px 0;
   }
   .sec36 .soporte_right .items hr {
-    color: #061d38;
+    color: #254275;
     width: 80%;
     height: 2px;
     border: 0;
@@ -13489,7 +13769,7 @@ form {
     border-radius: 25px;
   }
   .sec37 .contacto h3 {
-    color: #061d38;
+    color: #254275;
     margin-bottom: 0;
     font-family: font-semibold;
     font-size: 1.7rem;
@@ -13513,31 +13793,31 @@ form {
     margin-bottom: 20px;
   }
   .sec37 .contacto .form-check label.form-check-label {
-    color: #061d38;
+    color: #254275;
     font-size: 1rem;
     font-family: font-light;
   }
   .sec37 .contacto .form-check label.form-check-label a {
-    color: #061d38;
+    color: #254275;
   }
   .sec37 .contacto .form-group {
     margin-bottom: 15px;
   }
   .sec37 .contacto .form-group label {
-    color: #061d38;
+    color: #254275;
     font-size: 1rem;
     font-family: font-light;
   }
   .sec37 .contacto .form-group input.form-control,
   .sec37 .contacto .form-group textarea {
     background-color: transparent;
-    border: 1px solid #061d38;
+    border: 1px solid #254275;
     padding-top: 6px;
     padding-bottom: 6px;
     border-radius: 12px;
   }
   .sec37 .contacto .form-group .btn-enviar {
-    background-color: #ffce7b;
+    background-color: #e5b336;
     font-family: font-medium;
     font-size: 1rem;
     color: #000;
@@ -13595,7 +13875,7 @@ form {
     padding-left: 20px;
   }
   .sec38 .politicas h1 {
-    color: #061d38;
+    color: #254275;
     font-size: 1.5rem;
     font-family: font-semibold;
     text-align: center;
@@ -13620,7 +13900,7 @@ form {
     line-height: 1.3;
   }
   .sec38 .terminos h1 {
-    color: #061d38;
+    color: #254275;
     font-size: 1.5rem;
     font-family: font-semibold;
     text-align: center;
@@ -13654,21 +13934,21 @@ form {
     padding-left: 20px;
   }
   .sec39 .manual_alumno h1 {
-    color: #061d38;
+    color: #254275;
     font-family: font-bold;
     font-size: 1.5rem;
     margin-bottom: 25px;
   }
   .sec39 .manual_alumno .accordion .accordion-item {
     background-color: #fff;
-    border: 2px solid #061d38;
+    border: 2px solid #254275;
     border-radius: 12px;
     margin-bottom: 20px;
   }
   .sec39 .manual_alumno .accordion .accordion-item .accordion-header .accordion-button {
     background-color: transparent;
     border-radius: unset;
-    color: #061d38;
+    color: #254275;
     box-shadow: unset;
     font-family: font-medium;
     font-size: 1.2rem;
@@ -13697,7 +13977,7 @@ form {
     text-transform: uppercase;
   }
   .sec39 .manual_alumno .accordion .accordion-item .accordion-body h4 {
-    color: #061d38 !important;
+    color: #254275 !important;
     font-family: font-bold;
     font-size: 1rem;
   }
@@ -13728,7 +14008,7 @@ form {
     margin: 0;
   }
   .sec39 .manual_alumno .accordion .accordion-item .accordion-body #accordion_flush .accordion-item .accordion-header .accordion-button {
-    color: #061d38;
+    color: #254275;
     font-family: font-regular;
     font-size: 0.9rem;
     padding-left: 0;
@@ -13758,7 +14038,7 @@ form {
     width: 240px;
   }
   .sec39 .manual_alumno .felicitaciones h2 {
-    color: #061d38;
+    color: #254275;
     font-size: 1.5rem;
     font-family: font-bold;
     margin-bottom: 15px;
@@ -13767,7 +14047,7 @@ form {
   .sec39 .manual_alumno .felicitaciones p {
     font-family: font-medium;
     line-height: 1.3;
-    color: #061d38;
+    color: #254275;
     margin: 0;
     text-align: center;
     font-size: 1rem;
@@ -13779,7 +14059,7 @@ form {
     padding-left: 20px;
   }
   .sec40 .libro_reclamaciones .tit h1 {
-    color: #061d38;
+    color: #254275;
     font-family: font-semibold;
     font-size: 1.5rem;
     text-align: center;
@@ -13798,33 +14078,33 @@ form {
     margin-bottom: 20px;
   }
   .sec40 .libro_reclamaciones .tit2 h3 {
-    color: #061d38;
+    color: #254275;
     font-family: font-semibold;
     font-size: 1rem;
     margin: 0;
   }
   .sec40 .libro_reclamaciones .tit2 p {
-    color: #061d38;
+    color: #254275;
     font-family: font-semibold;
     font-size: 1rem;
     line-height: 1.3;
     margin: 0;
   }
   .sec40 .libro_reclamaciones .formu p.detail {
-    color: #061d38;
+    color: #254275;
     font-size: 0.8rem;
     line-height: 1.3;
     margin: 0;
   }
   .sec40 .libro_reclamaciones .formu p.detail_text {
-    color: #061d38;
+    color: #254275;
     font-size: 0.8rem;
     line-height: 1.3;
     margin: 0;
     text-align: right;
   }
   .sec40 .libro_reclamaciones .formu label {
-    color: #061d38;
+    color: #254275;
     font-size: 1rem;
     margin-right: 10px;
   }
@@ -13836,13 +14116,13 @@ form {
   .sec40 .libro_reclamaciones .formu select,
   .sec40 .libro_reclamaciones .formu textarea {
     background-color: #fff;
-    border: 2px solid #061d38;
+    border: 2px solid #254275;
     border-radius: 5px;
-    color: #061d38;
+    color: #254275;
     font-size: 1rem;
   }
   .sec40 .libro_reclamaciones .formu .btn-enviar {
-    background-color: #ffce7b;
+    background-color: #e5b336;
     color: #000;
     padding: 10px 25px;
     border-radius: 5px;
@@ -13891,17 +14171,17 @@ form {
   }
   .sec40 .libro_reclamaciones .formu .formu_item .tit_head p.fecha {
     margin: 0;
-    color: #061d38;
+    color: #254275;
     font-family: font-semibold;
     font-size: 1rem;
   }
   .sec40 .libro_reclamaciones .formu .formu_item p {
-    color: #061d38;
+    color: #254275;
     font-size: 1rem;
     line-height: 1.3;
   }
   .sec40 .libro_reclamaciones .formu .formu_item h3 {
-    color: #061d38;
+    color: #254275;
     font-family: font-semibold;
     font-size: 1.2rem;
     margin-bottom: 30px;
@@ -13989,8 +14269,8 @@ form {
     font-size: 1.3rem;
   }
   .sec41 .login_trabajo ul li .active {
-    background-color: #fed68c;
-    color: #061d38;
+    background-color: #e5b336;
+    color: #254275;
     font-family: font-semibold;
     font-size: 1.3rem;
   }
@@ -14030,7 +14310,7 @@ form {
   .sec41 .login_trabajo .login_trabajo_content .formulario_trabajo .form-group input {
     background: #fff;
     border-radius: 7px;
-    color: #061d38;
+    color: #254275;
     font-size: 1rem;
     border: 0;
     padding-top: 10px;
@@ -14038,14 +14318,14 @@ form {
   }
   .sec41 .login_trabajo .login_trabajo_content .formulario_trabajo .form-group .btn-login-trabajo {
     background-color: #fdcc7b;
-    color: #061d38;
+    color: #254275;
     font-family: font-medium;
     width: 100%;
     border-radius: 7px;
     font-size: 1.1rem;
   }
   .sec41 .login_trabajo .login_trabajo_content .formulario_trabajo .form-group .btn-login-crear {
-    background-color: #061d38;
+    background-color: #254275;
     color: #fff;
     font-family: font-medium;
     width: 100%;
@@ -14099,7 +14379,7 @@ form {
     border-radius: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
-    color: #061d38;
+    color: #254275;
     font-size: 0.9rem;
   }
   .sec42 p.aviso {
@@ -14115,14 +14395,14 @@ form {
     margin-top: 20px;
   }
   .sec42 .back-login {
-    color: #061d38;
+    color: #254275;
     text-decoration: none;
     font-family: font-medium;
     font-size: 0.9rem;
   }
   .sec42 .btn-crear {
     background-color: #fdcc7b;
-    color: #061d38;
+    color: #254275;
     font-family: font-medium;
     width: 80%;
     border-radius: 7px;
@@ -14167,7 +14447,7 @@ form {
     border-radius: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
-    color: #061d38;
+    color: #254275;
     font-size: 0.9rem;
   }
   .sec42_2 p.aviso {
@@ -14191,7 +14471,7 @@ form {
   }
   .sec42_2 .btn-crear {
     background-color: #fdcc7b;
-    color: #061d38;
+    color: #254275;
     font-family: font-medium;
     width: 80%;
     border-radius: 7px;
@@ -14212,7 +14492,7 @@ form {
     margin-bottom: 40px;
   }
   .sec43 .tit h1 {
-    color: #061d38;
+    color: #254275;
     font-size: 2.4rem;
     font-family: font-semibold;
     text-align: center;
@@ -14248,21 +14528,21 @@ form {
     width: 20%;
     text-align: right;
     margin-right: 20px;
-    color: #061d38;
+    color: #254275;
     font-size: 0.9rem;
     line-height: 1.3;
   }
   .sec43 .solicitud .form-group textarea {
     background: #fff;
     font-size: 0.9rem;
-    border: 1.5px solid #061d38;
+    border: 1.5px solid #254275;
   }
   .sec43 .solicitud .form-group input {
     font-size: 0.9rem;
     color: #999;
     height: 40px;
     background: #fff;
-    border: 1.5px solid #061d38;
+    border: 1.5px solid #254275;
   }
   .sec44 {
     padding-top: 10vh;
@@ -14322,18 +14602,18 @@ form {
   }
   .sec44 .nav_respo .btn-group button {
     background-color: #fff;
-    color: #061d38;
+    color: #254275;
     font-family: font-light;
     font-size: 1rem;
     border-radius: 0.25rem !important;
     padding: 8px 25px;
-    border: 1px solid #fed68c;
+    border: 1px solid #e5b336;
   }
   .sec44 .nav_respo .btn-group button:hover {
-    background-color: #fed68c;
+    background-color: #e5b336;
   }
   .sec44 .nav_respo .btn-group .active {
-    background-color: #fed68c;
+    background-color: #e5b336;
   }
   .sec44 .nav_respo .dropdown-menu {
     padding: 0;
@@ -14341,7 +14621,7 @@ form {
     border: none;
   }
   .sec44 .nav_respo .dropdown-menu li .dropdown-item {
-    background-color: #ffce7b;
+    background-color: #e5b336;
     border: 1px solid rgba(255,255,255,0.5);
     padding-left: 14px;
     padding-top: 10px;
@@ -14351,14 +14631,14 @@ form {
     color: inherit;
   }
   .sec44 .nav_respo .dropdown-menu li .dropdown-item:hover {
-    background-color: #ffd58e;
-    border-left: 3px solid #061d38;
+    background-color: #e5b336;
+    border-left: 3px solid #254275;
     padding-left: 12px;
   }
   .sec44 .nav_respo .dropdown-menu li .active {
     color: #212529;
-    background-color: #ffd58e;
-    border-left: 3px solid #061d38;
+    background-color: #e5b336;
+    border-left: 3px solid #254275;
     padding-left: 12px;
   }
   .sec44 .content {
@@ -14376,7 +14656,7 @@ form {
     margin-bottom: 35px;
   }
   .sec44 .content h2.tit2 {
-    color: #ffce7b;
+    color: #e5b336;
     font-family: font-bold;
     font-size: 1.1rem;
     text-align: center;
@@ -14416,6 +14696,36 @@ form {
   .sec44 .content .content2 p {
     font-size: 1rem;
     line-height: 1.4;
+  }
+  .sec44 h2.tit_vf {
+    color: #254275;
+    font-family: font-semibold;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    padding: 0 10px;
+  }
+  .sec44 .content_vf {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+  .sec44 .content_vf .content_left {
+    width: 100%;
+    order: 2;
+  }
+  .sec44 .content_vf .content_left p {
+    font-size: 0.9rem;
+    color: #2b2b2b;
+    line-height: 1.3;
+  }
+  .sec44 .content_vf .content_right {
+    width: 100%;
+    order: 1;
+  }
+  .sec44 .content_vf .content_right img {
+    width: 100%;
+    height: auto;
   }
   .sec45 {
     position: relative;
@@ -14501,12 +14811,12 @@ form {
     padding-left: 0;
   }
   .sec46 .profile .dropdown-menu li .dropdown-item {
-    background-color: #ffce7b;
+    background-color: #e5b336;
     border: 1px solid rgba(255,255,255,0.5);
     padding-left: 14px;
     padding-top: 10px;
     padding-bottom: 10px;
-    color: #061d38;
+    color: #254275;
     font-family: font-medium;
     display: flex;
     align-items: center;
@@ -14517,8 +14827,8 @@ form {
     color: inherit;
   }
   .sec46 .profile .dropdown-menu li .dropdown-item:hover {
-    background-color: #ffd58e;
-    border-left: 3px solid #061d38;
+    background-color: #e5b336;
+    border-left: 3px solid #254275;
     padding-left: 12px;
   }
   .sec46 .profile .dropdown-menu li .dropdown-item img {
@@ -14528,8 +14838,8 @@ form {
   }
   .sec46 .profile .dropdown-menu li .active {
     color: #212529;
-    background-color: #ffd58e;
-    border-left: 3px solid #061d38;
+    background-color: #e5b336;
+    border-left: 3px solid #254275;
     padding-left: 12px;
   }
   .sec46 .busq {
@@ -14539,21 +14849,21 @@ form {
   }
   .sec46 .busq input,
   .sec46 .busq select {
-    border: 1px solid #061d38;
+    border: 1px solid #254275;
     border-radius: 0;
     width: 100%;
     font-size: 1rem;
     border-radius: 4px;
   }
   .sec46 .busq .btn-enviar {
-    background-color: #061d38;
+    background-color: #254275;
     color: #fff;
     font-family: font-semibold;
     font-size: 1rem;
     border-radius: 4px;
   }
   .sec46 .busq label {
-    color: #061d38;
+    color: #254275;
     font-size: 0.9rem;
     margin-top: 8px;
   }
@@ -14682,12 +14992,12 @@ form {
     padding-left: 0;
   }
   .sec47 .profile .dropdown-menu li .dropdown-item {
-    background-color: #ffce7b;
+    background-color: #e5b336;
     border: 1px solid rgba(255,255,255,0.5);
     padding-left: 14px;
     padding-top: 10px;
     padding-bottom: 10px;
-    color: #061d38;
+    color: #254275;
     font-family: font-medium;
     display: flex;
     align-items: center;
@@ -14698,8 +15008,8 @@ form {
     color: inherit;
   }
   .sec47 .profile .dropdown-menu li .dropdown-item:hover {
-    background-color: #ffd58e;
-    border-left: 3px solid #061d38;
+    background-color: #e5b336;
+    border-left: 3px solid #254275;
     padding-left: 12px;
   }
   .sec47 .profile .dropdown-menu li .dropdown-item img {
@@ -14709,8 +15019,8 @@ form {
   }
   .sec47 .profile .dropdown-menu li .active {
     color: #212529;
-    background-color: #ffd58e;
-    border-left: 3px solid #061d38;
+    background-color: #e5b336;
+    border-left: 3px solid #254275;
     padding-left: 12px;
   }
   .sec47 .content {
@@ -14963,12 +15273,12 @@ form {
     padding-left: 0;
   }
   .sec48 .profile .dropdown-menu li .dropdown-item {
-    background-color: #ffce7b;
+    background-color: #e5b336;
     border: 1px solid rgba(255,255,255,0.5);
     padding-left: 14px;
     padding-top: 10px;
     padding-bottom: 10px;
-    color: #061d38;
+    color: #254275;
     font-family: font-medium;
     display: flex;
     align-items: center;
@@ -14979,8 +15289,8 @@ form {
     color: inherit;
   }
   .sec48 .profile .dropdown-menu li .dropdown-item:hover {
-    background-color: #ffd58e;
-    border-left: 3px solid #061d38;
+    background-color: #e5b336;
+    border-left: 3px solid #254275;
     padding-left: 12px;
   }
   .sec48 .profile .dropdown-menu li .dropdown-item img {
@@ -14990,8 +15300,8 @@ form {
   }
   .sec48 .profile .dropdown-menu li .active {
     color: #212529;
-    background-color: #ffd58e;
-    border-left: 3px solid #061d38;
+    background-color: #e5b336;
+    border-left: 3px solid #254275;
     padding-left: 12px;
   }
   .sec48 .content h5 {
@@ -15074,20 +15384,20 @@ form {
     color: #706f6f;
   }
   .sec48 .content .content_item form .btn-guardar {
-    background-color: #ffce7b;
-    color: #242953;
+    background-color: #e5b336;
+    color: #254275;
     font-family: font-medium;
     font-size: 1rem;
     margin-right: 15px;
   }
   .sec48 .content .content_item form .btn-cancelar {
-    background-color: #242953;
+    background-color: #254275;
     font-family: font-medium;
     font-size: 1rem;
     color: #fff;
   }
   .sec48 .content .content_item .btn-back {
-    background-color: #242953;
+    background-color: #254275;
     font-family: font-medium;
     font-size: 1rem;
     color: #fff;
@@ -15095,12 +15405,12 @@ form {
   .sec48 .content .content_item .offer_detail h3 {
     font-size: 1rem;
     font-family: font-medium;
-    color: #242953;
+    color: #254275;
   }
   .sec48 .content .content_item .offer_detail p {
     font-size: 1rem;
     font-family: font-medium;
-    color: #242953;
+    color: #254275;
     line-height: 1.3;
     margin: 0;
   }
@@ -15113,8 +15423,8 @@ form {
   .sec48 .content .content_item .applicants .accordion .accordion-item .accordion-button {
     font-size: 1rem;
     font-family: font-medium;
-    background-color: #ffce7b;
-    color: #242953;
+    background-color: #e5b336;
+    color: #254275;
     border-radius: 20px;
     margin-bottom: 5px;
   }
@@ -15130,7 +15440,7 @@ form {
     font-size: 1rem;
     line-height: 1.3;
     font-family: font-light;
-    color: #242953;
+    color: #254275;
   }
   .sec48 .content .content_item .applicants .description .btn-postular {
     background-color: #fed68c;
@@ -15166,7 +15476,7 @@ form {
     line-height: 1.4;
     margin: 0;
     font-size: 1rem;
-    color: #242953;
+    color: #254275;
   }
   .sec48 .content h3 {
     font-size: 1rem;
@@ -15202,7 +15512,7 @@ form {
     margin-top: 10px;
   }
   .sec48 .content .postulaciones #datatable_wrapper .row:nth-child(1) {
-    background: #061d38;
+    background: #254275;
     margin: 0;
     border-radius: 8px;
     padding: 10px 0;
@@ -15233,13 +15543,13 @@ form {
     font-size: 1rem;
   }
   .sec48 .content .postulaciones #datatable_wrapper #datatable_paginate .pagination .page-item .page-link {
-    color: #061d38;
+    color: #254275;
   }
   .sec48 .content .postulaciones #datatable_wrapper #datatable_paginate .pagination .page-item .page-link:focus {
     box-shadow: none;
   }
   .sec48 .content .postulaciones #datatable_wrapper #datatable_paginate .pagination .active .page-link {
-    background: #061d38;
+    background: #254275;
     color: #fff;
   }
   .sec48 .content .postulaciones #datatable_wrapper #datatable_paginate .pagination .active .page-link:focus {
@@ -15249,7 +15559,7 @@ form {
     color: rgba(108,117,125,0.5) !important;
   }
   .sec48 .content .postulaciones table thead {
-    background: #061d38;
+    background: #254275;
     color: #fff;
   }
   .sec48 .content .postulaciones table thead tr th {
@@ -15291,19 +15601,19 @@ form {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     border-top: 0px;
-    color: #061d38;
+    color: #254275;
     font-size: 1rem;
   }
   .sec48 .radios_form label {
     font-size: 1rem;
-    color: #061d38;
+    color: #254275;
     font-family: font-semibold;
   }
   .sec48 .radios_form p {
     font-size: 1rem;
     line-height: 1.3;
     margin: 0;
-    color: #061d38;
+    color: #254275;
   }
   .sec49 {
     padding-bottom: 20px;
@@ -15338,14 +15648,14 @@ form {
     margin-bottom: 20px;
   }
   .sec49 ul.nav li.nav-item button {
-    color: #061d38;
+    color: #254275;
     font-family: font-light;
     font-size: 1rem;
     border: 1px solid #fed68c;
   }
   .sec49 ul.nav li.nav-item .active {
     background-color: #fed68c;
-    color: #061d38;
+    color: #254275;
     font-family: font-light;
     font-size: 1rem;
   }
@@ -15426,12 +15736,12 @@ form {
     border-radius: 7px;
   }
   .sec49 .content .content1 .content_image .items_ .items .item .item_ h3 {
-    color: #ffce7b;
+    color: #e5b336;
     font-size: 1.1rem;
     margin: 0 9% 18px;
     padding: 5px 0 2px;
     font-family: font-bold;
-    background-color: #061d38;
+    background-color: #254275;
     text-transform: uppercase;
   }
   .sec49 .content .content1 .content_image .items_ .items .item .item_ p {
@@ -15478,14 +15788,14 @@ form {
     margin-bottom: 20px;
   }
   .sec50 ul.nav li.nav-item button {
-    color: #061d38;
+    color: #254275;
     font-family: font-light;
     font-size: 1rem;
     border: 1px solid #fed68c;
   }
   .sec50 ul.nav li.nav-item .active {
     background-color: #fed68c;
-    color: #061d38;
+    color: #254275;
     font-family: font-light;
     font-size: 1rem;
   }
@@ -15512,7 +15822,7 @@ form {
     background-color: #e0e2e5;
   }
   .sec50 .content .content1 .content1_1 .content_ .content p {
-    color: #061d38;
+    color: #254275;
     font-size: 1rem;
     line-height: 1.4;
     margin: 0;
@@ -15527,7 +15837,7 @@ form {
     padding: 20px;
   }
   .sec50 .content .content1 .content1_1 .content_ .content .btn_action a.btn-conocemas {
-    background-color: #061d38;
+    background-color: #254275;
     color: #fff;
     font-family: font-semibold;
     display: flex;
@@ -15612,7 +15922,7 @@ form {
     padding: 15px 30px;
     border-radius: 10px;
     width: 100%;
-    background-color: #061d38;
+    background-color: #254275;
     text-align: center;
     margin-bottom: 20px;
   }
@@ -15623,7 +15933,7 @@ form {
     height: 100%;
   }
   .sec50 .content .content1 .propuestas .comercial .items .item h3 {
-    color: #061d38;
+    color: #254275;
     font-size: 1rem;
     margin: 10px 20px 10px;
     background-color: #fcd48a;
@@ -15732,7 +16042,7 @@ form {
     background-color: #e0e2e5;
   }
   .sec50 .content .content1 .portafolio .portafolio_header .content_ .content h1 {
-    color: #061d38;
+    color: #254275;
     font-family: font-bold;
     font-size: 1rem;
     margin: 0;
@@ -15749,14 +16059,14 @@ form {
   }
   .sec50 .content .content1 .portafolio .portafolio_header .content_ .content p strong {
     font-family: font-bold;
-    color: #061d38;
+    color: #254275;
   }
   .sec50 .content .content1 .portafolio .portafolio_header .content_ .content .btn_action {
     background-color: #facd7f;
     padding: 20px;
   }
   .sec50 .content .content1 .portafolio .portafolio_header .content_ .content .btn_action a.btn-conocemas {
-    background-color: #061d38;
+    background-color: #254275;
     color: #fff;
     font-family: font-semibold;
     display: flex;
@@ -15774,7 +16084,7 @@ form {
     margin-top: 25px;
   }
   .sec50 .content .content1 .portafolio .portafolio_carrusel h1 {
-    color: #061d38;
+    color: #254275;
     font-family: font-bold;
     font-size: 1.1rem;
     margin-bottom: 20px;
@@ -15925,8 +16235,8 @@ form {
     margin: 0;
   }
   .sec50 .content .content1 .contacto .formulario form .btn-guardar {
-    color: #242953;
-    background-color: #ffce7b;
+    color: #254275;
+    background-color: #e5b336;
     font-size: 1rem;
     padding: 13px 20px;
     font-family: font-medium;
@@ -15934,7 +16244,7 @@ form {
   }
   .sec50 .content .content1 .contacto .formulario form .btn-cancelar {
     color: #fff;
-    background-color: #242953;
+    background-color: #254275;
     font-size: 1rem;
     padding: 13px 20px;
     font-family: font-medium;
@@ -15945,7 +16255,7 @@ form {
   .sec51 .title h1 {
     text-align: center;
     font-family: font-semibold;
-    color: #061d38;
+    color: #254275;
     font-size: 1.7rem;
   }
   .sec51 #carousel-cursos {
@@ -15976,11 +16286,11 @@ form {
     padding: 5px 0;
   }
   .sec51 #carousel-cursos .item:hover .item-content .content h4 {
-    color: #061d38;
+    color: #254275;
     font-size: 1.1rem;
   }
   .sec51 #carousel-cursos .item:hover .item-content .content .btn-vermas {
-    background: #061d38;
+    background: #254275;
     color: #fff;
     font-size: 1rem;
   }
@@ -16002,7 +16312,7 @@ form {
     font-family: font-medium;
     font-size: 1rem;
     line-height: 1.2;
-    color: #061d38;
+    color: #254275;
     width: 130px;
     transition: all 0.5s;
   }
@@ -16023,7 +16333,7 @@ form {
     font-size: 1rem;
     line-height: 1.2;
     margin: 0;
-    color: #061d38;
+    color: #254275;
   }
   .sec51 #carousel-cursos .item .item-content {
     background: #e0e2e5;
@@ -16039,7 +16349,7 @@ form {
     transition: all 0.5s;
   }
   .sec51 #carousel-cursos .item .item-content .content h4 {
-    color: #061d38;
+    color: #254275;
     font-family: font-bold;
     font-size: 1rem;
     margin: 15px 0 15px;
@@ -16058,7 +16368,7 @@ form {
   }
   .sec51 #carousel-cursos .item .item-content .content .btn-vermas {
     transition: all 0.5s;
-    color: #061d38;
+    color: #254275;
     font-size: 1rem;
     background: #fed68c;
     border-radius: 5px;
@@ -16149,7 +16459,7 @@ form {
     padding-left: 20px;
   }
   .sec53 .beneficios .items .item .text h3 {
-    color: #061d38;
+    color: #254275;
     font-size: 1.1rem;
     font-family: font-bold;
     margin-bottom: 15px;
@@ -16164,7 +16474,7 @@ form {
     font-family: font-semibold;
   }
   .sec53 .beneficios .items .item .text .btn-action .btn-ingresa {
-    background-color: #061d38;
+    background-color: #254275;
     color: #fff;
     font-family: font-medium;
     font-size: 1rem;
@@ -16192,7 +16502,7 @@ form {
     margin-top: 25px;
   }
   .sec54 .btn-action .btn-vermas {
-    color: #061d38;
+    color: #254275;
     font-size: 1rem;
     padding: 4px 20px 2px;
     background-color: #fed68c;
@@ -16212,27 +16522,27 @@ form {
   }
   .sec54 .item .item_:hover .content {
     background: #facd7f;
-    color: #061d38;
+    color: #254275;
   }
   .sec54 .item .item_:hover p.category {
-    background: #061d38 !important;
+    background: #254275 !important;
     color: #facd7f !important;
   }
   .sec54 .item .item_:hover p.tit {
-    color: #061d38 !important;
+    color: #254275 !important;
   }
   .sec54 .item .item_:hover p.description {
-    color: #061d38 !important;
+    color: #254275 !important;
   }
   .sec54 .item .item_:hover .btn-tag {
-    background-color: #061d38 !important;
+    background-color: #254275 !important;
     color: #facd7f !important;
   }
   .sec54 .item .item_ .image img {
     width: 100%;
   }
   .sec54 .item .item_ .content {
-    background: #061d38;
+    background: #254275;
     padding: 20px 15px 23px;
     position: relative;
     overflow-y: hidden;
@@ -16247,7 +16557,7 @@ form {
     bottom: -30px;
     left: 0;
     width: 100%;
-    background: #061d38;
+    background: #254275;
     color: #facd7f;
     font-size: 1rem;
     text-decoration: none;
@@ -16286,7 +16596,7 @@ form {
   }
   .sec54 .item .item_ .tags .btn-tag {
     background-color: #facd7f;
-    color: #061d38;
+    color: #254275;
     padding: 2px 7px 1px;
     font-size: 1rem;
     margin-bottom: 4px;
@@ -16327,7 +16637,7 @@ form {
     padding-right: 35px;
   }
   .sec55 .content ul.nav li.nav-item button {
-    color: #061d38;
+    color: #254275;
     font-family: font-light;
     font-size: 0.9rem;
     padding-right: 40px;
@@ -16335,7 +16645,7 @@ form {
   }
   .sec55 .content ul.nav li.nav-item .active {
     background-color: #fed68c;
-    color: #061d38;
+    color: #254275;
     font-family: font-light;
     font-size: 0.9rem;
   }
@@ -16367,7 +16677,7 @@ form {
   }
   .sec55 .content .content_tab .items .item .text .btn-action .btn-vermas {
     background-color: #fed68c;
-    color: #061d38;
+    color: #254275;
     padding: 5px 20px;
     font-size: 1.1rem;
     font-family: font-medium;
@@ -16404,8 +16714,8 @@ form {
     font-size: 1.1rem;
   }
   .sec55 .content .content_tab .items_insignias .item_insignia .item-right .item-right-bottom a.btn-vermas {
-    background-color: #fed68c;
-    color: #061d38;
+    background-color: #e5b336;
+    color: #254275;
     font-family: font-light;
     width: 80%;
     margin-top: 5px;
@@ -16485,7 +16795,7 @@ form {
     margin-top: 150px;
   }
   .sec56 .certificado_resultado .btn-action .btn-descargar {
-    color: #061d38;
+    color: #254275;
     background-color: #fed68c;
     padding: 4px 30px;
     font-size: 1rem;
@@ -16495,7 +16805,7 @@ form {
     transform: scale(1.1);
   }
   .sec57 h1 {
-    color: #061d38;
+    color: #254275;
     font-size: 1.7rem;
     margin: 20px 0 30px;
     font-family: font-semibold;
@@ -16517,7 +16827,7 @@ form {
   .sec57 .texto p {
     font-size: 1rem;
     line-height: 1.4;
-    color: #061d38;
+    color: #254275;
     margin: 13px 0 0;
     padding: 0 20px 0;
   }
@@ -16548,7 +16858,7 @@ form {
     font-size: 1.1rem;
     margin: 20px 0 17px;
     padding: 0 0px;
-    color: #061d38;
+    color: #254275;
     text-transform: uppercase;
     text-align: center;
     font-family: font-bold;
@@ -16556,7 +16866,7 @@ form {
   .sec57 .items .item p {
     font-size: 1rem;
     line-height: 1.4;
-    color: #061d38;
+    color: #254275;
     padding: 0 0px;
     margin: 0;
   }
@@ -16565,7 +16875,7 @@ form {
     padding: 47px 20px 10px;
   }
   .sec57 .iconos_ .text_icon {
-    color: #061d38;
+    color: #254275;
     font-size: 1rem;
     line-height: 1.4;
     margin-bottom: 50px;
@@ -16602,7 +16912,7 @@ form {
   .sec57 .iconos_ .iconos .icon .icon_right p {
     margin: 0;
     font-size: 1rem;
-    color: #061d38;
+    color: #254275;
     line-height: 1.4;
     text-align: justify;
   }
@@ -16656,16 +16966,16 @@ form {
     text-align: center;
   }
   .sec57 .competencias_ .competencias .tit_color h1.color {
-    color: #061d38;
+    color: #254275;
     font-size: 1.1rem;
     font-family: font-bold;
-    background-color: #ffce7b;
+    background-color: #e5b336;
     display: inline;
     padding: 6px 15px;
     border-radius: 10px;
   }
   .sec57 .competencias_ .competencias h3 {
-    color: #061d38;
+    color: #254275;
     font-size: 1.1rem;
     font-family: font-bold;
     margin-top: 35px;
@@ -16678,7 +16988,7 @@ form {
     padding-right: 0;
     font-size: 1rem;
     line-height: 1.5;
-    color: #061d38;
+    color: #254275;
     text-align: justify;
   }
   .sec57 .elearning_ {
@@ -16705,10 +17015,10 @@ form {
     text-align: center;
   }
   .sec57 .elearning_ .elearning .tit_color h1.color {
-    color: #061d38;
+    color: #254275;
     font-size: 1.1rem;
     font-family: font-bold;
-    background-color: #ffce7b;
+    background-color: #e5b336;
     display: inline;
     padding: 6px 15px;
     border-radius: 10px;
@@ -16728,14 +17038,14 @@ form {
     margin-bottom: 25px;
   }
   .sec58 .somos_ .somos .tit h1 {
-    color: #061d38;
+    color: #254275;
     font-size: 1.7rem;
     font-family: font-semibold;
     text-transform: uppercase;
     margin-bottom: 30px;
   }
   .sec58 .somos_ .somos .tit p {
-    color: #061d38;
+    color: #254275;
     font-size: 1rem;
     margin: 0;
     line-height: 1.4;
@@ -16757,14 +17067,14 @@ form {
     margin-bottom: 15px;
   }
   .sec58 ul.nav li.nav-item button {
-    color: #061d38;
+    color: #254275;
     font-family: font-light;
     font-size: 1rem;
     border: 1px solid #fed68c;
   }
   .sec58 ul.nav li.nav-item .active {
     background-color: #fed68c;
-    color: #061d38;
+    color: #254275;
     font-family: font-light;
     font-size: 1rem;
   }
@@ -16810,7 +17120,7 @@ form {
     background-color: #fff;
     padding: 15px;
     border-radius: 12px;
-    color: #061d38;
+    color: #254275;
     text-align: center;
   }
   .sec58 .content .content1 .mision_vision .p_top2 {
@@ -16819,14 +17129,14 @@ form {
     margin: 0;
     padding: 15px 0;
     border-radius: 12px;
-    color: #061d38;
+    color: #254275;
     text-align: center;
   }
   .sec58 .content .content1 .mision_vision h3 {
     font-family: font-bold;
     font-size: 1.1rem;
     text-align: center;
-    color: #061d38;
+    color: #254275;
     margin: 30px 0 30px;
   }
   .sec58 .content .content1 .mision_vision .items {
@@ -16837,7 +17147,7 @@ form {
     align-items: center;
   }
   .sec58 .content .content1 .mision_vision .items .item {
-    border: 3px #061d38 dashed;
+    border: 3px #254275 dashed;
     width: 85%;
     display: flex;
     align-items: center;
@@ -16863,7 +17173,7 @@ form {
     text-align: center;
   }
   .sec58 .content .content1 .mision_vision .items .item2 {
-    border: 3px #061d38 dashed;
+    border: 3px #254275 dashed;
     width: 85%;
     display: flex;
     align-items: center;
@@ -16894,7 +17204,7 @@ form {
     padding: 0;
     width: 100%;
     text-align: center;
-    border: 3.5px dashed #061d38;
+    border: 3.5px dashed #254275;
   }
   .sec58 .content .content1 .valores .tit {
     position: absolute;
@@ -16926,7 +17236,7 @@ form {
     color: #00001d;
     font-size: 1rem;
     padding: 7px 40px;
-    background-color: #ffce7b;
+    background-color: #e5b336;
   }
   .sec59 {
     margin-bottom: 50px;
@@ -16935,7 +17245,7 @@ form {
     padding: 0;
   }
   .sec59 .titulo h1 {
-    color: #061d38;
+    color: #254275;
     font-family: font-semibold;
     font-size: 1.7rem;
     margin: 0;
@@ -16993,7 +17303,7 @@ form {
     height: 360px;
   }
   .sec59 .premiacion h1 {
-    color: #061d38;
+    color: #254275;
     font-family: font-semibold;
     font-size: 1.7rem;
     margin-bottom: 25px;
@@ -17005,7 +17315,7 @@ form {
     font-size: 1rem;
     margin: 0;
     line-height: 1.4;
-    color: #061d38;
+    color: #254275;
   }
   .sec59 .premiacion .items {
     display: flex;
@@ -17019,7 +17329,7 @@ form {
     width: 48%;
     background-color: #fcd48a;
     border-radius: 6px;
-    border-top: 5px solid #061d38;
+    border-top: 5px solid #254275;
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
@@ -17033,7 +17343,7 @@ form {
     height: 100%;
   }
   .sec59 .premiacion .items .item .texto {
-    background-color: #061d38;
+    background-color: #254275;
     height: 100%;
     display: flex;
     align-items: center;
@@ -17115,7 +17425,7 @@ form {
     margin-bottom: 30px;
   }
   .sec60 .text_ .text a {
-    background-color: #061d38;
+    background-color: #254275;
     color: #fff;
     font-family: font-semibold;
     display: inline-flex;
@@ -17182,7 +17492,7 @@ form {
   }
   .sec61 .anuncio_seleccionar ul .btn-ver {
     background-color: #f9cc85;
-    color: #061d38;
+    color: #254275;
     font-family: font-medium;
     font-size: 1rem;
     padding: 5px 20px 3px;
@@ -17227,7 +17537,7 @@ form {
     margin: 20px 0 40px;
   }
   .sec62 .items_ h1 {
-    color: #061d38;
+    color: #254275;
     font-family: font-bold;
     font-size: 1.1rem;
     margin-bottom: 25px;
@@ -17245,7 +17555,7 @@ form {
     width: 100%;
     background-color: #fcd48a;
     border-radius: 6px;
-    border-top: 5px solid #061d38;
+    border-top: 5px solid #254275;
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
@@ -17259,7 +17569,7 @@ form {
     height: 100%;
   }
   .sec62 .items_ .items .item .texto {
-    background-color: #061d38;
+    background-color: #254275;
     height: 100%;
     display: flex;
     align-items: center;
@@ -17340,7 +17650,7 @@ form {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    background-color: #061d38;
+    background-color: #254275;
     border-radius: 20px;
   }
   .sec64 .items_ .items .item .item_ .item_left {
@@ -17404,19 +17714,19 @@ form {
     background-color: #d6dde5;
   }
   .sec64 .items_ .items .item2 .item_ .item_left .image {
-    background: #061d38;
+    background: #254275;
   }
   .sec64 .items_ .items .item2 .item_ .item_left .image img {
-    border: 3px solid #061d38;
+    border: 3px solid #254275;
   }
   .sec64 .items_ .items .item2 .item_ .item_right h2 {
-    color: #061d38;
+    color: #254275;
   }
   .sec64 .items_ .items .item2 .item_ .item_right h3 {
-    color: #061d38;
+    color: #254275;
   }
   .sec64 .items_ .items .item2 .item_ .item_right .detail p {
-    color: #061d38;
+    color: #254275;
   }
   .sec64 .items_ .items .item2 .item_right2 .triangle {
     border-left: 100px solid #d6dde5;
@@ -17433,7 +17743,7 @@ form {
     margin-bottom: 25px;
   }
   .sec65 .cart-right .content .details h2 {
-    color: #061d38;
+    color: #254275;
     font-family: font-bold;
     font-size: 1.4rem;
     margin-bottom: 30px;
@@ -17442,7 +17752,7 @@ form {
   .sec65 .cart-right .content .details p {
     font-size: 1.1rem;
     line-height: 1.3;
-    color: #061d38;
+    color: #254275;
     font-family: font-medium;
     margin: 6px;
   }
@@ -17454,8 +17764,8 @@ form {
     margin-bottom: 15px;
   }
   .sec65 .cart-right .content .items {
-    border-bottom: 3px solid #061d38;
-    border-top: 3px solid #061d38;
+    border-bottom: 3px solid #254275;
+    border-top: 3px solid #254275;
     padding-bottom: 10px;
   }
   .sec65 .cart-right .content .items .item {
@@ -17480,7 +17790,7 @@ form {
   }
   .sec65 .cart-right .content .items .item .detail-left .image {
     padding: 2px;
-    border: 3px solid #061d38;
+    border: 3px solid #254275;
     border-radius: 10px;
     margin-right: 10px;
   }
@@ -17533,7 +17843,7 @@ form {
   }
   .sec65 .cart-right .content .subtotal {
     padding: 20px 0 15px;
-    border-bottom: 3px solid #061d38;
+    border-bottom: 3px solid #254275;
   }
   .sec65 .cart-right .content .subtotal .item {
     display: flex;
@@ -17557,7 +17867,7 @@ form {
   .sec65 .cart-right .content .subtotal .item div.envios .signo {
     cursor: pointer;
     color: #fff;
-    background-color: #061d38;
+    background-color: #254275;
     height: 18px;
     width: 18px;
     border-radius: 50%;
@@ -17598,7 +17908,7 @@ form {
   }
   .sec65 .cart-right .content .total .btn-pagar {
     color: #000;
-    background-color: #ffce7b;
+    background-color: #e5b336;
     padding: 10px 60px;
     font-family: font-medium;
     font-size: 1.1rem;
@@ -17609,7 +17919,7 @@ form {
   }
   .sec65 .back a {
     font-family: font-medium;
-    color: #061d38;
+    color: #254275;
     font-size: 1rem;
     text-decoration: none;
   }
@@ -17625,7 +17935,7 @@ form {
   }
   .sec66 .shopping h1 {
     font-size: 1.3rem;
-    color: #061d38;
+    color: #254275;
     font-family: font-bold;
     margin-bottom: 20px;
   }
@@ -17633,13 +17943,13 @@ form {
     width: 100%;
   }
   .sec66 .shopping table thead tr th {
-    color: #061d38;
+    color: #254275;
     font-family: font-semibold;
     font-size: 1rem;
-    border-bottom: 1px solid #061d38;
+    border-bottom: 1px solid #254275;
   }
   .sec66 .shopping table tbody tr td {
-    color: #061d38;
+    color: #254275;
     padding: 5px 20px;
   }
   .sec66 .shopping table tbody tr td p {
@@ -17653,7 +17963,7 @@ form {
     top: 0;
     width: 100%;
     z-index: 99999;
-    background-color: #061d38;
+    background-color: #254275;
   }
   .header_mobile .content {
     display: flex;
@@ -17704,7 +18014,7 @@ form {
     position: fixed;
     top: 0;
     left: 0;
-    background: #061d38;
+    background: #254275;
     height: 101vh;
     width: 100%;
     z-index: 9999999999;
@@ -17760,8 +18070,8 @@ form {
     font-family: font-regular;
     font-size: 1rem;
     padding: 0.6rem 1.25rem;
-    background-color: #ffce7b;
-    color: #061d38 !important;
+    background-color: #e5b336;
+    color: #254275 !important;
   }
   .header_mobile .content .content-list .accordion .accordion-item .accordion-header .accordion-button:focus {
     box-shadow: unset;
@@ -17772,7 +18082,7 @@ form {
   }
   .header_mobile .content .content-list .accordion .accordion-item .accordion-body {
     padding: 0;
-    background: #061d38;
+    background: #254275;
   }
   .header_mobile .content .content-list .accordion .accordion-item .accordion-body ul.list2 {
     padding: 0;
@@ -17892,6 +18202,7 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     border-radius: 5px;
     padding: 8px 15px;
     margin-right: 3px;
@@ -17908,6 +18219,8 @@ form {
     font-family: font-medium;
     font-size: 1rem;
     margin-bottom: 0.5rem;
+    text-align: center;
+    line-height: 1.3;
   }
   .footer .col2 ul .items .mail a img {
     width: 50px;
@@ -17917,6 +18230,7 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     border-radius: 5px;
     padding: 8px 15px;
     margin-left: 3px;
@@ -17926,6 +18240,7 @@ form {
     text-decoration: none;
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
   }
   .footer .col2 ul .items .libro a p {
@@ -17933,7 +18248,7 @@ form {
     font-family: font-medium;
     font-size: 1rem;
     text-align: center;
-    line-height: 1.2;
+    line-height: 1.3;
     margin-bottom: 0.5rem;
   }
   .footer .col2 ul .items .libro a img {

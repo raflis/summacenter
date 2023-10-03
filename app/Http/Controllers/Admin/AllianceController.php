@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use Validator;
-use App\Models\Admin\Worker;
+use App\Models\Admin\Alliance;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class WorkerAdministratorController extends Controller
+class AllianceController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -25,10 +25,10 @@ class WorkerAdministratorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        $worker_administrators = Worker::where('type', 'administration')->orderBy('order','Asc')->paginate();
-        return view('admin.worker_administrators.index', compact('worker_administrators'));
+        $alliances = Alliance::orderBy('order', 'Asc')->paginate();
+        return view('admin.alliances.index', compact('alliances'));
     }
 
     /**
@@ -38,7 +38,7 @@ class WorkerAdministratorController extends Controller
      */
     public function create()
     {
-        return view('admin.worker_administrators.create');
+        return view('admin.alliances.create');
     }
 
     /**
@@ -50,20 +50,12 @@ class WorkerAdministratorController extends Controller
     public function store(Request $request)
     {
         $rules=[
-            'type' => 'required',
-            'fullname' => 'required',
             'image' => 'required',
-            'position' => 'required',
-            'email' => 'required',
             'order' => 'required',
         ];
 
         $messages=[
-            'type.required' => 'Ingrese tipo de trabajador',
-            'fullname.required' => 'Ingrese nombres',
             'image.required' => 'Seleccione imagen',
-            'position.required' => 'Ingrese puesto de trabajo',
-            'email.required' => 'Ingrese email',
             'order.required' => 'Ingrese orden',
         ];
 
@@ -71,8 +63,8 @@ class WorkerAdministratorController extends Controller
         if($validator->fails()):
             return back()->withErrors($validator)->with('message','Se ha producido un error')->with('typealert','danger')->withInput();
         else:
-            $recorded = Worker::create($request->all());
-            return redirect()->route('worker_administrators.index')->with('message','Creado con éxito.')->with('typealert','success');
+            $recorded = Alliance::create($request->all());
+            return redirect()->route('alliances.index')->with('message','Creado con éxito.')->with('typealert','success');
         endif;
     }
 
@@ -95,8 +87,8 @@ class WorkerAdministratorController extends Controller
      */
     public function edit($id)
     {
-        $worker_administrator = Worker::find($id);
-        return view('admin.worker_administrators.edit', compact('worker_administrator'));
+        $alliance = Alliance::find($id);
+        return view('admin.alliances.edit', compact('alliance'));
     }
 
     /**
@@ -109,20 +101,12 @@ class WorkerAdministratorController extends Controller
     public function update(Request $request, $id)
     {
         $rules=[
-            'type' => 'required',
-            'fullname' => 'required',
             'image' => 'required',
-            'position' => 'required',
-            'email' => 'required',
             'order' => 'required',
         ];
 
         $messages=[
-            'type.required' => 'Ingrese tipo de trabajador',
-            'fullname.required' => 'Ingrese nombres',
             'image.required' => 'Seleccione imagen',
-            'position.required' => 'Ingrese puesto de trabajo',
-            'email.required' => 'Ingrese email',
             'order.required' => 'Ingrese orden',
         ];
 
@@ -130,9 +114,9 @@ class WorkerAdministratorController extends Controller
         if($validator->fails()):
             return back()->withErrors($validator)->with('message','Se ha producido un error')->with('typealert','danger')->withInput();
         else:
-            $updated = Worker::find($id);
+            $updated = Alliance::find($id);
             $updated->fill($request->all())->save();
-            return redirect()->route('worker_administrators.index')->with('message','Actualizado con éxito.')->with('typealert','success');
+            return redirect()->route('alliances.index')->with('message','Actualizado con éxito.')->with('typealert','success');
         endif;
     }
 
@@ -144,7 +128,7 @@ class WorkerAdministratorController extends Controller
      */
     public function destroy($id)
     {
-        $destroyed = Worker::find($id)->delete();
+        $destroyed = Alliance::find($id)->delete();
         return back()->with('message', 'Eliminado correctamente')->with('typealert','success');
     }
 }

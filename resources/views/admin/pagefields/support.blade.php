@@ -76,17 +76,17 @@
                                         <i class="far fa-image"></i> Elegir
                                         </a>
                                     </span>
-                                    {!! Form::text('support_items1['.$loop->index.'][image]',$item['image'],['class'=>'form-control','id'=>'thumbnail_support_items1'.$loop->iteration,'required']) !!}
+                                    {!! Form::text('support_items1['.$loop->iteration.'][image]',$item['image'],['class'=>'form-control','id'=>'thumbnail_support_items1'.$loop->iteration,'required']) !!}
                                 </div>
                                 <div id="holder_support_items1{{ $loop->iteration }}" style="margin-top:15px;max-height:100px;">
                                     <img src="{{ $item['image'] }}" alt="" style="height:5rem">
                                 </div>
                                 {!! Form::label('support_items1','Nombre:',['class'=>'mt-3']) !!} <code>*</code>
-                                {!! Form::text('support_items1['.$loop->index.'][name]',$item["name"],['class'=>'form-control','required']) !!}
+                                {!! Form::text('support_items1['.$loop->iteration.'][name]',$item["name"],['class'=>'form-control','required']) !!}
                                 {!! Form::label('support_items1','Detalle:',['class'=>'mt-3']) !!} <code>*</code>
-                                {!! Form::textarea('support_items1['.$loop->index.'][detail]',$item["detail"],['class'=>'form-control','required', 'rows' => 3, 'required']) !!}
+                                {!! Form::textarea('support_items1['.$loop->iteration.'][detail]',$item["detail"],['class'=>'form-control','required', 'rows' => 3, 'required']) !!}
                                 {!! Form::label('support_items1','Orden:',['class'=>'mt-3']) !!} <code>*</code>
-                                {!! Form::number('support_items1['.$loop->index.'][order]',$item["order"],['class'=>'form-control','required']) !!}
+                                {!! Form::number('support_items1['.$loop->iteration.'][order]',$item["order"],['class'=>'form-control','required']) !!}
                                 <hr class="mx-0 mt-4 border-bottom-dark" style="border:1px solid;background:#000">
                               </div>
                               @endforeach
@@ -121,17 +121,17 @@
                                         <i class="far fa-image"></i> Elegir
                                         </a>
                                     </span>
-                                    {!! Form::text('support_items2['.$loop->index.'][image]',$item['image'],['class'=>'form-control','id'=>'thumbnail_support_items2'.$loop->iteration,'required']) !!}
+                                    {!! Form::text('support_items2['.$loop->iteration.'][image]',$item['image'],['class'=>'form-control','id'=>'thumbnail_support_items2'.$loop->iteration,'required']) !!}
                                 </div>
                                 <div id="holder_support_items2{{ $loop->iteration }}" style="margin-top:15px;max-height:100px;">
                                     <img src="{{ $item['image'] }}" alt="" style="height:5rem">
                                 </div>
                                 {!! Form::label('support_items2','Nombre:',['class'=>'mt-3']) !!} <code>*</code>
-                                {!! Form::text('support_items2['.$loop->index.'][name]',$item["name"],['class'=>'form-control','required']) !!}
+                                {!! Form::text('support_items2['.$loop->iteration.'][name]',$item["name"],['class'=>'form-control','required']) !!}
                                 {!! Form::label('support_items2','Detalle:',['class'=>'mt-3']) !!} <code>*</code>
-                                {!! Form::textarea('support_items2['.$loop->index.'][detail]',$item["detail"],['class'=>'form-control','required', 'rows' => 3, 'required']) !!}
+                                {!! Form::textarea('support_items2['.$loop->iteration.'][detail]',$item["detail"],['class'=>'form-control','required', 'rows' => 3, 'required']) !!}
                                 {!! Form::label('support_items2','Orden:',['class'=>'mt-3']) !!} <code>*</code>
-                                {!! Form::number('support_items2['.$loop->index.'][order]',$item["order"],['class'=>'form-control','required']) !!}
+                                {!! Form::number('support_items2['.$loop->iteration.'][order]',$item["order"],['class'=>'form-control','required']) !!}
                                 <hr class="mx-0 mt-4 border-bottom-dark" style="border:1px solid;background:#000">
                               </div>
                               @endforeach

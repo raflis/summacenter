@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Web;
 
-use Mail;
 use Str;
 use Http;
+use Mail;
 use Validator;
 use App\Models\Record;
 use GuzzleHttp\Client;
@@ -18,6 +18,7 @@ use Illuminate\Http\Request;
 use App\Models\Admin\BlogTag;
 use App\Models\Admin\Partner;
 use App\Models\Admin\Setting;
+use App\Models\Admin\Alliance;
 use App\Models\Admin\BlogPost;
 use Illuminate\Support\Carbon;
 use App\Models\Admin\PageField;
@@ -44,11 +45,12 @@ class WebController extends Controller
         $sliders = Slider::orderBy('order', 'Asc')->get();
         $testimonials = Testimonial::orderBy('order', 'Asc')->get()->take(6);
         $partners = Partner::orderBy('order', 'Asc')->get();
+        $alliances = Alliance::orderBy('order', 'Asc')->get();
         $pagefield = PageField::find(1);
         $course_areas = CourseArea::orderBy('order', 'Asc')->get();
         $featured_posts = BlogPost::where('featured', 1)->where('status', 'PUBLISHED')->get();
         $agent = new Agent();
-        return view('web.index', compact('agent', 'sliders', 'testimonials', 'partners', 'pagefield', 'course_areas', 'featured_posts', 'flags'));
+        return view('web.index', compact('agent', 'sliders', 'testimonials', 'partners', 'alliances', 'pagefield', 'course_areas', 'featured_posts', 'flags'));
     }
 
     public function egresados()
@@ -190,49 +192,64 @@ class WebController extends Controller
     public function responsabilidad_social_objetivos()
     {
         $agent = new Agent();
-        return view('web.responsabilidad-social-objetivos', compact('agent'));
+        $pagefield = PageField::find(1);
+        return view('web.responsabilidad-social-objetivos', compact('agent', 'pagefield'));
     }
 
     public function responsabilidad_social_mision()
     {
         $agent = new Agent();
-        return view('web.responsabilidad-social-mision', compact('agent'));
+        $pagefield = PageField::find(1);
+        return view('web.responsabilidad-social-mision', compact('agent', 'pagefield'));
     }
 
     public function responsabilidad_social_quienes_somos()
     {
         $agent = new Agent();
-        return view('web.responsabilidad-social-quienes-somos', compact('agent'));
+        $pagefield = PageField::find(1);
+        return view('web.responsabilidad-social-quienes-somos', compact('agent', 'pagefield'));
     }
 
     public function responsabilidad_social_programa_de_becas()
     {
         $agent = new Agent();
-        return view('web.responsabilidad-social-programa-de-becas', compact('agent'));
+        $pagefield = PageField::find(1);
+        return view('web.responsabilidad-social-programa-de-becas', compact('agent', 'pagefield'));
     }
 
     public function responsabilidad_social_biblioteca_summa()
     {
         $agent = new Agent();
-        return view('web.responsabilidad-social-biblioteca-summa', compact('agent'));
+        $pagefield = PageField::find(1);
+        return view('web.responsabilidad-social-biblioteca-summa', compact('agent', 'pagefield'));
     }
 
     public function responsabilidad_social_talleres_gratuitos()
     {
         $agent = new Agent();
-        return view('web.responsabilidad-social-talleres-gratuitos', compact('agent'));
+        $pagefield = PageField::find(1);
+        return view('web.responsabilidad-social-talleres-gratuitos', compact('agent', 'pagefield'));
     }
 
     public function responsabilidad_social_ecoeficiencia()
     {
         $agent = new Agent();
-        return view('web.responsabilidad-social-ecoeficiencia', compact('agent'));
+        $pagefield = PageField::find(1);
+        return view('web.responsabilidad-social-ecoeficiencia', compact('agent', 'pagefield'));
     }
 
     public function responsabilidad_social_programa_de_donaciones()
     {
         $agent = new Agent();
-        return view('web.responsabilidad-social-programa-de-donaciones', compact('agent'));
+        $pagefield = PageField::find(1);
+        return view('web.responsabilidad-social-programa-de-donaciones', compact('agent', 'pagefield'));
+    }
+
+    public function responsabilidad_social_programa_de_participacion()
+    {
+        $agent = new Agent();
+        $pagefield = PageField::find(1);
+        return view('web.responsabilidad-social-programa-de-participacion', compact('agent', 'pagefield'));
     }
 
     public function nuestras_certificaciones()
@@ -427,9 +444,9 @@ class WebController extends Controller
         if($validator->fails()):
             return back()->withErrors($validator)->with('message','Se ha producido un error')->with('typealert','danger')->withInput();
         else:
-            $text = explode('|', $request->interested_course);
+            /*$text = explode('|', $request->interested_course);
             $zoho_code = $text[0];
-            $request->merge(['interested_course' => $text[1]]);
+            $request->merge(['interested_course' => $text[1]]);*/
             $record = Record::create($request->all());
 
             $setting = Setting::find(1);
@@ -447,12 +464,13 @@ class WebController extends Controller
                         'First_Name' => $request->name,
                         'Last_Name' => $request->lastname,
                         'Email' => $request->email,
-                        'Phone' => $request->telephone,
+                        'Phone' => $record->flag->dial_code.$request->telephone,
                         'Lead_Status' => 'No contactado',
-                        'CAMPA_A_OK' => 'Campaña Web',
+                        'CAMPA_A_OK' => 'FORMULARIO WEB',
                         'Fuente_de_Lead' => $request->document,
-                        /*'Fuente_de_Lead1' => 'GOOGLE ADWORDS',
-                        'C_digo_Curso' => [
+                        'Fuente_de_Lead1' => 'GOOGLE ADWORDS',
+                        'Observaciones2' => $request->interested_course,
+                        /*'C_digo_Curso' => [
                             $zoho_code
                         ]*/
                     ]
@@ -464,7 +482,7 @@ class WebController extends Controller
                 'Content-Type' => 'application/json',
             ])->post('https://www.zohoapis.com/crm/v2/Leads', $data_zoho);
 
-            return redirect()->route('gracias')->with('message','Creado con éxito.')->with('typealert','success');
+            return redirect()->route('gracias')->with('message', 'Creado con éxito.')->with('typealert', 'success');
         endif;
     }
 

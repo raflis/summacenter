@@ -33,7 +33,11 @@
         </a>
         <a class="nav-link @if(in_array(Route::currentRouteName(), array('partners.index', 'partners.edit', 'partners.create'))) active @endif" 
         href="{{ route('partners.index') }}">
-            <i class="fas fa-home text-gray pr-1"></i> Partners
+            <i class="fas fa-home text-gray pr-1"></i> Acreditadores
+        </a>
+        <a class="nav-link @if(in_array(Route::currentRouteName(), array('alliances.index', 'alliances.edit', 'alliances.create'))) active @endif" 
+        href="{{ route('alliances.index') }}">
+            <i class="fas fa-home text-gray pr-1"></i> Alianzas estratégicas
         </a>
         <a class="nav-link @if(in_array(Route::currentRouteName(), array('testimonials.index', 'testimonials.edit', 'testimonials.create'))) active @endif" 
         href="{{ route('testimonials.index') }}">
@@ -73,13 +77,17 @@
         href="{{ route('pagefields.support') }}">
             <i class="fas fa-home text-gray pr-1"></i> Soporte
         </a>
-        <a class="nav-link @if(preg_match("/pagefields.graduates/", Route::currentRouteName())) active @endif" 
+        <!--<a class="nav-link @if(preg_match("/pagefields.graduates/", Route::currentRouteName())) active @endif" 
         href="{{ route('pagefields.graduates') }}">
             <i class="fas fa-home text-gray pr-1"></i> Egresados
-        </a>
+        </a>-->
         <a class="nav-link @if(preg_match("/pagefields.aboutus/", Route::currentRouteName())) active @endif" 
         href="{{ route('pagefields.aboutus') }}">
             <i class="fas fa-home text-gray pr-1"></i> Nosotros
+        </a>
+        <a class="nav-link @if(preg_match("/pagefields.responsability/", Route::currentRouteName())) active @endif" 
+        href="{{ route('pagefields.responsability') }}">
+            <i class="fas fa-home text-gray pr-1"></i> Responsabilidad Social
         </a>
         <a class="nav-link @if(preg_match("/pagefields.terms_and_conditions/", Route::currentRouteName())) active @endif" 
         href="{{ route('pagefields.terms_and_conditions') }}">

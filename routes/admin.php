@@ -17,9 +17,11 @@ Route::prefix('/admin')->group(function(){
     Route::get('pagefields/aboutus', [App\Http\Controllers\Admin\PageFieldController::class,'aboutus'])->name('pagefields.aboutus');
     Route::get('pagefields/terms_and_conditions', [App\Http\Controllers\Admin\PageFieldController::class,'terms_and_conditions'])->name('pagefields.terms_and_conditions');
     Route::get('pagefields/privacy_policies', [App\Http\Controllers\Admin\PageFieldController::class,'privacy_policies'])->name('pagefields.privacy_policies');
+    Route::get('pagefields/responsability', [App\Http\Controllers\Admin\PageFieldController::class,'responsability'])->name('pagefields.responsability');
     Route::resource('settings', App\Http\Controllers\Admin\SettingController::class);
     Route::resource('sliders', App\Http\Controllers\Admin\SliderController::class);
     Route::resource('partners', App\Http\Controllers\Admin\PartnerController::class);
+    Route::resource('alliances', App\Http\Controllers\Admin\AllianceController::class);
     Route::resource('testimonials', App\Http\Controllers\Admin\TestimonialController::class);
     Route::resource('badges', App\Http\Controllers\Admin\BadgeController::class);
     Route::resource('courses', App\Http\Controllers\Admin\CourseController::class);

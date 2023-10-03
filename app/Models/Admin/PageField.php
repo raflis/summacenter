@@ -34,6 +34,9 @@ class PageField extends Model
         'cover_pages', 'graduates_titles', 'graduates_images', 'graduates_items',
         'job_bank_advertising', 'aboutus_title', 'aboutus_description', 'aboutus_video',
         'aboutus_mission', 'aboutus_vision', 'aboutus_images', 'aboutus_items1',
-        'aboutus_items2', 'terms_and_conditions', 'privacy_policies', 
+        'aboutus_items2', 'terms_and_conditions', 'privacy_policies',
+        'responsibility_text1', 'responsibility_image1', 'responsibility_text2', 'responsibility_image2',
+        'responsibility_text3', 'responsibility_image3', 'responsibility_text4', 'responsibility_image4',
+        'responsibility_text5', 'responsibility_image5', 'responsibility_text6', 'responsibility_image6',
     ];
 }
