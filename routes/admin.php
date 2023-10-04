@@ -18,7 +18,9 @@ Route::prefix('/admin')->group(function(){
     Route::get('pagefields/terms_and_conditions', [App\Http\Controllers\Admin\PageFieldController::class,'terms_and_conditions'])->name('pagefields.terms_and_conditions');
     Route::get('pagefields/privacy_policies', [App\Http\Controllers\Admin\PageFieldController::class,'privacy_policies'])->name('pagefields.privacy_policies');
     Route::get('pagefields/responsability', [App\Http\Controllers\Admin\PageFieldController::class,'responsability'])->name('pagefields.responsability');
-    Route::resource('settings', App\Http\Controllers\Admin\SettingController::class);
+    Route::get('pagefields/certifications', [App\Http\Controllers\Admin\PageFieldController::class,'certifications'])->name('pagefields.certifications');
+    Route::resource('settings', App\Http\Controllers\Admin\SettingController::class)->only(['index', 'update']);
+    Route::get('settings/whatsapp', [App\Http\Controllers\Admin\SettingController::class,'whatsapp'])->name('settings.whatsapp');
     Route::resource('sliders', App\Http\Controllers\Admin\SliderController::class);
     Route::resource('partners', App\Http\Controllers\Admin\PartnerController::class);
     Route::resource('alliances', App\Http\Controllers\Admin\AllianceController::class);

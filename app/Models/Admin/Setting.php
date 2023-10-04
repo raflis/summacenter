@@ -13,7 +13,7 @@ class Setting extends Model
 
     protected $fillable = [
         'address', 'telephone', 'email', 'facebook', 'instagram', 'linkedin', 'youtube', 'whatsapp', 'script', 'zoho_token',
-        'map', 'button_name', 'button_link',
+        'map', 'button_name', 'button_link', 'floating_chat', 'floating_text', 'floating_telephone',
     ];
     
 }

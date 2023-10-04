@@ -39,11 +39,11 @@
                     {{ $pagefield->support_text[0]['title2'] }}
                 </p>
                 <div class="botones">
-                    <a href="" class="btn btn-matricula">
-                        APOYO TÉCNICO
+                    <a target="_blank" href="https://api.whatsapp.com/send?phone={{ $pagefield->support_button1_telephone }}&text={{ $pagefield->support_button1_text }}" class="btn btn-matricula">
+                        {{ $pagefield->support_button1_name }}
                     </a>
-                    <a href="" class="btn btn-azul">
-                        APOYO ACADÉMICO
+                    <a target="_blank" href="https://api.whatsapp.com/send?phone={{ $pagefield->support_button2_telephone }}&text={{ $pagefield->support_button2_text }}" class="btn btn-azul">
+                        {{ $pagefield->support_button2_name }}
                     </a>
                 </div>
             </div>

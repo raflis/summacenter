@@ -7,7 +7,7 @@
         <div class="row show-header">
             <div class="col-sm-12">
                 <h1>
-                    <i class="fas fa-home fa-xs"></i> <span>Soporte técnico y académico</span>
+                    <i class="fas fa-home fa-xs"></i> <span>Nuestras certificaciones</span>
                 </h1>
             </div>
         </div>
@@ -16,7 +16,7 @@
                 <div class="card shadow">
                     <div class="card-header">
                         <span>
-                            Soporte
+                          Nuestras certificaciones
                         </span>
                     </div>
                     {!! Form::model($pagefield, ['route' => ['pagefields.update', 1], 'method' => 'PUT', 'class' => 'needs-validation', 'novalidate']) !!}
@@ -25,45 +25,45 @@
                             @include('admin.includes.alert')
                         </div>
 
-                        <div class="form-group col-sm-7">
-                          {{ Form::label('aboutus_title', 'Título:') }} <code>*</code>
-                          {{ Form::text('aboutus_title', null, ['class' => 'form-control', 'placeholder' => 'Título', 'required']) }}
+                        <div class="form-group col-sm-12">
+                          {{ Form::label('certifications_title1', 'Título 1:') }} <code>*</code>
+                          {{ Form::text('certifications_title1', null, ['class' => 'form-control', 'placeholder' => 'Título 1', 'required']) }}
                         </div>
                         
-                        <div class="form-group col-sm-5">
-                          {{ Form::label('aboutus_video', 'Id de Youtube:') }} <code>*</code>
-                          {{ Form::text('aboutus_video', null, ['class' => 'form-control', 'placeholder' => 'Ingrese Id de Youtube', 'required']) }}
+                        <div class="form-group col-sm-12">
+                          {{ Form::label('certifications_subtitle1', 'Sub Título 1:') }} <code>*</code>
+                          {{ Form::text('certifications_subtitle1', null, ['class' => 'form-control', 'placeholder' => 'Sub Título 1', 'required']) }}
                         </div>
 
                         <div class="form-group col-sm-12">
-                          {{ Form::label('aboutus_description', 'Detalle:') }} <code>*</code>
-                          {{ Form::textarea('aboutus_description', null, ['class' => 'form-control ckeditor', 'required']) }}
+                          {{ Form::label('certifications_text1', 'Detalle 1:') }} <code>*</code>
+                          {{ Form::textarea('certifications_text1', null, ['class' => 'form-control ckeditor', 'required']) }}
                         </div>
 
                         <div class="form-group col-sm-12">
-                          {!! Form::label('aboutus_images','Imagen de misión:',['class'=>'mt-0']) !!} <strong>(798 x 1000px)</strong> <code>*</code>
+                          {!! Form::label('certifications_image1','Imagen 1:', ['class' => 'mt-0']) !!} <strong>(1100 x 756px recomendado)</strong> <code>*</code>
                           <div class="input-group">
                             <span class="input-group-btn">
                                 <a id="lfm0" data-input="thumbnail0" data-preview="holder0" class="btn btn-primary text-white">
                                 <i class="far fa-image"></i> Elegir
                                 </a>
                             </span>
-                            {!! Form::text('aboutus_images[0][mission]', null, ['class'=>'form-control','id'=>'thumbnail0', 'required']) !!}
+                            {!! Form::text('certifications_image1', null, ['class'=>'form-control','id'=>'thumbnail0', 'required']) !!}
                           </div>
                           <div id="holder0" style="margin-top:15px;max-height:100px;">
-                            <img src="{{ $pagefield->aboutus_images[0]['mission'] }}" alt="" style="height:5rem">
+                            <img src="{{ $pagefield->certifications_image1 }}" alt="" style="height:5rem">
                           </div>
                         </div>
 
                         <div class="form-group col-sm-12">
-                          {{ Form::label('aboutus_mission', 'Misión:') }} <code>*</code>
-                          {{ Form::textarea('aboutus_mission', null, ['class' => 'form-control ckeditor', 'required']) }}
+                          {{ Form::label('certifications_title2', 'Título 2:') }} <code>*</code>
+                          {{ Form::text('certifications_title2', null, ['class' => 'form-control', 'placeholder' => 'Título 2', 'required']) }}
                         </div>
 
                         <div class="px-3 col-sm-12 mb-3">
                           <div class="card shadow col-sm-12 px-0">
                             <div class="card-header py-3 card-into">
-                              <h6 class="m-0 font-weight-bold text-primary float-left">Items Misión:</h6>
+                              <h6 class="m-0 font-weight-bold text-primary float-left">Beneficios:</h6>
                               <p class="btn btn-success btn-icon-split float-right añadir">
                                 <span class="icon text-white-50">
                                   <i class="fas fa-plus"></i>
@@ -72,30 +72,32 @@
                               </p>
                             </div>
                             <div class="texto row px-3">
-                              @foreach ($pagefield->aboutus_items1 as $item)
-                              @php $var_col = (count($pagefield->aboutus_items1)>1)?'col-md-4':'col-md-12'; @endphp
+                              @foreach ($pagefield->certifications_items2 as $item)
+                              @php $var_col = (count($pagefield->certifications_items2)>1)?'col-md-4':'col-md-12'; @endphp
                               <div class="card-body {{ $var_col }}">
                                 @if ($loop->index >= 1)
                                 <a href="#" class="btn btn-danger btn-circle btn-sm float-right mb-2 eliminar">
                                   <i class="fas fa-trash"></i>
                                 </a>
                                 @endif
-                                {!! Form::label('aboutus_items1','Selecciona una imagen:',['class'=>'']) !!} <small><strong>(Ancho 80px)</strong></small> <code>*</code>
+                                {!! Form::label('certifications_items2', 'Selecciona una imagen:', ['class' => '']) !!} <small><strong>(Alto 80px)</strong></small> <code>*</code>
                                 <div class="input-group">
                                     <span class="input-group-btn">
                                         <a id="lfm_aboutus_items1{{ $loop->iteration }}" data-input="thumbnail_aboutus_items1{{ $loop->iteration }}" data-preview="holder_aboutus_items1{{ $loop->iteration }}" class="btn btn-primary text-white">
                                         <i class="far fa-image"></i> Elegir
                                         </a>
                                     </span>
-                                    {!! Form::text('aboutus_items1['.$loop->iteration.'][image]',$item['image'],['class'=>'form-control','id'=>'thumbnail_aboutus_items1'.$loop->iteration,'required']) !!}
+                                    {!! Form::text('certifications_items2['.$loop->iteration.'][image]',$item['image'],['class'=>'form-control','id'=>'thumbnail_aboutus_items1'.$loop->iteration,'required']) !!}
                                 </div>
                                 <div id="holder_aboutus_items1{{ $loop->iteration }}" style="margin-top:15px;max-height:100px;">
                                     <img src="{{ $item['image'] }}" alt="" style="height:5rem">
                                 </div>
-                                {!! Form::label('aboutus_items1','Nombre:',['class'=>'mt-3']) !!} <code>*</code>
-                                {!! Form::text('aboutus_items1['.$loop->iteration.'][name]',$item["name"],['class'=>'form-control','required']) !!}
-                                {!! Form::label('aboutus_items1','Orden:',['class'=>'mt-3']) !!} <code>*</code>
-                                {!! Form::number('aboutus_items1['.$loop->iteration.'][order]',$item["order"],['class'=>'form-control','required']) !!}
+                                {!! Form::label('certifications_items2','Nombre:',['class'=>'mt-3']) !!} <code>*</code>
+                                {!! Form::text('certifications_items2['.$loop->iteration.'][name]',$item["name"],['class'=>'form-control','required']) !!}
+                                {!! Form::label('certifications_items2','Detalle:',['class'=>'mt-3']) !!} <code>*</code>
+                                {!! Form::textarea('certifications_items2['.$loop->iteration.'][detail]',$item["detail"],['class'=>'form-control', 'rows' => 4, 'required']) !!}
+                                {!! Form::label('certifications_items2','Orden:',['class'=>'mt-3']) !!} <code>*</code>
+                                {!! Form::number('certifications_items2['.$loop->iteration.'][order]',$item["order"],['class'=>'form-control','required']) !!}
                                 <hr class="mx-0 mt-4 border-bottom-dark" style="border:1px solid;background:#000">
                               </div>
                               @endforeach
@@ -104,29 +106,39 @@
                         </div>
 
                         <div class="form-group col-sm-12">
-                          {!! Form::label('aboutus_images','Imagen de visión:',['class'=>'mt-0']) !!} <strong>(798 x 1000px)</strong> <code>*</code>
-                          <div class="input-group">
-                            <span class="input-group-btn">
-                                <a id="lfm1" data-input="thumbnail1" data-preview="holder1" class="btn btn-primary text-white">
-                                <i class="far fa-image"></i> Elegir
-                                </a>
-                            </span>
-                            {!! Form::text('aboutus_images[0][vision]', null, ['class'=>'form-control','id'=>'thumbnail1', 'required']) !!}
-                          </div>
-                          <div id="holder1" style="margin-top:15px;max-height:100px;">
-                            <img src="{{ $pagefield->aboutus_images[0]['vision'] }}" alt="" style="height:5rem">
-                          </div>
+                          {{ Form::label('certifications_title3', 'Título 3:') }} <code>*</code>
+                          {{ Form::text('certifications_title3', null, ['class' => 'form-control', 'placeholder' => 'Título 3', 'required']) }}
                         </div>
 
                         <div class="form-group col-sm-12">
-                          {{ Form::label('aboutus_vision', 'Visión:') }} <code>*</code>
-                          {{ Form::textarea('aboutus_vision', null, ['class' => 'form-control ckeditor', 'required']) }}
+                          {{ Form::label('certifications_youtube3', 'Id Youtube:') }} <code>*</code>
+                          {{ Form::text('certifications_youtube3', null, ['class' => 'form-control', 'placeholder' => 'Id Youtube', 'required']) }}
+                        </div>
+                        
+                        <div class="form-group col-sm-12">
+                          {{ Form::label('certifications_text3', 'Detalle 3:') }} <code>*</code>
+                          {{ Form::textarea('certifications_text3', null, ['class' => 'form-control ckeditor', 'required']) }}
+                        </div>
+
+                        <div class="form-group col-sm-12">
+                          {{ Form::label('certifications_title4', 'Título 4:') }} <code>*</code>
+                          {{ Form::text('certifications_title4', null, ['class' => 'form-control', 'placeholder' => 'Título 4', 'required']) }}
+                        </div>
+
+                        <div class="form-group col-sm-12">
+                          {{ Form::label('certifications_youtube4', 'Id Youtube:') }} <code>*</code>
+                          {{ Form::text('certifications_youtube4', null, ['class' => 'form-control', 'placeholder' => 'Id Youtube', 'required']) }}
+                        </div>
+                        
+                        <div class="form-group col-sm-12">
+                          {{ Form::label('certifications_text4', 'Detalle 4:') }} <code>*</code>
+                          {{ Form::textarea('certifications_text4', null, ['class' => 'form-control ckeditor', 'required']) }}
                         </div>
 
                         <div class="px-3 col-sm-12 mb-3">
                           <div class="card shadow col-sm-12 px-0">
                             <div class="card-header py-3 card-into">
-                              <h6 class="m-0 font-weight-bold text-primary float-left">Items Visión:</h6>
+                              <h6 class="m-0 font-weight-bold text-primary float-left">Pasos:</h6>
                               <p class="btn btn-success btn-icon-split float-right añadir2">
                                 <span class="icon text-white-50">
                                   <i class="fas fa-plus"></i>
@@ -135,49 +147,36 @@
                               </p>
                             </div>
                             <div class="texto2 row px-3">
-                              @foreach ($pagefield->aboutus_items2 as $item)
-                              @php $var_col = (count($pagefield->aboutus_items2)>1)?'col-md-4':'col-md-12'; @endphp
+                              @foreach ($pagefield->certifications_items4 as $item)
+                              @php $var_col = (count($pagefield->certifications_items4)>1)?'col-md-4':'col-md-12'; @endphp
                               <div class="card-body {{ $var_col }}">
                                 @if ($loop->index >= 1)
                                 <a href="#" class="btn btn-danger btn-circle btn-sm float-right mb-2 eliminar2">
                                   <i class="fas fa-trash"></i>
                                 </a>
                                 @endif
-                                {!! Form::label('aboutus_items2','Selecciona una imagen:',['class'=>'']) !!} <small><strong>(Alto 80px)</strong></small> <code>*</code>
+                                {!! Form::label('certifications_items4','Selecciona una imagen:',['class'=>'']) !!} <small><strong>(Alto 300px)</strong></small> <code>*</code>
                                 <div class="input-group">
                                     <span class="input-group-btn">
                                         <a id="lfm_aboutus_items2{{ $loop->iteration }}" data-input="thumbnail_aboutus_items2{{ $loop->iteration }}" data-preview="holder_aboutus_items2{{ $loop->iteration }}" class="btn btn-primary text-white">
                                         <i class="far fa-image"></i> Elegir
                                         </a>
                                     </span>
-                                    {!! Form::text('aboutus_items2['.$loop->iteration.'][image]',$item['image'],['class'=>'form-control','id'=>'thumbnail_aboutus_items2'.$loop->iteration,'required']) !!}
+                                    {!! Form::text('certifications_items4['.$loop->iteration.'][image]',$item['image'],['class'=>'form-control','id'=>'thumbnail_aboutus_items2'.$loop->iteration,'required']) !!}
                                 </div>
                                 <div id="holder_aboutus_items2{{ $loop->iteration }}" style="margin-top:15px;max-height:100px;">
                                     <img src="{{ $item['image'] }}" alt="" style="height:5rem">
                                 </div>
-                                {!! Form::label('aboutus_items2','Nombre:',['class'=>'mt-3']) !!} <code>*</code>
-                                {!! Form::text('aboutus_items2['.$loop->iteration.'][name]',$item["name"],['class'=>'form-control','required']) !!}
-                                {!! Form::label('aboutus_items2','Orden:',['class'=>'mt-3']) !!} <code>*</code>
-                                {!! Form::number('aboutus_items2['.$loop->iteration.'][order]',$item["order"],['class'=>'form-control','required']) !!}
+                                {!! Form::label('certifications_items4','Nombre:',['class'=>'mt-3']) !!} <code>*</code>
+                                {!! Form::text('certifications_items4['.$loop->iteration.'][name]',$item["name"],['class'=>'form-control','required']) !!}
+                                {!! Form::label('certifications_items4','Detalle:',['class'=>'mt-3']) !!} <code>*</code>
+                                {!! Form::textarea('certifications_items4['.$loop->iteration.'][detail]',$item["detail"],['class'=>'form-control','rows'=>4,'required']) !!}
+                                {!! Form::label('certifications_items4','Orden:',['class'=>'mt-3']) !!} <code>*</code>
+                                {!! Form::number('certifications_items4['.$loop->iteration.'][order]',$item["order"],['class'=>'form-control','required']) !!}
                                 <hr class="mx-0 mt-4 border-bottom-dark" style="border:1px solid;background:#000">
                               </div>
                               @endforeach
                             </div>
-                          </div>
-                        </div>
-
-                        <div class="form-group col-sm-12">
-                          {!! Form::label('aboutus_images','Imagen de nuestros valores:',['class'=>'mt-0']) !!} <strong>(1000 x 460px)</strong> <code>*</code>
-                          <div class="input-group">
-                            <span class="input-group-btn">
-                                <a id="lfm2" data-input="thumbnail2" data-preview="holder2" class="btn btn-primary text-white">
-                                <i class="far fa-image"></i> Elegir
-                                </a>
-                            </span>
-                            {!! Form::text('aboutus_images[0][values]', null, ['class'=>'form-control','id'=>'thumbnail2', 'required']) !!}
-                          </div>
-                          <div id="holder2" style="margin-top:15px;max-height:100px;">
-                            <img src="{{ $pagefield->aboutus_images[0]['values'] }}" alt="" style="height:5rem">
                           </div>
                         </div>
 
@@ -198,7 +197,7 @@
 <script>
 	$(document).ready(function(){
 		 
-		var i={{ count(($pagefield->aboutus_items1))+1 }};
+		var i={{ count(($pagefield->certifications_items2))+1 }};
 
 		$('.añadir').on('click',function(e){
 			e.preventDefault();
@@ -207,21 +206,23 @@
 								'<i class="fas fa-trash"></i>' +
 							'</a>' +
 
-                '<label for="aboutus_items1" class="">Selecciona una imagen:</label> <small><strong>(Ancho 80px)</strong></small> <code>*</code>' +
+                '<label for="certifications_items2" class="">Selecciona una imagen:</label> <small><strong>(Alto 80px)</strong></small> <code>*</code>' +
                 '<div class="input-group">' +
                   '<span class="input-group-btn">' +
                       '<a id="lfm_aboutus_items1'+i+'" data-input="aboutus_items1'+i+'" data-preview="holder_aboutus_items1'+i+'" class="btn btn-primary text-white">' +
                       '<i class="far fa-image"></i> Elegir' +
                       '</a>' +
                   '</span>' +
-                  '<input class="form-control" id="aboutus_items1'+i+'" name="aboutus_items1['+i+'][image]" type="text" required>' +
+                  '<input class="form-control" id="aboutus_items1'+i+'" name="certifications_items2['+i+'][image]" type="text" required>' +
                 '</div>' +
                 '<div id="holder_aboutus_items1'+i+'" style="margin-top:15px;max-height:100px;"></div>' +
                 
-                '<label for="aboutus_items1" class="mt-3">Nombre:</label> <code>*</code>' +
-								'<input class="form-control" name="aboutus_items1['+i+'][name]" type="text" required>' +
-								'<label for="aboutus_items1" class="mt-3">Orden:</label> <code>*</code>' +
-								'<input class="form-control" name="aboutus_items1['+i+'][order]" type="number" required>' +
+                '<label for="certifications_items2" class="mt-3">Nombre:</label> <code>*</code>' +
+								'<input class="form-control" name="certifications_items2['+i+'][name]" type="text" required>' +
+                '<label for="certifications_items2" class="mt-3">Detalle:</label> <code>*</code>' +
+								'<textarea class="form-control" name="certifications_items2['+i+'][detail]" rows=4 required></textarea>' +
+								'<label for="certifications_items2" class="mt-3">Orden:</label> <code>*</code>' +
+								'<input class="form-control" name="certifications_items2['+i+'][order]" type="number" required>' +
                 
 							'<hr class="mx-0 mt-4 border-bottom-dark" style="border:1px solid;background:#000">' + 
 						'</div></div>' +
@@ -237,7 +238,7 @@
 			$(this).parent('.card-body').remove();
 		});
 
-    var j={{ count(($pagefield->aboutus_items2))+1 }};
+    var j={{ count(($pagefield->certifications_items4))+1 }};
 
 		$('.añadir2').on('click',function(e){
 			e.preventDefault();
@@ -246,21 +247,23 @@
 								'<i class="fas fa-trash"></i>' +
 							'</a>' +
 
-                '<label for="aboutus_items2" class="">Selecciona una imagen:</label> <small><strong>(Ancho 80px)</strong></small> <code>*</code>' +
+                '<label for="certifications_items4" class="">Selecciona una imagen:</label> <small><strong>(Alto 300px)</strong></small> <code>*</code>' +
                 '<div class="input-group">' +
                   '<span class="input-group-btn">' +
                       '<a id="lfm_aboutus_items2'+j+'" data-input="aboutus_items2'+j+'" data-preview="holder_aboutus_items2'+j+'" class="btn btn-primary text-white">' +
                       '<i class="far fa-image"></i> Elegir' +
                       '</a>' +
                   '</span>' +
-                  '<input class="form-control" id="aboutus_items2'+j+'" name="aboutus_items2['+j+'][image]" type="text" required>' +
+                  '<input class="form-control" id="aboutus_items2'+j+'" name="certifications_items4['+j+'][image]" type="text" required>' +
                 '</div>' +
                 '<div id="holder_aboutus_items2'+j+'" style="margin-top:15px;max-height:100px;"></div>' +
                 
-                '<label for="aboutus_items2" class="mt-3">Nombre:</label> <code>*</code>' +
-								'<input class="form-control" name="aboutus_items2['+j+'][name]" type="text" required>' +
-								'<label for="aboutus_items2" class="mt-3">Orden:</label> <code>*</code>' +
-								'<input class="form-control" name="aboutus_items2['+j+'][order]" type="number" required>' +
+                '<label for="certifications_items4" class="mt-3">Nombre:</label> <code>*</code>' +
+								'<input class="form-control" name="certifications_items4['+j+'][name]" type="text" required>' +
+                '<label for="certifications_items4" class="mt-3">Detalle:</label> <code>*</code>' +
+								'<textarea class="form-control" name="certifications_items4['+j+'][detail]" rows=4 required></textarea>' +
+								'<label for="certifications_items4" class="mt-3">Orden:</label> <code>*</code>' +
+								'<input class="form-control" name="certifications_items4['+j+'][order]" type="number" required>' +
                 
 							'<hr class="mx-0 mt-4 border-bottom-dark" style="border:1px solid;background:#000">' + 
 						'</div></div>' +
@@ -320,14 +323,12 @@
   </script>
   <script>
     $('#lfm0').filemanager('image', {prefix: route_prefix});
-    $('#lfm1').filemanager('image', {prefix: route_prefix});
-    $('#lfm2').filemanager('image', {prefix: route_prefix});
 
-    @foreach ($pagefield->aboutus_items1 as $item)
+    @foreach ($pagefield->certifications_items2 as $item)
     $('#lfm_aboutus_items1{{ $loop->iteration }}').filemanager('image', {prefix: route_prefix});
     @endforeach
 
-    @foreach ($pagefield->aboutus_items2 as $item)
+    @foreach ($pagefield->certifications_items4 as $item)
     $('#lfm_aboutus_items2{{ $loop->iteration }}').filemanager('image', {prefix: route_prefix});
     @endforeach
 

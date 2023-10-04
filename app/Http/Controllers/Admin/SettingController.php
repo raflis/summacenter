@@ -27,6 +27,12 @@ class SettingController extends Controller
         return view('admin.settings.index', compact('setting'));
     }
 
+    public function whatsapp()
+    {
+        $setting = Setting::find(1);
+        return view('admin.settings.whatsapp', compact('setting'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -80,25 +86,16 @@ class SettingController extends Controller
     public function update(Request $request, $id)
     {
         $rules=[
-            'address' => 'required',
-            'telephone' => 'required',
-            'email' => 'required',
-            'facebook' => 'required',
-            'instagram' => 'required',
-            'linkedin' => 'required',
-            'youtube' => 'required',
-            'map' => 'required',
-            'button_name' => 'required',
-            'button_link' => 'required',
+            //
         ];
 
         $messages=[
-            'address.required'=> 'Ingrese dirección',
+            'address.required' => 'Ingrese dirección',
         ];
 
         $validator=Validator::make($request->all(), $rules, $messages);
         if($validator->fails()):
-            return back()->withErrors($validator)->with('message','Se ha producido un error')->with('typealert','danger')->withInput();
+            return back()->withErrors($validator)->with('message', 'Se ha producido un error')->with('typealert', 'danger')->withInput();
         else:
             $updated = Setting::find(1);
             $updated->fill($request->all())->save();

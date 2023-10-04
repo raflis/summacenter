@@ -9,6 +9,10 @@
         href="{{ route('index') }}">
             <i class="fas fa-globe text-gray pr-1"></i> Ver Web
         </a>
+        <a class="nav-link @if(in_array(Route::currentRouteName(), array('settings.whatsapp'))) active @endif" 
+        href="{{ route('settings.whatsapp') }}">
+            <i class="fas fa-home text-gray pr-1"></i> Chat Flotante
+        </a>
         <a class="nav-link @if(in_array(Route::currentRouteName(), array('settings.index'))) active @endif" 
         href="{{ route('settings.index') }}">
             <i class="fas fa-home text-gray pr-1"></i> Configuración
@@ -88,6 +92,10 @@
         <a class="nav-link @if(preg_match("/pagefields.responsability/", Route::currentRouteName())) active @endif" 
         href="{{ route('pagefields.responsability') }}">
             <i class="fas fa-home text-gray pr-1"></i> Responsabilidad Social
+        </a>
+        <a class="nav-link @if(preg_match("/pagefields.certifications/", Route::currentRouteName())) active @endif" 
+        href="{{ route('pagefields.certifications') }}">
+            <i class="fas fa-home text-gray pr-1"></i> Nuestras Certificaciones
         </a>
         <a class="nav-link @if(preg_match("/pagefields.terms_and_conditions/", Route::currentRouteName())) active @endif" 
         href="{{ route('pagefields.terms_and_conditions') }}">

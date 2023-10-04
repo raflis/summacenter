@@ -207,28 +207,65 @@
         <div class="row">
             <div class="col-md-12 title">
                 <h1>
-                    ARTÍCULOS DESTACADOS
+                    ARTÍCULOS
                 </h1>
             </div>
-            @foreach ($featured_posts as $item_p)
-            <div class="col-md-4 item">
-                <div class="item_">
-                    <div class="image">
-                        <a href="{{ route('post', [$item_p->blog_category->slug, $item_p->slug, $item_p->id]) }}">
-                            <img src="{{ $item_p->image1 }}" alt="">
-                        </a>
+            <div class="col-md-12">
+                <div id="carousel-blog-index" class="owl-carousel">
+                    @foreach ($featured_posts as $item_p)
+                    <div class="item">
+                        <div class="image">
+                            <a href="{{ route('post', [$item_p->blog_category->slug, $item_p->slug, $item_p->id]) }}">
+                                <img src="{{ $item_p->image1 }}" alt="">
+                            </a>
+                        </div>
+                        <div class="content">
+                            <p class="category">
+                                {{ $item_p->blog_category->name }}
+                            </p>
+                            <a class="tit" href="{{ route('post', [$item_p->blog_category->slug, $item_p->slug, $item_p->id]) }}">
+                                {{ $item_p->name }}
+                            </a>
+                        </div>
                     </div>
-                    <div class="content">
-                        <p class="category">
-                            {{ $item_p->blog_category->name }}
-                        </p>
-                        <a class="tit" href="{{ route('post', [$item_p->blog_category->slug, $item_p->slug, $item_p->id]) }}">
-                            {{ $item_p->name }}
-                        </a>
-                    </div>
+                    @endforeach
                 </div>
             </div>
-            @endforeach
+        </div>
+    </div>
+</section>
+@endif
+
+@if(count($event_posts) > 0)
+<section class="sec5">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 title">
+                <h1>
+                    EVENTOS
+                </h1>
+            </div>
+            <div class="col-md-12">
+                <div id="carousel-blog-index2" class="owl-carousel">
+                    @foreach ($event_posts as $item_p)
+                    <div class="item">
+                        <div class="image">
+                            <a href="{{ route('post', [$item_p->blog_category->slug, $item_p->slug, $item_p->id]) }}">
+                                <img src="{{ $item_p->image1 }}" alt="">
+                            </a>
+                        </div>
+                        <div class="content">
+                            <p class="category">
+                                {{ $item_p->blog_category->name }}
+                            </p>
+                            <a class="tit" href="{{ route('post', [$item_p->blog_category->slug, $item_p->slug, $item_p->id]) }}">
+                                {{ $item_p->name }}
+                            </a>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -257,6 +294,18 @@
                                 <p class="description">
                                     Egresado: {{ $testimonial->graduated_career }}
                                 </p>
+                            </div>
+                            <div class="detras">
+                                <div class="first">
+                                    <img src="{{ asset('images/icon-reco1.png') }}" alt="">
+                                    <p>
+                                        {{ $testimonial->career }}
+                                    </p>
+                                </div>
+                                <div class="second">
+                                    <img src="{{ asset('images/icon-reco2.png') }}" alt="">
+                                    {!! htmlspecialchars_decode($testimonial->comment) !!}
+                                </div>
                             </div>
                         </div>
                     </div>

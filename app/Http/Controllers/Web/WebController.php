@@ -48,9 +48,13 @@ class WebController extends Controller
         $alliances = Alliance::orderBy('order', 'Asc')->get();
         $pagefield = PageField::find(1);
         $course_areas = CourseArea::orderBy('order', 'Asc')->get();
-        $featured_posts = BlogPost::where('featured', 1)->where('status', 'PUBLISHED')->get();
+        $featured_posts = BlogPost::where('featured', 1)->where('slug', '<>', 'eventos')->where('status', 'PUBLISHED')->get();
+        $event_posts = BlogPost::whereHas('blog_category', function($q){
+                            $q->where('slug', 'eventos');
+                        })->where('status', 'PUBLISHED')
+                        ->get();
         $agent = new Agent();
-        return view('web.index', compact('agent', 'sliders', 'testimonials', 'partners', 'alliances', 'pagefield', 'course_areas', 'featured_posts', 'flags'));
+        return view('web.index', compact('agent', 'sliders', 'testimonials', 'partners', 'alliances', 'pagefield', 'course_areas', 'featured_posts', 'flags', 'event_posts'));
     }
 
     public function egresados()
@@ -442,7 +446,7 @@ class WebController extends Controller
 
         $validator=Validator::make($request->all(), $rules, $messages);
         if($validator->fails()):
-            return back()->withErrors($validator)->with('message','Se ha producido un error')->with('typealert','danger')->withInput();
+            return back()->withErrors($validator)->with('message', 'Se ha producido un error')->with('typealert', 'danger')->withInput();
         else:
             /*$text = explode('|', $request->interested_course);
             $zoho_code = $text[0];
@@ -508,11 +512,8 @@ class WebController extends Controller
 
         $validator=Validator::make($request->all(), $rules, $messages);
         if($validator->fails()):
-            return back()->withErrors($validator)->with('message','Se ha producido un error')->with('typealert','danger')->withInput();
+            return back()->withErrors($validator)->with('message', 'Se ha producido un error')->with('typealert', 'danger')->withInput();
         else:
-            $text = explode('|', $request->interested_course);
-            $zoho_code = $text[0];
-            $request->merge(['interested_course' => $text[1]]);
             $record = Record::create($request->all());
 
             $setting = Setting::find(1);
@@ -530,12 +531,13 @@ class WebController extends Controller
                         'First_Name' => $request->name,
                         'Last_Name' => $request->lastname,
                         'Email' => $request->email,
-                        'Phone' => $request->telephone,
+                        'Phone' => $record->flag->dial_code.$request->telephone,
                         'Lead_Status' => 'No contactado',
-                        'CAMPA_A_OK' => 'Campaña Web',
+                        'CAMPA_A_OK' => 'FORMULARIO PROGRAMAS',
                         'Fuente_de_Lead' => $request->document,
-                        /*'Fuente_de_Lead1' => 'GOOGLE ADWORDS',
-                        'C_digo_Curso' => [
+                        'Fuente_de_Lead1' => 'GOOGLE ADWORDS',
+                        'Observaciones2' => $request->interested_course,
+                        /*'C_digo_Curso' => [
                             $zoho_code
                         ]*/
                     ]
@@ -592,9 +594,10 @@ class WebController extends Controller
                         'Email' => $request->email,
                         'Phone' => $request->telephone,
                         'Lead_Status' => 'No contactado',
-                        'CAMPA_A_OK' => 'Campaña Web',
+                        'CAMPA_A_OK' => 'CONTACTO',
                         'Fuente_de_Lead' => $request->document,
-                        //'Fuente_de_Lead1' => 'GOOGLE ADWORDS',
+                        'Fuente_de_Lead1' => 'GOOGLE ADWORDS',
+                        'Observaciones2' => $request->observation,
                     ]
                 ]
             ];
@@ -639,6 +642,40 @@ class WebController extends Controller
                 $request->merge(['call_sms' => 0]);
             endif;
             $record = Record::create($request->all());
+
+            $setting = Setting::find(1);
+            $zoho_token = $setting->zoho_token;
+            $now = Carbon::now();
+            $minutes = $now->diffInMinutes($setting->zoho_token_created);
+            if($minutes >= 50):
+                $soho = new SohoController();
+                $soho->refresh_token();
+            endif;
+            
+            $data_zoho = [
+                "data" => [
+                    [
+                        'First_Name' => $request->name,
+                        'Last_Name' => $request->lastname,
+                        'Email' => $request->email,
+                        'Phone' => $request->telephone,
+                        'Lead_Status' => 'No contactado',
+                        'CAMPA_A_OK' => 'FORMULARIO CORPORATIVO',
+                        'Fuente_de_Lead' => $request->document,
+                        'Fuente_de_Lead1' => 'GOOGLE ADWORDS',
+                        'Observaciones2' => $request->observation,
+                        /*'C_digo_Curso' => [
+                            $zoho_code
+                        ]*/
+                    ]
+                ]
+            ];
+
+            $response = Http::withHeaders([
+                'Authorization' => 'Zoho-oauthtoken '.$zoho_token,
+                'Content-Type' => 'application/json',
+            ])->post('https://www.zohoapis.com/crm/v2/Leads', $data_zoho);
+
             return redirect()->route('gracias')->with('message', 'Creado con éxito.')->with('typealert', 'success');
         endif;
     }

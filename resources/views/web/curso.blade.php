@@ -294,7 +294,7 @@
                         <form action="{{ route('postCurso') }}" method="POST" class="needs-validation" novalidate>
                         @csrf
                         <input type="hidden" name="from" value="curso">
-                        <input type="hidden" name="interested_course" value="{{ $course->zoho_code }}|{{ $course->name }}">
+                        <input type="hidden" name="interested_course" value="{{ $course->name }}">
                         <div class="form-group col-md-12">
                             <label for="name">Nombres</label>
                             <input type="text" name="name" class="form-control" placeholder="Nombres" required>
@@ -315,7 +315,7 @@
                             <label for="telephone">Teléfono</label>
                             <div class="phone_contact d-flex">
                                 <div class="dropdown drop_flags">
-                                    <button class="btn btn-flag dropdown-toggle" type="button" id="drop_flags" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <button class="btn btn-flag dropdown-toggle drop_flagsW" type="button" id="drop_flags" data-bs-toggle="dropdown" aria-expanded="false">
                                         <img class="flag_user" src="{{ asset('images/flags/pe.png') }}" alt="">
                                         <input type="hidden" name="flag_id" value="12">
                                     </button>

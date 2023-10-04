@@ -37,7 +37,7 @@
                             {{ Form::text('email', null, ['class' => 'form-control', 'placeholder' => 'Ingrese email', 'required']) }}
                         </div>
                         <div class="form-group col-sm-12">
-                            {{ Form::label('whatsapp', 'Whatsapp:') }} <code>*</code>
+                            {{ Form::label('whatsapp', 'Whatsapp Footer:') }} <code>*</code> <small>Ej: 999666333</small>
                             {{ Form::text('whatsapp', null, ['class' => 'form-control', 'placeholder' => 'Ingrese whatsapp', 'required']) }}
                         </div>
                         <div class="form-group col-sm-12">

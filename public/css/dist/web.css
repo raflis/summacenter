@@ -95,12 +95,162 @@ textarea:focus {
   padding-left: 60px;
   padding-right: 60px;
 }
+.wp_float {
+  position: fixed;
+  bottom: 6px;
+  right: 15px;
+  z-index: 99999999;
+  cursor: pointer;
+}
+.wp_float img {
+  width: 75px;
+}
+.fondo_all {
+  background: rgba(0,0,0,0.65);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999999;
+}
+.fondo_all .chat {
+  width: 480px;
+  position: fixed;
+  right: 22px;
+  bottom: 100px;
+  box-shadow: 0px 0px 8px #333;
+  border-color: #bbb;
+  border-width: 1px;
+}
+.fondo_all .chat .chat_header {
+  background: #0b6156;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  position: relative;
+  padding: 10px 10px;
+}
+.fondo_all .chat .chat_header .logo {
+  height: 57px;
+}
+.fondo_all .chat .chat_header .logo img {
+  height: 100%;
+  width: auto;
+}
+.fondo_all .chat .chat_header .title {
+  padding-left: 15px;
+}
+.fondo_all .chat .chat_header .title p {
+  line-height: 1.3;
+  color: #fff;
+  margin: 0;
+  font-size: 1rem;
+}
+.fondo_all .chat .chat_header .title p span {
+  font-family: font-bold;
+}
+.fondo_all .chat .chat_header button {
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.fondo_all .chat .chat_header button svg {
+  width: 12px;
+  height: 12px;
+  fill: #fff;
+}
+.fondo_all .chat .chat_content {
+  background-image: url("../images/bg_chat.png"), linear-gradient(to bottom, #e9e0d7 0%, #e9e0d7 100%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 15px 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.fondo_all .chat .chat_content .text_left {
+  width: 75%;
+  background-color: #fff;
+  border-bottom-style: solid;
+  border-color: #cacaca;
+  border-left-style: solid;
+  border-radius: 6px;
+  border-right-style: none;
+  border-top-style: none;
+  border-width: 1px;
+  margin-bottom: 12px;
+}
+.fondo_all .chat .chat_content .text_left p {
+  padding: 12px;
+  margin: 0;
+  font-size: 0.9rem;
+  color: #4a4a4a;
+  line-height: 1.3;
+}
+.fondo_all .chat .chat_content .text_right {
+  margin-left: 25%;
+  width: 75%;
+}
+.fondo_all .chat .chat_content .text_right form input,
+.fondo_all .chat .chat_content .text_right form textarea {
+  color: #4a4a4a;
+  font-size: 0.9rem;
+  background-color: #e7ffe7;
+  border-bottom-style: solid;
+  border-left-style: none;
+  border-right-style: solid;
+  border-top-style: none;
+  border-color: #cacaca;
+  border-radius: 6px;
+  border-width: 1px;
+  margin-bottom: 12px;
+}
+.fondo_all .chat .chat_content .text_right form button {
+  float: right;
+  background-color: #0b6156;
+  border-bottom-style: none;
+  border-color: #000;
+  border-left-style: none;
+  border-radius: 6px;
+  border-right-style: none;
+  border-top-style: none;
+  border-width: 0px;
+  box-shadow: 0px 0px 0px 0px #ccc;
+  color: #fff;
+  cursor: pointer;
+  font-family: Open Sans, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: normal;
+  height: 40px;
+  line-height: 1.42857;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  max-width: 180px;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+.fondo_all .chat .chat_content .text_right form .invalid-feedback {
+  margin: -10px 0 12px;
+  font-size: 0.8rem;
+}
 .drop_flags {
   border-bottom: 2.5px solid #254275;
   margin-bottom: 12px;
 }
 .drop_flags button#drop_flags {
   color: #254275;
+}
+.drop_flags .drop_flagsW {
+  color: #fff !important;
 }
 .drop_flags ul {
   height: 190px;
@@ -1502,7 +1652,7 @@ form {
   font-size: 1.7rem;
 }
 .sec4 #carousel-cursos {
-  padding: 0 50px;
+  padding: 0 60px;
   margin-top: 40px;
 }
 .sec4 #carousel-cursos .item {
@@ -1639,9 +1789,7 @@ form {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url("../images/background-blog.png");
-  padding: 60px 0 70px;
-  box-shadow: 0 0rem 1rem rgba(0,0,0,0.4);
+  padding: 30px 0 30px;
 }
 .sec5 .title h1 {
   text-align: center;
@@ -1650,17 +1798,24 @@ form {
   font-size: 1.7rem;
   padding-bottom: 40px;
 }
-.sec5 .item .item_ {
-  margin-bottom: 20px;
+.sec5 #carousel-blog-index,
+.sec5 #carousel-blog-index2 {
+  padding: 0 60px;
+}
+.sec5 #carousel-blog-index .item,
+.sec5 #carousel-blog-index2 .item {
   border-radius: 20px;
   box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+  margin: 5px 0 25px;
 }
-.sec5 .item .item_ .image img {
+.sec5 #carousel-blog-index .item .image img,
+.sec5 #carousel-blog-index2 .item .image img {
   width: 100%;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
-.sec5 .item .item_ .content {
+.sec5 #carousel-blog-index .item .content,
+.sec5 #carousel-blog-index2 .item .content {
   background: #fff;
   padding: 20px 15px 23px;
   position: relative;
@@ -1669,7 +1824,8 @@ form {
   border-bottom-left-radius: 20px;
   height: 125px;
 }
-.sec5 .item .item_ .content p.category {
+.sec5 #carousel-blog-index .item .content p.category,
+.sec5 #carousel-blog-index2 .item .content p.category {
   display: inline-block;
   background: #facd7f;
   color: #000017;
@@ -1679,7 +1835,8 @@ form {
   line-height: 1.2;
   text-transform: uppercase;
 }
-.sec5 .item .item_ .content a.tit {
+.sec5 #carousel-blog-index .item .content a.tit,
+.sec5 #carousel-blog-index2 .item .content a.tit {
   font-family: font-semibold;
   line-height: 1.2;
   font-size: 1rem;
@@ -1687,11 +1844,13 @@ form {
   text-decoration: none;
   display: block;
 }
-.sec5 .item .item_ .tags {
+.sec5 #carousel-blog-index .item .tags,
+.sec5 #carousel-blog-index2 .item .tags {
   padding: 0;
   margin-bottom: 15px;
 }
-.sec5 .item .item_ .tags .btn-tag {
+.sec5 #carousel-blog-index .item .tags .btn-tag,
+.sec5 #carousel-blog-index2 .item .tags .btn-tag {
   background-color: #facd7f;
   color: #254275;
   padding: 2px 7px 1px;
@@ -1700,6 +1859,26 @@ form {
   border-radius: 13px;
   font-family: font-medium;
   transition: 0.5s all;
+}
+.sec5 #carousel-blog-index .owl-nav,
+.sec5 #carousel-blog-index2 .owl-nav {
+  display: inherit !important;
+}
+.sec5 #carousel-blog-index .owl-nav .owl-prev,
+.sec5 #carousel-blog-index2 .owl-nav .owl-prev {
+  position: absolute;
+  left: 0%;
+  top: 44%;
+}
+.sec5 #carousel-blog-index .owl-nav .owl-next,
+.sec5 #carousel-blog-index2 .owl-nav .owl-next {
+  position: absolute;
+  right: 0%;
+  top: 44%;
+}
+.sec5 #carousel-blog-index .owl-nav img,
+.sec5 #carousel-blog-index2 .owl-nav img {
+  height: 40px;
 }
 .sec6 {
   padding: 0px 0 50px;
@@ -1731,17 +1910,24 @@ form {
 }
 .sec6 #carousel-recomendaciones .item {
   padding: 0 10px;
-/*&:hover
-                .content
-                    transform rotateY(180deg)*/
+}
+.sec6 #carousel-recomendaciones .item:hover .content {
+  transform: rotateY(180deg);
+}
+.sec6 #carousel-recomendaciones .item:hover .content .detras {
+  border: 4px solid #254275;
 }
 .sec6 #carousel-recomendaciones .item .content {
+  transform-style: preserve-3d;
   transition: all 0.4s linear;
   background: #fff;
+  height: 52vh;
 }
 .sec6 #carousel-recomendaciones .item .content .cara {
   height: 100%;
   width: 100%;
+  position: absolute;
+  backface-visibility: hidden;
   top: 0;
   left: 0;
   padding: 30px 40px 10px;
@@ -1750,14 +1936,16 @@ form {
   overflow: hidden;
 }
 .sec6 #carousel-recomendaciones .item .content .detras {
-  height: 99%;
+  border: 4px solid transparent;
+  transition: all 0.7s linear;
+  border-radius: 20px;
+  height: 93%;
   transform: rotateY(180deg);
   padding: 30px 20px 10px;
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   overflow: hidden;
 }
 .sec6 #carousel-recomendaciones .item .content .detras .first {
@@ -1772,7 +1960,7 @@ form {
   text-transform: uppercase;
   font-family: font-medium;
   font-size: 1rem;
-  color: #fff;
+  color: #2b2b2b;
   padding-left: 8px;
 }
 .sec6 #carousel-recomendaciones .item .content .detras .second {
@@ -1785,7 +1973,7 @@ form {
 .sec6 #carousel-recomendaciones .item .content .detras .second p {
   line-height: 1.3;
   font-size: 0.8rem;
-  color: #fff;
+  color: #2b2b2b;
   padding-left: 8px;
 }
 .sec6 #carousel-recomendaciones .item .content .detras .second p span {
@@ -2334,7 +2522,16 @@ form {
   margin-bottom: 50px;
 }
 .sec14 .description,
-.sec14 span.texto {
+.sec14 .texto,
+.sec14 .text {
+  font-size: 1rem;
+  color: #000017;
+  text-align: justify;
+  line-height: 1.9;
+}
+.sec14 .description p,
+.sec14 .texto p,
+.sec14 .text p {
   font-size: 1rem;
   color: #000017;
   text-align: justify;
@@ -2441,6 +2638,14 @@ form {
   width: 90%;
   margin-bottom: 1rem;
 }
+.sec16 .description .video_ {
+  text-align: center;
+  margin: 20px 0;
+}
+.sec16 .description .video_ iframe {
+  width: 60%;
+  height: 420px;
+}
 .sec17 {
   position: relative;
   padding-top: 50px;
@@ -2462,6 +2667,14 @@ form {
 .sec17 .description img {
   width: 100%;
   margin-bottom: 1rem;
+}
+.sec17 .description .video_ {
+  text-align: center;
+  margin: 30px 0 40px;
+}
+.sec17 .description .video_ iframe {
+  width: 60%;
+  height: 420px;
 }
 .sec17 .pasos .paso .paso_ .titulo {
   background: #facd7f;
@@ -3690,8 +3903,9 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   padding: 0 12px;
-  width: 20%;
+  width: 16%;
 }
 .sec27 .content .content1 .levels .item img {
   width: 100%;
@@ -3965,7 +4179,7 @@ form {
 .sec28 .formu .formulario .formulario_ .form-group input[type=email],
 .sec28 .formu .formulario .formulario_ .form-group select {
   background-color: transparent;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.8);
   padding: 0;
   border: none;
   border-bottom: 2.5px solid #fff;
@@ -3980,6 +4194,9 @@ form {
   border-color: unset;
   border-bottom: 3.5px solid #fff;
   box-shadow: unset;
+}
+.sec28 .formu .formulario .formulario_ .form-group ::placeholder {
+  color: rgba(255,255,255,0.8);
 }
 .sec28 .formu .formulario .formulario_ .form-select {
   background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%23FFFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/></svg>") !important;
@@ -9563,6 +9780,137 @@ form {
   width: 60px;
 }
 @media screen and (max-width: 1024px) {
+  .fondo_all {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999999;
+  }
+  .fondo_all .chat {
+    width: 90%;
+    position: fixed;
+    right: 5%;
+    bottom: 100px;
+    border-width: 1px;
+  }
+  .fondo_all .chat .chat_header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+    padding: 10px 10px;
+  }
+  .fondo_all .chat .chat_header .logo {
+    height: 57px;
+  }
+  .fondo_all .chat .chat_header .logo img {
+    height: 100%;
+    width: auto;
+  }
+  .fondo_all .chat .chat_header .title {
+    padding-left: 15px;
+  }
+  .fondo_all .chat .chat_header .title p {
+    line-height: 1.3;
+    margin: 0;
+    font-size: 1rem;
+  }
+  .fondo_all .chat .chat_header .title p span {
+    font-family: font-bold;
+  }
+  .fondo_all .chat .chat_header button {
+    box-shadow: none;
+    border: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  .fondo_all .chat .chat_header button svg {
+    width: 12px;
+    height: 12px;
+    fill: #fff;
+  }
+  .fondo_all .chat .chat_content {
+    background-image: url("../images/bg_chat.png"), linear-gradient(to bottom, #e9e0d7 0%, #e9e0d7 100%);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 15px 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .fondo_all .chat .chat_content .text_left {
+    width: 75%;
+    background-color: #fff;
+    border-bottom-style: solid;
+    border-color: #cacaca;
+    border-left-style: solid;
+    border-radius: 6px;
+    border-right-style: none;
+    border-top-style: none;
+    border-width: 1px;
+    margin-bottom: 12px;
+  }
+  .fondo_all .chat .chat_content .text_left p {
+    padding: 12px;
+    margin: 0;
+    font-size: 0.9rem;
+    color: #4a4a4a;
+    line-height: 1.3;
+  }
+  .fondo_all .chat .chat_content .text_right {
+    margin-left: 25%;
+    width: 75%;
+  }
+  .fondo_all .chat .chat_content .text_right form input,
+  .fondo_all .chat .chat_content .text_right form textarea {
+    color: #4a4a4a;
+    font-size: 0.9rem;
+    background-color: #e7ffe7;
+    border-bottom-style: solid;
+    border-left-style: none;
+    border-right-style: solid;
+    border-top-style: none;
+    border-color: #cacaca;
+    border-radius: 6px;
+    border-width: 1px;
+    margin-bottom: 12px;
+  }
+  .fondo_all .chat .chat_content .text_right form button {
+    float: right;
+    background-color: #0b6156;
+    border-bottom-style: none;
+    border-color: #000;
+    border-left-style: none;
+    border-radius: 6px;
+    border-right-style: none;
+    border-top-style: none;
+    border-width: 0px;
+    box-shadow: 0px 0px 0px 0px #ccc;
+    color: #fff;
+    cursor: pointer;
+    font-family: Open Sans, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: normal;
+    height: 40px;
+    line-height: 1.42857;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    max-width: 180px;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+  .fondo_all .chat .chat_content .text_right form .invalid-feedback {
+    margin: -10px 0 12px;
+    font-size: 0.8rem;
+  }
   .breadcrumb__ {
     padding: 0 15px;
   }
@@ -10109,9 +10457,7 @@ form {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url("../images/background-blog.png");
-    padding: 60px 0 70px;
-    box-shadow: 0 0rem 1rem rgba(0,0,0,0.4);
+    padding: 30px 0 30px;
   }
   .sec5 .title h1 {
     text-align: center;
@@ -10205,11 +10551,14 @@ form {
     padding: 0 50px;
     margin-top: 40px;
   }
+  .sec6 #carousel-recomendaciones .item:hover .content .detras {
+    opacity: 1;
+  }
   .sec6 #carousel-recomendaciones .item .content {
-    transition: all 0.4s linear;
+    height: auto;
   }
   .sec6 #carousel-recomendaciones .item .content .cara {
-    height: 100%;
+    height: auto;
     width: 100%;
     top: 0;
     left: 0;
@@ -10219,42 +10568,40 @@ form {
     overflow: hidden;
   }
   .sec6 #carousel-recomendaciones .item .content .detras {
+    opacity: 0;
     height: 99%;
     transform: rotateY(180deg);
-    padding: 30px 20px 10px;
+    padding: 10px 10px;
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     overflow: hidden;
   }
   .sec6 #carousel-recomendaciones .item .content .detras .first {
     display: flex;
   }
   .sec6 #carousel-recomendaciones .item .content .detras .first img {
-    height: 20px;
+    height: 15px;
     width: auto;
   }
   .sec6 #carousel-recomendaciones .item .content .detras .first p {
     line-height: 1.3;
     text-transform: uppercase;
     font-family: font-medium;
-    font-size: 1rem;
-    color: #fff;
+    font-size: 0.8rem;
     padding-left: 8px;
   }
   .sec6 #carousel-recomendaciones .item .content .detras .second {
     display: flex;
   }
   .sec6 #carousel-recomendaciones .item .content .detras .second img {
-    height: 25px;
+    height: 18px;
     width: auto;
   }
   .sec6 #carousel-recomendaciones .item .content .detras .second p {
     line-height: 1.3;
-    font-size: 0.9rem;
-    color: #fff;
+    font-size: 0.8rem;
     padding-left: 8px;
   }
   .sec6 #carousel-recomendaciones .item .content .detras .second p span {
@@ -10913,6 +11260,14 @@ form {
     width: 100%;
     margin-bottom: 1rem;
   }
+  .sec16 .description .video_ {
+    text-align: center;
+    margin: 20px 0;
+  }
+  .sec16 .description .video_ iframe {
+    width: 100%;
+    height: 400px;
+  }
   .sec17 {
     position: relative;
     padding-top: 50px;
@@ -10935,6 +11290,13 @@ form {
   .sec17 .description img {
     width: 100%;
     margin-bottom: 1rem;
+  }
+  .sec17 .description .video_ {
+    text-align: center;
+  }
+  .sec17 .description .video_ iframe {
+    width: 100%;
+    height: 400px;
   }
   .sec17 .pasos .paso .paso_ .titulo {
     background: #facd7f;

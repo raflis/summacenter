@@ -62,7 +62,7 @@
                         </div>
                         <div class="form-group col-md-12">
                             <label for="name">Necesito apoyo en lo siguiente</label>
-                            <textarea name="observation" id="" class="form-control"></textarea>
+                            <textarea name="observation" id="" class="form-control" maxlength="200"></textarea>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required>

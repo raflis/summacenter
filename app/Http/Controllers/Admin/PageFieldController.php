@@ -75,6 +75,12 @@ class PageFieldController extends Controller
         return view('admin.pagefields.responsability', compact('pagefield'));
     }
 
+    public function certifications()
+    {
+        $pagefield = PageField::find(1);
+        return view('admin.pagefields.certifications', compact('pagefield'));
+    }
+
     public function index()
     {
         //
@@ -170,6 +176,18 @@ class PageFieldController extends Controller
 
             if($request->aboutus_items2):
                 $request->merge(['aboutus_items2'=>array_values(collect($request->aboutus_items2)->sortBy(['order'])->toArray())]);
+            endif;
+
+            if($request->cover_pages):
+                $request->merge(['cover_pages'=>array_values(collect($request->cover_pages)->sortBy(['order'])->toArray())]);
+            endif;
+
+            if($request->certifications_items2):
+                $request->merge(['certifications_items2'=>array_values(collect($request->certifications_items2)->sortBy(['order'])->toArray())]);
+            endif;
+
+            if($request->certifications_items4):
+                $request->merge(['certifications_items4'=>array_values(collect($request->certifications_items4)->sortBy(['order'])->toArray())]);
             endif;
             
             $pagefield = PageField::find(1);

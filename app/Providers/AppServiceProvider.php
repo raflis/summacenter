@@ -56,6 +56,10 @@ class AppServiceProvider extends ServiceProvider
             $view->with('setting', Setting::find(1));
         });
 
+        view()->composer('web.partials.whatsapp',function($view){
+            $view->with('setting', Setting::find(1));
+        });
+
         view()->composer('web.layout',function($view){
             $view->with('setting', Setting::find(1));
         });

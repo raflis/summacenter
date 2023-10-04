@@ -85,11 +85,143 @@ body
     padding-left 60px
     padding-right 60px
 
+.wp_float
+    position fixed
+    bottom 6px
+    right 15px
+    z-index 99999999
+    cursor pointer
+    img
+        width 75px
+
+.fondo_all
+    background rgba(0, 0, 0, .65)
+    position fixed
+    top 0
+    left 0
+    width 100%
+    height 100%
+    z-index 9999999
+    .chat
+        width 480px
+        position fixed
+        right 22px
+        bottom 100px
+        box-shadow 0px 0px 8px #333
+        border-color #BBBBBB
+        border-width 1px
+        .chat_header
+            background rgba(11, 97, 86, 1)
+            display flex
+            flex-wrap wrap
+            align-items center
+            position relative
+            padding 10px 10px
+            .logo
+                height 57px
+                img
+                    height 100%
+                    width auto
+            .title
+                padding-left 15px
+                p
+                    line-height 1.3
+                    color #FFF
+                    margin 0
+                    font-size 1rem
+                    span
+                        font-family font-bold
+            button
+                background transparent
+                box-shadow none
+                border none
+                position absolute
+                top 10px
+                right 10px
+                svg
+                    width 12px
+                    height 12px
+                    fill #ffffff
+        .chat_content
+            background-image url('../images/bg_chat.png'), linear-gradient(to bottom, rgba(233,224,215,1) 0%, rgba(233,224,215,1) 100%)
+            background-position center
+            background-repeat no-repeat
+            background-size cover
+            padding 15px 15px
+            display flex
+            flex-wrap wrap
+            justify-content space-between
+            .text_left
+                width 75%
+                background-color rgba(255,255,255,1)
+                border-bottom-style solid
+                border-color #cacaca
+                border-left-style solid
+                border-radius 6px
+                border-right-style none
+                border-top-style none
+                border-width 1px
+                margin-bottom 12px
+                p
+                    padding 12px
+                    margin 0
+                    font-size .9rem
+                    color rgb(74, 74, 74)
+                    line-height 1.3
+            .text_right
+                margin-left 25%
+                width 75%
+                form
+                    input, textarea
+                        color #4a4a4a
+                        font-size .9rem
+                        background-color #e7ffe7
+                        border-bottom-style solid
+                        border-left-style none
+                        border-right-style solid
+                        border-top-style none
+                        border-color #cacaca
+                        border-radius 6px
+                        border-width 1px
+                        margin-bottom 12px
+                    button
+                        float right
+                        background-color rgba(11,97,86,1)
+                        border-bottom-style none
+                        border-color #000000
+                        border-left-style none
+                        border-radius 6px
+                        border-right-style none
+                        border-top-style none
+                        border-width 0px
+                        box-shadow 0px 0px 0px 0px #cccccc
+                        color #FFFFFF
+                        cursor pointer
+                        font-family Open Sans, sans-serif
+                        font-size 16px
+                        font-style normal
+                        font-weight normal
+                        height 40px
+                        line-height 1.42857
+                        margin-bottom 0px
+                        margin-top 0px
+                        max-width 180px
+                        text-align center
+                        text-decoration none
+                        width 100%
+                        padding-right 10px
+                        padding-left 10px
+                    .invalid-feedback
+                        margin -10px 0 12px
+                        font-size .8rem
+
 .drop_flags
     border-bottom 2.5px solid #254275
     margin-bottom 12px
     button#drop_flags
         color #254275
+    .drop_flagsW
+        color #FFF !important
     ul
         height 190px
         overflow-y overlay
@@ -1230,7 +1362,7 @@ form
             color #254275
             font-size 1.7rem
     #carousel-cursos
-        padding 0 50px
+        padding 0 60px
         margin-top 40px
         .item
             margin-top 15px
@@ -1346,9 +1478,7 @@ form
     background-position center
     background-size cover
     background-repeat no-repeat
-    background-image url('../images/background-blog.png')
-    padding 60px 0 70px
-    box-shadow 0 0rem 1rem rgba(0,0,0,.4)
+    padding 30px 0 30px
     .title
         h1
             text-align center
@@ -1356,11 +1486,12 @@ form
             color #254275
             font-size 1.7rem
             padding-bottom 40px
-    .item
-        .item_
-            margin-bottom 20px
+    #carousel-blog-index, #carousel-blog-index2
+        padding 0 60px
+        .item
             border-radius 20px
             box-shadow 0 0.5rem 1rem rgba(0, 0, 0, 0.15)
+            margin 5px 0 25px
             .image
                 img
                     width 100%
@@ -1402,6 +1533,18 @@ form
                     border-radius 13px
                     font-family font-medium
                     transition .5s all
+        .owl-nav
+            display inherit !important
+            .owl-prev
+                position absolute
+                left 0%
+                top 44%
+            .owl-next
+                position absolute
+                right 0%
+                top 44%
+            img
+                height 40px
 
 .sec6
     padding 0px 0 50px
@@ -1429,18 +1572,21 @@ form
         margin-top 40px
         .item
             padding 0 10px
-            /*&:hover
+            &:hover
                 .content
-                    transform rotateY(180deg)*/
+                    transform rotateY(180deg)
+                    .detras
+                        border 4px solid #254275
             .content
-                //transform-style preserve-3d
+                transform-style preserve-3d
                 transition all .4s linear
                 background #FFF
+                height 52vh
                 .cara
                     height 100%
                     width 100%
-                    //position absolute
-                    //backface-visibility hidden
+                    position absolute
+                    backface-visibility hidden
                     top 0
                     left 0
                     padding 30px 40px 10px
@@ -1448,14 +1594,17 @@ form
                     z-index 9
                     overflow hidden
                 .detras
-                    height 99%
+                    border 4px solid transparent
+                    transition all .7s linear
+                    border-radius 20px
+                    height 93%
                     transform rotateY(180deg)
                     padding 30px 20px 10px
                     display flex
                     flex-wrap wrap
                     align-content flex-start
-                    flex-direction column
-                    justify-content center
+                    //flex-direction column
+                    justify-content flex-start
                     overflow hidden
                     .first
                         display flex
@@ -1467,7 +1616,7 @@ form
                             text-transform uppercase
                             font-family font-medium
                             font-size 1rem
-                            color #FFF
+                            color #2B2B2B
                             padding-left 8px
                     .second
                         display flex
@@ -1477,7 +1626,7 @@ form
                         p
                             line-height 1.3
                             font-size .8rem
-                            color #FFF
+                            color #2B2B2B
                             padding-left 8px
                             span
                                 font-family font-bold
@@ -1917,11 +2066,16 @@ form
             font-size 1.9rem
             margin-bottom 50px
     .description
-    span.texto
+    .texto, .text
         font-size 1rem
         color #000017
         text-align justify
         line-height 1.9
+        p
+            font-size 1rem
+            color #000017
+            text-align justify
+            line-height 1.9
     .imagen
         width 70%
         float right
@@ -2009,6 +2163,12 @@ form
         img
             width 90%
             margin-bottom 1rem
+        .video_
+            text-align center
+            margin 20px 0
+            iframe
+                width 60%
+                height 420px
 
 .sec17
     position relative
@@ -2030,6 +2190,12 @@ form
         img
             width 100%
             margin-bottom 1rem
+        .video_
+            text-align center
+            margin 30px 0 40px
+            iframe
+                width 60%
+                height 420px
     .pasos
         .paso
             .paso_
@@ -3059,8 +3225,9 @@ form
                     display flex
                     flex-direction column
                     align-items center
+                    justify-content space-between
                     padding 0 12px
-                    width 20%
+                    width 16%
                     img
                         width 100%
                     h3
@@ -3284,7 +3451,7 @@ form
                         font-size .85rem
                     input[type=text], input[type=email], select
                         background-color transparent
-                        color rgba(255, 255, 255, .5)
+                        color rgba(255, 255, 255, .8)
                         padding 0
                         border none
                         border-bottom 2.5px solid #FFF
@@ -3297,6 +3464,8 @@ form
                             border-color unset
                             border-bottom 3.5px solid #FFF
                             box-shadow unset
+                    ::placeholder
+                        color rgba(255, 255, 255, .8)
                 .form-select
                     background-image url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%23FFFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/></svg>") !important
                     background-size 19px 19px !important
@@ -7956,6 +8125,121 @@ form
 
 @media screen and (max-width:1024px)
 
+    .fondo_all
+        position fixed
+        top 0
+        left 0
+        width 100%
+        height 100%
+        z-index 9999999
+        .chat
+            width 90%
+            position fixed
+            right 5%
+            bottom 100px
+            border-width 1px
+            .chat_header
+                display flex
+                flex-wrap wrap
+                align-items center
+                position relative
+                padding 10px 10px
+                .logo
+                    height 57px
+                    img
+                        height 100%
+                        width auto
+                .title
+                    padding-left 15px
+                    p
+                        line-height 1.3
+                        margin 0
+                        font-size 1rem
+                        span
+                            font-family font-bold
+                button
+                    box-shadow none
+                    border none
+                    position absolute
+                    top 10px
+                    right 10px
+                    svg
+                        width 12px
+                        height 12px
+                        fill #ffffff
+            .chat_content
+                background-image url('../images/bg_chat.png'), linear-gradient(to bottom, rgba(233,224,215,1) 0%, rgba(233,224,215,1) 100%)
+                background-position center
+                background-repeat no-repeat
+                background-size cover
+                padding 15px 15px
+                display flex
+                flex-wrap wrap
+                justify-content space-between
+                .text_left
+                    width 75%
+                    background-color rgba(255,255,255,1)
+                    border-bottom-style solid
+                    border-color #cacaca
+                    border-left-style solid
+                    border-radius 6px
+                    border-right-style none
+                    border-top-style none
+                    border-width 1px
+                    margin-bottom 12px
+                    p
+                        padding 12px
+                        margin 0
+                        font-size .9rem
+                        color rgb(74, 74, 74)
+                        line-height 1.3
+                .text_right
+                    margin-left 25%
+                    width 75%
+                    form
+                        input, textarea
+                            color #4a4a4a
+                            font-size .9rem
+                            background-color #e7ffe7
+                            border-bottom-style solid
+                            border-left-style none
+                            border-right-style solid
+                            border-top-style none
+                            border-color #cacaca
+                            border-radius 6px
+                            border-width 1px
+                            margin-bottom 12px
+                        button
+                            float right
+                            background-color rgba(11,97,86,1)
+                            border-bottom-style none
+                            border-color #000000
+                            border-left-style none
+                            border-radius 6px
+                            border-right-style none
+                            border-top-style none
+                            border-width 0px
+                            box-shadow 0px 0px 0px 0px #cccccc
+                            color #FFFFFF
+                            cursor pointer
+                            font-family Open Sans, sans-serif
+                            font-size 16px
+                            font-style normal
+                            font-weight normal
+                            height 40px
+                            line-height 1.42857
+                            margin-bottom 0px
+                            margin-top 0px
+                            max-width 180px
+                            text-align center
+                            text-decoration none
+                            width 100%
+                            padding-right 10px
+                            padding-left 10px
+                        .invalid-feedback
+                            margin -10px 0 12px
+                            font-size .8rem
+
     .breadcrumb__
         padding 0 15px
     .drop_flags
@@ -8412,9 +8696,7 @@ form
         background-position center
         background-size cover
         background-repeat no-repeat
-        background-image url('../images/background-blog.png')
-        padding 60px 0 70px
-        box-shadow 0 0rem 1rem rgba(0,0,0,.4)
+        padding 30px 0 30px
         .title
             h1
                 text-align center
@@ -8498,10 +8780,14 @@ form
             padding 0 50px
             margin-top 40px
             .item
+                &:hover
+                    .content
+                        .detras
+                            opacity 1
                 .content
-                    transition all .4s linear
+                    height auto
                     .cara
-                        height 100%
+                        height auto
                         width 100%
                         top 0
                         left 0
@@ -8510,36 +8796,35 @@ form
                         z-index 9
                         overflow hidden
                     .detras
+                        opacity 0
                         height 99%
                         transform rotateY(180deg)
-                        padding 30px 20px 10px
+                        padding 10px 10px
                         display flex
                         flex-wrap wrap
                         align-content flex-start
-                        flex-direction column
-                        justify-content center
+                        //flex-direction column
+                        justify-content flex-start
                         overflow hidden
                         .first
                             display flex
                             img
-                                height 20px
+                                height 15px
                                 width auto
                             p
                                 line-height 1.3
                                 text-transform uppercase
                                 font-family font-medium
-                                font-size 1rem
-                                color #FFF
+                                font-size .8rem
                                 padding-left 8px
                         .second
                             display flex
                             img
-                                height 25px
+                                height 18px
                                 width auto
                             p
                                 line-height 1.3
-                                font-size .9rem
-                                color #FFF
+                                font-size .8rem
                                 padding-left 8px
                                 span
                                     font-family font-bold
@@ -9071,6 +9356,12 @@ form
             img
                 width 100%
                 margin-bottom 1rem
+            .video_
+                text-align center
+                margin 20px 0
+                iframe
+                    width 100%
+                    height 400px
 
     .sec17
         position relative
@@ -9093,6 +9384,11 @@ form
             img
                 width 100%
                 margin-bottom 1rem
+            .video_
+                text-align center
+                iframe
+                    width 100%
+                    height 400px
         .pasos
             .paso
                 .paso_

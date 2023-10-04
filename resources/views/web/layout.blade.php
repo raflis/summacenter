@@ -24,6 +24,9 @@
     <!-- End Google Tag Manager -->
 </head>
 <body>
+    @if ($setting->floating_chat == 1)
+    @include('web.partials.whatsapp')
+    @endif
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KL8NBWJZ"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>

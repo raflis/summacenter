@@ -534,6 +534,60 @@ $(function () {
   });
   $('#carousel-cursos .owl-next').html('<img src="' + base + '/images/arrow-right-black.png">');
   $('#carousel-cursos .owl-prev').html('<img src="' + base + '/images/arrow-left-black.png">');
+  $('#carousel-blog-index').owlCarousel({
+    loop: false,
+    startPosition: 0,
+    dots: true,
+    margin: 20,
+    autoplay: false,
+    autoplayTimeout: 8000,
+    touchDrag: true,
+    mouseDrag: true,
+    nav: true,
+    responsive: {
+      0: {
+        items: 1,
+        nav: false
+      },
+      768: {
+        items: 1,
+        nav: false
+      },
+      900: {
+        items: 3,
+        nav: true
+      }
+    }
+  });
+  $('#carousel-blog-index .owl-next').html('<img src="' + base + '/images/arrow-right-black.png">');
+  $('#carousel-blog-index .owl-prev').html('<img src="' + base + '/images/arrow-left-black.png">');
+  $('#carousel-blog-index2').owlCarousel({
+    loop: false,
+    startPosition: 0,
+    dots: true,
+    margin: 20,
+    autoplay: false,
+    autoplayTimeout: 8000,
+    touchDrag: true,
+    mouseDrag: true,
+    nav: true,
+    responsive: {
+      0: {
+        items: 1,
+        nav: false
+      },
+      768: {
+        items: 1,
+        nav: false
+      },
+      900: {
+        items: 3,
+        nav: true
+      }
+    }
+  });
+  $('#carousel-blog-index2 .owl-next').html('<img src="' + base + '/images/arrow-right-black.png">');
+  $('#carousel-blog-index2 .owl-prev').html('<img src="' + base + '/images/arrow-left-black.png">');
   $('#carousel-curso-profesor').owlCarousel({
     loop: true,
     startPosition: 0,
@@ -695,6 +749,49 @@ $(function () {
       $('.linea3').removeClass('toggle3');
     } else {
       $('.linea3').addClass('toggle3');
+    }
+  });
+  $('#chat_formdd').on('submit', function (e) {
+    if (form.checkValidity() === false) {
+      e.preventDefault();
+      e.stopPropagation();
+      console.log('bad');
+    } else {
+      console.log('gud');
+    }
+
+    e.preventDefault();
+    chat_msg = $('#chat_msg').val();
+    chat_telephone = $('#chat_telephone').val();
+
+    if (chat_msg == '') {
+      return false;
+    }
+
+    window.open('https://web.whatsapp.com/send?phone=+' + chat_telephone + '&text=' + chat_msg, '_blank'); //window.focus();
+  });
+  var forms = document.getElementsByClassName('needs-validation-wp');
+  var chat_telephone = document.getElementById("chat_telephone").value;
+  var validation = Array.prototype.filter.call(forms, function (form) {
+    form.addEventListener('submit', function (event) {
+      if (form.checkValidity() === false) {
+        event.preventDefault();
+        event.stopPropagation();
+      } else {
+        event.preventDefault();
+        event.stopPropagation();
+        var chat_msg = document.getElementById("chat_msg").value;
+        window.open('https://web.whatsapp.com/send?phone=+' + chat_telephone + '&text=' + chat_msg, '_blank');
+      }
+
+      form.classList.add('was-validated');
+    }, false);
+  });
+  $('[id*=chat_close]').on('click', function (e) {
+    if ($('.fondo_all').hasClass('d-none')) {
+      $('.fondo_all').removeClass('d-none');
+    } else {
+      $('.fondo_all').addClass('d-none');
     }
   });
 });

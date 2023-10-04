@@ -24,6 +24,37 @@
                         <div class="col-sm-12">
                             @include('admin.includes.alert')
                         </div>
+
+                        <div class="form-group col-sm-3">
+                          {{ Form::label('support_button1_name', 'Botón 1 nombre:') }} <code>*</code>
+                          {{ Form::text('support_button1_name', null, ['class' => 'form-control', 'placeholder' => 'Botón 1 nombre', 'required']) }}
+                        </div>
+
+                        <div class="form-group col-sm-3">
+                          {{ Form::label('support_button1_telephone', 'Botón 1 número:') }} <code>*</code> <small>(Ej: 51999666333)</small>
+                          {{ Form::text('support_button1_telephone', null, ['class' => 'form-control', 'placeholder' => 'Botón 1 número', 'required']) }}
+                        </div>
+
+                        <div class="form-group col-sm-6">
+                          {{ Form::label('support_button1_text', 'Botón 1 texto:') }} <code>*</code>
+                          {{ Form::text('support_button1_text', null, ['class' => 'form-control', 'placeholder' => 'Botón 1 texto', 'required']) }}
+                        </div>
+
+                        <div class="form-group col-sm-3">
+                          {{ Form::label('support_button2_name', 'Botón 2 nombre:') }} <code>*</code>
+                          {{ Form::text('support_button2_name', null, ['class' => 'form-control', 'placeholder' => 'Botón 2 nombre', 'required']) }}
+                        </div>
+
+                        <div class="form-group col-sm-3">
+                          {{ Form::label('support_button2_telephone', 'Botón 2 número:') }} <code>*</code> <small>(Ej: 51999666333)</small>
+                          {{ Form::text('support_button2_telephone', null, ['class' => 'form-control', 'placeholder' => 'Botón 2 número', 'required']) }}
+                        </div>
+
+                        <div class="form-group col-sm-6">
+                          {{ Form::label('support_button2_text', 'Botón 2 texto:') }} <code>*</code>
+                          {{ Form::text('support_button2_text', null, ['class' => 'form-control', 'placeholder' => 'Botón 2 texto', 'required']) }}
+                        </div>
+
                         <div class="form-group col-sm-2">
                           {{ Form::label('support_text', 'Título 1:') }} <code>*</code>
                           {{ Form::textarea('support_text[0][title1]', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el título 1', 'rows' => 4, 'required']) }}
