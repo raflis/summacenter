@@ -151,7 +151,6 @@ class CheckoutController extends Controller
             $total_price = $total_price * $discount;
         endif;
 
-
         $sale = Sale::orderBy('id', 'Desc')->first();
         if($sale):
             $purchaseNumber = date('Ym').zero_fill($sale->id + 1, 5);
@@ -199,6 +198,12 @@ class CheckoutController extends Controller
             {
                 $message->to($email)->subject($data_mail['name_email'].', Gracias por tu compra');
             });
+
+            $email_company = "summa.center1@gmail.com";
+            Mail::send('web.emails.sale_confirmation_without', $data_mail, function($message) use ($email_company, $data_mail)
+            {
+                $message->to($email_company)->subject('Se ha realizado una compra sin tarjeta - '.$data_mail['purchase_number']);
+            });
     
             session()->forget('cart');
             session()->forget('invoice');
@@ -240,6 +245,12 @@ class CheckoutController extends Controller
             Mail::send('web.emails.sale_confirmation_transfer', $data_mail, function($message) use ($email, $data_mail)
             {
                 $message->to($email)->subject($data_mail['name_email'].', Gracias por tu compra');
+            });
+
+            $email_company = "summa.center1@gmail.com";
+            Mail::send('web.emails.sale_confirmation_transfer', $data_mail, function($message) use ($email_company, $data_mail)
+            {
+                $message->to($email_company)->subject('Se ha realizado una compra por transferencia - '.$data_mail['purchase_number']);
             });
     
             session()->forget('cart');
@@ -301,6 +312,12 @@ class CheckoutController extends Controller
         Mail::send('web.emails.sale_confirmation', $data_mail, function($message) use ($email, $data_mail)
         {
             $message->to($email)->subject($data_mail['name_email'].', Gracias por tu compra');
+        });
+
+        $email_company = "summa.center1@gmail.com";
+        Mail::send('web.emails.sale_confirmation', $data_mail, function($message) use ($email_company, $data_mail)
+        {
+            $message->to($email_company)->subject('Se ha realizado una compra con tarjeta - '.$data_mail['purchase_number']);
         });
 
         session()->forget('cart');

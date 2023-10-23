@@ -21,6 +21,10 @@
         href="{{ route('promos.index') }}">
             <i class="fas fa-home text-gray pr-1"></i> Cupones de descuento
         </a>
+        <a class="nav-link @if(in_array(Route::currentRouteName(), array('settings.links'))) active @endif" 
+        href="{{ route('settings.links') }}">
+            <i class="fas fa-home text-gray pr-1"></i> Links Header
+        </a>
 
         <div class="sidenav-menu-heading">Inicio</div>
         <a class="nav-link @if(in_array(Route::currentRouteName(), array('sliders.index', 'sliders.edit', 'sliders.create'))) active @endif" 
@@ -104,6 +108,20 @@
         <a class="nav-link @if(preg_match("/pagefields.privacy_policies/", Route::currentRouteName())) active @endif" 
         href="{{ route('pagefields.privacy_policies') }}">
             <i class="fas fa-home text-gray pr-1"></i> Política de privacidad
+        </a>
+
+        <div class="sidenav-menu-heading">Bolsa de Trabajo</div>
+        <a class="nav-link @if(preg_match("/pagefields.job_bank_advertising/", Route::currentRouteName())) active @endif" 
+        href="{{ route('pagefields.job_bank_advertising') }}">
+            <i class="fas fa-home text-gray pr-1"></i> Publicidad
+        </a>
+        <a class="nav-link @if(preg_match("/job_bank_users/", Route::currentRouteName())) active @endif" 
+        href="{{ route('job_bank_users.index') }}">
+            <i class="fas fa-home text-gray pr-1"></i> Postulantes
+        </a>
+        <a class="nav-link @if(preg_match("/job_bank_offers/", Route::currentRouteName())) active @endif" 
+        href="{{ route('job_bank_offers.index') }}">
+            <i class="fas fa-home text-gray pr-1"></i> Ofertas de trabajo
         </a>
 
         <div class="sidenav-menu-heading">Blog</div>

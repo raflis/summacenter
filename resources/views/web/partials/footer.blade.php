@@ -43,13 +43,13 @@
                                 <div class="mail">
                                     <a href="{{ route('contacto') }}">
                                         <p>Enviar mensaje</p>
-                                        <img src="{{ asset('images/mail.png') }}" alt="">
+                                        <img src="{{ asset('images/contacto.png') }}" alt="">
                                     </a>
                                 </div>
                                 <div class="libro">
                                     <a href="{{ route('libro.reclamaciones') }}">
                                         <p>Libro de <br>reclamaciones</p>
-                                        <img src="{{ asset('images/libro.png') }}" alt="">
+                                        <img src="{{ asset('images/libro-reclamaciones.png') }}" alt="">
                                     </a>
                                 </div>
                             </div>
@@ -81,22 +81,22 @@
                         </li>
                         <li>
                             <a href="{{ $setting->facebook }}" target="_blank">
-                                <img src="{{ asset('images/fb.png') }}" alt="">
+                                <img src="{{ asset('images/fb-ico.png') }}" alt="">
                             </a>
                         </li>
                         <li>
                             <a href="{{ $setting->instagram }}" target="_blank">
-                                <img src="{{ asset('images/ig.png') }}" alt="">
+                                <img src="{{ asset('images/ig-ico.png') }}" alt="">
                             </a>
                         </li>
                         <li>
                             <a href="{{ $setting->linkedin }}" target="_blank">
-                                <img src="{{ asset('images/in.png') }}" alt="">
+                                <img src="{{ asset('images/lkn-ico.png') }}" alt="">
                             </a>
                         </li>
                         <li>
                             <a href="{{ $setting->youtube }}" target="_blank">
-                                <img src="{{ asset('images/yt.png') }}" alt="">
+                                <img src="{{ asset('images/yt-ico.png') }}" alt="">
                             </a>
                         </li>
                     </ul>

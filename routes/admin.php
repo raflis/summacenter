@@ -19,7 +19,9 @@ Route::prefix('/admin')->group(function(){
     Route::get('pagefields/privacy_policies', [App\Http\Controllers\Admin\PageFieldController::class,'privacy_policies'])->name('pagefields.privacy_policies');
     Route::get('pagefields/responsability', [App\Http\Controllers\Admin\PageFieldController::class,'responsability'])->name('pagefields.responsability');
     Route::get('pagefields/certifications', [App\Http\Controllers\Admin\PageFieldController::class,'certifications'])->name('pagefields.certifications');
+    Route::get('pagefields/job_bank_advertising', [App\Http\Controllers\Admin\PageFieldController::class,'job_bank_advertising'])->name('pagefields.job_bank_advertising');
     Route::resource('settings', App\Http\Controllers\Admin\SettingController::class)->only(['index', 'update']);
+    Route::get('settings/links', [App\Http\Controllers\Admin\SettingController::class,'links'])->name('settings.links');
     Route::get('settings/whatsapp', [App\Http\Controllers\Admin\SettingController::class,'whatsapp'])->name('settings.whatsapp');
     Route::resource('sliders', App\Http\Controllers\Admin\SliderController::class);
     Route::resource('partners', App\Http\Controllers\Admin\PartnerController::class);
@@ -38,6 +40,8 @@ Route::prefix('/admin')->group(function(){
     Route::resource('blog_categories', App\Http\Controllers\Admin\BlogCategoryController::class);
     Route::resource('blog_sub_categories', App\Http\Controllers\Admin\BlogSubCategoryController::class);
     Route::resource('blog_posts', App\Http\Controllers\Admin\BlogPostController::class);
+    Route::resource('job_bank_users', App\Http\Controllers\Admin\JobBankUserController::class);
+    Route::resource('job_bank_offers', App\Http\Controllers\Admin\JobBankOfferController::class);
     Route::get('records/excel_record', [App\Http\Controllers\Admin\RecordController::class, 'excel_record'])->name('excel.record');
     Route::get('records/excel_contact', [App\Http\Controllers\Admin\RecordController::class, 'excel_contact'])->name('excel.contact');
     Route::get('records/excel_corporate', [App\Http\Controllers\Admin\RecordController::class, 'excel_corporate'])->name('excel.corporate');

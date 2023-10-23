@@ -81,6 +81,12 @@ class PageFieldController extends Controller
         return view('admin.pagefields.certifications', compact('pagefield'));
     }
 
+    public function job_bank_advertising()
+    {
+        $pagefield = PageField::find(1);
+        return view('admin.pagefields.job_bank_advertising', compact('pagefield'));
+    }
+
     public function index()
     {
         //

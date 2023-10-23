@@ -3,40 +3,32 @@
 namespace App\Http\Controllers\Admin;
 
 use Validator;
+use App\Models\Admin\JobBankOffer;
 use Illuminate\Http\Request;
-use App\Models\Admin\Setting;
 use App\Http\Controllers\Controller;
 
-class SettingController extends Controller
+class JobBankOfferController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Create a new controller instance.
      *
-     * @return \Illuminate\Http\Response
+     * @return void
      */
-
     public function __construct()
     {
         $this->middleware('auth:user');
         $this->middleware('isadmin');
     }
-
-    public function links()
-    {
-        $setting = Setting::find(1);
-        return view('admin.settings.links', compact('setting'));
-    }
-
-    public function whatsapp()
-    {
-        $setting = Setting::find(1);
-        return view('admin.settings.whatsapp', compact('setting'));
-    }
-
+    
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-        $setting = Setting::find(1);
-        return view('admin.settings.index', compact('setting'));
+        $job_bank_offers = JobBankOffer::orderBy('id', 'Desc')->paginate();
+        return view('admin.job_bank_offers.index', compact('job_bank_offers'));
     }
 
     /**
@@ -46,7 +38,7 @@ class SettingController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.job_bank_offers.create');
     }
 
     /**
@@ -57,7 +49,21 @@ class SettingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $rules=[
+            //
+        ];
+
+        $messages=[
+            //
+        ];
+
+        $validator=Validator::make($request->all(), $rules, $messages);
+        if($validator->fails()):
+            return back()->withErrors($validator)->with('message', 'Se ha producido un error')->with('typealert', 'danger')->withInput();
+        else:
+            $recorded = JobBankOffer::create($request->all());
+            return redirect()->route('job_bank_offers.index')->with('message', 'Creado con éxito.')->with('typealert', 'success');
+        endif;
     }
 
     /**
@@ -79,7 +85,8 @@ class SettingController extends Controller
      */
     public function edit($id)
     {
-        //
+        $job_bank_offer = JobBankOffer::find($id);
+        return view('admin.job_bank_offers.edit', compact('job_bank_offer'));
     }
 
     /**
@@ -87,7 +94,7 @@ class SettingController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illum   inate\Http\Response
      */
     public function update(Request $request, $id)
     {
@@ -96,16 +103,16 @@ class SettingController extends Controller
         ];
 
         $messages=[
-            'address.required' => 'Ingrese dirección',
+            //
         ];
 
         $validator=Validator::make($request->all(), $rules, $messages);
         if($validator->fails()):
             return back()->withErrors($validator)->with('message', 'Se ha producido un error')->with('typealert', 'danger')->withInput();
         else:
-            $updated = Setting::find(1);
+            $updated = JobBankOffer::find($id);
             $updated->fill($request->all())->save();
-            return redirect()->back()->with('message', 'Actualizado con éxito.')->with('typealert', 'success');
+            return redirect()->route('job_bank_offers.index')->with('message', 'Actualizado con éxito.')->with('typealert', 'success');
         endif;
     }
 
@@ -117,6 +124,7 @@ class SettingController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $destroyed = JobBankOffer::find($id)->delete();
+        return back()->with('message', 'Eliminado correctamente')->with('typealert', 'success');
     }
 }

@@ -9,6 +9,7 @@ use Validator;
 use Jenssegers\Agent\Agent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use App\Models\Admin\PageField;
 use App\Models\Admin\JobBankUser;
 use App\Models\Admin\JobBankOffer;
 use App\Http\Controllers\Controller;
@@ -57,10 +58,12 @@ class JobBankController extends Controller
         $position = $request->get('position');
 
         $agent = new Agent();
+        $pagefield = PageField::find(1);
         $applicants = JobBankUser::where('role', 2)
                                 ->position($position)
+                                ->where('status', 1)
                                 ->get();
-        return view('web.job_bank.ver-anuncios-postulantes', compact('agent', 'applicants'));
+        return view('web.job_bank.ver-anuncios-postulantes', compact('agent', 'applicants', 'pagefield'));
     }
 
     public function ver_anuncios_empresas(Request $request)
@@ -70,32 +73,36 @@ class JobBankController extends Controller
         $job_type = $request->get('job_type');
 
         $agent = new Agent();
+        $pagefield = PageField::find(1);
         $offers = JobBankOffer::name($name)
                             ->department($department)
                             ->jobtype($job_type)
+                            ->where('status', 1)
                             ->get();
-        return view('web.job_bank.ver-anuncios-empresas', compact('agent', 'offers'));
+        return view('web.job_bank.ver-anuncios-empresas', compact('agent', 'offers', 'pagefield'));
     }
 
     public function anuncio_postulante($slug, $id)
     {
         $agent = new Agent();
+        $pagefield = PageField::find(1);
         $applicant = JobBankUser::find($id);
-        $applicant_related = JobBankUser::where('id', '<>', $applicant->id)->where('role', 2)->inRandomOrder()->take(3)->get()->chunk(3);
-        return view('web.job_bank.anuncio-postulante', compact('agent', 'applicant', 'applicant_related'));
+        $applicant_related = JobBankUser::where('id', '<>', $applicant->id)->where('status', 1)->where('role', 2)->inRandomOrder()->take(3)->get()->chunk(3);
+        return view('web.job_bank.anuncio-postulante', compact('agent', 'applicant', 'applicant_related', 'pagefield'));
     }
 
     public function anuncio_empresa($slug, $id)
     {
         $agent = new Agent();
+        $pagefield = PageField::find(1);
         $offer = JobBankOffer::where('slug', $slug)->where('id', $id)->first();
-        $offer_related = JobBankOffer::where('id', '<>', $offer->id)->inRandomOrder()->take(3)->get()->chunk(3);
+        $offer_related = JobBankOffer::where('id', '<>', $offer->id)->where('status', 1)->inRandomOrder()->take(3)->get()->chunk(3);
         if(Auth::guard('jobbank')->check()):
             $applied = JobBankApplicant::where('job_bank_offer_id', $id)->where('job_bank_user_id', Auth::guard('jobbank')->user()->id)->get()->count();
         else:
             $applied = 0;
         endif;
-        return view('web.job_bank.anuncio-empresa', compact('agent', 'offer', 'offer_related', 'applied'));
+        return view('web.job_bank.anuncio-empresa', compact('agent', 'offer', 'offer_related', 'applied', 'pagefield'));
     }
 
     public function applicant(Request $request)

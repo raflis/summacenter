@@ -77,7 +77,7 @@
         <td colspan="4" align="center" valign="top">&nbsp;</td>
       </tr>
       <tr>
-        <td height="83" colspan="4" align="center" valign="middle" bgcolor="#061D38"><img src="https://summa.dopamina.pe/images/logo.png" width="262" height="60" alt=""/></td>
+        <td height="83" colspan="4" align="center" valign="middle" bgcolor="#061D38"><img src="https://summacenterlatam.com/images/logo_new.png" width="168" height="70" alt=""/></td>
         </tr>
       <tr>
         <td width="4%" height="18">&nbsp;</td>
@@ -332,9 +332,9 @@ Los detalles de tu pedido se muestran a continuación
 		        </tr>
 		      <tr>
 		        <td align="center">&nbsp;</td>
-		        <td align="center"><img src="https://summa.dopamina.pe/images/yape.png" width="55" height="57" alt=""/></td>
+		        <td align="center"><img src="https://summacenterlatam.com/images/yape.png" width="55" height="57" alt=""/></td>
 		        <td>&nbsp;</td>
-		        <td align="center"><img src="https://summa.dopamina.pe/images/plin.png" width="55" height="56" alt=""/></td>
+		        <td align="center"><img src="https://summacenterlatam.com/images/plin.png" width="55" height="56" alt=""/></td>
 		        <td>&nbsp;</td>
 		        </tr>
 		      <tr>
@@ -346,9 +346,9 @@ Los detalles de tu pedido se muestran a continuación
 		        </tr>
 		      <tr>
 		        <td align="center">&nbsp;</td>
-		        <td align="center"><img src="https://summa.dopamina.pe/images/qr.png" width="170" height="170" alt=""/></td>
+		        <td align="center"><img src="https://summacenterlatam.com/images/qr.png" width="170" height="170" alt=""/></td>
 		        <td>&nbsp;</td>
-		        <td align="center"><img src="https://summa.dopamina.pe/images/qr.png" width="170" height="170" alt=""/></td>
+		        <td align="center"><img src="https://summacenterlatam.com/images/qr.png" width="170" height="170" alt=""/></td>
 		        <td>&nbsp;</td>
 		        </tr>
 		      </tbody>
@@ -375,7 +375,7 @@ Los detalles de tu pedido se muestran a continuación
 		<tr>
 		  <td>&nbsp;</td>
 		  <td align="center">
-			  <img src="https://summa.dopamina.pe/images/wp.png" width="30" height="29" alt=""/>
+			  <img src="https://summacenterlatam.com/images/wp.png" width="30" height="29" alt=""/>
 			</td>
 		  <td><p style="font-family: Segoe, 'Segoe UI', 'DejaVu Sans', 'Trebuchet MS', Verdana, sans-serif; font-size: 13px; color: #061d38; line-height: 20px; font-weight: normal; text-align: left; margin: 0;padding-left: 0px">
 					<a href="https://api.whatsapp.com/send/?phone=51946543435" style="color:#4AA0FF" target="_blank">(+51) 946543435</a> (Raúl Daniel De La Cruz Peña - Jefe de Ventas)

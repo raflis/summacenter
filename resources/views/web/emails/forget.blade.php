@@ -77,7 +77,7 @@
         <td colspan="4" align="center" valign="top">&nbsp;</td>
       </tr>
       <tr>
-        <td height="83" colspan="4" align="center" valign="middle" bgcolor="#061D38"><img src="https://summa.dopamina.pe/images/logo.png" width="262" height="60" alt=""/></td>
+        <td height="83" colspan="4" align="center" valign="middle" bgcolor="#061D38"><img src="https://summacenterlatam.com/images/logo_new.png" width="262" height="60" alt=""/></td>
         </tr>
       <tr>
         <td width="4%" height="18">&nbsp;</td>
@@ -127,7 +127,7 @@
         <tr>
             <td height="41">&nbsp;</td>
             <td colspan="2" align="center">
-				<a href="https://summa.dopamina.pe/myaccount/reset-password/{{ $token }}" style="text-decoration: none; background-color: #fdcc7b; font-size: 17px; color: #061d38; font-weight: bold; padding: 8px 30px; font-family: Segoe, 'Segoe UI', 'DejaVu Sans', 'Trebuchet MS', Verdana, sans-serif;">
+				<a href="https://summacenterlatam.com/myaccount/reset-password/{{ $token }}" style="text-decoration: none; background-color: #fdcc7b; font-size: 17px; color: #061d38; font-weight: bold; padding: 8px 30px; font-family: Segoe, 'Segoe UI', 'DejaVu Sans', 'Trebuchet MS', Verdana, sans-serif;">
 					Restablecer contraseña</a></td>
             <td>&nbsp;</td>
         </tr>

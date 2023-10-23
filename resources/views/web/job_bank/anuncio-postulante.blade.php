@@ -81,9 +81,8 @@
                 <h2 class="similares">Postulantes similares</h2>
                 <div class="content_results">
                     <div class="items">
+                        @if(count($applicant_related)>0)
                         @foreach ($applicant_related[0] as $item)
-                            
-                        @endforeach
                         <div class="item">
                             <div class="item_left">
                                 <h1>
@@ -98,10 +97,12 @@
                                 <a href="{{ route('bolsa.anuncio.postulante', [Str::slug($item->name).'-'.Str::slug($item->lastname), $item->id]) }}" class="btn btn-info">Más información</a>
                             </div>
                         </div>
+                        @endforeach
+                        @endif
                     </div>
                     <div class="content_right">
                         <div class="advertisements">
-                            <img src="{{ asset('images/adver4.png') }}" alt="">
+                            <img src="{{ $pagefield->job_bank_advertising[3] }}" alt="">
                         </div>
                     </div>
                 </div>

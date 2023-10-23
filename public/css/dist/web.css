@@ -1317,7 +1317,7 @@ form {
   margin-top: 20px;
 }
 .sec1 .formulario .formulario_ .enviar .btn-enviar {
-  background: #fed68c;
+  background: #e5b336;
   color: #00001d;
   font-family: font-semibold;
   font-size: 1rem;
@@ -1328,9 +1328,10 @@ form {
   position: relative;
 }
 .sec1 #carousel-slider .item {
-  height: 100vh;
+  margin: 15vh 0 0;
+  height: 85vh;
   width: 100%;
-  background-position: bottom;
+  background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
@@ -1338,6 +1339,7 @@ form {
   flex-wrap: wrap;
   align-items: flex-end;
   padding: 0 40px 50px;
+  position: relative;
 }
 .sec1 #carousel-slider .item .text {
   width: 70%;
@@ -1384,7 +1386,7 @@ form {
   border: 2px solid #fff;
 }
 .sec1 #carousel-slider .owl-dots .active {
-  background: #fed68c;
+  background: #e5b336;
 }
 .sec2 {
   padding: 30px 0 10px;
@@ -1663,7 +1665,7 @@ form {
   margin-top: 0px;
 }
 .sec4 #carousel-cursos .item:hover .item-header {
-  background: #fed68c;
+  background: #e5b336;
   padding: 19px 20%;
 }
 .sec4 #carousel-cursos .item:hover .item-header .titulo-header span {
@@ -1673,7 +1675,7 @@ form {
   height: 43px;
 }
 .sec4 #carousel-cursos .item:hover .item-content {
-  background: #fed68c;
+  background: #e5b336;
 }
 .sec4 #carousel-cursos .item:hover .item-content .content {
   padding: 5px 0;
@@ -1763,7 +1765,7 @@ form {
   transition: all 0.5s;
   color: #254275;
   font-size: 0.9rem;
-  background: #fed68c;
+  background: #e5b336;
   border-radius: 5px;
   padding: 3px 10px 2px;
   font-family: font-semibold;
@@ -1827,7 +1829,7 @@ form {
 .sec5 #carousel-blog-index .item .content p.category,
 .sec5 #carousel-blog-index2 .item .content p.category {
   display: inline-block;
-  background: #facd7f;
+  background: #e5b336;
   color: #000017;
   font-family: font-bold;
   font-size: 0.9rem;
@@ -1851,7 +1853,7 @@ form {
 }
 .sec5 #carousel-blog-index .item .tags .btn-tag,
 .sec5 #carousel-blog-index2 .item .tags .btn-tag {
-  background-color: #facd7f;
+  background-color: #e5b336;
   color: #254275;
   padding: 2px 7px 1px;
   font-size: 0.7rem;
@@ -2161,7 +2163,7 @@ form {
   font-family: font-semibold;
 }
 .sec9 .content .content_ p:nth-child(3) {
-  color: #f1cc7f;
+  color: #e5b336;
   font-size: 3.5rem;
   font-family: font-extrabold;
 }
@@ -2171,7 +2173,7 @@ form {
   padding-bottom: 0;
 }
 .sec9 .content .content_ p.color {
-  color: #f1cc7f;
+  color: #e5b336;
   font-size: 4.5rem;
   font-family: font-extrabold;
 }
@@ -2181,7 +2183,7 @@ form {
   padding-bottom: 0;
 }
 .sec9 .content .content_ p.color2 {
-  color: #f1cc7f;
+  color: #e5b336;
   font-size: 3.5rem;
   font-family: font-extrabold;
 }
@@ -2216,7 +2218,7 @@ form {
   font-family: font-semibold;
 }
 .sec9_1 .content .content_ p:nth-child(3) {
-  color: #f1cc7f;
+  color: #e5b336;
   font-size: 3.5rem;
   font-family: font-extrabold;
 }
@@ -2226,7 +2228,7 @@ form {
   padding-bottom: 0;
 }
 .sec9_1 .content .content_ p.color {
-  color: #f1cc7f;
+  color: #e5b336;
   font-size: 4.5rem;
   font-family: font-extrabold;
 }
@@ -2236,7 +2238,7 @@ form {
   padding-bottom: 0;
 }
 .sec9_1 .content .content_ p.color2 {
-  color: #f1cc7f;
+  color: #e5b336;
   font-size: 3.5rem;
   font-family: font-extrabold;
 }
@@ -2281,7 +2283,7 @@ form {
   height: 8px;
   width: 8px;
   border-radius: 50%;
-  background: #f1cc7f;
+  background: #e5b336;
   bottom: -10px;
   right: 0;
   left: 0;
@@ -2451,7 +2453,7 @@ form {
   margin: auto;
 }
 .sec12 .nuestras-insignias .descripcion .descripcion_ h3 {
-  color: #f1cc7f;
+  color: #e5b336;
   font-size: 3rem;
   font-family: font-extrabold;
   margin-bottom: 30px;
@@ -2506,7 +2508,7 @@ form {
   font-family: font-bold;
 }
 .sec13 .content .content_ p:nth-child(2) {
-  color: #f1cc7f;
+  color: #e5b336;
   font-family: font-extrabold;
 }
 .sec14 {
@@ -2677,7 +2679,7 @@ form {
   height: 420px;
 }
 .sec17 .pasos .paso .paso_ .titulo {
-  background: #facd7f;
+  background: #e5b336;
   padding: 15px 0;
   border-radius: 15px;
   margin-bottom: 10px;
@@ -2690,7 +2692,7 @@ form {
   font-family: font-semibold;
 }
 .sec17 .pasos .paso .paso_ .detalle {
-  background: #facd7f;
+  background: #e5b336;
   border-radius: 15px;
   padding: 25px 20px;
   margin-bottom: 10px;
@@ -2739,7 +2741,7 @@ form {
   font-family: font-semibold;
 }
 .sec18 .content .content_ p:nth-child(3) {
-  color: #f1cc7f;
+  color: #e5b336;
   font-size: 3.5rem;
   font-family: font-extrabold;
 }
@@ -2762,7 +2764,7 @@ form {
   font-size: 0.9rem;
 }
 .sec19 ul.nav li.nav-item .active {
-  background-color: #fed68c;
+  background-color: #e5b336;
   color: #254275;
   font-family: font-light;
   font-size: 0.9rem;
@@ -2841,12 +2843,12 @@ form {
   transform: scale(1.05);
 }
 .sec19 .content1 .item .item_:hover .content {
-  background: #facd7f;
+  background: #e5b336;
   color: #254275;
 }
 .sec19 .content1 .item .item_:hover p.category {
   background: #254275 !important;
-  color: #facd7f !important;
+  color: #e5b336 !important;
 }
 .sec19 .content1 .item .item_:hover p.tit {
   color: #254275 !important;
@@ -2856,7 +2858,7 @@ form {
 }
 .sec19 .content1 .item .item_:hover .btn-tag {
   background-color: #254275 !important;
-  color: #facd7f !important;
+  color: #e5b336 !important;
 }
 .sec19 .content1 .item .item_ .image img {
   width: 100%;
@@ -2878,7 +2880,7 @@ form {
   left: 0;
   width: 100%;
   background: #254275;
-  color: #facd7f;
+  color: #e5b336;
   font-size: 0.9rem;
   text-decoration: none;
   border-radius: 0;
@@ -2887,7 +2889,7 @@ form {
 }
 .sec19 .content1 .item .item_ .content p.category {
   display: inline-block;
-  background: #facd7f;
+  background: #e5b336;
   color: #000017;
   font-family: font-bold;
   font-size: 0.9rem;
@@ -2900,7 +2902,7 @@ form {
   font-family: font-semibold;
   line-height: 1.2;
   font-size: 1rem;
-  color: #facd7f;
+  color: #e5b336;
   transition: 0.5s all;
 }
 .sec19 .content1 .item .item_ .content p.description {
@@ -2915,7 +2917,7 @@ form {
   margin-bottom: 15px;
 }
 .sec19 .content1 .item .item_ .tags .btn-tag {
-  background-color: #facd7f;
+  background-color: #e5b336;
   color: #254275;
   padding: 2px 7px 1px;
   font-size: 0.7rem;
@@ -2941,12 +2943,12 @@ form {
   transform: scale(1.05);
 }
 .sec19 .itemSearch #itemTag .item_:hover .content {
-  background: #facd7f;
+  background: #e5b336;
   color: #254275;
 }
 .sec19 .itemSearch #itemTag .item_:hover p.category {
   background: #254275 !important;
-  color: #facd7f !important;
+  color: #e5b336 !important;
 }
 .sec19 .itemSearch #itemTag .item_:hover p.tit {
   color: #254275 !important;
@@ -2956,7 +2958,7 @@ form {
 }
 .sec19 .itemSearch #itemTag .item_:hover .btn-tag {
   background-color: #254275 !important;
-  color: #facd7f !important;
+  color: #e5b336 !important;
 }
 .sec19 .itemSearch #itemTag .item_ .image img {
   width: 100%;
@@ -2978,7 +2980,7 @@ form {
   left: 0;
   width: 100%;
   background: #254275;
-  color: #facd7f;
+  color: #e5b336;
   font-size: 0.9rem;
   text-decoration: none;
   border-radius: 0;
@@ -2987,7 +2989,7 @@ form {
 }
 .sec19 .itemSearch #itemTag .item_ .content p.category {
   display: inline-block;
-  background: #facd7f;
+  background: #e5b336;
   color: #000017;
   font-family: font-bold;
   font-size: 0.9rem;
@@ -3000,7 +3002,7 @@ form {
   font-family: font-semibold;
   line-height: 1.2;
   font-size: 1rem;
-  color: #facd7f;
+  color: #e5b336;
   transition: 0.5s all;
 }
 .sec19 .itemSearch #itemTag .item_ .content p.description {
@@ -3015,7 +3017,7 @@ form {
   margin-bottom: 15px;
 }
 .sec19 .itemSearch #itemTag .item_ .tags .btn-tag {
-  background-color: #facd7f;
+  background-color: #e5b336;
   color: #254275;
   padding: 2px 7px 1px;
   font-size: 0.7rem;
@@ -3057,7 +3059,7 @@ form {
   font-family: font-semibold;
 }
 .sec22 .content .content_ p:nth-child(3) {
-  color: #f1cc7f;
+  color: #e5b336;
   font-size: 3.8rem;
   font-family: font-extrabold;
 }
@@ -3147,7 +3149,7 @@ form {
   margin-top: 20px;
 }
 .sec22 .formulario .formulario_ .enviar .btn-enviar {
-  background: #fed68c;
+  background: #e5b336;
   color: #00001d;
   font-family: font-semibold;
   font-size: 1rem;
@@ -3166,23 +3168,22 @@ form {
   background-color: #e5b336;
   padding: 10px 60px;
 }
-.sec23 .info .info_ .precio {
-  background-color: #254275;
-  width: 265px;
-  border-radius: 10px;
-}
-.sec23 .info .info_ .precio p {
-  color: #fff !important;
-}
 .sec23 .info .info_ .info-item {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   padding: 10px 20px;
+  width: 17%;
+}
+.sec23 .info .info_ .info-item .image {
+  width: 30%;
 }
 .sec23 .info .info_ .info-item .image img {
-  height: 55px;
-  width: auto;
+  height: auto;
+  width: 100%;
 }
 .sec23 .info .info_ .info-item .text {
+  width: 70%;
   padding-left: 10px;
 }
 .sec23 .info .info_ .info-item .text p {
@@ -3197,14 +3198,12 @@ form {
   font-family: font-regular;
   margin-bottom: 2px;
 }
-.sec23 .info .info_ .info-item .text p.fecha {
-  width: 50px;
+.sec23 .info .info_ .precio {
+  background-color: #254275;
+  border-radius: 10px;
 }
-.sec23 .info .info_ .info-item .text p.horario {
-  width: 170px;
-}
-.sec23 .info .info_ .info-item .text p.duracion {
-  width: 160px;
+.sec23 .info .info_ .precio p {
+  color: #fff !important;
 }
 .sec24 {
   position: relative;
@@ -3352,7 +3351,7 @@ form {
   border: unset;
 }
 .sec25 .content .left-content .accordion-item button.accordion-button {
-  background: #fed68c;
+  background: #e5b336;
   color: #254275;
   font-size: 0.9rem;
 }
@@ -3402,7 +3401,7 @@ form {
   padding: 8px 0 0px;
 }
 .sec25 .content .left-content .accordion-bottom {
-  background-color: #fed68c;
+  background-color: #e5b336;
   border: 1px solid #254275;
   border-bottom: 2px solid;
   border-left: 2px solid;
@@ -3413,7 +3412,7 @@ form {
 }
 .sec25 .content .left-content .accordion-bottom:hover {
   background-color: #254275;
-  color: #fed68c;
+  color: #e5b336;
   border-color: #254275;
 }
 .sec25 .content .left-content .accordion-bottom button {
@@ -3426,7 +3425,7 @@ form {
   transition: 0.3s all;
 }
 .sec25 .content .left-content .accordion-bottom button:hover {
-  color: #fed68c;
+  color: #e5b336;
 }
 .sec25 .content .right-content {
   width: 77%;
@@ -3449,7 +3448,7 @@ form {
   font-size: 0.9rem;
 }
 .sec25 .content .right-content ul.nav li.nav-item .active {
-  background-color: #fed68c;
+  background-color: #e5b336;
   color: #254275;
   font-family: font-light;
   font-size: 0.9rem;
@@ -3529,7 +3528,7 @@ form {
 .sec25 .content .right-content .content .item .item-content .content .btn-vermas {
   color: #254275;
   font-size: 0.85rem;
-  background: #fed68c;
+  background: #e5b336;
   border-radius: 5px;
   padding: 3px 15px 2px;
   font-family: font-semibold;
@@ -3538,7 +3537,7 @@ form {
 }
 .sec25 .content .right-content .content .item .item-content .content .btn-vermas:hover {
   background: #254275;
-  color: #fed68c;
+  color: #e5b336;
 }
 .sec25 .content .right-content .content_paginate {
   margin-top: 15px;
@@ -3570,7 +3569,7 @@ form {
   font-size: 0.9rem;
 }
 .sec26 ul.nav li.nav-item .active {
-  background-color: #fed68c;
+  background-color: #e5b336;
   color: #254275;
   font-family: font-light;
   font-size: 0.9rem;
@@ -3800,11 +3799,10 @@ form {
 }
 .sec27 ul.nav li.nav-item button {
   color: #254275;
-  font-family: font-light;
   font-size: 0.9rem;
 }
 .sec27 ul.nav li.nav-item .active {
-  background-color: #fed68c;
+  background-color: #e5b336;
   color: #254275;
   font-family: font-light;
   font-size: 0.9rem;
@@ -3839,7 +3837,7 @@ form {
   width: 100%;
 }
 .sec27 .content .content1 .btn-descargarpdf {
-  background-color: #fcd48a;
+  background-color: #e5b336;
   color: #081c38;
   font-family: font-light;
   font-size: 1rem;
@@ -3869,7 +3867,7 @@ form {
   font-size: 1.3rem;
   margin: 0;
   padding: 13px 20px;
-  background-color: #fcd48a;
+  background-color: #e5b336;
   width: 50%;
   margin: auto;
   text-align: center;
@@ -3894,6 +3892,7 @@ form {
   box-shadow: 0 0rem 1rem rgba(0,0,0,0.5);
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   margin-top: 30px;
   margin-bottom: 40px;
   padding: 13px 30px 20px;
@@ -3903,9 +3902,8 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   padding: 0 12px;
-  width: 16%;
+  width: 19%;
 }
 .sec27 .content .content1 .levels .item img {
   width: 100%;
@@ -4215,7 +4213,7 @@ form {
   margin-top: 20px;
 }
 .sec28 .formu .formulario .formulario_ .enviar .btn-enviar {
-  background: #fed68c;
+  background: #e5b336;
   color: #00001d;
   font-family: font-semibold;
   font-size: 1rem;
@@ -4689,7 +4687,7 @@ form {
   padding-left: 40px;
 }
 .sec31 ul.nav li.nav-item .active {
-  background-color: #fed68c;
+  background-color: #e5b336;
   color: #254275;
   font-family: font-light;
   font-size: 0.9rem;
@@ -4782,7 +4780,7 @@ form {
   padding-left: 40px;
 }
 .sec32 ul.nav li.nav-item .active {
-  background-color: #fed68c;
+  background-color: #e5b336;
   color: #254275;
   font-family: font-light;
   font-size: 0.9rem;
@@ -4885,7 +4883,7 @@ form {
   margin-top: 35px;
 }
 .sec33 .btn-action .btn-credly {
-  background-color: #fed68c;
+  background-color: #e5b336;
   color: #254275;
   padding: 5px 25px;
 }
@@ -4910,7 +4908,7 @@ form {
   width: 80%;
   bottom: -13px;
   margin: auto;
-  background-color: #fdcc7b;
+  background-color: #e5b336;
 }
 .sec33 .content {
   display: flex;
@@ -4940,7 +4938,7 @@ form {
   right: 0;
   bottom: -13px;
   margin: auto;
-  background-color: #fdcc7b;
+  background-color: #e5b336;
 }
 .sec33 .content .content-left .text p:last-child:after {
   display: none;
@@ -4985,7 +4983,7 @@ form {
   margin-bottom: 15px;
 }
 .sec33 .content .content-right .habilidades .item {
-  background-color: #fdcc7b;
+  background-color: #e5b336;
   padding: 10px 20px;
   margin-bottom: 10px;
   margin-right: 8px;
@@ -5047,7 +5045,7 @@ form {
 }
 .sec34 .content .item .item_ .detail h3 {
   color: #000017;
-  background-color: #facd7f;
+  background-color: #e5b336;
   font-size: 1.1rem;
   font-family: font-bold;
   text-align: center;
@@ -5065,7 +5063,7 @@ form {
   line-height: 1.3;
 }
 .sec34 .content .item .item_ a.btn-vermas {
-  background-color: #facd7f;
+  background-color: #e5b336;
   color: #000017;
   font-size: 0.8rem;
   padding: 9px 0 8px;
@@ -5172,7 +5170,7 @@ form {
   font-size: 0.9rem;
 }
 .sec35 .navegacion ul.nav li.nav-item .active {
-  background-color: #fed68c;
+  background-color: #e5b336;
   color: #254275;
   font-family: font-light;
   font-size: 0.9rem;
@@ -5210,12 +5208,12 @@ form {
   transform: scale(1.05);
 }
 .sec35 #carouselblog-related .item:hover .content {
-  background: #facd7f;
+  background: #e5b336;
   color: #254275;
 }
 .sec35 #carouselblog-related .item:hover p.category {
   background: #254275 !important;
-  color: #facd7f !important;
+  color: #e5b336 !important;
 }
 .sec35 #carouselblog-related .item:hover p.tit {
   color: #254275 !important;
@@ -5225,7 +5223,7 @@ form {
 }
 .sec35 #carouselblog-related .item:hover .btn-tag {
   background-color: #254275 !important;
-  color: #facd7f !important;
+  color: #e5b336 !important;
 }
 .sec35 #carouselblog-related .item .image {
   width: 100%;
@@ -5251,7 +5249,7 @@ form {
   left: 0;
   width: 100%;
   background: #254275;
-  color: #facd7f;
+  color: #e5b336;
   font-size: 0.9rem;
   text-decoration: none;
   border-radius: 0;
@@ -5260,7 +5258,7 @@ form {
 }
 .sec35 #carouselblog-related .item .content p.category {
   display: inline-block;
-  background: #facd7f;
+  background: #e5b336;
   color: #000017;
   font-family: font-bold;
   font-size: 0.9rem;
@@ -5273,7 +5271,7 @@ form {
   font-family: font-semibold;
   line-height: 1.2;
   font-size: 1rem;
-  color: #facd7f;
+  color: #e5b336;
   transition: 0.5s all;
 }
 .sec35 #carouselblog-related .item .content p.description {
@@ -5288,7 +5286,7 @@ form {
   margin-bottom: 15px;
 }
 .sec35 #carouselblog-related .item .tags .btn-tag {
-  background-color: #facd7f;
+  background-color: #e5b336;
   color: #254275;
   padding: 2px 7px 1px;
   font-size: 0.7rem;
@@ -5451,7 +5449,7 @@ form {
   line-height: 1;
 }
 .sec37 .contacto h2 {
-  color: #fdcc7b;
+  color: #e5b336;
   text-align: center;
   margin-bottom: 5px;
   font-family: font-extrabold;
@@ -5963,7 +5961,7 @@ form {
 }
 .sec41 .login_trabajo .login_trabajo_content .tit h1 span {
   font-family: font-extrabold;
-  color: #fdcc7b;
+  color: #e5b336;
   font-size: 2.8rem;
 }
 .sec41 .login_trabajo .login_trabajo_content .tit img.logo {
@@ -5985,7 +5983,7 @@ form {
   padding-bottom: 10px;
 }
 .sec41 .login_trabajo .login_trabajo_content .formulario_trabajo .form-group .btn-login-trabajo {
-  background-color: #fdcc7b;
+  background-color: #e5b336;
   color: #254275;
   font-family: font-medium;
   width: 100%;
@@ -6069,7 +6067,7 @@ form {
   font-size: 0.9rem;
 }
 .sec42 .btn-crear {
-  background-color: #fdcc7b;
+  background-color: #e5b336;
   color: #254275;
   font-family: font-medium;
   width: 80%;
@@ -6138,7 +6136,7 @@ form {
   font-size: 0.9rem;
 }
 .sec42_2 .btn-crear {
-  background-color: #fdcc7b;
+  background-color: #e5b336;
   color: #254275;
   font-family: font-medium;
   width: 80%;
@@ -6398,7 +6396,7 @@ form {
 }
 .sec45 .content .content_ h1 {
   text-align: center;
-  color: #fdcc7b;
+  color: #e5b336;
   font-family: font-extrabold;
   line-height: 1;
   margin: 0;
@@ -6486,7 +6484,7 @@ form {
   padding-left: 12px;
 }
 .sec46 .busq {
-  background-color: #fed68c;
+  background-color: #e5b336;
   padding: 30px 30px 20px;
   margin-bottom: 20px;
 }
@@ -6541,7 +6539,7 @@ form {
   width: 80%;
 }
 .sec46 .content_results .items .item .item_left h1 {
-  color: #fed68c;
+  color: #e5b336;
   font-family: font-bold;
   font-size: 2.5rem;
   margin-bottom: 20px;
@@ -6559,7 +6557,7 @@ form {
 }
 .sec46 .content_results .items .item .item_right .btn-info {
   font-family: font-medium;
-  background-color: #fed68c;
+  background-color: #e5b336;
   font-size: 0.9rem;
   border: 0;
   padding: 8px 16px;
@@ -6570,7 +6568,7 @@ form {
   text-align: center;
 }
 .sec46 .content_results .content_right .btn-cv {
-  background-color: #fed68c;
+  background-color: #e5b336;
   font-family: font-medium;
   font-size: 1.4rem;
   padding: 20px 50px;
@@ -6700,13 +6698,13 @@ form {
   font-size: 0.75rem;
 }
 .sec47 .content .content_left .offer h1 {
-  color: #fed68c;
+  color: #e5b336;
   font-family: font-bold;
   font-size: 2rem;
   margin-bottom: 20px;
 }
 .sec47 .content .content_left .offer h3 {
-  color: #fed68c;
+  color: #e5b336;
   font-family: font-bold;
   font-size: 1.5rem;
 }
@@ -6720,7 +6718,7 @@ form {
   line-height: 1.3;
 }
 .sec47 .content .content_left .offer .description .btn-postular {
-  background-color: #fed68c;
+  background-color: #e5b336;
   font-family: font-medium;
   font-size: 1.1rem;
   padding: 10px 30px;
@@ -6782,7 +6780,7 @@ form {
   margin: 0;
 }
 .sec47 .content .content_right .btn-cv {
-  background-color: #fed68c;
+  background-color: #e5b336;
   font-family: font-medium;
   font-size: 1.4rem;
   padding: 20px 50px;
@@ -6830,7 +6828,7 @@ form {
   width: 80%;
 }
 .sec47 .content_results .items .item .item_left h1 {
-  color: #fed68c;
+  color: #e5b336;
   font-family: font-bold;
   font-size: 1.6rem;
   margin-bottom: 20px;
@@ -6849,7 +6847,7 @@ form {
 }
 .sec47 .content_results .items .item .item_right .btn-info {
   font-family: font-medium;
-  background-color: #fed68c;
+  background-color: #e5b336;
   font-size: 0.9rem;
   border: 0;
   padding: 8px 16px;
@@ -7084,7 +7082,7 @@ form {
   color: #254275;
 }
 .sec48 .content .content_item .applicants .description .btn-postular {
-  background-color: #fed68c;
+  background-color: #e5b336;
   font-family: font-medium;
   font-size: 1.1rem;
   padding: 10px 30px;
@@ -7289,7 +7287,7 @@ form {
   font-size: 0.9rem;
 }
 .sec49 ul.nav li.nav-item .active {
-  background-color: #fed68c;
+  background-color: #e5b336;
   color: #254275;
   font-family: font-light;
   font-size: 0.9rem;
@@ -7322,7 +7320,7 @@ form {
 }
 .sec49 .content .content1 .detail_text .number p {
   font-size: 16rem;
-  -webkit-text-stroke: 2px #fcd48a;
+  -webkit-text-stroke: 2px #e5b336;
   color: transparent;
   font-family: fantasy;
   margin-top: -120px;
@@ -7436,7 +7434,7 @@ form {
   font-size: 0.9rem;
 }
 .sec50 ul.nav li.nav-item .active {
-  background-color: #fed68c;
+  background-color: #e5b336;
   color: #254275;
   font-family: font-light;
   font-size: 0.9rem;
@@ -7475,7 +7473,7 @@ form {
   font-family: font-bold;
 }
 .sec50 .content .content1 .content1_1 .content_ .content .btn_action {
-  background-color: #facd7f;
+  background-color: #e5b336;
   padding: 20px 40% 20px 20px;
 }
 .sec50 .content .content1 .content1_1 .content_ .content .btn_action a.btn-conocemas {
@@ -7531,7 +7529,7 @@ form {
   color: #000;
   font-size: 0.9rem;
   margin: 10px 15% 10px;
-  background-color: #fcd48a;
+  background-color: #e5b336;
   font-family: font-semibold;
   text-align: center;
   text-transform: uppercase;
@@ -7577,7 +7575,7 @@ form {
   color: #254275;
   font-size: 0.9rem;
   margin: 10px 15% 10px;
-  background-color: #fcd48a;
+  background-color: #e5b336;
   font-family: font-semibold;
   text-align: center;
   text-transform: uppercase;
@@ -7621,7 +7619,7 @@ form {
   font-family: font-light;
 }
 .sec50 .content .content1 .educacion_corporativa .steps {
-  background-color: #fcd48a;
+  background-color: #e5b336;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -7701,7 +7699,7 @@ form {
   color: #254275;
 }
 .sec50 .content .content1 .portafolio .portafolio_header .content_ .content .btn_action {
-  background-color: #facd7f;
+  background-color: #e5b336;
   padding: 20px 40% 20px 20px;
 }
 .sec50 .content .content1 .portafolio .portafolio_header .content_ .content .btn_action a.btn-conocemas {
@@ -7799,14 +7797,14 @@ form {
   display: inline-flex;
 }
 .sec50 .content .content1 .portafolio2 .items .item .counters .counter {
-  color: #facd7f;
+  color: #e5b336;
   font-size: 4rem;
   font-family: font-bold;
 }
 .sec50 .content .content1 .portafolio2 .items .item .counters span {
   font-family: font-bold;
   font-size: 4rem;
-  color: #facd7f;
+  color: #e5b336;
   margin-left: 8px;
 }
 .sec50 .content .content1 .portafolio2 .items .item p {
@@ -7907,7 +7905,7 @@ form {
   margin-top: 0px;
 }
 .sec51 #carousel-cursos .item:hover .item-header {
-  background: #fed68c;
+  background: #e5b336;
   padding: 19px 20%;
 }
 .sec51 #carousel-cursos .item:hover .item-header .titulo-header span {
@@ -7917,7 +7915,7 @@ form {
   height: 40px;
 }
 .sec51 #carousel-cursos .item:hover .item-content {
-  background: #fed68c;
+  background: #e5b336;
 }
 .sec51 #carousel-cursos .item:hover .item-content .content {
   padding: 5px 0;
@@ -8007,7 +8005,7 @@ form {
   transition: all 0.5s;
   color: #254275;
   font-size: 0.9rem;
-  background: #fed68c;
+  background: #e5b336;
   border-radius: 5px;
   padding: 3px 10px 2px;
   font-family: font-semibold;
@@ -8077,7 +8075,7 @@ form {
   width: 30%;
   display: flex;
   flex-wrap: wrap;
-  background-color: #facd7f;
+  background-color: #e5b336;
   border-radius: 13px;
   padding: 30px 20px;
   border-top: 15px solid #081c38;
@@ -8142,7 +8140,7 @@ form {
   color: #254275;
   font-size: 1rem;
   padding: 4px 20px 2px;
-  background-color: #fed68c;
+  background-color: #e5b336;
   border-radius: 4px;
 }
 .sec54 .item {
@@ -8158,12 +8156,12 @@ form {
   transform: scale(1.05);
 }
 .sec54 .item .item_:hover .content {
-  background: #facd7f;
+  background: #e5b336;
   color: #254275;
 }
 .sec54 .item .item_:hover p.category {
   background: #254275 !important;
-  color: #facd7f !important;
+  color: #e5b336 !important;
 }
 .sec54 .item .item_:hover p.tit {
   color: #254275 !important;
@@ -8173,7 +8171,7 @@ form {
 }
 .sec54 .item .item_:hover .btn-tag {
   background-color: #254275 !important;
-  color: #facd7f !important;
+  color: #e5b336 !important;
 }
 .sec54 .item .item_ .image img {
   width: 100%;
@@ -8195,7 +8193,7 @@ form {
   left: 0;
   width: 100%;
   background: #254275;
-  color: #facd7f;
+  color: #e5b336;
   font-size: 0.9rem;
   text-decoration: none;
   border-radius: 0;
@@ -8204,7 +8202,7 @@ form {
 }
 .sec54 .item .item_ .content p.category {
   display: inline-block;
-  background: #facd7f;
+  background: #e5b336;
   color: #000017;
   font-family: font-bold;
   font-size: 0.9rem;
@@ -8217,7 +8215,7 @@ form {
   font-family: font-semibold;
   line-height: 1.2;
   font-size: 1rem;
-  color: #facd7f;
+  color: #e5b336;
   transition: 0.5s all;
 }
 .sec54 .item .item_ .content p.description {
@@ -8232,7 +8230,7 @@ form {
   margin-bottom: 15px;
 }
 .sec54 .item .item_ .tags .btn-tag {
-  background-color: #facd7f;
+  background-color: #e5b336;
   color: #254275;
   padding: 2px 7px 1px;
   font-size: 0.7rem;
@@ -8281,7 +8279,7 @@ form {
   padding-left: 40px;
 }
 .sec55 .content ul.nav li.nav-item .active {
-  background-color: #fed68c;
+  background-color: #e5b336;
   color: #254275;
   font-family: font-light;
   font-size: 0.9rem;
@@ -8313,7 +8311,7 @@ form {
   margin-bottom: 20px;
 }
 .sec55 .content .content_tab .items .item .text .btn-action .btn-vermas {
-  background-color: #fed68c;
+  background-color: #e5b336;
   color: #254275;
   padding: 5px 20px;
   font-size: 1.1rem;
@@ -8420,7 +8418,7 @@ form {
   right: 0;
   bottom: -13px;
   margin: auto;
-  background-color: #fdcc7b;
+  background-color: #e5b336;
 }
 .sec56 .certificado_resultado .text p:last-child:after {
   display: none;
@@ -8433,7 +8431,7 @@ form {
 }
 .sec56 .certificado_resultado .btn-action .btn-descargar {
   color: #254275;
-  background-color: #fed68c;
+  background-color: #e5b336;
   padding: 4px 30px;
   font-size: 1rem;
   transition: 0.4s all;
@@ -8501,7 +8499,7 @@ form {
   margin: 0;
 }
 .sec57 .iconos_ {
-  background-color: #fed68c;
+  background-color: #e5b336;
   padding: 47px 60px 10px;
 }
 .sec57 .iconos_ .text_icon {
@@ -8700,7 +8698,7 @@ form {
   font-size: 0.9rem;
 }
 .sec58 ul.nav li.nav-item .active {
-  background-color: #fed68c;
+  background-color: #e5b336;
   color: #254275;
   font-family: font-light;
   font-size: 0.9rem;
@@ -8737,7 +8735,7 @@ form {
   color: #00001d;
   font-family: font-semibold;
   font-size: 1.5rem;
-  background-color: #fed68c;
+  background-color: #e5b336;
   display: inline-flex;
   padding: 9px 50px;
   border-radius: 12px;
@@ -8847,7 +8845,7 @@ form {
   color: #00001d;
   font-family: font-semibold;
   font-size: 2rem;
-  background-color: #fed68c;
+  background-color: #e5b336;
   display: inline-flex;
   padding: 15px 50px;
   border-radius: 12px;
@@ -8954,7 +8952,7 @@ form {
 .sec59 .premiacion .items .item {
   text-align: center;
   width: 27%;
-  background-color: #fcd48a;
+  background-color: #e5b336;
   border-radius: 6px;
   border-top: 5px solid #254275;
   display: flex;
@@ -9114,7 +9112,7 @@ form {
   margin-top: 20px;
 }
 .sec61 .anuncio_seleccionar ul .btn-ver {
-  background-color: #f9cc85;
+  background-color: #e5b336;
   color: #254275;
   font-family: font-medium;
   font-size: 1rem;
@@ -9173,7 +9171,7 @@ form {
 .sec62 .items_ .items .item {
   text-align: center;
   width: 27%;
-  background-color: #fcd48a;
+  background-color: #e5b336;
   border-radius: 6px;
   border-top: 5px solid #254275;
   display: flex;
@@ -9245,7 +9243,7 @@ form {
   line-height: 1.1;
   margin: 0;
   font-size: 3.5rem;
-  color: #f1cc7f;
+  color: #e5b336;
   font-family: font-extrabold;
 }
 .sec63 .content .content_ p.subtit {
@@ -9663,7 +9661,7 @@ form {
   display: flex;
 }
 .footer .col2 ul .items .mail {
-  background: #facd7f;
+  background: #e5b336;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9946,14 +9944,14 @@ form {
     display: none;
   }
   .pt-20 {
-    padding-top: 10vh !important;
+    padding-top: 14vh !important;
   }
   .px-60 {
     padding-left: 15px;
     padding-right: 15px;
   }
   .sec0 {
-    padding-top: 10vh;
+    padding-top: 15vh;
   }
   .sec0 .breadcrumb_ {
     padding-right: 20px;
@@ -10043,7 +10041,7 @@ form {
     margin-top: 20px;
   }
   .sec1 .formulario .formulario_ .enviar .btn-enviar {
-    background: #fed68c;
+    background: #e5b336;
     color: #00001d;
     font-family: font-semibold;
     font-size: 1rem;
@@ -10054,7 +10052,7 @@ form {
     position: relative;
   }
   .sec1 #carousel-slider .item {
-    height: 100vh;
+    height: 95vh;
     width: 100%;
     background-position: bottom;
     background-size: cover;
@@ -10064,6 +10062,7 @@ form {
     flex-wrap: wrap;
     align-items: flex-end;
     padding: 0 40px 50px;
+    margin: 5vh 0 0;
   }
   .sec1 #carousel-slider .item .text {
     width: 100%;
@@ -10099,7 +10098,7 @@ form {
     border: 2px solid #fff;
   }
   .sec1 #carousel-slider .owl-dots .active {
-    background: #fed68c;
+    background: #e5b336;
   }
   .sec2 {
     padding: 30px 0 30px;
@@ -10345,7 +10344,7 @@ form {
     height: 43px;
   }
   .sec4 #carousel-cursos .item:hover .item-content {
-    background: #fed68c;
+    background: #e5b336;
   }
   .sec4 #carousel-cursos .item:hover .item-content .content {
     padding: 5px 0;
@@ -10431,7 +10430,7 @@ form {
     transition: all 0.5s;
     color: #254275;
     font-size: 1rem;
-    background: #fed68c;
+    background: #e5b336;
     border-radius: 5px;
     padding: 3px 10px 2px;
     font-family: font-semibold;
@@ -10480,7 +10479,7 @@ form {
     bottom: 0px;
     left: 0;
     width: 100%;
-    background: #facd7f;
+    background: #e5b336;
     color: #000017;
     font-size: 1rem;
     text-decoration: none;
@@ -10490,7 +10489,7 @@ form {
   }
   .sec5 .item .item_ .content p.category {
     display: inline-block;
-    background: #facd7f;
+    background: #e5b336;
     color: #000017;
     font-family: font-bold;
     font-size: 1rem;
@@ -10514,7 +10513,7 @@ form {
     margin-bottom: 15px;
   }
   .sec5 .item .item_ .tags .btn-tag {
-    background-color: #facd7f;
+    background-color: #e5b336;
     color: #254275;
     padding: 2px 7px 1px;
     font-size: 0.9rem;
@@ -10738,7 +10737,7 @@ form {
   }
   .sec8 .content form input[type=submit] {
     background: #254275;
-    color: #fed68c;
+    color: #e5b336;
     border: unset;
     margin-left: 10px;
     padding-right: 30px;
@@ -10780,7 +10779,7 @@ form {
     font-family: font-semibold;
   }
   .sec9 .content .content_ p:nth-child(3) {
-    color: #f1cc7f;
+    color: #e5b336;
     font-size: 3.5rem;
     font-family: font-extrabold;
   }
@@ -10790,7 +10789,7 @@ form {
     padding-bottom: 0;
   }
   .sec9 .content .content_ p.color {
-    color: #f1cc7f;
+    color: #e5b336;
     font-size: 4.5rem;
     font-family: font-extrabold;
   }
@@ -10800,7 +10799,7 @@ form {
     padding-bottom: 0;
   }
   .sec9 .content .content_ p.color2 {
-    color: #f1cc7f;
+    color: #e5b336;
     font-size: 3.5rem;
     font-family: font-extrabold;
   }
@@ -10835,7 +10834,7 @@ form {
     font-family: font-semibold;
   }
   .sec9_1 .content .content_ p:nth-child(3) {
-    color: #f1cc7f;
+    color: #e5b336;
     font-size: 3.5rem;
     font-family: font-extrabold;
   }
@@ -10845,7 +10844,7 @@ form {
     padding-bottom: 0;
   }
   .sec9_1 .content .content_ p.color {
-    color: #f1cc7f;
+    color: #e5b336;
     font-size: 4.5rem;
     font-family: font-extrabold;
   }
@@ -10855,7 +10854,7 @@ form {
     padding-bottom: 0;
   }
   .sec9_1 .content .content_ p.color2 {
-    color: #f1cc7f;
+    color: #e5b336;
     font-size: 3.5rem;
     font-family: font-extrabold;
   }
@@ -10900,7 +10899,7 @@ form {
     height: 8px;
     width: 8px;
     border-radius: 50%;
-    background: #f1cc7f;
+    background: #e5b336;
     bottom: -10px;
     right: 0;
     left: 0;
@@ -11073,7 +11072,7 @@ form {
     margin: auto;
   }
   .sec12 .nuestras-insignias .descripcion .descripcion_ h3 {
-    color: #f1cc7f;
+    color: #e5b336;
     font-size: 3rem;
     font-family: font-extrabold;
     margin-bottom: 30px;
@@ -11129,7 +11128,7 @@ form {
     font-family: font-bold;
   }
   .sec13 .content .content_ p:nth-child(2) {
-    color: #f1cc7f;
+    color: #e5b336;
     font-family: font-extrabold;
   }
   .sec14 {
@@ -11299,7 +11298,7 @@ form {
     height: 400px;
   }
   .sec17 .pasos .paso .paso_ .titulo {
-    background: #facd7f;
+    background: #e5b336;
     padding: 15px 0;
     border-radius: 15px;
     margin-bottom: 10px;
@@ -11312,7 +11311,7 @@ form {
     font-family: font-semibold;
   }
   .sec17 .pasos .paso .paso_ .detalle {
-    background: #facd7f;
+    background: #e5b336;
     border-radius: 15px;
     padding: 25px 20px;
     margin-bottom: 10px;
@@ -11366,7 +11365,7 @@ form {
     font-family: font-semibold;
   }
   .sec18 .content .content_ p:nth-child(3) {
-    color: #f1cc7f;
+    color: #e5b336;
     font-size: 3.5rem;
     font-family: font-extrabold;
   }
@@ -11388,10 +11387,10 @@ form {
     color: #254275;
     font-family: font-light;
     font-size: 1rem;
-    border: 1px solid #fed68c;
+    border: 1px solid #e5b336;
   }
   .sec19 ul.nav li.nav-item .active {
-    background-color: #fed68c;
+    background-color: #e5b336;
     color: #254275;
     font-family: font-light;
     font-size: 1rem;
@@ -11470,12 +11469,12 @@ form {
     transform: scale(1.05);
   }
   .sec19 .content1 .item .item_:hover .content {
-    background: #facd7f;
+    background: #e5b336;
     color: #254275;
   }
   .sec19 .content1 .item .item_:hover p.category {
     background: #254275 !important;
-    color: #facd7f !important;
+    color: #e5b336 !important;
   }
   .sec19 .content1 .item .item_:hover p.tit {
     color: #254275 !important;
@@ -11485,7 +11484,7 @@ form {
   }
   .sec19 .content1 .item .item_:hover .btn-tag {
     background-color: #254275 !important;
-    color: #facd7f !important;
+    color: #e5b336 !important;
   }
   .sec19 .content1 .item .item_ .image img {
     width: 100%;
@@ -11507,7 +11506,7 @@ form {
     left: 0;
     width: 100%;
     background: #254275;
-    color: #facd7f;
+    color: #e5b336;
     font-size: 1rem;
     text-decoration: none;
     border-radius: 0;
@@ -11516,7 +11515,7 @@ form {
   }
   .sec19 .content1 .item .item_ .content p.category {
     display: inline-block;
-    background: #facd7f;
+    background: #e5b336;
     color: #000017;
     font-family: font-bold;
     font-size: 1rem;
@@ -11529,7 +11528,7 @@ form {
     font-family: font-semibold;
     line-height: 1.2;
     font-size: 1rem;
-    color: #facd7f;
+    color: #e5b336;
     transition: 0.5s all;
   }
   .sec19 .content1 .item .item_ .content p.description {
@@ -11544,7 +11543,7 @@ form {
     margin-bottom: 15px;
   }
   .sec19 .content1 .item .item_ .tags .btn-tag {
-    background-color: #facd7f;
+    background-color: #e5b336;
     color: #254275;
     padding: 2px 7px 1px;
     font-size: 1rem;
@@ -11570,12 +11569,12 @@ form {
     transform: scale(1.05);
   }
   .sec19 .itemSearch #itemTag .item_:hover .content {
-    background: #facd7f;
+    background: #e5b336;
     color: #254275;
   }
   .sec19 .itemSearch #itemTag .item_:hover p.category {
     background: #254275 !important;
-    color: #facd7f !important;
+    color: #e5b336 !important;
   }
   .sec19 .itemSearch #itemTag .item_:hover p.tit {
     color: #254275 !important;
@@ -11585,7 +11584,7 @@ form {
   }
   .sec19 .itemSearch #itemTag .item_:hover .btn-tag {
     background-color: #254275 !important;
-    color: #facd7f !important;
+    color: #e5b336 !important;
   }
   .sec19 .itemSearch #itemTag .item_ .image img {
     width: 100%;
@@ -11607,7 +11606,7 @@ form {
     left: 0;
     width: 100%;
     background: #254275;
-    color: #facd7f;
+    color: #e5b336;
     font-size: 1rem;
     text-decoration: none;
     border-radius: 0;
@@ -11616,7 +11615,7 @@ form {
   }
   .sec19 .itemSearch #itemTag .item_ .content p.category {
     display: inline-block;
-    background: #facd7f;
+    background: #e5b336;
     color: #000017;
     font-family: font-bold;
     font-size: 1rem;
@@ -11629,7 +11628,7 @@ form {
     font-family: font-semibold;
     line-height: 1.2;
     font-size: 1rem;
-    color: #facd7f;
+    color: #e5b336;
     transition: 0.5s all;
   }
   .sec19 .itemSearch #itemTag .item_ .content p.description {
@@ -11644,7 +11643,7 @@ form {
     margin-bottom: 15px;
   }
   .sec19 .itemSearch #itemTag .item_ .tags .btn-tag {
-    background-color: #facd7f;
+    background-color: #e5b336;
     color: #254275;
     padding: 2px 7px 1px;
     font-size: 1rem;
@@ -11687,7 +11686,7 @@ form {
     font-family: font-semibold;
   }
   .sec22 .content .content_ p:nth-child(3) {
-    color: #f1cc7f;
+    color: #e5b336;
     font-size: 3.8rem;
     font-family: font-extrabold;
   }
@@ -11777,7 +11776,7 @@ form {
     margin-top: 20px;
   }
   .sec22 .formulario .formulario_ .enviar .btn-enviar {
-    background: #fed68c;
+    background: #e5b336;
     color: #00001d;
     font-family: font-semibold;
     font-size: 1rem;
@@ -11798,26 +11797,21 @@ form {
     background-color: #e5b336;
     padding: 20px 15px;
   }
-  .sec23 .info .info_ .precio {
-    width: 100% !important;
-    background-color: #254275;
-    border-radius: 10px;
-    margin-top: 15px;
-  }
-  .sec23 .info .info_ .precio p {
-    color: #fff !important;
-  }
   .sec23 .info .info_ .info-item {
     width: 50%;
     display: flex;
     align-items: center;
     padding: 15px;
   }
+  .sec23 .info .info_ .info-item .image {
+    width: 40%;
+  }
   .sec23 .info .info_ .info-item .image img {
-    height: 55px;
-    width: auto;
+    height: auto;
+    width: 100%;
   }
   .sec23 .info .info_ .info-item .text {
+    width: 60%;
     padding-left: 10px;
   }
   .sec23 .info .info_ .info-item .text p {
@@ -11840,6 +11834,21 @@ form {
   }
   .sec23 .info .info_ .info-item .text p.duracion {
     width: auto;
+  }
+  .sec23 .info .info_ .precio {
+    width: 100% !important;
+    background-color: #254275;
+    border-radius: 10px;
+    margin-top: 15px;
+  }
+  .sec23 .info .info_ .precio p {
+    color: #fff !important;
+  }
+  .sec23 .info .info_ .precio .image {
+    width: 23%;
+  }
+  .sec23 .info .info_ .precio .text {
+    width: 77%;
   }
   .sec24 {
     position: relative;
@@ -11997,7 +12006,7 @@ form {
     border: unset;
   }
   .sec25 .content .left-content .accordion-item button.accordion-button {
-    background: #fed68c;
+    background: #e5b336;
     color: #254275;
     font-size: 1rem;
   }
@@ -12047,7 +12056,7 @@ form {
     padding: 8px 0 0px;
   }
   .sec25 .content .left-content .accordion-bottom {
-    background-color: #fed68c;
+    background-color: #e5b336;
     border: 1px solid #254275;
     border-bottom: 2px solid;
     border-left: 2px solid;
@@ -12058,7 +12067,7 @@ form {
   }
   .sec25 .content .left-content .accordion-bottom:hover {
     background-color: #254275;
-    color: #fed68c;
+    color: #e5b336;
     border-color: #254275;
   }
   .sec25 .content .left-content .accordion-bottom button {
@@ -12071,7 +12080,7 @@ form {
     transition: 0.3s all;
   }
   .sec25 .content .left-content .accordion-bottom button:hover {
-    color: #fed68c;
+    color: #e5b336;
   }
   .sec25 .content .right-content {
     width: 100%;
@@ -12094,7 +12103,7 @@ form {
     font-size: 1rem;
   }
   .sec25 .content .right-content ul.nav li.nav-item .active {
-    background-color: #fed68c;
+    background-color: #e5b336;
     color: #254275;
     font-family: font-light;
     font-size: 1rem;
@@ -12174,7 +12183,7 @@ form {
   .sec25 .content .right-content .content .item .item-content .content .btn-vermas {
     color: #254275;
     font-size: 1rem;
-    background: #fed68c;
+    background: #e5b336;
     border-radius: 5px;
     padding: 3px 15px 2px;
     font-family: font-semibold;
@@ -12183,7 +12192,7 @@ form {
   }
   .sec25 .content .right-content .content .item .item-content .content .btn-vermas:hover {
     background: #254275;
-    color: #fed68c;
+    color: #e5b336;
   }
   .sec25 .content .right-content .content_paginate {
     margin-top: 15px;
@@ -12214,10 +12223,10 @@ form {
     color: #254275;
     font-family: font-light;
     font-size: 1rem;
-    border: 1px solid #fed68c;
+    border: 1px solid #e5b336;
   }
   .sec26 ul.nav li.nav-item .active {
-    background-color: #fed68c;
+    background-color: #e5b336;
     color: #254275;
     font-family: font-light;
     font-size: 1rem;
@@ -12452,14 +12461,12 @@ form {
   }
   .sec27 ul.nav li.nav-item button {
     color: #254275;
-    font-family: font-light;
     font-size: 1rem;
-    border: 1px solid #fed68c;
+    border: 1px solid #e5b336;
   }
   .sec27 ul.nav li.nav-item .active {
-    background-color: #fed68c;
+    background-color: #e5b336;
     color: #254275;
-    font-family: font-light;
     font-size: 1rem;
   }
   .sec27 .content {
@@ -12505,7 +12512,7 @@ form {
     width: 100%;
   }
   .sec27 .content .content1 .btn-descargarpdf {
-    background-color: #fcd48a;
+    background-color: #e5b336;
     color: #081c38;
     font-family: font-light;
     font-size: 1rem;
@@ -12535,7 +12542,7 @@ form {
     font-size: 1.1rem;
     margin: 0;
     padding: 13px 20px;
-    background-color: #fcd48a;
+    background-color: #e5b336;
     width: 90%;
     margin: auto;
     text-align: center;
@@ -12571,9 +12578,11 @@ form {
     align-items: center;
     padding: 0 12px;
     width: 50%;
+    margin-bottom: 15px;
   }
   .sec27 .content .content1 .levels .item img {
     width: 100%;
+    margin-bottom: 0;
   }
   .sec27 .content .content1 .levels .item h3 {
     color: #000;
@@ -12883,7 +12892,7 @@ form {
     margin-top: 20px;
   }
   .sec28 .formu .formulario .formulario_ .enviar .btn-enviar {
-    background: #fed68c;
+    background: #e5b336;
     color: #00001d;
     font-family: font-semibold;
     font-size: 1rem;
@@ -13352,10 +13361,10 @@ form {
     font-size: 1rem;
     padding-right: 40px;
     padding-left: 40px;
-    border: 1px solid #fed68c;
+    border: 1px solid #e5b336;
   }
   .sec31 ul.nav li.nav-item .active {
-    background-color: #fed68c;
+    background-color: #e5b336;
     color: #254275;
     font-family: font-light;
     font-size: 1rem;
@@ -13448,10 +13457,10 @@ form {
     font-size: 1rem;
     padding-right: 40px;
     padding-left: 40px;
-    border: 1px solid #fed68c;
+    border: 1px solid #e5b336;
   }
   .sec32 ul.nav li.nav-item .active {
-    background-color: #fed68c;
+    background-color: #e5b336;
     color: #254275;
     font-family: font-light;
     font-size: 1rem;
@@ -13557,7 +13566,7 @@ form {
     margin-top: 35px;
   }
   .sec33 .btn-action .btn-credly {
-    background-color: #fed68c;
+    background-color: #e5b336;
     color: #254275;
     padding: 5px 25px;
   }
@@ -13582,7 +13591,7 @@ form {
     width: 80%;
     bottom: -13px;
     margin: auto;
-    background-color: #fdcc7b;
+    background-color: #e5b336;
   }
   .sec33 .content {
     display: flex;
@@ -13616,7 +13625,7 @@ form {
     right: 0;
     bottom: -13px;
     margin: auto;
-    background-color: #fdcc7b;
+    background-color: #e5b336;
   }
   .sec33 .content .content-left .text p:last-child:after {
     display: none;
@@ -13662,7 +13671,7 @@ form {
     margin-bottom: 15px;
   }
   .sec33 .content .content-right .habilidades .item {
-    background-color: #fdcc7b;
+    background-color: #e5b336;
     padding: 10px 20px;
     margin-bottom: 10px;
     margin-right: 8px;
@@ -13724,7 +13733,7 @@ form {
   }
   .sec34 .content .item .item_ .detail h3 {
     color: #000017;
-    background-color: #facd7f;
+    background-color: #e5b336;
     font-size: 1.1rem;
     font-family: font-bold;
     text-align: center;
@@ -13742,7 +13751,7 @@ form {
     line-height: 1.3;
   }
   .sec34 .content .item .item_ a.btn-vermas {
-    background-color: #facd7f;
+    background-color: #e5b336;
     color: #000017;
     font-size: 0.8rem;
     padding: 9px 0 8px;
@@ -13853,10 +13862,10 @@ form {
     color: #254275;
     font-family: font-light;
     font-size: 1rem;
-    border: 1px solid #fed68c;
+    border: 1px solid #e5b336;
   }
   .sec35 .navegacion ul.nav li.nav-item .active {
-    background-color: #fed68c;
+    background-color: #e5b336;
     color: #254275;
     font-family: font-light;
     font-size: 1rem;
@@ -13894,12 +13903,12 @@ form {
     transform: scale(1.05);
   }
   .sec35 #carouselblog-related .item:hover .content {
-    background: #facd7f;
+    background: #e5b336;
     color: #254275;
   }
   .sec35 #carouselblog-related .item:hover p.category {
     background: #254275 !important;
-    color: #facd7f !important;
+    color: #e5b336 !important;
   }
   .sec35 #carouselblog-related .item:hover p.tit {
     color: #254275 !important;
@@ -13909,7 +13918,7 @@ form {
   }
   .sec35 #carouselblog-related .item:hover .btn-tag {
     background-color: #254275 !important;
-    color: #facd7f !important;
+    color: #e5b336 !important;
   }
   .sec35 #carouselblog-related .item .image {
     width: 100%;
@@ -13935,7 +13944,7 @@ form {
     left: 0;
     width: 100%;
     background: #254275;
-    color: #facd7f;
+    color: #e5b336;
     font-size: 1rem;
     text-decoration: none;
     border-radius: 0;
@@ -13944,7 +13953,7 @@ form {
   }
   .sec35 #carouselblog-related .item .content p.category {
     display: inline-block;
-    background: #facd7f;
+    background: #e5b336;
     color: #000017;
     font-family: font-bold;
     font-size: 1rem;
@@ -13957,7 +13966,7 @@ form {
     font-family: font-semibold;
     line-height: 1.2;
     font-size: 1rem;
-    color: #facd7f;
+    color: #e5b336;
     transition: 0.5s all;
   }
   .sec35 #carouselblog-related .item .content p.description {
@@ -13972,7 +13981,7 @@ form {
     margin-bottom: 15px;
   }
   .sec35 #carouselblog-related .item .tags .btn-tag {
-    background-color: #facd7f;
+    background-color: #e5b336;
     color: #254275;
     padding: 2px 7px 1px;
     font-size: 1rem;
@@ -14139,7 +14148,7 @@ form {
     line-height: 1;
   }
   .sec37 .contacto h2 {
-    color: #fdcc7b;
+    color: #e5b336;
     text-align: center;
     margin-bottom: 5px;
     font-family: font-extrabold;
@@ -14657,7 +14666,7 @@ form {
   }
   .sec41 .login_trabajo .login_trabajo_content .tit h1 span {
     font-family: font-extrabold;
-    color: #fdcc7b;
+    color: #e5b336;
     font-size: 2.8rem;
   }
   .sec41 .login_trabajo .login_trabajo_content .tit img.logo {
@@ -14679,7 +14688,7 @@ form {
     padding-bottom: 10px;
   }
   .sec41 .login_trabajo .login_trabajo_content .formulario_trabajo .form-group .btn-login-trabajo {
-    background-color: #fdcc7b;
+    background-color: #e5b336;
     color: #254275;
     font-family: font-medium;
     width: 100%;
@@ -14763,7 +14772,7 @@ form {
     font-size: 0.9rem;
   }
   .sec42 .btn-crear {
-    background-color: #fdcc7b;
+    background-color: #e5b336;
     color: #254275;
     font-family: font-medium;
     width: 80%;
@@ -14832,7 +14841,7 @@ form {
     font-size: 0.9rem;
   }
   .sec42_2 .btn-crear {
-    background-color: #fdcc7b;
+    background-color: #e5b336;
     color: #254275;
     font-family: font-medium;
     width: 80%;
@@ -15117,7 +15126,7 @@ form {
   }
   .sec45 .content .content_ h1 {
     text-align: center;
-    color: #fdcc7b;
+    color: #e5b336;
     font-family: font-extrabold;
     line-height: 1;
     margin: 0;
@@ -15205,7 +15214,7 @@ form {
     padding-left: 12px;
   }
   .sec46 .busq {
-    background-color: #fed68c;
+    background-color: #e5b336;
     padding: 30px 30px 20px;
     margin-bottom: 20px;
   }
@@ -15261,7 +15270,7 @@ form {
     width: 100%;
   }
   .sec46 .content_results .items .item .item_left h1 {
-    color: #fed68c;
+    color: #e5b336;
     font-family: font-bold;
     font-size: 1.5rem;
     margin-bottom: 20px;
@@ -15279,7 +15288,7 @@ form {
   }
   .sec46 .content_results .items .item .item_right .btn-info {
     font-family: font-medium;
-    background-color: #fed68c;
+    background-color: #e5b336;
     font-size: 1rem;
     border: 0;
     padding: 8px 16px;
@@ -15291,7 +15300,7 @@ form {
     text-align: center;
   }
   .sec46 .content_results .content_right .btn-cv {
-    background-color: #fed68c;
+    background-color: #e5b336;
     font-family: font-medium;
     font-size: 1.4rem;
     padding: 20px 50px;
@@ -15420,13 +15429,13 @@ form {
     font-size: 0.75rem;
   }
   .sec47 .content .content_left .offer h1 {
-    color: #fed68c;
+    color: #e5b336;
     font-family: font-bold;
     font-size: 2rem;
     margin-bottom: 20px;
   }
   .sec47 .content .content_left .offer h3 {
-    color: #fed68c;
+    color: #e5b336;
     font-family: font-bold;
     font-size: 1.5rem;
   }
@@ -15440,7 +15449,7 @@ form {
     line-height: 1.3;
   }
   .sec47 .content .content_left .offer .description .btn-postular {
-    background-color: #fed68c;
+    background-color: #e5b336;
     font-family: font-medium;
     font-size: 1.1rem;
     padding: 10px 30px;
@@ -15502,7 +15511,7 @@ form {
     margin: 0;
   }
   .sec47 .content .content_right .btn-cv {
-    background-color: #fed68c;
+    background-color: #e5b336;
     font-family: font-medium;
     font-size: 1.1rem;
     padding: 8px 40px;
@@ -15550,7 +15559,7 @@ form {
     width: 100%;
   }
   .sec47 .content_results .items .item .item_left h1 {
-    color: #fed68c;
+    color: #e5b336;
     font-family: font-bold;
     font-size: 1.5rem;
     margin-bottom: 20px;
@@ -15570,7 +15579,7 @@ form {
   }
   .sec47 .content_results .items .item .item_right .btn-info {
     font-family: font-medium;
-    background-color: #fed68c;
+    background-color: #e5b336;
     font-size: 1.1rem;
     border: 0;
     padding: 8px 16px;
@@ -15805,7 +15814,7 @@ form {
     color: #254275;
   }
   .sec48 .content .content_item .applicants .description .btn-postular {
-    background-color: #fed68c;
+    background-color: #e5b336;
     font-family: font-medium;
     font-size: 1rem;
     padding: 10px 30px;
@@ -16013,10 +16022,10 @@ form {
     color: #254275;
     font-family: font-light;
     font-size: 1rem;
-    border: 1px solid #fed68c;
+    border: 1px solid #e5b336;
   }
   .sec49 ul.nav li.nav-item .active {
-    background-color: #fed68c;
+    background-color: #e5b336;
     color: #254275;
     font-family: font-light;
     font-size: 1rem;
@@ -16153,10 +16162,10 @@ form {
     color: #254275;
     font-family: font-light;
     font-size: 1rem;
-    border: 1px solid #fed68c;
+    border: 1px solid #e5b336;
   }
   .sec50 ul.nav li.nav-item .active {
-    background-color: #fed68c;
+    background-color: #e5b336;
     color: #254275;
     font-family: font-light;
     font-size: 1rem;
@@ -16195,7 +16204,7 @@ form {
     font-family: font-bold;
   }
   .sec50 .content .content1 .content1_1 .content_ .content .btn_action {
-    background-color: #facd7f;
+    background-color: #e5b336;
     padding: 20px;
   }
   .sec50 .content .content1 .content1_1 .content_ .content .btn_action a.btn-conocemas {
@@ -16252,7 +16261,7 @@ form {
     color: #000;
     font-size: 1rem;
     margin: 10px 20px 10px;
-    background-color: #fcd48a;
+    background-color: #e5b336;
     font-family: font-semibold;
     text-align: center;
     text-transform: uppercase;
@@ -16298,7 +16307,7 @@ form {
     color: #254275;
     font-size: 1rem;
     margin: 10px 20px 10px;
-    background-color: #fcd48a;
+    background-color: #e5b336;
     font-family: font-semibold;
     text-align: center;
     text-transform: uppercase;
@@ -16342,7 +16351,7 @@ form {
     font-family: font-light;
   }
   .sec50 .content .content1 .educacion_corporativa .steps {
-    background-color: #fcd48a;
+    background-color: #e5b336;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -16424,7 +16433,7 @@ form {
     color: #254275;
   }
   .sec50 .content .content1 .portafolio .portafolio_header .content_ .content .btn_action {
-    background-color: #facd7f;
+    background-color: #e5b336;
     padding: 20px;
   }
   .sec50 .content .content1 .portafolio .portafolio_header .content_ .content .btn_action a.btn-conocemas {
@@ -16524,14 +16533,14 @@ form {
     display: inline-flex;
   }
   .sec50 .content .content1 .portafolio2 .items .item .counters .counter {
-    color: #facd7f;
+    color: #e5b336;
     font-size: 2.3rem;
     font-family: font-bold;
   }
   .sec50 .content .content1 .portafolio2 .items .item .counters span {
     font-family: font-bold;
     font-size: 2.3rem;
-    color: #facd7f;
+    color: #e5b336;
     margin-left: 8px;
   }
   .sec50 .content .content1 .portafolio2 .items .item p {
@@ -16632,7 +16641,7 @@ form {
     margin-top: 0px;
   }
   .sec51 #carousel-cursos .item:hover .item-header {
-    background: #fed68c;
+    background: #e5b336;
     padding: 19px 15%;
   }
   .sec51 #carousel-cursos .item:hover .item-header .titulo-header span {
@@ -16642,7 +16651,7 @@ form {
     height: 40px;
   }
   .sec51 #carousel-cursos .item:hover .item-content {
-    background: #fed68c;
+    background: #e5b336;
   }
   .sec51 #carousel-cursos .item:hover .item-content .content {
     padding: 5px 0;
@@ -16732,7 +16741,7 @@ form {
     transition: all 0.5s;
     color: #254275;
     font-size: 1rem;
-    background: #fed68c;
+    background: #e5b336;
     border-radius: 5px;
     padding: 3px 10px 2px;
     font-family: font-semibold;
@@ -16802,7 +16811,7 @@ form {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    background-color: #facd7f;
+    background-color: #e5b336;
     border-radius: 13px;
     padding: 30px 20px;
     border-top: 15px solid #081c38;
@@ -16867,7 +16876,7 @@ form {
     color: #254275;
     font-size: 1rem;
     padding: 4px 20px 2px;
-    background-color: #fed68c;
+    background-color: #e5b336;
     border-radius: 4px;
   }
   .sec54 .item {
@@ -16883,12 +16892,12 @@ form {
     transform: scale(1.05);
   }
   .sec54 .item .item_:hover .content {
-    background: #facd7f;
+    background: #e5b336;
     color: #254275;
   }
   .sec54 .item .item_:hover p.category {
     background: #254275 !important;
-    color: #facd7f !important;
+    color: #e5b336 !important;
   }
   .sec54 .item .item_:hover p.tit {
     color: #254275 !important;
@@ -16898,7 +16907,7 @@ form {
   }
   .sec54 .item .item_:hover .btn-tag {
     background-color: #254275 !important;
-    color: #facd7f !important;
+    color: #e5b336 !important;
   }
   .sec54 .item .item_ .image img {
     width: 100%;
@@ -16920,7 +16929,7 @@ form {
     left: 0;
     width: 100%;
     background: #254275;
-    color: #facd7f;
+    color: #e5b336;
     font-size: 1rem;
     text-decoration: none;
     border-radius: 0;
@@ -16929,7 +16938,7 @@ form {
   }
   .sec54 .item .item_ .content p.category {
     display: inline-block;
-    background: #facd7f;
+    background: #e5b336;
     color: #000017;
     font-family: font-bold;
     font-size: 1rem;
@@ -16942,7 +16951,7 @@ form {
     font-family: font-semibold;
     line-height: 1.2;
     font-size: 1rem;
-    color: #facd7f;
+    color: #e5b336;
     transition: 0.5s all;
   }
   .sec54 .item .item_ .content p.description {
@@ -16957,7 +16966,7 @@ form {
     margin-bottom: 15px;
   }
   .sec54 .item .item_ .tags .btn-tag {
-    background-color: #facd7f;
+    background-color: #e5b336;
     color: #254275;
     padding: 2px 7px 1px;
     font-size: 1rem;
@@ -17006,7 +17015,7 @@ form {
     padding-left: 40px;
   }
   .sec55 .content ul.nav li.nav-item .active {
-    background-color: #fed68c;
+    background-color: #e5b336;
     color: #254275;
     font-family: font-light;
     font-size: 0.9rem;
@@ -17038,7 +17047,7 @@ form {
     margin-bottom: 20px;
   }
   .sec55 .content .content_tab .items .item .text .btn-action .btn-vermas {
-    background-color: #fed68c;
+    background-color: #e5b336;
     color: #254275;
     padding: 5px 20px;
     font-size: 1.1rem;
@@ -17145,7 +17154,7 @@ form {
     right: 0;
     bottom: -13px;
     margin: auto;
-    background-color: #fdcc7b;
+    background-color: #e5b336;
   }
   .sec56 .certificado_resultado .text p:last-child:after {
     display: none;
@@ -17158,7 +17167,7 @@ form {
   }
   .sec56 .certificado_resultado .btn-action .btn-descargar {
     color: #254275;
-    background-color: #fed68c;
+    background-color: #e5b336;
     padding: 4px 30px;
     font-size: 1rem;
     transition: 0.4s all;
@@ -17233,7 +17242,7 @@ form {
     margin: 0;
   }
   .sec57 .iconos_ {
-    background-color: #fed68c;
+    background-color: #e5b336;
     padding: 47px 20px 10px;
   }
   .sec57 .iconos_ .text_icon {
@@ -17432,10 +17441,10 @@ form {
     color: #254275;
     font-family: font-light;
     font-size: 1rem;
-    border: 1px solid #fed68c;
+    border: 1px solid #e5b336;
   }
   .sec58 ul.nav li.nav-item .active {
-    background-color: #fed68c;
+    background-color: #e5b336;
     color: #254275;
     font-family: font-light;
     font-size: 1rem;
@@ -17469,7 +17478,7 @@ form {
     color: #00001d;
     font-family: font-semibold;
     font-size: 1.1rem;
-    background-color: #fed68c;
+    background-color: #e5b336;
     display: inline-flex;
     padding: 9px 50px;
     border-radius: 12px;
@@ -17579,7 +17588,7 @@ form {
     color: #00001d;
     font-family: font-semibold;
     font-size: 1.1rem;
-    background-color: #fed68c;
+    background-color: #e5b336;
     display: inline-flex;
     padding: 9px 50px;
     border-radius: 12px;
@@ -17689,7 +17698,7 @@ form {
   .sec59 .premiacion .items .item {
     text-align: center;
     width: 48%;
-    background-color: #fcd48a;
+    background-color: #e5b336;
     border-radius: 6px;
     border-top: 5px solid #254275;
     display: flex;
@@ -17853,7 +17862,7 @@ form {
     margin-top: 20px;
   }
   .sec61 .anuncio_seleccionar ul .btn-ver {
-    background-color: #f9cc85;
+    background-color: #e5b336;
     color: #254275;
     font-family: font-medium;
     font-size: 1rem;
@@ -17915,7 +17924,7 @@ form {
   .sec62 .items_ .items .item {
     text-align: center;
     width: 100%;
-    background-color: #fcd48a;
+    background-color: #e5b336;
     border-radius: 6px;
     border-top: 5px solid #254275;
     display: flex;
@@ -17987,7 +17996,7 @@ form {
     line-height: 1.1;
     margin: 0;
     font-size: 2.5rem;
-    color: #f1cc7f;
+    color: #e5b336;
     font-family: font-extrabold;
   }
   .sec63 .content .content_ p.subtit {
@@ -18560,7 +18569,7 @@ form {
     justify-content: space-around;
   }
   .footer .col2 ul .items .mail {
-    background: #facd7f;
+    background: #e5b336;
     display: flex;
     flex-direction: column;
     align-items: center;

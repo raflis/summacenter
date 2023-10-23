@@ -77,8 +77,12 @@
                     <h2>
                         {{ $slider->title3 }}
                     </h2>
-                    @if($slider->button_name && $slider->button_link)
-                    <a href="{{ $slider->button_link }}" class="btn btn-vermas">{{ $slider->button_name }}</a>
+                    @if($slider->full_link_desktop == 0)
+                        @if($slider->button_name && $slider->button_link)
+                        <a href="{{ $slider->button_link }}" class="btn btn-vermas">{{ $slider->button_name }}</a>
+                        @endif
+                    @else
+                        <a href="{{ $slider->button_link }}" class="btn btn-vermas" style="position: absolute; height: 100%; width: 100%; top: 0; left: 0; border: unset; margin: unset"></a>
                     @endif
                 </div>
             </div>

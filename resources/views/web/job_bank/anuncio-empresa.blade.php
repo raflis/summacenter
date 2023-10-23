@@ -121,6 +121,7 @@
                 <h2 class="similares">Ofertas similares</h2>
                 <div class="content_results">
                     <div class="items">
+                        @if(count($offer_related)>0)
                         @foreach ($offer_related[0] as $item)
                         <div class="item">
                             <div class="item_left">
@@ -137,10 +138,11 @@
                             </div>
                         </div>
                         @endforeach
+                        @endif
                     </div>
                     <div class="content_right">
                         <div class="advertisements">
-                            <img src="{{ asset('images/adver4.png') }}" alt="">
+                            <img src="{{ $pagefield->job_bank_advertising[7] }}" alt="">
                         </div>
                     </div>
                 </div>

@@ -6,6 +6,22 @@
     @include('web.partials.header')
 </section>
 
+<section class="sec0 pt-20">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 breadcrumb_">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item"><a href="{{ route('index') }}">Inicio</a></li>
+                      <li class="breadcrumb-item"><a href="{{ route('ofertas.index') }}">Mis ofertas</a></li>
+                      <li class="breadcrumb-item active" aria-current="page">Editar oferta</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="sec48">
     <div class="container-fluid">
         <div class="row justify-content-center">

@@ -12,7 +12,7 @@ class JobBankOffer extends Model
     protected $table = 'job_bank_offers';
 
     protected $fillable = [
-        'job_bank_user_id', 'name', 'slug', 'title', 'requirements', 'responsibilities', 
+        'status', 'job_bank_user_id', 'name', 'slug', 'title', 'requirements', 'responsibilities', 
         'benefits', 'detail', 'job_type', 'department', 'address',
         'category', 'end_offer', 'salary',
     ];

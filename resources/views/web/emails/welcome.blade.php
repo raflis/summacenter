@@ -77,7 +77,7 @@
         <td colspan="4" align="center" valign="top">&nbsp;</td>
       </tr>
       <tr>
-        <td height="83" colspan="4" align="center" valign="middle" bgcolor="#061D38"><img src="https://summa.dopamina.pe/images/logo.png" width="262" height="60" alt=""/></td>
+        <td height="83" colspan="4" align="center" valign="middle" bgcolor="#061D38"><img src="https://summacenterlatam.com/images/logo_new.png" width="168" height="70" alt=""/></td>
         </tr>
       <tr>
         <td width="4%" height="18">&nbsp;</td>
@@ -140,7 +140,7 @@
         <tr>
             <td height="41">&nbsp;</td>
             <td colspan="2" align="center">
-				<a href="https://summa.dopamina.pe" style="text-decoration: none; background-color: #fdcc7b; font-size: 17px; color: #061d38; font-weight: bold; padding: 8px 30px; font-family: Segoe, 'Segoe UI', 'DejaVu Sans', 'Trebuchet MS', Verdana, sans-serif;">
+				<a href="https://summacenterlatam.com" style="text-decoration: none; background-color: #fdcc7b; font-size: 17px; color: #061d38; font-weight: bold; padding: 8px 30px; font-family: Segoe, 'Segoe UI', 'DejaVu Sans', 'Trebuchet MS', Verdana, sans-serif;">
 					VISITA NUESTRA WEB</a></td>
             <td>&nbsp;</td>
         </tr>
@@ -154,7 +154,7 @@
 		  <td colspan="2">
 			<p style="font-family: Segoe, 'Segoe UI', 'DejaVu Sans', 'Trebuchet MS', Verdana, sans-serif; font-size: 15px; color: #061d38; line-height: 20px; font-weight: regular; text-align: left; margin: 0">
                 
-                Puedes acceder a tu cuenta para ver tus cursos y cambiar tu contraseña aquí: <a href="https://summacenter.net/" style="color:#4AA0FF">summacenter.net</a>
+                Puedes acceder a tu cuenta para ver tus cursos y cambiar tu contraseña aquí: <a href="https://summacenterlatam.com" style="color:#4AA0FF">summacenterlatam.com</a>
                 
                 </p>
 			</td>

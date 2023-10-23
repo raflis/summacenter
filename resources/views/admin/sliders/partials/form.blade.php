@@ -58,6 +58,11 @@
 </div>
 
 <div class="form-group col-sm-12">
+  {{ Form::label('full_link_desktop', 'Activar link completo (Dekstop):') }} 
+  {{ Form::select('full_link_desktop', [0 => 'No', 1 => 'Si'], null, ['class' => 'custom-select', 'placeholder' => 'Seleccione']) }}
+</div>
+
+<div class="form-group col-sm-12">
   {{ Form::label('order', 'Orden:') }} <code>*</code>
   {{ Form::number('order', null, ['class' => 'form-control', 'placeholder' => 'Orden', 'required']) }}
   <div class="invalid-feedback">

@@ -77,7 +77,7 @@
         <td colspan="4" align="center" valign="top">&nbsp;</td>
       </tr>
       <tr>
-        <td height="83" colspan="4" align="center" valign="middle" bgcolor="#061D38"><img src="https://summa.dopamina.pe/images/logo.png" width="262" height="60" alt=""/></td>
+        <td height="83" colspan="4" align="center" valign="middle" bgcolor="#061D38"><img src="https://summacenterlatam.com/images/logo_new.png" width="168" height="70" alt=""/></td>
         </tr>
       <tr>
         <td width="4%" height="18">&nbsp;</td>
@@ -331,7 +331,7 @@ Los detalles de tu pedido se muestran a continuación
 		        <td width="16%">&nbsp;</td>
 		        </tr>
 		      <tr>
-		        <td align="center"><img src="https://summa.dopamina.pe/images/bcp.png" width="130" height="49" alt=""/></td>
+		        <td align="center"><img src="https://summacenterlatam.com/images/bcp.png" width="130" height="49" alt=""/></td>
 		        <td align="center">&nbsp;</td>
 		        <td colspan="3" valign="middle"><p style="font-family: Segoe, 'Segoe UI', 'DejaVu Sans', 'Trebuchet MS', Verdana, sans-serif; font-size: 13px; color: #061d38; line-height: 20px; font-weight: normal; text-align: left; margin: 0;padding: 0px">
 					Cuenta Corriente en Soles: 191-2598721-0-05<br>
@@ -346,7 +346,7 @@ Los detalles de tu pedido se muestran a continuación
 		        <td>&nbsp;</td>
 		        </tr>
 		      <tr>
-		        <td align="center"><img src="https://summa.dopamina.pe/images/bbva0.png" width="130" height="49" alt=""/></td>
+		        <td align="center"><img src="https://summacenterlatam.com/images/bbva0.png" width="130" height="49" alt=""/></td>
 		        <td>&nbsp;</td>
 		        <td colspan="3"><p style="font-family: Segoe, 'Segoe UI', 'DejaVu Sans', 'Trebuchet MS', Verdana, sans-serif; font-size: 13px; color: #061d38; line-height: 20px; font-weight: normal; text-align: left; margin: 0;padding: 0px">
 					Cuenta Corriente en Soles: 0011-0101-01000513-88<br>
@@ -361,7 +361,7 @@ Los detalles de tu pedido se muestran a continuación
 		        <td>&nbsp;</td>
 		        </tr>
 		      <tr>
-		        <td align="center"><img src="https://summa.dopamina.pe/images/nacion.png" width="130" height="49" alt=""/></td>
+		        <td align="center"><img src="https://summacenterlatam.com/images/nacion.png" width="130" height="49" alt=""/></td>
 		        <td align="center">&nbsp;</td>
 		        <td colspan="3"><p style="font-family: Segoe, 'Segoe UI', 'DejaVu Sans', 'Trebuchet MS', Verdana, sans-serif; font-size: 13px; color: #061d38; line-height: 20px; font-weight: normal; text-align: left; margin: 0;padding: 0px">
 					N° Cuenta de Detracciones<br>
@@ -392,7 +392,7 @@ Los detalles de tu pedido se muestran a continuación
 		<tr>
 		  <td>&nbsp;</td>
 		  <td align="center">
-			  <img src="https://summa.dopamina.pe/images/wp.png" width="30" height="29" alt=""/>
+			  <img src="https://summacenterlatam.com/images/wp.png" width="30" height="29" alt=""/>
 			</td>
 		  <td><p style="font-family: Segoe, 'Segoe UI', 'DejaVu Sans', 'Trebuchet MS', Verdana, sans-serif; font-size: 13px; color: #061d38; line-height: 20px; font-weight: normal; text-align: left; margin: 0;padding-left: 0px">
 					<a href="https://api.whatsapp.com/send/?phone=51946543435" style="color:#4AA0FF" target="_blank">(+51) 946543435</a> (Raúl Daniel De La Cruz Peña - Jefe de Ventas)

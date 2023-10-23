@@ -428,20 +428,7 @@
                                         </div>
                                     </div>
                                     <div class="item">
-                                        <img src="{{ asset('images/gold.png') }}" alt="">
-                                        <h3>
-                                            Gold
-                                        </h3>
-                                        <div class="stars">
-                                            <img src="{{ asset('images/star.png') }}" alt="">
-                                            <img src="{{ asset('images/star.png') }}" alt="">
-                                            <img src="{{ asset('images/star.png') }}" alt="">
-                                            <img src="{{ asset('images/star.png') }}" alt="">
-                                            <img src="{{ asset('images/star.png') }}" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <img src="{{ asset('images/gold.png') }}" alt="">
+                                        <img src="{{ asset('images/black.png') }}" alt="">
                                         <h3>
                                             Black
                                         </h3>

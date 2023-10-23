@@ -5,11 +5,11 @@
                 <a href="{{ route('egresados') }}" class="@if(Route::currentRouteName()=="egresados") active @endif">EGRESADOS</a>
             </li>-->
             <li>
-                <a href="{{ route('blog') }}" class="@if(Route::currentRouteName()=="blog") active @endif">BLOG</a>
+                <a href="{{ route('blog') }}" class="@if(Route::currentRouteName()=="blog") active @endif">{{ $setting->links[1] }}</a>
             </li>
             <li class="bolsa">
                 <div class="dropdown">
-                    <a href="{{ route('bolsa.trabajo') }}" class="@if(preg_match("/^bolsa./", Route::currentRouteName())) active @endif" id="dropdownMenuButton0" data-bs-toggle="dropdown" aria-expanded="false">BOLSA DE TRABAJO</a>
+                    <a href="{{ route('bolsa.trabajo') }}" class="@if(preg_match("/^bolsa./", Route::currentRouteName())) active @endif" id="dropdownMenuButton0" data-bs-toggle="dropdown" aria-expanded="false">{{ $setting->links[2] }}</a>
                     <ul class="dropdown-menu shadow" aria-labelledby="dropdownMenuButton0">
                         <li>
                             <a class="dropdown-item @if(Route::currentRouteName()=="bolsa.seleccionar") active @endif" href="{{ route('bolsa.seleccionar') }}">
@@ -25,10 +25,10 @@
                 </div>
             </li>
             <li>
-                <a href="{{ route('soporte') }}" class="@if(Route::currentRouteName()=="soporte") active @endif">SOPORTE</a>
+                <a href="{{ route('soporte') }}" class="@if(Route::currentRouteName()=="soporte") active @endif">{{ $setting->links[3] }}</a>
             </li>
             <li>
-                <a href="{{ route('contacto') }}" class="@if(Route::currentRouteName()=="contacto") active @endif">CONTACTO</a>
+                <a href="{{ route('contacto') }}" class="@if(Route::currentRouteName()=="contacto") active @endif">{{ $setting->links[4] }}</a>
             </li>
         </ul>
         <ul class="header-second" id="header-second">
@@ -41,7 +41,7 @@
                 <li class="menu">
                     <div class="dropdown dropdown_header">
                         <button id="btn-header" list="header1_list" class="btn btn-item @if(Route::currentRouteName()=="modelo-educativo" || Route::currentRouteName()=="nosotros" || Route::currentRouteName()=="equipo" || Route::currentRouteName()=="ofimatica" || preg_match("/^responsabilidad-social/", Route::currentRouteName()) || Route::currentRouteName()=="distinciones") active0 @endif">
-                        SUMMA
+                            {{ $setting->links[5] }}
                         </button>
                     </div>
                     <div class="dropPrograma dropCorpo shadow noActiveList" id="header1_list">
@@ -74,7 +74,7 @@
                 <li class="menu">
                     <div class="dropdown dropdown_header">
                         <button id="btn-header" list="header2_list" class="btn btn-item @if(Route::currentRouteName()=="programas" || Route::currentRouteName()=="curso") active0 @endif">
-                        PROGRAMAS
+                            {{ $setting->links[6] }}
                         </button>
                     </div>
                     <div class="dropPrograma dropCorpo shadow noActiveList" id="header2_list">
@@ -98,7 +98,7 @@
                 <li class="menu">
                     <div class="dropdown dropdown_header">
                         <button id="btn-header" list="header3_list" class="btn btn-item @if(Route::currentRouteName()=="nuestras-certificaciones" || Route::currentRouteName()=="preguntas-frecuentes" || Route::currentRouteName()=="grupo-excelencia" || preg_match("/insignia/", Route::currentRouteName()) ) active0 @endif">
-                            CERTIFICACIONES
+                            {{ $setting->links[7] }}
                         </button>
                     </div>
                     <div class="dropPrograma dropCorpo shadow noActiveList" id="header3_list">
@@ -131,7 +131,7 @@
                 <li class="menu">
                     <div class="dropdown dropdown_header">
                         <button id="btn-header" list="header4_list" class="btn btn-item @if(Route::currentRouteName()=="asesoria-especializada" || Route::currentRouteName()=="capacitaciones-corporativas") active0 @endif">
-                            CORPORATIVOS
+                            {{ $setting->links[8] }}
                         </button>
                     </div>
                     <div class="dropPrograma dropCorpo shadow noActiveList" id="header4_list">
@@ -216,7 +216,7 @@
                 <div class="content">
                     <div class="content-left">
                         <div class="logo">
-                            <a href="{{ route('index') }}"><img src="{{ asset('images/logo.png') }}" alt=""></a>
+                            <a href="{{ route('index') }}"><img src="{{ asset('images/logo_new.png') }}" alt=""></a>
                         </div>
                     </div>
                     <div class="content-right">
@@ -234,19 +234,19 @@
                         </div>
                         <ul class="list1">
                             <li>
-                                <img src="{{ asset('images/logo.png') }}" alt="">
+                                <img src="{{ asset('images/logo_new.png') }}" alt="">
                             </li>
                             <!--<li class="{{ (Route::currentRouteName()=="egresados")?'active':'' }}">
                                 <a href="{{ route('egresados') }}"><i class="fa-solid fa-angle-right"></i> EGRESADOS</a>
                             </li>-->
                             <li class="{{ (Route::currentRouteName()=="blog")?'active':'' }}">
-                                <a href="{{ route('blog') }}"><i class="fa-solid fa-angle-right"></i> BLOG</a>
+                                <a href="{{ route('blog') }}"><i class="fa-solid fa-angle-right"></i> {{ $setting->links[1] }}</a>
                             </li>
                             <li class="{{ (Route::currentRouteName()=="soporte")?'active':'' }}">
-                                <a href="{{ route('soporte') }}"><i class="fa-solid fa-angle-right"></i> SOPORTE</a>
+                                <a href="{{ route('soporte') }}"><i class="fa-solid fa-angle-right"></i> {{ $setting->links[3] }}</a>
                             </li>
                             <li class="{{ (Route::currentRouteName()=="contacto")?'active':'' }}">
-                                <a href="{{ route('contacto') }}"><i class="fa-solid fa-angle-right"></i> CONTACTO</a>
+                                <a href="{{ route('contacto') }}"><i class="fa-solid fa-angle-right"></i> {{ $setting->links[4] }}</a>
                             </li>
                             <li>
                                 <a href="{{ $setting->button_link }}"><i class="fa-solid fa-link"></i> {{ $setting->button_name }}</a>
@@ -256,7 +256,7 @@
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="flush-heading0">
                                     <button class="accordion-button {{ preg_match("/^bolsa./", Route::currentRouteName())?'':'collapsed' }}" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse0" aria-expanded="false" aria-controls="flush-collapse0">
-                                        BOLSA DE TRABAJO
+                                        {{ $setting->links[2] }}
                                     </button>
                                 </h2>
                                 <div id="flush-collapse0" class="accordion-collapse collapse {{ preg_match("/^bolsa./", Route::currentRouteName())?'show':'' }}" aria-labelledby="flush-heading0" data-bs-parent="#accordionFlushExample">
@@ -275,7 +275,7 @@
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="flush-headingOne">
                                     <button class="accordion-button @if(Route::currentRouteName()=="modelo-educativo" || Route::currentRouteName()=="nosotros" || Route::currentRouteName()=="equipo" || Route::currentRouteName()=="ofimatica" || preg_match("/^responsabilidad-social/", Route::currentRouteName()) || Route::currentRouteName()=="distinciones") @else collapsed @endif" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                                        SUMMA
+                                        {{ $setting->links[5] }}
                                     </button>
                                 </h2>
                                 <div id="flush-collapseOne" class="accordion-collapse collapse @if(Route::currentRouteName()=="modelo-educativo" || Route::currentRouteName()=="nosotros" || Route::currentRouteName()=="equipo" || Route::currentRouteName()=="ofimatica" || preg_match("/^responsabilidad-social/", Route::currentRouteName()) || Route::currentRouteName()=="distinciones") show @endif" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
@@ -303,7 +303,7 @@
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="flush-headingTwo">
                                     <button class="accordion-button @if(Route::currentRouteName()=="programas" || Route::currentRouteName()=="curso") @else collapsed @endif" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                                        PROGRAMAS
+                                        {{ $setting->links[6] }}
                                     </button>
                                 </h2>
                                 <div id="flush-collapseTwo" class="accordion-collapse collapse @if(Route::currentRouteName()=="programas" || Route::currentRouteName()=="curso") show @endif" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
@@ -324,7 +324,7 @@
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="flush-headingThree">
                                     <button class="accordion-button @if(Route::currentRouteName()=="nuestras-certificaciones" || Route::currentRouteName()=="preguntas-frecuentes" || Route::currentRouteName()=="grupo-excelencia" || preg_match("/insignia/", Route::currentRouteName()) ) @else collapsed @endif" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                                        CERTIFICACIONES
+                                        {{ $setting->links[7] }}
                                     </button>
                                 </h2>
                                 <div id="flush-collapseThree" class="accordion-collapse collapse @if(Route::currentRouteName()=="nuestras-certificaciones" || Route::currentRouteName()=="preguntas-frecuentes" || Route::currentRouteName()=="grupo-excelencia" || preg_match("/insignia/", Route::currentRouteName()) ) show @endif" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
@@ -352,7 +352,7 @@
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="flush-heading4">
                                     <button class="accordion-button @if(Route::currentRouteName()=="asesoria-especializada" || Route::currentRouteName()=="capacitaciones-corporativas") @else collapsed @endif" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse4" aria-expanded="false" aria-controls="flush-collapse4">
-                                        CORPORATIVO
+                                        {{ $setting->links[8] }}
                                     </button>
                                 </h2>
                                 <div id="flush-collapse4" class="accordion-collapse collapse @if(Route::currentRouteName()=="asesoria-especializada" || Route::currentRouteName()=="capacitaciones-corporativas") show @endif" aria-labelledby="flush-heading4" data-bs-parent="#accordionFlushExample">

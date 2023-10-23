@@ -76,9 +76,9 @@
                             @endif
                         @endif
                         <div class="advertisements">
-                            <img src="{{ asset('images/adver1.png') }}" alt="">
-                            <img src="{{ asset('images/adver2.png') }}" alt="">
-                            <img src="{{ asset('images/adver3.png') }}" alt="">
+                            <img src="{{ $pagefield->job_bank_advertising[0] }}" alt="">
+                            <img src="{{ $pagefield->job_bank_advertising[1] }}" alt="">
+                            <img src="{{ $pagefield->job_bank_advertising[2] }}" alt="">
                         </div>
                     </div>
                 </div>
