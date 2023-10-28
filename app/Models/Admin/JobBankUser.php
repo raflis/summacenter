@@ -22,7 +22,7 @@ class JobBankUser extends Authenticatable
     ];
 
     protected $fillable = [
-        'status', 'role', 'name', 'lastname', 'type_document', 'document', 'birthday', 'telephone',
+        'status', 'file', 'role', 'name', 'lastname', 'type_document', 'document', 'birthday', 'telephone',
         'career', 'position', 'address', 'summary', 'experience', 'company_name', 'company_document', 'company_address',
         'company_telephone', 'avatar', 'email', 'password',
     ];

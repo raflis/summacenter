@@ -23,6 +23,11 @@ Route::prefix('/admin')->group(function(){
     Route::resource('settings', App\Http\Controllers\Admin\SettingController::class)->only(['index', 'update']);
     Route::get('settings/links', [App\Http\Controllers\Admin\SettingController::class,'links'])->name('settings.links');
     Route::get('settings/whatsapp', [App\Http\Controllers\Admin\SettingController::class,'whatsapp'])->name('settings.whatsapp');
+    Route::get('settings/titles', [App\Http\Controllers\Admin\SettingController::class,'titles'])->name('settings.titles');
+    Route::get('settings/descriptions', [App\Http\Controllers\Admin\SettingController::class,'descriptions'])->name('settings.descriptions');
+    Route::get('settings/keywords', [App\Http\Controllers\Admin\SettingController::class,'keywords'])->name('settings.keywords');
+    Route::get('settings/image', [App\Http\Controllers\Admin\SettingController::class,'image'])->name('settings.image');
+    Route::get('settings/paymodetext', [App\Http\Controllers\Admin\SettingController::class,'paymodetext'])->name('settings.paymodetext');
     Route::resource('sliders', App\Http\Controllers\Admin\SliderController::class);
     Route::resource('partners', App\Http\Controllers\Admin\PartnerController::class);
     Route::resource('alliances', App\Http\Controllers\Admin\AllianceController::class);

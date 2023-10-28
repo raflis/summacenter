@@ -1,5 +1,8 @@
 @extends('web.layout')
-
+@section('title', $post->meta[1])
+@section('keywords', $post->meta[2])
+@section('description', $post->meta[3])
+@section('image', $post->image2)
 @section('content')
 
 <section class="sec18">
@@ -34,15 +37,15 @@
                             COMPARTE ESTE ARTICULO EN:
                         </p>
                         <div class="images">
-                            <a href="">
+                            <a href="https://www.facebook.com/sharer/sharer.php?u={{ route('post', [$post->blog_category->slug, $post->slug, $post->id]) }}" target="_blank">
                                 <img src="{{ asset('images/facebook.png') }}" alt="">
                             </a>
-                            <a href="">
+                            <a href="https://twitter.com/intent/tweet?url={{ route('post', [$post->blog_category->slug, $post->slug, $post->id]) }}" target="_blank">
                                 <img src="{{ asset('images/twitter.png') }}" alt="">
                             </a>
-                            <a href="">
+                            <!--<a href="">
                                 <img src="{{ asset('images/whatsapp.png') }}" alt="">
-                            </a>
+                            </a>-->
                         </div>
                     </div>
                 </div>
@@ -56,6 +59,7 @@
                     {!! htmlspecialchars_decode($post->body) !!}
                 </div>
             </div>
+            @if (count($related) > 0)
             <div class="col-md-12 navegacion">
                 <h3>
                     NOTICIAS QUE TE PUEDEN INTERESAR
@@ -93,6 +97,7 @@
                     @endforeach
                 </div>
             </div>
+            @endif
         </div>
     </div>
 </section>

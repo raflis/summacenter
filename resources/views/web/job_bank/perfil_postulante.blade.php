@@ -1,5 +1,7 @@
 @extends('web.layout')
-
+@section('title', $setting->meta_title[2])
+@section('description', $setting->meta_description[2])
+@section('keywords', $setting->meta_keyword[2])
 @section('content')
 
 <section class="sec22">
@@ -35,7 +37,7 @@
                             </h1>
                         </div>
                         @php Auth::guard('jobbank')->user()->birthday = \Carbon\Carbon::parse(Auth::guard('jobbank')->user()->birthday)->format('Y-m-d') @endphp
-                        {!! Form::model(Auth::guard('jobbank')->user(), ['route' => ['bolsa.trabajo.perfil.update', Auth::user()->id], 'class' => 'needs-validation', 'novalidate', 'method' => 'PUT']) !!}
+                        {!! Form::model(Auth::guard('jobbank')->user(), ['route' => ['bolsa.trabajo.perfil.update', Auth::user()->id], 'class' => 'needs-validation', 'novalidate', 'method' => 'PUT', 'enctype' => 'multipart/form-data']) !!}
                             <div class="row">
                                 <div class="form-group col-md-12">
                                     @include('web.partials.alert')
@@ -124,7 +126,14 @@
                                         @endforeach
                                     </div>
                                 </div>
-                               
+                                <div class="form-group col-md-6">
+                                    <label for="">Subir CV</label>
+                                    {{ Form::file('cv', ['class' => 'form-control', 'placeholder' => 'Subir CV', 'accept' => 'application/pdf']) }}
+                                    @if (Auth::guard('jobbank')->user()->file != NULL)
+                                    <p class="mt-1 mb-0"><strong>Archivo:</strong><a class="ms-2" href="{{ asset('cvs/'.Auth::guard('jobbank')->user()->file) }}" target="_blank">Ver CV</a></p> 
+                                    @endif
+                                </div>
+                                
                                 <div class="form-group col-md-12 m-0">
                                     <label for="">Información de contacto</label>
                                     <div class="info">
@@ -145,6 +154,10 @@
                                     <p class="info2">
                                         Este es el CV con el que podrás postular a los avisos de empresas.
                                     </p>
+                                </div>
+                                <div class="col-md-12 form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" role="switch" id="status" name="status" {{ (Auth::guard('jobbank')->user()->status == 1)?'checked':'' }}>
+                                    <label class="form-check-label" for="status">Mostrar mi perfil de modo público</label>
                                 </div>
                                 <div class="form-group col-md-12 mt-4">
                                     <button type="submit" class="btn btn-guardar">GUARDAR</button>

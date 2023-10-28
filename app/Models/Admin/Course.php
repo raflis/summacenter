@@ -12,7 +12,7 @@ class Course extends Model
     protected $table = 'courses';
 
     protected $casts = [
-        //'benefits' => 'array',
+        'meta' => 'array',
     ];
 
     protected $fillable = [
@@ -20,7 +20,7 @@ class Course extends Model
         'slider', 'image', 'badge', 'certificate',
         'start_of_classes', 'schedule', 'duration', 'price', 'subtitle', 'modality',
         'download_video', 'brochure', 'video_id', 'objective', 'audience', 'benefits',
-        'order',
+        'order', 'meta',
     ];
 
     public function course_category()

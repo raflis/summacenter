@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Web;
 
-use Auth;
 use Str;
+use Auth;
 use Validator;
 use Illuminate\Http\Request;
+use App\Models\Admin\Setting;
 use App\Models\Admin\JobBankOffer;
 use App\Http\Controllers\Controller;
 
@@ -28,8 +29,9 @@ class JobBankOfferController extends Controller
      */
     public function index()
     {
+        $setting = Setting::find(1);
         $job_bank_offers = JobBankOffer::get();
-        return view('web.job_bank.ofertas.index', compact('job_bank_offers'));
+        return view('web.job_bank.ofertas.index', compact('setting', 'job_bank_offers'));
     }
 
     /**
@@ -39,7 +41,8 @@ class JobBankOfferController extends Controller
      */
     public function create()
     {
-        return view('web.job_bank.ofertas.create');
+        $setting = Setting::find(1);
+        return view('web.job_bank.ofertas.create', compact('setting'));
     }
 
     /**
@@ -89,8 +92,9 @@ class JobBankOfferController extends Controller
      */
     public function show($id)
     {
+        $setting = Setting::find(1);
         $job_bank_offer = JobBankOffer::find($id);
-        return view('web.job_bank.ofertas.show', compact('job_bank_offer'));
+        return view('web.job_bank.ofertas.show', compact('setting', 'job_bank_offer'));
     }
 
     /**
@@ -101,9 +105,10 @@ class JobBankOfferController extends Controller
      */
     public function edit($id)
     {
+        $setting = Setting::find(1);
         $job_bank_offer = JobBankOffer::find($id);
         $job_bank_offer->end_offer = \Carbon\Carbon::parse($job_bank_offer->end_offer)->format('Y-m-d');
-        return view('web.job_bank.ofertas.edit', compact('job_bank_offer'));
+        return view('web.job_bank.ofertas.edit', compact('setting', 'job_bank_offer'));
     }
 
     /**

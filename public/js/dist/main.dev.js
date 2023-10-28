@@ -371,6 +371,9 @@ $(function () {
     $('div[id*=mode_pay]').removeClass('active_mode');
     $(this).addClass('active_mode');
     $('input[name=mode]').val($(this).attr('pay_value'));
+    $('p[id*=mode_text]').removeClass('d-none');
+    $('p[id*=mode_text]').addClass('d-none');
+    $('#mode_text' + $(this).attr('pay_value')).removeClass('d-none');
   });
   $('#carousel-slider').owlCarousel({
     loop: true,

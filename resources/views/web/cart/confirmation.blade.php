@@ -1,5 +1,7 @@
 @extends('web.layout')
-
+@section('title', 'Gracias por tu compra | SUMMA CENTER LATAM')
+@section('description', 'Gracias por tu compra | SUMMA CENTER LATAM')
+@section('keywords', 'Gracias por tu compra | SUMMA CENTER LATAM')
 @section('content')
 
 <section class="sec9_1" style="background-image: url({{ asset('images/slider-gracias.png') }});">

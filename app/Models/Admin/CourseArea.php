@@ -11,8 +11,12 @@ class CourseArea extends Model
 
     protected $table = 'course_areas';
 
+    protected $casts = [
+        'meta' => 'array',
+    ];
+
     protected $fillable = [
-        'name', 'slug', 'icon', 'image', 'badge', 'text', 'order',
+        'name', 'slug', 'icon', 'image', 'badge', 'text', 'order', 'meta',
     ];
 
     public function courses()

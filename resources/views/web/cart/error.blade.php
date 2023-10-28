@@ -1,5 +1,7 @@
 @extends('web.layout')
-
+@section('title', 'Error carrito de compras | SUMMA CENTER LATAM')
+@section('description', 'Error carrito de compras | SUMMA CENTER LATAM')
+@section('keywords', 'Error carrito de compras | SUMMA CENTER LATAM')
 @section('content')
 
 <section class="sec9_1" style="background-image: url({{ asset('images/slider-gracias.png') }});">

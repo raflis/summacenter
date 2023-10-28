@@ -1,5 +1,8 @@
 @extends('web.layout')
-
+@section('title', $course->meta[1])
+@section('keywords', $course->meta[2])
+@section('description', $course->meta[3])
+@section('image', (isset($course->meta[4]))?$course->meta[4]:$setting->meta_image)
 @section('content')
 
 <section class="sec22" style="background-image: url('{{ $course->slider }}')!important">

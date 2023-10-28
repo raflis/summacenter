@@ -3,6 +3,12 @@
   {{ Form::select('status', [0 => 'No', 1 => 'Si'], null, ['class' => 'custom-select', 'placeholder' => 'Seleccione', 'required']) }}
 </div>
 
+@if ($job_bank_user->file != NULL)
+<div class="form-group col-md-12">
+  <label for="">Archivo</label> <code><a href="{{ asset('cvs/'.$job_bank_user->file) }}" target="_blank">Ver CV</a></code>
+</div>
+@endif
+
 <div class="form-group col-md-6">
   <label for="">Nombres</label> <code>*</code>
   {{ Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Nombres', 'required']) }}

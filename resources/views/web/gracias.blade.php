@@ -1,5 +1,8 @@
 @extends('web.layout')
-
+@section('title', 'Gracias por la compra | SUMMA CENTER LATAM')
+@section('description', 'Gracias por la compra | SUMMA CENTER LATAM')
+@section('keywords', 'Gracias por la compra | SUMMA CENTER LATAM')
+@section('image', $setting->meta_image)
 @section('content')
 
 <section class="sec9_1" style="background-image: url({{ asset('images/slider-gracias.png') }});">

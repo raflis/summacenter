@@ -1,5 +1,8 @@
 @extends('web.layout')
-
+@section('title', 'Recomendaciones | SUMMA CENTER LATAM')
+@section('description', 'Nuestras recomendaciones')
+@section('keywords', 'recomendaciones, summa')
+@section('image', $setting->meta_image)
 @section('content')
 
 <section class="sec63" style="background-image: url(../images/slider-recomendaciones.jpg);">

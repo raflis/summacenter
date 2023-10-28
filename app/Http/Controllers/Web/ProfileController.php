@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Web;
 
 use Auth;
 use Hash;
+use Str;
 use Validator;
 use App\Models\User;
 use App\Models\Admin\Sale;
@@ -164,6 +165,21 @@ class ProfileController extends Controller
         else:
             if(Auth::guard('jobbank')->user()->id <> $id):
                 return back()->withErrors($validator)->with('message', '¿Qué haces? o.O')->with('typealert', 'danger')->withInput();
+            endif;
+
+            if($request->hasFile('cv')):
+                $fileName = $id.'_CV_'.Str::slug($request->name).'-'.Str::slug($request->lastname);
+                $fileName = $fileName.'.'.$request->cv->getClientOriginalExtension();
+                $request->cv->move(public_path('cvs'), $fileName);
+                $request->merge(['file' => $fileName]);
+            else:
+                $request->merge(['file' => '']);
+            endif;
+
+            if($request->status == "on"):
+                $request->merge(['status' => 1]);
+            else:
+                $request->merge(['status' => 0]);
             endif;
 
             if($request->experience):

@@ -33,6 +33,36 @@ class SettingController extends Controller
         return view('admin.settings.whatsapp', compact('setting'));
     }
 
+    public function titles()
+    {
+        $setting = Setting::find(1);
+        return view('admin.settings.titles', compact('setting'));
+    }
+
+    public function descriptions()
+    {
+        $setting = Setting::find(1);
+        return view('admin.settings.descriptions', compact('setting'));
+    }
+
+    public function keywords()
+    {
+        $setting = Setting::find(1);
+        return view('admin.settings.keywords', compact('setting'));
+    }
+
+    public function image()
+    {
+        $setting = Setting::find(1);
+        return view('admin.settings.image', compact('setting'));
+    }
+
+    public function paymodetext()
+    {
+        $setting = Setting::find(1);
+        return view('admin.settings.pay_mode_text', compact('setting'));
+    }
+
     public function index()
     {
         $setting = Setting::find(1);

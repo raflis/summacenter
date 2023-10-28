@@ -1,5 +1,8 @@
 @extends('web.layout')
-
+@section('title', $tag->meta[1])
+@section('keywords', $tag->meta[2])
+@section('description', $tag->meta[3])
+@section('image', $setting->meta_image)
 @section('content')
 
 <section class="sec18" style="background-image: url('{{ $pagefield->cover_pages[12]['image'] }}')">
@@ -28,6 +31,7 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                       <li class="breadcrumb-item"><a href="{{ route('index') }}">Inicio</a></li>
+                      <li class="breadcrumb-item"><a href="{{ route('blog') }}">Blog</a></li>
                       <li class="breadcrumb-item active" aria-current="page">Tag</li>
                       <li class="breadcrumb-item active" aria-current="page">{{ $tag->name }}</li>
                     </ol>
@@ -44,16 +48,16 @@
             <div class="col-md-4 item" id="itemTag">
                 <div class="item_">
                     <div class="image">
-                        <a href="{{ route('post', [$item_p->blog_sub_category->blog_category->slug, $item_p->blog_sub_category->slug, $item_p->slug, $item_p->id]) }}">
+                        <a href="{{ route('post', [$item_p->blog_category->slug, $item_p->slug, $item_p->id]) }}">
                             <img src="{{ $item_p->image1 }}" alt="">
                         </a>
                     </div>
                     <div class="content">
-                        <a href="{{ route('post', [$item_p->blog_sub_category->blog_category->slug, $item_p->blog_sub_category->slug, $item_p->slug, $item_p->id]) }}" class="btn btn-leer">
+                        <a href="{{ route('post', [$item_p->blog_category->slug, $item_p->slug, $item_p->id]) }}" class="btn btn-leer">
                             ARTÍCULO COMPLETO
                         </a>
                         <p class="category">
-                            {{ $item_p->blog_sub_category->name }}
+                            {{ $item_p->blog_category->name }}
                         </p>
                         <p class="tit">
                             {{ $item_p->name }}

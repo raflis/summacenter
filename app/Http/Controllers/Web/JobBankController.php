@@ -8,6 +8,7 @@ use Mail;
 use Validator;
 use Jenssegers\Agent\Agent;
 use Illuminate\Http\Request;
+use App\Models\Admin\Setting;
 use Illuminate\Support\Carbon;
 use App\Models\Admin\PageField;
 use App\Models\Admin\JobBankUser;
@@ -25,36 +26,42 @@ class JobBankController extends Controller
 
     public function bolsa_seleccionar()
     {
+        $setting = Setting::find(1);
         $agent = new Agent();
-        return view('web.job_bank.seleccionar', compact('agent'));
+        return view('web.job_bank.seleccionar', compact('setting', 'agent'));
     }
 
     public function bolsa_trabajo_perfil_postulante()
     {
+        $setting = Setting::find(1);
         $agent = new Agent();
-        return view('web.job_bank.perfil_postulante', compact('agent'));
+        return view('web.job_bank.perfil_postulante', compact('setting', 'agent'));
     }
 
     public function bolsa_trabajo_perfil_empresa()
     {
+        $setting = Setting::find(1);
         $agent = new Agent();
-        return view('web.job_bank.perfil_empresa', compact('agent'));
+        return view('web.job_bank.perfil_empresa', compact('setting', 'agent'));
     }
 
     public function bolsa_trabajo_configuracion()
     {
+        $setting = Setting::find(1);
         $agent = new Agent();
-        return view('web.job_bank.configuracion', compact('agent'));
+        return view('web.job_bank.configuracion', compact('setting', 'agent'));
     }
 
     public function bolsa_trabajo_postulaciones()
     {
+        $setting = Setting::find(1);
         $agent = new Agent();
-        return view('web.job_bank.postulaciones', compact('agent'));
+        return view('web.job_bank.postulaciones', compact('setting', 'agent'));
     }
 
     public function ver_anuncios_postulantes(Request $request)
     {
+        $setting = Setting::find(1);
         $position = $request->get('position');
 
         $agent = new Agent();
@@ -63,11 +70,12 @@ class JobBankController extends Controller
                                 ->position($position)
                                 ->where('status', 1)
                                 ->get();
-        return view('web.job_bank.ver-anuncios-postulantes', compact('agent', 'applicants', 'pagefield'));
+        return view('web.job_bank.ver-anuncios-postulantes', compact('setting', 'agent', 'applicants', 'pagefield'));
     }
 
     public function ver_anuncios_empresas(Request $request)
     {
+        $setting = Setting::find(1);
         $name = $request->get('name');
         $department = $request->get('department');
         $job_type = $request->get('job_type');
@@ -79,20 +87,22 @@ class JobBankController extends Controller
                             ->jobtype($job_type)
                             ->where('status', 1)
                             ->get();
-        return view('web.job_bank.ver-anuncios-empresas', compact('agent', 'offers', 'pagefield'));
+        return view('web.job_bank.ver-anuncios-empresas', compact('setting', 'agent', 'offers', 'pagefield'));
     }
 
     public function anuncio_postulante($slug, $id)
     {
+        $setting = Setting::find(1);
         $agent = new Agent();
         $pagefield = PageField::find(1);
         $applicant = JobBankUser::find($id);
         $applicant_related = JobBankUser::where('id', '<>', $applicant->id)->where('status', 1)->where('role', 2)->inRandomOrder()->take(3)->get()->chunk(3);
-        return view('web.job_bank.anuncio-postulante', compact('agent', 'applicant', 'applicant_related', 'pagefield'));
+        return view('web.job_bank.anuncio-postulante', compact('setting', 'agent', 'applicant', 'applicant_related', 'pagefield'));
     }
 
     public function anuncio_empresa($slug, $id)
     {
+        $setting = Setting::find(1);
         $agent = new Agent();
         $pagefield = PageField::find(1);
         $offer = JobBankOffer::where('slug', $slug)->where('id', $id)->first();
@@ -102,7 +112,7 @@ class JobBankController extends Controller
         else:
             $applied = 0;
         endif;
-        return view('web.job_bank.anuncio-empresa', compact('agent', 'offer', 'offer_related', 'applied', 'pagefield'));
+        return view('web.job_bank.anuncio-empresa', compact('setting', 'agent', 'offer', 'offer_related', 'applied', 'pagefield'));
     }
 
     public function applicant(Request $request)

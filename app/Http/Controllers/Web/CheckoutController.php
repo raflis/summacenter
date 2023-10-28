@@ -12,6 +12,7 @@ use App\Models\Admin\Promo;
 use Jenssegers\Agent\Agent;
 use App\Models\Admin\Course;
 use Illuminate\Http\Request;
+use App\Models\Admin\Setting;
 use Illuminate\Support\Carbon;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
@@ -25,6 +26,8 @@ class CheckoutController extends Controller
 
     public function index()
     {
+        $setting = Setting::find(1);
+        
         if(session('promo') == ''):
             session()->forget('promo');
         else:
@@ -41,7 +44,7 @@ class CheckoutController extends Controller
             endif;
         endif;
         
-        return view('web.cart.index');
+        return view('web.cart.index', compact('setting'));
     }
 
     private function postRequest($url, $postData, $token) {

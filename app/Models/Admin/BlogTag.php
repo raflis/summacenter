@@ -11,8 +11,12 @@ class BlogTag extends Model
 
     protected $table = 'blog_tags';
 
+    protected $casts = [
+        'meta' => 'array',
+    ];
+
     protected $fillable = [
-        'name', 'slug',
+        'name', 'slug', 'meta',
     ];
 
     public function blog_posts()

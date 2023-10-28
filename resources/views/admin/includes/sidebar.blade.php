@@ -21,9 +21,31 @@
         href="{{ route('promos.index') }}">
             <i class="fas fa-home text-gray pr-1"></i> Cupones de descuento
         </a>
+        <a class="nav-link @if(in_array(Route::currentRouteName(), array('settings.paymodetext'))) active @endif" 
+        href="{{ route('settings.paymodetext') }}">
+            <i class="fas fa-home text-gray pr-1"></i> Textos métodos de pago
+        </a>
         <a class="nav-link @if(in_array(Route::currentRouteName(), array('settings.links'))) active @endif" 
         href="{{ route('settings.links') }}">
             <i class="fas fa-home text-gray pr-1"></i> Links Header
+        </a>
+
+        <div class="sidenav-menu-heading">SEO</div>
+        <a class="nav-link @if(in_array(Route::currentRouteName(), array('settings.titles'))) active @endif" 
+        href="{{ route('settings.titles') }}">
+            <i class="fas fa-home text-gray pr-1"></i> Meta Titles
+        </a>
+        <a class="nav-link @if(in_array(Route::currentRouteName(), array('settings.keywords'))) active @endif" 
+        href="{{ route('settings.keywords') }}">
+            <i class="fas fa-home text-gray pr-1"></i> Meta Keywords
+        </a>
+        <a class="nav-link @if(in_array(Route::currentRouteName(), array('settings.descriptions'))) active @endif" 
+        href="{{ route('settings.descriptions') }}">
+            <i class="fas fa-home text-gray pr-1"></i> Meta Description
+        </a>
+        <a class="nav-link @if(in_array(Route::currentRouteName(), array('settings.image'))) active @endif" 
+        href="{{ route('settings.image') }}">
+            <i class="fas fa-home text-gray pr-1"></i> Meta Image
         </a>
 
         <div class="sidenav-menu-heading">Inicio</div>

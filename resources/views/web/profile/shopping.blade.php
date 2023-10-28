@@ -1,5 +1,7 @@
 @extends('web.layout')
-
+@section('title', 'Mis Cursos | SUMMA CENTER LATAM')
+@section('description', 'Mis Cursos | SUMMA CENTER LATAM')
+@section('keywords', 'Mis Cursos | SUMMA CENTER LATAM')
 @section('content')
 
 <section class="sec22">

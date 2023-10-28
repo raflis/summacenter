@@ -946,7 +946,7 @@ form
                 //width 100%
                 .menu-left
                     //width 25%
-                    background-color #E5B336
+                    background-color #f4f7ff
                     overflow-y auto
                     max-height 500px
                     width 220px
@@ -956,7 +956,7 @@ form
                         border-left 3px solid #254275 !important
                         padding-left 14px
                     a.dropdown-item
-                        color #071e38 !important
+                        color #254275 !important
                         border 1px solid rgba(255, 255, 255, .5)
                         font-family font-medium
                         display flex
@@ -966,7 +966,7 @@ form
                         transition .3s all
                         line-height 1.5
                         &:hover
-                            background-color #ffd58e
+                            background-color #E5B336
                             border-left 3px solid #254275
                             padding-left 14px
                         img
@@ -980,12 +980,17 @@ form
                         text-align center
                         padding 23px 0 18px
                         a
-                            color #E5B336
-                            background-color #254275
+                            color #254275
+                            background #E5B336
                             font-size .9rem
                             padding 6px 10px
                             text-decoration none
                             border-radius 4px
+                            transition .3s all
+                            font-family font-medium
+                            &:hover
+                                background #254275
+                                color #FFF
                 .menu-right
                     position relative
                     display flex
@@ -1086,6 +1091,10 @@ form
                     font-size 1rem
                     border-radius 5px
                     padding 8px 33px 4px
+                    transition all .3s
+                    &:hover
+                        background #254275
+                        color #FFF
     #carousel-slider
         position relative
         .item
@@ -1121,11 +1130,16 @@ form
                     margin 0
             .btn-vermas
                 margin-top 25px
-                color #E5B336
-                background transparent
-                border 1px solid #E5B336
+                color #00001d
+                background #e5b336
                 font-size 1.2rem
-                padding 3px 15px
+                padding 8px 33px 4px
+                font-family font-semibold
+                transition .3s all
+                &:hover
+                    background #254275
+                    color #FFF
+                    border 1px solid rgba(255,255,255,.2)
         .owl-dots
             position absolute
             bottom 0
@@ -3502,32 +3516,46 @@ form
         font-family font-semibold
         color #254275
         margin-bottom 60px
+    .modes
+        display flex
+        flex-wrap wrap
+        justify-content space-between
+        margin 20px 0 0 0
+        border-radius 12px
+        h3
+            color #000
+            font-family font-semibold
+            font-size 1rem
+            width 100%
+            margin-bottom .5rem
+        .mode
+            width 30%
+            display flex
+            flex-direction column
+            align-items center
+            cursor pointer
+            background-color #FFF
+            border-radius 12px
+            padding 20px 0
+            img
+                height 55px
+                margin-bottom 10px
+            p
+                font-size .9rem
+                color #254275
+                margin 0
+                font-family font-medium
+                text-align center
+        p.mode_text
+            width 100%
+            margin 10px 0 0
+            color #000
+            font-size .7rem
+            line-height 1.3
+        .active_mode
+            background-color #E5B336
     .cart-left
         padding 0 60px
-        .modes
-            display flex
-            flex-wrap wrap
-            justify-content space-between
-            margin-bottom 35px
-            .mode
-                width 30%
-                display flex
-                flex-direction column
-                align-items center
-                cursor pointer
-                background-color #EFF0F4
-                border-radius 12px
-                padding 20px 0
-                img
-                    height 55px
-                    margin-bottom 10px
-                p
-                    font-size .9rem
-                    color #254275
-                    margin 0
-                    font-family font-medium
-            .active_mode
-                background-color #E5B336
         .information
             h3
                 font-family font-medium
@@ -3638,9 +3666,16 @@ form
                         height 27px
     .cart-right
         padding-right 60px
+        .btn-pagar
+            color #000
+            background-color #E5B336
+            padding 10px 60px
+            font-family font-medium
+            font-size 1.1rem
+            margin 17px 0 30px
         .content
             background-color #eff0f4
-            padding 40px 20px 20px 20px
+            padding 40px 20px 30px 20px
             border-radius 12px
             .items
                 border-bottom 3px solid #254275
@@ -3760,13 +3795,6 @@ form
                         span
                             font-size 1rem
                             text-decoration line-through
-                .btn-pagar
-                    color #000
-                    background-color #E5B336
-                    padding 10px 60px
-                    font-family font-medium
-                    font-size 1.1rem
-                    margin 17px 0 30px
             .promo
                 h3
                     color #000
@@ -5392,7 +5420,7 @@ form
                     border-left 3px solid #254275
                     padding-left 12px
     .busq
-        background-color #E5B336
+        background-color #F4F7FF
         padding 30px 30px 20px
         margin-bottom 20px
         input, select
@@ -5402,11 +5430,17 @@ form
             font-size .9rem
             border-radius 4px
         .btn-enviar
-            background-color #254275
-            color #FFF
+            border 1px solid #E5B336
+            background-color #E5B336
+            color #254275
             font-family font-semibold
             font-size .9rem
             border-radius 4px
+            transition .3s all
+            &:hover
+                background #254275
+                color #FFF
+                border 1px solid #254275
         label
             color #254275
             font-size .8rem
@@ -5437,9 +5471,9 @@ form
                 .item_left
                     width 80%
                     h1
-                        color #E5B336
-                        font-family font-bold
-                        font-size 2.5rem
+                        color #254275
+                        font-family font-semibold
+                        font-size 1.5rem
                         margin-bottom 20px
                     p
                         line-height 1.3
@@ -5456,16 +5490,26 @@ form
                         border 0
                         padding 8px 16px
                         margin-bottom 20px
+                        color #254275
+                        transition .3s all
+                        &:hover
+                            background #254275
+                            color #FFF
         .content_right
             width 30%
             text-align center
             .btn-cv
                 background-color #E5B336
                 font-family font-medium
-                font-size 1.4rem
-                padding 20px 50px
+                font-size 1.3rem
+                padding 10px 30px
                 border-radius 12px
                 margin-bottom 50px
+                color #254275
+                transition .3s all
+                &:hover
+                    background #254275
+                    color #FFF
             .advertisements
                 img
                     width 100%
@@ -5572,14 +5616,14 @@ form
                         font-family font-light
                         font-size .75rem
                 h1
-                    color #E5B336
+                    color #254275
                     font-family font-bold
-                    font-size 2rem
+                    font-size 1.6rem
                     margin-bottom 20px
                 h3
-                    color #E5B336
+                    color #254275
                     font-family font-bold
-                    font-size 1.5rem
+                    font-size 1.1rem
                 .description
                     h2
                         font-family font-semibold
@@ -5640,12 +5684,17 @@ form
                     margin 0
             .btn-cv
                 background-color #E5B336
-                font-family font-medium
+                color #254275
+                font-family font-semibold
                 font-size 1.4rem
                 padding 20px 50px
                 border-radius 12px
                 position sticky
                 top 80px
+                transition .3s all
+                &:hover
+                    background #254275
+                    color #FFF
             .advertisements
                 margin-top 30px
                 img
@@ -5653,8 +5702,9 @@ form
     h2.similares
         text-align center
         font-size 2rem
-        font-family font-medium
+        font-family font-bold
         margin-top 50px
+        color #254275
     .content_results
         display flex
         flex-wrap wrap
@@ -5679,9 +5729,9 @@ form
                 .item_left
                     width 80%
                     h1
-                        color #E5B336
-                        font-family font-bold
-                        font-size 1.6rem
+                        color #254275
+                        font-family font-semibold
+                        font-size 1.5rem
                         margin-bottom 20px
                     p
                         line-height 1.3
@@ -5694,11 +5744,16 @@ form
                     width 20%
                     .btn-info
                         font-family font-medium
-                        background-color #E5B336
+                        background #E5B336
+                        color #254275
                         font-size .9rem
                         border 0
                         padding 8px 16px
                         margin-bottom 5px
+                        transition .3s all
+                        &:hover
+                            background #254275
+                            color #FFF
         .content_right
             width 25%
             text-align center
@@ -5806,12 +5861,15 @@ form
                     margin-bottom 0px
             form
                 .form-check
-                    padding-left 33px
                     label
                         font-size .7rem
                         line-height 1.3
                         margin 0
                         color #706F6F
+                .form-switch
+                    .form-check-input
+                        margin-left -1.8em
+                        margin-right 5px
                 p.info2
                     font-size .7rem
                     line-height 1.3
@@ -5820,7 +5878,7 @@ form
                     color #706F6F
                 .form-group
                     margin-bottom 18px
-                input, select, textarea
+                input[type=date], input[type=text], select, textarea
                     border 1px solid #706F6F
                     background-color #FFF
                     font-size .9rem
@@ -7579,6 +7637,10 @@ form
                 font-size 1rem
                 padding 5px 35px 3px
                 margin-top 30px
+                transition .3s all
+                &:hover
+                    background #254275
+                    color #FFF
 
 .sec62
     margin-bottom 50px
@@ -10734,40 +10796,55 @@ form
                             padding 8px 33px 4px
 
     .sec29
-        padding-top 22vh
+        padding-top 15vh
         padding-bottom 40px
         h1.tit
-            text-align center
-            font-size 1.8rem
+            text-align left
+            font-size 1.5rem
             font-family font-semibold
             color #254275
-            margin-bottom 60px
-        .cart-left
-            padding 0 60px
-            .modes
+            margin-bottom 20px
+        .modes
+            display flex
+            flex-wrap wrap
+            justify-content space-between
+            margin 20px 0 0 0
+            border-radius 12px
+            h3
+                color #000
+                font-family font-semibold
+                font-size 1rem
+                width 100%
+                margin-bottom .5rem
+            .mode
+                width 48%
                 display flex
-                flex-wrap wrap
-                justify-content space-between
-                margin-bottom 35px
-                .mode
-                    width 30%
-                    display flex
-                    flex-direction column
-                    align-items center
-                    cursor pointer
-                    background-color #EFF0F4
-                    border-radius 12px
-                    padding 20px 0
-                    img
-                        height 55px
-                        margin-bottom 10px
-                    p
-                        font-size .9rem
-                        color #254275
-                        margin 0
-                        font-family font-medium
-                .active_mode
-                    background-color #E5B336
+                flex-direction column
+                align-items center
+                cursor pointer
+                background-color #FFF
+                border-radius 12px
+                padding 20px 0
+                margin 0 0 10px
+                img
+                    height 50px
+                    margin-bottom 10px
+                p
+                    font-size .9rem
+                    color #254275
+                    margin 0
+                    font-family font-medium
+                    text-align center
+            p.mode_text
+                width 100%
+                margin 10px 0 0
+                color #000
+                font-size .7rem
+                line-height 1.3
+            .active_mode
+                background-color #E5B336
+        .cart-left
+            padding 0 20px
             .information
                 h3
                     font-family font-medium
@@ -10877,11 +10954,19 @@ form
                         img
                             height 27px
         .cart-right
-            padding-right 60px
+            padding-right 0px
+            .btn-pagar
+                color #000
+                background-color #E5B336
+                padding 10px 60px
+                font-family font-medium
+                font-size 1.1rem
+                margin 17px 0 30px
             .content
                 background-color #eff0f4
-                padding 40px 20px 20px 20px
+                padding 40px 20px 30px 20px
                 border-radius 12px
+                margin 15px 0 0
                 .items
                     border-bottom 3px solid #254275
                     padding-bottom 10px
@@ -10900,7 +10985,7 @@ form
                         .detail-left
                             display flex
                             align-items center
-                            width 80%
+                            width 85%
                             .image
                                 padding 2px
                                 border 3px solid #254275
@@ -10912,7 +10997,7 @@ form
                                 h3
                                     font-family font-bold
                                     color #000000
-                                    font-size 1.1rem
+                                    font-size .9rem
                                     margin-bottom 0px
                                     text-transform uppercase
                                 p
@@ -10925,7 +11010,7 @@ form
                             display flex
                             justify-content flex-end
                             align-items center
-                            width 18%
+                            width 10%
                             .price
                                 text-align right
                                 .price-before
@@ -10994,19 +11079,12 @@ form
                             p.p_total
                                 font-size 1rem
                         .price-right
-                            font-size 1.3rem
+                            font-size 1.2rem
                             color #000
                             font-family font-medium
                             span
                                 font-size 1rem
                                 text-decoration line-through
-                    .btn-pagar
-                        color #000
-                        background-color #E5B336
-                        padding 10px 60px
-                        font-family font-medium
-                        font-size 1.1rem
-                        margin 17px 0 30px
                 .promo
                     h3
                         color #000
@@ -12675,7 +12753,6 @@ form
                         border-left 3px solid #254275
                         padding-left 12px
         .busq
-            background-color #E5B336
             padding 30px 30px 20px
             margin-bottom 20px
             input, select
@@ -12685,8 +12762,6 @@ form
                 font-size 1rem
                 border-radius 4px
             .btn-enviar
-                background-color #254275
-                color #FFF
                 font-family font-semibold
                 font-size 1rem
                 border-radius 4px
@@ -12721,7 +12796,6 @@ form
                     .item_left
                         width 100%
                         h1
-                            color #E5B336
                             font-family font-bold
                             font-size 1.5rem
                             margin-bottom 20px
@@ -12747,10 +12821,10 @@ form
                 .btn-cv
                     background-color #E5B336
                     font-family font-medium
-                    font-size 1.4rem
-                    padding 20px 50px
+                    font-size 1.1rem
+                    padding 10px 30px
                     border-radius 12px
-                    margin-bottom 50px
+                    margin-bottom 30px
                 .advertisements
                     display none
 
@@ -12855,12 +12929,10 @@ form
                             font-family font-light
                             font-size .75rem
                     h1
-                        color #E5B336
                         font-family font-bold
                         font-size 2rem
                         margin-bottom 20px
                     h3
-                        color #E5B336
                         font-family font-bold
                         font-size 1.5rem
                     .description
@@ -12922,7 +12994,6 @@ form
                         font-size .9rem
                         margin 0
                 .btn-cv
-                    background-color #E5B336
                     font-family font-medium
                     font-size 1.1rem
                     padding 8px 40px
@@ -12962,7 +13033,6 @@ form
                     .item_left
                         width 100%
                         h1
-                            color #E5B336
                             font-family font-bold
                             font-size 1.5rem
                             margin-bottom 20px
@@ -12978,7 +13048,6 @@ form
                         margin-top 15px
                         .btn-info
                             font-family font-medium
-                            background-color #E5B336
                             font-size 1.1rem
                             border 0
                             padding 8px 16px
@@ -14874,8 +14943,6 @@ form
                     margin auto
                     margin-top 20px
                 .btn-ver
-                    background-color #e5b336
-                    color #254275
                     font-family font-medium
                     font-size 1rem
                     padding 5px 20px 3px

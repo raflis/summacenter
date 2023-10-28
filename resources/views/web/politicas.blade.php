@@ -1,5 +1,8 @@
 @extends('web.layout')
-
+@section('title', 'Políticas de privacidad')
+@section('description', 'Políticas de privacidad')
+@section('keywords', 'políticas de privacidad')
+@section('image', $setting->meta_image)
 @section('content')
 
 <section class="sec22">

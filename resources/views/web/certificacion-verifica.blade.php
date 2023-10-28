@@ -1,5 +1,8 @@
 @extends('web.layout')
-
+@section('title', 'Verifica tu certificación | SUMMA CENTER LATAM')
+@section('description', 'Verifica tu certificación | SUMMA CENTER LATAM')
+@section('keywords', 'Verifica tu certificación | SUMMA CENTER LATAM')
+@section('image', $setting->meta_image)
 @section('content')
 
 <section class="sec22">

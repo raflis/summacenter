@@ -4,7 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>SUMMACENTER</title>
+    <title>@yield('title')</title>
+    <meta name="description" content="@yield('description')">
+    <meta name="keywords" content="@yield('keywords')">
+    <meta property="og:title" content="@yield('title')" />
+    <meta property="og:url" content="{{ url()->current() }}" />
+    <meta property="og:image" content="@yield('image')" />
+    <meta property="og:description" content="@yield('description')" />
+    <meta property="og:site_name" content="SUMMA CENTER LATAM" />
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="SUMMA CENTER LATAM">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="routeName" content="{{ Route::currentRouteName() }}">
     <link rel="icon" href="{{ asset('images/favicon.png') }}" type="image/png" />

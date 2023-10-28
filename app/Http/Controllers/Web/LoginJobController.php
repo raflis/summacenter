@@ -12,6 +12,7 @@ use Carbon\Carbon;
 use App\Models\User;
 use Jenssegers\Agent\Agent;
 use Illuminate\Http\Request;
+use App\Models\Admin\Setting;
 use App\Models\Admin\JobBankUser;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
@@ -27,20 +28,23 @@ class LoginJobController extends Controller
 
     public function bolsa_trabajo()
     {
+        $setting = Setting::find(1);
         $agent = new Agent();
-        return view('web.job_bank.bolsa-trabajo', compact('agent'));
+        return view('web.job_bank.bolsa-trabajo', compact('setting', 'agent'));
     }
 
     public function bolsa_trabajo_registro_postulante()
     {
+        $setting = Setting::find(1);
         $agent = new Agent();
-        return view('web.job_bank.registro-postulante', compact('agent'));
+        return view('web.job_bank.registro-postulante', compact('setting', 'agent'));
     }
 
     public function bolsa_trabajo_registro_empresa()
     {
+        $setting = Setting::find(1);
         $agent = new Agent();
-        return view('web.job_bank.registro-empresa', compact('agent'));
+        return view('web.job_bank.registro-empresa', compact('setting', 'agent'));
     }
 
     public function createPerson(Request $request)

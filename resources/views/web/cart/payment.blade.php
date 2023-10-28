@@ -1,5 +1,7 @@
 @extends('web.layout')
-
+@section('title', 'Carrito de compras | SUMMA CENTER LATAM')
+@section('description', 'Carrito de compras | SUMMA CENTER LATAM')
+@section('keywords', 'Carrito de compras | SUMMA CENTER LATAM')
 @section('content')
 
 <section class="sec22">

@@ -1,5 +1,7 @@
 @extends('web.layout')
-
+@section('title', 'Carrito de compras | SUMMA CENTER LATAM')
+@section('description', 'Carrito de compras | SUMMA CENTER LATAM')
+@section('keywords', 'Carrito de compras | SUMMA CENTER LATAM')
 @section('content')
 
 <section class="sec22">
@@ -12,26 +14,6 @@
             <h1 class="tit">Confirmar Compra</h1>
             <form action="{{ route('checkout.payment') }}" class="row needs-validation" novalidate method="POST">
             <div class="col-md-7 cart-left">
-                <div class="modes">
-                    <div class="mode active_mode" id="mode_pay" pay_value=1>
-                        <img src="{{ asset('images/con-tarjeta.png') }}" alt="">
-                        <p>
-                            Pagar con tarjeta
-                        </p>
-                    </div>
-                    <div class="mode" id="mode_pay" pay_value=2>
-                        <img src="{{ asset('images/sin-tarjeta.png') }}" alt="">
-                        <p>
-                            Pagar sin tarjeta
-                        </p>
-                    </div>
-                    <div class="mode" id="mode_pay" pay_value=3>
-                        <img src="{{ asset('images/transferencia.png') }}" alt="">
-                        <p>
-                            Transferencia
-                        </p>
-                    </div>
-                </div>
                 <div class="information row">
                     <h3>Datos de facturación</h3>
                     @csrf
@@ -150,11 +132,7 @@
                                 @endif 
                             </div>
                         </div>
-                        @if(session('cart'))
-                        <div class="text-center">
-                            <button href="" type="submit" class="btn btn-pagar">CONTINUAR</button>
-                        </div>
-                        @endif
+                        
                     </div>
                     <div class="promo">
                         <h3>Promociones</h3>
@@ -172,10 +150,39 @@
                             
                         </p>
                     </div>
+                    <div class="modes">
+                        <h3>Seleccione un método de pago</h3>
+                        <div class="mode active_mode" id="mode_pay" pay_value=1>
+                            <img src="{{ asset('images/con-tarjeta.png') }}" alt="">
+                            <p>
+                                Pagar con tarjeta
+                            </p>
+                        </div>
+                        <div class="mode" id="mode_pay" pay_value=2>
+                            <img src="{{ asset('images/sin-tarjeta.png') }}" alt="">
+                            <p>
+                                Pagar sin tarjeta
+                            </p>
+                        </div>
+                        <div class="mode" id="mode_pay" pay_value=3>
+                            <img src="{{ asset('images/transferencia.png') }}" alt="">
+                            <p>
+                                Transferencia
+                            </p>
+                        </div>
+                        <p class="mode_text" id="mode_text1">{{ $setting->pay_mode_text[1] }}</p>
+                        <p class="mode_text d-none" id="mode_text2">{{ $setting->pay_mode_text[2] }}</p>
+                        <p class="mode_text d-none" id="mode_text3">{{ $setting->pay_mode_text[3] }}</p>
+                    </div>
                 </div>
                 <p class="compra_segura mt-3">
                     <img src="{{ asset('images/shield.png') }}" alt=""> Pago 100% Seguro
                 </p>
+                @if(session('cart'))
+                <div class="text-center">
+                    <button href="" type="submit" class="btn btn-pagar">CONTINUAR</button>
+                </div>
+                @endif
             </div>
             </form>
         </div>

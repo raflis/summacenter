@@ -1,5 +1,8 @@
 @extends('web.layout')
-
+@section('title', $badge->meta[1])
+@section('keywords', $badge->meta[2])
+@section('description', $badge->meta[3])
+@section('image', $setting->meta_image)
 @section('content')
 
 <section class="sec9">

@@ -41,6 +41,7 @@ class WebController extends Controller
 
     public function index()
     {
+        $setting = Setting::find(1);
         $flags = Flag::orderBy('name', 'Asc')->get();
         $sliders = Slider::orderBy('order', 'Asc')->get();
         $testimonials = Testimonial::orderBy('order', 'Asc')->get()->take(6);
@@ -54,23 +55,25 @@ class WebController extends Controller
                         })->where('status', 'PUBLISHED')
                         ->get();
         $agent = new Agent();
-        return view('web.index', compact('agent', 'sliders', 'testimonials', 'partners', 'alliances', 'pagefield', 'course_areas', 'featured_posts', 'flags', 'event_posts'));
+        return view('web.index', compact('setting', 'agent', 'sliders', 'testimonials', 'partners', 'alliances', 'pagefield', 'course_areas', 'featured_posts', 'flags', 'event_posts'));
     }
 
     public function egresados()
     {
+        $setting = Setting::find(1);
         $pagefield = PageField::find(1);
         $posts = BlogCategory::where('name', 'LIKE', '%egresado%')->get();
         $agent = new Agent();
-        return view('web.egresados', compact('agent', 'pagefield', 'posts'));
+        return view('web.egresados', compact('setting', 'agent', 'pagefield', 'posts'));
     }
 
     public function recomendaciones()
     {
+        $setting = Setting::find(1);
         $pagefield = PageField::find(1);
         $testimonials = Testimonial::orderBy('order', 'Asc')->get();
         $agent = new Agent();
-        return view('web.recomendaciones', compact('agent', 'testimonials', 'pagefield'));
+        return view('web.recomendaciones', compact('setting', 'agent', 'testimonials', 'pagefield'));
     }
 
     public function programas(Request $request, $slug = 'all')
@@ -83,6 +86,7 @@ class WebController extends Controller
             endforeach;
         endif;
 
+        $setting = Setting::find(1);
         $agent = new Agent();
         $course_areas = CourseArea::orderBy('order', 'Asc')->get();
         if($slug == 'all'):
@@ -99,16 +103,17 @@ class WebController extends Controller
             $q_result = $courses_tot->courses()->count();
         endif;
 
-        return view('web.programas', compact('agent', 'slug', 'course_areas', 'courses_tot', 'q_result', 'q'));
+        return view('web.programas', compact('setting', 'agent', 'slug', 'course_areas', 'courses_tot', 'q_result', 'q'));
     }
 
     public function curso($slug, $id)
     {
+        $setting = Setting::find(1);
         $agent = new Agent();
         $flags = Flag::orderBy('name', 'Asc')->get();
         $course = Course::find($id);
         $course_areas = CourseArea::orderBy('order', 'Asc')->get();
-        return view('web.curso', compact('agent', 'course', 'course_areas', 'flags'));
+        return view('web.curso', compact('setting', 'agent', 'course', 'course_areas', 'flags'));
     }
 
     public function equipo(Request $request)
@@ -136,138 +141,158 @@ class WebController extends Controller
         else:
             $workers = Worker::orderBy('order', 'Asc')->get();
         endif;
+
+        $setting = Setting::find(1);
         $agent = new Agent();
-        return view('web.equipo', compact('agent', 'workers', 'pagefield'));
+        return view('web.equipo', compact('setting', 'agent', 'workers', 'pagefield'));
     }
 
     public function distinciones()
     {
+        $setting = Setting::find(1);
         $pagefield = PageField::find(1);
         $agent = new Agent();
-        return view('web.distinciones', compact('agent', 'pagefield'));
+        return view('web.distinciones', compact('setting', 'agent', 'pagefield'));
     }
 
     public function insignias_digitales()
     {
+        $setting = Setting::find(1);
         $pagefield = PageField::find(1);
         $agent = new Agent();
-        return view('web.insignias-digitales', compact('agent', 'pagefield'));
+        return view('web.insignias-digitales', compact('setting', 'agent', 'pagefield'));
     }
 
     public function coleccion_insignias()
     {
+        $setting = Setting::find(1);
         $pagefield = PageField::find(1);
         $course_areas = CourseArea::orderBy('order', 'Asc')->get();
         $agent = new Agent();
-        return view('web.coleccion-insignias', compact('agent', 'course_areas', 'pagefield'));
+        return view('web.coleccion-insignias', compact('setting', 'agent', 'course_areas', 'pagefield'));
     }
 
     public function insignia($slug, $id)
     {
+        $setting = Setting::find(1);
         $pagefield = PageField::find(1);
         $agent = new Agent();
         $course_area = CourseArea::find($id);
         $badges = Badge::where('course_area_id', $id)->select('category')->orderBy('category', 'Asc')->distinct('category')->get();
-        return view('web.insignia', compact('agent', 'course_area', 'badges', 'pagefield'));
+        return view('web.insignia', compact('setting', 'agent', 'course_area', 'badges', 'pagefield'));
     }
 
     public function preguntas_frecuentes()
     {
+        $setting = Setting::find(1);
         $pagefield = PageField::find(1);
         $agent = new Agent();
-        return view('web.preguntas-frecuentes', compact('agent', 'pagefield'));
+        return view('web.preguntas-frecuentes', compact('setting', 'agent', 'pagefield'));
     }
 
     public function ruta_insignias($area, $category, $name, $id)
     {
+        $setting = Setting::find(1);
         $badge = Badge::find($id);
         $agent = new Agent();
-        return view('web.ruta-insignias', compact('agent', 'badge'));
+        return view('web.ruta-insignias', compact('setting', 'agent', 'badge'));
     }
 
     public function grupo_excelencia()
     {
+        $setting = Setting::find(1);
         $course_areas = CourseArea::orderBy('order', 'Asc')->get();
         $pagefield = PageField::find(1);
         $agent = new Agent();
-        return view('web.grupo-excelencia', compact('agent', 'pagefield', 'course_areas'));
+        return view('web.grupo-excelencia', compact('setting', 'agent', 'pagefield', 'course_areas'));
     }
 
     public function responsabilidad_social_objetivos()
     {
+        $setting = Setting::find(1);
         $agent = new Agent();
         $pagefield = PageField::find(1);
-        return view('web.responsabilidad-social-objetivos', compact('agent', 'pagefield'));
+        return view('web.responsabilidad-social-objetivos', compact('setting', 'agent', 'pagefield'));
     }
 
     public function responsabilidad_social_mision()
     {
+        $setting = Setting::find(1);
         $agent = new Agent();
         $pagefield = PageField::find(1);
-        return view('web.responsabilidad-social-mision', compact('agent', 'pagefield'));
+        return view('web.responsabilidad-social-mision', compact('setting', 'agent', 'pagefield'));
     }
 
     public function responsabilidad_social_quienes_somos()
     {
+        $setting = Setting::find(1);
         $agent = new Agent();
         $pagefield = PageField::find(1);
-        return view('web.responsabilidad-social-quienes-somos', compact('agent', 'pagefield'));
+        return view('web.responsabilidad-social-quienes-somos', compact('setting', 'agent', 'pagefield'));
     }
 
     public function responsabilidad_social_programa_de_becas()
     {
+        $setting = Setting::find(1);
         $agent = new Agent();
         $pagefield = PageField::find(1);
-        return view('web.responsabilidad-social-programa-de-becas', compact('agent', 'pagefield'));
+        return view('web.responsabilidad-social-programa-de-becas', compact('setting', 'agent', 'pagefield'));
     }
 
     public function responsabilidad_social_biblioteca_summa()
     {
+        $setting = Setting::find(1);
         $agent = new Agent();
         $pagefield = PageField::find(1);
-        return view('web.responsabilidad-social-biblioteca-summa', compact('agent', 'pagefield'));
+        return view('web.responsabilidad-social-biblioteca-summa', compact('setting', 'agent', 'pagefield'));
     }
 
     public function responsabilidad_social_talleres_gratuitos()
     {
+        $setting = Setting::find(1);
         $agent = new Agent();
         $pagefield = PageField::find(1);
-        return view('web.responsabilidad-social-talleres-gratuitos', compact('agent', 'pagefield'));
+        return view('web.responsabilidad-social-talleres-gratuitos', compact('setting', 'agent', 'pagefield'));
     }
 
     public function responsabilidad_social_ecoeficiencia()
     {
+        $setting = Setting::find(1);
         $agent = new Agent();
         $pagefield = PageField::find(1);
-        return view('web.responsabilidad-social-ecoeficiencia', compact('agent', 'pagefield'));
+        return view('web.responsabilidad-social-ecoeficiencia', compact('setting', 'agent', 'pagefield'));
     }
 
     public function responsabilidad_social_programa_de_donaciones()
     {
+        $setting = Setting::find(1);
         $agent = new Agent();
         $pagefield = PageField::find(1);
-        return view('web.responsabilidad-social-programa-de-donaciones', compact('agent', 'pagefield'));
+        return view('web.responsabilidad-social-programa-de-donaciones', compact('setting', 'agent', 'pagefield'));
     }
 
     public function responsabilidad_social_programa_de_participacion()
     {
+        $setting = Setting::find(1);
         $agent = new Agent();
         $pagefield = PageField::find(1);
-        return view('web.responsabilidad-social-programa-de-participacion', compact('agent', 'pagefield'));
+        return view('web.responsabilidad-social-programa-de-participacion', compact('setting', 'agent', 'pagefield'));
     }
 
     public function nuestras_certificaciones()
     {
+        $setting = Setting::find(1);
         $pagefield = PageField::find(1);
         $agent = new Agent();
-        return view('web.nuestras-certificaciones', compact('agent', 'pagefield'));
+        return view('web.nuestras-certificaciones', compact('setting', 'agent', 'pagefield'));
     }
 
     public function soporte()
     {
+        $setting = Setting::find(1);
         $pagefield = PageField::find(1);
         $agent = new Agent();
-        return view('web.soporte', compact('agent', 'pagefield'));
+        return view('web.soporte', compact('setting', 'agent', 'pagefield'));
     }
 
     public function cart()
@@ -278,37 +303,42 @@ class WebController extends Controller
 
     public function contacto()
     {
+        $setting = Setting::find(1);
         $agent = new Agent();
         $setting = Setting::find(1);
-        return view('web.contacto', compact('agent', 'setting'));
+        return view('web.contacto', compact('setting', 'agent', 'setting'));
     }
 
     public function politicas()
     {
+        $setting = Setting::find(1);
         $agent = new Agent();
         $pagefield = PageField::find(1);
-        return view('web.politicas', compact('agent', 'pagefield'));
+        return view('web.politicas', compact('setting', 'agent', 'pagefield'));
     }
 
     public function terminos_y_condiciones()
     {
+        $setting = Setting::find(1);
         $agent = new Agent();
         $pagefield = PageField::find(1);
-        return view('web.terminos-y-condiciones', compact('agent', 'pagefield'));
+        return view('web.terminos-y-condiciones', compact('setting', 'agent', 'pagefield'));
     }
 
     public function manual_alumno()
     {
+        $setting = Setting::find(1);
         $pagefield = PageField::find(1);
         $agent = new Agent();
-        return view('web.manual-alumno', compact('agent', 'pagefield'));
+        return view('web.manual-alumno', compact('setting', 'agent', 'pagefield'));
     }
 
     public function libro_reclamaciones()
     {
+        $setting = Setting::find(1);
         $agent = new Agent();
         $last_id = ComplaintBook::count() + 1;
-        return view('web.libro-reclamaciones', compact('agent', 'last_id'));
+        return view('web.libro-reclamaciones', compact('setting', 'agent', 'last_id'));
     }
 
     public function postLibro(Request $request)
@@ -373,17 +403,19 @@ class WebController extends Controller
 
     public function asesoria_especializada()
     {
+        $setting = Setting::find(1);
         $pagefield = PageField::find(1);
         $agent = new Agent();
-        return view('web.corporativo-asesoria-especializada', compact('agent', 'pagefield'));
+        return view('web.corporativo-asesoria-especializada', compact('setting', 'agent', 'pagefield'));
     }
 
     public function capacitaciones_corporativas()
     {
+        $setting = Setting::find(1);
         $pagefield = PageField::find(1);
         $course_areas = CourseArea::orderBy('order', 'Asc')->get();
         $agent = new Agent();
-        return view('web.corporativo-capacitaciones-corporativas', compact('agent', 'pagefield', 'course_areas'));
+        return view('web.corporativo-capacitaciones-corporativas', compact('setting', 'agent', 'pagefield', 'course_areas'));
     }
 
     public function verifica_certificacion(Request $request)
@@ -399,6 +431,7 @@ class WebController extends Controller
 
     public function insignia_adquirida($hash)
     {
+        $setting = Setting::find(1);
         $agent = new Agent();
         $issued_badge = IssuedBadge::where('hash', $hash)->first();
         $course_areas = CourseArea::orderBy('order', 'Asc')->get();
@@ -413,15 +446,17 @@ class WebController extends Controller
 
     public function modelo_educativo()
     {
+        $setting = Setting::find(1);
         $agent = new Agent();
-        return view('web.modelo-educativo', compact('agent'));
+        return view('web.modelo-educativo', compact('setting', 'agent'));
     }
 
     public function nosotros()
     {
+        $setting = Setting::find(1);
         $agent = new Agent();
         $pagefield = PageField::find(1);
-        return view('web.nosotros', compact('agent', 'pagefield'));
+        return view('web.nosotros', compact('setting', 'agent', 'pagefield'));
     }
 
     public function postIndex(Request $request)
@@ -687,21 +722,24 @@ class WebController extends Controller
 
     public function blog()
     {
+        $setting = Setting::find(1);
         $pagefield = PageField::find(1);
         $blog_categories = BlogCategory::orderBy('order', 'Asc')->get();
-    	return view('web.blog.blog', compact('pagefield', 'blog_categories'));
+    	return view('web.blog.blog', compact('setting', 'pagefield', 'blog_categories'));
     }
 
     public function post($category, $slug, $id)
     {
+        $setting = Setting::find(1);
         $post = BlogPost::where('slug', $slug)->where('id', $id)->first();
         //$related = BlogPost::where('id', '<>', $post->id)->get();
         $related = BlogPost::where('blog_category_id', $post->blog_category_id)->where('id', '<>', $post->id)->orderBy('order', 'Asc')->get();
-    	return view('web.blog.post', compact('post', 'related'));
+    	return view('web.blog.post', compact('setting', 'post', 'related'));
     }
 
     public function tag($slug)
     {
+        $setting = Setting::find(1);
         $pagefield = PageField::find(1);
         $tag = BlogTag::where('slug', $slug)->first();
         $posts = BlogPost::whereHas('blog_tags', function($query) use ($slug) {
@@ -709,7 +747,7 @@ class WebController extends Controller
         })
         ->orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(30);
 
-        return view('web.blog.tag', compact('pagefield', 'tag', 'posts'));
+        return view('web.blog.tag', compact('setting', 'pagefield', 'tag', 'posts'));
     }
 
 }

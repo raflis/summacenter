@@ -1,5 +1,8 @@
 @extends('web.layout')
-
+@section('title', 'Términos y condiciones | SUMMA CENTER LATAM')
+@section('description', 'Términos y condiciones | SUMMA CENTER LATAM')
+@section('keywords', 'Términos y condiciones | SUMMA CENTER LATAM')
+@section('image', $setting->meta_image)
 @section('content')
 
 <section class="sec22">

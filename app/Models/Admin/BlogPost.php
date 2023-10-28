@@ -11,8 +11,12 @@ class BlogPost extends Model
 
     protected $table = 'blog_posts';
 
+    protected $casts = [
+        'meta' => 'array',
+    ];
+
     protected $fillable = [
-        'blog_category_id', 'name', 'slug', 'image1', 'image2', 'summary', 'body', 'status', 'featured', 'order',
+        'blog_category_id', 'name', 'slug', 'image1', 'image2', 'summary', 'body', 'status', 'featured', 'order', 'meta',
     ];
 
     public function blog_category()

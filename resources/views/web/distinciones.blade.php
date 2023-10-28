@@ -1,5 +1,8 @@
 @extends('web.layout')
-
+@section('title', $setting->meta_title[8])
+@section('description', $setting->meta_description[8])
+@section('keywords', $setting->meta_keyword[8])
+@section('image', $setting->meta_image)
 @section('content')
 
 <section class="sec13" style="background-image: url('{{ $pagefield->cover_pages[1]['image'] }}')">

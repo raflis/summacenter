@@ -1,3 +1,24 @@
+<div class="form-group col-sm-12 m-0">
+<label class="m-0"><strong>SEO</strong></label>
+</div>
+<div class="form-group col-sm-12">
+  {{ Form::label('meta', 'Título de la página:') }} <code>*</code>
+  {{ Form::text('meta[1]', null, ['class' => 'form-control', 'placeholder' => '', 'required']) }}
+</div>
+<div class="form-group col-sm-12">
+  {{ Form::label('meta', 'Keywords de la página:') }} <code>*</code>
+  {{ Form::text('meta[2]', null, ['class' => 'form-control', 'placeholder' => '', 'required']) }}
+</div>
+<div class="form-group col-sm-12">
+  {{ Form::label('meta', 'Description de la página:') }} <code>*</code>
+  {{ Form::text('meta[3]', null, ['class' => 'form-control', 'placeholder' => '', 'required']) }}
+</div>
+<div class="form-group col-sm-12">
+  {{ Form::label('meta', 'Imagen para compartir Redes Sociales:') }} <strong>(1200 x 630px)</strong>
+  {{ Form::text('meta[4]', null, ['class' => 'form-control', 'placeholder' => '']) }}
+</div>
+<hr style="width: 97%">
+
 <div class="form-group col-sm-3">
   {{ Form::label('not_read', 'Área de capacitación:') }} <code>*</code>
   {{ Form::text('not_read', $course_category->course_area->name, ['class' => 'form-control', 'readonly', 'required']) }}

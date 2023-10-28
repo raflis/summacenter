@@ -1,9 +1,27 @@
 @extends('web.layout')
-
+@section('title', $setting->meta_title[2])
+@section('description', $setting->meta_description[2])
+@section('keywords', $setting->meta_keyword[2])
 @section('content')
 
 <section class="sec22">
     @include('web.partials.header')
+</section>
+
+<section class="sec0 pt-20">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 breadcrumb_">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item"><a href="{{ route('index') }}">Inicio</a></li>
+                      <li class="breadcrumb-item"><a href="{{ route('ofertas.index') }}">Mis Ofertas</a></li>
+                      <li class="breadcrumb-item active" aria-current="page">Postulantes</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
 </section>
 
 <section class="sec48">
@@ -106,6 +124,14 @@
                                                 <p>
                                                     {!! nl2br($item->job_bank_user->summary) !!}
                                                 </p>
+                                                @if ($item->job_bank_user->file != NULL)
+                                                <h2>
+                                                    CV:
+                                                </h2>
+                                                <p>
+                                                    <a href="{{ asset('cvs/'.$item->job_bank_user->file) }}" target="_blank">Ver CV</a>
+                                                </p>
+                                                @endif
                                                 <h2>
                                                     EXPERIENCIA:
                                                 </h2>
