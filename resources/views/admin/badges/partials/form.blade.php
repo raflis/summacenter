@@ -133,11 +133,9 @@
           @if (Route::currentRouteName()=="badges.edit")
           @foreach ($badge->skills as $item)
           <div class="card-body col-md-12">
-              @if ($loop->index >= 1)
               <a href="#" class="btn btn-danger btn-circle btn-sm float-right mb-2 eliminar">
                 <i class="fas fa-trash"></i>
               </a>
-              @endif
               {!! Form::label('skills','Habilidad:',['class'=>'mt-3']) !!} <code>*</code>
               {!! Form::text('skills['.$loop->index.'][name]',$item['name'],['class'=>'form-control','required']) !!}
 
@@ -169,8 +167,8 @@
 <script>
 	$(document).ready(function(){
 
-    @if (Route::currentRouteName()=="courses.edit")
-      var i={{ count($course->benefits)+1 }};
+    @if (Route::currentRouteName()=="badges.edit")
+      var i={{ count($badge->skills)+1 }};
     @else
       var i=1;
     @endif

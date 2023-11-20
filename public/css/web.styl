@@ -29,22 +29,22 @@
     src url(../fonts/Poppins-Regular.ttf)
 
 .font-light
-	font-family font-light
+	font-family font-light !important
 
 .font-semibold
-	font-family font-semibold
+	font-family font-semibold !important
 
 .font-extrabold
-	font-family font-extrabold
+	font-family font-extrabold !important
 
 .font-medium
-	font-family font-medium
+	font-family font-medium !important
 
 .font-regular
-	font-family font-regular
+	font-family font-regular !important
 
 .font-bold
-    font-family font-bold
+    font-family font-bold !important
 
 body
     background #FFF
@@ -85,6 +85,22 @@ body
     padding-left 60px
     padding-right 60px
 
+.title_index
+    text-align center
+    color #254275
+    font-size 3rem
+    margin-bottom 20px
+    font-family font-medium
+
+.fieldname
+    label
+        color #e5b336 !important
+        font-family font-semibold
+    input
+        border-bottom 2.5px solid #e5b336 !important
+    ::placeholder
+        color #e5b336 !important
+
 .wp_float
     position fixed
     bottom 6px
@@ -93,6 +109,27 @@ body
     cursor pointer
     img
         width 75px
+
+.floating_advertising
+    position fixed
+    bottom 100px
+    left 0px
+    z-index 9999999
+    cursor pointer
+    #btn_close_fa
+        position absolute
+        top -12px
+        right -13px
+        border-radius 50%
+        background #254275
+        border 0
+        svg
+            fill #FFF
+            height 14px
+            width 14px
+    img
+        width 300px
+        height auto
 
 .fondo_all
     background rgba(0, 0, 0, .65)
@@ -821,6 +858,16 @@ form
                     background-image url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23242953'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important
                     background-repeat no-repeat
                     background-size 1.25rem
+            .btn-item2
+                background transparent
+                border 1px solid #254275
+                transition all .3s
+                &:hover
+                    background #E5B336
+                    border 1px solid #E5B336
+            .activeB
+                background #E5B336 !important
+                border 1px solid #E5B336 !important
             .active0
                 color #254275
                 font-family font-semibold
@@ -833,6 +880,7 @@ form
                 color #254275
                 font-family font-semibold
                 background #E5B336
+                border 1px solid #E5B336
                 padding 10px 35px 10px 13px
                 transition .2s all
                 &:after
@@ -896,6 +944,21 @@ form
                     height 35px
                 i
                     font-size 1.4rem
+        li.menu-link4
+            margin-right 20px
+            a
+                text-decoration none
+                border 1px solid #254275
+                background transparent
+                color #254275
+                border-radius 5px
+                padding 10px 13px
+                font-size .9rem
+                font-family font-medium
+                transition all .3s
+                &:hover
+                    background #E5B336
+                    border 1px solid #E5B336
         .ActiveList
             display flex
         .noActiveList
@@ -1277,7 +1340,7 @@ form
         color #254275
         font-size 3rem
         margin-bottom 20px
-        font-family font-medium
+        font-family font-semibold
         span
             font-family font-bold
     #carousel-chooseus
@@ -1950,7 +2013,7 @@ form
     .description
         padding 0 60px
         p
-            font-size .9rem
+            font-size 1rem
             text-align justify
             img.insignia-digital
                 float right
@@ -2699,7 +2762,8 @@ form
                 display flex
                 align-items center
                 img
-                    height 40px
+                    height 37px
+                    padding-right 7px
             .btn-descarga
                 background-color #254275
                 color #FFF
@@ -2909,7 +2973,7 @@ form
                         .content
                             text-align center
                             padding-top 0px
-                            height 90px
+                            height 105px
                             display flex
                             flex-direction column
                             justify-content space-between
@@ -2971,7 +3035,7 @@ form
         flex-wrap wrap
         padding 0 45px 30px
         .item2
-            width 25%
+            width 33%
             padding 15px
             &:hover
                 .content
@@ -2980,9 +3044,9 @@ form
                 transform-style preserve-3d
                 transition all .4s linear
                 background #e0e2e5
-                border-radius 10px
+                border-radius 20px
                 border 1px solid #FFF
-                height 51vh
+                height 400px
                 .item_active
                     border 2px solid #254275
                 .cara
@@ -2994,7 +3058,7 @@ form
                     padding 0px
                     padding-bottom 18px
                     text-align center
-                    border-radius 10px
+                    border-radius 20px
                     background-color inherit
                     z-index 9
                     width 100%
@@ -3012,7 +3076,7 @@ form
                     align-content flex-start
                     flex-direction column
                     justify-content center
-                    border-radius 10px
+                    border-radius 20px
                     .first
                         display flex
                         align-items center
@@ -3059,7 +3123,8 @@ form
                 .image
                     img
                         width 100%
-                        border-radius 10px
+                        border-top-left-radius 20px
+                        border-top-right-radius 20px
                 .cara_bottom
                     height 100%
                     display flex
@@ -3091,7 +3156,7 @@ form
             .content
                 transition all .4s linear
                 background #e0e2e5
-                border-radius 10px
+                border-radius 20px
                 border 1px solid #FFF
                 text-align center
                 padding-bottom 15px
@@ -3099,7 +3164,8 @@ form
                 .image
                     img
                         width 100%
-                        border-radius 10px
+                        border-top-left-radius 20px
+                        border-top-right-radius 20px
                 p.name
                     font-family font-semibold
                     color #000000
@@ -3168,9 +3234,11 @@ form
         padding 0 60px
         .content1
             p
-                font-size .9rem
+                font-size 1rem
                 color #000
                 text-align justify
+            strong
+                font-family font-bold
             ul
                 //list-style-image: url('../images/li-check.png');
                 list-style none
@@ -3180,10 +3248,11 @@ form
                     margin-left 35px
                     display flex
                     align-items flex-start
+                    font-size 1rem
                     &:before
                         content ''
                         position absolute
-                        background-image url('../images/li-check.png')
+                        background-image url('../images/li-check0.png')
                         background-size contain
                         background-repeat no-repeat
                         margin-left -35px
@@ -3202,7 +3271,7 @@ form
                 width 100%
                 display flex
                 align-items center
-                justify-content space-between
+                justify-content flex-start
                 background-color #dfe0e3
                 flex-direction column
                 border-radius 15px
@@ -3227,11 +3296,11 @@ form
                     margin-top 30px
                     margin-bottom 15px
                 img.img-h
-                    width 80%
+                    width 90%
                 img.img-h2
-                    width 43%
+                    width 80%
                 img.img-v
-                    width 65%
+                    width 90%
             .levels
                 background-color #dfe0e3
                 box-shadow 0 0rem 1rem rgba(0,0,0,.5)
@@ -3419,7 +3488,9 @@ form
                         margin-top 25px
                         display flex
                         justify-content space-between
+                        flex-direction column
                         a
+                            margin-top 15px
                             padding 9px 20px
                             background #254275
                             color #FFF
@@ -3469,6 +3540,7 @@ form
                         margin 0
                         color #FFF
                         font-size .85rem
+                        transition 1s all
                     input[type=text], input[type=email], select
                         background-color transparent
                         color rgba(255, 255, 255, .8)
@@ -3476,7 +3548,7 @@ form
                         border none
                         border-bottom 2.5px solid #FFF
                         border-radius 0
-                        transition 1s
+                        transition 1s all
                         font-size .85rem
                         //height calc(1.6em + .75rem + -13px)
                         margin-bottom 12px
@@ -3486,6 +3558,7 @@ form
                             box-shadow unset
                     ::placeholder
                         color rgba(255, 255, 255, .8)
+                        transition 1s all
                 .form-select
                     background-image url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%23FFFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/></svg>") !important
                     background-size 19px 19px !important
@@ -4286,10 +4359,21 @@ form
             width 100%
     .content0
         padding-top 50px
+        span, p
+            font-family font-regular !important
+            font-size 1rem !important
+            img
+                width 100% !important
+                height auto !important
         p
             line-height 1.3
             color #000
             font-size 1rem
+            font-family font-regular !important
+            span
+                font-family font-regular !important
+        strong, b
+            font-family font-semibold !important
     .navegacion
         padding-right 0
         padding-left 0
@@ -5248,7 +5332,7 @@ form
             border none
             li
                 .dropdown-item
-                    background-color #E5B336
+                    background-color #f4f7ff
                     border 1px solid rgba(255,255,255,0.5)
                     padding-left 14px
                     padding-top 10px
@@ -6399,13 +6483,14 @@ form
                     display flex
                     flex-wrap wrap
                     justify-content space-between
-                    padding 30px 15px
+                    padding 30px 15px 0
                     border-radius 12px
                     .step
                         width 20%
                         display flex
                         flex-wrap wrap
                         justify-content space-between
+                        margin 0 0 30px
                         .number
                             width 20%
                             position relative
@@ -6434,7 +6519,7 @@ form
                         background-image url(../images/img-caso-exito.png)
                         background-position center
                         background-repeat no-repeat
-                        background-size 101%
+                        background-size cover
                         width 50%
                         img
                             width 100%
@@ -6512,7 +6597,7 @@ form
             .portafolio2
                 padding 0
                 .image-bg
-                    height 80vh
+                    height 50vh
                     background-image url(../images/img-bg-portafolio.png)
                     background-position center
                     background-repeat no-repeat
@@ -6522,14 +6607,15 @@ form
                     background-position center
                     background-repeat no-repeat
                     background-size cover
-                    padding-top 18vh
+                    padding 120px 0 80px
                     display flex
+                    flex-wrap wrap
                     width 100%
-                    justify-content space-evenly
-                    height 90vh
+                    justify-content center
                     .item
                         width 20%
                         text-align center
+                        margin 0 2% 40px
                         .image
                             display flex
                             justify-content center
@@ -7091,6 +7177,7 @@ form
         margin-top 30px
         margin-bottom 60px
         .item
+            margin 20px 0 0
             width 35%
             background-color #D9E3F5
             text-align center
@@ -7163,12 +7250,13 @@ form
         .details
             display flex
             flex-wrap wrap
-            justify-content space-between
-            padding 60px
+            justify-content center
+            padding 30px 50px 50px
             align-items center
             .detail
                 text-align center
                 width 18%
+                margin 20px 1% 0
                 p
                     color #FFF
                     font-size 1.5rem
@@ -7518,7 +7606,7 @@ form
                     align-items center
                     justify-content center
                     border-radius 4px
-                    padding 15px 0
+                    padding 15px 20px
                     p
                         font-family font-bold
                         color #FFF
@@ -7678,7 +7766,7 @@ form
         .items
             display flex
             flex-wrap wrap
-            justify-content space-around
+            justify-content center
             padding 0 60px
             margin-top 40px
             .item
@@ -7689,7 +7777,7 @@ form
                 border-top 5px solid #254275
                 display flex
                 flex-direction column
-                margin-bottom 20px
+                margin 0 3% 40px
                 padding 16px
                 .image
                     height 90px
@@ -8193,6 +8281,8 @@ form
 
 @media screen and (max-width:1024px)
 
+    .cartlist
+        width 90%
     .fondo_all
         position fixed
         top 0
@@ -8434,23 +8524,24 @@ form
                 flex-direction row
                 flex-wrap wrap
                 align-items flex-end
-                padding 0 40px 50px
+                padding 0 20px 60px
                 margin 5vh 0 0
                 .text
+                    position relative
+                    margin-bottom 10px
                     width 100%
                     h1
-                        display none
+                        font-size 2rem
                     h2
-                        display none
+                        font-size 2rem
                 .btn-vermas
-                    position absolute
-                    width 100%
-                    height 100%
-                    top 0
-                    left 0
+                    height fit-content
                     border unset
-                    margin unset
+                    margin-top 20px
                     color unset
+                    font-size 1rem
+                #linkcompleto
+                    position unset !important
             .owl-dots
                 position absolute
                 bottom 0
@@ -8553,7 +8644,6 @@ form
             color #254275
             font-size 1.7rem
             margin-bottom 20px
-            font-family font-medium
             span
                 font-family font-bold
         #carousel-chooseus
@@ -9762,17 +9852,15 @@ form
 
     .sec22
         position relative
-        background-position bottom
+        background-position center
         background-size cover
         background-repeat no-repeat
         .content
-            display none
-            height 100vh
+            height auto
             .content_
-                height 100vh
+                height 40vh
                 align-items flex-end
-                padding-bottom 40px
-                padding-left 30px
+                padding 10px
                 p
                     line-height 1
                     margin 0
@@ -9781,21 +9869,21 @@ form
                     &:nth-child(1)
                         padding-bottom 5px
                         font-family font-extrabold
-                        font-size 4rem
+                        font-size 2rem
                     &:nth-child(2)
                         color #FFF
-                        font-size 2.9rem
+                        font-size 1.6rem
                         padding-bottom 5px
                         font-family font-semibold
                     &:nth-child(3)
                         color #E5B336
-                        font-size 3.8rem
+                        font-size 1.3rem
                         font-family font-extrabold
                 p.tit
-                    font-size 4rem
+                    font-size 2rem
                     font-family font-extrabold
                 img
-                    height 90px
+                    height 60px
         .formulario
             position absolute
             right 0
@@ -9870,7 +9958,7 @@ form
 
     .sec23
         position relative
-        padding-top 12vh
+        padding-top 0vh
         .info
             padding 0
             .info_
@@ -9963,7 +10051,8 @@ form
                     margin-bottom 20px
                     font-size 1rem
                     img
-                        height 40px
+                        height 37px
+                        padding-right 7px
                 .btn-descarga
                     background-color #254275
                     color #FFF
@@ -10252,7 +10341,7 @@ form
                     background #e0e2e5
                     border-radius 10px
                     border 1px solid #FFF
-                    height 51vh
+                    height 400px
                     .item_active
                         border 2px solid #254275
                     .cara
@@ -10264,7 +10353,7 @@ form
                         padding 0px
                         padding-bottom 18px
                         text-align center
-                        border-radius 10px
+                        border-radius 20px
                         background-color inherit
                         z-index 9
                         width 100%
@@ -10282,7 +10371,7 @@ form
                         align-content flex-start
                         flex-direction column
                         justify-content center
-                        border-radius 10px
+                        border-radius 20px
                         .first
                             display flex
                             align-items center
@@ -10332,7 +10421,8 @@ form
                     .image
                         img
                             width 100%
-                            border-radius 10px
+                            border-top-left-radius 20px
+                            border-top-right-radius 20px
                     .cara_bottom
                         height 100%
                         display flex
@@ -10365,7 +10455,7 @@ form
                 .content
                     transition all .4s linear
                     background #e0e2e5
-                    border-radius 10px
+                    border-radius 20px
                     border 1px solid #FFF
                     text-align center
                     padding-bottom 15px
@@ -10373,7 +10463,8 @@ form
                     .image
                         img
                             width 100%
-                            border-radius 10px
+                            border-top-left-radius 20px
+                            border-top-right-radius 20px
                     p.name
                         font-family font-semibold
                         color #000000
@@ -10468,7 +10559,7 @@ form
                         &:before
                             content ''
                             position absolute
-                            background-image url('../images/li-check.png')
+                            background-image url('../images/li-check0.png')
                             background-size contain
                             background-repeat no-repeat
                             margin-left -35px
@@ -10708,7 +10799,9 @@ form
                             margin-top 25px
                             display flex
                             justify-content space-between
+                            flex-direction column
                             a
+                                margin 13px 0 0
                                 padding 9px 20px
                                 background #254275
                                 color #FFF
@@ -11535,7 +11628,7 @@ form
 
     .sec35
         padding-top 12vh
-        padding-bottom 80px
+        padding-bottom 80px 
         .breadcrumb___
             padding 0 15px
         .tab-content > .tab-pane
@@ -11589,10 +11682,23 @@ form
                 width 100%
         .content0
             padding-top 50px
+            img
+                width 100% !important
+                height auto !important
+            span, p
+                font-family font-regular !important
+                img
+                    width 100% !important
+                    height auto !important
             p
                 line-height 1.3
                 color #000
                 font-size 1rem
+                font-family font-regular !important
+                span
+                    font-family font-regular !important
+            strong, b
+                font-family font-semibold !important
         .navegacion
             padding-right 0
             padding-left 0
@@ -12249,7 +12355,12 @@ form
                             width 60%
 
     .sec41
-        margin-top -32vh
+        margin-top unset
+        padding-top 15vh
+        background-position: bottom
+        background-size cover
+        background-repeat no-repeat
+        background-image url(../images/slider-insignias.jpg)
         position relative
         z-index 99
         padding-bottom 40px
@@ -12287,7 +12398,7 @@ form
                     margin-bottom 18px
                     h1
                         font-family font-semibold
-                        font-size 2.3rem
+                        font-size 1.5rem
                         line-height 1
                         color #FFF
                         span
@@ -12304,7 +12415,7 @@ form
                             background #FFF
                             border-radius 7px
                             color #254275
-                            font-size 1rem
+                            font-size .9rem
                             border 0
                             padding-top 10px
                             padding-bottom 10px
@@ -12314,14 +12425,14 @@ form
                             font-family font-medium
                             width 100%
                             border-radius 7px
-                            font-size 1.1rem
+                            font-size 1rem
                         .btn-login-crear
                             background-color #254275
                             color #FFF
                             font-family font-medium
                             width 100%
                             border-radius 7px
-                            font-size 1.1rem
+                            font-size 1rem
                         a
                             color #FFF
                             text-decoration none
@@ -12332,21 +12443,26 @@ form
                             font-size .8rem
 
     .sec42
-        margin-top -50vh
+        margin-top unset
+        padding-top 15vh
         position relative
         z-index 99
         padding-bottom 40px
+        background-position: bottom
+        background-size cover
+        background-repeat no-repeat
+        background-image url(../images/slider-insignias.jpg)
         .tit_registro
             h1
                 font-family font-semibold
                 color #FFF
-                font-size 2.3rem
+                font-size 1.5rem
                 text-align center
             p
                 text-align center
                 color #FFF
                 line-height 1.3
-                font-size 1.15rem
+                font-size 1.1rem
         .form_registro
             background-color rgba(0, 0, 0, .4)
             border-radius 20px
@@ -12373,8 +12489,9 @@ form
             font-size .9rem
             text-align center
             margin-top 20px
+            color #FFF
         .back-login
-            color #254275
+            color #FFF
             text-decoration none
             font-family font-medium
             font-size .9rem
@@ -12384,7 +12501,7 @@ form
             font-family font-medium
             width 80%
             border-radius 7px
-            font-size 1.1rem
+            font-size 1rem
             margin auto
             display flex
             align-items center
@@ -12392,10 +12509,15 @@ form
             margin-top 25px
 
     .sec42_2
-        margin-top -77vh
+        margin-top unset
+        padding-top 15vh
         position relative
         z-index 99
         padding-bottom 40px
+        background-position: bottom
+        background-size cover
+        background-repeat no-repeat
+        background-image url(../images/slider-insignias.jpg)
         .tit_registro
             h1
                 font-family font-semibold
@@ -12566,8 +12688,6 @@ form
                 border none
                 li
                     .dropdown-item
-                        background-color #E5B336
-                        border 1px solid rgba(255,255,255,0.5)
                         padding-left 14px
                         padding-top 10px
                         padding-bottom 10px
@@ -14470,13 +14590,13 @@ form
             .details
                 display flex
                 flex-wrap wrap
-                justify-content space-between
-                padding 40px 20px 20px
+                justify-content center
+                padding 30px 50px 50px
                 align-items center
                 .detail
                     text-align center
-                    width 50%
-                    margin-bottom 20px
+                    width 18%
+                    margin 20px 1% 0
                     p
                         color #FFF
                         font-size 1.1rem
@@ -14722,7 +14842,10 @@ form
                             border-radius 12px
                             box-shadow 0 0.5rem 1rem rgba(0, 0, 0, .2)
                     img
-                        width 75%
+                        padding-top 60px
+                        width 100%
+                #nodashed
+                    border 0 !important
                 h4.val
                     font-family font-semibold
                     color #00001D
@@ -14813,7 +14936,7 @@ form
                     display flex
                     flex-direction column
                     margin-bottom 20px
-                    padding 16px
+                    padding 13px
                     .image
                         height 90px
                         margin-bottom 15px
@@ -14826,7 +14949,7 @@ form
                         align-items center
                         justify-content center
                         border-radius 4px
-                        padding 15px 0
+                        padding 15px 10px
                         p
                             font-family font-bold
                             color #FFF
@@ -15349,7 +15472,48 @@ form
             width 100%
             height auto
             .content-left
-                width 40%
+                width 80%
+                display flex
+                align-items center
+                justify-content space-between
+                ul
+                    list-style none
+                    margin 0
+                    li.menu-link3
+                        position relative
+                        .cant
+                            position absolute
+                            height 19px
+                            width 19px
+                            top -4px
+                            right 0px
+                            font-size .7rem
+                            display flex
+                            align-items center
+                            justify-content center
+                            background-color #254275
+                            border-radius 50%
+                            z-index 1
+                            color #FFF
+                        a
+                            text-decoration none
+                            background #E5B336
+                            color #254275
+                            border-radius 5px
+                            padding 10px 13px
+                            font-size .9rem
+                            font-family font-medium
+                            display flex
+                            justify-content center
+                            align-items center
+                            img.cart
+                                padding-right 10px
+                                padding-left 10px
+                                height 44px
+                            img.search
+                                height 35px
+                            i
+                                font-size 1.4rem
                 .logo
                     height 45px
                     img
@@ -15425,6 +15589,8 @@ form
                                 padding .6rem 1.25rem
                                 background-color #E5B336
                                 color #254275 !important
+                                i
+                                    padding-right 6px
                                 &:focus
                                     box-shadow unset
                                     border-color unset
@@ -15466,7 +15632,6 @@ form
         background-position center
         background-size cover
         background-repeat no-repeat
-        background-image url('../images/background-footer.png')
         padding 40px 0 20px
         position relative
         .msg

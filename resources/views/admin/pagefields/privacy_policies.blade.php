@@ -28,7 +28,7 @@
 
                         <div class="form-group col-sm-12">
                           {{ Form::label('privacy_policies', 'Políticas de privacidad:') }} <code>*</code>
-                          {{ Form::textarea('privacy_policies', null, ['class' => 'form-control ckeditor', 'required']) }}
+                          {{ Form::textarea('privacy_policies', null, ['class' => 'form-control ckeditor5', 'required']) }}
                         </div>
 
                     </div>

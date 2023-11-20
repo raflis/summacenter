@@ -44,72 +44,45 @@
                 <div class="detail">
                     <div class="detail_left">
                         <h1>
-                            Summa Center inicia el Programa de Reconocimiento a la Excelencia Académica (REA)
+                            {{ $pagefield->field_free_2[1] }}
                         </h1>
-                        <p>
-                            Distinción que busca premiar a los estudiantes con calificaciones sobresalientes en nuestras capacitaciones. Este Reconocimiento a la Excelencia Académica (REA) se otorga a los estudiantes de Summa Center cuyo promedio final ponderado sea mayor o igual a 17.00 puntos en su capacitación.
-                        </p>
+                        <div>
+                            {!! htmlspecialchars_decode($pagefield->field_free_2[2]) !!}
+                        </div>
                     </div>
                     <div class="detail_right">
-                        <img src="{{ asset('images/img-reconocimiento.png') }}" alt="">
+                        <img src="{{ $pagefield->field_free_2[3] }}" alt="">
                     </div>
                 </div>
             </div>
             <div class="col-md-12 items_">
                 <h1>
-                    BENEFICIOS
+                    {{ $pagefield->field_free_2[4] }}
                 </h1>
                 <div class="items">
+                    @foreach ($pagefield->field_free_3 as $item)
                     <div class="item">
                         <div class="image">
-                            <img src="{{ asset('images/icon-grupo1.png') }}" alt="">
+                            <img src="{{ $item['image'] }}" alt="">
                         </div>
                         <div class="texto">
-                            <p>
-                                <strong>Certificaciones
-                                internacionales</strong> que 
-                                respaldan el logro
-                                sobresaliente del 
-                                estudiante
+                            <p class="font-medium">
+                                {!! nl2br($item['detail']) !!}
                             </p>
                         </div>
                     </div>
-                    <div class="item">
-                        <div class="image">
-                            <img src="{{ asset('images/icon-grupo2.png') }}" alt="">
-                        </div>
-                        <div class="texto">
-                            <p>
-                                <strong>Becas y
-                                financiamientos</strong>
-                                especiales a nuevoS
-                                cursos
-                            </p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="image">
-                            <img src="{{ asset('images/icon-grupo3.png') }}" alt="">
-                        </div>
-                        <div class="texto">
-                            <p>
-                                Participación en
-                                <strong>videoconferencias
-                                gratuitas</strong>
-                            </p>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
             <div class="col-md-12 px-0 bg1">
-                <img class="reco1" src="{{ asset('images/imagen1-reco.png') }}" alt="">
-                <img class="reco2" src="{{ asset('images/imagen2-reco.png') }}" alt="">
+                <img class="reco1" src="{{ $pagefield->field_free_2[5] }}" alt="">
+                <img class="reco2" src="{{ $pagefield->field_free_2[6] }}" alt="">
             </div>
         </div>
     </div>
 </section>
 
-<section class="sec51">
+<section class="sec4">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12 title">
@@ -123,16 +96,15 @@
                     <div class="item">
                         <div class="item-header">
                             <div class="titulo-header">
-                                <img src="{{ $item->icon }}" alt="">
                                 <span>
                                     {{ $item->name }}
                                 </span>
                             </div>
                         </div>
                         <div class="item-content">
-                            <div class="imagen">
+                            <a class="imagen" href="{{ route('programas', $item->slug) }}">
                                 <img src="{{ $item->image }}" alt="">
-                            </div>
+                            </a>
                             <div class="content">
                                 <h4>
                                     {{ $item->text }}

@@ -20,6 +20,12 @@ Route::prefix('/admin')->group(function(){
     Route::get('pagefields/responsability', [App\Http\Controllers\Admin\PageFieldController::class,'responsability'])->name('pagefields.responsability');
     Route::get('pagefields/certifications', [App\Http\Controllers\Admin\PageFieldController::class,'certifications'])->name('pagefields.certifications');
     Route::get('pagefields/job_bank_advertising', [App\Http\Controllers\Admin\PageFieldController::class,'job_bank_advertising'])->name('pagefields.job_bank_advertising');
+    Route::get('pagefields/index_title', [App\Http\Controllers\Admin\PageFieldController::class,'index_title'])->name('pagefields.index_title');
+    Route::get('pagefields/educational_model', [App\Http\Controllers\Admin\PageFieldController::class,'educational_model'])->name('pagefields.educational_model');
+    Route::get('pagefields/distinctions', [App\Http\Controllers\Admin\PageFieldController::class,'distinctions'])->name('pagefields.distinctions');
+    Route::get('pagefields/digital_badges', [App\Http\Controllers\Admin\PageFieldController::class,'digital_badges'])->name('pagefields.digital_badges');
+    Route::get('pagefields/academic_group', [App\Http\Controllers\Admin\PageFieldController::class,'academic_group'])->name('pagefields.academic_group');
+    Route::get('pagefields/corporative_training', [App\Http\Controllers\Admin\PageFieldController::class,'corporative_training'])->name('pagefields.corporative_training');
     Route::resource('settings', App\Http\Controllers\Admin\SettingController::class)->only(['index', 'update']);
     Route::get('settings/links', [App\Http\Controllers\Admin\SettingController::class,'links'])->name('settings.links');
     Route::get('settings/whatsapp', [App\Http\Controllers\Admin\SettingController::class,'whatsapp'])->name('settings.whatsapp');
@@ -28,6 +34,7 @@ Route::prefix('/admin')->group(function(){
     Route::get('settings/keywords', [App\Http\Controllers\Admin\SettingController::class,'keywords'])->name('settings.keywords');
     Route::get('settings/image', [App\Http\Controllers\Admin\SettingController::class,'image'])->name('settings.image');
     Route::get('settings/paymodetext', [App\Http\Controllers\Admin\SettingController::class,'paymodetext'])->name('settings.paymodetext');
+    Route::get('settings/floating_advertising', [App\Http\Controllers\Admin\SettingController::class,'floating_advertising'])->name('settings.floating_advertising');
     Route::resource('sliders', App\Http\Controllers\Admin\SliderController::class);
     Route::resource('partners', App\Http\Controllers\Admin\PartnerController::class);
     Route::resource('alliances', App\Http\Controllers\Admin\AllianceController::class);
@@ -47,6 +54,9 @@ Route::prefix('/admin')->group(function(){
     Route::resource('blog_posts', App\Http\Controllers\Admin\BlogPostController::class);
     Route::resource('job_bank_users', App\Http\Controllers\Admin\JobBankUserController::class);
     Route::resource('job_bank_offers', App\Http\Controllers\Admin\JobBankOfferController::class);
+    Route::resource('frequent_questions', App\Http\Controllers\Admin\FrequentQuestionController::class);
+    Route::resource('consultancies', App\Http\Controllers\Admin\ConsultancyController::class);
+    Route::resource('manuals', App\Http\Controllers\Admin\ManualController::class);
     Route::get('records/excel_record', [App\Http\Controllers\Admin\RecordController::class, 'excel_record'])->name('excel.record');
     Route::get('records/excel_contact', [App\Http\Controllers\Admin\RecordController::class, 'excel_contact'])->name('excel.contact');
     Route::get('records/excel_corporate', [App\Http\Controllers\Admin\RecordController::class, 'excel_corporate'])->name('excel.corporate');

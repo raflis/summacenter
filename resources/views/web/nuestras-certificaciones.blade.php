@@ -96,30 +96,6 @@
     </div>
 </section>
 
-<section class="sec8">
-    <div class="container-fluid">
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <div class="content">
-                    <h5>
-                        VERIFICA TU CERTIFICACIÓN
-                    </h5>
-                    <p>
-                        Como alumno Summa puedes ingresar tu correo de
-                        usuario y verificar tu insignia emitida por nuestra
-                        institución, respaldada internacionalmente
-                        por Credly.
-                    </p>
-                    <form action="{{ route('verifica-tu-certificacion') }}" method="GET" class="needs-validation" novalidate>
-                        <input type="email" class="form-control shadow" name="email" placeholder="Ingrese su email" required>
-                        <input type="submit" value="Verificar">
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
 <section class="sec16">
     <div class="container-fluid">
         <div class="row justify-content-center">
@@ -181,6 +157,30 @@
                         </div>
                     </div>
                     @endforeach
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="sec8">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="content">
+                    <h5>
+                        VERIFICA TU CERTIFICACIÓN
+                    </h5>
+                    <p>
+                        Como alumno Summa puedes ingresar tu correo de
+                        usuario y verificar tu insignia emitida por nuestra
+                        institución, respaldada internacionalmente
+                        por Credly.
+                    </p>
+                    <form action="{{ route('verifica-tu-certificacion') }}" method="GET" class="needs-validation" novalidate>
+                        <input type="email" class="form-control shadow" name="email" placeholder="Ingrese su email" required>
+                        <input type="submit" value="Verificar">
+                    </form>
                 </div>
             </div>
         </div>

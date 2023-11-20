@@ -16,7 +16,7 @@
     <meta name="author" content="SUMMA CENTER LATAM">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="routeName" content="{{ Route::currentRouteName() }}">
-    <link rel="icon" href="{{ asset('images/favicon.png') }}" type="image/png" />
+    <link rel="icon" href="{{ asset('images/favicon.ico') }}" type="image/png" />
     <link href="{{ asset('css/app.css?v=0') }}" rel="stylesheet">
     <link href="{{ asset('css/web.css?v='.time()) }}" rel="stylesheet">
     <link href="{{ asset('css/owl.carousel.min.css') }}" rel="stylesheet">
@@ -33,6 +33,9 @@
     <!-- End Google Tag Manager -->
 </head>
 <body>
+    @if ($setting->floating_advertising[0] == 1 && Route::currentRouteName() == "index")
+    @include('web.partials.floating_advertising')
+    @endif
     @if ($setting->floating_chat == 1)
     @include('web.partials.whatsapp')
     @endif

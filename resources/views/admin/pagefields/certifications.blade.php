@@ -75,11 +75,9 @@
                               @foreach ($pagefield->certifications_items2 as $item)
                               @php $var_col = (count($pagefield->certifications_items2)>1)?'col-md-4':'col-md-12'; @endphp
                               <div class="card-body {{ $var_col }}">
-                                @if ($loop->index >= 1)
                                 <a href="#" class="btn btn-danger btn-circle btn-sm float-right mb-2 eliminar">
                                   <i class="fas fa-trash"></i>
                                 </a>
-                                @endif
                                 {!! Form::label('certifications_items2', 'Selecciona una imagen:', ['class' => '']) !!} <small><strong>(Alto 80px)</strong></small> <code>*</code>
                                 <div class="input-group">
                                     <span class="input-group-btn">
@@ -150,11 +148,9 @@
                               @foreach ($pagefield->certifications_items4 as $item)
                               @php $var_col = (count($pagefield->certifications_items4)>1)?'col-md-4':'col-md-12'; @endphp
                               <div class="card-body {{ $var_col }}">
-                                @if ($loop->index >= 1)
                                 <a href="#" class="btn btn-danger btn-circle btn-sm float-right mb-2 eliminar2">
                                   <i class="fas fa-trash"></i>
                                 </a>
-                                @endif
                                 {!! Form::label('certifications_items4','Selecciona una imagen:',['class'=>'']) !!} <small><strong>(Alto 300px)</strong></small> <code>*</code>
                                 <div class="input-group">
                                     <span class="input-group-btn">

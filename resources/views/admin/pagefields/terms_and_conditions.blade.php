@@ -28,7 +28,7 @@
 
                         <div class="form-group col-sm-12">
                           {{ Form::label('terms_and_conditions', 'Términos y condiciones:') }} <code>*</code>
-                          {{ Form::textarea('terms_and_conditions', null, ['class' => 'form-control ckeditor', 'required']) }}
+                          {{ Form::textarea('terms_and_conditions', null, ['class' => 'form-control ckeditor5', 'required']) }}
                         </div>
 
                     </div>

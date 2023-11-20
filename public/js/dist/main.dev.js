@@ -148,7 +148,7 @@ $(function () {
 
   AOS.init();
   $('[data-bs-toggle="tooltip"]').tooltip();
-  $('#cart_user').on('click', function (e) {
+  $('[id*=cart_user]').on('click', function (e) {
     e.preventDefault();
 
     if ($('.cartlist').hasClass('cartlist-active')) {
@@ -688,7 +688,7 @@ $(function () {
   }), _$$owlCarousel));
   $('#carouselblog-related .owl-next').html('<img src="' + base + '/images/arrow-right-black.png">');
   $('#carouselblog-related .owl-prev').html('<img src="' + base + '/images/arrow-left-black.png">');
-  $('[id*=btn-header]').on('click', function () {
+  $('[id*=btn-header]').on('mouseover', function () {
     var id_list = $(this).attr('list');
 
     if ($('#' + id_list).hasClass('noActiveList')) {
@@ -796,6 +796,10 @@ $(function () {
     } else {
       $('.fondo_all').addClass('d-none');
     }
+  });
+  $('#btn_close_fa').on('click', function (e) {
+    e.preventDefault();
+    $('.floating_advertising').hide();
   });
 });
 $(document).on("click", function (event) {

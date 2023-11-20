@@ -17,6 +17,6 @@ class BlogCategory extends Model
 
     public function blog_posts()
     {
-        return $this->hasMany(BlogPost::class)->where('status', 'PUBLISHED');
+        return $this->hasMany(BlogPost::class)->where('status', 'PUBLISHED')->orderBy('order', 'Asc');
     }
 }

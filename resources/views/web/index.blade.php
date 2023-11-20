@@ -71,7 +71,7 @@
         <div id="carousel-slider" class="owl-carousel">
             @foreach ($sliders as $slider)
             <div class="item" style="background-image: url({{ ($agent->isMobile())?$slider->image_mobile:$slider->image_desktop }})">
-                <div class="text">
+                <div class="text" id="{{ ($slider->full_link_desktop == 1)?'linkcompleto':'' }}">
                     <h1>
                         {{ $slider->title1 }}
                         <br>
@@ -85,7 +85,7 @@
                         <a href="{{ $slider->button_link }}" class="btn btn-vermas">{{ $slider->button_name }}</a>
                         @endif
                     @else
-                        <a href="{{ $slider->button_link }}" class="btn btn-vermas" style="position: absolute; height: 100%; width: 100%; top: 0; left: 0; border: unset; margin: unset"></a>
+                        <a href="{{ $slider->button_link }}" class="btn btn-vermas" style="position: absolute; height: 100%; width: 100%; top: 0; left: 0; border: unset; margin: unset; background: transparent !important"></a>
                     @endif
                 </div>
             </div>
@@ -99,7 +99,7 @@
         <div class="row">
             <div class="col-md-12 title">
                 <h1>
-                    NUESTROS ACREDITADORES
+                    {{ $pagefield->field_free_1[1] }}
                 </h1>
             </div>
             <div class="col-md-12 carousel">
@@ -122,7 +122,7 @@
         <div class="row">
             <div class="col-md-12">
                 <h1 class="title">
-                    ¿Por qué <span>elegirnos?</span>
+                    {{ $pagefield->field_free_1[2] }}
                 </h1>
                 <div id="carousel-chooseus" class="owl-carousel">
                     @foreach ($pagefield->choose_items as $item)
@@ -152,7 +152,7 @@
         <div class="row">
             <div class="col-md-12 title">
                 <h1>
-                    ALIANZAS ESTRATEGICAS
+                    {{ $pagefield->field_free_1[3] }}
                 </h1>
             </div>
             <div class="col-md-12 carousel">
@@ -175,7 +175,7 @@
         <div class="row">
             <div class="col-md-12 title">
                 <h1>
-                    +60 CURSOS EN 6 CATEGORÍAS
+                    {{ $pagefield->field_free_1[4] }}
                 </h1>
             </div>
             <div class="col-md-12">
@@ -190,9 +190,9 @@
                             </div>
                         </div>
                         <div class="item-content">
-                            <div class="imagen">
+                            <a class="imagen" href="{{ route('programas', $item->slug) }}">
                                 <img src="{{ $item->image }}" alt="">
-                            </div>
+                            </a>
                             <div class="content">
                                 <h4>
                                     {{ $item->text }}
@@ -214,7 +214,7 @@
         <div class="row">
             <div class="col-md-12 title">
                 <h1>
-                    ARTÍCULOS
+                    {{ $pagefield->field_free_1[5] }}
                 </h1>
             </div>
             <div class="col-md-12">
@@ -249,7 +249,7 @@
         <div class="row">
             <div class="col-md-12 title">
                 <h1>
-                    EVENTOS
+                    {{ $pagefield->field_free_1[6] }}
                 </h1>
             </div>
             <div class="col-md-12">
@@ -283,7 +283,7 @@
         <div class="row">
             <div class="col-md-12 title">
                 <h1>
-                    EGRESADOS
+                    {{ $pagefield->field_free_1[7] }}
                 </h1>
             </div>
             <div class="col-md-12">
@@ -331,7 +331,7 @@
         <div class="row justify-content-center">
             <div class="col-md-12 title">
                 <h1>
-                    {{ $pagefield->achievement_title }}
+                    {{ $pagefield->field_free_1[8] }}
                 </h1>
             </div>
             @foreach ($pagefield->achievement_items as $item)
@@ -355,7 +355,7 @@
             <div class="col-md-6">
                 <div class="content">
                     <h5>
-                        VERIFICA TU CERTIFICACIÓN
+                        {{ $pagefield->field_free_1[9] }}
                     </h5>
                     <p>
                         Como alumno Summa puedes ingresar tu correo de

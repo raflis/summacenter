@@ -151,14 +151,14 @@
                 </li>
             </div>
             <div class="header-right">
-                <li class="menu-link2">
-                    <a href="{{ $setting->button_link }}">{{ $setting->button_name }}</a>
+                <li class="menu-link4">
+                    <a target="_blank" href="{{ $setting->button_link }}">{{ $setting->button_name }}</a>
                 </li>
                 <li class="menu menu2">
                     <div class="dropdown dropdown_header">
                         @if(Auth::guard('user')->check())
-                        <button id="btn-header" list="header5_list" class="btn btn-item active0">
-                            <i class="fa-solid fa-user"></i> {{ ucwords(Auth::guard('user')->user()->name) }} 
+                        <button id="btn-header" list="header5_list" class="btn btn-item btn-item2 @if(in_array(Route::currentRouteName(), array('profile.shopping', 'profile.index'))) activeB @endif">
+                            <i class="fa-solid fa-user"></i> {{ ucwords(Auth::guard('user')->user()->name) }}
                         </button>
                         @else
                         <a href="{{ route('login.index') }}" class="btn btn-login">
@@ -197,7 +197,7 @@
                             0
                         @endif
                     </div>
-                    <a href="{{ route('checkout.cart') }}" id="{{ (preg_match("/checkout/", Route::currentRouteName()))?'':'cart_user' }}">
+                    <a href="{{ route('checkout.cart') }}" id="{{ (preg_match("/checkout/", Route::currentRouteName()))?'':'cart_user' }}" style="background: none">
                         <i class="fa-solid fa-cart-arrow-down"></i>
                     </a>
                     <!--<a href="">
@@ -218,6 +218,23 @@
                         <div class="logo">
                             <a href="{{ route('index') }}"><img src="{{ asset('images/logo_new.png') }}" alt=""></a>
                         </div>
+                        <ul>
+                            <li class="menu-link3">
+                                <div class="cant" id="cant_header">
+                                    @if(session('cart'))
+                                        {{ count(session('cart')) }}
+                                    @else
+                                        0
+                                    @endif
+                                </div>
+                                <a href="{{ route('checkout.cart') }}" id="{{ (preg_match("/checkout/", Route::currentRouteName()))?'':'cart_user' }}">
+                                    <i class="fa-solid fa-cart-arrow-down"></i>
+                                </a>
+                                <!--<a href="">
+                                    <img class="search" src="{{ asset('images/search.png') }}" alt="">
+                                </a>-->
+                            </li>
+                        </ul>
                     </div>
                     <div class="content-right">
                         <div class="burger burgergg">
@@ -236,42 +253,49 @@
                             <li>
                                 <img src="{{ asset('images/logo_new.png') }}" alt="">
                             </li>
-                            <!--<li class="{{ (Route::currentRouteName()=="egresados")?'active':'' }}">
-                                <a href="{{ route('egresados') }}"><i class="fa-solid fa-angle-right"></i> EGRESADOS</a>
-                            </li>-->
-                            <li class="{{ (Route::currentRouteName()=="blog")?'active':'' }}">
-                                <a href="{{ route('blog') }}"><i class="fa-solid fa-angle-right"></i> {{ $setting->links[1] }}</a>
-                            </li>
-                            <li class="{{ (Route::currentRouteName()=="soporte")?'active':'' }}">
-                                <a href="{{ route('soporte') }}"><i class="fa-solid fa-angle-right"></i> {{ $setting->links[3] }}</a>
-                            </li>
-                            <li class="{{ (Route::currentRouteName()=="contacto")?'active':'' }}">
-                                <a href="{{ route('contacto') }}"><i class="fa-solid fa-angle-right"></i> {{ $setting->links[4] }}</a>
-                            </li>
+                            @if(!Auth::guard('user')->check())
                             <li>
-                                <a href="{{ $setting->button_link }}"><i class="fa-solid fa-link"></i> {{ $setting->button_name }}</a>
+                                <a href="{{ route('login.index') }}"><i class="fa-solid fa-user"></i> INICIAR SESIÓN</a>
                             </li>
+                            @endif
                         </ul>
-                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                        @if(Auth::guard('user')->check())
+                        <div class="accordion accordion-flush" id="accordionFlushExample5">
                             <div class="accordion-item">
-                                <h2 class="accordion-header" id="flush-heading0">
-                                    <button class="accordion-button {{ preg_match("/^bolsa./", Route::currentRouteName())?'':'collapsed' }}" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse0" aria-expanded="false" aria-controls="flush-collapse0">
-                                        {{ $setting->links[2] }}
+                                <h2 class="accordion-header" id="flush-heading5">
+                                    <button class="accordion-button @if(Route::currentRouteName()=="profile.index" || Route::currentRouteName()=="profile.shopping") @else collapsed @endif" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse5" aria-expanded="false" aria-controls="flush-collapse5">
+                                        <i class="fa-solid fa-user"></i> {{ ucwords(Auth::guard('user')->user()->name) }} 
                                     </button>
                                 </h2>
-                                <div id="flush-collapse0" class="accordion-collapse collapse {{ preg_match("/^bolsa./", Route::currentRouteName())?'show':'' }}" aria-labelledby="flush-heading0" data-bs-parent="#accordionFlushExample">
+                                <div id="flush-collapse5" class="accordion-collapse collapse @if(Route::currentRouteName()=="profile.index" || Route::currentRouteName()=="profile.shopping") show @endif" aria-labelledby="flush-heading5" data-bs-parent="#accordionFlushExample5">
                                     <div class="accordion-body">
                                         <ul class="list2">
-                                            <li class="{{ (Route::currentRouteName()=="bolsa.seleccionar")?'active':'' }}">
-                                                <a href="{{ route('bolsa.seleccionar') }}">Ver Anuncios</a>
+                                            @if (Auth::guard('user')->user()->role == 0)
+                                            <li class="@if(Route::currentRouteName()=="admin") active @endif">
+                                                <a href="{{ route('admin') }}"><i class="fa-solid fa-cog"></i> Administrador</a>
                                             </li>
-                                            <li class="{{ (Route::currentRouteName()=="bolsa.trabajo")?'active':'' }}">
-                                                <a href="{{ route('bolsa.trabajo') }}">Crear Anuncios</a>
+                                            @endif
+                                            <li class="@if(Route::currentRouteName()=="profile.index") active @endif">
+                                                <a href="{{ route('profile.index') }}"><i class="fa-solid fa-cog"></i> Mis Datos</a>
+                                            </li>
+                                            <li class="@if(Route::currentRouteName()=="profile.shopping") active @endif">
+                                                <a href="{{ route('profile.shopping') }}"><i class="fa-solid fa-bag-shopping"></i> Mis Cursos</a>
+                                            </li>
+                                            <li class="">
+                                                <a href="{{ route('logout') }}"><i class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar Sesión</a>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        @endif
+                        <ul class="list1">
+                            <li>
+                                <a href="{{ $setting->button_link }}"><i class="fa-solid fa-link"></i> {{ $setting->button_name }}</a>
+                            </li>
+                        </ul>
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="flush-headingOne">
                                     <button class="accordion-button @if(Route::currentRouteName()=="modelo-educativo" || Route::currentRouteName()=="nosotros" || Route::currentRouteName()=="equipo" || Route::currentRouteName()=="ofimatica" || preg_match("/^responsabilidad-social/", Route::currentRouteName()) || Route::currentRouteName()=="distinciones") @else collapsed @endif" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
@@ -369,6 +393,17 @@
                                 </div>
                             </div>
                         </div>
+                        <ul class="list1">
+                            <li class="{{ (Route::currentRouteName()=="soporte")?'active':'' }}">
+                                <a href="{{ route('soporte') }}"><i class="fa-solid fa-angle-right"></i> {{ $setting->links[3] }}</a>
+                            </li>
+                            <li class="{{ (Route::currentRouteName()=="contacto")?'active':'' }}">
+                                <a href="{{ route('contacto') }}"><i class="fa-solid fa-angle-right"></i> {{ $setting->links[4] }}</a>
+                            </li>
+                            <li class="{{ (Route::currentRouteName()=="blog")?'active':'' }}">
+                                <a href="{{ route('blog') }}"><i class="fa-solid fa-angle-right"></i> {{ $setting->links[1] }}</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>

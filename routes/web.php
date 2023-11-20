@@ -53,7 +53,6 @@ Route::get('capacitaciones-corporativas', [App\Http\Controllers\Web\WebControlle
 Route::get('egresados', [App\Http\Controllers\Web\WebController::class, 'egresados'])->name('egresados');
 Route::get('verifica-tu-certificacion', [App\Http\Controllers\Web\WebController::class, 'verifica_certificacion'])->name('verifica-tu-certificacion');
 Route::get('insignia-adquirida/{hash}', [App\Http\Controllers\Web\WebController::class, 'insignia_adquirida'])->name('insignia-adquirida');
-Route::get('certificado-adquirido', [App\Http\Controllers\Web\WebController::class, 'certificado_adquirido'])->name('certificado-adquirido');
 Route::get('modelo-educativo', [App\Http\Controllers\Web\WebController::class, 'modelo_educativo'])->name('modelo-educativo');
 Route::get('nosotros', [App\Http\Controllers\Web\WebController::class, 'nosotros'])->name('nosotros');
 

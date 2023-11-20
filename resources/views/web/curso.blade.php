@@ -123,7 +123,7 @@
                 </p>
                 <div class="botones">
                     <a href="" class="btn btn-matricula btn-add" id_product="{{ $course->id }}">
-                        <img src="{{ asset('images/cart.png') }}" alt="">
+                        <img src="{{ asset('images/cart_buy.png') }}" alt="">
                         MATRICULARME AHORA
                     </a>
                     <a href="" class="btn btn-descarga" data-bs-toggle="modal" data-bs-target="#video1">
@@ -298,7 +298,7 @@
                         @csrf
                         <input type="hidden" name="from" value="curso">
                         <input type="hidden" name="interested_course" value="{{ $course->name }}">
-                        <div class="form-group col-md-12">
+                        <div class="form-group col-md-12" id="fieldname">
                             <label for="name">Nombres</label>
                             <input type="text" name="name" class="form-control" placeholder="Nombres" required>
                         </div>
@@ -374,9 +374,9 @@
                             </div>
                         </div>
                         <div class="item-content">
-                            <div class="imagen">
+                            <a class="imagen" href="{{ route('programas', $item->slug) }}">
                                 <img src="{{ $item->image }}" alt="">
-                            </div>
+                            </a>
                             <div class="content">
                                 <h4>
                                     {{ $item->text }}
@@ -401,6 +401,10 @@
         $('.btn-solicitar').click(function(e){
             e.preventDefault();
             $('input[name=name]').focus();
+            $('#fieldname').addClass('fieldname');
+            setTimeout(function() {
+                $('#fieldname').removeClass('fieldname');
+            }, 5000);
         })
     })
 </script>

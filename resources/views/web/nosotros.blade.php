@@ -127,7 +127,7 @@
                         </div>
                         <div class="tab-pane fade" id="pills_3" role="tabpanel" aria-labelledby="pills_3_tab">
                             <div class="content1 text-center">
-                                <div class="valores">
+                                <div class="valores" id="nodashed">
                                     <div class="tit">
                                         <h1>
                                             Nuestros Valores

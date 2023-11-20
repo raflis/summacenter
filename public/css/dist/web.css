@@ -29,22 +29,22 @@
   src: url("../fonts/Poppins-Regular.ttf");
 }
 .font-light {
-  font-family: font-light;
+  font-family: font-light !important;
 }
 .font-semibold {
-  font-family: font-semibold;
+  font-family: font-semibold !important;
 }
 .font-extrabold {
-  font-family: font-extrabold;
+  font-family: font-extrabold !important;
 }
 .font-medium {
-  font-family: font-medium;
+  font-family: font-medium !important;
 }
 .font-regular {
-  font-family: font-regular;
+  font-family: font-regular !important;
 }
 .font-bold {
-  font-family: font-bold;
+  font-family: font-bold !important;
 }
 body {
   background: #fff;
@@ -95,6 +95,23 @@ textarea:focus {
   padding-left: 60px;
   padding-right: 60px;
 }
+.title_index {
+  text-align: center;
+  color: #254275;
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-family: font-medium;
+}
+.fieldname label {
+  color: #e5b336 !important;
+  font-family: font-semibold;
+}
+.fieldname input {
+  border-bottom: 2.5px solid #e5b336 !important;
+}
+.fieldname ::placeholder {
+  color: #e5b336 !important;
+}
 .wp_float {
   position: fixed;
   bottom: 6px;
@@ -104,6 +121,30 @@ textarea:focus {
 }
 .wp_float img {
   width: 75px;
+}
+.floating_advertising {
+  position: fixed;
+  bottom: 100px;
+  left: 0px;
+  z-index: 9999999;
+  cursor: pointer;
+}
+.floating_advertising #btn_close_fa {
+  position: absolute;
+  top: -12px;
+  right: -13px;
+  border-radius: 50%;
+  background: #254275;
+  border: 0;
+}
+.floating_advertising #btn_close_fa svg {
+  fill: #fff;
+  height: 14px;
+  width: 14px;
+}
+.floating_advertising img {
+  width: 300px;
+  height: auto;
 }
 .fondo_all {
   background: rgba(0,0,0,0.65);
@@ -985,6 +1026,19 @@ form {
   background-repeat: no-repeat;
   background-size: 1.25rem;
 }
+.header ul.header-second li.menu .btn-item2 {
+  background: transparent;
+  border: 1px solid #254275;
+  transition: all 0.3s;
+}
+.header ul.header-second li.menu .btn-item2:hover {
+  background: #e5b336;
+  border: 1px solid #e5b336;
+}
+.header ul.header-second li.menu .activeB {
+  background: #e5b336 !important;
+  border: 1px solid #e5b336 !important;
+}
 .header ul.header-second li.menu .active0 {
   color: #254275;
   font-family: font-semibold;
@@ -999,6 +1053,7 @@ form {
   color: #254275;
   font-family: font-semibold;
   background: #e5b336;
+  border: 1px solid #e5b336;
   padding: 10px 35px 10px 13px;
   transition: 0.2s all;
 }
@@ -1073,6 +1128,24 @@ form {
 }
 .header ul.header-second li.menu-link3 a i {
   font-size: 1.4rem;
+}
+.header ul.header-second li.menu-link4 {
+  margin-right: 20px;
+}
+.header ul.header-second li.menu-link4 a {
+  text-decoration: none;
+  border: 1px solid #254275;
+  background: transparent;
+  color: #254275;
+  border-radius: 5px;
+  padding: 10px 13px;
+  font-size: 0.9rem;
+  font-family: font-medium;
+  transition: all 0.3s;
+}
+.header ul.header-second li.menu-link4 a:hover {
+  background: #e5b336;
+  border: 1px solid #e5b336;
 }
 .header ul.header-second .ActiveList {
   display: flex;
@@ -1548,7 +1621,7 @@ form {
   color: #254275;
   font-size: 3rem;
   margin-bottom: 20px;
-  font-family: font-medium;
+  font-family: font-semibold;
 }
 .sec3_2 h1.title span {
   font-family: font-bold;
@@ -2389,7 +2462,7 @@ form {
   padding: 0 60px;
 }
 .sec11 .description p {
-  font-size: 0.9rem;
+  font-size: 1rem;
   text-align: justify;
 }
 .sec11 .description p img.insignia-digital {
@@ -3269,7 +3342,8 @@ form {
   align-items: center;
 }
 .sec24 .presentacion .botones .btn-matricula img {
-  height: 40px;
+  height: 37px;
+  padding-right: 7px;
 }
 .sec24 .presentacion .botones .btn-descarga {
   background-color: #254275;
@@ -3529,7 +3603,7 @@ form {
 .sec25 .content .right-content .content .item .item-content .content {
   text-align: center;
   padding-top: 0px;
-  height: 90px;
+  height: 105px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -3599,7 +3673,7 @@ form {
   padding: 0 45px 30px;
 }
 .sec26 .items .item2 {
-  width: 25%;
+  width: 33%;
   padding: 15px;
 }
 .sec26 .items .item2:hover .content {
@@ -3609,9 +3683,9 @@ form {
   transform-style: preserve-3d;
   transition: all 0.4s linear;
   background: #e0e2e5;
-  border-radius: 10px;
+  border-radius: 20px;
   border: 1px solid #fff;
-  height: 51vh;
+  height: 400px;
 }
 .sec26 .items .item2 .content .item_active {
   border: 2px solid #254275;
@@ -3625,7 +3699,7 @@ form {
   padding: 0px;
   padding-bottom: 18px;
   text-align: center;
-  border-radius: 10px;
+  border-radius: 20px;
   background-color: inherit;
   z-index: 9;
   width: 100%;
@@ -3644,7 +3718,7 @@ form {
   align-content: flex-start;
   flex-direction: column;
   justify-content: center;
-  border-radius: 10px;
+  border-radius: 20px;
 }
 .sec26 .items .item2 .content .detras .first {
   display: flex;
@@ -3701,7 +3775,8 @@ form {
 }
 .sec26 .items .item2 .content .image img {
   width: 100%;
-  border-radius: 10px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 .sec26 .items .item2 .content .cara_bottom {
   height: 100%;
@@ -3739,7 +3814,7 @@ form {
 .sec26 .items .item3 .content {
   transition: all 0.4s linear;
   background: #e0e2e5;
-  border-radius: 10px;
+  border-radius: 20px;
   border: 1px solid #fff;
   text-align: center;
   padding-bottom: 15px;
@@ -3747,7 +3822,8 @@ form {
 }
 .sec26 .items .item3 .content .image img {
   width: 100%;
-  border-radius: 10px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 .sec26 .items .item3 .content p.name {
   font-family: font-semibold;
@@ -3829,9 +3905,12 @@ form {
   padding: 0 60px;
 }
 .sec27 .content .content1 p {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #000;
   text-align: justify;
+}
+.sec27 .content .content1 strong {
+  font-family: font-bold;
 }
 .sec27 .content .content1 ul {
   list-style: none;
@@ -3842,11 +3921,12 @@ form {
   margin-left: 35px;
   display: flex;
   align-items: flex-start;
+  font-size: 1rem;
 }
 .sec27 .content .content1 ul li:before {
   content: '';
   position: absolute;
-  background-image: url("../images/li-check.png");
+  background-image: url("../images/li-check0.png");
   background-size: contain;
   background-repeat: no-repeat;
   margin-left: -35px;
@@ -3868,7 +3948,7 @@ form {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   background-color: #dfe0e3;
   flex-direction: column;
   border-radius: 15px;
@@ -3897,13 +3977,13 @@ form {
   margin-bottom: 15px;
 }
 .sec27 .content .content1 .item_share img.img-h {
-  width: 80%;
+  width: 90%;
 }
 .sec27 .content .content1 .item_share img.img-h2 {
-  width: 43%;
+  width: 80%;
 }
 .sec27 .content .content1 .item_share img.img-v {
-  width: 65%;
+  width: 90%;
 }
 .sec27 .content .content1 .levels {
   background-color: #dfe0e3;
@@ -4131,8 +4211,10 @@ form {
   margin-top: 25px;
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
 }
 .sec28 .contenido .accordion .accordion-certificate .content .buttons a {
+  margin-top: 15px;
   padding: 9px 20px;
   background: #254275;
   color: #fff;
@@ -4190,6 +4272,7 @@ form {
   margin: 0;
   color: #fff;
   font-size: 0.85rem;
+  transition: 1s all;
 }
 .sec28 .formu .formulario .formulario_ .form-group input[type=text],
 .sec28 .formu .formulario .formulario_ .form-group input[type=email],
@@ -4200,7 +4283,7 @@ form {
   border: none;
   border-bottom: 2.5px solid #fff;
   border-radius: 0;
-  transition: 1s;
+  transition: 1s all;
   font-size: 0.85rem;
   margin-bottom: 12px;
 }
@@ -4213,6 +4296,7 @@ form {
 }
 .sec28 .formu .formulario .formulario_ .form-group ::placeholder {
   color: rgba(255,255,255,0.8);
+  transition: 1s all;
 }
 .sec28 .formu .formulario .formulario_ .form-select {
   background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%23FFFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/></svg>") !important;
@@ -5172,10 +5256,28 @@ form {
 .sec35 .content0 {
   padding-top: 50px;
 }
+.sec35 .content0 span,
+.sec35 .content0 p {
+  font-family: font-regular !important;
+  font-size: 1rem !important;
+}
+.sec35 .content0 span img,
+.sec35 .content0 p img {
+  width: 100% !important;
+  height: auto !important;
+}
 .sec35 .content0 p {
   line-height: 1.3;
   color: #000;
   font-size: 1rem;
+  font-family: font-regular !important;
+}
+.sec35 .content0 p span {
+  font-family: font-regular !important;
+}
+.sec35 .content0 strong,
+.sec35 .content0 b {
+  font-family: font-semibold !important;
 }
 .sec35 .navegacion {
   padding-right: 0;
@@ -6314,7 +6416,7 @@ form {
   border: none;
 }
 .sec44 .nav_respo .dropdown-menu li .dropdown-item {
-  background-color: #e5b336;
+  background-color: #f4f7ff;
   border: 1px solid rgba(255,255,255,0.5);
   padding-left: 14px;
   padding-top: 10px;
@@ -7691,7 +7793,7 @@ form {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 30px 15px;
+  padding: 30px 15px 0;
   border-radius: 12px;
 }
 .sec50 .content .content1 .educacion_corporativa .steps .step {
@@ -7699,6 +7801,7 @@ form {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin: 0 0 30px;
 }
 .sec50 .content .content1 .educacion_corporativa .steps .step .number {
   width: 20%;
@@ -7734,7 +7837,7 @@ form {
   background-image: url("../images/img-caso-exito.png");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 101%;
+  background-size: cover;
   width: 50%;
 }
 .sec50 .content .content1 .portafolio .portafolio_header .image img {
@@ -7831,7 +7934,7 @@ form {
   padding: 0;
 }
 .sec50 .content .content1 .portafolio2 .image-bg {
-  height: 80vh;
+  height: 50vh;
   background-image: url("../images/img-bg-portafolio.png");
   background-position: center;
   background-repeat: no-repeat;
@@ -7842,15 +7945,16 @@ form {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  padding-top: 18vh;
+  padding: 120px 0 80px;
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
-  justify-content: space-evenly;
-  height: 90vh;
+  justify-content: center;
 }
 .sec50 .content .content1 .portafolio2 .items .item {
   width: 20%;
   text-align: center;
+  margin: 0 2% 40px;
 }
 .sec50 .content .content1 .portafolio2 .items .item .image {
   display: flex;
@@ -8536,6 +8640,7 @@ form {
   margin-bottom: 60px;
 }
 .sec57 .items .item {
+  margin: 20px 0 0;
   width: 35%;
   background-color: #d9e3f5;
   text-align: center;
@@ -8623,13 +8728,14 @@ form {
 .sec57 .modelo-back .details {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 60px;
+  justify-content: center;
+  padding: 30px 50px 50px;
   align-items: center;
 }
 .sec57 .modelo-back .details .detail {
   text-align: center;
   width: 18%;
+  margin: 20px 1% 0;
 }
 .sec57 .modelo-back .details .detail p {
   color: #fff;
@@ -9042,7 +9148,7 @@ form {
   align-items: center;
   justify-content: center;
   border-radius: 4px;
-  padding: 15px 0;
+  padding: 15px 20px;
 }
 .sec59 .premiacion .items .item .texto p {
   font-family: font-bold;
@@ -9237,7 +9343,7 @@ form {
 .sec62 .items_ .items {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   padding: 0 60px;
   margin-top: 40px;
 }
@@ -9249,7 +9355,7 @@ form {
   border-top: 5px solid #254275;
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
+  margin: 0 3% 40px;
   padding: 16px;
 }
 .sec62 .items_ .items .item .image {
@@ -9851,6 +9957,9 @@ form {
   width: 60px;
 }
 @media screen and (max-width: 1024px) {
+  .cartlist {
+    width: 90%;
+  }
   .fondo_all {
     position: fixed;
     top: 0;
@@ -10134,27 +10243,29 @@ form {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-end;
-    padding: 0 40px 50px;
+    padding: 0 20px 60px;
     margin: 5vh 0 0;
   }
   .sec1 #carousel-slider .item .text {
+    position: relative;
+    margin-bottom: 10px;
     width: 100%;
   }
   .sec1 #carousel-slider .item .text h1 {
-    display: none;
+    font-size: 2rem;
   }
   .sec1 #carousel-slider .item .text h2 {
-    display: none;
+    font-size: 2rem;
   }
   .sec1 #carousel-slider .item .btn-vermas {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
+    height: fit-content;
     border: unset;
-    margin: unset;
+    margin-top: 20px;
     color: unset;
+    font-size: 1rem;
+  }
+  .sec1 #carousel-slider .item #linkcompleto {
+    position: unset !important;
   }
   .sec1 #carousel-slider .owl-dots {
     position: absolute;
@@ -10272,7 +10383,6 @@ form {
     color: #254275;
     font-size: 1.7rem;
     margin-bottom: 20px;
-    font-family: font-medium;
   }
   .sec3_2 h1.title span {
     font-family: font-bold;
@@ -11727,19 +11837,17 @@ form {
   }
   .sec22 {
     position: relative;
-    background-position: bottom;
+    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
   }
   .sec22 .content {
-    display: none;
-    height: 100vh;
+    height: auto;
   }
   .sec22 .content .content_ {
-    height: 100vh;
+    height: 40vh;
     align-items: flex-end;
-    padding-bottom: 40px;
-    padding-left: 30px;
+    padding: 10px;
   }
   .sec22 .content .content_ p {
     line-height: 1;
@@ -11750,25 +11858,25 @@ form {
   .sec22 .content .content_ p:nth-child(1) {
     padding-bottom: 5px;
     font-family: font-extrabold;
-    font-size: 4rem;
+    font-size: 2rem;
   }
   .sec22 .content .content_ p:nth-child(2) {
     color: #fff;
-    font-size: 2.9rem;
+    font-size: 1.6rem;
     padding-bottom: 5px;
     font-family: font-semibold;
   }
   .sec22 .content .content_ p:nth-child(3) {
     color: #e5b336;
-    font-size: 3.8rem;
+    font-size: 1.3rem;
     font-family: font-extrabold;
   }
   .sec22 .content .content_ p.tit {
-    font-size: 4rem;
+    font-size: 2rem;
     font-family: font-extrabold;
   }
   .sec22 .content .content_ img {
-    height: 90px;
+    height: 60px;
   }
   .sec22 .formulario {
     position: absolute;
@@ -11858,7 +11966,7 @@ form {
   }
   .sec23 {
     position: relative;
-    padding-top: 12vh;
+    padding-top: 0vh;
   }
   .sec23 .info {
     padding: 0;
@@ -11976,7 +12084,8 @@ form {
     font-size: 1rem;
   }
   .sec24 .presentacion .botones .btn-matricula img {
-    height: 40px;
+    height: 37px;
+    padding-right: 7px;
   }
   .sec24 .presentacion .botones .btn-descarga {
     background-color: #254275;
@@ -12324,7 +12433,7 @@ form {
     background: #e0e2e5;
     border-radius: 10px;
     border: 1px solid #fff;
-    height: 51vh;
+    height: 400px;
   }
   .sec26 .items .item2 .content .item_active {
     border: 2px solid #254275;
@@ -12338,7 +12447,7 @@ form {
     padding: 0px;
     padding-bottom: 18px;
     text-align: center;
-    border-radius: 10px;
+    border-radius: 20px;
     background-color: inherit;
     z-index: 9;
     width: 100%;
@@ -12357,7 +12466,7 @@ form {
     align-content: flex-start;
     flex-direction: column;
     justify-content: center;
-    border-radius: 10px;
+    border-radius: 20px;
   }
   .sec26 .items .item2 .content .detras .first {
     display: flex;
@@ -12417,7 +12526,8 @@ form {
   }
   .sec26 .items .item2 .content .image img {
     width: 100%;
-    border-radius: 10px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
   }
   .sec26 .items .item2 .content .cara_bottom {
     height: 100%;
@@ -12456,7 +12566,7 @@ form {
   .sec26 .items .item3 .content {
     transition: all 0.4s linear;
     background: #e0e2e5;
-    border-radius: 10px;
+    border-radius: 20px;
     border: 1px solid #fff;
     text-align: center;
     padding-bottom: 15px;
@@ -12464,7 +12574,8 @@ form {
   }
   .sec26 .items .item3 .content .image img {
     width: 100%;
-    border-radius: 10px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
   }
   .sec26 .items .item3 .content p.name {
     font-family: font-semibold;
@@ -12576,7 +12687,7 @@ form {
   .sec27 .content .content1 ul li:before {
     content: '';
     position: absolute;
-    background-image: url("../images/li-check.png");
+    background-image: url("../images/li-check0.png");
     background-size: contain;
     background-repeat: no-repeat;
     margin-left: -35px;
@@ -12865,8 +12976,10 @@ form {
     margin-top: 25px;
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
   }
   .sec28 .contenido .accordion .accordion-certificate .content .buttons a {
+    margin: 13px 0 0;
     padding: 9px 20px;
     background: #254275;
     color: #fff;
@@ -13922,10 +14035,31 @@ form {
   .sec35 .content0 {
     padding-top: 50px;
   }
+  .sec35 .content0 img {
+    width: 100% !important;
+    height: auto !important;
+  }
+  .sec35 .content0 span,
+  .sec35 .content0 p {
+    font-family: font-regular !important;
+  }
+  .sec35 .content0 span img,
+  .sec35 .content0 p img {
+    width: 100% !important;
+    height: auto !important;
+  }
   .sec35 .content0 p {
     line-height: 1.3;
     color: #000;
     font-size: 1rem;
+    font-family: font-regular !important;
+  }
+  .sec35 .content0 p span {
+    font-family: font-regular !important;
+  }
+  .sec35 .content0 strong,
+  .sec35 .content0 b {
+    font-family: font-semibold !important;
   }
   .sec35 .navegacion {
     padding-right: 0;
@@ -14703,7 +14837,12 @@ form {
     width: 60%;
   }
   .sec41 {
-    margin-top: -32vh;
+    margin-top: unset;
+    padding-top: 15vh;
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("../images/slider-insignias.jpg");
     position: relative;
     z-index: 99;
     padding-bottom: 40px;
@@ -14751,7 +14890,7 @@ form {
   }
   .sec41 .login_trabajo .login_trabajo_content .tit h1 {
     font-family: font-semibold;
-    font-size: 2.3rem;
+    font-size: 1.5rem;
     line-height: 1;
     color: #fff;
   }
@@ -14773,7 +14912,7 @@ form {
     background: #fff;
     border-radius: 7px;
     color: #254275;
-    font-size: 1rem;
+    font-size: 0.9rem;
     border: 0;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -14784,7 +14923,7 @@ form {
     font-family: font-medium;
     width: 100%;
     border-radius: 7px;
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
   .sec41 .login_trabajo .login_trabajo_content .formulario_trabajo .form-group .btn-login-crear {
     background-color: #254275;
@@ -14792,7 +14931,7 @@ form {
     font-family: font-medium;
     width: 100%;
     border-radius: 7px;
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
   .sec41 .login_trabajo .login_trabajo_content .formulario_trabajo .form-group a {
     color: #fff;
@@ -14805,22 +14944,27 @@ form {
     font-size: 0.8rem;
   }
   .sec42 {
-    margin-top: -50vh;
+    margin-top: unset;
+    padding-top: 15vh;
     position: relative;
     z-index: 99;
     padding-bottom: 40px;
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("../images/slider-insignias.jpg");
   }
   .sec42 .tit_registro h1 {
     font-family: font-semibold;
     color: #fff;
-    font-size: 2.3rem;
+    font-size: 1.5rem;
     text-align: center;
   }
   .sec42 .tit_registro p {
     text-align: center;
     color: #fff;
     line-height: 1.3;
-    font-size: 1.15rem;
+    font-size: 1.1rem;
   }
   .sec42 .form_registro {
     background-color: rgba(0,0,0,0.4);
@@ -14855,9 +14999,10 @@ form {
     font-size: 0.9rem;
     text-align: center;
     margin-top: 20px;
+    color: #fff;
   }
   .sec42 .back-login {
-    color: #254275;
+    color: #fff;
     text-decoration: none;
     font-family: font-medium;
     font-size: 0.9rem;
@@ -14868,7 +15013,7 @@ form {
     font-family: font-medium;
     width: 80%;
     border-radius: 7px;
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin: auto;
     display: flex;
     align-items: center;
@@ -14876,10 +15021,15 @@ form {
     margin-top: 25px;
   }
   .sec42_2 {
-    margin-top: -77vh;
+    margin-top: unset;
+    padding-top: 15vh;
     position: relative;
     z-index: 99;
     padding-bottom: 40px;
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("../images/slider-insignias.jpg");
   }
   .sec42_2 .tit_registro h1 {
     font-family: font-semibold;
@@ -15083,8 +15233,6 @@ form {
     border: none;
   }
   .sec44 .nav_respo .dropdown-menu li .dropdown-item {
-    background-color: #e5b336;
-    border: 1px solid rgba(255,255,255,0.5);
     padding-left: 14px;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -17382,14 +17530,14 @@ form {
   .sec57 .modelo-back .details {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 40px 20px 20px;
+    justify-content: center;
+    padding: 30px 50px 50px;
     align-items: center;
   }
   .sec57 .modelo-back .details .detail {
     text-align: center;
-    width: 50%;
-    margin-bottom: 20px;
+    width: 18%;
+    margin: 20px 1% 0;
   }
   .sec57 .modelo-back .details .detail p {
     color: #fff;
@@ -17677,7 +17825,11 @@ form {
     box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.2);
   }
   .sec58 .content .content1 .valores img {
-    width: 75%;
+    padding-top: 60px;
+    width: 100%;
+  }
+  .sec58 .content .content1 #nodashed {
+    border: 0 !important;
   }
   .sec58 .content .content1 h4.val {
     font-family: font-semibold;
@@ -17786,7 +17938,7 @@ form {
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
-    padding: 16px;
+    padding: 13px;
   }
   .sec59 .premiacion .items .item .image {
     height: 90px;
@@ -17802,7 +17954,7 @@ form {
     align-items: center;
     justify-content: center;
     border-radius: 4px;
-    padding: 15px 0;
+    padding: 15px 10px;
   }
   .sec59 .premiacion .items .item .texto p {
     font-family: font-bold;
@@ -18426,7 +18578,55 @@ form {
     height: auto;
   }
   .header_mobile .content .content-left {
-    width: 40%;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .header_mobile .content .content-left ul {
+    list-style: none;
+    margin: 0;
+  }
+  .header_mobile .content .content-left ul li.menu-link3 {
+    position: relative;
+  }
+  .header_mobile .content .content-left ul li.menu-link3 .cant {
+    position: absolute;
+    height: 19px;
+    width: 19px;
+    top: -4px;
+    right: 0px;
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #254275;
+    border-radius: 50%;
+    z-index: 1;
+    color: #fff;
+  }
+  .header_mobile .content .content-left ul li.menu-link3 a {
+    text-decoration: none;
+    background: #e5b336;
+    color: #254275;
+    border-radius: 5px;
+    padding: 10px 13px;
+    font-size: 0.9rem;
+    font-family: font-medium;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .header_mobile .content .content-left ul li.menu-link3 a img.cart {
+    padding-right: 10px;
+    padding-left: 10px;
+    height: 44px;
+  }
+  .header_mobile .content .content-left ul li.menu-link3 a img.search {
+    height: 35px;
+  }
+  .header_mobile .content .content-left ul li.menu-link3 a i {
+    font-size: 1.4rem;
   }
   .header_mobile .content .content-left .logo {
     height: 45px;
@@ -18524,6 +18724,9 @@ form {
     background-color: #e5b336;
     color: #254275 !important;
   }
+  .header_mobile .content .content-list .accordion .accordion-item .accordion-header .accordion-button i {
+    padding-right: 6px;
+  }
   .header_mobile .content .content-list .accordion .accordion-item .accordion-header .accordion-button:focus {
     box-shadow: unset;
     border-color: unset;
@@ -18573,7 +18776,6 @@ form {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url("../images/background-footer.png");
     padding: 40px 0 20px;
     position: relative;
   }

@@ -1,7 +1,7 @@
 @extends('web.layout')
-@section('title', 'Inicio de sesión | SUMMA CENTER LATAM')
-@section('description', 'Inicio de sesión | SUMMA CENTER LATAM')
-@section('keywords', 'Inicio de sesión | SUMMA CENTER LATAM')
+@section('title', 'Crear cuenta | SUMMA CENTER LATAM')
+@section('description', 'Crear cuenta | SUMMA CENTER LATAM')
+@section('keywords', 'Crear cuenta | SUMMA CENTER LATAM')
 @section('content')
 
 <section class="sec9" style="background-size: cover;background-position: bottom">

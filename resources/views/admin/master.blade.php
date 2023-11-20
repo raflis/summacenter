@@ -171,6 +171,15 @@
         filebrowserUploadUrl: route_prefix + '/upload?type=Files&_token=LbN1W47Wmxi1atddNpT3pLcmTqo3gkrtKvrkPVju'
       });
     </script>
+    <script>
+      $('.ckeditor5').ckeditor({
+        height: 500,
+        filebrowserImageBrowseUrl: route_prefix + '?type=Images',
+        filebrowserImageUploadUrl: route_prefix + '/upload?type=Images&_token=LbN1W47Wmxi1atddNpT3pLcmTqo3gkrtKvrkPVju',
+        filebrowserBrowseUrl: route_prefix + '?type=Files',
+        filebrowserUploadUrl: route_prefix + '/upload?type=Files&_token=LbN1W47Wmxi1atddNpT3pLcmTqo3gkrtKvrkPVju'
+      });
+    </script>
     @yield('script')
 </body>
 </html>

@@ -42,11 +42,11 @@
         <div class="row">
             <div class="col-md-12 texto">
                 <h1>
-                    CURSOS CORPORATIVOS ADAPTADOS A TUS NECESIDADES
+                    {{ $pagefield->field_free_4[1] }}
                 </h1>
-                <p>
-                    A través de nuestros cursos y programas corporativos, llevamos el conocimiento a tu organización mediante una sólida propuesta educativa que responde a los retos en transformación digital, agilidad, data, innovación y tecnologías exponenciales. Nuestras propuestas educativas son tanto para organizaciones públicas como privadas.
-                </p>
+                <div>
+                    {!! htmlspecialchars_decode($pagefield->field_free_4[2]) !!}
+                </div>
             </div>
             <div class="col-md-12 px-0 navdiv">
                 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
@@ -84,20 +84,14 @@
                             <div class="content1">
                                 <div class="content1_1">
                                     <div class="image">
-                                        <img src="{{ asset('images/capacitaciones_image1.png') }}" alt="">
+                                        <img src="{{ $pagefield->field_free_4[3] }}" alt="">
                                     </div>
                                     <div class="content_">
                                         <div class="content">
-                                            <p>
-                                                Desarrollamos programas y <strong>cursos de formación para empresas</strong>, los cuales permiten estandarizar los conocimientos de los participantes a través de una metodología ágil que incluye casuística real para el logro de los objetivos.
-                                                <br><br>
-                                                Al finalizar, el participante podrá gestionar sus actividades de forma práctica, aplicando lo aprendido y utilizando la información de la organización para los ejercicios, casos y discusiones.
-                                                <br><br>
-                                                Lo cuál brindará a los participantes más herramientas para seguir desarrollándose como profesionales de alto rendimiento en sus centros de labores.
-                                            </p>
+                                            {!! htmlspecialchars_decode($pagefield->field_free_4[4]) !!}
                                             <div class="btn_action">
-                                                <a href="{{ route('programas') }}" class="btn btn-conocemas">
-                                                    Conoce más sobre nuestros<br>cursos corporativos
+                                                <a href="{{ $pagefield->field_free_4[6] }}" class="btn btn-conocemas">
+                                                    {!! nl2br($pagefield->field_free_4[5]) !!}
                                                     <img src="{{ asset('images/arrow-right-white.png') }}" alt="">
                                                 </a>
                                             </div>
@@ -111,7 +105,7 @@
                                 <div class="propuestas">
                                     <div class="academica">
                                         <h1>
-                                            Propuesta Académica
+                                            {{ $pagefield->field_free_4[7] }}
                                         </h1>
                                         <div class="items">
                                             <div class="item">
@@ -169,7 +163,7 @@
                                     </div>
                                     <div class="comercial">
                                         <h1>
-                                            Propuesta Comercial
+                                            {{ $pagefield->field_free_4[8] }}
                                         </h1>
                                         <div class="items">
                                             <div class="item">
@@ -231,12 +225,11 @@
                             <div class="content1">
                                 <div class="educacion_corporativa">
                                     <h1>
-                                        MODELO CORPORativo
+                                        {{ $pagefield->field_free_4[9] }}
                                     </h1>
-                                    <p>
-                                        Programas Corporativos IN-COMPANY responde a un modelo de educación que se basa en tres pilares esenciales: especialidad, transformativa y del futuro.
-                                        Los cursos y programas pueden ser adaptados para hacer frente a las necesidades e intereses específicos de su empresa; incorporando casos prácticos reales, actividades sobre las iniciativas o proyectos propios de su organización.
-                                    </p>
+                                    <div>
+                                        {!! htmlspecialchars_decode($pagefield->field_free_4[10]) !!}
+                                    </div>
                                     <div class="steps">
                                         <div class="step">
                                             <div class="number">
@@ -282,10 +275,10 @@
                                         </div>
                                     </div>
                                     <h2>
-                                        ¿Cómo lo hacemos?
+                                        {{ $pagefield->field_free_4[11] }}
                                     </h2>
                                     <div class="image">
-                                        <img src="{{ asset('images/educacion-corporativa-como.png') }}" alt="">
+                                        <img src="{{ $pagefield->field_free_4[12] }}" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -297,16 +290,17 @@
                                         <div class="content_">
                                             <div class="content">
                                                 <h1>
-                                                    CASOS DE ÉXITO
+                                                    {{ $pagefield->field_free_4[13] }}
                                                 </h1>
-                                                <p>
-                                                    <strong>Con más de una década de experiencia brindando servicios de capacitación a la medida,</strong>
-                                                    <br><br>
-                                                    Summa Center ha tenido la oportunidad de trabajar con organizaciones líderes, dentro y fuera del Perú, que operan en diferentes sectores económicos, destacando entre los sectores minero, energético, gobierno, financiero, contrucción, entre otros.
+                                                <p class="pb-0">
+                                                    <strong>{{ $pagefield->field_free_4[14] }}</strong>
                                                 </p>
+                                                <div>
+                                                    {!! htmlspecialchars_decode($pagefield->field_free_4[15]) !!}
+                                                </div>
                                                 <div class="btn_action">
-                                                    <a href="" class="btn btn-conocemas">
-                                                        Conoce más sobre nuestros<br>Casos de Éxito
+                                                    <a href="{{ $pagefield->field_free_4[17] }}" class="btn btn-conocemas">
+                                                        {!! nl2br($pagefield->field_free_4[16]) !!}
                                                         <img src="{{ asset('images/arrow-right-white.png') }}" alt="">
                                                     </a>
                                                 </div>
@@ -317,54 +311,16 @@
                                     </div>
                                     <div class="portafolio_carrusel">
                                         <h1>
-                                            EMPRESAS QUE CONFIARON EN NOSOTROS
+                                            {{ $pagefield->field_free_4[20] }}
                                         </h1>
                                         <div id="carousel-confiaron-empresas" class="owl-carousel">
+                                            @foreach ($pagefield->field_free_8 as $item)
                                             <div class="item">
                                                 <div class="imagen">
-                                                    <img src="{{ asset('images/backus.png') }}" alt="">
+                                                    <img src="{{ $item['image'] }}" alt="">
                                                 </div>
                                             </div>
-                                            <div class="item">
-                                                <div class="imagen">
-                                                    <img src="{{ asset('images/bbva.png') }}" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="imagen">
-                                                    <img src="{{ asset('images/alicorp.png') }}" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="imagen">
-                                                    <img src="{{ asset('images/volcan.png') }}" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="imagen">
-                                                    <img src="{{ asset('images/boxer.png') }}" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="imagen">
-                                                    <img src="{{ asset('images/orion.png') }}" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="imagen">
-                                                    <img src="{{ asset('images/nestle.png') }}" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="imagen">
-                                                    <img src="{{ asset('images/kimberly.png') }}" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="imagen">
-                                                    <img src="{{ asset('images/aceros.png') }}" alt="">
-                                                </div>
-                                            </div>
+                                            @endforeach
                                         </div>
                                     </div>
                                 </div>
@@ -372,39 +328,19 @@
                                     <div class="image-bg">
                                     </div>
                                     <div class="items">
+                                        @foreach ($pagefield->field_free_9 as $item)
                                         <div class="item">
                                             <div class="image">
-                                                <img src="{{ asset('images/icon-portafolio1.png') }}" alt="">
+                                                <img src="{{ $item['image'] }}" alt="">
                                             </div>
                                             <div class="counters" id="counters_1">
-                                                <div class="counter" data-TargetNum="50">0</div><span class="plus"> %</span>
+                                                <div class="counter">{{ $item['name'] }}</div>
                                             </div>
                                             <p>
-                                                de nuestros clientes se encuentran entre las 500 organizaciones más grandes del país.
+                                                {!! nl2br($item['detail']) !!}
                                             </p>
                                         </div>
-                                        <div class="item">
-                                            <div class="image">
-                                                <img src="{{ asset('images/icon-portafolio2.png') }}" alt="">
-                                            </div>
-                                            <div class="counters" id="counters_1">
-                                                <div class="counter" data-TargetNum="60">0</div><span class="plus"> %</span>
-                                            </div>
-                                            <p>
-                                                de los programas se desarrollaron con organizaciones entre las 100 más grandes del Perú.
-                                            </p>
-                                        </div>
-                                        <div class="item">
-                                            <div class="image">
-                                                <img src="{{ asset('images/icon-portafolio3.png') }}" alt="">
-                                            </div>
-                                            <div class="counters" id="counters_1">
-                                                <div class="counter" data-TargetNum="30">0</div><span class="plus"> %</span>
-                                            </div>
-                                            <p>
-                                                de nuestros clientes son organizaciones de cooperación internacional, gubernamentaleso sin fines de lucro.
-                                            </p>
-                                        </div>
+                                        @endforeach
                                     </div>
                                 </div>
                             </div>
@@ -414,11 +350,11 @@
                                 <div class="contacto">
                                     <div class="formulario">
                                         <h1>
-                                            EXCLUSIVO PARA EMPRESAS
+                                            {{ $pagefield->field_free_4[18] }}
                                         </h1>
-                                        <p class="tit">
-                                            Si quieres solicitar información sobre algún curso para llevarlo únicamente de forma corporativa déjanos tus datos para comunicarnos contigo a la brevedad. 
-                                        </p>
+                                        <div class="tit">
+                                            {!! htmlspecialchars_decode($pagefield->field_free_4[19]) !!}
+                                        </div>
                                         <form action="{{ route('postCorporativo') }}" method="POST" class="row needs-validation" novalidate>
                                             @csrf
                                             <input type="hidden" name="from" value="corporativo">
@@ -495,7 +431,7 @@
     </div>
 </section>
 
-<section class="sec51">
+<section class="sec4">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12 title">
@@ -509,16 +445,15 @@
                     <div class="item">
                         <div class="item-header">
                             <div class="titulo-header">
-                                <img src="{{ $item->icon }}" alt="">
                                 <span>
                                     {{ $item->name }}
                                 </span>
                             </div>
                         </div>
                         <div class="item-content">
-                            <div class="imagen">
+                            <a class="imagen" href="{{ route('programas', $item->slug) }}">
                                 <img src="{{ $item->image }}" alt="">
-                            </div>
+                            </a>
                             <div class="content">
                                 <h4>
                                     {{ $item->text }}

@@ -13,6 +13,10 @@
         href="{{ route('settings.whatsapp') }}">
             <i class="fas fa-home text-gray pr-1"></i> Chat Flotante
         </a>
+        <a class="nav-link @if(preg_match("/pagefields.cover_page/", Route::currentRouteName())) active @endif" 
+        href="{{ route('pagefields.cover_page') }}">
+            <i class="fas fa-home text-gray pr-1"></i> Portadas & títulos
+        </a>
         <a class="nav-link @if(in_array(Route::currentRouteName(), array('settings.index'))) active @endif" 
         href="{{ route('settings.index') }}">
             <i class="fas fa-home text-gray pr-1"></i> Configuración
@@ -28,6 +32,10 @@
         <a class="nav-link @if(in_array(Route::currentRouteName(), array('settings.links'))) active @endif" 
         href="{{ route('settings.links') }}">
             <i class="fas fa-home text-gray pr-1"></i> Links Header
+        </a>
+        <a class="nav-link @if(in_array(Route::currentRouteName(), array('settings.floating_advertising'))) active @endif" 
+        href="{{ route('settings.floating_advertising') }}">
+            <i class="fas fa-home text-gray pr-1"></i> Publicidad flotante
         </a>
 
         <div class="sidenav-menu-heading">SEO</div>
@@ -49,6 +57,10 @@
         </a>
 
         <div class="sidenav-menu-heading">Inicio</div>
+        <a class="nav-link @if(in_array(Route::currentRouteName(), array('pagefields.index_title'))) active @endif" 
+        href="{{ route('pagefields.index_title') }}">
+            <i class="fas fa-home text-gray pr-1"></i> Títulos Inicio
+        </a>
         <a class="nav-link @if(in_array(Route::currentRouteName(), array('sliders.index', 'sliders.edit', 'sliders.create'))) active @endif" 
         href="{{ route('sliders.index') }}">
             <i class="fas fa-home text-gray pr-1"></i> Sliders
@@ -79,55 +91,83 @@
         href="{{ route('course_subareas.index') }}">
             <i class="fas fa-home text-gray pr-1"></i> Sub Áreas
         </a>
-        <a class="nav-link @if(preg_match("/course_areas|course_categories|courses|topics|badge/", Route::currentRouteName())) active @endif" 
+        <a class="nav-link @if(preg_match("/^course_areas|^course_categories|^courses|^topics|^badge/", Route::currentRouteName())) active @endif" 
         href="{{ route('course_areas.index') }}">
             <i class="fas fa-home text-gray pr-1"></i> Áreas de capacitación
         </a>
 
-        <div class="sidenav-menu-heading">Equipo</div>
-        <a class="nav-link @if(in_array(Route::currentRouteName(), array('worker_managers.index', 'worker_managers.edit', 'worker_managers.create'))) active @endif" 
-        href="{{ route('worker_managers.index') }}">
-            <i class="fas fa-home text-gray pr-1"></i> Dirección
-        </a>
-        <a class="nav-link @if(in_array(Route::currentRouteName(), array('worker_teachers.index', 'worker_teachers.edit', 'worker_teachers.create'))) active @endif" 
-        href="{{ route('worker_teachers.index') }}">
-            <i class="fas fa-home text-gray pr-1"></i> Docentes
-        </a>
-        <a class="nav-link @if(in_array(Route::currentRouteName(), array('worker_administrators.index', 'worker_administrators.edit', 'worker_administrators.create'))) active @endif" 
-        href="{{ route('worker_administrators.index') }}">
-            <i class="fas fa-home text-gray pr-1"></i> Administración
-        </a>
-
-        <div class="sidenav-menu-heading">Páginas</div>
-        <a class="nav-link @if(preg_match("/pagefields.cover_page/", Route::currentRouteName())) active @endif" 
-        href="{{ route('pagefields.cover_page') }}">
-            <i class="fas fa-home text-gray pr-1"></i> Portadas & títulos
-        </a>
-        <a class="nav-link @if(preg_match("/pagefields.support/", Route::currentRouteName())) active @endif" 
-        href="{{ route('pagefields.support') }}">
-            <i class="fas fa-home text-gray pr-1"></i> Soporte
-        </a>
-        <!--<a class="nav-link @if(preg_match("/pagefields.graduates/", Route::currentRouteName())) active @endif" 
-        href="{{ route('pagefields.graduates') }}">
-            <i class="fas fa-home text-gray pr-1"></i> Egresados
-        </a>-->
+        <div class="sidenav-menu-heading">SUMMA</div>
         <a class="nav-link @if(preg_match("/pagefields.aboutus/", Route::currentRouteName())) active @endif" 
         href="{{ route('pagefields.aboutus') }}">
             <i class="fas fa-home text-gray pr-1"></i> Nosotros
+        </a>
+        <a class="nav-link @if(in_array(Route::currentRouteName(), array('worker_managers.index', 'worker_managers.edit', 'worker_managers.create'))) active @endif" 
+        href="{{ route('worker_managers.index') }}">
+            <i class="fas fa-home text-gray pr-1"></i> Equipo - Dirección
+        </a>
+        <a class="nav-link @if(in_array(Route::currentRouteName(), array('worker_teachers.index', 'worker_teachers.edit', 'worker_teachers.create'))) active @endif" 
+        href="{{ route('worker_teachers.index') }}">
+            <i class="fas fa-home text-gray pr-1"></i> Equipo - Docentes
+        </a>
+        <a class="nav-link @if(in_array(Route::currentRouteName(), array('worker_administrators.index', 'worker_administrators.edit', 'worker_administrators.create'))) active @endif" 
+        href="{{ route('worker_administrators.index') }}">
+            <i class="fas fa-home text-gray pr-1"></i> Equipo - Administración
+        </a>
+        <a class="nav-link @if(preg_match("/pagefields.educational_model/", Route::currentRouteName())) active @endif" 
+        href="{{ route('pagefields.educational_model') }}">
+            <i class="fas fa-home text-gray pr-1"></i> Modelo Educativo
+        </a>
+        <a class="nav-link @if(preg_match("/pagefields.distinctions/", Route::currentRouteName())) active @endif" 
+        href="{{ route('pagefields.distinctions') }}">
+            <i class="fas fa-home text-gray pr-1"></i> Distinciones
         </a>
         <a class="nav-link @if(preg_match("/pagefields.responsability/", Route::currentRouteName())) active @endif" 
         href="{{ route('pagefields.responsability') }}">
             <i class="fas fa-home text-gray pr-1"></i> Responsabilidad Social
         </a>
+
+        <div class="sidenav-menu-heading">Certificaciones</div>
         <a class="nav-link @if(preg_match("/pagefields.certifications/", Route::currentRouteName())) active @endif" 
         href="{{ route('pagefields.certifications') }}">
             <i class="fas fa-home text-gray pr-1"></i> Nuestras Certificaciones
         </a>
-        <a class="nav-link @if(preg_match("/pagefields.terms_and_conditions/", Route::currentRouteName())) active @endif" 
+        <a class="nav-link @if(preg_match("/^pagefields.digital_badges/", Route::currentRouteName())) active @endif" 
+        href="{{ route('pagefields.digital_badges') }}">
+            <i class="fas fa-home text-gray pr-1"></i> Insignias Digitales
+        </a>
+        <a class="nav-link @if(preg_match("/^pagefields.academic_group/", Route::currentRouteName())) active @endif" 
+        href="{{ route('pagefields.academic_group') }}">
+            <i class="fas fa-home text-gray pr-1"></i> G. Excelencia Académica
+        </a>
+        <a class="nav-link @if(preg_match("/^frequent_questions/", Route::currentRouteName())) active @endif" 
+        href="{{ route('frequent_questions.index') }}">
+            <i class="fas fa-home text-gray pr-1"></i> Preguntas Frecuentes
+        </a>
+
+        <div class="sidenav-menu-heading">Corporativos</div>
+        <a class="nav-link @if(preg_match("/^consultancies/", Route::currentRouteName())) active @endif" 
+        href="{{ route('consultancies.index') }}">
+            <i class="fas fa-home text-gray pr-1"></i> Asesoría Especializada
+        </a>
+        <a class="nav-link @if(preg_match("/^pagefields.corporative_training/", Route::currentRouteName())) active @endif" 
+        href="{{ route('pagefields.corporative_training') }}">
+            <i class="fas fa-home text-gray pr-1"></i> Capacit. Corporativas
+        </a>
+
+        <div class="sidenav-menu-heading">Páginas</div>
+        <a class="nav-link @if(preg_match("/^pagefields.support/", Route::currentRouteName())) active @endif" 
+        href="{{ route('pagefields.support') }}">
+            <i class="fas fa-home text-gray pr-1"></i> Soporte
+        </a>
+        <a class="nav-link @if(preg_match("/^pagefields.terms_and_conditions/", Route::currentRouteName())) active @endif" 
         href="{{ route('pagefields.terms_and_conditions') }}">
             <i class="fas fa-home text-gray pr-1"></i> Términos y condiciones
         </a>
-        <a class="nav-link @if(preg_match("/pagefields.privacy_policies/", Route::currentRouteName())) active @endif" 
+        <a class="nav-link @if(preg_match("/^manuals/", Route::currentRouteName())) active @endif" 
+        href="{{ route('manuals.index') }}">
+            <i class="fas fa-home text-gray pr-1"></i> Manual del Alumno
+        </a>
+        <a class="nav-link @if(preg_match("/^pagefields.privacy_policies/", Route::currentRouteName())) active @endif" 
         href="{{ route('pagefields.privacy_policies') }}">
             <i class="fas fa-home text-gray pr-1"></i> Política de privacidad
         </a>

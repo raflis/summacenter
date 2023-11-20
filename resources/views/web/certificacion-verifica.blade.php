@@ -133,7 +133,7 @@
 </section>
 @endif
 
-<section class="sec51">
+<section class="sec4">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12 title">
@@ -147,16 +147,15 @@
                     <div class="item">
                         <div class="item-header">
                             <div class="titulo-header">
-                                <img src="{{ $item->icon }}" alt="">
                                 <span>
                                     {{ $item->name }}
                                 </span>
                             </div>
                         </div>
                         <div class="item-content">
-                            <div class="imagen">
+                            <a class="imagen" href="{{ route('programas', $item->slug) }}">
                                 <img src="{{ $item->image }}" alt="">
-                            </div>
+                            </a>
                             <div class="content">
                                 <h4>
                                     {{ $item->text }}

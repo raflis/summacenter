@@ -171,9 +171,9 @@
                             </div>
                         </div>
                         <div class="item-content">
-                            <div class="imagen">
+                            <a class="imagen" href="{{ route('programas', $item->slug) }}">
                                 <img src="{{ asset('images/curso1.png') }}" alt="">
-                            </div>
+                            </a>
                             <div class="content">
                                 <h4>
                                     Accede nuestros cursos

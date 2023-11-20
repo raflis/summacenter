@@ -12,6 +12,7 @@ use App\Models\Admin\Flag;
 use App\Models\Admin\Badge;
 use Jenssegers\Agent\Agent;
 use App\Models\Admin\Course;
+use App\Models\Admin\Manual;
 use App\Models\Admin\Slider;
 use App\Models\Admin\Worker;
 use Illuminate\Http\Request;
@@ -23,12 +24,14 @@ use App\Models\Admin\BlogPost;
 use Illuminate\Support\Carbon;
 use App\Models\Admin\PageField;
 use App\Models\Admin\CourseArea;
+use App\Models\Admin\Consultancy;
 use App\Models\Admin\IssuedBadge;
 use App\Models\Admin\Testimonial;
 use App\Models\Admin\BlogCategory;
 use App\Models\Admin\ComplaintBook;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
+use App\Models\Admin\FrequentQuestion;
 use App\Http\Controllers\Api\SohoController;
 use App\Http\Controllers\Api\CredlyController;
 
@@ -90,8 +93,8 @@ class WebController extends Controller
         $agent = new Agent();
         $course_areas = CourseArea::orderBy('order', 'Asc')->get();
         if($slug == 'all'):
-            $courses_tot = Course::orderBy('course_category_id', 'Asc')->orderBy('order', 'Asc')->paginate(15);
-            $q_result = $courses_tot->total();
+            $courses_tot = Course::orderBy('course_category_id', 'Asc')->orderBy('order', 'Asc')->get();
+            $q_result = $courses_tot->count();
         elseif($slug == 'q'):
             $courses_tot = CourseArea::whereIn('slug', $q)->get();
             $q_result = 0;
@@ -187,15 +190,17 @@ class WebController extends Controller
         $setting = Setting::find(1);
         $pagefield = PageField::find(1);
         $agent = new Agent();
-        return view('web.preguntas-frecuentes', compact('setting', 'agent', 'pagefield'));
+        $frequent_questions = FrequentQuestion::orderBy('order', 'Asc')->get();
+        return view('web.preguntas-frecuentes', compact('setting', 'agent', 'pagefield', 'frequent_questions'));
     }
 
     public function ruta_insignias($area, $category, $name, $id)
     {
+        $pagefield = PageField::find(1);
         $setting = Setting::find(1);
         $badge = Badge::find($id);
         $agent = new Agent();
-        return view('web.ruta-insignias', compact('setting', 'agent', 'badge'));
+        return view('web.ruta-insignias', compact('setting', 'agent', 'badge', 'pagefield'));
     }
 
     public function grupo_excelencia()
@@ -330,7 +335,8 @@ class WebController extends Controller
         $setting = Setting::find(1);
         $pagefield = PageField::find(1);
         $agent = new Agent();
-        return view('web.manual-alumno', compact('setting', 'agent', 'pagefield'));
+        $manuals = Manual::orderBy('order', 'Asc')->get();
+        return view('web.manual-alumno', compact('setting', 'agent', 'pagefield', 'manuals'));
     }
 
     public function libro_reclamaciones()
@@ -406,7 +412,8 @@ class WebController extends Controller
         $setting = Setting::find(1);
         $pagefield = PageField::find(1);
         $agent = new Agent();
-        return view('web.corporativo-asesoria-especializada', compact('setting', 'agent', 'pagefield'));
+        $consultancies = Consultancy::orderBy('order', 'Asc')->get();
+        return view('web.corporativo-asesoria-especializada', compact('setting', 'agent', 'pagefield', 'consultancies'));
     }
 
     public function capacitaciones_corporativas()
@@ -420,35 +427,33 @@ class WebController extends Controller
 
     public function verifica_certificacion(Request $request)
     {
+        $setting = Setting::find(1);
+        $pagefield = PageField::find(1);
         $email = $request->email;
         $agent = new Agent();
         $credly = new CredlyController($email);
         $course_areas = CourseArea::orderBy('order', 'Asc')->get();
         $result = $credly->results();
 
-        return view('web.certificacion-verifica', compact('agent', 'result', 'course_areas'));
+        return view('web.certificacion-verifica', compact('agent', 'result', 'course_areas', 'setting', 'pagefield'));
     }
 
     public function insignia_adquirida($hash)
     {
         $setting = Setting::find(1);
+        $pagefield = PageField::find(1);
         $agent = new Agent();
         $issued_badge = IssuedBadge::where('hash', $hash)->first();
         $course_areas = CourseArea::orderBy('order', 'Asc')->get();
-        return view('web.certificacion-insignia-adquirido', compact('agent', 'issued_badge', 'course_areas'));
-    }
-
-    public function certificado_adquirido()
-    {
-        $agent = new Agent();
-        return view('web.certificacion-certificado-adquirido', compact('agent'));
+        return view('web.certificacion-insignia-adquirido', compact('agent', 'issued_badge', 'course_areas', 'setting', 'pagefield'));
     }
 
     public function modelo_educativo()
     {
         $setting = Setting::find(1);
+        $pagefield = PageField::find(1);
         $agent = new Agent();
-        return view('web.modelo-educativo', compact('setting', 'agent'));
+        return view('web.modelo-educativo', compact('setting', 'agent', 'pagefield'));
     }
 
     public function nosotros()
