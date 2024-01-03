@@ -55,6 +55,8 @@ Route::get('verifica-tu-certificacion', [App\Http\Controllers\Web\WebController:
 Route::get('insignia-adquirida/{hash}', [App\Http\Controllers\Web\WebController::class, 'insignia_adquirida'])->name('insignia-adquirida');
 Route::get('modelo-educativo', [App\Http\Controllers\Web\WebController::class, 'modelo_educativo'])->name('modelo-educativo');
 Route::get('nosotros', [App\Http\Controllers\Web\WebController::class, 'nosotros'])->name('nosotros');
+Route::get('summa-club', [App\Http\Controllers\Web\WebController::class, 'summa_club'])->name('promociones');
+Route::get('pagina/{slug}', [App\Http\Controllers\Web\WebController::class, 'pages'])->name('pages');
 
 Route::post('postIndex', [App\Http\Controllers\Web\WebController::class, 'postIndex'])->name('postIndex');
 Route::post('postCurso', [App\Http\Controllers\Web\WebController::class, 'postCurso'])->name('postCurso');
@@ -95,7 +97,15 @@ Route::post('addtocart', [App\Http\Controllers\Web\CheckoutController::class, 'a
 Route::delete('removefromcart', [App\Http\Controllers\Web\CheckoutController::class, 'removeFromCart'])->name('removeFromCart');
 Route::patch('updatecart', [App\Http\Controllers\Web\CheckoutController::class, 'updateCart'])->name('updateCart');
 
-Route::post('loginPostJob', [App\Http\Controllers\Web\LoginJobController::class, 'loginJob'])->name('login.login.job');
+Route::prefix('/bolsa-de-trabajo')->group(function(){
+    Route::get('/', [App\Http\Controllers\Web\JobBankController::class, 'index'])->name('bolsa.index');
+    Route::get('empleo/crear', [App\Http\Controllers\Web\JobBankController::class, 'job_create'])->name('bolsa.create');
+    Route::post('empleo/crear', [App\Http\Controllers\Web\JobBankController::class, 'job_store'])->name('bolsa.store');
+    Route::get('empleos/{slug}/{id}', [App\Http\Controllers\Web\JobBankController::class, 'job_show'])->name('bolsa.show');
+    Route::post('empleo/postular', [App\Http\Controllers\Web\JobBankController::class, 'job_apply'])->name('bolsa.apply');
+});
+
+/*Route::post('loginPostJob', [App\Http\Controllers\Web\LoginJobController::class, 'loginJob'])->name('login.login.job');
 Route::post('bolsa-de-trabajo/createPerson', [App\Http\Controllers\Web\LoginJobController::class, 'createPerson'])->name('jobbank.person');
 Route::post('bolsa-de-trabajo/createCompany', [App\Http\Controllers\Web\LoginJobController::class, 'createCompany'])->name('jobbank.company');
 Route::get('bolsa-de-trabajo', [App\Http\Controllers\Web\LoginJobController::class, 'bolsa_trabajo'])->name('bolsa.trabajo');
@@ -119,7 +129,7 @@ Route::group(['middleware' => ['auth:jobbank'] ], function () {
     Route::resource('bolsa-de-trabajo/ofertas', App\Http\Controllers\Web\JobBankOfferController::class);
     Route::post('bolsa-de-trabajo/postular', [App\Http\Controllers\Web\JobBankController::class, 'applicant'])->name('jobbank.applicant');
     Route::get('bolsa-de-trabajo/logout', [App\Http\Controllers\Web\LoginJobController::class, 'logout'])->name('bolsa.trabajo.logout');
-});
+});*/
 
 Route::get('gracias', [App\Http\Controllers\Web\WebController::class, 'gracias'])->name('gracias');
 

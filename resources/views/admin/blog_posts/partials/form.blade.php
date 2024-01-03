@@ -49,7 +49,7 @@
 </div>
 
 <div class="form-group col-sm-6">
-  {!! Form::label('image2', 'Imagen para cabecera del contenido:', ['class' => '']) !!} <strong>(800 x 341px)</strong> <code>*</code>
+  {!! Form::label('image2', 'Imagen para cabecera del contenido:', ['class' => '']) !!} <strong>(1200 x 627px)</strong> <code>*</code>
   <div class="input-group">
     <span class="input-group-btn">
         <a id="lfm2" data-input="thumbnail2" data-preview="holder2" class="btn btn-primary text-white">

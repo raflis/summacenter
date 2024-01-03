@@ -25,6 +25,10 @@
                             @include('admin.includes.alert')
                         </div>
                         <div class="form-group col-sm-12">
+                            {{ Form::label('links', 'Header Azul - Link 0:') }} <code>*</code>
+                            {{ Form::text('links[0]', null, ['class' => 'form-control', 'placeholder' => 'Header Azul - Link 0', 'required']) }}
+                          </div>
+                        <div class="form-group col-sm-12">
                           {{ Form::label('links', 'Header Azul - Link 1:') }} <code>*</code>
                           {{ Form::text('links[1]', null, ['class' => 'form-control', 'placeholder' => 'Header Azul - Link 1', 'required']) }}
                         </div>

@@ -22,7 +22,7 @@
                             Editar entrada
                         </span>
                     </div>
-                    {!! Form::model($post, ['route' => ['posts.update', $post->id], 'method' => 'PUT']) !!}
+                    {!! Form::model($post, ['route' => ['posts.update', $post->id], 'method' => 'PUT', 'class' => 'needs-validation', 'novalidate']) !!}
                     <div class="card-body row">
                         <div class="col-sm-12">
                             @include('admin.includes.alert')

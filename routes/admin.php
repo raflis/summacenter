@@ -26,6 +26,9 @@ Route::prefix('/admin')->group(function(){
     Route::get('pagefields/digital_badges', [App\Http\Controllers\Admin\PageFieldController::class,'digital_badges'])->name('pagefields.digital_badges');
     Route::get('pagefields/academic_group', [App\Http\Controllers\Admin\PageFieldController::class,'academic_group'])->name('pagefields.academic_group');
     Route::get('pagefields/corporative_training', [App\Http\Controllers\Admin\PageFieldController::class,'corporative_training'])->name('pagefields.corporative_training');
+    Route::get('pagefields/promotions', [App\Http\Controllers\Admin\PageFieldController::class,'promotions'])->name('pagefields.promotions');
+    Route::get('pagefields/page_free1', [App\Http\Controllers\Admin\PageFieldController::class,'page_free1'])->name('pagefields.page_free1');
+    Route::get('pagefields/page_free2', [App\Http\Controllers\Admin\PageFieldController::class,'page_free2'])->name('pagefields.page_free2');
     Route::resource('settings', App\Http\Controllers\Admin\SettingController::class)->only(['index', 'update']);
     Route::get('settings/links', [App\Http\Controllers\Admin\SettingController::class,'links'])->name('settings.links');
     Route::get('settings/whatsapp', [App\Http\Controllers\Admin\SettingController::class,'whatsapp'])->name('settings.whatsapp');
@@ -35,6 +38,7 @@ Route::prefix('/admin')->group(function(){
     Route::get('settings/image', [App\Http\Controllers\Admin\SettingController::class,'image'])->name('settings.image');
     Route::get('settings/paymodetext', [App\Http\Controllers\Admin\SettingController::class,'paymodetext'])->name('settings.paymodetext');
     Route::get('settings/floating_advertising', [App\Http\Controllers\Admin\SettingController::class,'floating_advertising'])->name('settings.floating_advertising');
+    Route::get('settings/counter_advertising', [App\Http\Controllers\Admin\SettingController::class,'counter_advertising'])->name('settings.counter_advertising');
     Route::resource('sliders', App\Http\Controllers\Admin\SliderController::class);
     Route::resource('partners', App\Http\Controllers\Admin\PartnerController::class);
     Route::resource('alliances', App\Http\Controllers\Admin\AllianceController::class);
@@ -66,4 +70,6 @@ Route::prefix('/admin')->group(function(){
     Route::get('sales/excel', [App\Http\Controllers\Admin\SaleController::class, 'excel'])->name('sales.excel');
     Route::resource('sales', App\Http\Controllers\Admin\SaleController::class);
     Route::resource('promos', App\Http\Controllers\Admin\PromoController::class);
+    Route::resource('jobs', App\Http\Controllers\Admin\JobController::class);
+    Route::resource('applicants', App\Http\Controllers\Admin\ApplicantController::class);
 });

@@ -74,11 +74,8 @@
   <td align="center" style="padding: 0px; margin: 0px; border: 0px; background-color: #ffffff; width: 650px;"><table width="100%" border="0" cellspacing="0" cellpadding="0">
     <tbody>
       <tr>
-        <td colspan="4" align="center" valign="top">&nbsp;</td>
+        <td height="83" colspan="4" align="center" valign="middle" bgcolor="#061D38"><img src="https://summacenterlatam.com/images/logo_new.png" width="168" height="71" alt=""/></td>
       </tr>
-      <tr>
-        <td height="83" colspan="4" align="center" valign="middle" bgcolor="#061D38"><img src="https://summacenterlatam.com/images/logo_new.png" width="262" height="60" alt=""/></td>
-        </tr>
       <tr>
         <td width="4%" height="18">&nbsp;</td>
         <td width="26%">&nbsp;</td>

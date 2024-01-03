@@ -24,6 +24,7 @@
         border-color: rgb(10, 112, 206) !important;
       }
     </style>
+    @yield('css')
 </head>
 <body>
     <div class="loading">

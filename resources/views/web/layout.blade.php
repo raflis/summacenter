@@ -31,6 +31,7 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-KL8NBWJZ');</script>
     <!-- End Google Tag Manager -->
+    @yield('script0')
 </head>
 <body>
     @if ($setting->floating_advertising[0] == 1 && Route::currentRouteName() == "index")
@@ -49,6 +50,7 @@
     <script src="{{ asset('js/aos.js') }}"></script>
     <script src="{{ asset('js/main.js?v='.time()) }}"></script>
     <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('js/simplyCountdown.min.js') }}"></script>
     <script src="{{ asset('js/multi-animated-counter.js') }}"></script>
     <!--<script src="{{ asset('js/all.js') }}"></script>-->
     @yield('script')

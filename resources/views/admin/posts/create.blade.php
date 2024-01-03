@@ -22,7 +22,7 @@
                             Crear entrada
                         </span>
                     </div>
-                    {!! Form::open(['route' => 'posts.store']) !!}
+                    {!! Form::open(['route' => 'posts.store', 'class' => 'needs-validation', 'novalidate']) !!}
                     <div class="card-body row">
                         <div class="col-sm-12">
                             @include('admin.includes.alert')

@@ -25,12 +25,8 @@
                             @include('admin.includes.alert')
                         </div>
 
-                        <div class="form-group col-md-12 m-0">
-                          <p class="medium m-0 font-bold">Postulantes</p>
-                        </div>
-
                         <div class="form-group col-sm-12">
-                          {!! Form::label('job_bank_advertising','Imagen 1 principal:',['class'=>'']) !!} <strong>(529 x 529px)</strong> <code>*</code>
+                          {!! Form::label('job_bank_advertising','Imagen 1:',['class'=>'']) !!} <strong>(529 x 529px)</strong> <code>*</code>
                           <div class="input-group">
                             <span class="input-group-btn">
                                 <a id="lfm0" data-input="thumbnail0" data-preview="holder0" class="btn btn-primary text-white">
@@ -45,112 +41,48 @@
                         </div>
 
                         <div class="form-group col-sm-12">
-                          {!! Form::label('job_bank_advertising','Imagen 2 principal:',['class'=>'']) !!} <strong>(529 x 529px)</strong> <code>*</code>
+                          {{ Form::label('job_bank_advertising', 'Link 1:') }} <code>*</code>
+                          {{ Form::text('job_bank_advertising[1]', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el título', 'required']) }}
+                        </div>
+
+                        <div class="form-group col-sm-12">
+                          {!! Form::label('job_bank_advertising','Imagen 2:',['class'=>'']) !!} <strong>(529 x 529px)</strong> <code>*</code>
                           <div class="input-group">
                             <span class="input-group-btn">
                                 <a id="lfm1" data-input="thumbnail1" data-preview="holder1" class="btn btn-primary text-white">
                                 <i class="far fa-image"></i> Elegir
                                 </a>
                             </span>
-                            {!! Form::text('job_bank_advertising[1]', null, ['class' => 'form-control', 'id' => 'thumbnail1']) !!}
+                            {!! Form::text('job_bank_advertising[2]', null, ['class' => 'form-control', 'id' => 'thumbnail1']) !!}
                           </div>
                           <div id="holder1" style="margin-top:15px;max-height:100px;">
-                            <img src="{{ $pagefield->job_bank_advertising[1] }}" alt="" style="height:3rem">
+                            <img src="{{ $pagefield->job_bank_advertising[2] }}" alt="" style="height:3rem">
                           </div>
                         </div>
 
                         <div class="form-group col-sm-12">
-                          {!! Form::label('job_bank_advertising','Imagen 3 principal:',['class'=>'']) !!} <strong>(529 x 529px)</strong> <code>*</code>
+                          {{ Form::label('job_bank_advertising', 'Link 2:') }} <code>*</code>
+                          {{ Form::text('job_bank_advertising[3]', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el título', 'required']) }}
+                        </div>
+
+                        <div class="form-group col-sm-12">
+                          {!! Form::label('job_bank_advertising','Imagen 3:',['class'=>'']) !!} <strong>(529 x 529px)</strong> <code>*</code>
                           <div class="input-group">
                             <span class="input-group-btn">
                                 <a id="lfm2" data-input="thumbnail2" data-preview="holder2" class="btn btn-primary text-white">
                                 <i class="far fa-image"></i> Elegir
                                 </a>
                             </span>
-                            {!! Form::text('job_bank_advertising[2]', null, ['class' => 'form-control', 'id' => 'thumbnail2']) !!}
+                            {!! Form::text('job_bank_advertising[4]', null, ['class' => 'form-control', 'id' => 'thumbnail2']) !!}
                           </div>
                           <div id="holder2" style="margin-top:15px;max-height:100px;">
-                            <img src="{{ $pagefield->job_bank_advertising[2] }}" alt="" style="height:3rem">
-                          </div>
-                        </div>
-
-                        <div class="form-group col-sm-12">
-                          {!! Form::label('job_bank_advertising','Imagen 4 individual:',['class'=>'']) !!} <strong>(457 x 914px)</strong> <code>*</code>
-                          <div class="input-group">
-                            <span class="input-group-btn">
-                                <a id="lfm3" data-input="thumbnail3" data-preview="holder3" class="btn btn-primary text-white">
-                                <i class="far fa-image"></i> Elegir
-                                </a>
-                            </span>
-                            {!! Form::text('job_bank_advertising[3]', null, ['class' => 'form-control', 'id' => 'thumbnail3']) !!}
-                          </div>
-                          <div id="holder3" style="margin-top:15px;max-height:100px;">
-                            <img src="{{ $pagefield->job_bank_advertising[3] }}" alt="" style="height:3rem">
-                          </div>
-                        </div>
-
-                        <div class="form-group col-md-12 m-0">
-                          <p class="medium m-0 font-bold">Empresas</p>
-                        </div>
-                        
-                        <div class="form-group col-sm-12">
-                          {!! Form::label('job_bank_advertising','Imagen 1 principal:',['class'=>'']) !!} <strong>(529 x 529px)</strong> <code>*</code>
-                          <div class="input-group">
-                            <span class="input-group-btn">
-                                <a id="lfm4" data-input="thumbnail4" data-preview="holder4" class="btn btn-primary text-white">
-                                <i class="far fa-image"></i> Elegir
-                                </a>
-                            </span>
-                            {!! Form::text('job_bank_advertising[4]', null, ['class' => 'form-control', 'id' => 'thumbnail4']) !!}
-                          </div>
-                          <div id="holder4" style="margin-top:15px;max-height:100px;">
                             <img src="{{ $pagefield->job_bank_advertising[4] }}" alt="" style="height:3rem">
                           </div>
                         </div>
 
                         <div class="form-group col-sm-12">
-                          {!! Form::label('job_bank_advertising','Imagen 2 principal:',['class'=>'']) !!} <strong>(529 x 529px)</strong> <code>*</code>
-                          <div class="input-group">
-                            <span class="input-group-btn">
-                                <a id="lfm5" data-input="thumbnail5" data-preview="holder5" class="btn btn-primary text-white">
-                                <i class="far fa-image"></i> Elegir
-                                </a>
-                            </span>
-                            {!! Form::text('job_bank_advertising[5]', null, ['class' => 'form-control', 'id' => 'thumbnail5']) !!}
-                          </div>
-                          <div id="holder5" style="margin-top:15px;max-height:100px;">
-                            <img src="{{ $pagefield->job_bank_advertising[5] }}" alt="" style="height:3rem">
-                          </div>
-                        </div>
-
-                        <div class="form-group col-sm-12">
-                          {!! Form::label('job_bank_advertising','Imagen 3 principal:',['class'=>'']) !!} <strong>(529 x 529px)</strong> <code>*</code>
-                          <div class="input-group">
-                            <span class="input-group-btn">
-                                <a id="lfm6" data-input="thumbnail6" data-preview="holder6" class="btn btn-primary text-white">
-                                <i class="far fa-image"></i> Elegir
-                                </a>
-                            </span>
-                            {!! Form::text('job_bank_advertising[6]', null, ['class' => 'form-control', 'id' => 'thumbnail6']) !!}
-                          </div>
-                          <div id="holder6" style="margin-top:15px;max-height:100px;">
-                            <img src="{{ $pagefield->job_bank_advertising[6] }}" alt="" style="height:3rem">
-                          </div>
-                        </div>
-
-                        <div class="form-group col-sm-12">
-                          {!! Form::label('job_bank_advertising','Imagen 4 individual:',['class'=>'']) !!} <strong>(457 x 914px)</strong> <code>*</code>
-                          <div class="input-group">
-                            <span class="input-group-btn">
-                                <a id="lfm7" data-input="thumbnail7" data-preview="holder7" class="btn btn-primary text-white">
-                                <i class="far fa-image"></i> Elegir
-                                </a>
-                            </span>
-                            {!! Form::text('job_bank_advertising[7]', null, ['class' => 'form-control', 'id' => 'thumbnail7']) !!}
-                          </div>
-                          <div id="holder7" style="margin-top:15px;max-height:100px;">
-                            <img src="{{ $pagefield->job_bank_advertising[7] }}" alt="" style="height:3rem">
-                          </div>
+                          {{ Form::label('job_bank_advertising', 'Link 3:') }} <code>*</code>
+                          {{ Form::text('job_bank_advertising[5]', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el título', 'required']) }}
                         </div>
 
                     </div>

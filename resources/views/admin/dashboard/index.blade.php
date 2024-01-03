@@ -12,7 +12,7 @@
             </div>
         </div>
         <div class="row mt-3 dashboard">
-            <div class="col-sm-12 col-md-4 mb-4">
+            <!--<div class="col-sm-12 col-md-4 mb-4">
                 <div class="card shadow card border-start-lg border-start-primary h-100">
                     <div class="card-body">
                         <div class="d-flex align-items-center">
@@ -49,7 +49,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>-->
         </div>
     </div>
 </div>

@@ -1,4 +1,7 @@
-<a class="floating_advertising" href="{{ $setting->floating_advertising[2] }}" target="_blank">
+@if ($setting->floating_advertising[3] == 'middle')
+<div class="floating_advertising_background"></div> 
+@endif
+<a class="floating_advertising_{{ $setting->floating_advertising[3] }}" href="{{ $setting->floating_advertising[2] }}" target="_blank">
     <img src="{{ $setting->floating_advertising[1] }}" alt="Cursos SAP">
     <button id="btn_close_fa">
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 348.333 348.334">

@@ -1,28 +1,26 @@
 <div class="header">
     <div class="container-fluid px-0">
         <ul class="header-first">
-            <!--<li>
-                <a href="{{ route('egresados') }}" class="@if(Route::currentRouteName()=="egresados") active @endif">EGRESADOS</a>
-            </li>-->
+            @if ($pagefield->field_free_12[0] == 1)
+            <li>
+                <a href="{{ route('pages', $pagefield->field_free_12[2]) }}" class="@if(Route::currentRouteName()=="pages" && $slug == $pagefield->field_free_12[2]) active @endif">{{ $pagefield->field_free_12[1] }}</a>
+            </li>
+            @endif
+            @if ($pagefield->field_free_13[0] == 1)
+            <li>
+                <a href="{{ route('pages', $pagefield->field_free_13[2]) }}" class="@if(Route::currentRouteName()=="pages" && $slug == $pagefield->field_free_13[2]) active @endif">{{ $pagefield->field_free_13[1] }}</a>
+            </li>
+            @endif
+            @if ($pagefield->field_free_10[0] == 1)
+            <li>
+                <a href="{{ route('promociones') }}" class="@if(Route::currentRouteName()=="promociones") active @endif">{{ $setting->links[0] }}</a>
+            </li>
+            @endif
             <li>
                 <a href="{{ route('blog') }}" class="@if(Route::currentRouteName()=="blog") active @endif">{{ $setting->links[1] }}</a>
             </li>
-            <li class="bolsa">
-                <div class="dropdown">
-                    <a href="{{ route('bolsa.trabajo') }}" class="@if(preg_match("/^bolsa./", Route::currentRouteName())) active @endif" id="dropdownMenuButton0" data-bs-toggle="dropdown" aria-expanded="false">{{ $setting->links[2] }}</a>
-                    <ul class="dropdown-menu shadow" aria-labelledby="dropdownMenuButton0">
-                        <li>
-                            <a class="dropdown-item @if(Route::currentRouteName()=="bolsa.seleccionar") active @endif" href="{{ route('bolsa.seleccionar') }}">
-                                <img src="{{ asset('images/icono-veranuncios.png') }}" alt=""> Ver Anuncios
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="{{ route('bolsa.trabajo') }}">
-                                <img src="{{ asset('images/icono-crearanuncios.png') }}" alt=""> Crear Anuncios
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+            <li>
+                <a href="{{ route('bolsa.index') }}" class="@if(preg_match("/^bolsa./", Route::currentRouteName())) active @endif">{{ $setting->links[2] }}</a>
             </li>
             <li>
                 <a href="{{ route('soporte') }}" class="@if(Route::currentRouteName()=="soporte") active @endif">{{ $setting->links[3] }}</a>
@@ -32,179 +30,198 @@
             </li>
         </ul>
         <ul class="header-second" id="header-second">
-            <div class="header-left">
-                <li class="logo">
-                    <a href="{{ route('index') }}">
-                        <img src="{{ asset('images/logo_color.png') }}" alt="">
-                    </a>
-                </li>
-                <li class="menu">
-                    <div class="dropdown dropdown_header">
-                        <button id="btn-header" list="header1_list" class="btn btn-item @if(Route::currentRouteName()=="modelo-educativo" || Route::currentRouteName()=="nosotros" || Route::currentRouteName()=="equipo" || Route::currentRouteName()=="ofimatica" || preg_match("/^responsabilidad-social/", Route::currentRouteName()) || Route::currentRouteName()=="distinciones") active0 @endif">
-                            {{ $setting->links[5] }}
-                        </button>
-                    </div>
-                    <div class="dropPrograma dropCorpo shadow noActiveList" id="header1_list">
-                        <div class="menu">
-                            <div class="menu-left">
-                                <a class="dropdown-item @if(Route::currentRouteName()=="nosotros") activeitems @endif" href="{{ route('nosotros') }}" class="menu1">
-                                    <img src="{{ asset('images/icono-nosotros.png') }}" alt="">
-                                    Nosotros
-                                </a>
-                                <a class="dropdown-item @if(Route::currentRouteName()=="equipo") activeitems @endif" href="{{ route('equipo') }}" class="menu2">
-                                    <img src="{{ asset('images/icono-equipo.png') }}" alt="">
-                                    Equipo Summa
-                                </a>
-                                <a class="dropdown-item @if(Route::currentRouteName()=="modelo-educativo") activeitems @endif" href="{{ route('modelo-educativo') }}">
-                                    <img src="{{ asset('images/icono-modelo.png') }}" alt="">
-                                    Modelo Educativo
-                                </a>
-                                <a class="dropdown-item @if(Route::currentRouteName()=="distinciones") activeitems @endif" href="{{ route('distinciones') }}">
-                                    <img src="{{ asset('images/icono-distinciones.png') }}" alt="">
-                                    Distinciones
-                                </a>
-                                <a class="dropdown-item @if(preg_match("/^responsabilidad-social/", Route::currentRouteName())) activeitems @endif" href="{{ route('responsabilidad-social-programa-de-becas') }}">
-                                    <img src="{{ asset('images/icono-responsabilidad.png') }}" alt="">
-                                    Responsabilidad Social
-                                </a>
-                            </div>
+            <div class="head_second_">
+                <div class="header-left">
+                    <li class="logo">
+                        <a href="{{ route('index') }}">
+                            <img src="{{ asset('images/logo_color.png') }}" alt="">
+                        </a>
+                    </li>
+                    <li class="menu">
+                        <div class="dropdown dropdown_header">
+                            <button id="btn-header" list="header1_list" class="btn btn-item @if(Route::currentRouteName()=="modelo-educativo" || Route::currentRouteName()=="nosotros" || Route::currentRouteName()=="equipo" || Route::currentRouteName()=="ofimatica" || preg_match("/^responsabilidad-social/", Route::currentRouteName()) || Route::currentRouteName()=="distinciones") active0 @endif">
+                                {{ $setting->links[5] }}
+                            </button>
                         </div>
-                    </div>
-                </li>
-                <li class="menu">
-                    <div class="dropdown dropdown_header">
-                        <button id="btn-header" list="header2_list" class="btn btn-item @if(Route::currentRouteName()=="programas" || Route::currentRouteName()=="curso") active0 @endif">
-                            {{ $setting->links[6] }}
-                        </button>
-                    </div>
-                    <div class="dropPrograma dropCorpo shadow noActiveList" id="header2_list">
-                        <div class="menu">
-                            <div class="menu-left">
-                                @foreach ($course_areas as $item)
-                                <a class="dropdown-item" href="{{ route('programas', $item->slug) }}" class="menu1">
-                                    <img src="{{ $item->icon }}" alt="">
-                                    {{ $item->name }}
-                                </a>
-                                @endforeach
-                                <div class="todo">
-                                    <a href="{{ route('programas') }}">
-                                        Ver Todo
+                        <div class="dropPrograma dropCorpo shadow noActiveList" id="header1_list">
+                            <div class="menu">
+                                <div class="menu-left">
+                                    <a class="dropdown-item @if(Route::currentRouteName()=="nosotros") activeitems @endif" href="{{ route('nosotros') }}" class="menu1">
+                                        <img src="{{ asset('images/icono-nosotros.png') }}" alt="">
+                                        Nosotros
+                                    </a>
+                                    <a class="dropdown-item @if(Route::currentRouteName()=="equipo") activeitems @endif" href="{{ route('equipo') }}" class="menu2">
+                                        <img src="{{ asset('images/icono-equipo.png') }}" alt="">
+                                        Equipo Summa
+                                    </a>
+                                    <a class="dropdown-item @if(Route::currentRouteName()=="modelo-educativo") activeitems @endif" href="{{ route('modelo-educativo') }}">
+                                        <img src="{{ asset('images/icono-modelo.png') }}" alt="">
+                                        Modelo Educativo
+                                    </a>
+                                    <a class="dropdown-item @if(Route::currentRouteName()=="distinciones") activeitems @endif" href="{{ route('distinciones') }}">
+                                        <img src="{{ asset('images/icono-distinciones.png') }}" alt="">
+                                        Distinciones
+                                    </a>
+                                    <a class="dropdown-item @if(preg_match("/^responsabilidad-social/", Route::currentRouteName())) activeitems @endif" href="{{ route('responsabilidad-social-programa-de-becas') }}">
+                                        <img src="{{ asset('images/icono-responsabilidad.png') }}" alt="">
+                                        Responsabilidad Social
                                     </a>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </li>
-                <li class="menu">
-                    <div class="dropdown dropdown_header">
-                        <button id="btn-header" list="header3_list" class="btn btn-item @if(Route::currentRouteName()=="nuestras-certificaciones" || Route::currentRouteName()=="preguntas-frecuentes" || Route::currentRouteName()=="grupo-excelencia" || preg_match("/insignia/", Route::currentRouteName()) ) active0 @endif">
-                            {{ $setting->links[7] }}
-                        </button>
-                    </div>
-                    <div class="dropPrograma dropCorpo shadow noActiveList" id="header3_list">
-                        <div class="menu">
-                            <div class="menu-left">
-                                <a class="dropdown-item @if(Route::currentRouteName()=="nuestras-certificaciones") activeitems @endif" href="{{ route('nuestras-certificaciones') }}">
-                                    <img src="{{ asset('images/menu-certificaciones.png') }}" alt="">
-                                    Nuestras Certificaciones
-                                </a>
-                                <a class="dropdown-item @if(Route::currentRouteName()=="insignias-digitales") activeitems @endif" href="{{ route('insignias-digitales') }}">
-                                    <img src="{{ asset('images/menu-insignias-digitales.png') }}" alt="">
-                                    Insignias Digitales
-                                </a>
-                                <a class="dropdown-item @if(Route::currentRouteName()=="coleccion-insignias" || Route::currentRouteName()=="insignia") activeitems @endif" href="{{ route('coleccion-insignias') }}">
-                                    <img src="{{ asset('images/coleccion-insignias.png') }}" alt="">
-                                    Colección de Insignias
-                                </a>
-                                <a class="dropdown-item @if(Route::currentRouteName()=="grupo-excelencia") activeitems @endif" href="{{ route('grupo-excelencia') }}">
-                                    <img src="{{ asset('images/icon-excelencia-academica.png') }}" alt="">
-                                    Grupo de Excelencia Académica
-                                </a>
-                                <a class="dropdown-item @if(Route::currentRouteName()=="preguntas-frecuentes") activeitems @endif" href="{{ route('preguntas-frecuentes') }}">
-                                    <img src="{{ asset('images/menu-preguntas-frecuentes.png') }}" alt="">
-                                    Preguntas Frecuentes
-                                </a>
+                    </li>
+                    <li class="menu">
+                        <div class="dropdown dropdown_header">
+                            <button id="btn-header" list="header2_list" class="btn btn-item @if(Route::currentRouteName()=="programas" || Route::currentRouteName()=="curso") active0 @endif">
+                                {{ $setting->links[6] }}
+                            </button>
+                        </div>
+                        <div class="dropPrograma dropCorpo shadow noActiveList" id="header2_list">
+                            <div class="menu">
+                                <div class="menu-left">
+                                    @foreach ($course_areas as $item)
+                                    <a class="dropdown-item" href="{{ route('programas', $item->slug) }}" class="menu1">
+                                        <img src="{{ $item->icon }}" alt="">
+                                        {{ $item->name }}
+                                    </a>
+                                    @endforeach
+                                    <div class="todo">
+                                        <a href="{{ route('programas') }}">
+                                            Ver Todo
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </li>
-                <li class="menu">
-                    <div class="dropdown dropdown_header">
-                        <button id="btn-header" list="header4_list" class="btn btn-item @if(Route::currentRouteName()=="asesoria-especializada" || Route::currentRouteName()=="capacitaciones-corporativas") active0 @endif">
-                            {{ $setting->links[8] }}
-                        </button>
-                    </div>
-                    <div class="dropPrograma dropCorpo shadow noActiveList" id="header4_list">
-                        <div class="menu">
-                            <div class="menu-left">
-                                <a class="dropdown-item @if(Route::currentRouteName()=="asesoria-especializada") activeitems @endif" href="{{ route('asesoria-especializada') }}">
-                                    <img src="{{ asset('images/icono-corporativo1.png') }}" alt="">
-                                    Asesoría Especializada
-                                </a>
-                                <a class="dropdown-item @if(Route::currentRouteName()=="capacitaciones-corporativas") activeitems @endif" href="{{ route('capacitaciones-corporativas') }}">
-                                    <img src="{{ asset('images/icono-corporativo2.png') }}" alt="">
-                                    Capacitaciones Corporativas
-                                </a>
+                    </li>
+                    <li class="menu">
+                        <div class="dropdown dropdown_header">
+                            <button id="btn-header" list="header3_list" class="btn btn-item @if(Route::currentRouteName()=="nuestras-certificaciones" || Route::currentRouteName()=="preguntas-frecuentes" || Route::currentRouteName()=="grupo-excelencia" || preg_match("/insignia/", Route::currentRouteName()) ) active0 @endif">
+                                {{ $setting->links[7] }}
+                            </button>
+                        </div>
+                        <div class="dropPrograma dropCorpo shadow noActiveList" id="header3_list">
+                            <div class="menu">
+                                <div class="menu-left">
+                                    <a class="dropdown-item @if(Route::currentRouteName()=="nuestras-certificaciones") activeitems @endif" href="{{ route('nuestras-certificaciones') }}">
+                                        <img src="{{ asset('images/menu-certificaciones.png') }}" alt="">
+                                        Nuestras Certificaciones
+                                    </a>
+                                    <a class="dropdown-item @if(Route::currentRouteName()=="insignias-digitales") activeitems @endif" href="{{ route('insignias-digitales') }}">
+                                        <img src="{{ asset('images/menu-insignias-digitales.png') }}" alt="">
+                                        Insignias Digitales
+                                    </a>
+                                    <a class="dropdown-item @if(Route::currentRouteName()=="coleccion-insignias" || Route::currentRouteName()=="insignia") activeitems @endif" href="{{ route('coleccion-insignias') }}">
+                                        <img src="{{ asset('images/coleccion-insignias.png') }}" alt="">
+                                        Colección de Insignias
+                                    </a>
+                                    <a class="dropdown-item @if(Route::currentRouteName()=="grupo-excelencia") activeitems @endif" href="{{ route('grupo-excelencia') }}">
+                                        <img src="{{ asset('images/icon-excelencia-academica.png') }}" alt="">
+                                        Grupo de Excelencia Académica
+                                    </a>
+                                    <a class="dropdown-item @if(Route::currentRouteName()=="preguntas-frecuentes") activeitems @endif" href="{{ route('preguntas-frecuentes') }}">
+                                        <img src="{{ asset('images/menu-preguntas-frecuentes.png') }}" alt="">
+                                        Preguntas Frecuentes
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </li>
-            </div>
-            <div class="header-right">
-                <li class="menu-link4">
-                    <a target="_blank" href="{{ $setting->button_link }}">{{ $setting->button_name }}</a>
-                </li>
-                <li class="menu menu2">
-                    <div class="dropdown dropdown_header">
+                    </li>
+                    <li class="menu">
+                        <div class="dropdown dropdown_header">
+                            <button id="btn-header" list="header4_list" class="btn btn-item @if(Route::currentRouteName()=="asesoria-especializada" || Route::currentRouteName()=="capacitaciones-corporativas") active0 @endif">
+                                {{ $setting->links[8] }}
+                            </button>
+                        </div>
+                        <div class="dropPrograma dropCorpo shadow noActiveList" id="header4_list">
+                            <div class="menu">
+                                <div class="menu-left">
+                                    <a class="dropdown-item @if(Route::currentRouteName()=="asesoria-especializada") activeitems @endif" href="{{ route('asesoria-especializada') }}">
+                                        <img src="{{ asset('images/icono-corporativo1.png') }}" alt="">
+                                        Asesoría Especializada
+                                    </a>
+                                    <a class="dropdown-item @if(Route::currentRouteName()=="capacitaciones-corporativas") activeitems @endif" href="{{ route('capacitaciones-corporativas') }}">
+                                        <img src="{{ asset('images/icono-corporativo2.png') }}" alt="">
+                                        Capacitaciones Corporativas
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </div>
+                <div class="header-right">
+                    <li class="menu-link4">
+                        <a target="_blank" href="{{ $setting->button_link }}">{{ $setting->button_name }}</a>
+                    </li>
+                    <li class="menu menu2">
+                        <div class="dropdown dropdown_header">
+                            @if(Auth::guard('user')->check())
+                            <button id="btn-header" list="header5_list" class="btn btn-item btn-item2 @if(in_array(Route::currentRouteName(), array('profile.shopping', 'profile.index'))) activeB @endif">
+                                <i class="fa-solid fa-user"></i> {{ ucwords(Auth::guard('user')->user()->name) }}
+                            </button>
+                            @else
+                            <a href="{{ route('login.index') }}" class="btn btn-login">
+                                <i class="fa-solid fa-user"></i> INICIAR SESIÓN
+                            </a>
+                            @endif
+                        </div>
                         @if(Auth::guard('user')->check())
-                        <button id="btn-header" list="header5_list" class="btn btn-item btn-item2 @if(in_array(Route::currentRouteName(), array('profile.shopping', 'profile.index'))) activeB @endif">
-                            <i class="fa-solid fa-user"></i> {{ ucwords(Auth::guard('user')->user()->name) }}
-                        </button>
-                        @else
-                        <a href="{{ route('login.index') }}" class="btn btn-login">
-                            <i class="fa-solid fa-user"></i> INICIAR SESIÓN
-                        </a>
-                        @endif
-                    </div>
-                    @if(Auth::guard('user')->check())
-                    <div class="dropPrograma dropCorpo shadow noActiveList" id="header5_list">
-                        <div class="menu">
-                            <div class="menu-left">
-                                @if (Auth::guard('user')->user()->role == 0)
-                                <a class="dropdown-item userdrop" href="{{ route('admin') }}">
-                                    <i class="fa-solid fa-cog"></i> Administrador
-                                </a>
-                                @endif
-                                <a class="dropdown-item userdrop @if(Route::currentRouteName()=="profile.index") activeitems @endif" href="{{ route('profile.index') }}">
-                                    <i class="fa-solid fa-cog"></i> Mis Datos
-                                </a>
-                                <a class="dropdown-item userdrop @if(Route::currentRouteName()=="profile.shopping") activeitems @endif" href="{{ route('profile.shopping') }}">
-                                    <i class="fa-solid fa-bag-shopping"></i> Mis Cursos
-                                </a>
-                                <a class="dropdown-item userdrop" href="{{ route('logout') }}">
-                                    <i class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar Sesión
-                                </a>
+                        <div class="dropPrograma dropCorpo shadow noActiveList" id="header5_list">
+                            <div class="menu">
+                                <div class="menu-left">
+                                    @if (Auth::guard('user')->user()->role == 0)
+                                    <a class="dropdown-item userdrop" href="{{ route('admin') }}">
+                                        <i class="fa-solid fa-cog"></i> Administrador
+                                    </a>
+                                    @endif
+                                    <a class="dropdown-item userdrop @if(Route::currentRouteName()=="profile.index") activeitems @endif" href="{{ route('profile.index') }}">
+                                        <i class="fa-solid fa-cog"></i> Mis Datos
+                                    </a>
+                                    <a class="dropdown-item userdrop @if(Route::currentRouteName()=="profile.shopping") activeitems @endif" href="{{ route('profile.shopping') }}">
+                                        <i class="fa-solid fa-bag-shopping"></i> Mis Cursos
+                                    </a>
+                                    <a class="dropdown-item userdrop" href="{{ route('logout') }}">
+                                        <i class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar Sesión
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    @endif
-                </li>
-                <li class="menu-link3">
-                    <div class="cant" id="cant_header">
-                        @if(session('cart'))
-                            {{ count(session('cart')) }}
-                        @else
-                            0
                         @endif
-                    </div>
-                    <a href="{{ route('checkout.cart') }}" id="{{ (preg_match("/checkout/", Route::currentRouteName()))?'':'cart_user' }}" style="background: none">
-                        <i class="fa-solid fa-cart-arrow-down"></i>
-                    </a>
-                    <!--<a href="">
-                        <img class="search" src="{{ asset('images/search.png') }}" alt="">
-                    </a>-->
-                </li>
+                    </li>
+                    <li class="menu-link3">
+                        <div class="cant" id="cant_header">
+                            @if(session('cart'))
+                                {{ count(session('cart')) }}
+                            @else
+                                0
+                            @endif
+                        </div>
+                        <a href="{{ route('checkout.cart') }}" id="{{ (preg_match("/checkout/", Route::currentRouteName()))?'':'cart_user' }}" style="background: none">
+                            <i class="fa-solid fa-cart-arrow-down"></i>
+                        </a>
+                        <!--<a href="">
+                            <img class="search" src="{{ asset('images/search.png') }}" alt="">
+                        </a>-->
+                    </li>
+                </div>
             </div>
+            @if ($setting->counter_advertising[0] == 1)
+            @if(Carbon\Carbon::now()->toDateTimeString() >= Carbon\Carbon::parse($setting->counter_advertising[4])->format('Y-m-d H:i:s') && Carbon\Carbon::now()->toDateTimeString() <= Carbon\Carbon::parse($setting->counter_advertising[5])->format('Y-m-d H:i:s'))
+            <div class="header-third alert fade show" id="header-third" role="alert" style="background-image: url('{{ $setting->counter_advertising[1] }}')">
+                <div class="bg"></div>
+                <div class="texto" style="color: {{ $setting->counter_advertising[3] }} !important">
+                    <p>{{ $setting->counter_advertising[2] }}</p>
+                </div>
+                <div class="contador" id="contador" style="color: {{ $setting->counter_advertising[6] }} !important"></div>
+                <div class="link_button">
+                    <a class="btn btn-link" href="{{ $setting->counter_advertising[8] }}" style="color: {{ $setting->counter_advertising[10] }} !important; background: {{ $setting->counter_advertising[9] }} !important" target="_blank">
+                        {{ $setting->counter_advertising[7] }}
+                    </a>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            @endif
+            @endif
         </ul>
     </div>
 </div>
@@ -212,7 +229,7 @@
 <div class="header_mobile">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 px-0">
                 <div class="content">
                     <div class="content-left">
                         <div class="logo">
@@ -403,9 +420,44 @@
                             <li class="{{ (Route::currentRouteName()=="blog")?'active':'' }}">
                                 <a href="{{ route('blog') }}"><i class="fa-solid fa-angle-right"></i> {{ $setting->links[1] }}</a>
                             </li>
+                            <li class="@if(preg_match("/^bolsa./", Route::currentRouteName())) active @endif">
+                                <a href="{{ route('bolsa.index') }}"><i class="fa-solid fa-angle-right"></i> {{ $setting->links[2] }}</a>
+                            </li>
+                            @if ($pagefield->field_free_10[0] == 1)
+                            <li class="{{ (Route::currentRouteName()=="promociones")?'active':'' }}">
+                                <a href="{{ route('promociones') }}"><i class="fa-solid fa-angle-right"></i> {{ $setting->links[0] }}</a>
+                            </li>
+                            @endif
+                            @if ($pagefield->field_free_12[0] == 1)
+                            <li class="{{ (Route::currentRouteName()=="pages" && $slug == $pagefield->field_free_12[2])?'active':'' }}">
+                                <a href="{{ route('pages', $pagefield->field_free_12[2]) }}"><i class="fa-solid fa-angle-right"></i> {{ $pagefield->field_free_12[1] }}</a>
+                            </li>
+                            @endif
+                            @if ($pagefield->field_free_13[0] == 1)
+                            <li class="{{ (Route::currentRouteName()=="pages" && $slug == $pagefield->field_free_13[2])?'active':'' }}">
+                                <a href="{{ route('pages', $pagefield->field_free_13[2]) }}"><i class="fa-solid fa-angle-right"></i> {{ $pagefield->field_free_13[1] }}</a>
+                            </li>
+                            @endif
                         </ul>
                     </div>
                 </div>
+                @if ($setting->counter_advertising[0] == 1)
+                @if(Carbon\Carbon::now()->toDateTimeString() >= Carbon\Carbon::parse($setting->counter_advertising[4])->format('Y-m-d H:i:s') && Carbon\Carbon::now()->toDateTimeString() <= Carbon\Carbon::parse($setting->counter_advertising[5])->format('Y-m-d H:i:s'))
+                <div class="header-third alert fade show" id="header-third-mobile header-third" role="alert" style="background-image: url('{{ $setting->counter_advertising[1] }}')">
+                    <div class="bg"></div>
+                    <div class="texto" style="color: {{ $setting->counter_advertising[3] }} !important">
+                        <p>{{ $setting->counter_advertising[2] }}</p>
+                    </div>
+                    <div class="contador" id="contador" style="color: {{ $setting->counter_advertising[6] }} !important"></div>
+                    <div class="link_button">
+                        <a class="btn btn-link" href="{{ $setting->counter_advertising[8] }}" style="color: {{ $setting->counter_advertising[10] }} !important; background: {{ $setting->counter_advertising[9] }} !important" target="_blank">
+                            {{ $setting->counter_advertising[7] }}
+                        </a>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                @endif
+                @endif
             </div>
         </div>
     </div>
@@ -503,3 +555,42 @@
 <div class="beforesend">
     <span class="beforesend_loader"></span>
 </div>
+
+@section('script')
+
+<script>
+    simplyCountdown('#contador', {
+        year: {{ Carbon\Carbon::parse($setting->counter_advertising[5])->format('Y') }}, // required
+        month: {{ Carbon\Carbon::parse($setting->counter_advertising[5])->format('m') }}, // required
+        day: {{ Carbon\Carbon::parse($setting->counter_advertising[5])->format('d') }}, // required
+        hours: {{ Carbon\Carbon::parse($setting->counter_advertising[5])->format('H') }}, // Default is 0 [0-23] integer
+        minutes: {{ Carbon\Carbon::parse($setting->counter_advertising[5])->format('i') }}, // Default is 0 [0-59] integer
+        seconds: {{ Carbon\Carbon::parse($setting->counter_advertising[5])->format('s') }}, // Default is 0 [0-59] integer
+        words: { //words displayed into the countdown
+            days: { singular: 'día', plural: 'dias' },
+            hours: { singular: 'hora', plural: 'horas' },
+            minutes: { singular: 'minuto', plural: 'minutos' },
+            seconds: { singular: 'segundo', plural: 'segundos' }
+        },
+        plural: true, //use plurals
+        inline: false, //set to true to get an inline basic countdown like : 24 days, 4 hours, 2 minutes, 5 seconds
+        inlineClass: 'simply-countdown-inline', //inline css span class in case of inline = true
+        // in case of inline set to false
+        enableUtc: false, //Use UTC or not - default : false
+        onEnd: function() { 
+            document.getElementById('header-third').classList.remove('show');
+            document.getElementById('header-third').classList.add('d-none');
+            document.getElementById('header-third-mobile header-third').classList.remove('show');
+            document.getElementById('header-third-mobile header-third').classList.add('d-none');
+            return; 
+        }, //Callback on countdown end, put your own function here
+        refresh: 1000, // default refresh every 1s
+        sectionClass: 'simply-section', //section css class
+        amountClass: 'simply-amount', // amount css class
+        wordClass: 'simply-word', // word css class
+        zeroPad: false,
+        countUp: false
+    });
+</script>
+
+@endsection

@@ -48,18 +48,14 @@ function zero_fill($valor, $long = 0)
     return str_pad($valor, $long, '0', STR_PAD_LEFT);
 }
 
-function job_types()
+function work_modality()
 {
-    $job_types = [
-        'Tiempo Completo' => 'Tiempo Completo',
-        'Medio Tiempo' => 'Medio Tiempo',
-        'Part time' => 'Part time',
-        'Freelance' => 'Freelance',
-        'Trabajo desde Casa' => 'Trabajo desde Casa',
-        'Rotativo' => 'Rotativo',
-        'Por temporada' => 'Por temporada',
+    $work_modality = [
+        'Presencial' => 'Presencial',
+        'Híbrido' => 'Híbrido',
+        'Remoto' => 'Remoto',
     ];
-    return $job_types;
+    return $work_modality;
 }
 
 function departments()
@@ -92,6 +88,21 @@ function departments()
         'Ucayali' => 'Ucayali',
     ];
     return $departments;
+}
+
+function workload()
+{
+    $workload = [
+        'Full-time' => 'Full-time',
+        'Part-time' => 'Part-time',
+        'Por Horas' => 'Por Horas',
+        'Pasantia' => 'Pasantia',
+        'Nocturno' => 'Nocturno',
+        'Temporario' => 'Temporario',
+        'Por Contrato' => 'Por Contrato',
+        'Fines de Semana' => 'Fines de Semana',
+    ];
+    return $workload;
 }
 
 function getStatus($value)

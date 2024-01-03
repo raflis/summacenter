@@ -123,6 +123,24 @@ class PageFieldController extends Controller
         return view('admin.pagefields.corporative_training', compact('pagefield'));
     }
 
+    public function promotions()
+    {
+        $pagefield = PageField::find(1);
+        return view('admin.pagefields.promotions', compact('pagefield'));
+    }
+
+    public function page_free1()
+    {
+        $pagefield = PageField::find(1);
+        return view('admin.pagefields.page_free1', compact('pagefield'));
+    }
+
+    public function page_free2()
+    {
+        $pagefield = PageField::find(1);
+        return view('admin.pagefields.page_free2', compact('pagefield'));
+    }
+
     public function index()
     {
         //
@@ -282,6 +300,10 @@ class PageFieldController extends Controller
 
             if($request->field_free_9):
                 $request->merge(['field_free_9'=>array_values(collect($request->field_free_9)->sortBy(['order'])->toArray())]);
+            endif;
+
+            if($request->field_free_11):
+                $request->merge(['field_free_11'=>array_values(collect($request->field_free_11)->sortBy(['order'])->toArray())]);
             endif;
             
             $pagefield = PageField::find(1);

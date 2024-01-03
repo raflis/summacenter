@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Models\Admin\Worker;
 use App\Models\Admin\Setting;
 use Illuminate\Support\Carbon;
+use App\Models\Admin\PageField;
 use App\Models\Admin\CourseArea;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
@@ -50,6 +51,7 @@ class AppServiceProvider extends ServiceProvider
             $view->with('worker_administrators', Worker::select('position')->where('type', 'administration')->orderBy('order', 'Asc')->distinct('position')->get());
             $view->with('course_areas', CourseArea::orderBy('order', 'Asc')->get());
             $view->with('setting', Setting::find(1));
+            $view->with('pagefield', PageField::find(1));
         });
 
         view()->composer('web.partials.footer',function($view){

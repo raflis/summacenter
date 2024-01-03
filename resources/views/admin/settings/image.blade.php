@@ -26,7 +26,7 @@
                         </div>
 
                         <div class="form-group col-sm-12">
-                          {!! Form::label('meta_image','Imagen de defecto para compartir redes sociales:',['class'=>'']) !!} <strong>(1200 x 630px)</strong> <code>*</code>
+                          {!! Form::label('meta_image','Imagen de defecto para compartir redes sociales:',['class'=>'']) !!} <strong>(1200 x 627px)</strong> <code>*</code>
                           <div class="input-group">
                             <span class="input-group-btn">
                                 <a id="lfm0" data-input="thumbnail0" data-preview="holder0" class="btn btn-primary text-white">

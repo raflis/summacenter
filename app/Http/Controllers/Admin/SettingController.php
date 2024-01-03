@@ -69,6 +69,12 @@ class SettingController extends Controller
         return view('admin.settings.floating_advertising', compact('setting'));
     }
 
+    public function counter_advertising()
+    {
+        $setting = Setting::find(1);
+        return view('admin.settings.counter_advertising', compact('setting'));
+    }
+
     public function index()
     {
         $setting = Setting::find(1);

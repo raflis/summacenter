@@ -5,7 +5,7 @@
 
 <div class="form-group col-sm-12">
   {{ Form::label('detail', 'Detalle:') }} <code>*</code>
-  {{ Form::textarea('detail', null, ['class' => 'form-control ckeditor', 'placeholder' => 'Nombre', 'required']) }}
+  {{ Form::textarea('detail', null, ['class' => 'form-control ckeditor5', 'placeholder' => 'Nombre', 'required']) }}
 </div>
 
 <div class="form-group col-sm-12">

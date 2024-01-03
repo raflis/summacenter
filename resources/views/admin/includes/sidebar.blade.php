@@ -37,7 +37,23 @@
         href="{{ route('settings.floating_advertising') }}">
             <i class="fas fa-home text-gray pr-1"></i> Publicidad flotante
         </a>
-
+        <a class="nav-link @if(in_array(Route::currentRouteName(), array('settings.counter_advertising'))) active @endif" 
+        href="{{ route('settings.counter_advertising') }}">
+            <i class="fas fa-home text-gray pr-1"></i> Contador
+        </a>
+        <a class="nav-link @if(in_array(Route::currentRouteName(), array('pagefields.promotions'))) active @endif" 
+        href="{{ route('pagefields.promotions') }}">
+            <i class="fas fa-home text-gray pr-1"></i> Página Promociones
+        </a>
+        <a class="nav-link @if(in_array(Route::currentRouteName(), array('pagefields.page_free1'))) active @endif" 
+        href="{{ route('pagefields.page_free1') }}">
+            <i class="fas fa-home text-gray pr-1"></i> Página Libre 1
+        </a>
+        <a class="nav-link @if(in_array(Route::currentRouteName(), array('pagefields.page_free2'))) active @endif" 
+        href="{{ route('pagefields.page_free2') }}">
+            <i class="fas fa-home text-gray pr-1"></i> Página Libre 2
+        </a>
+        
         <div class="sidenav-menu-heading">SEO</div>
         <a class="nav-link @if(in_array(Route::currentRouteName(), array('settings.titles'))) active @endif" 
         href="{{ route('settings.titles') }}">
@@ -177,12 +193,12 @@
         href="{{ route('pagefields.job_bank_advertising') }}">
             <i class="fas fa-home text-gray pr-1"></i> Publicidad
         </a>
-        <a class="nav-link @if(preg_match("/job_bank_users/", Route::currentRouteName())) active @endif" 
-        href="{{ route('job_bank_users.index') }}">
+        <a class="nav-link @if(preg_match("/applicants/", Route::currentRouteName())) active @endif" 
+        href="{{ route('applicants.index') }}">
             <i class="fas fa-home text-gray pr-1"></i> Postulantes
         </a>
-        <a class="nav-link @if(preg_match("/job_bank_offers/", Route::currentRouteName())) active @endif" 
-        href="{{ route('job_bank_offers.index') }}">
+        <a class="nav-link @if(preg_match("/jobs/", Route::currentRouteName())) active @endif" 
+        href="{{ route('jobs.index') }}">
             <i class="fas fa-home text-gray pr-1"></i> Ofertas de trabajo
         </a>
 

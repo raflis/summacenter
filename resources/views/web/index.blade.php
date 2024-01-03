@@ -70,7 +70,7 @@
     <div class="container-fluid px-0 carousel_index">
         <div id="carousel-slider" class="owl-carousel">
             @foreach ($sliders as $slider)
-            <div class="item" style="background-image: url({{ ($agent->isMobile())?$slider->image_mobile:$slider->image_desktop }})">
+            <div class="item" style="background-image: url('{{ ($agent->isMobile())?$slider->image_mobile:$slider->image_desktop }}')">
                 <div class="text" id="{{ ($slider->full_link_desktop == 1)?'linkcompleto':'' }}">
                     <h1>
                         {{ $slider->title1 }}

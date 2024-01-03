@@ -52,10 +52,11 @@ class WebController extends Controller
         $alliances = Alliance::orderBy('order', 'Asc')->get();
         $pagefield = PageField::find(1);
         $course_areas = CourseArea::orderBy('order', 'Asc')->get();
-        $featured_posts = BlogPost::where('featured', 1)->where('slug', '<>', 'eventos')->where('status', 'PUBLISHED')->get();
+        $featured_posts = BlogPost::where('featured', 1)->where('slug', '<>', 'eventos')->where('status', 'PUBLISHED')->orderBy('created_at', 'Asc')->get();
         $event_posts = BlogPost::whereHas('blog_category', function($q){
                             $q->where('slug', 'eventos');
                         })->where('status', 'PUBLISHED')
+                        ->orderBy('created_at', 'Asc')
                         ->get();
         $agent = new Agent();
         return view('web.index', compact('setting', 'agent', 'sliders', 'testimonials', 'partners', 'alliances', 'pagefield', 'course_areas', 'featured_posts', 'flags', 'event_posts'));
@@ -722,7 +723,46 @@ class WebController extends Controller
 
     public function gracias()
     {
-        return view('web.gracias');
+        $setting = Setting::find(1);
+        $pagefield = PageField::find(1);
+        return view('web.gracias', compact('setting', 'pagefield'));
+    }
+
+    public function summa_club()
+    {
+        $setting = Setting::find(1);
+        $pagefield = PageField::find(1);
+        if($pagefield->field_free_10[0] == 0):
+            return redirect()->route('index');
+        endif;
+        return view('web.promociones', compact('setting', 'pagefield'));
+    }
+
+    public function pages($slug)
+    {
+        $setting = Setting::find(1);
+        $pagefield = PageField::find(1);
+        $slug1 = $pagefield->field_free_12[2];
+        $slug2 = $pagefield->field_free_13[2];
+
+        if($slug == $slug1):
+            if($pagefield->field_free_12[0] == 0):
+                return redirect()->route('index');
+            endif;
+            $title = $pagefield->field_free_12[1];
+            $detail = $pagefield->field_free_12[3];
+            return view('web.page_free', compact('title', 'detail', 'setting', 'slug'));
+        elseif($slug == $slug2):
+            if($pagefield->field_free_13[0] == 0):
+                return redirect()->route('index');
+            endif;
+            $title = $pagefield->field_free_13[1];
+            $detail = $pagefield->field_free_13[3];
+            return view('web.page_free', compact('title', 'detail', 'setting', 'slug'));
+        else:
+            return redirect()->route('index');
+        endif;
+        return view('web.pages', compact('setting', 'pagefield'));
     }
 
     public function blog()

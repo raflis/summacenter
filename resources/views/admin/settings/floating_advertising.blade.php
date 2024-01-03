@@ -31,7 +31,7 @@
                         </div>
                         
                         <div class="form-group col-sm-12">
-                          {!! Form::label('floating_advertising','Image:',['class'=>'']) !!} <strong>(600 x 600px)</strong> <code>*</code>
+                          {!! Form::label('floating_advertising','Image:',['class'=>'']) !!} <strong>(Ancho máximo 650px)</strong> <code>*</code>
                           <div class="input-group">
                             <span class="input-group-btn">
                                 <a id="lfm0" data-input="thumbnail0" data-preview="holder0" class="btn btn-primary text-white">
@@ -50,6 +50,11 @@
                         <div class="form-group col-sm-12">
                           {{ Form::label('floating_advertising', 'Link URL:') }} <code>*</code>
                           {{ Form::text('floating_advertising[2]', null, ['class' => 'form-control', 'placeholder' => 'Ingrese URL', 'required']) }}
+                        </div>
+
+                        <div class="form-group col-sm-12">
+                          {{ Form::label('floating_advertising', 'Posición:') }} <code>*</code>
+                          {{ Form::select('floating_advertising[3]',['left' => 'Izquierda', 'middle' => 'Centro'], null, ['class' => 'custom-select', 'placeholder' => 'Seleccione', 'required']) }}
                         </div>
                     </div>
                 </div>

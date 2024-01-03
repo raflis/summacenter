@@ -310,7 +310,6 @@ $(function () {
       $('#header-second').css('top', '0');
       $('#header-second').css('width', '100%');
       $('#header-second').css('background-color', 'rgba(255, 255, 255, .95)');
-      $('#header-second').css('padding', '6px 20px');
       $('#header-second').addClass('shadow');
     } else {
       console.log('top');
@@ -318,7 +317,6 @@ $(function () {
       $('#header-second').css('top', 'unset');
       $('#header-second').css('width', 'unset');
       $('#header-second').css('background-color', 'rgba(255, 255, 255, 1)');
-      $('#header-second').css('padding', '9px 20px');
       $('#header-second').removeClass('shadow');
     }
   });
@@ -799,7 +797,17 @@ $(function () {
   });
   $('#btn_close_fa').on('click', function (e) {
     e.preventDefault();
-    $('.floating_advertising').hide();
+    $('.floating_advertising_middle').hide();
+    $('.floating_advertising_left').hide();
+    $('.floating_advertising_background').hide();
+  });
+  $('#file_front').on('change', function () {
+    if ($('#file_front').val() == '') {
+      $('#file_front_label').text('Sube tu CV aquí:');
+    } else {
+      var file = $('#file_front')[0].files[0].name;
+      $('#file_front_label').text(file);
+    }
   });
 });
 $(document).on("click", function (event) {
